@@ -291,21 +291,7 @@ h2 {
   margin-right: 10px;
 }
 
-#whatsUp::before {
-  content: "☕";
-  color: gray;
-  margin-right: 10px; 
-}
-#statuscafe {
-  padding: .5em;
-  margin-top: 0.5em;
-}
-#statuscafe-username {
-  margin-bottom: .5em;
-}
-#statuscafe-content {
-  margin: 0 1em 0.5em 1em;
-}
+
 
 /* adjust for screen size */
 
@@ -404,9 +390,46 @@ h2 {
     max-width: 250px;
   }
 }
+#spotifyHomepage {
+  padding: 0;
+  height: 200px;
+  overflow: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
+  background-color:rgb(173, 41, 173);
+  margin: auto;
+  max-width: max-content;
+}
 
+#whatsUp::before {
+  content: "☕";
+  color: gray;
+  margin-right: 10px; 
+}
+#statuscafe {
+  padding: .5em;
+  margin-top: 0.5em;
+}
+#statuscafe-username {
+  margin-bottom: .5em;
+}
+#latestStatus {
+  padding-left: 0; padding-top: 0; padding-bottom: 0;
+  min-width: 90%;
+  margin: auto;
+}
+@media all and (max-width:900px) {
+  #latestStatus {
+    min-width: 50%;
+  }
+}
+#latestStatusMain {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 .section-binding {
-  background: url(assets/media/main/line-in-motion.svg); background-size: 100px;margin-right: 20px; width: 15%; border-right: 1px solid pink;background-color: rgb(238, 225, 238); border-top-left-radius: 1em; border-bottom-left-radius: 1em;
+  background: url(assets/media/main/line-in-motion.svg); background-size: 100px; margin-right: 20px; width: 100px; border-right: 1px solid pink;background-color: rgb(238, 225, 238); border-top-left-radius: 1em; border-bottom-left-radius: 1em;
 }
 
 /* custom main-info styles */
