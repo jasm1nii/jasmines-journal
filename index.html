@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>jasmine's journal</title>
+
+    <link rel="icon" type="image/x-icon" href="itchio-textless-white.svg">
+    <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
+
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    
+    <!-- GoatCounter analytics -->
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  
+  </head>
+  
+  <body>
+    
+    <div class="notice-group">
+
+      <script>
+        function hide() {
+        var x = document.getElementById("notice");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+      </script>
+
+      <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
+      <div id="notice">
+
+        <p style="font-size: 18px;"><b><i>have you seen him?</i></b></p>
+        <span><img src="Media/Main/pretzel.png" alt="a gray tabby cat with golden eyes staring off into the distance while lounging on a bed" style="width: 75%; border: white solid 5px; outline: 1px solid darkkhaki;"/></span>
+        <br>
+        <small>my cat pretzel</small>
+        <p><b>now you have!</b></p>
+        <hr style="border-color: goldenrod;">
+        <p><small>click the pushpin to hide this notice.</small></p>
+
+      </div>
+    </div>
+
+    <main class="board">
+
+    <header>
+      <div>
+        <div><h1>jasmine's journal</h1></div>
+        <div style="margin-top: auto;">
+          <p>always a work in progress</p>
+          <p><b>last updated:</b><br>31 july 2023</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a rel="me" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+          <li><a href="">neocities network</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-group">
+
+      <div class="page-columns">
+
+      <!-- 1st column START -->
+    
+        <div id="column" style="min-width: 300px; max-width: 300px;">
+
+          <div class="main-info" id="idCard"> 
+
+            <div style="position: relative;"><div id="neocitiesWM"></div></div>
+    
+            <div id="idCardContent">
+              <div><h2>webmaster identity</h2></div>
+              <div id="idCardPFP">
+                <div style="width: 150px; height: 150px;"><img src="https://jasmineamalia.carrd.co/assets/images/image02.jpg" width="100%">
+                </div>
+                <div class="flower-fill">
+                    <img src="Media/Main/flower.svg" width="40px">
+                    <img src="Media/Main/flower.svg" width="40px">
+                    <img src="Media/Main/flower.svg" width="40px">
+                </div>
+              </div>
+            </div>
+                
+            <div id="idCardBiodata">
+              <table>
+                <tr><td>👋</td> <td><b>jasmine</b></td></tr>
+                <tr><td>🎂</td> <td>1999</td></tr>
+                <tr><td>📍</td> <td>IDN</td></tr>
+                <tr><td>💼</td> <td>illustrator & multimedia designer</td></tr>
+              </table>
+            </div>
+
+            <div id="barcode"></div>
+    
+          </div> <!-- idCard end (MOBILE)-->
+     
+          <div id="jsWarning">
+            <div style="margin: auto 15px auto auto;">
+              <?xml version="1.0" encoding="UTF-8"?><svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M20.043 21H3.957c-1.538 0-2.5-1.664-1.734-2.997l8.043-13.988c.77-1.337 2.699-1.337 3.468 0l8.043 13.988C22.543 19.336 21.58 21 20.043 21zM12 9v4" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 17.01l.01-.011" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div>
+              <p><b>if you're able to close this alert, you're good to go!</b> otherwise, please allow javascript for site widgets to function.</p>
+            </div>
+            <button class="closebtn" onclick="this.parentElement.style.display='none';">&times;</button>
+          </div>
+
+          <div class="main-info" id="links"> <!-- my links -->
+            <h2 id="otherlinks">my other sites</h2>
+            <ul>
+              <li><a href="https://jasmineamalia.com/" rel="me">main portfolio</a></li>
+              <li><span><a href="https://jasmineamalia.carrd.co/" rel="me">carrd</a> (social links, about me, and contact info)</span></li>
+            </ul>
+          </div>
+          
+          <div class="main-info" id="links">
+            <h2 id="trace">anon inbox</h2>
+              <ul>
+                <li><a rel="me" href="https://tellonym.me/jasmineamalia">tellonym</a></li>
+                <li><a rel="me" href="https://cohost.org/jasm1nii/ask">cohost</a></li>
+              </ul>
+          </div>
+          
+        </div>
+    
+    
+        <!-- 2nd column START -->    
+      
+        <div id="column" style="min-width: 300px; max-width: 350px;">
+        
+        <!-- spotify playlist -->
+
+          <div class="main-info" style="padding: 0; height: 200px; overflow: auto; overflow-x: hidden; box-shadow: 10px 10px rgba(128, 0, 128, 0.5); background-color:rgb(173, 41, 173);">
+
+            <iframe style="scrollbar-width: thin;" src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+          </div>
+
+          <!-- status.cafe -->
+
+          <div class="main-info" style="max-width: 75%; margin-left: auto; margin-right: auto; padding-left: 0; padding-top: 0; padding-bottom: 0;"> 
+            <div style="display: flex;">
+
+              <div style="background: url(Media/Main/line-in-motion.svg); background-size: 100px;margin-right: 20px; width: 15%; border-right: 1px solid pink;background-color: rgb(238, 225, 238); border-top-left-radius: 1em; border-bottom-left-radius: 1em;"></div>
+
+              <div style="padding-top: 15px; padding-bottom: 15px; width: 75%;">
+                <h2 id="whatsUp">latest status</h2>
+                <div id="statuscafe">
+                  <div id="statuscafe-username"></div>
+                  <div id="statuscafe-content"></div>
+                </div>
+                <script src="https://status.cafe/current-status.js?name=jasm1nii" defer></script>
+                <hr>
+                <div style="text-align: center; margin-top: 20px;">
+                  <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+                </div>
+              </div>
+
+            </div> <!-- status flex group END -->
+
+        </div> <!-- status END -->
+
+          <div style="display: flex; position: relative;"> <!-- notepad -->
+
+            <!-- rings are hidden for now -->
+
+            <div style="display: none; flex-direction: column; justify-content: space-evenly; margin-left: 10px; margin-top: 10px; height: 280px; position: absolute; z-index: 2;"> <!-- notepad rings -->
+
+              <style>
+                .rings {
+                  width: 40px; height: 5px; background-color: rgb(224, 213, 213); border-radius: 5px; outline: 1px solid gray;
+                }
+              </style>
+
+              <div class="rings"></div>
+              <div class="rings"></div>
+              <div class="rings"></div>
+              <div class="rings"></div>
+              <div class="rings"></div>
+
+            </div> <!-- rings END -->
+            
+            <div class="main-info" id="to-do" style="width: 200px; margin-left: auto; margin-right: auto;">
+
+              <div>
+                <h2 id="todo">to-do list</h2>
+                <div class="list-contents">
+                  <ul>
+                    <li>add more graphics to the homepage</li>
+                    <li>create "site map" page</li>
+                    <li>create "about me" page</li>
+                    <li>create "projects" page</li>
+                    <li>create "resources" page</li>
+                    <li>create "media library" page</li>
+                    <li>add rss feed</li>
+                    <li>add dark mode</li>
+                    <li>join some webrings</li>
+                    <li>add <a href="https://mas.to/@jasm1nii" rel="me">mastodon</a> feed</li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- main to-do section END -->
+
+          </div> <!-- notepad flex END -->
+
+        <div class="main-info" id="issues" style="width: 200px; margin-left: auto; margin-right: auto;"> <!-- known issues-->
+
+          <h2 id="knownIssues">known issues</h2>
+
+          <div class="list-contents">
+
+            <h3>30 july 2023</h3>
+            <ul><li><del>javascript warning cannot be closed with keyboard controls</del> fixed 31 july 2023 - thank you <a href="https://fri11s.neocities.org/">fri11s!!</a></li></ul>
+
+            <h3>26 july 2023</h3>
+            <ul>
+              <li><del>ko-fi and trakteer button icons will sometimes disappear on mobile</del> fixed 27 july 2023</li>
+            </ul>
+
+          </div>
+
+          <hr>
+
+          <h3>report a problem</h3>
+
+          <p><a href="mailto:contact@jasmineamalia.com" rel="me">let me know via email</a> if you spot anything else</p>
+
+        </div>
+
+        </div> <!-- 2nd column END -->
+    
+      <!-- 3rd column START -->
+      <div id="column" style="max-width: 300px;">
+
+        <div class="time"> <!-- clock -->
+          <script src="Scripts/time.js"></script>
+          <p>current time in<br><span style="font-size: 16px;"><b>bandung, indonesia</b></span></p>
+          <div class="clock-display"><p class="clock" timezone="+7"></p></div>
+          <p>timezone: GMT+7</p>
+        </div>
+
+        <div class="main-info" id="links">
+          <h2 id="support">tip jar</h2>
+            <ul>
+              <li><a href="https://ko-fi.com/jasmineamalia">ko-fi (USD)</a></li>
+              <li><a href="https://trakteer.id/jasmineamalia/tip">trakteer (IDR)</a></li>
+            </ul>
+        </div> <!-- div id="support" END -->
+
+        <div class="main-info" style="max-width: 70%;">
+
+          <h2 id="siteButton">link to this site</h2>
+          <br>
+          <img src="Media/Main/jasmines-journal-neocities-button.png" alt="&ldquo;jasmine's journal&rdquo; on neocities" style="margin-left: auto; margin-right: auto; display: block; outline: 1px solid gray;"/>
+
+          <p style="text-align: center;">copy and paste the following code into your HTML file ↓</p>
+
+          <div style="word-wrap: break-word; max-height: 50px; overflow: auto; font-size:12px; padding: 5px 10px 5px 10px; border: 1px solid gray; text-align: left; scrollbar-width:thin;">
+            <code>&lt;a href="https://jasm1nii.neocities.org/" target="_blank">&lt;img src="https://jasm1nii.neocities.org/Media/Main/jasmines-journal-neocities-button.png" alt="&amp;ldquo;jasmine's journal&amp;rdquo; on neocities" style="outline: 1px solid gray;"/>&lt;/a></code>
+          </div> <!-- button code END -->
+          <br>
+          <hr>
+          <p style="text-align: center;"><small><a href="https://sadgrl.online/projects/88x31-button-maker">button maker credits</a></small></p>
+        
+        </div>
+
+        <div class="main-info"> <!-- mutuals -->
+          <h2 id="mutuals">mutual followers</h2>
+          
+          <div class="list-contents" style="text-align: center; max-height: 100px;">
+
+            <br>
+
+            <a href="https://juxtajuno.neocities.org/"><img src="https://juxtajuno.neocities.org/main_assets/templogo.gif" alt="juno on neocities" title="juno on neocities"></a>
+            
+            <a href="https://jeith.neocities.org/"><img src="https://jeith.com/assets/neocities/jeith.gif" alt="jeith"></a>
+
+            <a href="https://fri11s.neocities.org" target="_blank"><style>@keyframes cl{0%{fill: hsl(0, 70%, 70%)}20%{fill: hsl(51, 70%, 70%)}40%{fill: hsl(102, 70%, 70%)}60%{fill: hsl(153, 70%, 70%)}80%{fill: hsl(204, 70%, 70%)}100%{fill: hsl(255, 70%, 70%)}}.frills-tx{fill: hsl(330, 70%, 70%)}@media (prefers-reduced-motion: no-preference){.frills-tx{animation: cl 10s 0s infinite forwards alternate}}.frills-bg{fill:hsl(330, 4%, 9%)}</style><svg class="frills" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" width="88" height="31"><title>Visit Frills' neocities site</title><path class="frills-bg" d="M83 0H5a5 5 0 0 0-5 5v21a5 5 0 0 0 5 5h78a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5Z" /><path class="frills-tx" d="M23.8 17c.5.3.7.8.7 1.6 0 1-.4 1.7-1.2 2-1 .4-2.2.5-3.4.5h-4.2v1.8c0 2.1-.8 3.2-2.5 3.2-1.4 0-2.5-.8-3.3-2.4-.8-1.5-1.2-4-1.2-7.4 0-2 .4-3.9 1.3-5.5 1.6-3 5-5 8.4-5.1 2.8-.2 6.8 1 6.8 4.3s-3.2 3.4-5.7 3.4c-1.7 0-4.1.7-4.1 2.7h3.7c1.5 0 3.4 0 4.7.9Zm6 9.1c-1.2 0-2-.7-2.5-2.2-.7-2.8-1-6.1-.4-9 .3-1.6 1.1-2.8 2.7-2.8 1 0 2 .4 2.2 1.4a4 4 0 0 1 1.7-.8c1.4-.4 2.8-.4 4.1.2 1.4.6 2.8 2.3 2.1 3.9-.4.9-1.2 1.4-2.2 1.4-1.7 0-2.8-1-4.2.5-1.2 1.2-.8 3.3-.9 4.8 0 1.5-1 2.6-2.6 2.6Zm14-14.1c-2 0-3.3-1.8-3.3-3.6 0-2 1.5-3.5 3.4-3.5 2 0 3.4 1.6 3.4 3.5S45.7 12 43.8 12Zm0 14.1c-1.6 0-2.3-1.2-2.4-2.7-.3-2.5-.3-5 0-7.4.2-1.4 1-2.5 2.5-2.5s2.3 1.3 2.5 2.7c.3 2.5.3 5 0 7.4-.3 1.5-.9 2.5-2.6 2.5Zm8.4 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 .8-4.5 3.2-4.5 2.4 0 3.2 3.8 3.3 4.5.3 3.8.2 7.7-.2 11.5-.1 1.8-.9 4.4-3.1 4.4Zm8.3 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 1-4.5 3.3-4.5 2.4 0 3 2.5 3.2 4.5.3 3.8.3 7.7-.1 11.5-.1 1.9-1 4.4-3.2 4.4Zm10 0c-1.8 0-5.6-.5-5.6-3 0-.6.2-1 .6-1.4.4-.3 1-.5 1.5-.5 1 0 1.5.8 2.3.9.6 0 .9-.7.3-1l-2.1-.9c-1.4-.8-2.7-1.8-2.6-3.5 0-1.7 1.6-3 3.1-3.7 2-.8 4.3-.7 6.4-.1 1.3.4 2.9 1.5 2.9 3 0 1.6-1.9 2.3-3.2 1.5-.4-.2-1.3-.5-1.5 0-.1.5.2.8.6.9 1.1.4 2 .9 2.7 1.4a3 3 0 0 1 1 2.4c0 1.2-.5 2.2-1.7 3-1.2.7-2.7 1-4.7 1Z" /><path fill="hsl(332, 70%, 60%)" d="M76.2 4.2a2 2 0 0 1 1.5 1.5 2 2 0 0 1 1.6-1.5V4a2 2 0 0 1-1.5-1.5h-.1A2 2 0 0 1 76.2 4c-.1 0-.1.1 0 .2Z" /><path fill="hsl(332, 70%, 70%)" d="M71 7.3a3.7 3.7 0 0 1 2.6 2.6h.3a3.7 3.7 0 0 1 2.6-2.6c.1 0 .1-.2 0-.2a3.6 3.6 0 0 1-2.6-2.7h-.3A3.7 3.7 0 0 1 71 7.1c-.1 0-.1.1 0 .2Z" /><path fill="hsl(332, 70%, 80%)" d="M75.4 11.4a5.5 5.5 0 0 1 4 4h.3a5.5 5.5 0 0 1 4-4v-.3a5.5 5.5 0 0 1-4-4c0-.1-.3-.1-.4 0a5.5 5.5 0 0 1-3.9 4c-.2 0-.2.3 0 .3Z" /></svg></a>
+            
+            <a href="https://owlhari.com/"><img src="https://owlhari.com/collect/linkbtns/owlhari.gif" alt="button for owlhari on neocities"></a>
+            
+            <a href="https://icecreampizzer.neocities.org/"><img src="https://icecreampizzer.neocities.org/assets/btnz/pizzer.gif" alt="button for icecreampizzer on neocities"></a>
+
+          </div>
+          <hr>
+          <div style="text-align: center;">
+          <small>to friends who haven't been listed yet - don't hesitate to contact me!</small>
+          </div>
+
+        </div>
+
+        <div class="main-info"> <!-- featured sites -->
+
+          <h2 id="featuredSites">more cool sites</h2>
+
+          <div class="list-contents" style="text-align: center; max-height: 100px;">
+
+            <br>
+
+            <a href="https://sadgrl.online/" target="_blank"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif" alt="button for sadness on neocities"></a>
+
+            <a href="https://cherubiims.neocities.org" target="_blank"><img src="https://cherubiims.neocities.org/cherubbutton.gif" alt="button for cherubiims on neocities"></a>
+
+            <a href="https://freakphone.net/"><img src="https://freakphone.net/freakbutton2.gif" alt="button for freak phone on neocities"></a>
+
+            <a href="https://irony-machine.neocities.org/"><img src="https://irony-machine.neocities.org/buttons/buttons/irony-machine.png" alt="button for irony machine on neocities"></a>
+
+            <a href="https://aegi.neocities.org/"><img src="https://aegi.neocities.org/images/aegi_button.gif" alt="button for aegi on neocities"></a>
+
+            <a href="https://shishka.neocities.org/"><img src="https://shishka.neocities.org/shishka/img/shishka-ulala.gif" alt="button for shiska on neocities"></a>
+
+            <a href="https://cinni.net/directory/" target="_blank"> <img src="https://cinni.net/directory/img/88x31.png" alt="button for ichigo directory on neocities"></a>
+
+            <a href="https://entranceorexit.net/" target="_blank"><img src="https://entranceorexit.net/img/eoe_button.png" alt="button for entrance or exit"></a>
+
+            <a href="https://oekaki.cinni.net/"><img src="https://cinni.net/images/button/cinni-oekaki-88x31.gif" alt="button for cinni's oekaki on neocities"></a>
+
+            <a href="https://hillhouse.neocities.org"> <img src="https://hillhouse.neocities.org/_images/badge/hillhouse3.png" width="88" height="31" alt="website badge for hillhouse on neocities" style="image-rendering:pixelated"></a>
+
+            <a href="https://nenrikido.neocities.org/"><img src="https://dl.dropbox.com/s/265wg2om8bjr5g6/nenrikido_button.gif" alt="button for nenrikido on neocities"></a>
+
+            <a href="https://fuchi.neocities.org/"><img src="https://fuchi.neocities.org/fuchibutton.jpeg" target="_blank"></a>
+
+            <a href="https://nonkiru.art/"><img src="https://nonkiru.art/bunnies/nonkiru.gif" alt="button for nonkiru on neocities"></a>
+
+            <a href="https://macchiato.neocities.org" target="_blank"><img src="https://macchiato.neocities.org/images/assets/button.png" title="macchiato" alt="button for macchiato on neocities"></a>
+
+            <a href="https://chaodamacy.neocities.org/"><img src="https://chaodamacy.neocities.org/linkimg/cdimg.png" alt="button for chaodamacy on neocities"></a>
+
+            <a href="https://waterfall.neocities.org"><img src="https://waterfall.neocities.org/images/waterfallbuttonpurple.png" alt="button for waterfall on neocities"></a>
+
+          </div>
+
+        </div>
+ 
+      </div>
+      
+      <!-- 3rd column END -->
+
+    </div>
+
+  </div>
+
+  </main>
+
+    <footer>
+        
+      <p>
+        site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
+        <br><br>
+        best viewed on a chromium-based desktop browser
+      </p>
+
+      <ul>
+        <li>by <a href="https://neocities.org/site/jasm1nii">jasm1nii on neocities</a></li>
+        <li>2023</li>
+      </ul>
+
+    </footer>
+    
+  </body>
+  
+</html>
