@@ -250,20 +250,21 @@ nav a {
   padding: 0px 5px 0px 5px;
   margin-left: -5px;
 }
+#archiveNav li {
+  margin-right: 0;
+  font-weight: 600;
+}
 @media all and (max-width:768px) {
-  nav ul {
-    margin: 0;
-    margin-bottom: 15px;
+  header > nav ul {
     padding: 0;
   }
-  nav li {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 25px;
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
   }
-  #archiveNav li {
-    float: none;
-    margin-right: 0;
+  nav li {
+    margin-right: 20px;
   }
 }
 section > nav {
@@ -282,6 +283,9 @@ section > nav li:first-child::before {
   content: "⟶";
   margin-right: 0.5em;
   margin-left: 0.5em;
+}
+#archiveNav li li::before {
+  content: none;
 }
 section > nav li::after {
   content: "•";
