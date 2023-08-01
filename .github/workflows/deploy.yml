@@ -8,7 +8,7 @@ on:
       - master
     # only run deploys when public changes
     paths:
-      - 'dist_dir/**'
+      - 'public/**'
 
 jobs:
   deploy:
