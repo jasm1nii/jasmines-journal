@@ -2,6 +2,7 @@ name: Deploy to neocities
 
 # only run on changes to master
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
