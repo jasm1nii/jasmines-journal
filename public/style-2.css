@@ -66,39 +66,7 @@ body {
 ::selection {
   background-color: yellow;
 }
-nav .site-update {
-  border-left: 2px solid purple;
-  padding-left: 15px;
-  margin-bottom: 0;
-}
-nav ul {
-  border-left: 2px solid purple;
-  padding-left: 15px;
-  padding-top: 50px;
-  margin-top: 0;
-}
-nav li {
-  display: block;
-  margin-bottom: 20px;
-}
-nav a {
-  text-decoration: none;
-  color: purple;
-  padding: 0px 5px 0px 5px;
-  margin-left: -5px;
-}
-@media all and (max-width:768px) {
-  nav ul {
-    margin: 0;
-    margin-bottom: 15px;
-    padding: 0;
-  }
-  nav li {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 25px;
-  }
-}
+
 
 .layout {
   display: flex;
@@ -261,6 +229,43 @@ article > nav a::before {
   content: "⟵";
   margin-right: .5em;
 }
+nav .site-update {
+  border-left: 2px solid purple;
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+nav ul {
+  border-left: 2px solid purple;
+  padding-left: 15px;
+  padding-top: 50px;
+  margin-top: 0;
+}
+nav li {
+  display: block;
+  margin-bottom: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: purple;
+  padding: 0px 5px 0px 5px;
+  margin-left: -5px;
+}
+@media all and (max-width:768px) {
+  nav ul {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  nav li {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 25px;
+  }
+  #archiveNav li {
+    float: none;
+    margin-right: 0;
+  }
+}
 section > nav {
   display: initial;
 }
@@ -274,7 +279,7 @@ section > nav li {
   font-weight: normal;
 }
 section > nav li:first-child::before {
-  content: "⭢";
+  content: "⟶";
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
@@ -286,6 +291,7 @@ section > nav li::after {
 section > nav li:last-child::after {
   content: none;
 }
+
 
 footer {
   margin-top: 50px;
