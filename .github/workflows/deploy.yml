@@ -1,22 +1,21 @@
 name: Deploy to neocities
 
-# only run on changes to master
+# only run on changes to main
 on:
   workflow_dispatch:
   push:
     branches:
       - master
-
-concurrency: # prevent concurrent deploys doing strange things
-  group: deploy-to-neocities
-  cancel-in-progress: true
+    # only run deploys when public changes
+    paths:
+      - 'dist_dir/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
     # When the dist_dir is ready, deploy it to neocities
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1.1.17
