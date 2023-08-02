@@ -377,6 +377,10 @@ h2 {
   padding-right: 1em;
 }
 
+section {
+  margin-left: auto;
+  margin-right: auto;
+}
 .main-info {
   border: 3px double lightpink;
   border-radius: 15px 15px 15px 15px;
@@ -405,7 +409,7 @@ h2 {
   box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   background-color:rgb(173, 41, 173);
   margin: auto;
-  max-width: max-content;
+  max-width: 275px;
 }
 
 #whatsUp::before {
@@ -427,7 +431,8 @@ h2 {
 #latestStatus {
   padding: 0;
   margin: auto;
-  min-width: 90%;
+  min-width: 80%;
+  max-width: 275px;
 }
 #statuscafeButton {
   margin-top: 15px;
@@ -575,10 +580,13 @@ h2 {
   text-align: center;
 }
 
-#smallerSection {
+#mainExtLinks {
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  min-width: 200px;
+}
+
+#smallerSection {
+  width: 70%;
 }
 @media all and (max-width:600px) {
   #smallerSection {
