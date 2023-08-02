@@ -109,41 +109,48 @@ main {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  max-width: 1000px;
+  max-width: fit-content;
 }
-@media all and (max-width:768px) {
+#neocitiesNetwork {
+  max-width: 900px;
+}
+@media all and (max-width:900px) {
+  .board {
+    max-width: 700px;
+  }
+}
+@media all and (max-width:700px) {
   .board {
     margin-top: 0;
-    width: 100%;
+    max-width: none;
   }
 }
 
 .page-columns {
    columns: 3;
-   column-gap: 20px;
    background-image: url(assets/media/main/ooorganize.svg);
    background-size: 200px;
    height: 100%;
-   padding-top: 30px;
-   padding-bottom: 50px;
-   padding-left: 20px;
-   padding-right: 20px;
+   padding-top: 25px;
+   padding-bottom: 35px;
+   padding-left: 3%;
+   padding-right: 3%;
    overflow: auto;
    scrollbar-width: thin;
 }
 .page-columns > section {
-  margin-bottom: 40px;
+  margin-bottom: 10%;
 }
 @media all and (max-width:900px) {
   .page-columns {
-    max-width: none;
     columns: 2;
+  }
+  .page-columns > section {
+    margin-bottom: 15%;
   }
 }
 @media all and (max-width:600px) {
   .page-columns {
-    max-width: none;
     columns: 1;
   }
 }
@@ -252,7 +259,9 @@ h2 {
   color: #5a5463;
   margin: 0;
   border-bottom: 1px solid hotpink;
-  padding-bottom: 10px;
+  padding-bottom: .5em;
+  font-size: 1.25em;
+  letter-spacing: .1em;
 }
 
 /* main-info h2 decoration */
@@ -292,8 +301,6 @@ h2 {
   margin-right: 10px;
 }
 
-
-
 /* adjust for screen size */
 
 @media all and (max-width:768px) {
@@ -301,9 +308,7 @@ h2 {
     padding-left: 5%;
   }
   .board {
-    height: 100%;
     overflow-x: hidden;
-    border-top: none;
   }
 }
 
@@ -363,7 +368,7 @@ h2 {
   padding: 5px 15px 5px 15px;
   background-color: ivory;
   display: flex;
-  max-width: 250px;
+  max-width: 200px;
   color: rgb(94, 82, 53);
   break-inside: avoid;
   margin: auto;
@@ -385,22 +390,21 @@ section {
 .main-info {
   border: 3px double lightpink;
   border-radius: 15px 15px 15px 15px;
-  padding: 15px 20px 15px 20px;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
   height: min-content;
   background-color: ghostwhite;
   box-shadow: 10px 10px rgba(255, 182, 193, 0.5);
   scrollbar-width: thin;
   break-inside: avoid;
-  margin: auto;
 }
 @media all and (max-width:900px) {
   .main-info {
     max-width: 250px;
   }
 }
-.main-info:nth-last-of-type(2) {
-  display: none;
-}
+
 #spotifyHomepage {
   padding: 0;
   height: 200px;
@@ -409,8 +413,6 @@ section {
   scrollbar-width: thin;
   box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   background-color:rgb(173, 41, 173);
-  margin: auto;
-  max-width: 275px;
 }
 
 #whatsUp::before {
@@ -432,8 +434,6 @@ section {
 #latestStatus {
   padding: 0;
   margin: auto;
-  min-width: 80%;
-  max-width: 275px;
 }
 #statuscafeButton {
   margin-top: 15px;
@@ -466,7 +466,9 @@ section {
 
 /* custom main-info styles */
 #idCard {
-  border: 1px solid plum; background: url(assets/media/main/bank-note.svg); background-color: snow; max-width: 200px; height: min-content;
+  border: 1px solid plum; background: url(assets/media/main/bank-note.svg); background-color: snow;
+  max-width: 200px;
+  height: min-content;
 }
 #idCardContent {
   display: flex; flex-direction: column;
@@ -541,16 +543,10 @@ section {
 }
 
 #buttonSection {
-  max-width: 300px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: .5em;
-  min-width: 250px;
-}
-@media all and (max-width:600px) {
-  #buttonSection {
-    max-width: 80%;
-  }
+  width: 90%;
 }
 #buttonSection h2, #buttonSection p {
   padding-left: 1em;
@@ -558,14 +554,6 @@ section {
 }
 #buttonSection p {
   text-align: center;
-}
-@media all and (max-width:600px) {
-  section:first-of-type {
-    width: 60%;
-    min-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 #buttonCode {
   word-wrap: break-word;
@@ -577,7 +565,7 @@ section {
   text-align: left;
   scrollbar-width: thin;
   resize: vertical;
-  width: 70%;
+  width: 80%;
   margin: auto;
   margin-bottom: 15px;
 }
@@ -586,19 +574,8 @@ section {
   text-align: center;
 }
 
-#mainExtLinks {
-  width: 80%;
-  min-width: 200px;
-}
-
-#smallerSection {
-  width: 70%;
-}
-@media all and (max-width:600px) {
-  #smallerSection {
-    max-width: 50%;
-    min-width: 200px;
-  }
+#links {
+  max-width: 200px;
 }
 #links ul {
   list-style: none;
