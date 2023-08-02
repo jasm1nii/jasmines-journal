@@ -118,6 +118,7 @@ main {
     width: 100%;
   }
 }
+
 .page-columns {
    columns: 3;
    column-gap: 20px;
@@ -540,11 +541,16 @@ section {
 }
 
 #buttonSection {
-  max-width: max-content;
+  max-width: 300px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: .5em;
   min-width: 250px;
+}
+@media all and (max-width:600px) {
+  #buttonSection {
+    max-width: 80%;
+  }
 }
 #buttonSection h2, #buttonSection p {
   padding-left: 1em;
