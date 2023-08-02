@@ -120,14 +120,14 @@ main {
 }
 .page-columns {
    columns: 3;
-   column-gap: 2em;
+   column-gap: 20px;
    background-image: url(assets/media/main/ooorganize.svg);
    background-size: 200px;
    height: 100%;
-   padding-top: 20px;
-   padding-bottom: 40px;
+   padding-top: 30px;
+   padding-bottom: 50px;
    padding-left: 20px;
-   padding-right: 40px;
+   padding-right: 20px;
    overflow: auto;
    scrollbar-width: thin;
 }
@@ -346,11 +346,15 @@ h2 {
 #notice {
   border: 1px solid darkgoldenrod;
   margin: 15px 15px 0 0;
+  padding: .25em;
   background-color: cornsilk;
   width: 150px;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
   text-align: center;
   color: rgb(94, 82, 53);
+}
+#pretzel {
+  width: 75%; border: white solid 5px; outline: 1px solid darkkhaki;
 }
 
 #jsWarning {
@@ -378,7 +382,6 @@ h2 {
   border-radius: 15px 15px 15px 15px;
   padding: 15px 20px 15px 20px;
   height: min-content;
-  max-width: 200px;
   background-color: ghostwhite;
   box-shadow: 10px 10px rgba(255, 182, 193, 0.5);
   scrollbar-width: thin;
@@ -389,6 +392,9 @@ h2 {
   .main-info {
     max-width: 250px;
   }
+}
+.main-info:nth-last-of-type(2) {
+  display: none;
 }
 #spotifyHomepage {
   padding: 0;
@@ -410,26 +416,46 @@ h2 {
 #statuscafe {
   padding: .5em;
   margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 1em;
+  border: 1px solid rgb(175, 153, 175);
 }
 #statuscafe-username {
   margin-bottom: .5em;
 }
 #latestStatus {
-  padding-left: 0; padding-top: 0; padding-bottom: 0;
-  min-width: 90%;
+  padding: 0;
   margin: auto;
+  min-width: 90%;
 }
-@media all and (max-width:900px) {
+#statuscafeButton {
+  margin-top: 15px;
+  text-align: center;
+}
+@media all and (max-width:768px) {
   #latestStatus {
-    min-width: 50%;
+    min-width: 55%;
   }
 }
 #latestStatusMain {
   padding-top: 1em;
   padding-bottom: 1em;
+  width: 100%;
+}
+#latestStatusMain h2 {
+  padding-left: .75em;
+  padding-right: .5em;
+  border: none;
 }
 .section-binding {
-  background: url(assets/media/main/line-in-motion.svg); background-size: 100px; margin-right: 20px; width: 100px; border-right: 1px solid pink;background-color: rgb(238, 225, 238); border-top-left-radius: 1em; border-bottom-left-radius: 1em;
+  background: url(assets/media/main/line-in-motion.svg);
+  background-size: 100px;
+  width: 40px;
+  border-right: 1px solid pink;
+  background-color: rgb(238, 225, 238);
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
 
 /* custom main-info styles */
@@ -500,18 +526,6 @@ h2 {
   margin-top: 0;
 }
 
-#to-do, #issues {
-  background-color: lavenderblush;
-  border: 2px dashed pink;
-  box-shadow: 10px 10px rgba(240, 128, 128,50%);
-  color:rgb(97, 71, 75);
-}
-#to-do h2 {
-  color: rgb(85, 62, 66);
-}
-#to-do h3 {
-  color: rgb(110, 77, 83);
-}
 .list-contents {
   max-height: 150px;
   padding-right: 20px;
@@ -519,23 +533,59 @@ h2 {
   overflow: auto;
   scrollbar-width: thin;
 }
-#to-do::after {
-  content: "ฅ(＾・ω・＾ฅ)";
-  display: block;
-  text-align: right;
-  font-weight: 100;
-  font-size: 15px;
-  color: rgba(255, 127, 80, 0.5);
+
+#buttonSection {
+  max-width: max-content;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: .5em;
+  min-width: 250px;
 }
-#issues:after{
-  content: "Σ(ﾟ口ﾟ;)//";
-  display: block;
-  text-align: right;
-  font-weight: 100;
-  font-size: 20px;
-  color: rgba(255, 127, 80, 0.5);
+#buttonSection h2, #buttonSection p {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#buttonSection p {
+  text-align: center;
+}
+@media all and (max-width:600px) {
+  section:first-of-type {
+    width: 60%;
+    min-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+#buttonCode {
+  word-wrap: break-word;
+  height: 50px;
+  overflow: auto;
+  font-size:12px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid gray;
+  text-align: left;
+  scrollbar-width: thin;
+  resize: vertical;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.button-gallery {
+  margin-top: 10px;
+  text-align: center;
 }
 
+#smallerSection {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width:600px) {
+  #smallerSection {
+    max-width: 50%;
+    min-width: 200px;
+  }
+}
 #links ul {
   list-style: none;
   padding: 5px;
@@ -558,7 +608,7 @@ footer {
   background-color: transparent;
   text-align: center;
   font-size: 14px;
-  color: rgb(83, 72, 83);
+  color: rgb(97, 58, 97);
   width: 400px;
 }
 @media all and (max-width:768px) {
@@ -571,7 +621,6 @@ footer ul {
    padding: 0;
    list-style-type: none;
 }
-
 footer li:nth-child(1)::before {
    content: "";
 }
@@ -580,7 +629,6 @@ footer li::before {
    font-size: 20px;
    margin-right: 15px;
 }
-
 footer li {
    display: inline-block;
    margin-right: 15px;

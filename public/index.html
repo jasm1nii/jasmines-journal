@@ -58,8 +58,8 @@
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
 
             <div id="notice">
-              <p style="font-size: 18px;"><b><i>have you seen him?</i></b></p>
-              <span><img src="assets/media/main/pretzel.png" alt="a gray tabby cat with golden eyes staring off into the distance while lounging on a bed" style="width: 75%; border: white solid 5px; outline: 1px solid darkkhaki;"/></span>
+              <p style="font-size: 18px; padding-left: 0;"><b><i>have you seen him?</i></b></p>
+              <span><img src="assets/media/main/pretzel.png" alt="a gray tabby cat with golden eyes staring off into the distance while lounging on a bed" id="pretzel"/></span>
               <br>
               <small>my cat pretzel</small>
               <p><b>now you have!</b></p>
@@ -129,23 +129,34 @@
 
           <!-- status.cafe -->
           <section>
-            <div class="main-info" id="latestStatus"> 
+
+            <div class="main-info" id="latestStatus">
+              
+              <script src="https://status.cafe/current-status.js?name=jasm1nii" defer></script>
+
               <div style="display: flex;">
+
                 <div class="section-binding"></div>
+
                 <div id="latestStatusMain">
+
                   <h2 id="whatsUp">latest status</h2>
+
                   <div id="statuscafe">
                     <div id="statuscafe-username"></div>
                     <div id="statuscafe-content"></div>
                   </div>
-                  <script src="https://status.cafe/current-status.js?name=jasm1nii" defer></script>
-                  <hr>
-                  <div style="text-align: center; margin-top: 20px;">
+
+                  <div id="statuscafeButton"> <!-- status cafe button-->
                     <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
                   </div>
-                </div>
-              </div> <!-- status flex END -->
-          </div> <!-- status END -->
+
+                </div> <!-- status page w/o binding END -->
+
+              </div> <!-- status flex group END -->
+
+            </div> <!-- status section END -->
+
           </section>
 
           <!-- spotify playlist -->
@@ -156,7 +167,7 @@
           </section>
 
           <!-- my links -->
-          <section>
+          <section id="smallerSection">
             <div class="main-info" id="links">
               <h2 id="otherlinks">my other sites</h2>
               <ul>
@@ -167,7 +178,7 @@
           </section>
 
           <!-- tip jar -->
-          <section>
+          <section id="smallerSection">
             <div class="main-info" id="links">
               <h2 id="support">tip jar</h2>
                 <ul>
@@ -178,7 +189,7 @@
           </section>
 
           <!-- anon inbox -->
-          <section>
+          <section id="smallerSection">
             <div class="main-info" id="links">
               <h2 id="trace">anon inbox</h2>
                 <ul>
