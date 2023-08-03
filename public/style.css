@@ -109,10 +109,7 @@ main {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  max-width: fit-content;
-}
-#neocitiesNetwork {
-  max-width: 900px;
+  max-width: 950px;
 }
 @media all and (max-width:900px) {
   .board {
@@ -131,15 +128,15 @@ main {
    background-image: url(assets/media/main/ooorganize.svg);
    background-size: 200px;
    height: 100%;
-   padding-top: 25px;
-   padding-bottom: 35px;
+   padding-top: 5%;
+   padding-bottom: 5%;
    padding-left: 3%;
    padding-right: 3%;
    overflow: auto;
    scrollbar-width: thin;
 }
 .page-columns > section {
-  margin-bottom: 10%;
+  margin-bottom: 12%;
 }
 @media all and (max-width:900px) {
   .page-columns {
@@ -414,6 +411,61 @@ section {
   box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   background-color:rgb(173, 41, 173);
 }
+#lastPlayed {
+  max-width: 200px;
+  background-color: #b8dce0;
+  border-color: rgb(125, 143, 137);text-align: center;
+  padding-bottom: 0;
+}
+#lastPlayed h2 {
+  margin-left: .5em;
+  margin-right: .5em;
+  margin-bottom: -.25em;
+  font-variant: small-caps;
+  border-color: rgb(79, 170, 161);
+}
+#lastPlayed a {
+  text-decoration: none;
+}
+#track {
+  background-color: linen;
+  padding-top: .5em;
+  border: 1px solid rgb(113, 135, 160);
+}
+#speaker {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid rgb(146, 162, 180);
+  border-top: none;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+#speaker img {
+  width: 50px;
+  user-select: none;
+  margin-left: 15px;
+}
+#speaker button {
+  margin-bottom: 1em;
+  width: 70%;
+  font: inherit;
+  font-size: 0.9em;
+  border: 1px outset;
+  border-radius: 5px;
+  background-color: rgb(230, 240, 248);
+  outline: 1px solid gray;
+  transition: background-color 0.3s;
+}
+#speaker button:hover {
+  background-color: #f5e5c5;
+}
+#speaker button a {
+  color: rgb(46, 42, 42);
+}
+#speaker button a:hover {
+  background-color: transparent;
+}
 
 #whatsUp::before {
   content: "☕";
@@ -423,13 +475,19 @@ section {
 #statuscafe {
   padding: .5em;
   margin-top: 0.5em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 1em;
   border: 1px solid rgb(175, 153, 175);
+  max-width: 80%;
+  word-wrap: break-word;
+}
+#statuscafe a {
+  text-decoration: none;
 }
 #statuscafe-username {
   margin-bottom: .5em;
+  font-weight: 600;
 }
 #latestStatus {
   padding: 0;
@@ -489,6 +547,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  user-select: none;
 }
 #idCardBiodata td:first-of-type {
     text-align: center;
