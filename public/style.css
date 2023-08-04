@@ -101,6 +101,7 @@ hr {
 
 time {
   font-weight: 600;
+  display: block;
 }
 
 main {

@@ -9,7 +9,7 @@
 
 header, main, footer {
   opacity: 0;
-  animation: fadeInPage 1s;
+  animation: fadeInPage .75s;
   animation-fill-mode: forwards;
 }
 header p, h1, h2, h3 {
@@ -293,6 +293,7 @@ nav .site-update {
 }
 .site-update time {
   font-weight: 600;
+  display: block;
 }
 nav ul {
   border-left: 2px solid purple;
