@@ -99,6 +99,10 @@ hr {
   border: 1px dashed plum;
 }
 
+time {
+  font-weight: 600;
+}
+
 main {
   margin: auto;
 }
@@ -435,7 +439,10 @@ section {
 #speaker {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 1px solid rgb(146, 162, 180);
   border-top: none;
   border-bottom-left-radius: 1em;
@@ -444,11 +451,10 @@ section {
 #speaker img {
   width: 50px;
   user-select: none;
-  margin-left: 15px;
+  margin-right: 20px;
 }
 #speaker button {
   margin-bottom: 1em;
-  width: 70%;
   font: inherit;
   font-size: 0.9em;
   border: 1px outset;

@@ -10,7 +10,6 @@
 header, main, footer {
   opacity: 0;
   animation: fadeInPage 1s;
-  animation-delay: 0.25s;
   animation-fill-mode: forwards;
 }
 header p, h1, h2, h3 {
@@ -66,7 +65,15 @@ body {
 ::selection {
   background-color: yellow;
 }
-
+mark {
+  background-color: rgb(247, 222, 226);
+}
+.mark-2 {
+  background-color: antiquewhite;
+}
+.mark-3 {
+  background-color: rgb(202, 230, 220);
+}
 
 .layout {
   display: flex;
@@ -98,18 +105,33 @@ header {
 main {
   width: 500px;
   margin: 50px;
-  padding: 20px 50px 25px 50px;
+  padding: 3em;
+  padding-top: 1em;
   background-color: whitesmoke;
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
 }
+.main-2 {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
 @media all and (max-width:768px) {
   main {
     margin: auto;
-    width: 70%;
+    width: 80%;
+    padding-top: 0;
+    padding-bottom: 1.5em;
+    padding-left: 1.5em;
+    padding-right: 1em;
     height: 500px;
     overflow: auto;
     scrollbar-width: thin;
+  }
+  .main-2 {
+    min-width: fit-content;
+    height: max-content;
   }
 }
 
@@ -161,11 +183,17 @@ h2 {
 
 /* p */
 #important {
-  border: 2px dashed orange;
+  border: 1px solid rgb(187, 142, 59);
   padding: 1em;
   font-weight: 600;
   background-color: rgb(241, 230, 225);
   color: rgb(78, 57, 18);
+  width: fit-content;
+}
+@media all and (max-width:768px) {
+  #important {
+    margin: auto;
+  }
 }
 
 a {
@@ -209,9 +237,24 @@ section h3 {
 }
 #owo::before {
   content: "( ͡o ω ͡o )" ;
-  color: gray;
+  color: rgb(173, 123, 173);
   margin-right: 0.25em;
   text-transform: none;
+}
+h4 {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background-color: antiquewhite;
+  padding: .5em;
+  color: rgb(119, 95, 35)
+}
+h4::before {
+  content: '☆';
+  margin-right: .5em;
+}
+h4::after {
+  content: '☆';
+  margin-left: .5em;
 }
 
 hr {
@@ -229,10 +272,27 @@ article > nav a::before {
   content: "⟵";
   margin-right: .5em;
 }
+.article-2 > section:not(section:first-child) {
+  border: 1px solid purple;
+  background-color: whitesmoke;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 2em;
+}
+@media all and (max-width:768px) {
+  .article-2 > section:not(section:first-child) {
+    max-width: 500px;
+  }
+}
 nav .site-update {
   border-left: 2px solid purple;
   padding-left: 15px;
   margin-bottom: 0;
+}
+.site-update time {
+  font-weight: 600;
 }
 nav ul {
   border-left: 2px solid purple;
