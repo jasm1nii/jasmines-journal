@@ -257,9 +257,9 @@ nav a {
 }
 
 h2 {
-  color: #804e67;
+  color: #ce5ea8;
   margin: 0;
-  border-bottom: 1px solid rgb(184, 126, 176);
+  border-bottom: 1px solid rgb(233, 166, 205);
   padding-bottom: .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
@@ -389,14 +389,14 @@ section {
   margin-right: auto;
 }
 .main-info {
-  border: 3px double lightpink;
+  border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
   padding: 1em;
   margin-left: auto;
   margin-right: auto;
   height: min-content;
-  background-color: rgb(255, 251, 251);
-  box-shadow: 10px 10px rgba(255, 182, 193, 0.5);
+  background-color: rgb(255, 239, 239);
+  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   scrollbar-width: thin;
   break-inside: avoid;
 }
@@ -418,8 +418,14 @@ section {
 #lastPlayed {
   max-width: 200px;
   background-color: #b8dce0;
-  border-color: rgb(125, 143, 137);text-align: center;
+  outline: 1px solid rgb(125, 143, 137);
+  text-align: center;
   padding-bottom: 0;
+  box-shadow: 10px 10px rgba(98, 136, 194, 0.5);
+  border-top: none;
+  border-left: none;
+  border-bottom: 10px outset rgb(155, 211, 207);
+  border-right: 10px outset rgb(189, 235, 232);
 }
 #lastPlayed h2 {
   margin-left: .5em;
@@ -427,6 +433,7 @@ section {
   margin-bottom: -.25em;
   font-variant: small-caps;
   border-color: rgb(79, 170, 161);
+  color: rgb(45, 94, 77);
 }
 #lastPlayed a {
   text-decoration: none;
@@ -503,6 +510,7 @@ section {
   background: url(assets/media/main/line-in-motion.svg) rgb(238, 225, 238);
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
+  box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
 }
 @media all and (max-width:768px) {
   #latestStatus {
@@ -526,7 +534,9 @@ section {
 
 /* custom main-info styles */
 #idCard {
-  border: 1px solid plum; background: url(assets/media/main/bank-note.svg); background-color: snow;
+  border: 1px solid rgb(183, 124, 189); background: url(assets/media/main/bank-note.svg);
+  background-color: snow;
+  box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   max-width: 200px;
   height: min-content;
 }
@@ -535,6 +545,7 @@ section {
 }
 #idCardContent h2 {
   border: none; font-variant: small-caps; letter-spacing: 1px;
+  color: rgb(94, 75, 92);
 }
 #neocitiesWM {
   background: url(https://googol.neocities.org/neocities_bw/logo_black.png); background-size: cover; width: 100px; height: 80px; opacity: 0.1; mix-blend-mode: multiply; margin-top: 190px; margin-left: 100px; position: absolute;
@@ -572,8 +583,8 @@ section {
   text-align: center;
   background-color: lavender;
   box-shadow: 10px 10px rgba(147, 112, 219, 50%);
-  border-bottom: 5px outset lavender;
-  border-right: 5px outset lavender;
+  border-bottom: 5px outset rgb(199, 199, 236);
+  border-right: 5px outset rgb(242, 242, 255);
   outline: 1px solid 	rgb(140, 112, 169);
   width: 200px;
   color:#685c7c;
