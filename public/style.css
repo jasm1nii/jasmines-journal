@@ -5,10 +5,9 @@
 
 /* animations */
 
-header, main, footer {
+body, header, main, footer {
   opacity: 0;
   animation: fadeInPage 1s;
-  animation-delay: 0.25s;
   animation-fill-mode: forwards;
 }
 
@@ -258,12 +257,12 @@ nav a {
 }
 
 h2 {
-  color: #5a5463;
+  color: #804e67;
   margin: 0;
-  border-bottom: 1px solid hotpink;
+  border-bottom: 1px solid rgb(184, 126, 176);
   padding-bottom: .5em;
   font-size: 1.25em;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
 }
 
 /* main-info h2 decoration */
@@ -396,7 +395,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   height: min-content;
-  background-color: ghostwhite;
+  background-color: rgb(255, 251, 251);
   box-shadow: 10px 10px rgba(255, 182, 193, 0.5);
   scrollbar-width: thin;
   break-inside: avoid;
@@ -474,20 +473,19 @@ section {
   background-color: transparent;
 }
 
-#whatsUp::before {
-  content: "☕";
-  color: gray;
-  margin-right: 10px; 
-}
+
 #statuscafe {
-  padding: .5em;
+  padding: 1em;
   margin-top: 0.5em;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1em;
-  border: 1px solid rgb(175, 153, 175);
-  max-width: 80%;
+  border-top: 1px solid rgb(194, 167, 194);
   word-wrap: break-word;
+  background: rgb(255, 248, 252);
+}
+#statuscafe div:last-child {
+  margin-top: 1em;
+  text-align: center;
 }
 #statuscafe a {
   text-decoration: none;
@@ -496,13 +494,15 @@ section {
   margin-bottom: .5em;
   font-weight: 600;
 }
+#statuscafe-content {
+  padding-left: .5em;
+}
 #latestStatus {
   padding: 0;
   margin: auto;
-}
-#statuscafeButton {
-  margin-top: 15px;
-  text-align: center;
+  background: url(assets/media/main/line-in-motion.svg) rgb(238, 225, 238);
+  border: 1px solid rgb(175, 140, 175);
+  border-radius: 0;
 }
 @media all and (max-width:768px) {
   #latestStatus {
@@ -511,22 +511,17 @@ section {
 }
 #latestStatusMain {
   padding-top: 1em;
-  padding-bottom: 1em;
   width: 100%;
 }
 #latestStatusMain h2 {
-  padding-left: .75em;
-  padding-right: .5em;
+  color: rgb(85, 63, 85);
   border: none;
+  padding-left: 1em;
+  padding-bottom: 0;
 }
-.section-binding {
-  background: url(assets/media/main/line-in-motion.svg);
-  background-size: 100px;
-  width: 40px;
-  border-right: 1px solid pink;
-  background-color: rgb(238, 225, 238);
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+#latestStatusMain h2::before {
+  content: '☕';
+  margin-right: .5em;
 }
 
 /* custom main-info styles */

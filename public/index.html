@@ -113,7 +113,7 @@
                 <?xml version="1.0" encoding="UTF-8"?><svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M20.043 21H3.957c-1.538 0-2.5-1.664-1.734-2.997l8.043-13.988c.77-1.337 2.699-1.337 3.468 0l8.043 13.988C22.543 19.336 21.58 21 20.043 21zM12 9v4" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 17.01l.01-.011" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </div>
               <div>
-                <p><b>if you're able to close this alert, you're good to go!</b> otherwise, please allow javascript for site widgets to function.</p>
+                <p><b>if you're able to close this alert, you're good to go!</b> otherwise, please allow javascript for site interactivity to function.</p>
               </div>
               <button class="closebtn" onclick="this.parentElement.style.display='none';">&times;</button>
             </div>
@@ -136,28 +136,19 @@
               
               <script src="https://status.cafe/current-status.js?name=jasm1nii" defer></script>
 
-              <div style="display: flex;">
+              <div id="latestStatusMain">
 
-                <div class="section-binding"></div>
-
-                <div id="latestStatusMain">
-
-                  <h2 id="whatsUp">latest status</h2>
+                  <h2>latest status</h2>
 
                   <div id="statuscafe">
                     <div id="statuscafe-username"></div>
                     <div id="statuscafe-content"></div>
+                    <div><a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a></div>
                   </div>
 
-                  <div id="statuscafeButton"> <!-- status cafe button-->
-                    <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
-                  </div>
+              </div>
 
-                </div> <!-- status page w/o binding END -->
-
-              </div> <!-- status flex group END -->
-
-            </div> <!-- status section END -->
+            </div>
 
           </section>
 
