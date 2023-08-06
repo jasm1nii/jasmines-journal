@@ -410,12 +410,7 @@ footer {
   text-align: center;
   font-size: 14px;
   color: rgb(97, 58, 97);
-  width: 400px;
-}
-@media all and (max-width:768px) {
-  footer {
-    width: 350px;
-  }
+  width: 85%;
 }
 
 footer ul {
@@ -433,4 +428,7 @@ footer li::before {
    content: "⬩";
    font-size: 20px;
    margin-right: 15px;
+}
+footer time {
+  font-weight: 600;
 }

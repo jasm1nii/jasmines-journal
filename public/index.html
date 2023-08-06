@@ -42,6 +42,14 @@
 
       <header>
 
+        <noscript>
+          <div>
+            <p>
+              <b>(javascript is disabled - some site elements may be non-interactive and/or out of date)</b>
+            </p>
+          </div>
+        </noscript>
+
         <div>
           <div><h1>jasmine's journal</h1></div>
           <div style="margin-top: auto;">
@@ -54,13 +62,20 @@
           </div>
         </div>
 
-        <nav>
-          <ul>
-            <li><b><a href="index.html">home</a></b></li>
-            <li><a href="about.html">about</a></li>
-            <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-            <li><a href="neocities-network.html">neocities network</a></li>
-          </ul>
+        <nav id="headernav">
+          <script src="assets/scripts/headernav.js"></script>
+          <noscript>
+            <ul>
+              <li><b><a href="index.html">home</a></b></li>
+              <li><a href="about.html">about</a></li>
+              <li>🔨 <del>blog</del></li>
+              <li>🔨 <del>shrines</del></li>
+              <li>🔨 <del>art</del></li>
+              <li>🔨 <del>resources</del></li>
+              <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+              <li><a href="neocities-network.html">neocities network</a></li>
+            </ul>
+          </noscript>
         </nav>
 
         <section> <!-- pretzel -->
@@ -127,18 +142,7 @@
             </div>
           </section>
 
-          <!-- jsWarning -->
-          <section>
-            <div id="jsWarning">
-              <div>
-                <?xml version="1.0" encoding="UTF-8"?><svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M20.043 21H3.957c-1.538 0-2.5-1.664-1.734-2.997l8.043-13.988c.77-1.337 2.699-1.337 3.468 0l8.043 13.988C22.543 19.336 21.58 21 20.043 21zM12 9v4" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 17.01l.01-.011" stroke="goldenrod" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-              </div>
-              <div>
-                <p><b>if you're able to close this alert, you're good to go!</b> otherwise, please allow javascript for site interactivity to function.</p>
-              </div>
-              <button class="closebtn" onclick="this.parentElement.style.display='none';">&times;</button>
-            </div>
-          </section>
+          <br>
 
           <!-- clock -->
           <section>
@@ -298,19 +302,23 @@
 
     </div>
 
-    <footer>
-        
-      <p>
-        site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
-        <br><br>
-        best viewed on a chromium-based desktop browser
-      </p>
+    <footer id="footer">
+      
+      <script src="assets/scripts/footer.js"></script>
 
-      <ul>
-        <li><time>2023</time></li>
-        <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a></li>
-        <li><a href="credits.html">credits</a></li>
-      </ul>
+      <noscript>
+        <p>
+          site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
+          <br><br>
+          best viewed on a chromium-based desktop browser
+        </p>
+
+        <ul>
+          <li>2023 - until hell freezes over</li>
+          <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a></li>
+          <li><a href="credits.html">credits</a></li>
+        </ul>
+      </noscript>
 
     </footer>
     

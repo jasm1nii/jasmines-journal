@@ -73,6 +73,8 @@
                                 <li>added <a href="https://ogp.me/">open graph</a> meta tags</li>
                                 <li>added more featured sites to the <a href="../../neocities-network.html">"neocities network" page</a></li>
                                 <li>button galleries are now hidden by default for increased accessibility</li>
+                                <li><b>major update, for me -</b> added header and footer scripts so i don't have retype the entire thing every time i create or update a page</li>
+                                <li>yeeted the javascript warning on the homepage - replaced it with a minimal noscript line that will show if it's disabled</li>
                             </ul>
                         </section>
 
@@ -147,17 +149,20 @@
                     </article>
                 </main>
 
-                <footer>
-                    <p>
-                        site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
-                        <br><br>
-                        best viewed on a chromium-based desktop browser
-                    </p>
-                    <ul>
-                        <li>2023</li>
-                        <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a></li>
-                        <li><a href="../../credits.html">credits</a></li>
-                    </ul>
+                <footer id="footer">
+                    <script src="../../assets/scripts/footer.js"></script>
+                    <noscript>
+                        <p>
+                            site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
+                            <br><br>
+                            best viewed on a chromium-based desktop browser
+                        </p>
+                        <ul>
+                            <li>2023</li>
+                            <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a></li>
+                            <li><a href="../../credits.html">credits</a></li>
+                        </ul>
+                    </noscript>
                 </footer>
 
             </div>
