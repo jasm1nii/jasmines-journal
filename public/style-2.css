@@ -259,8 +259,8 @@ h4::after {
 
 hr {
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
   border: 1px dashed plum;
@@ -295,15 +295,23 @@ nav .site-update {
   font-weight: 600;
   display: block;
 }
+header nav ul li ul {
+  border: none;
+}
 nav ul {
   border-left: 2px solid purple;
   padding-left: 15px;
   padding-top: 50px;
   margin-top: 0;
+  color: rgb(76, 15, 95);
 }
 nav li {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
+}
+nav li ul {
+  padding-top: 0;
+  margin-top: 1em;
 }
 nav a {
   text-decoration: none;
@@ -325,7 +333,21 @@ nav a {
     border: none;
   }
   nav li {
-    margin-right: 20px;
+    margin-right: 1em;
+    display: inline;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  header nav li ul {
+    display: inline;
+  }
+  header nav li ul::before {
+    content: '⟶ [';
+    padding-right: .25em;
+  }
+  header nav li ul li:last-child:after {
+    content: ']';
+    padding-left: .25em;
   }
 }
 section > nav {
@@ -355,6 +377,28 @@ section > nav li::after {
 }
 section > nav li:last-child::after {
   content: none;
+}
+
+summary {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+details dl {
+  margin-left: 2em;
+  font-weight: 600;
+}
+details dt {
+  font-weight: normal;
+  margin-left: 1em;
+}
+details dl:last-child dt::before {
+  content: '☆ »';
+  margin-right: .5em;
+}
+section > details summary {
+  background-color: rgb(216, 216, 233);
+  padding: .5em;
+  margin-top: 1em;
 }
 
 footer {

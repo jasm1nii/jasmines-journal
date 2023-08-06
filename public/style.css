@@ -108,7 +108,7 @@ main {
 }
 .board {
   border: 1px solid purple;
-  background-color: whitesmoke;
+  background-color: #fff6f6;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin-top: 5%;
   margin-left: auto;
@@ -125,6 +125,11 @@ main {
     margin-top: 0;
     max-width: none;
   }
+}
+
+#guestbookScroller {
+  width:100%; height: 15px;
+  border-bottom: 1px solid gray;
 }
 
 .page-columns {
@@ -414,6 +419,9 @@ section {
   scrollbar-width: thin;
   box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   background-color:rgb(173, 41, 173);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid purple;
 }
 #lastPlayed {
   max-width: 200px;
@@ -614,11 +622,33 @@ section {
   scrollbar-width: thin;
 }
 
+#warning {
+  width: 80%;
+  background-color: #e3d7e9;
+  color: rgb(92, 63, 128);
+  padding: 0;
+  box-shadow: 10px 10px rgba(131, 36, 131, 0.397);
+}
+#warning h2 {
+  color: #8259be;
+  padding: 1em;
+  border-color: rgb(204, 148, 204);
+}
+#warning h2::before {
+  content: '💫';
+  margin-right: .5em;
+}
+#warning p {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: .5em;
+}
 #buttonSection {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: .5em;
   width: 90%;
+  max-width: 320px;
 }
 #buttonSection h2, #buttonSection p {
   padding-left: 1em;
@@ -627,9 +657,9 @@ section {
 #buttonSection p {
   text-align: center;
 }
-#buttonCode {
+#buttonCode { /* button textarea */
   word-wrap: break-word;
-  height: 50px;
+  height: 80px;
   overflow: auto;
   font-size:12px;
   padding: 5px 10px 5px 10px;
@@ -640,10 +670,69 @@ section {
   width: 80%;
   margin: auto;
   margin-bottom: 15px;
+  background-color: rgb(255, 244, 244);
 }
 .button-gallery {
   margin-top: 10px;
   text-align: center;
+  scrollbar-width: thin;
+}
+#buttonSection summary {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: .5em;
+}
+#notNeo::before {
+  content: '🪐';
+  margin-right: .5em;
+}
+
+#webrings {
+  background-color: #f5ddff;
+  border-color: purple;
+  color: rgb(92, 39, 92);
+  box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
+  max-width: 200px;
+}
+#webrings h2::before {
+  content: '🕸';
+  margin-right: .5em;
+}
+#webrings p {
+  text-align: center;
+}
+#webrings a {
+  text-decoration: none;
+  color: rgb(122, 78, 180);
+}
+#webrings a:hover {
+  color: white;
+}
+#webrings summary {
+  margin-left: -1em;
+  font-weight: 600;
+}
+#webrings details {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+#webrings hr {
+  margin-top: 1em;
+}
+#webrings > div {
+  border: 1px solid rgb(167, 95, 177);
+  padding: 5px;
+  background: rgb(255, 233, 251);
+  scrollbar-width: thin;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 90%;
+}
+#vocaring {
+  max-width: 150px;
+}
+#vocaring a:hover {
+  background-color: transparent;
 }
 
 #links {
