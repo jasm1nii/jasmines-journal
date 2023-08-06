@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "Instrument Sans";
+    src: url('assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+}
+
+:root {
+    --font-1: 'Instrument Sans', sans-serif;
+    --bg-color-1: rgb(219, 202, 219);
+    --bg-color-2: ghostwhite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+a {
+    background-color: transparent;
+    color: darkmagenta;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    }
+    a:hover {
+    background-color: palevioletred;
+    color: white;
+    }   
+
+::selection {
+    background-color: rgb(248, 208, 170);
+}
+
+header, h2 {
+    color: rgb(77, 28, 92);
+}
+h1 {
+    font-size: 1.75em;
+}
+h3 {
+    color: rgb(201, 109, 173);
+}
+h3::before {
+    content: '⟶';
+    margin-right: .5em;
+}
+h3 ~ ul {
+    margin-left: 1em;
+}
+
+hr {
+    border: 1px dashed plum;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
+    }
+
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-width: thin;
+    text-rendering: geometricPrecision;
+}
+
+body {
+    background-color: var(--bg-color-1);
+    font-family: var(--font-1);
+    font-size: 1em;
+    width: 50%;
+    max-width: 1000px;
+    margin: auto;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    opacity: 0;
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+    margin-top: 10%;
+    }
+        @media all and (max-width:768px) {
+            body {
+                width: fit-content;
+            }
+        }
+    #layout {
+        background-color: var(--bg-color-2);
+        border: 1px solid rgb(163, 120, 127);
+        
+    }
+
+header {
+    letter-spacing: .1em;
+}
+header div {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+header div p {
+    text-align: right;
+    align-self: center;
+}
+    @media all and (max-width:768px) {
+        header div {
+            flex-direction: column;
+        }
+        header div p {
+            text-align: left;
+            align-self: normal;
+        }
+    }
+header time {
+    font-weight: 600;
+    display: block;
+}
+
+main {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+nav li {
+    display: block;
+    letter-spacing: .05em;
+}
+nav li::before {
+    content: '₊˚⊹♡';
+    margin-right: .5em;
+    color: rgb(177, 147, 152);
+    font-weight: 600;
+}
+nav li ul li::before {
+    content: '⋆ ˚｡⋆୨୧˚';
+    font-weight: 400;
+}
+h3 ~ ul li::before {
+    content: '୨♡୧';
+    font-weight: 400;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 3em;
+    }
+    footer ul {
+        padding: 0;
+        list-style-type: none;
+        }
+        footer li:nth-child(1)::before {
+            content: "";
+        }
+        footer li::before {
+            content: "⬩";
+            font-size: 1.25em;
+            margin-right: 1em;
+        }
+        footer li {
+            display: inline-block;
+            margin-right: 1em;
+        }
+    footer time {
+        font-weight: 600;
+    }

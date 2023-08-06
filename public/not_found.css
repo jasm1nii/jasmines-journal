@@ -1,0 +1,78 @@
+/* replace with internal font url before pushing*/
+@font-face {
+    font-family: "Instrument Sans";
+    src: url('assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+}
+
+:root {
+    --font-1: 'Instrument Sans', sans-serif;
+    --bg-color-1: rgb(49, 43, 49);
+}
+
+a {
+    background-color: transparent;
+    color: rgb(255, 168, 216);
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    }
+    a:hover {
+    background-color: palevioletred;
+    color: white;
+    }   
+
+::selection {
+    background-color: rgb(248, 208, 170);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
+    }
+
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: var(--bg-color-1);
+    font-family: var(--font-1);
+    font-size: 1em;
+    color: ghostwhite;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    }
+        @media all and (max-width:768px) {
+            body {
+                width: fit-content;
+            }
+        }
+
+nav {
+    margin: auto;
+    letter-spacing: .1em;
+    }
+    nav a:first-child::before {
+        content: '⟵';
+        margin-right: .5em;
+    }
+    nav a:last-child::after {
+        content: '⟶';
+        margin-left: .5em;
+    }
+
+main {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
