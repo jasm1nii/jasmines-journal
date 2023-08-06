@@ -77,7 +77,7 @@ body {
     font-family: var(--font-1);
     font-size: 1em;
     width: 50%;
-    max-width: 1000px;
+    max-width: 400px;
     margin: auto;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
