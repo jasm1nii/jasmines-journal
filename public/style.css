@@ -372,26 +372,6 @@ h2 {
   width: 75%; border: white solid 5px; outline: 1px solid darkkhaki;
 }
 
-#jsWarning {
-  border: 1px solid goldenrod;
-  padding: 5px 15px 5px 15px;
-  background-color: ivory;
-  display: flex;
-  max-width: 200px;
-  color: rgb(94, 82, 53);
-  break-inside: avoid;
-  margin: auto;
-}
-#jsWarning > button {
-  background: transparent;
-  border: none;
-  height: fit-content;
-}
-#jsWarning > div:first-child {
-  margin: auto;
-  padding-right: 1em;
-}
-
 section {
   margin-left: auto;
   margin-right: auto;
@@ -689,6 +669,42 @@ section {
 #notNeo::before {
   content: '🪐';
   margin-right: .5em;
+}
+.ff-container.ff-responsive {
+  max-width: 88px;
+}
+#gifControls { 
+  text-align: center;
+  padding-bottom: 2em;
+}
+#gifControls button {
+  font: inherit;
+  text-transform: lowercase;
+  margin-right: 1em;
+  background-color: pink;
+  border: 1px solid rgb(128, 69, 128);
+  padding: .5em;
+  transition: all 0.5s;
+  color:#210a42;
+  letter-spacing: 0.05em;
+  border-radius: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px outset rgb(255, 189, 211);
+  outline: 1px solid purple;
+}
+#gifControls button:hover {
+  background-color: rgb(255, 222, 151);
+  transition: all 0.1s;
+}
+#gifControls button:active {
+  background-color: rgb(255, 255, 255);
+  border-bottom: none;
+  padding: .25em;
+}
+#gifControls button:focus {
+  background-color: rgb(248, 220, 248);
 }
 
 #webrings {
