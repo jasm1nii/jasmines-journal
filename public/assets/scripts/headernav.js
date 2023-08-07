@@ -1,6 +1,6 @@
 document.getElementById("headernav").innerHTML =`
 <ul>
-    <li><b><a href="index.html">home</a></b></li>
+    <li><a href="index.html">home</a></li>
     <li><a href="about.html">about</a></li>
     <li>🔨 <del>blog</del></li>
     <li>🔨 <del>shrines</del></li>
