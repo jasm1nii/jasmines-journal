@@ -209,6 +209,10 @@ a:hover {
   text-decoration: none;
   color: white;
 }
+button {
+  cursor: pointer;
+}
+
 section ul {
   list-style-position: inside;
   padding: 0;

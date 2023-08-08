@@ -3,53 +3,32 @@
 <html lang="en-US">
 
   <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>jasmine's journal</title>
-
     <link rel="icon" type="image/x-icon" href="assets/media/itchio-textless-white.svg">
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
-    
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-    <meta name="description" content="the personal sandbox of an indonesian-based artist">
-
+    <meta name="description" content="the personal sandbox of a multifaceted internet creative">
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://jasm1nii.neocities.org/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="jasmine's journal">
     <meta property="og:description" content="the personal sandbox of a multifaceted internet creative">
-  
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="jasm1nii.neocities.org">
     <meta property="twitter:url" content="https://jasm1nii.neocities.org/">
     <meta name="twitter:title" content="jasmine's journal">
     <meta name="twitter:description" content="the personal sandbox of a multifaceted internet creative">
-  
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
   </head>
   
   <body>
-
     <div class="board">
-
       <header>
-
-        <noscript>
-          <div>
-            <p>
-              <b>(javascript is disabled - some site elements may be non-interactive and/or out of date)</b>
-            </p>
-          </div>
-        </noscript>
-
         <div>
           <div><h1>jasmine's journal</h1></div>
           <div style="margin-top: auto;">
@@ -57,18 +36,11 @@
             <p>
               page contents updated
               <br>
-              <time datetime="2023-08-07">7 august 2023</time>
+              <time datetime="2023-08-08">8 august 2023</time>
             </p>
           </div>
         </div>
-
         <nav id="headernav">
-          <script src="assets/scripts/headernav.js"></script>
-          <style>
-            #headernav ul li:first-child {
-                font-weight: 600;
-            }
-        </style>
           <noscript>
             <ul>
               <li><b><a href="index.html">home</a></b></li>
@@ -85,30 +57,13 @@
 
         <section> <!-- pretzel -->
           <div class="notice-group">
-
-            <script>
-              function hide() {
-              var x = document.getElementById("notice");
-              if (x.style.display === "none") {
-                x.style.display = "block";
-                } else {
-                  x.style.display = "none";
-                }
-              }
-            </script>
-
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
-
-            <div id="notice">
-              <p style="font-size: 18px; padding-left: 0;"><b><i>have you seen him?</i></b></p>
-              <span><img src="assets/media/main/pretzel.png" alt="a gray tabby cat with golden eyes staring off into the distance while lounging on a bed" id="pretzel"/></span>
-              <br>
-              <small>my cat pretzel</small>
-              <p><b>now you have!</b></p>
-              <hr style="border-color: goldenrod;">
-              <p><small>click the pushpin to hide this notice.</small></p>
-            </div>
+            <div id="notice"></div>
+            <noscript>
+              <b>(javascript is disabled - some site elements may be non-interactive, missing and/or out of date)</b>
+            </noscript>
           </div>
+          
         </section>
 
       </header>
@@ -150,7 +105,6 @@
           <!-- status.cafe -->
           <section>
             <div class="main-info" id="latestStatus">
-              <script src="https://status.cafe/current-status.js?name=jasm1nii" defer></script>
               <div id="latestStatusMain">
                   <h2>latest status</h2>
                   <div id="statuscafe">
@@ -165,7 +119,6 @@
           <!-- clock -->
           <section>
             <div class="time">
-              <script src="assets/scripts/time.js"></script>
               <p>current time in<br><span style="font-size: 16px;"><b>bandung, indonesia</b></span></p>
               <div class="clock-display"><p class="clock" timezone="+7"></p></div>
               <p>timezone: GMT+7</p>
@@ -192,7 +145,7 @@
                   </button>
                 </div>
               </div>
-              <script src="assets/scripts/lastfm.js" type="text/javascript"></script>
+              
             </div>
           </section>
 
@@ -243,7 +196,7 @@
           <!-- webrings -->
           <section>
             <div class="main-info" id="webrings">
-                <h2>web rings</h2>
+                <h2>web rings & listings</h2>
                 <details>
                     <summary>
                         what's a web ring?
@@ -279,8 +232,11 @@
                       <a href="https://loop.graycot.dev/webring.html?action=list"> member list </a> ]
                   </p>
                   <div id="vocaring">
-                    <script src="https://webring.adilene.net/webring.js"></script>
+                    
                   </div>
+                  <p>
+                    <a href="https://melanated.neocities.org/"><img src="assets/media/main/melanated.png" alt="button for melanated, a POC webmaster listing"></a>
+                  </p>
                 </div>
                   <p>
                     <small>
@@ -292,15 +248,14 @@
           </section>
 
         </div>
+
         <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments"></iframe>
+
       </main>
 
     </div>
 
     <footer id="footer">
-      
-      <script src="assets/scripts/footer.js"></script>
-
       <noscript>
         <p>
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
@@ -315,9 +270,22 @@
           <li><a href="credits.html">credits</a></li>
         </ul>
       </noscript>
-
     </footer>
     
+  <script async src="assets/scripts/headernav.js"></script>
+  <style>
+    #headernav ul li:first-child {
+      font-weight: 600;
+    }
+  </style>
+  <script src="assets/scripts/sticky-note.js"></script>
+  <script defer src="assets/scripts/pretzel.js"></script>
+  <script defer src="https://status.cafe/current-status.js?name=jasm1nii" ></script>
+  <script defer src="assets/scripts/time.js"></script>
+  <script defer src="assets/scripts/lastfm.js" type="text/javascript"></script>
+  <script defer src="https://webring.adilene.net/webring.js" ></script>
+  <script async src="assets/scripts/footer.js"></script>
+  
   </body>
   
 </html>

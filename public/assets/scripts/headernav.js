@@ -9,13 +9,4 @@ document.getElementById("headernav").innerHTML =`
     <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
     <li><a href="neocities-network.html">neocities network</a></li>
 </ul>
-<style>
-@media all and (max-width:768px) {
-    #headernav {
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: thin;
-        }
-}
-</style>
 `;

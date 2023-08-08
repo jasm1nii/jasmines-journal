@@ -47,6 +47,7 @@ html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   scrollbar-width: thin;
   text-rendering: geometricPrecision;
+  height: 100%;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -66,9 +67,9 @@ body {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 14px;
   margin: auto;
-  position: relative;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
+  min-height: 100%;
 }
 
 ::selection {
@@ -87,6 +88,9 @@ a:hover {
   background-color: palevioletred;
   text-decoration: none;
   color: white;
+}
+button {
+  cursor: pointer;
 }
 
 hr {
@@ -134,6 +138,7 @@ main {
   border-bottom: 1px solid gray;
   margin-bottom: 15px;
 }
+
 
 .page-columns {
    columns: 3;
@@ -185,6 +190,13 @@ header p {
   header > div {
     flex-direction: column;
   }
+}
+@media all and (max-width:768px) {
+  #headernav {
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
+      }
 }
 h1 {
   padding-left: 5%;
@@ -789,8 +801,15 @@ footer {
   }
 }
 
+footer {
+  background-color: thistle;
+  padding-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 footer ul {
-   padding: 0;
    list-style-type: none;
 }
 footer li:nth-child(1)::before {
@@ -802,9 +821,10 @@ footer li::before {
    margin-right: 15px;
 }
 footer li {
-   display: inline-block;
+   display: inline;
    margin-right: 15px;
 }
 footer time {
   display: inline;
+  margin-left: -3em;
 }
