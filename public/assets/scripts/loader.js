@@ -5,7 +5,6 @@ document.getElementById("loader").innerHTML = `loading contents...
   margin: auto;
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 50%;
   font-size: 1.5em;
   letter-spacing: .1em;
