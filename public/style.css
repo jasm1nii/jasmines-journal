@@ -768,7 +768,7 @@ section {
   padding-top: .5em;
   margin: 0;
 }
-#webrings h3 ~ p {
+#webrings h3 + p {
   margin-top: 0.25em;
   font-size: 0.9em;
 }
