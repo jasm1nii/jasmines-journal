@@ -171,6 +171,11 @@ footer .subpage-nav {
     justify-content: space-between;
     display: flex;
 }
+    @media all and (max-width:500px) {
+        footer .subpage-nav {
+            display: inline;
+            }
+    }
 footer .subpage-nav a:first-child:before {
     content: '⟵';
     margin-right: .5em;
@@ -187,12 +192,22 @@ main {
             width: 80%;
         }
     }
+    @media all and (max-width:400px) {
+        main {
+            width: fit-content;
+        }
+    }
 article {
     border: 1px solid;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 2em;
 }
+    @media all and (max-width:400px) {
+        article {
+            border: none;
+        }
+    }
 article ol {
     margin-left: .5em;
 }
@@ -250,6 +265,7 @@ article ol li time {
 footer {
     font-size: smaller;
     margin-top: 3em;
+    margin-bottom: 5em;
     width: 70%;
     letter-spacing: .05em;
     }
