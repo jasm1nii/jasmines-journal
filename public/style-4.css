@@ -175,6 +175,11 @@ footer .subpage-nav {
         footer .subpage-nav {
             display: inline;
             }
+        footer .subpage-nav a {
+            margin-right: 2em;
+            margin-left: 2em;
+            line-height: 2.5em;
+        }
     }
 footer .subpage-nav a:first-child:before {
     content: '⟵';
@@ -206,6 +211,7 @@ article {
     @media all and (max-width:400px) {
         article {
             border: none;
+            padding-top: 1em;
         }
     }
 article ol {
