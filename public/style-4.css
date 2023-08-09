@@ -264,7 +264,9 @@ article ol li time {
 .entry blockquote {
     border: 1px dashed;
     padding: 1em;
-    margin-left: 0;
+    margin-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     width: fit-content;
 }
 
