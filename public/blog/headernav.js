@@ -1,8 +1,8 @@
 document.getElementById("headernav").innerHTML =`
 <ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="about.html">about</a></li>
-    <li><a href="blog/index.html">blog</a></li>
+    <li><a href="../index.html">home</a></li>
+    <li><a href="../about.html">about</a></li>
+    <li><a href="index.html">blog</a></li>
     <li>🔨 <del>shrines</del></li>
     <li>🔨 <del>art</del></li>
     <li>🔨 <del>resources</del></li>

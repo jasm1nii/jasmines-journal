@@ -93,6 +93,9 @@ header {
   position: sticky;
   top: 5%;
 }
+header p {
+  color: rgb(56, 36, 56);
+}
 @media all and (max-width:768px) {
   header {
     margin: 5% auto 25px auto;
@@ -136,7 +139,7 @@ main {
 }
 
 h1 {
-  color: #5a5463;
+  color: #4a3b61;
   text-align: left;
   font-size: 36px;
   letter-spacing: 1px;
