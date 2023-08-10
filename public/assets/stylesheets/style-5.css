@@ -51,8 +51,8 @@ hr {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: .4em;
+    height: .4em;
     }
     ::-webkit-scrollbar-thumb {
     background-color: pink;
@@ -63,7 +63,7 @@ hr {
     }
 
 html {
-    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-color: rgb(184, 140, 184) transparent;
     scrollbar-width: thin;
     text-rendering: optimizeLegibility;
 }
@@ -71,7 +71,6 @@ html {
 body {
     font-family: var(--font-1);
     font-size: 1em;
-    font-weight: 500;
     width: 90%;
     max-width: 800px;
     margin: auto;
@@ -202,86 +201,82 @@ main {
         }
     }
 article {
-    border: 1px solid;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 2em;
+    padding: 1em;
 }
-    @media all and (max-width:400px) {
-        article {
-            border: none;
-            padding-top: 1em;
-        }
-    }
-main::before {
-    content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
+article::before {
+    content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
     display: block;
     text-align: center;
-    margin-bottom: 1.5em;
-    letter-spacing: .4em;
-    font-size: x-large;
-}
-main::after {
-    content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
-    display: block;
-    text-align: center;
-    margin-top: 1.5em;
-    font-size: x-large;
-}
-article ol {
-    margin-left: .5em;
-}
-article ol li::marker {
-    font-size: xx-large;
-    font-style: italic;
-}
-article ol li {
-    list-style-type: decimal-leading-zero;
-}
-article ol li span {
-    border-bottom: 1px solid;
-    font-size: large;
-}
-article ol li span::before {
-    content: '❝';
-    margin-right: .25em;
-}
-article ol li span::after {
-    content: '❞';
-    margin-left: .25em;
-}
-article ol li span a {
-    color: inherit;
-}
-article ol li time {
-    display: block;
-    font-size: smaller;
-    margin-top: .5em;
-}
-.entry h2 {
-    border-bottom: 1px solid;
-    padding-bottom: .25em;
-}
-.entry time {
-    margin-right: auto;
-    text-align: right;
-    display: block;
-}
-.entry p {
-    text-indent: 2em;
-}
-.entry p img {
-    padding: 1em;
-    display: block;
-    margin: auto;
-}
-.entry blockquote {
-    border: 1px dashed;
-    padding: 1em;
-    margin-left: 1em;
-    margin-top: 2em;
     margin-bottom: 2em;
-    width: fit-content;
+    font-size: x-large;
+}
+article::after {
+    content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
+    display: block;
+    text-align: center;
+    font-size: x-large;
+}
+    article ol {
+        margin-left: .5em;
+    }
+    article ol li::marker {
+        font-size: xx-large;
+        font-style: italic;
+    }
+    article ol li {
+        list-style-type: decimal-leading-zero;
+    }
+    article ol li span {
+        border-bottom: 1px solid;
+        font-size: large;
+    }
+    article ol li span::before {
+        content: '❝';
+        margin-right: .25em;
+    }
+    article ol li span::after {
+        content: '❞';
+        margin-left: .25em;
+    }
+    article ol li span a {
+        color: inherit;
+    }
+    article ol li time {
+        display: block;
+        font-size: smaller;
+        margin-top: .5em;
+    }
+section {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    padding-top: 0;
+    border: 1px solid;
+}
+section h2 {
+    background-color: rgba(110, 60, 139, 0.233);
+    padding: .5em;
+}
+section:nth-child(2n) h2 {
+    text-align: right;
+}
+section section {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+dt {
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+dt::before {
+    content: '‧₊˚✩彡';
+    margin-right: .5em;
+}
+dd {
+    margin-left: 1em;
+}
+details p {
+    margin-left: 1em;
 }
 
 footer {
@@ -290,6 +285,7 @@ footer {
     margin-bottom: 5em;
     width: 70%;
     letter-spacing: .05em;
+    border-top: 1px solid;
     }
     @media all and (max-width:768px) {
         footer {
@@ -351,7 +347,7 @@ footer {
     .dark-mode a:hover {
         color: black
     }
-    .dark-mode article {
+    .dark-mode section {
         background-color: var(--dark-bg);
     }
 
@@ -363,7 +359,7 @@ footer {
     a {
         color: var(--light-links);
     }
-    .entry {
+    section {
         background-color: var(--light-bg-article);
     }
 }
@@ -377,6 +373,6 @@ footer {
     .light-mode a:hover {
         color: black;
     }
-    .light-mode article {
+    .light-mode section {
         background-color: var(--light-bg-article);
     }
