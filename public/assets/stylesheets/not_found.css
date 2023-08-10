@@ -1,7 +1,7 @@
 /* replace with internal font url before pushing*/
 @font-face {
     font-family: "Instrument Sans";
-    src: url('assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {

@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url('assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 /* animations */
@@ -17,7 +17,7 @@ header p, h1, h2, h3 {
   transition: color 0.3s ease-out;
 }
 header p:hover, h1:hover, h2:hover, h3:hover {
-  color: rgb(122, 88, 136);
+  color: rgb(124, 36, 98);
 }
 
 @keyframes fadeInSlide {

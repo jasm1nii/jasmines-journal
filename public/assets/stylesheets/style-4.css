@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -65,7 +65,7 @@ hr {
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
     scrollbar-width: thin;
-    text-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
 }
 
 body {
@@ -154,7 +154,6 @@ header nav {
             header nav li:last-child::after {
                 content: "✧";
                 margin-left: .5em;
-                color: pink;
             }
         }
     header nav li::before {
