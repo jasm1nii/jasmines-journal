@@ -278,7 +278,7 @@ section {
     section:nth-child(2n) h2 {
         text-align: right;
     }
-    article > section > h2:first-of-type {
+    article > section > h2:nth-of-type(2n) {
         text-align: right;
     }
     section section {
