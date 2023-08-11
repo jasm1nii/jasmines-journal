@@ -355,6 +355,7 @@ nav a {
   header nav li ul li:last-child:after {
     content: ']';
     padding-left: .25em;
+    font-weight: normal;
   }
 }
 section > nav {
