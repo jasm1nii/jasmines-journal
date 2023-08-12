@@ -7,6 +7,6 @@ document.getElementById("headernav").innerHTML =`
     <li>🔨 <del>art</del></li>
     <li><a href="resources/index.html">resources</a></li>
     <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-    <li><a href="neocities-network.html">neocities network</a></li>
+    <li><a href="link-gallery.html">link gallery</a></li>
 </ul>
 `;

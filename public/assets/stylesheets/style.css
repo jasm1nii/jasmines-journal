@@ -63,11 +63,11 @@ a:hover {
   animation: fadeInSlide 0.75s forwards;
 }
 
-.main-info, #notice, .notice-group-button, .folder-group, .time {
+.main-info, #notice, .notice-group-button, .time {
   transition: transform 0.3s;
 }
 
-.main-info:hover, #notice:hover, .folder-group:hover, .time:hover {
+.main-info:hover, #notice:hover, .time:hover {
   transform: translatey(-5px);
 }
 
@@ -397,6 +397,63 @@ section {
   }
 }
 
+#siteUpdates {
+  width: 75%;
+  padding-bottom: 1.5em;
+}
+#siteUpdates hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+#siteUpdates h2::before {
+  content: '🆕';
+  margin-right: .5em;
+}
+#siteUpdates ul {
+  margin: 0;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border: 1px solid rgb(179, 97, 111);
+  background-color: #fff5f5;
+}
+#siteUpdates li {
+  margin: .5em;
+}
+#siteUpdates div:last-of-type {
+  text-align: center;
+}
+#siteUpdates div:last-of-type p {
+  margin: .25em;
+}
+#siteUpdates h3 {
+  margin: .5em;
+  color:#631863;
+  letter-spacing: .05em;
+}
+#siteUpdates form input {
+  margin: .5em;
+  font: inherit;
+}
+#siteUpdates form input:last-of-type {
+  background-color: rgb(255, 248, 249);
+  border: 1px solid rgb(202, 184, 204);
+  color: rgb(61, 17, 78);
+  padding-left: .75em;
+  padding-right: .75em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  cursor: pointer;
+  transition: all .5s;
+}
+#siteUpdates form input:last-of-type:hover {
+  background-color: #fae2ff;
+  border-color: purple;
+}
+
+
 #spotifyHomepage {
   padding: 0;
   height: 200px;
@@ -436,6 +493,8 @@ section {
   background-color: linen;
   padding-top: .5em;
   border: 1px solid rgb(113, 135, 160);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #speaker {
   display: flex;
@@ -738,6 +797,15 @@ section {
 #webrings p {
   text-align: center;
 }
+#webrings details p:first-of-type {
+  text-align: left;
+  position: absolute;
+  border: 1px solid;
+  color: black;
+  padding: 1em;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+}
 #webrings a {
   text-decoration: none;
   color: rgb(122, 78, 180);
@@ -746,7 +814,7 @@ section {
   color: white;
 }
 #webrings summary {
-  margin-left: -1em;
+  margin-left: -2em;
   font-weight: 600;
 }
 #webrings details {

@@ -87,7 +87,7 @@ body {
     opacity: 0;
     animation: fadeIn 1s;
     animation-fill-mode: forwards;
-    margin-top: 10%;
+    margin-top: 5%;
     }
         @media all and (max-width:768px) {
             body {
@@ -158,6 +158,7 @@ footer {
     text-align: center;
     font-size: 0.9em;
     margin-top: 3em;
+    margin-bottom: 3em;
     }
     footer ul {
         padding: 0;

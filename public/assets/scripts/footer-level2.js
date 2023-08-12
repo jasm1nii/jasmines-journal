@@ -7,7 +7,7 @@ document.getElementById("footer").innerHTML =`
 
 <ul>
     <li><time>2023</time> - until hell freezes over</li>
-    <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a> (<a href="mailto:jasm1nii@proton.me" rel="author external me">jasm1nii@proton.me</a>)</li>
+    <li><a href="mailto:jasm1nii@proton.me">jasm1nii@proton.me</a></li>
     <li><a href="../site-map.html">site map</a></li>
     <li><a href="../credits.html">credits</a></li>
 </ul>
