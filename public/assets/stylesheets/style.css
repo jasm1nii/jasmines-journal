@@ -63,11 +63,11 @@ a:hover {
   animation: fadeInSlide 0.75s forwards;
 }
 
-.main-info, #notice, .notice-group-button, .time {
+section, #notice, .notice-group-button {
   transition: transform 0.3s;
 }
 
-.main-info:hover, #notice:hover, .time:hover {
+section:hover, #notice:hover, .notice-group-button:hover {
   transform: translatey(-5px);
 }
 
@@ -90,7 +90,6 @@ a:hover {
       opacity: 1;
   }
 }
-
 
 button {
   cursor: pointer;
@@ -586,20 +585,6 @@ section {
   margin-right: .5em;
 }
 
-#stickerPack {
-  background-color: linen;
-  position: absolute;
-  top: 80%;
-  left: 5%;
-  z-index: 4;
-  border-radius: 0;
-  width: 200px;
-  height: 200px;
-}
-#sticker {
-  position: absolute;
-}
-
 /* custom main-info styles */
 #idCard {
   border: 1px solid rgb(183, 124, 189);
@@ -609,6 +594,14 @@ section {
   max-width: 200px;
   height: min-content;
 }
+#idCard a[rel="me"] {
+  text-decoration: none;
+  color: inherit;
+}
+#idCard a[rel="me"]:hover {
+  color: inherit;
+  background-color: transparent;
+}
 #idCardContent {
   display: flex; flex-direction: column;
 }
@@ -616,12 +609,8 @@ section {
   border: none; font-variant: small-caps; letter-spacing: 1px;
   color: rgb(94, 75, 92);
 }
-#neocitiesWM {
-  background: url(../media/main/logo_black.png);background-size: cover; width: 100px; height: 80px; opacity: 0.1; mix-blend-mode: multiply; margin-top: 190px; margin-left: 100px; position: absolute;
-}
 #idCardPFP {
   display: flex;
-  margin-bottom: 10px;
 }
 .flower-fill {
   mix-blend-mode: multiply;
@@ -631,20 +620,33 @@ section {
   justify-content: space-around;
   user-select: none;
 }
-#idCardBiodata td:first-of-type {
-    text-align: center;
-    vertical-align: top;
-    padding-right: 10px;
+#idCardBiodata > p {
+  margin: 1em;
 }
-#idCardBiodata table {
-  background-color: rgba(255, 250, 250, 0.5); padding: 5px 5px 5px 5px;
+#idCardBiodata ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  background-color: rgba(255, 255, 255, 0.479);
+}
+#idCardBiodata li {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: .5em;
+}
+#idCardBiodata li span:first-of-type {
+  width: 1em;
+  text-align: center;
+  margin-right: 1em;
 }
 #barcode {
   background: url(../media/main/barcode.svg);
   background-repeat: no-repeat;
   background-position: right;
   height: 2em;
-  margin-top: 1em;
 }
 
 .time {

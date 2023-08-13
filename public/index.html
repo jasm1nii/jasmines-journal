@@ -10,6 +10,8 @@
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
   </head>
   <body>
     <script async src="assets/scripts/loader.js"></script>
@@ -30,8 +32,6 @@
           </ul>
           </noscript>
         </nav>
-
-        <section> <!-- pretzel -->
           <div class="notice-group">
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
             <div id="notice"></div>
@@ -39,7 +39,6 @@
               <b>(javascript is disabled - some site elements may be non-interactive, missing and/or out of date)</b>
             </noscript>
           </div>
-        </section>
       </header>
 
       <main>
@@ -47,14 +46,17 @@
         <div class="page-columns">
 
           <!-- id card -->
-          <section>
-            <div class="main-info" id="idCard"> 
-              <div style="position: relative;">
-              </div>
+          <section class="h-card">
+            
+            <div class="main-info" id="idCard">
+               
               <div id="idCardContent">
-                <div><h2>webmaster identity</h2></div>
+                <div>
+                  <h2>webmaster identity</h2>
+                </div>
                 <div id="idCardPFP">
-                  <div style="width: 150px; height: 150px;"><img src="assets/media/main/07042023 me.png" width="100%">
+                  <div>
+                    <img class="u-photo" src="assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the author wearing a hijab, glasses, jewelry, and a collared blouse; drawn against a pink background">
                   </div>
                   <div class="flower-fill" aria-hidden="true">
                       <img src="assets/media/main/flower.svg" width="40px" alt="">
@@ -64,12 +66,17 @@
                 </div>
               </div>
               <div id="idCardBiodata">
-                <table>
-                  <tr><td>👋</td> <td><b>jasmine</b></td></tr>
-                  <tr><td>🎂</td> <td>1999</td></tr>
-                  <tr><td>📍</td> <td>IDN</td></tr>
-                  <tr><td>💼</td> <td>illustrator & multimedia designer</td></tr>
-                </table>
+                <p>
+                  just call me <a rel="me"><b>jasmine!</b></a> 👋
+                </p>
+                <ul class="p-note">
+                    <li><span>📍</span> <span>IDN</span></li>
+                    <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
+                    <li><span>🐘</span> <span><b><a href="https://mas.to/@jasm1nii" rel="me">@jasm1nii@mas.to</a></b></span></li>
+                    <a class="u-url" href="acct:jasmine@jasm1nii.xyz"></a>
+                    <a href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me"></a>
+                    <span class="u-url u-uid"><a href="https://jasm1nii.xyz/"></a></span>
+                </ul>
               </div>
               <div id="barcode"></div>
             </div>
@@ -267,11 +274,12 @@
 
         <ul>
           <li>2023 - until hell freezes over</li>
-          <li><a href="https://neocities.org/site/jasm1nii" rel="author me">mailto:jasm1nii@proton.me</a></li>
+          <li><a href="mailto:jasm1nii@proton.me" rel="author me">jasm1nii@proton.me</a></li>
           <li><a href="site-map.html">site map</a></li>
           <li><a href="credits.html">credits</a></li>
         </ul>
       </noscript>
+      <link rel="pgpkey" href="0xF427FC36-pub.asc">
       <link href="https://github.com/jasm1nii" rel="me">
     </footer>
   
