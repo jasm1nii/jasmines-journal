@@ -408,7 +408,7 @@ section {
   content: '🆕';
   margin-right: .5em;
 }
-#siteUpdates ul {
+#siteUpdates > ul {
   margin: 0;
   padding-left: 2em;
   padding-bottom: 1em;
@@ -422,8 +422,10 @@ section {
 #siteUpdates li {
   margin: .5em;
 }
-#siteUpdates div:last-of-type {
-  text-align: center;
+#siteUpdates div:last-of-type ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 #siteUpdates div:last-of-type p {
   margin: .25em;
