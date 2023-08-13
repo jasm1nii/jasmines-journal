@@ -9,7 +9,7 @@
 
 header, main, footer {
   opacity: 0;
-  animation: fadeInPage .75s;
+  animation: fadeInPage .5s;
   animation-fill-mode: forwards;
 }
 header p, h1, h2, h3 {
@@ -63,7 +63,7 @@ body {
   font-size: 14px;
 }
 ::selection {
-  background-color: yellow;
+  background-color: rgb(255, 255, 191);
 }
 mark {
   background-color: rgb(247, 222, 226);
@@ -385,6 +385,34 @@ section > nav li::after {
 }
 section > nav li:last-child::after {
   content: none;
+}
+
+#githubStats {
+  width: 80%; margin: auto;
+  padding-top: 1em;
+}
+#githubStats > span {
+  display: flex; text-align: center; vertical-align: middle; border: 1px solid rgb(137, 109, 139); margin-bottom: 1em;
+}
+#githubStatsLegend {
+  list-style: none;
+}
+#githubStatsLegend li::before {
+  content: '';
+  outline: 1px solid;
+  width: .5em;
+  height: .5em;
+  display: inline-block;
+  margin-right: .5em;
+}
+#githubStatsLegend li:first-of-type::before {
+  background-color: rgb(235, 207, 235);
+}
+#githubStatsLegend li:nth-of-type(2)::before {
+  background-color: rgb(217, 241, 233);
+}
+#githubStatsLegend li:last-of-type::before {
+  background-color: rgb(196, 218, 236);
 }
 
 summary {

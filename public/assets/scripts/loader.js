@@ -13,12 +13,14 @@ document.getElementById("loader").innerHTML = `loading contents...
 }
 </style>`;
 
-document.onreadystatechange = function() {
-    if (document.readyState !== "complete") {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
-    } else {
-        document.querySelector("body").style.visibility = "visible";
-        document.querySelector("#loader").style.visibility = "hidden";
-    }
-};
+var loader = document.getElementById("loader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
+
+//Fade out, optional
+var s = document.getElementById("loader").style;
+s.opacity = 1;
+(function fade() {
+  (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
+})();

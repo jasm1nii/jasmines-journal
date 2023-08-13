@@ -56,7 +56,7 @@ a:hover {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
+  animation-delay: .5s;
 }
 
 .notice-group {
@@ -413,6 +413,7 @@ section {
   margin: 0;
   padding-left: 2em;
   padding-bottom: 1em;
+  padding-top: 1em;
   max-height: 150px;
   overflow-y: auto;
   scrollbar-width: thin;
