@@ -97,6 +97,17 @@ body {
                 flex-direction: column;
             }
         }
+body > nav {
+    text-align: center;
+}
+body > nav:first-of-type {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+body > nav:last-of-type {
+    margin-top: 1em;
+    margin-bottom: 5em;
+}
 header {
     max-width: 12em;
     margin-left: 1em;
@@ -216,6 +227,14 @@ main > nav {
 article {
     padding: 1em;
 }
+article > h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+}
+    @media all and (max-width:768px) {
+        article > h1 { text-align: center; }
+    }
 article::before {
     content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
     display: block;
@@ -295,9 +314,10 @@ section {
         margin-left: 1em;
     }
     section h4 {
-        padding-left: 1em;
-        width: fit-content;
         margin-left: 1em;
+        margin-right: 1em;
+        padding-bottom: .5em;
+        border-bottom: 1px solid;
     }
     section ul {
         margin-left: 2em;
@@ -323,10 +343,13 @@ section {
         margin-right: 2em;
         padding: 1em;
     }
+    #section2 dl {
+        padding-left: 1em;
+    }
+    #section2 summary {
+        margin-left: 3em;
+    }
 
-#section2 dl {
-    padding-left: 1em;
-}
 #legend dt::before {
     content: none;
 }
@@ -348,7 +371,7 @@ dd {
     margin-right: 1em;
 }
 details p {
-    margin-left: 1em;
+    margin-left: 3em;
 }
 
 footer {

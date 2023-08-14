@@ -105,19 +105,6 @@ header p {
     position: static;
   }
 }
-header nav::after {
-  content: '•☽────✧˖°˖☆˖°˖✧────☾•';
-  writing-mode: vertical-lr;
-  display: inline-flex;
-  line-height: 500%;
-  font-size: x-large;
-  color: rgb(162, 118, 175);
-}
-@media all and (max-width:768px) {
-  header nav::after {
-    content: none;
-  }
-}
 main {
   width: 500px;
   margin: 3em;
@@ -126,12 +113,6 @@ main {
   background-color: whitesmoke;
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
-}
-.main-2 {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
 }
 @media all and (max-width:768px) {
   main {
@@ -144,10 +125,6 @@ main {
     height: 500px;
     overflow: auto;
     scrollbar-width: thin;
-  }
-  .main-2 {
-    min-width: fit-content;
-    height: max-content;
   }
 }
 
@@ -186,28 +163,6 @@ h2 {
   content: "❗";
   color: gray;
   margin-right: 10px;
-}
-
-/* h3 */
-#log::before {
-    content: "⟶";
-    margin-right: 0.5em;
-    text-decoration-style: none;
-}
-
-/* p */
-#important {
-  border: 1px solid rgb(187, 142, 59);
-  padding: 1em;
-  font-weight: 600;
-  background-color: rgb(241, 230, 225);
-  color: rgb(78, 57, 18);
-  width: fit-content;
-}
-@media all and (max-width:768px) {
-  #important {
-    margin: auto;
-  }
 }
 
 a {
@@ -293,13 +248,6 @@ article > section h2::before {
   margin-right: .5em;
   font-weight: 400;
 }
-article::after {
-  content: '︶⊹︶︶⠀୨୧⠀︶︶⊹︶ ୨୧ ︶⊹︶︶⠀୨୧ ︶︶⊹︶';
-  font-size: larger;
-  text-align: center;
-  display: block;
-  color: rgb(169, 121, 179);
-}
 article > nav a::before {
   content: "⟵";
   margin-right: .5em;
@@ -332,7 +280,7 @@ header nav li::before {
   content:'୨୧';
   margin-right: .5em;
 }
-header nav ul:first-child {
+nav ul {
   border-bottom: 1px solid rgb(207, 145, 207);
   border-top: 1px solid rgb(207, 145, 207);
   padding: 1em;
@@ -340,20 +288,13 @@ header nav ul:first-child {
 }
 nav li {
   display: block;
-  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 nav a {
   text-decoration: none;
   color: purple;
   padding: 0px 5px 0px 5px;
   margin-left: -5px;
-}
-#archiveNav li {
-  margin-right: 0;
-  font-weight: 600;
-}
-#archiveNav li ul {
-  margin-left: 1em;
 }
 @media all and (max-width:768px) {
   header > nav ul {
@@ -410,34 +351,6 @@ section > nav li::after {
 }
 section > nav li:last-child::after {
   content: none;
-}
-
-#githubStats {
-  width: 80%; margin: auto;
-  padding-top: 1em;
-}
-#githubStats > span {
-  display: flex; text-align: center; vertical-align: middle; border: 1px solid rgb(137, 109, 139); margin-bottom: 1em;
-}
-#githubStatsLegend {
-  list-style: none;
-}
-#githubStatsLegend li::before {
-  content: '';
-  outline: 1px solid;
-  width: .5em;
-  height: .5em;
-  display: inline-block;
-  margin-right: .5em;
-}
-#githubStatsLegend li:first-of-type::before {
-  background-color: rgb(235, 207, 235);
-}
-#githubStatsLegend li:nth-of-type(2)::before {
-  background-color: rgb(217, 241, 233);
-}
-#githubStatsLegend li:last-of-type::before {
-  background-color: rgb(196, 218, 236);
 }
 
 summary {

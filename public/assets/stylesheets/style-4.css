@@ -195,6 +195,9 @@ main {
             margin-top: 5%;
             width: 80%;
         }
+        main > p {
+            text-align: center;
+        }
     }
     @media all and (max-width:400px) {
         main {
