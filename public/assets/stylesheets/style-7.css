@@ -225,16 +225,10 @@ main > nav {
     }
 
 article {
-    padding: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
-article > h1 {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2em;
-}
-    @media all and (max-width:768px) {
-        article > h1 { text-align: center; }
-    }
+
 article::before {
     content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
     display: block;
@@ -247,6 +241,7 @@ article::after {
     display: block;
     text-align: center;
     font-size: x-large;
+    padding-top: 1.5em;
 }
     article ol {
         margin-left: .5em;
@@ -278,40 +273,20 @@ article::after {
         font-size: smaller;
         margin-top: .5em;
     }
+    
 section {
-    margin-bottom: 1.5em;
-    padding: 0;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
     border: 1px solid;
+    padding-bottom: 1em;
 }
     section h2 {
         background-color: rgba(110, 60, 139, 0.233);
         padding: 1em;
         margin-top: 0;
-    }
-    section + h2 {
-        border: 1px solid;
-    }
-    section:nth-child(2n) h2 {
         text-align: right;
-    }
-    article > section > h2:nth-of-type(2n) {
-        text-align: right;
-    }
-    section section {
-        max-height: 400px;
-        overflow-y: auto;
-        scrollbar-width: thin;
-        padding: 0;
     }
     section h3 {
         padding: 1em;
         background-color: rgba(216, 112, 147, 0.2);
-    }
-    section section p {
-        margin-left: 1em;
     }
     section h4 {
         margin-left: 1em;
@@ -319,6 +294,7 @@ section {
         padding-bottom: .5em;
         border-bottom: 1px solid;
     }
+    
     section ul {
         margin-left: 2em;
         margin-top: 0;
@@ -326,6 +302,27 @@ section {
     section li {
         margin-bottom: 1em;
     }
+
+section section {
+    border: none;
+}
+section section section {
+    padding-bottom: 0;
+}
+h3 ~ section {
+    padding-left: 1em;
+}
+h3 ~ p {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+h4 ~ section {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+h4 + section details {
+    padding-left: 2em;
+}
 
 #legend dt::before {
     content: none;

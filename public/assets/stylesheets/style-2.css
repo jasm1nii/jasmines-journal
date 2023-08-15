@@ -119,7 +119,8 @@ header nav::after {
   }
 }
 main {
-  width: 500px;
+  width: max-content;
+  max-width: 500px;
   margin: 3em;
   padding: 2em;
   padding-top: 1em;

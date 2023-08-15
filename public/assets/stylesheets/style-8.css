@@ -17,6 +17,28 @@
     }
 }
 
+/* copied from inline style tag */
+@media all and (max-width:768px) {
+    article {
+        min-width: 90%;
+    }
+    article ul {
+        margin-left: 0;
+    }
+}
+
+article {
+    width: 60%; margin-left: auto; margin-right: auto;
+}
+article nav {
+    margin-bottom: 1em;
+}
+footer {
+    padding: 1em;
+    margin-left: auto; margin-right: auto; text-align: center;
+}
+/**/
+
 a {
     background-color: transparent;
     transition: all 0.2s ease-out;
@@ -108,13 +130,13 @@ body > nav:last-of-type {
     margin-top: 1em;
     margin-bottom: 5em;
 }
+    
+
 header {
-    max-width: 12em;
-    margin-left: 1em;
-    letter-spacing: .05em;
-    align-self: flex-start;
-    position: sticky;
-    top: 2em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
 }
     @media all and (max-width:768px) {
         header {
@@ -123,22 +145,17 @@ header {
             margin-right: auto;
             margin-top: 5%;
             position: relative;
-        }
-    }
-    header > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-        @media all and (max-width:768px) {
-            #themeToggle {
-                height: fit-content;
             }
         }
+    @media all and (max-width:768px) {
+        #themeToggle {
+            height: fit-content;
+            }
+        }
+
     header h1 {
         font-size: 1.5em;
+        padding-top: 1em;
     }
     header time {
         font-weight: 600;
@@ -180,25 +197,6 @@ header {
             padding: 0px 5px 3px 5px;
         }
 
-footer .subpage-nav {
-    justify-content: space-between;
-    display: flex;
-}
-    @media all and (max-width:500px) {
-        footer .subpage-nav {
-            display: inline;
-            }
-        footer .subpage-nav a {
-            margin-right: 2em;
-            margin-left: 2em;
-            line-height: 2.5em;
-        }
-    }
-footer .subpage-nav a:first-child:before {
-    content: '⟵';
-    margin-right: .5em;
-}
-
 main {
     margin-right: auto;
     width: 70%;
@@ -225,16 +223,10 @@ main > nav {
     }
 
 article {
-    padding: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
-article > h1 {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2em;
-}
-    @media all and (max-width:768px) {
-        article > h1 { text-align: center; }
-    }
+
 article::before {
     content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
     display: block;
@@ -247,6 +239,7 @@ article::after {
     display: block;
     text-align: center;
     font-size: x-large;
+    padding-top: 1.5em;
 }
     article ol {
         margin-left: .5em;
@@ -278,40 +271,20 @@ article::after {
         font-size: smaller;
         margin-top: .5em;
     }
+    
 section {
-    margin-bottom: 1.5em;
-    padding: 0;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
     border: 1px solid;
+    padding-bottom: 1em;
 }
     section h2 {
         background-color: rgba(110, 60, 139, 0.233);
         padding: 1em;
         margin-top: 0;
-    }
-    section + h2 {
-        border: 1px solid;
-    }
-    section:nth-child(2n) h2 {
         text-align: right;
-    }
-    article > section > h2:nth-of-type(2n) {
-        text-align: right;
-    }
-    section section {
-        max-height: 400px;
-        overflow-y: auto;
-        scrollbar-width: thin;
-        padding: 0;
     }
     section h3 {
         padding: 1em;
         background-color: rgba(216, 112, 147, 0.2);
-    }
-    section section p {
-        margin-left: 1em;
     }
     section h4 {
         margin-left: 1em;
@@ -319,6 +292,7 @@ section {
         padding-bottom: .5em;
         border-bottom: 1px solid;
     }
+    
     section ul {
         margin-left: 2em;
         margin-top: 0;
@@ -326,6 +300,27 @@ section {
     section li {
         margin-bottom: 1em;
     }
+
+section section {
+    border: none;
+}
+section section section {
+    padding-bottom: 0;
+}
+h3 ~ section {
+    padding-left: 1em;
+}
+h3 ~ p {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+h4 ~ section {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+h4 + section details {
+    padding-left: 2em;
+}
 
 #legend dt::before {
     content: none;

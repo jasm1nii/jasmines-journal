@@ -106,7 +106,8 @@ header p {
   }
 }
 main {
-  width: 500px;
+  width: max-content;
+  max-width: 500px;
   margin: 3em;
   padding: 2em;
   padding-top: 1em;
@@ -122,9 +123,6 @@ main {
     padding-bottom: 1.5em;
     padding-left: 1.5em;
     padding-right: 1em;
-    height: 500px;
-    overflow: auto;
-    scrollbar-width: thin;
   }
 }
 
@@ -140,29 +138,6 @@ h2 {
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
   font-size: 2em;
-}
-.article-2 h2 {
-  text-align: right;
-}
-#todo::before {
-  content: "📝";
-  color: gray;
-  margin-right: 10px;
-}
-#changelog::before {
-  content: "🔨";
-  color: gray;
-  margin-right: 10px;  
-}
-#knownIssues::before{
-  content: "💫";
-  color: gray;
-  margin-right: 10px;
-}
-#report::before {
-  content: "❗";
-  color: gray;
-  margin-right: 10px;
 }
 
 a {
@@ -208,12 +183,6 @@ section h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-#owo::before {
-  content: "( ͡o ω ͡o )" ;
-  color: rgb(173, 123, 173);
-  margin-right: 0.25em;
-  text-transform: none;
-}
 h4 {
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -251,20 +220,6 @@ article > section h2::before {
 article > nav a::before {
   content: "⟵";
   margin-right: .5em;
-}
-.article-2 > section {
-  border: 1px solid purple;
-  background-color: whitesmoke;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 2em;
-}
-@media all and (max-width:768px) {
-  .article-2 > section {
-    max-width: 500px;
-  }
 }
 .site-update time {
   font-weight: 600;
@@ -341,9 +296,6 @@ section > nav li:first-child::before {
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
-#archiveNav li li::before {
-  content: none;
-}
 section > nav li::after {
   content: "•";
   margin-right: 0.5em;
@@ -382,7 +334,7 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: 14px;
+  font-size: 1em;
   color: rgb(97, 58, 97);
   width: 90%;
 }
@@ -393,7 +345,7 @@ footer ul {
 }
 footer li {
    display: inline-block;
-   margin-right: 15px;
+   margin-right: 1em;
 }
 footer li:nth-child(1)::before {
    content: "";
