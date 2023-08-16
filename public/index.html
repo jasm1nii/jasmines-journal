@@ -17,16 +17,20 @@
     <link href="https://github.com/jasm1nii" rel="me">
   </head>
   <body>
-    <script async src="assets/scripts/loader.js"></script>
+    
     <div id="loader"></div>
+    <script async src="assets/scripts/loader.js"></script>
+
     <div class="board">
       <header>
+
         <div>
           <div><h1>jasmine's journal</h1></div>
           <div style="margin-top: auto;">
             <p>always a work in progress</p>
           </div>
         </div>
+
         <nav id="headernav">
           <noscript>
             <ul>
@@ -35,15 +39,23 @@
           </ul>
           </noscript>
         </nav>
-          <div class="notice-group">
+        <script src="assets/scripts/headernav.js"></script>
+        <style>
+      #headernav ul li:first-child {
+        font-weight: 600;
+      }
+        </style>
+
+        <div class="notice-group">
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
             <div id="notice"></div>
             <noscript>
               <b>(javascript is disabled - some site elements may be non-interactive, missing and/or out of date)</b>
             </noscript>
-          </div>
-      </header>
+        </div>
 
+      </header>
+      
       <main>
 
         <div class="page-columns">
@@ -96,6 +108,7 @@
                   <li>added <a href="https://indieweb.org/">indie web</a> badge to the footer!</li>
                   <li>rearranged some home page sections</li>
                   <li>re-added script buttons for ko-fi and trakteer - hope they don't break my mobile site again</li>
+                  <li>added robots.txt to mitigate scraping by chatGPT - <a href="https://matthiasott.com/notes/good-riddance-gptbot" rel="external">you should, too</a></li>
                   <li>miscellaneous code fixes</li>
                   <li>see the <a href="about/changelog/index.html">change log</a> for more details and past changes</li>
                 </ul>
@@ -298,6 +311,7 @@
 
     <footer >
       <div id="footer"></div>
+      <script src="assets/scripts/footer.js"></script>
       <noscript>
         <p>
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
@@ -320,13 +334,6 @@
       </noscript>
     </footer>
   
-  <script src="assets/scripts/headernav.js"></script>
-  <style>
-    #headernav ul li:first-child {
-      font-weight: 600;
-    }
-  </style>
-  <script defer src="assets/scripts/footer.js"></script>
   <script src="assets/scripts/sticky-note.js"></script>
   <script src="assets/scripts/pretzel.js"></script>
   <script src="assets/scripts/time.js"></script>

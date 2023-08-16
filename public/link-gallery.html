@@ -27,8 +27,10 @@
   </head>
 
   <body>
-    <script async src="assets/scripts/loader.js"></script>
+
     <div id="loader"></div>
+    <script async src="assets/scripts/loader.js"></script>
+
     <div class="board">
       <header>
         <div>
@@ -56,6 +58,12 @@
             </ul>
           </noscript>
         </nav>
+        <script src="assets/scripts/headernav.js"></script>
+        <style>
+          #headernav ul li:nth-last-child(3) {
+            font-weight: 600;
+          }
+        </style>
       </header>
 
       <main>
@@ -443,14 +451,9 @@
         </ul>
       </noscript>
     </footer>
-
-    <script src="assets/scripts/headernav.js"></script>
-    <style>
-      #headernav ul li:nth-last-child(3) {
-        font-weight: 600;
-      }
-    </style>
-    <script src="assets/scripts/freezeframe.min.js"></script>
     <script src="assets/scripts/footer.js"></script>
+
+    <script src="assets/scripts/freezeframe.min.js"></script>
+
   </body>
 </html>
