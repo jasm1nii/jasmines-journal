@@ -292,11 +292,11 @@ footer {
     margin-top: 3em;
     margin-bottom: 5em;
     width: 70%;
-    letter-spacing: .05em;
+    letter-spacing: .05em;text-align: center;
     }
     @media all and (max-width:768px) {
         footer {
-            text-align: center;
+            
             width: 80%;
             margin-left: auto;
             margin-right: auto;

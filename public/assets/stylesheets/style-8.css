@@ -239,7 +239,7 @@ article::after {
     display: block;
     text-align: center;
     font-size: x-large;
-    padding-top: 1.5em;
+    padding-top: 1em;
 }
     article ol {
         margin-left: .5em;
@@ -275,6 +275,7 @@ article::after {
 section {
     border: 1px solid;
     padding-bottom: 1em;
+    margin-bottom: 2em;
 }
     section h2 {
         background-color: rgba(110, 60, 139, 0.233);
@@ -347,12 +348,9 @@ details p {
 }
 
 footer {
-    font-size: smaller;
-    margin-top: 3em;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
     width: 70%;
     letter-spacing: .05em;
-    border-top: 1px solid;
     }
     @media all and (max-width:768px) {
         footer {
@@ -360,7 +358,6 @@ footer {
             width: 80%;
             margin-left: auto;
             margin-right: auto;
-            border: none;
         }
     }
     footer time {

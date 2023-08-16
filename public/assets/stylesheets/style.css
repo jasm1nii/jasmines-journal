@@ -7,9 +7,13 @@
   --font-1: 'Instrument Sans', sans-serif;
 }
 
+* {
+  scrollbar-color: pink transparent;
+  scrollbar-width: thin;
+}
+
 html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-  scrollbar-width: thin;
   height: 100%;
   text-rendering: optimizeLegibility;
 }
@@ -31,8 +35,6 @@ body {
   font-family: var(--font-1);
   font-size: .9em;
   margin: auto;
-  scrollbar-color: pink transparent;
-  scrollbar-width: thin;
   min-height: 100%;
 }
 
@@ -146,7 +148,6 @@ main {
    padding-left: 3%;
    padding-right: 3%;
    overflow: auto;
-   scrollbar-width: thin;
 }
 .page-columns > section {
   margin-bottom: 12%;
@@ -176,8 +177,8 @@ header > div {
   display: flex; justify-content: space-between;
 }
 header p {
-  padding-left: 5%;
-  letter-spacing: 1px;
+  letter-spacing:.05em;
+  padding-right: 1em;
 }
 @media all and (max-width:768px) {
   header {
@@ -186,12 +187,14 @@ header p {
   header > div {
     flex-direction: column;
   }
+  header p {
+    text-align: right;
+  }
 }
 @media all and (max-width:768px) {
   #headernav {
       overflow-x: auto;
       white-space: nowrap;
-      scrollbar-width: thin;
       }
 }
 h1 {
@@ -242,10 +245,11 @@ nav {
   margin: auto;
   padding-top: 5px;
   padding-bottom: 10px;
-  padding-left: 50px;
+  padding-left: 1em;
+  padding-right: 1em;
   border-bottom: 1px solid gray;
   border-top: 1px solid gray;
-  font-size: 16px;
+  font-size: 1.15em;
   letter-spacing: 1px;
 }
 nav ul {
@@ -254,19 +258,22 @@ nav ul {
 }
 nav li {
   display: inline;
-  margin-right: 10px;
+  margin-right: .5em;
+  white-space: nowrap;
 }
 nav li::before {
   content: "✧";
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 1.3em;
+  margin-right: .5em;
   color: pink;
+  font-weight: normal;
 }
 nav li:last-child::after {
   content: "✧";
-  font-size: 20px;
-  margin-left: 10px;
+  font-size: 1.3em;
+  margin-left: .5em;
   color: pink;
+  font-weight: normal;
 }
 nav a {
   text-decoration: none;
@@ -387,7 +394,6 @@ section {
   height: min-content;
   background-color: rgb(255, 239, 239);
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
-  scrollbar-width: thin;
   break-inside: avoid;
 }
 @media all and (max-width:900px) {
@@ -415,7 +421,6 @@ section {
   padding-top: 1em;
   max-height: 150px;
   overflow-y: auto;
-  scrollbar-width: thin;
   border: 1px solid rgb(179, 97, 111);
   background-color: #fff5f5;
 }
@@ -455,13 +460,11 @@ section {
   border-color: purple;
 }
 
-
 #spotifyHomepage {
   padding: 0;
   height: 200px;
   overflow: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
   box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   background-color:rgb(173, 41, 173);
   border-top-right-radius: 0;
@@ -684,7 +687,6 @@ section {
   padding-right: 20px;
   margin-right: -10px;
   overflow: auto;
-  scrollbar-width: thin;
 }
 
 #warning {
@@ -730,7 +732,6 @@ section {
   padding: 5px 10px 5px 10px;
   border: 1px solid gray;
   text-align: left;
-  scrollbar-width: thin;
   resize: vertical;
   width: 80%;
   margin: auto;
@@ -740,7 +741,6 @@ section {
 .button-gallery {
   margin-top: 10px;
   text-align: center;
-  scrollbar-width: thin;
 }
 #buttonSection summary {
   padding-top: 1em;
@@ -838,7 +838,6 @@ section {
   border: 1px solid rgb(167, 95, 177);
   padding: 5px;
   background: rgb(255, 233, 251);
-  scrollbar-width: thin;
   margin-left: auto;
   margin-right: auto;
   min-width: 90%;
@@ -883,7 +882,6 @@ section {
 
 footer {
   margin-top: 3em;
-  margin-bottom: 5em;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 2em;
@@ -891,6 +889,7 @@ footer {
   font-size: 1em;
   color: rgb(97, 58, 97);
   width: 50%;
+  max-width: 500px;
 }
 @media all and (max-width:768px) {
   footer {
@@ -899,6 +898,7 @@ footer {
 }
 footer ul {
    list-style-type: none;
+   padding-left: 0;
 }
 footer li:nth-child(1)::before {
    content: none;
@@ -914,5 +914,4 @@ footer li {
 }
 footer time {
   display: inline;
-  margin-left: -3em;
 }

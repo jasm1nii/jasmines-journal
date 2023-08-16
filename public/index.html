@@ -90,10 +90,13 @@
             <div class="main-info" id="siteUpdates">
               <h2>site updates</h2>
               <p>
-                <time datetime="2023-08-15">15 august 2023</time>
+                <time datetime="2023-08-16">16 august 2023</time>
                 <ul>
-                  <li>cleaned up some code and fixed a couple of broken links</li>
-                  <li>applied to more site listings</li>
+                  <li>added some more web listings</li>
+                  <li>added <a href="https://indieweb.org/">indie web</a> badge to the footer!</li>
+                  <li>rearranged some home page sections</li>
+                  <li>re-added script buttons for ko-fi and trakteer - hope they don't break my mobile site again</li>
+                  <li>miscellaneous code fixes</li>
                   <li>see the <a href="about/changelog/index.html">change log</a> for more details and past changes</li>
                 </ul>
               </p>
@@ -161,7 +164,9 @@
               <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="spotify songs on repeat"></iframe>
             </div>
           </section>
+
           
+
           <!-- my links -->
           <section>
             <div class="main-info" id="links">
@@ -174,17 +179,6 @@
                   <a href="https://jasmineamalia.carrd.co/" rel="me">carrd</a> 
                 </li>
               </ul>
-            </div>
-          </section>
-
-          <!-- tip jar -->
-          <section>
-            <div class="main-info" id="links">
-              <h2 id="support">tip jar</h2>
-                <ul>
-                  <li><a href="https://ko-fi.com/jasmineamalia" rel="me external">ko-fi (USD)</a></li>
-                  <li><a href="https://trakteer.id/jasmineamalia/tip" rel="me external">trakteer (IDR)</a></li>
-                </ul>
             </div>
           </section>
 
@@ -243,7 +237,16 @@
                     listed by date added<br>(newest to oldest)
                   </p>
                   <p>
-                    <a href=""><img src="assets/media/main/smooth-sailing.png" alt="smooth sailing listings"></a>
+                    <a href="https://macaque.neocities.org/trickyfox/">LINKED!</a> <img src="https://i.imgur.com/9nXFJCq.png" alt=""> blaze the cat
+                  </p>
+                  <p>
+                    <img src="https://i.imgur.com/7v5H0TL.png" alt=""> i am <a href="https://macaque.neocities.org/trickyfox/"> angelic ♥</a> <img src="https://i.imgur.com/uAEhywQ.png" alt="">
+                  </p>
+                  <p>
+                    <a href="https://kalechips.net/responsive/index"><img src="assets/media/main/responsive-website-directory.png" alt="responsive website directory"></a>
+                  </p>
+                  <p>
+                    <a href="https://smoothsailing.asclaria.org/"><img src="assets/media/main/smooth-sailing.png" alt="smooth sailing listings"></a>
                   </p>
                   <div id="healinghospital" style="text-align: center;"></div>
                   <div id="autiring" style="text-align: center;"></div>
@@ -265,6 +268,26 @@
             </div>
           </section>
 
+          <!-- tip jar -->
+          <section>
+            <div class="main-info" id="links">
+              <h2 id="support">tip jar</h2>
+              <div style="text-align: center;">
+                <p>
+                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('support with USD', '#9679c4', 'S6S8O3MD');kofiwidget2.draw();</script>
+                </p>
+                <p>
+                  <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script><script type='text/javascript'>(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
+                </p>
+              </div>
+              <noscript>
+                <ul>
+                  <li><a href="https://ko-fi.com/jasmineamalia" rel="me external">ko-fi (USD)</a></li>
+                  <li><a href="https://trakteer.id/jasmineamalia/tip" rel="me external">trakteer (IDR)</a></li>
+                </ul>
+              </noscript>
+            </div>
+          </section>
         </div>
 
         <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments"></iframe>
@@ -273,7 +296,8 @@
 
     </div>
 
-    <footer id="footer">
+    <footer >
+      <div id="footer"></div>
       <noscript>
         <p>
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
@@ -287,6 +311,11 @@
           <li><a href="credits.html">credits</a></li>
           <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a> at <a href="https://jasm1nii.xyz/" rel="me">jasm1nii.xyz</a></li>
           <li>mirrored on <a href="https://jasm1nii.ichi.city/">ichi</a></li>
+          <li>
+            <a href="https://indieweb.org/">
+            <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;">
+            </a>
+          </li>
         </ul>
       </noscript>
     </footer>
@@ -297,7 +326,7 @@
       font-weight: 600;
     }
   </style>
-  <script src="assets/scripts/footer.js"></script>
+  <script defer src="assets/scripts/footer.js"></script>
   <script src="assets/scripts/sticky-note.js"></script>
   <script src="assets/scripts/pretzel.js"></script>
   <script src="assets/scripts/time.js"></script>
