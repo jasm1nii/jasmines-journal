@@ -301,9 +301,6 @@ section {
         text-align: right;
     }
     section section {
-        max-height: 400px;
-        overflow-y: auto;
-        scrollbar-width: thin;
         padding: 0;
     }
     section h3 {
