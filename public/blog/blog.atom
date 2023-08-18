@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>jasmine's b(rain)log</title>
-    <id>https://www.jasm1nii.xyz/blog/</id>
-    <link rel="self" href="https://www.jasm1nii.xyz/blog/blog.atom"></link>
-    <link rel="alternate" href="https://www.jasm1nii.xyz/blog/"></link>
-    <updated>2022-07-05T00:00:00+00:00</updated>
+    <id>https://jasm1nii.xyz/blog/</id>
+    <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom"></link>
+    <link rel="alternate" href="https://jasm1nii.xyz/blog/"></link>
+    <updated>2023-08-17T00:00:00+00:00</updated>
     <author>
         <name>jasmine</name>
-        <uri>https://www.jasm1nii.xyz/blog</uri>
+        <uri>https://jasm1nii.xyz/blog</uri>
     </author>
-    <icon>https://www.jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
+    <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
     <logo>https://media.mas.to/masto-public/accounts/avatars/109/323/560/297/355/975/original/f62415bd47ff4ece.png</logo>
     <entry>
+        <title>bye neocities (part 2)</title>
+        <id>https://jasm1nii.xyz/blog/2023/august/17/entry.html</id>
+        <published>2023-08-17T00:00:00+00:00</published>
+        <updated>2023-08-18T00:00:00+00:00</updated>
+        <content type="html">lol. LMAO<br><del>too bad it had to end like this but oh well</del> (<a href="https://jasm1nii.xyz/blog/2023/august/17/entry.html">read more</a>)</content>
+    </entry>
+    <entry>
         <title>bye neocities</title>
-        <id>https://www.jasm1nii.xyz/blog/2023/august/12/entry.html</id>
+        <id>https://jasm1nii.xyz/blog/2023/august/12/entry.html</id>
         <published>2023-08-12T00:00:00+00:00</published>
         <updated>2023-08-12T00:00:00+00:00</updated>
         <content type="html">it was a good one month i guess</content>
     </entry>
     <entry>
         <title>parroting a broken record held together by elmer's glue</title>
-        <id>https://www.jasm1nii.xyz/blog/2023/august/09/entry.html</id>
+        <id>https://jasm1nii.xyz/blog/2023/august/09/entry.html</id>
         <published>2023-08-09T00:00:00+00:00</published>
         <updated>2023-08-09T00:00:00+00:00</updated>
         <content type="html">getting started</content>

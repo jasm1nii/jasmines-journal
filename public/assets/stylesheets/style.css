@@ -341,14 +341,15 @@ h2 {
 
 .notice-group {
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   margin: auto;
   z-index: 1;
 }
 @media all and (max-width:768px) {
   .notice-group {
-    top: 10px;
+    top: 5%;
+    right: 2%;
   }
 }
 .notice-group-button {
@@ -357,28 +358,44 @@ h2 {
   font-size: 24px;
   z-index: 2;
   position: absolute;
-  right: 0;
+  right: -15px;
+  top: -15px;
 }
 .notice-group-button:hover {
   transform: translatey(-5px);
 }
 #notice {
   border: 1px solid darkgoldenrod;
-  margin: 15px 15px 0 0;
-  padding: .25em;
   background-color: cornsilk;
-  width: 150px;
+  max-width: 150px;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
   text-align: center;
   color: rgb(94, 82, 53);
 }
-#pretzel {
-  width: 75%; border: white solid 5px; outline: 1px solid darkkhaki;
-}
-@-moz-document url-prefix() {
-  #notice {
-    font-weight: 400 !important;
+  @-moz-document url-prefix() {
+    #notice {
+      font-weight: 400 !important;
+    }
   }
+#notice p {
+  padding-left: 1em;
+}
+  @media all and (max-width:768px) {
+    #notice p {
+      text-align: center;
+    }
+  }
+#notice figure {
+  padding: 0;
+  margin: auto;
+  text-align: center;
+}
+#pretzel {
+  border: white solid 5px;
+  outline: 1px solid darkkhaki;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 section {

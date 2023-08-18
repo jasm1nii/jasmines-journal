@@ -209,10 +209,12 @@ article {
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 2em;
+    margin-bottom: 1em;
 }
     @media all and (max-width:400px) {
         article {
-            border: none;
+            border-left: none;
+            border-right: none;
             padding-top: 1em;
         }
     }
@@ -277,7 +279,14 @@ article ol li time {
     padding: 1em;
     display: block;
     margin: auto;
+    max-width: 70%;
 }
+    @media all and (max-width:768px) {
+        .entry p img {
+            max-width: 100%;
+            margin-left: -1em;
+        }
+    }
 .entry blockquote {
     border: 1px dashed;
     padding: 1em;
@@ -285,6 +294,17 @@ article ol li time {
     margin-top: 2em;
     margin-bottom: 2em;
     width: fit-content;
+}
+
+#comments {
+    border: 1px solid;
+    padding: 2em;
+}
+@media all and (max-width:400px) {
+    #comments { border-left: none; border-right: none; }
+}
+.cactus-editor-textarea::placeholder,.cactus-editor-name > span > input::placeholder, .cactus-container button {
+    text-transform: lowercase;
 }
 
 footer {
@@ -343,6 +363,15 @@ footer {
     a {
         color: var(--dark-links);
     }
+    #comments {
+        background-color: var(--dark-bg);
+    }
+    .cactus-container button {
+        color: rgb(165, 165, 173);
+    }
+    .cactus-container button:last-of-type:hover {
+        color: black;
+    }
 }
 .dark-mode {
     background-color: var(--dark-bg);
@@ -357,16 +386,26 @@ footer {
     .dark-mode article {
         background-color: var(--dark-bg);
     }
+    .dark-mode #comments {
+        background-color: var(--dark-bg);
+    }
+    .dark-mode .cactus-container button {
+        color: var(--light-font);
+    }
 
 @media (prefers-color-scheme: light) {
     body {
         background-color:  var(--light-bg);
         color: var(--light-font);
     } 
+    
     a {
         color: var(--light-links);
     }
     .entry {
+        background-color: var(--light-bg-article);
+    }
+    #comments {
         background-color: var(--light-bg-article);
     }
 }
@@ -382,4 +421,15 @@ footer {
     }
     .light-mode article {
         background-color: var(--light-bg-article);
+    }
+    .light-mode #comments {
+        background-color: var(--light-bg-article);
+    }
+    .light-mode .cactus-container button {
+        background-color: rgb(204, 198, 207);
+        color: black;
+    }
+    .light-mode .cactus-container button:hover {
+        background-color: pink;
+        color: rgb(70, 35, 41);
     }
