@@ -113,6 +113,9 @@
                   <li>updated yesterday's blog post with <a href="blog/2023/august/17/entry.html">the email response from neocities support</a></li>
                   <li>added a splash page to my subdomains on <a href="https://jasm1nii.neocities.org/" rel="external me">neocities</a> and <a href="https://jasm1nii.ichi.city/">ichi</a></li>
                   <li>fixed CSS for blog comments</li>
+                  <li>added <a href="https://xandra.cc/safonts/">safonts web ring</a> and <a href="https://pastels.minty.nu/">pastel colours fanlisting</a></li>
+                  <li>added atom validator badge to home page</li>
+                  <li>miscellaneous accessibility improvements</li>
                   <li>refer to the <a href="about/changelog/2023/august.html">change log</a> for past updates</li>
                 </ul>
               </p>
@@ -121,7 +124,11 @@
                 <h3>subscribe</h3>
                 <ul>
                     <li><b><a href="https://buttondown.email/jasm1nii" rel="me">newsletter</a></b> - for occasional site-wide update summaries</li>
-                    <li><b><a href="blog/blog.atom">atom feed</a></b> - for blog posts only</li>
+                    <li>
+                      <b><a href="blog/blog.atom">atom feed</a></b> - for blog posts only
+                      <br><br>
+                      <a style="text-align: center;" href="http://validator.w3.org/"><img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; display: block;"/></a>
+                    </li>
                 </ul>
               </div>
             </div>
@@ -162,7 +169,7 @@
               </div>
               <div id="speaker">
                 <div>
-                  <img src="assets/media/main/speaker.svg">
+                  <img src="assets/media/main/speaker.svg" alt="">
                 </div>
                 <div style="margin-top: 10px;">
                   <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
@@ -234,9 +241,9 @@
                   
                   <p> <!-- loop ring --> 
                       <b>
-                          <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site">←</a> 
+                          <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site" aria-label="previous site">←</a> 
                           <a href="https://loop.graycot.dev/webring.html?action=home">loop ring</a> 
-                          <a href="https://loop.graycot.dev/webring.html?action=next" title="next site">→</a>
+                          <a href="https://loop.graycot.dev/webring.html?action=next" title="next site" aria-label="next site">→</a>
                       </b>
                       <br>
                       [<a href="https://loop.graycot.dev/webring.html?action=rand"> random </a> |
@@ -247,11 +254,16 @@
                   <p>
                     listed by date added<br>(newest to oldest)
                   </p>
+                  <p>
+                    <a href="https://pastels.minty.nu/"><img src="assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
+                  </p>
+                  <script src="https://xandra.cc/safonts/webring.js"></script>
+                  <ring-900 site="https://jasm1nii.xyz/"></ring-900>
                   <p> <!-- fediring -->
                       <b>
-                          <a href="https://fediring.net/previous?host=jasm1nii.xyz" title="previous site">←</a>
+                          <a href="https://fediring.net/previous?host=jasm1nii.xyz" title="previous site" aria-label="previous site">←</a>
                           <a href="https://fediring.net/">fediring</a>
-                          <a href="https://fediring.net/next?host=jasm1nii.xyz" title="next site">→</a>
+                          <a href="https://fediring.net/next?host=jasm1nii.xyz" title="next site" aria-label="next site">→</a>
                       </b>
                       <br>
                       <a href="https://fediring.net/random">random</a>
@@ -279,9 +291,9 @@
                   <div id="vocaring"></div>
                   <p> <!-- hotline webring -->
                       <b>
-                          <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site">←</a>
+                          <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site" aria-label="previous site">←</a>
                           <a href="https://hotlinewebring.club/">hotline webring</a>
-                          <a href="https://hotlinewebring.club/jasm1nii/next" title="next site">→</a>
+                          <a href="https://hotlinewebring.club/jasm1nii/next" title="next site" aria-label="next site">→</a>
                       </b>
                   </p>
                 </div>
@@ -294,7 +306,7 @@
               <h2 id="support">tip jar</h2>
               <div style="text-align: center;">
                 <p>
-                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('support with USD', '#9679c4', 'S6S8O3MD');kofiwidget2.draw();</script>
+                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
                 </p>
                 <p>
                   <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script><script type='text/javascript'>(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
@@ -347,10 +359,10 @@
   <script defer src="assets/scripts/lastfm.js"></script>
   <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
   <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
-  <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-widget.js"></script>
+  <script defer type="text/javascript" src="assets/scripts/onionring-widget-healing-hospital.js"></script>
   <script defer src="assets/scripts/vocaring.js"></script>
   <script defer type="text/javascript" src="https://macaque.neocities.org/autiring/onionring-variables.js"></script>
-  <script defer type="text/javascript" src="https://macaque.neocities.org/autiring/onionring-widget.js"></script>
+  <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
   
   </body>
   

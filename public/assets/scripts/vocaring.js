@@ -21,7 +21,7 @@ document.getElementById("vocaring").innerHTML = `
     width: 150px;
     margin: 10px auto;
     background-color: #dbfcff;
-    border:3px solid #34f2ff;
+    border: 2px solid #34f2ff;
 }
 #vocaring a:hover {
     background-color: turquoise;
@@ -32,9 +32,9 @@ document.getElementById("vocaring").innerHTML = `
 }
 
 #vocaring .webring-info {
-    text-align:center;
+    text-align: center;
     font-family: 'Tektur', cursive;
-    color:#e74492;
+    color: #b300b3;
     font-size:20px;
 }
 
@@ -42,18 +42,16 @@ document.getElementById("vocaring").innerHTML = `
     font-size: .9em;
     font-family: 'Tektur', cursive;
     text-transform: lowercase;
-    color:#e74492;
+    color:#ac3973;
 }
 
 #vocaring .webring-links a{
     text-decoration: none;
-    color:#e74492;
-    text-shadow: 2px 2px 1px #34f2ff;
-    transition:0.3s;
+    color: #66449C;
+    transition: 0.3s;
 }
 
 #vocaring .webring-links a:hover{
-    
     letter-spacing: normal;
 }
 
@@ -77,7 +75,7 @@ img {
         </td>
     </tr>
     <tr>
-        <td style='text-align:center;'><img src='https://adilene.net/webring/images/vocaloid.png'></td>
+        <td style='text-align:center;'><img src='https://adilene.net/webring/images/vocaloid.png' alt=""></td>
     </tr>
   </table>
 `;

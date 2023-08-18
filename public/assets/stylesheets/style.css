@@ -5,6 +5,10 @@
 
 :root {
   --font-1: 'Instrument Sans', sans-serif;
+  --font-color-1: #4e494e;
+  --g1v5x3-background-color: transparent !important;
+  --g1v5x3-title-color: var(--font-color-1) !important;
+  --g1v5x3-link-color: rgb(170, 63, 170) !important;
 }
 
 * {
@@ -282,7 +286,7 @@ nav a {
 }
 
 h2 {
-  color: #ce5ea8;
+  color: #712357;
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
   padding-bottom: .5em;
@@ -714,7 +718,7 @@ section {
   box-shadow: 10px 10px rgba(131, 36, 131, 0.397);
 }
 #warning h2 {
-  color: #8259be;
+  color: #503281;
   padding: 1em;
   border-color: rgb(204, 148, 204);
 }
