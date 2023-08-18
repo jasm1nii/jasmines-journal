@@ -348,8 +348,8 @@ h2 {
 }
 @media all and (max-width:768px) {
   .notice-group {
-    top: 5%;
-    right: 2%;
+    top: 10%;
+    right: 5%;
   }
 }
 .notice-group-button {
