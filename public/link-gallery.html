@@ -24,22 +24,29 @@
       content="a list of cool websites on the indie web"
     />
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </head>
 
   <body>
 
     <div id="loader"></div>
-    <script async src="assets/scripts/loader.js"></script>
+    <script src="assets/scripts/loader.js"></script>
 
     <div class="board">
       <header>
         <div>
           <div><h1>jasmine's journal</h1></div>
           <div style="margin-top: auto">
+            <button id="themeToggle" onclick="themeToggle()">
+              switch theme
+            </button>
             <p>
               page contents updated
               <br />
-              <time datetime="2023-08-18">18 august 2023</time>
+              <time datetime="2023-08-19">19 august 2023</time>
             </p>
           </div>
         </div>
@@ -58,13 +65,18 @@
             </ul>
           </noscript>
         </nav>
-        <script src="assets/scripts/headernav.js"></script>
-        <style>
+
+        
+        
+      </header>
+
+      <script src="assets/scripts/headernav.js"></script>
+      <style>
           #headernav ul li:nth-last-child(3) {
             font-weight: 600;
           }
-        </style>
-      </header>
+      </style>
+      
 
       <main>
         <article>

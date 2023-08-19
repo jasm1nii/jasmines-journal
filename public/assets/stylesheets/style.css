@@ -5,10 +5,45 @@
 
 :root {
   --font-1: 'Instrument Sans', sans-serif;
-  --font-color-1: #4e494e;
+  --font-color-light: #4e494e;
+  --h1-light: #5a5463;
+  --h2-light: #712357;
+  --h3-light: #631863;
+  --link-color-light: darkmagenta;
+  --link-hover-bg-color-light: palevioletred;
+  --document-color-light: thistle;
+  --page-color-light: #fff6f6;
+  --section-card-light: rgb(255, 239, 239);
+  --site-updates-bg-light: #fff5f5;
+  --time-bg: lavender;
+  --time-font-color: #685c7c;
+  --time-border-bottom: 5px outset rgb(199, 199, 236);
+  --time-border-right: 5px outset rgb(242, 242, 255);
+  --last-played-bg: #b8dce0;
+  --last-played-border-right: 10px outset rgb(189, 235, 232);
+  --last-played-border-bottom: 10px outset rgb(155, 211, 207);
+  --spotify: rgb(173, 41, 173);
+  --web-rings-card: #f5ddff;
+  --web-rings-font: rgb(92, 39, 92);
+  --web-rings-links: rgb(122, 78, 180);
+  --web-rings-bg-light: rgb(255, 233, 251);
+  --sticky-note-light: cornsilk;
+  --sticky-note-font-light: rgb(94, 82, 53);
+  --sticky-note-border-light: darkgoldenrod;
+  --theme-toggle-bg: #e3d7e9;
+  --theme-toggle-hover-bg: #b084bd;
+  --theme-toggle-active-bg: #8b4f61;
+  --theme-toggle-focus-bg: #a175c5;
   --g1v5x3-background-color: transparent !important;
-  --g1v5x3-title-color: var(--font-color-1) !important;
+  --g1v5x3-title-color: var(--font-color-light) !important;
   --g1v5x3-link-color: rgb(170, 63, 170) !important;
+  --gif-controls-bg: pink;
+  --gif-controls-hover-bg: rgb(255, 222, 151);
+  --gif-controls-active-bg: rgb(238, 226, 235);
+  --gif-controls-focus-bg: rgb(248, 220, 248);
+  --gif-controls-font: #210a42;
+  --gif-controls-border: 1px solid purple;
+  --footer-font: rgb(97, 58, 97);
 }
 
 * {
@@ -21,21 +56,33 @@ html {
   height: 100%;
   text-rendering: optimizeLegibility;
 }
+
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: .5em;
+  height: .5em;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: pink;
   border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover {
+
+::-webkit-scrollbar-track-piece {
+  background-color: inherit;
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: #8f53a1;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background-color: #694677;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: pink;
+}
+body ::-webkit-scrollbar-thumb:hover {
   background-color: plum;
 }
 
 body {
-  background-color: thistle;
-  color: #4e494e;
+  color: var(--font-color-light);
   font-family: var(--font-1);
   font-size: .9em;
   margin: auto;
@@ -62,7 +109,7 @@ a:hover {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
-  animation-delay: .5s;
+  animation-delay: 1s;
 }
 
 .notice-group {
@@ -99,6 +146,28 @@ section:hover, #notice:hover, .notice-group-button:hover {
 
 button {
   cursor: pointer;
+}
+#themeToggle {
+  font: inherit;
+  color: purple;
+  height: fit-content;
+  width: fit-content;
+  padding: .5em;
+  background-color: var(--theme-toggle-bg);
+  border: 1px solid #8e629b;
+  transition: all .5s;
+}
+#themeToggle:hover {
+  background-color: var(--theme-toggle-hover-bg);
+  color: white;
+  transition: all .5s;
+}
+#themeToggle:active {
+  background-color: var(--theme-toggle-active-bg);
+}
+#themeToggle:focus {
+  background-color: var(--theme-toggle-focus-bg);
+  color: white;
 }
 
 hr {
@@ -178,7 +247,14 @@ header {
   z-index: 1;
 }
 header > div {
-  display: flex; justify-content: space-between;
+  display: flex;
+  padding: 1em;
+  justify-content: space-around;
+  flex-direction: row;
+}
+header > div button:not(.notice-group-button) {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 header p {
   letter-spacing:.05em;
@@ -188,33 +264,30 @@ header p {
   header {
     position: relative;
   }
+}
+@media all and (max-width:900px) {
   header > div {
-    flex-direction: column;
-  }
-  header p {
-    text-align: right;
+    flex-direction: column-reverse;
   }
 }
 @media all and (max-width:768px) {
-  #headernav {
+  nav {
       overflow-x: auto;
       white-space: nowrap;
       }
+  nav::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 192, 203, 0.445);
+  }
 }
 h1 {
-  padding-left: 5%;
-  padding-top: 2%;
-  width: 100%;
-  color: #5a5463;
+  width: fit-content;
+  color: var(--h1-light);
   text-align: left;
   font-size: 2.5em;
   letter-spacing: .05em;
   transition: color 0.3s ease-out;
   font-family: var(--font-1);
   font-weight: 600;
-}
-h1:hover {
-  color: rgb(122, 88, 136);
 }
 h1::after {
   content: "ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ";
@@ -228,14 +301,10 @@ h1::before {
   font-weight: 100;
   color: thistle;
   margin-right: 0.25em;
-  margin-left: -0.75em;
 }
 @media all and (max-width:768px) {
   h1 {
-    font-size: 1.8em;
-    padding-left: 25px;
-    margin-bottom: 0;
-    margin-top: 0;
+    font-size: 2em;
   }
   h1::before {
     margin-left: auto;
@@ -286,7 +355,7 @@ nav a {
 }
 
 h2 {
-  color: #712357;
+  color: var(--h2-light);
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
   padding-bottom: .5em;
@@ -333,7 +402,6 @@ h2 {
 }
 
 /* adjust for screen size */
-
 @media all and (max-width:768px) {
   nav {
     padding-left: 5%;
@@ -345,8 +413,7 @@ h2 {
 
 .notice-group {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  right: 0;
   margin: auto;
   z-index: 1;
 }
@@ -362,19 +429,19 @@ h2 {
   font-size: 24px;
   z-index: 2;
   position: absolute;
-  right: -15px;
-  top: -15px;
+  right: 0;
+  top: 0;
 }
 .notice-group-button:hover {
   transform: translatey(-5px);
 }
 #notice {
-  border: 1px solid darkgoldenrod;
-  background-color: cornsilk;
+  border: 1px solid var(--sticky-note-border-light);
+  background-color: var(--sticky-note-light);
   max-width: 150px;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
   text-align: center;
-  color: rgb(94, 82, 53);
+  color: var(--sticky-note-font-light);
 }
   @-moz-document url-prefix() {
     #notice {
@@ -413,8 +480,8 @@ section {
   margin-left: auto;
   margin-right: auto;
   height: min-content;
-  background-color: rgb(255, 239, 239);
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
+  background-color: var(--section-card-light);
+  box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   break-inside: avoid;
 }
 @media all and (max-width:900px) {
@@ -443,7 +510,7 @@ section {
   max-height: 150px;
   overflow-y: auto;
   border: 1px solid rgb(179, 97, 111);
-  background-color: #fff5f5;
+  background-color: var(--site-updates-bg-light);
 }
 #siteUpdates li {
   margin: .5em;
@@ -458,7 +525,7 @@ section {
 }
 #siteUpdates h3 {
   margin: .5em;
-  color:#631863;
+  color: var(--h3-light);
   letter-spacing: .05em;
 }
 #siteUpdates form input {
@@ -486,23 +553,23 @@ section {
   height: 200px;
   overflow: auto;
   overflow-x: hidden;
-  box-shadow: 10px 10px rgba(128, 0, 128, 0.5);
-  background-color:rgb(173, 41, 173);
+  box-shadow: 10px 10px rgba(128, 0, 128, 0.5) !important;
+  background-color: var(--spotify);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border: 1px solid purple;
 }
 #lastPlayed {
   max-width: 200px;
-  background-color: #b8dce0;
+  background-color: var(--last-played-bg);
   outline: 1px solid rgb(125, 143, 137);
   text-align: center;
   padding-bottom: 0;
-  box-shadow: 10px 10px rgba(98, 136, 194, 0.5);
+  box-shadow: 10px 10px rgba(98, 136, 194, 0.5) !important;
   border-top: none;
   border-left: none;
-  border-bottom: 10px outset rgb(155, 211, 207);
-  border-right: 10px outset rgb(189, 235, 232);
+  border-bottom: var(--last-played-border-bottom);
+  border-right: var(--last-played-border-right);
 }
 #lastPlayed h2 {
   margin-left: .5em;
@@ -512,6 +579,7 @@ section {
   border-color: rgb(79, 170, 161);
   color: rgb(45, 94, 77);
 }
+#lastPlayed h2::before { content: '🎵' }
 #lastPlayed a {
   text-decoration: none;
 }
@@ -543,10 +611,9 @@ section {
   margin-bottom: 1em;
   font: inherit;
   font-size: 0.9em;
-  border: 1px outset;
+  border: 1px solid green;
   border-radius: 5px;
   background-color: rgb(230, 240, 248);
-  outline: 1px solid gray;
   transition: background-color 0.3s;
 }
 #speaker button:hover {
@@ -585,7 +652,7 @@ section {
 #latestStatus {
   padding: 0;
   margin: auto;
-  background: url(../media/main/line-in-motion.svg) rgb(238, 225, 238);
+  background: url(../media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
@@ -615,7 +682,7 @@ section {
 #idCard {
   border: 1px solid rgb(183, 124, 189);
   background: url(../media/main/bank-note.svg);
-  background-color: snow;
+  background-color: snow !important;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   max-width: 200px;
   height: min-content;
@@ -678,13 +745,13 @@ section {
 .time {
   border-radius: 10px;
   text-align: center;
-  background-color: lavender;
+  background-color: var(--time-bg);
   box-shadow: 10px 10px rgba(147, 112, 219, 50%);
-  border-bottom: 5px outset rgb(199, 199, 236);
-  border-right: 5px outset rgb(242, 242, 255);
+  border-bottom: var(--time-border-bottom);
+  border-right: var(--time-border-right);
   outline: 1px solid 	rgb(140, 112, 169);
   width: 200px;
-  color:#685c7c;
+  color: var(--time-font-color);
   padding-top: .1em;
   margin: auto;
   break-inside: avoid;
@@ -712,10 +779,10 @@ section {
 
 #warning {
   width: 80%;
-  background-color: #e3d7e9;
+  background-color: #e3d7e9 !important;
   color: rgb(92, 63, 128);
   padding: 0;
-  box-shadow: 10px 10px rgba(131, 36, 131, 0.397);
+  box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
 }
 #warning h2 {
   color: #503281;
@@ -783,41 +850,36 @@ section {
 #gifControls { 
   text-align: center;
   padding-bottom: 2em;
+  background-color: transparent !important;
 }
 #gifControls button {
   font: inherit;
   text-transform: lowercase;
   margin-right: 1em;
-  background-color: pink;
-  border: 1px solid rgb(128, 69, 128);
+  background-color: var(--gif-controls-bg);
   padding: .5em;
   transition: all 0.5s;
   color:#210a42;
   letter-spacing: 0.05em;
   border-radius: 5px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 2px outset rgb(255, 189, 211);
-  outline: 1px solid purple;
+  border: 1px solid purple;
 }
 #gifControls button:hover {
-  background-color: rgb(255, 222, 151);
+  background-color: var(--gif-controls-hover-bg);
   transition: all 0.1s;
 }
 #gifControls button:active {
-  background-color: rgb(255, 255, 255);
-  border-bottom: none;
+  background-color: var(--gif-controls-active-bg);
   padding: .25em;
 }
 #gifControls button:focus {
-  background-color: rgb(248, 220, 248);
+  background-color: var(--gif-controls-focus-bg);
 }
 
 #webrings {
-  background-color: #f5ddff;
+  background-color: var(--web-rings-card);
   border-color: purple;
-  color: rgb(92, 39, 92);
+  color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
   max-width: 200px;
 }
@@ -839,7 +901,7 @@ section {
 }
 #webrings a {
   text-decoration: none;
-  color: rgb(122, 78, 180);
+  color: var(--web-rings-links);
 }
 #webrings a:hover {
   color: white;
@@ -858,7 +920,7 @@ section {
 #webrings > div {
   border: 1px solid rgb(167, 95, 177);
   padding: 5px;
-  background: rgb(255, 233, 251);
+  background: var(--web-rings-bg-light);
   margin-left: auto;
   margin-right: auto;
   min-width: 90%;
@@ -887,7 +949,7 @@ section {
   padding: 0;
 }
 
-#links {
+#links, #tipJar {
   max-width: 200px;
 }
 #links ul {
@@ -919,15 +981,15 @@ footer {
   padding-bottom: 2em;
   text-align: center;
   font-size: 1em;
-  color: rgb(97, 58, 97);
+  color: var(--footer-font);
   width: 50%;
   max-width: 500px;
 }
-@media all and (max-width:768px) {
-  footer {
-    width: 90%;
+  @media all and (max-width:768px) {
+    footer {
+      width: 90%;
+    }
   }
-}
 footer ul {
    list-style-type: none;
    padding-left: 0;
@@ -946,4 +1008,260 @@ footer li {
 }
 footer time {
   display: inline;
+}
+
+:root {
+  --page-bg-dark: rgb(13, 13, 14);
+  --page-border-dark: #503281;
+  --section-card-dark: hsl(255, 5%, 16%);
+  --dark-mode-links:  rgb(255, 192, 216);
+  --dark-mode-h: rgb(223, 154, 236);
+  --dark-button-bg: #463646;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--document-color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body, #webrings, #warning, .time, #notice, #webrings details p:first-of-type, footer {
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  :root {
+    --g1v5x3-title-color: white !important;
+  }
+  header nav {
+    border-color: #503281;
+  }
+  h1, header nav {
+    color: white;
+  }
+  h2, #idCard h2, #latestStatus h2, #lastPlayed h2, #warning h2, #siteUpdates h3 {
+    color: var(--dark-mode-h);
+  }
+  a, nav a, #webrings a {
+    color: var(--dark-mode-links);
+  }
+  a:hover {
+    color: white !important;
+  }
+  button:not(.notice-group-button) {
+    background-color: var(--dark-button-bg) !important;
+
+    color: rgb(230, 214, 236) !important;
+  }
+  button:not(.notice-group-button):hover {
+    background-color: #712357 !important;
+  }
+  button:not(.notice-group-button):active {
+    background-color: rgb(207, 102, 102) !important;
+    color: white !important;
+    transition: all .1s forwards !important;
+  }
+  button:not(.notice-group-button):focus {
+    background-color: #8b4f61;
+  }
+  .board {
+    background-color: var(--page-bg-dark); border-color: var(--page-border-dark);
+  }
+  .main-info, #webrings > div, #notice, .time, #lastPlayed, #idCard, #latestStatus, #webrings, #webrings details p:first-of-type, #warning {
+    background-color: var(--section-card-dark);
+  }
+  #statuscafe, #siteUpdates > ul, #buttonCode, #track, #speaker {
+    background-color: transparent;
+  }
+  #pretzel { border-color: transparent; outline-color: #805c33; }
+  .main-info {
+    box-shadow: 10px 10px rgba(128, 69, 128, .5);
+    border: 1px solid rgb(130, 99, 170);
+  }
+  #idCard { background-image: none; }
+  #idCardBiodata ul { background-color: transparent; }
+  .time {
+    border-bottom: 5px outset rgb(58, 58, 88);
+    border-right: 5px outset rgb(67, 67, 102);
+  }
+  #latestStatus { background-image: none; }
+  #lastPlayed {
+    border-bottom: 10px outset rgb(65, 77, 76);
+    border-right: 10px outset rgb(55, 63, 62);
+  }
+  #guestbookScroller { filter:invert(100%) hue-rotate(140deg); border-color: rgb(253, 190, 227);
+ }
+}
+
+.light-mode {
+  background-color: var(--document-color-light);
+  color: var(--font-color-light);
+}
+:root .light-mode{
+  --g1v5x3-title-color: var(--font-color-light);
+}
+.light-mode nav {
+  color: var(--font-color-light);
+}
+.light-mode h1 {
+  color: var(--h1-light);
+}
+.light-mode h2 {
+  color: var(--h2-light) !important;
+}
+.light-mode h3 {
+  color: var(--h3-light) !important;
+}
+.light-mode a {
+  color: var(--link-color-light) !important;
+}
+.light-mode a:hover {
+  color: white !important;
+}
+.light-mode #themeToggle {
+  background-color: #e3d7e9 !important;
+  color: purple !important;
+  border-color: #8e629b !important;
+}
+.light-mode #themeToggle:hover {
+  background-color: var(--theme-toggle-hover-bg) !important;
+  color: white !important;
+}
+.light-mode #notice {
+  background-color: var(--sticky-note-light) !important;
+  color: var(--sticky-note-font-light) !important;
+}
+.light-mode #pretzel {
+  border-color: white !important;
+}
+.light-mode .board {
+  background-color: var(--page-color-light) !important;
+}
+.light-mode .main-info {
+  background-color: var(--section-card-light) !important;
+  color: var(--font-color-light) !important;
+}
+.light-mode #siteUpdates > ul {
+  background-color: var(--site-updates-bg-light) !important;
+}
+.light-mode .time {
+  background-color: var(--time-bg);
+  color: var(--time-font-color);
+  border-bottom: var(--time-border-bottom);
+  border-right: var(--time-border-right);
+}
+.light-mode .clock {
+  color: mintcream;
+}
+.light-mode #statuscafe {
+  background-color: snow;
+}
+.light-mode #lastPlayed {
+  border-bottom: var(--last-played-border-bottom);
+  border-right: var(--last-played-border-right);
+  background-color: var(--last-played-bg) !important;
+}
+.light-mode #track {
+  background-color: linen;
+}
+.light-mode #spotifyHomepage {
+  background-color: var(--spotify) !important;
+}
+.light-mode #webrings {
+  background-color: var(--web-rings-card) !important;
+  color: var(--web-rings-font) !important;
+}
+.light-mode #webrings a {
+  color: var(--web-rings-links) !important;
+}
+.light-mode #webrings details p:first-of-type {
+  background-color: white;
+  color: var(--font-color-light);
+}
+.light-mode #webrings > div {
+  background-color: var(--web-rings-bg-light);
+}
+.light-mode #guestbookScroller {
+  filter: none;
+  border-color: gray;
+}
+.light-mode main button {
+  background-color: #f5e9f5 !important;
+  color: rgb(51, 44, 44) !important;
+}
+.light-mode main button:hover {
+  background-color: lightgoldenrodyellow !important;
+}
+.light-mode #gifControls button {
+  background-color: var(--gif-controls-bg) !important;
+  color: var(--gif-controls-font) !important;
+  border: var(--gif-controls-border)
+}
+.light-mode #gifControls button:hover {
+  background-color: var(--gif-controls-hover-bg) !important;
+}
+.light-mode #gifControls button:active {
+  background-color: var(--gif-controls-active-bg) !important;
+}
+.light-mode #gifControls button:focus {
+  background-color: var(--gif-controls-focus-bg) !important;
+}
+.light-mode footer {
+  color: var(--footer-font);
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.dark-mode a {
+  color: var(--dark-mode-links);
+}
+.dark-mode h1 {
+  color: white;
+}
+.dark-mode h2, .dark-mode h3 {
+  color: var(--dark-mode-h) !important;
+}
+.dark-mode .board {
+  background-color: var(--page-bg-dark); border-color: var(--page-border-dark);
+}
+.dark-mode nav {
+  border-color: #503281;
+}
+.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #warning {
+  background-color: var(--section-card-dark) !important;
+  color: white !important;
+}
+.dark-mode #warning {
+  box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
+}
+.dark-mode #idCard {
+  background-image: none;
+  background-color: inherit !important;
+}
+.dark-mode #idCard div, .dark-mode #idCard ul {
+  background-color: transparent !important;
+}
+.dark-mode .time {
+  border-bottom: 5px outset rgb(58, 58, 88);
+  border-right: 5px outset rgb(67, 67, 102);
+}
+.dark-mode #lastPlayed {
+  border-bottom: 10px outset rgb(65, 77, 76);
+  border-right: 10px outset rgb(55, 63, 62);
+}
+.dark-mode #spotifyHomepage {
+  background-color: var(--spotify) !important;
+}
+.dark-mode #pretzel {
+  border-color: transparent;
+}
+.dark-mode #guestbookScroller {
+  filter:invert(100%) hue-rotate(140deg); border-color: rgb(253, 190, 227);
+}
+.dark-mode footer {
+  color: white;
 }

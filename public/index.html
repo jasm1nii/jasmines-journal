@@ -16,37 +16,40 @@
     <link rel="pgpkey" href="0xF427FC36-pub.asc">
     <link href="https://github.com/jasm1nii" rel="me">
     <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
+
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </head>
   <body>
     
     <div id="loader"></div>
-    <script async src="assets/scripts/loader.js"></script>
+    <script src="assets/scripts/loader.js"></script>
 
     <div class="board">
       <header>
 
         <div>
-          <div><h1>jasmine's journal</h1></div>
-          <div style="margin-top: auto;">
-            <p>always a work in progress</p>
-          </div>
+          <h1>jasmine's journal</h1>
+          <button id="themeToggle" onclick="themeToggle()">
+            switch theme
+          </button>
         </div>
 
         <nav id="headernav">
+          <div ></div>
           <noscript>
             <ul>
-              <li><a href="site-map.html">site map</a></li>
-              <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+              <li>
+                <a href="site-map.html">site map</a>
+              </li>
+              <li>
+                <a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a>
+              </li>
           </ul>
           </noscript>
         </nav>
-        <script src="assets/scripts/headernav.js"></script>
-        <style>
-      #headernav ul li:first-child {
-        font-weight: 600;
-      }
-        </style>
-
+        
         <div class="notice-group">
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
             <div id="notice"></div>
@@ -58,8 +61,14 @@
               </p>
             </noscript>
         </div>
-
       </header>
+
+      <script src="assets/scripts/headernav.js"></script>
+      <style>
+        #headernav ul li:first-child {
+          font-weight: 600;
+        }
+      </style> 
       
       <main>
 
@@ -162,7 +171,6 @@
             <div class="main-info" id="lastPlayed">
               <div id="track">
                 <h2>
-                  <img src="https://i.gifer.com/5Btz.gif" width="15" style="margin-right: .25em;" alt="equalizer icon">
                   last played
                 </h2>
                   <p id="song">&#8987;</p>
@@ -304,7 +312,7 @@
 
           <!-- tip jar -->
           <section>
-            <div class="main-info" id="links">
+            <div class="main-info" id="tipJar">
               <h2 id="support">tip jar</h2>
               <div style="text-align: center;">
                 <p>

@@ -2,14 +2,15 @@ document.getElementById("loader").innerHTML = `loading contents...
 <style>
 #loader {
   text-align: center;
-  margin: auto;
   position: absolute;
-  width: 100%;
-  top: 50%;
+  width: 100vw;
+  min-height: 100vh;
   font-size: 1.5em;
   letter-spacing: .1em;
-  background: thistle;
-  color: indigo;
+  line-height: 50vh;
+  color: white;
+  background-color: rgba(83, 68, 117, 1);
+  top: 0;
 }
 </style>`;
 
@@ -18,9 +19,4 @@ window.addEventListener("load", function () {
   loader.style.display = "none";
 });
 
-//Fade out, optional
-var s = document.getElementById("loader").style;
-s.opacity = 1;
-(function fade() {
-  (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
-})();
+
