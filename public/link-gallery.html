@@ -27,11 +27,10 @@
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </head>
 
   <body>
-
+    
     <div id="loader"></div>
     <script src="assets/scripts/loader.js"></script>
 
@@ -45,7 +44,6 @@
             </button>
             <p>
               page contents updated
-              <br />
               <time datetime="2023-08-19">19 august 2023</time>
             </p>
           </div>
@@ -65,18 +63,15 @@
             </ul>
           </noscript>
         </nav>
-
-        
+        <script async src="assets/scripts/headernav.js"></script>
         
       </header>
-
-      <script src="assets/scripts/headernav.js"></script>
+      
       <style>
           #headernav ul li:nth-last-child(3) {
             font-weight: 600;
           }
       </style>
-      
 
       <main>
         <article>
@@ -267,6 +262,8 @@
                   style="text-align: center; margin-top: 1em; margin-bottom: 1em;">
                   <p>
                     join the community on <a href="https://32bit.cafe/discord/" rel="external">discord</a>!
+                    <br>
+                    (<b>18+ only</b>, SFW)
                   </p>
                   <a href="https://32bit.cafe/" rel="external"><img src="https://32bit.cafe/linktous/32b-neon.gif" alt="32-bit cafe"/></a>
                 </div>
@@ -463,9 +460,10 @@
         </ul>
       </noscript>
     </footer>
-    <script src="assets/scripts/footer.js"></script>
-
-    <script src="assets/scripts/freezeframe.min.js"></script>
+    
+    <script async src="assets/scripts/footer.js"></script>
+    <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
+    <script defer src="assets/scripts/freezeframe.min.js"></script>
 
   </body>
 </html>
