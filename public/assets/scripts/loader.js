@@ -24,6 +24,9 @@ document.getElementById("loader").innerHTML = `
 #loader div {
   margin-top: 40vh;
 }
+#loader span:last-of-type {
+  letter-spacing: 0;
+}
 </style>`;
 
 var loader = document.getElementById("loader");

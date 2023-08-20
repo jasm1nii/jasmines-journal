@@ -214,7 +214,7 @@ main {
 .page-columns {
    columns: 3;
    background-image: url(../media/main/ooorganize.svg);
-   background-size: 200px;
+   background-size: 200px !important;
    height: 100%;
    padding-top: 5%;
    padding-bottom: 5%;
@@ -652,7 +652,7 @@ section {
 #latestStatus {
   padding: 0;
   margin: auto;
-  background: url(../media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
+  background: url(/assets/media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
@@ -665,7 +665,7 @@ section {
 }
 #latestStatusMain {
   padding-top: 1em;
-  width: 100%;
+  width: 100% !important;
 }
 #latestStatusMain h2 {
   color: rgb(85, 63, 85);
@@ -681,11 +681,14 @@ section {
 /* custom main-info styles */
 #idCard {
   border: 1px solid rgb(183, 124, 189);
-  background: url(../media/main/bank-note.svg);
-  background-color: snow !important;
+  background: url(/assets/media/main/bank-note.svg);
+  background-color: snow;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   max-width: 200px;
   height: min-content;
+}
+#idCard div {
+  background-color: transparent !important;
 }
 #idCard a[rel="me"] {
   text-decoration: none;
@@ -704,9 +707,9 @@ section {
 }
 #idCardPFP {
   display: flex;
+  width: fit-content;
 }
 .flower-fill {
-  mix-blend-mode: multiply;
   margin-left: 10px;
   display: flex;
   flex-direction: column;
@@ -723,7 +726,7 @@ section {
   padding-right: 1em;
   padding-top: .5em;
   padding-bottom: .5em;
-  background-color: rgba(255, 255, 255, 0.479);
+  background-color: transparent !important;
 }
 #idCardBiodata li {
   display: flex;
@@ -1050,29 +1053,35 @@ footer time {
   a:hover {
     color: white !important;
   }
-  button:not(.notice-group-button) {
+  main button {
     background-color: var(--dark-button-bg) !important;
 
     color: rgb(230, 214, 236) !important;
   }
-  button:not(.notice-group-button):hover {
+  main button:hover {
     background-color: #712357 !important;
   }
-  button:not(.notice-group-button):active {
+  main button:active {
     background-color: rgb(207, 102, 102) !important;
     color: white !important;
     transition: all .1s forwards !important;
   }
-  button:not(.notice-group-button):focus {
+  main button:focus {
     background-color: #8b4f61;
   }
   .board {
     background-color: var(--page-bg-dark); border-color: var(--page-border-dark);
   }
-  .main-info, #webrings > div, #notice, .time, #lastPlayed, #idCard, #latestStatus, #webrings, #webrings details p:first-of-type, #warning {
+  .page-columns {
+    background: url(/assets/media/main/ooorganize-dark.svg);
+  }
+  .main-info, #webrings > div, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type, #warning {
     background-color: var(--section-card-dark);
   }
   #statuscafe, #siteUpdates > ul, #buttonCode, #track, #speaker {
+    background-color: transparent;
+  }
+  .button-gallery  {
     background-color: transparent;
   }
   #pretzel { border-color: transparent; outline-color: #805c33; }
@@ -1080,13 +1089,14 @@ footer time {
     box-shadow: 10px 10px rgba(128, 69, 128, .5);
     border: 1px solid rgb(130, 99, 170);
   }
-  #idCard { background-image: none; }
-  #idCardBiodata ul { background-color: transparent; }
+  #idCard { background-image: url(/assets/media/main/bank-note-dark.svg) !important; text-shadow: 0 0 5px black;}
   .time {
     border-bottom: 5px outset rgb(58, 58, 88);
     border-right: 5px outset rgb(67, 67, 102);
   }
-  #latestStatus { background-image: none; }
+  #latestStatusMain {
+    background: url(/assets/media/main/line-in-motion-dark.svg) rgb(52, 39, 58) !important;
+  }
   #lastPlayed {
     border-bottom: 10px outset rgb(65, 77, 76);
     border-right: 10px outset rgb(55, 63, 62);
@@ -1139,9 +1149,17 @@ footer time {
 .light-mode .board {
   background-color: var(--page-color-light) !important;
 }
+.light-mode .page-columns {
+  background: url(/assets/media/main/ooorganize.svg);
+}
 .light-mode .main-info {
   background-color: var(--section-card-light) !important;
   color: var(--font-color-light) !important;
+}
+.light-mode #idCard {
+  background: url(/assets/media/main/bank-note.svg) !important;
+  background-color: snow !important;
+  text-shadow: 0 0 5px white;
 }
 .light-mode #siteUpdates > ul {
   background-color: var(--site-updates-bg-light) !important;
@@ -1154,6 +1172,9 @@ footer time {
 }
 .light-mode .clock {
   color: mintcream;
+}
+.light-mode #latestStatusMain {
+  background: url(/assets/media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
 }
 .light-mode #statuscafe {
   background-color: snow;
@@ -1231,6 +1252,9 @@ footer time {
 .dark-mode nav {
   border-color: #503281;
 }
+.dark-mode .page-columns {
+  background: url(/assets/media/main/ooorganize-dark.svg);
+}
 .dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #warning {
   background-color: var(--section-card-dark) !important;
   color: white !important;
@@ -1239,11 +1263,9 @@ footer time {
   box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
 }
 .dark-mode #idCard {
-  background-image: none;
-  background-color: inherit !important;
-}
-.dark-mode #idCard div, .dark-mode #idCard ul {
-  background-color: transparent !important;
+  background-image: url(/assets/media/main/bank-note-dark.svg);
+  background-color: var(--section-card-dark);
+  text-shadow: 0 0 5px black;
 }
 .dark-mode .time {
   border-bottom: 5px outset rgb(58, 58, 88);
