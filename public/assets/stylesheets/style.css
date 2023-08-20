@@ -39,6 +39,7 @@
   --theme-toggle-focus-bg: #a175c5;
   --g1v5x3-background-color: transparent !important;
   --g1v5x3-title-color: var(--font-color-light) !important;
+  --button-code-txt: rgb(255, 244, 244);
   --gif-controls-bg: pink;
   --gif-controls-hover-bg: rgb(255, 222, 151);
   --gif-controls-active-bg: rgb(238, 226, 235);
@@ -800,52 +801,52 @@ section {
   padding-right: 1.5em;
   padding-bottom: .5em;
 }
-#buttonSection {
+#buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: .5em;
   width: 90%;
   max-width: 320px;
 }
-#buttonSection h2, #buttonSection p {
+#buttonSection h2, #buttonSection p, #mutualsButtonSection h2, #mutualsButtonSection p, #cafeButtonSection h2, #cafeButtonSection p, #mybuttonSection h2, #mybuttonSection p {
   padding-left: 1em;
   padding-right: 1em;
 }
-#buttonSection p {
+#buttonSection p, #mutualsButtonSection p, #cafeButtonSection p {
   text-align: center;
+}
+#mybuttonSection {
+  max-width: 250px;
 }
 #buttonCode { /* button textarea */
   word-wrap: break-word;
   height: 80px;
   overflow: auto;
-  font-size:12px;
   padding: 5px 10px 5px 10px;
   border: 1px solid gray;
   text-align: left;
   resize: vertical;
   width: 80%;
   margin: auto;
-  margin-bottom: 15px;
-  background-color: rgb(255, 244, 244);
+  background-color: var(--button-code-txt);
 }
 .button-gallery {
-  margin-top: 10px;
+  margin-top: .75em;
+  margin-bottom: .75em;
   text-align: center;
-}
-#buttonSection summary {
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: .5em;
+  background-color: transparent !important;
+  border-radius: inherit !important;
+  padding-top: .25em; padding-bottom: .25em;
+  max-height: 200px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 #bitcafe::before {
   content: '☕';
   margin-right: .5em;
 }
 
-#notNeo::before {
-  content: '🪐';
-  margin-right: .5em;
-}
 .ff-container.ff-responsive {
   max-width: 88px;
 }
@@ -864,7 +865,7 @@ section {
   color:#210a42;
   letter-spacing: 0.05em;
   border-radius: 5px;
-  border: 1px solid purple;
+  border: var(--gif-controls-border);
 }
 #gifControls button:hover {
   background-color: var(--gif-controls-hover-bg);
@@ -919,9 +920,9 @@ section {
 #webrings hr {
   margin-top: 1em;
 }
-#webrings > div {
+#webringsList {
   border: 1px solid rgb(167, 95, 177);
-  padding: 5px;
+  padding: .5em;
   background: var(--web-rings-bg-light);
   margin-left: auto;
   margin-right: auto;
@@ -929,13 +930,13 @@ section {
   overflow: auto;
   max-height: 200px;
 }
-#webrings > div h3 {
+#webringsList h3 {
   text-align: center;
   padding: 0;
   padding-top: .5em;
   margin: 0;
 }
-#webrings h3 + p {
+#webringsList p {
   margin-top: 0.25em;
   font-size: 0.9em;
 }
@@ -951,21 +952,24 @@ section {
   padding: 0;
 }
 
-#links, #tipJar {
+#links, #tipJar, #inboxlinks {
   max-width: 200px;
 }
-#links ul {
+#links ul, #inboxlinks ul {
   list-style: none;
   padding: 5px;
   margin: 0;
 }
-#links li {
-  padding: 5px;
+#links li, #inboxlinks li {
+  padding: .4em;
   display: flex;
 }
-#links li:before {
+#links li:before, #inboxlinks li:before {
    content: "🔗";
-   margin-right: 10px;
+   margin-right: .75em;
+}
+#tipJarButtons {
+  text-align: center;
 }
 
 #guestbookScroller {
@@ -1226,7 +1230,7 @@ footer time {
   background-color: white;
   color: var(--font-color-light);
 }
-.light-mode #webrings > div {
+.light-mode #webringsList {
   background-color: var(--web-rings-bg-light);
 }
 .light-mode #guestbookScroller {
@@ -1253,6 +1257,9 @@ footer time {
 }
 .light-mode #gifControls button:focus {
   background-color: var(--gif-controls-focus-bg) !important;
+}
+.light-mode #buttonCode {
+  background-color: var(--button-code-txt);
 }
 .light-mode footer {
   color: var(--footer-font);
