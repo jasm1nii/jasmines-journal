@@ -22,7 +22,10 @@
   --last-played-bg: #b8dce0;
   --last-played-border-right: 10px outset rgb(189, 235, 232);
   --last-played-border-bottom: 10px outset rgb(155, 211, 207);
+  --last-played-shadow: 10px 10px rgba(98, 136, 194, 0.5);
+  --last-played-outline: 1px solid rgb(125, 143, 137);
   --spotify: rgb(173, 41, 173);
+  --spotify-shadow: 10px 10px rgba(128, 0, 128, 0.5);
   --web-rings-card: #f5ddff;
   --web-rings-font: rgb(92, 39, 92);
   --web-rings-links: rgb(122, 78, 180);
@@ -36,7 +39,6 @@
   --theme-toggle-focus-bg: #a175c5;
   --g1v5x3-background-color: transparent !important;
   --g1v5x3-title-color: var(--font-color-light) !important;
-  --g1v5x3-link-color: rgb(170, 63, 170) !important;
   --gif-controls-bg: pink;
   --gif-controls-hover-bg: rgb(255, 222, 151);
   --gif-controls-active-bg: rgb(238, 226, 235);
@@ -100,7 +102,7 @@ a {
 a:hover {
   background-color: palevioletred;
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 /* animations */
@@ -553,7 +555,7 @@ section {
   height: 200px;
   overflow: auto;
   overflow-x: hidden;
-  box-shadow: 10px 10px rgba(128, 0, 128, 0.5) !important;
+  box-shadow: var(--spotify-shadow) !important;
   background-color: var(--spotify);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -562,10 +564,10 @@ section {
 #lastPlayed {
   max-width: 200px;
   background-color: var(--last-played-bg);
-  outline: 1px solid rgb(125, 143, 137);
+  outline: var(--last-played-outline);
   text-align: center;
   padding-bottom: 0;
-  box-shadow: 10px 10px rgba(98, 136, 194, 0.5) !important;
+  box-shadow: var(--last-played-shadow);
   border-top: none;
   border-left: none;
   border-bottom: var(--last-played-border-bottom);
@@ -638,9 +640,6 @@ section {
 #statuscafe div:last-child {
   margin-top: 1em;
   text-align: center;
-}
-#statuscafe a {
-  text-decoration: none;
 }
 #statuscafe-username {
   margin-bottom: .5em;
@@ -907,7 +906,7 @@ section {
   color: var(--web-rings-links);
 }
 #webrings a:hover {
-  color: white;
+  color: white !important;
 }
 #webrings summary {
   margin-left: -2em;
@@ -1020,11 +1019,21 @@ footer time {
   --dark-mode-links:  rgb(255, 192, 216);
   --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
+  --last-played-dark-bg: rgb(63, 85, 85);
+  --last-played-dark-r-border: 10px outset rgb(77, 90, 88);
+  --last-played-dark-b-border: 10px outset rgb(40, 44, 44);
+  --last-played-dark-shadow: 10px 10px rgba(53, 90, 146, 0.5);
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background-color: var(--document-color-light);
+  }
+  :root {
+    --g1v5x3-link-color: rgb(146, 53, 146) !important;
+  }
+  #webrings a:hover {
+    color: white !important;
   }
 }
 
@@ -1075,10 +1084,10 @@ footer time {
   .page-columns {
     background: url(/assets/media/main/ooorganize-dark.svg);
   }
-  .main-info, #webrings > div, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type, #warning {
+  .main-info, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type, #warning {
     background-color: var(--section-card-dark);
   }
-  #statuscafe, #siteUpdates > ul, #buttonCode, #track, #speaker {
+  #statuscafe, #siteUpdates > ul, #buttonCode, #track {
     background-color: transparent;
   }
   .button-gallery  {
@@ -1089,7 +1098,9 @@ footer time {
     box-shadow: 10px 10px rgba(128, 69, 128, .5);
     border: 1px solid rgb(130, 99, 170);
   }
-  #idCard { background-image: url(/assets/media/main/bank-note-dark.svg) !important; text-shadow: 0 0 5px black;}
+  #idCard {
+    background-image: url(/assets/media/main/bank-note-dark.svg) !important; text-shadow: 0 0 5px black;
+  }
   .time {
     border-bottom: 5px outset rgb(58, 58, 88);
     border-right: 5px outset rgb(67, 67, 102);
@@ -1098,10 +1109,20 @@ footer time {
     background: url(/assets/media/main/line-in-motion-dark.svg) rgb(52, 39, 58) !important;
   }
   #lastPlayed {
-    border-bottom: 10px outset rgb(65, 77, 76);
-    border-right: 10px outset rgb(55, 63, 62);
+    background-color: var(--last-played-dark-bg) !important;
+    border-bottom: var(--last-played-dark-b-border);
+    border-right: var(--last-played-dark-r-border);
+    box-shadow: var(--last-played-dark-shadow) !important;
   }
-  #guestbookScroller { filter:invert(100%) hue-rotate(140deg); border-color: rgb(253, 190, 227);
+  #speaker {
+    background-color: var(--last-played-dark-bg) !important;
+  }
+  #speaker div {
+    background-color: transparent !important;
+  }
+  #guestbookScroller {
+    filter:invert(100%) hue-rotate(140deg);
+    border-color: rgb(253, 190, 227);
  }
 }
 
@@ -1111,6 +1132,7 @@ footer time {
 }
 :root .light-mode{
   --g1v5x3-title-color: var(--font-color-light);
+  --g1v5x3-link-color: rgb(160, 47, 160);
 }
 .light-mode nav {
   color: var(--font-color-light);
@@ -1180,12 +1202,15 @@ footer time {
   background-color: snow;
 }
 .light-mode #lastPlayed {
-  border-bottom: var(--last-played-border-bottom);
-  border-right: var(--last-played-border-right);
+  border-bottom: var(--last-played-border-bottom) !important;
+  border-right: var(--last-played-border-right) !important;
   background-color: var(--last-played-bg) !important;
 }
 .light-mode #track {
   background-color: linen;
+}
+.light-mode #speaker {
+  background-color: var(--last-played-bg) !important;
 }
 .light-mode #spotifyHomepage {
   background-color: var(--spotify) !important;
@@ -1195,7 +1220,7 @@ footer time {
   color: var(--web-rings-font) !important;
 }
 .light-mode #webrings a {
-  color: var(--web-rings-links) !important;
+  color: var(--web-rings-links);
 }
 .light-mode #webrings details p:first-of-type {
   background-color: white;
@@ -1233,11 +1258,15 @@ footer time {
   color: var(--footer-font);
 }
 
+:root .dark-mode {
+  --g1v5x3-link-color: rgb(230, 80, 230);
+  --g1v5x3-title-color: white;
+}
 .dark-mode {
   background-color: black;
   color: white;
 }
-.dark-mode a {
+.dark-mode a, .dark-mode #webrings a {
   color: var(--dark-mode-links);
 }
 .dark-mode h1 {
@@ -1255,7 +1284,7 @@ footer time {
 .dark-mode .page-columns {
   background: url(/assets/media/main/ooorganize-dark.svg);
 }
-.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #warning {
+.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #warning, .dark-mode #webrings details p {
   background-color: var(--section-card-dark) !important;
   color: white !important;
 }

@@ -20,7 +20,7 @@ document.getElementById("vocaring").innerHTML = `
 #vocaring {
     width: 150px;
     margin: 10px auto;
-    background-color: #dbfcff;
+    background-color: #dbfcff !important;
     border: 2px solid #34f2ff;
 }
 #vocaring a:hover {
@@ -34,24 +34,26 @@ document.getElementById("vocaring").innerHTML = `
 #vocaring .webring-info {
     text-align: center;
     font-family: 'Tektur', cursive;
-    color: #b300b3;
+    color: #b300b3 !important;
     font-size:20px;
+    background-color: transparent !important;
 }
 
-#vocaring .webring-links{
+#vocaring .webring-links {
     font-size: .9em;
     font-family: 'Tektur', cursive;
     text-transform: lowercase;
-    color:#ac3973;
+    color:#ac3973 !important;
+    background-color: transparent !important;
 }
 
-#vocaring .webring-links a{
+#vocaring .webring-links a {
     text-decoration: none;
-    color: #66449C;
+    color: #66449C !important;
     transition: 0.3s;
 }
 
-#vocaring .webring-links a:hover{
+#vocaring .webring-links a:hover {
     letter-spacing: normal;
 }
 
