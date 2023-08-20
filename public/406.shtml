@@ -5,19 +5,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oops</title>
+    <title>???</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
 
   <body>
     <main>
-      <h1>404 - page not found</h1>
-      <p>
-        uh oh spaghettio's!
-      </p>
-      <p>
-        this page does not exist or has moved to a new URL - try checking the site map.
-      </p>
+      <h1>406 - not acceptable</h1>
       <nav>
         <a href="/index.html">go back home</a>
         <br>

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oops</title>
+    <title>slurrp</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
 
   <body>
     <main>
-      <h1>404 - page not found</h1>
+      <h1>418 - i'm a teapot</h1>
       <p>
-        uh oh spaghettio's!
-      </p>
-      <p>
-        this page does not exist or has moved to a new URL - try checking the site map.
+        🍵
       </p>
       <nav>
         <a href="/index.html">go back home</a>

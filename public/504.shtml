@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oops</title>
+    <title>woof</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
 
   <body>
     <main>
-      <h1>404 - page not found</h1>
-      <p>
-        uh oh spaghettio's!
-      </p>
-      <p>
-        this page does not exist or has moved to a new URL - try checking the site map.
-      </p>
+      <h1>504 - gateway timeout</h1>
+      <p>can't fix this on my end, sorry</p>
       <nav>
         <a href="/index.html">go back home</a>
         <br>

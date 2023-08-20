@@ -5,18 +5,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oops</title>
+    <title>hold it right there!!</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
 
   <body>
     <main>
-      <h1>404 - page not found</h1>
+      <h1>402 - payment required</h1>
       <p>
-        uh oh spaghettio's!
-      </p>
-      <p>
-        this page does not exist or has moved to a new URL - try checking the site map.
+        please complete your transaction before proceeding 💸
       </p>
       <nav>
         <a href="/index.html">go back home</a>
