@@ -5,14 +5,13 @@
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;
-    --bg-color-1: rgb(219, 202, 219);
+    --bg-color-1: rgb(47, 44, 63);
     --bg-color-2: rgba(250, 247, 255, .7);
 }
 
 * {
     font-family: var(--font-1);
 }
-
 @keyframes fadeInPage {
     0% {
         opacity: 0;
@@ -20,8 +19,26 @@
     100% {
         opacity: 1;
     }
-  }
-  
+}
+.background {
+    opacity: 0;
+    animation: fadeInPage .5s forwards;
+    animation-delay: .75s;
+}
+.loader {
+    text-align: center;
+    margin: auto;
+    margin-top: 40vh;
+    color: white;
+    letter-spacing: .1em;
+}
+article {
+    opacity: 0;
+    animation: fadeInPage .5s forwards;
+    animation-delay: 1s;
+    max-width: 400px;
+}
+
 a {
     background-color: transparent;
     color: darkmagenta;
@@ -116,19 +133,23 @@ html {
     text-rendering: geometricPrecision;
 }
 
+.background {
+    background: url(pexels-lara-wehbe-6564097.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
 body {
     background-color: var(--bg-color-1);
-    background: url(pexels-lara-wehbe-6564097.jpg);
     background-size: 100%;
     color: rgb(63, 19, 63);
     font-size: 1em;
     min-width: 50%;
     max-width: 500px;
     margin: auto;
-    animation: fadeInPage 1s forwards;
-    }
-    @media all and (max-width:768px) { 
-        body { background-size: 1000px;}
     }
     article {
         margin-top: 10%;
@@ -195,7 +216,7 @@ main {
     padding-right: 25px;
     padding-bottom: 25px;
 }
-main::after {
+article::after {
     content: '✩₊˚.⋆☾⋆⁺₊✧*:･ﾟ';
     color: white;
     text-align: center;
