@@ -20,11 +20,6 @@
         opacity: 1;
     }
 }
-.background {
-    opacity: 0;
-    animation: fadeInPage .5s forwards;
-    animation-delay: .75s;
-}
 .loader {
     text-align: center;
     margin: auto;
@@ -35,7 +30,7 @@
 article {
     opacity: 0;
     animation: fadeInPage .5s forwards;
-    animation-delay: 1s;
+    animation-delay: .5s;
     max-width: 400px;
 }
 
@@ -49,6 +44,7 @@ a {
     background-color: rgb(125, 71, 146);
     color: white;
     }
+    
 button {
   cursor: pointer;
   background-color: rgb(255, 242, 252);
