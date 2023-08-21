@@ -8,7 +8,7 @@ on:
       - master
     # only run deploys when public changes
     paths:
-      - 'public_mirror/**'
+      - 'public_splash/**'
 
 jobs:
   deploy:
@@ -22,4 +22,4 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true
-        dist_dir: public_mirror
+        dist_dir: public_splash
