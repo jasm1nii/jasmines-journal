@@ -102,6 +102,9 @@ header {
     max-width: 12em;
     margin-left: 1em;
     letter-spacing: .05em;
+    position: sticky;
+    top: 5%;
+    align-self: flex-start;
 }
     @media all and (max-width:768px) {
         header {
@@ -109,6 +112,7 @@ header {
             margin-left: auto;
             margin-right: auto;
             margin-top: 5%;
+            position: relative;
         }
     }
 header > div {
@@ -118,13 +122,14 @@ header > div {
     padding-left: 1em;
     padding-right: 1em;
 }
-    @media all and (max-width:768px) {
-        #themeToggle {
-            height: fit-content;
-        }
-    }
+
+#themeToggle {
+    height: fit-content;
+    width: fit-content;
+}
+
 header h1 {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 header time {
     font-weight: 600;
@@ -160,11 +165,20 @@ header nav {
         content: "✧";
         margin-right: .5em;
     }
-    
     header nav a {
         text-decoration: none;
         padding: 0px 5px 3px 5px;
     }
+    
+    header nav ul ul li::before {
+        content: '⟶';
+    }
+        @media all and (max-width:768px) {
+            header nav ul ul {
+                display: inline;
+                padding-left: 0;
+            }
+        }
 
 footer .subpage-nav {
     justify-content: space-between;

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jasmine's journal - change log</title>
-    <link rel="icon" type="image/x-icon" href="itchio-textless-white.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-    <link href="../../assets/stylesheets/style-2.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/stylesheets/style-2.css" rel="stylesheet" type="text/css" media="all">
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">   
@@ -18,25 +18,45 @@
             <header>
                 <h1>jasmine's journal</h1>
                 <p class="site-update">
-                    page contents updated <time datetime="2023-08-20">20 august 2023</time>
+                    page contents updated <time datetime="2023-08-21">21 august 2023</time>
                 </p>
                 <nav>
-                    <ul>
-                        <li><a href="../../">home</a></li>
-                        <li><a href="../">about</a>
-                            <ul>
-                                <b><li><a href="/about/changelog">change log</a></li></b>
-                            </ul>
-                        </li>
-                        <li><a href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-                    </ul>
+                    <div id="headernav"></div>
+                    <noscript>
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li><a href="/about">about</a>
+                                <ul>
+                                    <b><li><a href="/about/changelog">change log</a></li></b>
+                                </ul>
+                            </li>
+                            <li><a href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+                        </ul>
+                    </noscript>
                 </nav>
             </header>
         </div>
 
+        <script src="/assets/scripts/headernav.js"></script>
+        <script>
+            const changelogSubpage = document.querySelector('#headernav ul li:nth-child(2)');
+
+            changelogSubpage.insertAdjacentHTML(
+            'afterend',
+            '<ul><li><a href="/about/changelog">change log</a></li></ul>',
+            );
+        </script>
+        <style>
+            #headernav ul:nth-child(3) {
+                font-weight: 600;
+            }
+        </style>
+
         <div>
             <main>
-                <nav><p><a href="../">⟵ return to "about" page</a></p></nav>
+                <nav>
+                    <p><a href="/about/">⟵ return to "about" page</a></p>
+                </nav>
                 <section>
                         <h2 id="changelog">change log</h2>
                         <nav id="archiveNav">
@@ -80,12 +100,10 @@
 
                 </section>
 
-                <section>
-                        <h2 id="report">report a problem</h2>
-                        <p>you can <a href="mailto:jasm1nii@proton.me" rel="me">let me know via email</a> if you spot anything else!</p>
-                </section>
             </main>
             <footer>
+                <div id="footer"></div>
+                <noscript>
                     <p>
                         site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
                         <br><br>
@@ -93,11 +111,13 @@
                     </p>
                     <ul>
                         <li><time>2023</time> - until hell freezes over</li>
-                        <li><a href="">jasm1nii@proton.me</a></li>
-                        <li><a href="../../site-map.html">site map</a></li>
-                        <li><a href="../credits.html">credits</a></li>
+                        <li><a href="mailto:jasm1nii@proton.me">jasm1nii@proton.me</a></li>
+                        <li><a href="/site-map.html">site map</a></li>
+                        <li><a href="/credits.html">credits</a></li>
                     </ul>
+                </noscript>
             </footer>
+            <script src="/assets/scripts/footer.js"></script>
         </div>
 
     </div> <!-- .layout END -->

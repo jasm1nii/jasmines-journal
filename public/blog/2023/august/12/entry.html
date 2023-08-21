@@ -36,15 +36,35 @@
     <meta name="keywords" content="blog" />
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="layout">
       <header>
         <div>
-          <button id="themeToggle" onclick="themeToggle()">switch theme</button>
-          <noscript><small>unavailable</small></noscript>
+          <button id="themeToggle" onclick="themeToggle()">
+            switch theme
+          </button>
+          <noscript>
+            <small>unavailable</small>
+          </noscript>
+          <h1>b(rain)log entry</h1>
         </div>
+        <nav>
+          <div id="headernav"></div>
+        </nav>
       </header>
+      <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+      <script src="/assets/scripts/headernav.js"></script>
+      <script>
+        const changelogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
+
+        changelogSubpage.insertAdjacentHTML(
+        'afterend',
+        '<ul><li>2023 / august / 12</li></ul>',
+        );
+      </script>
       <main>
         <article class="entry">
           <h2>bye neocities</h2>
@@ -75,14 +95,13 @@
     </div>
     <footer>
       <nav class="subpage-nav">
-        <a href="../../../">return to blog index</a> |
-        <a href="../../../../site-map.html">site map</a> |
+        <a href="/blog/">return to blog index</a> |
+        <a href="/site-map.html">site map</a> |
         <a href="mailto:jasm1nii@proton.me" rel="author me external"
           >jasm1nii@proton.me</a
         >
       </nav>
     </footer>
 
-    <script src="../../../../assets/scripts/dark-light-toggle.js"></script>
   </body>
 </html>

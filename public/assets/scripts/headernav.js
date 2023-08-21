@@ -7,7 +7,7 @@ document.getElementById("headernav").innerHTML =`
     <li>🔨 <del>shrines</del></li>
     <li>🔨 <del>art</del></li>
     <li><a href="/resources">resources</a></li>
-    <li><a href="link-gallery.html">link gallery</a></li>
+    <li><a href="/link-gallery.html">link gallery</a></li>
     <li><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
 </ul>
 `;

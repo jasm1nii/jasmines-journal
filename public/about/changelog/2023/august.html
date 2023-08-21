@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>jasmine's journal - change log</title>
-        <link rel="icon" type="image/x-icon" href="../../../assets/media/itchio-textless-white.svg">
+        <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
         <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-        <link href="../../../assets/stylesheets/style-2.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/assets/stylesheets/style-2.css" rel="stylesheet" type="text/css" media="all">
         <!-- GoatCounter analytics -->
         <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
         <meta name="description" content="the personal sandbox of a multifaceted internet creative">
@@ -21,16 +21,50 @@
                 <header>
                     <h1>jasmine's journal</h1>
                     <p class="site-update">
-                        page contents updated <time datetime="2023-08-20">20 august 2023</time>
+                        page contents updated <time datetime="2023-08-21">21 august 2023</time>
                     </p>
+                    <nav>
+                        <div id="headernav"></div>
+                        <noscript>
+                            <ul>
+                                <li>
+                                    <a href="/index.html">home</a>
+                                </li>
+                                <li>
+                                    <a href="/about/index.html">about</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/about/changelog/index.html">change log</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </noscript>
+                    </nav>
                 </header>
+
+                <script src="/assets/scripts/headernav.js"></script>
+                <script>
+                    const changelogSubpage = document.querySelector('#headernav ul li:nth-child(2)');
+
+                    changelogSubpage.insertAdjacentHTML(
+                    'afterend',
+                    '<ul><li><a href="/about/changelog">change log</a> / <b>august 2023</b></li></ul>',
+                    );
+                </script>
             </div>
 
             <div>
                 <main>
                     <article>
                         <h2>change log</h2>
-                        <nav><a href="../">return to change log index</a></nav>
+
+                        <section>
+                            <h3><time datetime="2023-08-20">20 august 2023</time></h3>
+                            <ul>
+                                <li>theme adjustments</li>
+                                <li>miscellaneous code cleanup and text edits</li>
+                        </section>
 
                         <section>
                             <h3><time datetime="2023-08-19">19 august 2023</time></h3>
@@ -265,14 +299,15 @@
 
                 <footer>
                     <nav>
-                        <a href="../">⟵ return to change log index</a>
+                        <a href="/about/changelog/">⟵ return to change log index</a>
                     </nav>
+                    <div id="footer"></div>
                 </footer>
 
             </div>
         </div>
 
-    <script async src="footer.js"></script>
+    <script async src="/assets/scripts/footer.js"></script>
     </body>
 
 </html>

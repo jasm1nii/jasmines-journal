@@ -1,10 +1,6 @@
 document.getElementById("loader").innerHTML = `
 <div>
   <span>loading contents...</span>
-  <br>
-  <span>
-    <small>(refresh if it's taking too long)</span>
-  </span>
 </div>
 <style>
 #loader {

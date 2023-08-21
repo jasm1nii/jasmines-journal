@@ -348,7 +348,7 @@ footer {
     font-size: smaller;
     margin-top: 3em;
     margin-bottom: 5em;
-    width: 70%;
+    max-width: 500px;
     letter-spacing: .05em;
     border-top: 1px solid;
     }

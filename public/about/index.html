@@ -12,6 +12,8 @@
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <meta name="description" content="the personal sandbox of an indonesian-based artist">
     <meta name="robots" content="noindex">
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,20 +22,37 @@
             <header>
                 <h1>jasmine's journal</h1>
                 <p class="site-update">
-                    page contents updated <time datetime="2023-08-18">18 august 2023</time>
+                    page contents updated <time datetime="2023-08-21">21 august 2023</time>
                 </p>
                 <nav>
-                    <ul>
-                        <li><a href="../">home</a></li>
-                        <li><b><a href="/about">about</a></b>
-                            <ul>
-                                <li><a href="/about/changelog">change log</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-                    </ul>
+                    <div id="headernav"></div>
+                    <noscript>
+                        <ul>
+                            <li><a href="/index.html">home</a></li>
+                            <li><b><a href="/about">about</a></b>
+                                <ul>
+                                    <li><a href="/about/changelog">change log</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+                        </ul>
+                    </noscript>
                 </nav>
             </header>
+            <script src="/assets/scripts/headernav.js"></script>
+            <style>
+                header nav ul li:nth-child(2) {
+                    font-weight: 600;
+                }
+            </style>
+            <script>
+                const changelogSubpage = document.querySelector('#headernav ul li:nth-child(2)');
+
+                changelogSubpage.insertAdjacentHTML(
+                'afterend',
+                '<ul><li><a href="/about/changelog">change log</a></li></ul>',
+                );
+            </script>
         </div>
         <div>
             <main class="main-2">
@@ -161,7 +180,7 @@
             </main>
 
             <footer id="footer">
-                <script src="../assets/scripts/footer-level2.js"></script>
+                <script src="/assets/scripts/footer.js"></script>
                 <noscript>
                     <p>
                     site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>

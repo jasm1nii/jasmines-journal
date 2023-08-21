@@ -33,6 +33,8 @@
     />
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="layout">
@@ -40,22 +42,27 @@
             <button id="themeToggle" onclick="themeToggle()">
                 switch theme
             </button>
+            <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
             <noscript><small>unavailable</small></noscript>
             <h1>jasmine's resources</h1>
             <p>
                 page contents updated
-                <time datetime="2023-08-19">19 august 2023</time>
+                <time datetime="2023-08-21">21 august 2023</time>
             </p>
             <nav>
-                <ul>
-                    <li><a href="../../">home</a></li>
-                    <li><a href="../../site-map.html">site map</a></li>
-                </ul>
+                <div id="headernav"></div>
+                <script src="/assets/scripts/headernav.js"></script>
+                <noscript>
+                    <ul>
+                        <li><a href="/">home</a></li>
+                        <li><a href="/site-map.html">site map</a></li>
+                    </ul>
+                </noscript>
             </nav>
         </header>
         <main>
             <nav>
-                <a href="../index.html">return to resources index</a>
+                <a href="/resources/">return to resources index</a>
             </nav>
             <article>
                 <section>
@@ -137,11 +144,17 @@
                         </p>
 
                         <section>
-                            <h4>HTML</h4>
+                            <h4>HTML & javascript</h4>
                             <section>
                                 <dl>
                                     <dt><a href="https://www.maxlaumeister.com/pagecrypt/">page crypt</a> 👑</dt>
                                     <dd>password protect your static HTML files - great for restricting access to private pages!</dd>
+                                    <dt><a href="https://zonelets.net/">zonelets</a></dt>
+                                    <dd>a blogging engine designed for neocities, but can technically be used on any static site</dd>
+                                    <dt><a href="https://github.com/Graycot/Oring">oring</a></dt>
+                                    <dd>open source web ring template</dd>
+                                    <dt><a href="https://github.com/MaxLaumeister/collectibles.js">collectibles.js</a></dt>
+                                    <dd>add an item collection game to your website!</dd>
                                 </dl>
                             </section>
                         </section>
@@ -164,17 +177,6 @@
                             </section>
                         </section>
 
-                        <section>
-                            <h4>javascript</h4>
-                            <section>
-                                <dl>
-                                    <dt><a href="https://github.com/Graycot/Oring">oring</a></dt>
-                                    <dd>open source web ring template</dd>
-                                    <dt><a href="https://github.com/MaxLaumeister/collectibles.js">collectibles.js</a></dt>
-                                    <dd>add an item collection game to your website!</dd>
-                                </dl>
-                            </section>
-                        </section>
                     </section>
 
                     <section>
@@ -182,7 +184,7 @@
                         <section>
                             <dl>
                                 <dt><a href="https://matthiasott.com/notes/good-riddance-gptbot">how to deter chatGPT from scraping your site</a> 👑</dt>
-                                <dt>guestbooks and comment boxes</dt>
+                                <dt><b>guestbooks and comment boxes</b></dt>
                                 <dd>
                                     <details>
                                         <summary>expand section (5 entries)</summary>
@@ -264,6 +266,5 @@
     </div>
     <footer>
     </footer>
-    <script src="../../assets/scripts/dark-light-toggle.js"></script>
   </body>
 </html>

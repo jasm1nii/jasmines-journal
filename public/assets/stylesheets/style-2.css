@@ -319,12 +319,16 @@ article > nav a::before {
   display: block;
 }
 header nav ul {
-  padding-top: 1.5em;
+  padding: 1em;
 }
 header nav ul li ul {
   border: none;
+  padding-bottom: 0;
 }
-header nav li::before {
+header nav ul li ul li {
+  padding-bottom: 0;
+}
+header nav ul li::before {
   content:'୨୧';
   margin-right: .5em;
 }
@@ -334,6 +338,14 @@ header nav ul:first-child {
   padding: 1em;
   color: rgb(76, 15, 95);
 }
+header nav ul:nth-child(3) {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 1em;
+}
+header nav ul:nth-child(3) li::before {
+  content: '⟶';
+}
 nav li {
   display: block;
   padding-bottom: 1em;
@@ -341,8 +353,6 @@ nav li {
 nav a {
   text-decoration: none;
   color: purple;
-  padding: 0px 5px 0px 5px;
-  margin-left: -5px;
 }
 #archiveNav li {
   margin-right: 0;
@@ -360,7 +370,7 @@ nav a {
     flex-wrap: wrap;
     border: none;
   }
-  nav li {
+  nav ul li {
     margin-right: 1em;
     display: inline;
     flex-direction: row;
@@ -373,7 +383,18 @@ nav a {
     content: '⟶ [';
     padding-right: .25em;
   }
-  header nav li ul li:last-child:after {
+  header nav ul:nth-child(2) li::before {
+    content: none;
+  }
+  header nav ul:nth-child(2) li {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  header nav ul:nth-child(3) {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  header nav ul:nth-child(3) li:last-child:after {
     content: ']';
     padding-left: .25em;
     font-weight: normal;
@@ -459,8 +480,8 @@ section > details summary {
 }
 
 footer {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2em;
+  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;
@@ -468,6 +489,13 @@ footer {
   font-size: 14px;
   color: rgb(97, 58, 97);
   width: 90%;
+}
+footer nav {
+  border-bottom: 1px solid rgb(177, 137, 177);
+  padding-bottom: 1em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer ul {
