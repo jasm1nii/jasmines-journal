@@ -13,7 +13,14 @@ document.querySelector("#footer").innerHTML =`
     <li><a href="/credits.html">credits</a></li>
     <li>🔨 <del>accessibility</del></li>
     <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a> at <a href="https://jasm1nii.xyz/" rel="me">jasm1nii.xyz</a></li>
-    <li><a href="https://indieweb.org/">
-    <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;"></a></li>
+    <li>
+        <a href="https://indieweb.org/">
+        <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;"></a>
+    </li>
 </ul>
+<style>
+    footer ul li:last-child a {
+        text-decoration: none;
+    }
+</style>
 `;
