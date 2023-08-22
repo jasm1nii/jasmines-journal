@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>jasmine's journal</title>
+    <meta name="description" content="the personal sandbox of a multifaceted internet creative">
+
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
+
     <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
+
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <meta name="description" content="the personal sandbox of a multifaceted internet creative">
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
-    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    
     <!-- indie login -->
     <link rel="pgpkey" href="0xF427FC36-pub.asc">
     <link href="https://github.com/jasm1nii" rel="me">
+    <link href="https://mas.to/@jasm1nii" rel="me">
+    
     <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
+
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -49,6 +57,7 @@
             </ul>
           </noscript>
         </nav>
+        <script async src="/assets/scripts/headernav.js"></script>
         <style>
           header nav ul li:first-child {
             font-weight: 600;
@@ -74,36 +83,40 @@
         <div class="page-columns">
 
           <!-- id card -->
-          <section class="h-card">
-            <div class="main-info" id="idCard">
-               
+          <section>
+            <div class="main-info h-card" id="idCard">
               <div id="idCardContent">
                 <h2>webmaster identity</h2>
                 <div id="idCardPFP">
                   <div>
-                    <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the author wearing a hijab, glasses, jewelry, and a collared blouse; drawn against a pink background">
+                    <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the webmaster">
                   </div>
-                  <div class="flower-fill" aria-hidden="true">
+                  <div class="flower-fill">
                       <img src="/assets/media/main/flower.svg" width="40px" alt="">
                       <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                      <details>
+                        <summary>
+                          <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt="">
+                        </summary>
+                        <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creatue meme">
+                      </details>
                   </div>
                 </div>
               </div>
-              <div id="idCardBiodata">
-                <p>
-                  just call me <a rel="me"><b>jasmine!</b></a> 👋
-                </p>
-                <ul class="p-note">
-                    <li><span>📍</span> <span>IDN</span></li>
-                    <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
-                    <li><span>🐘</span> <span><b><a href="https://mas.to/@jasm1nii" rel="me">@jasm1nii@mas.to</a></b></span></li>
-                    <!-- additional h-card attributes -->
-                    <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
-                    <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
-                      <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
-                    </span>
-                </ul>
+              <div class="p-note" id="idCardBiodata">
+                  <p>
+                    just call me <a rel="me"><b>jasmine!</b></a> 👋
+                  </p>
+                  <ul>
+                      <li><span>📍</span> <span>IDN</span></li>
+                      <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
+                      <li><span>🐘</span> <span><b><a href="https://mas.to/@jasm1nii" rel="me">@jasm1nii@mas.to</a></b></span></li>
+                      <!-- additional h-card attributes -->
+                      <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
+                      <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
+                        <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
+                      </span>
+                  </ul>
               </div>
               <div id="barcode"></div>
             </div>
@@ -113,15 +126,11 @@
             <div class="main-info" id="siteUpdates">
               <h2>site updates</h2>
               <p>
-                <time datetime="2023-08-21">21 august 2023</time>
+                <time datetime="2023-08-22">22 august 2023</time>
                 <ul>
-                  <li><b>note</b> - dark mode has yet to be implemented on some pages</li>
-                  <li>added more buttons to the <a href="/link-gallery.html">link gallery</a></li>
-                  <li>re-added the navigation script to some pages</li>
-                  <li>updated <a href="/resources/webdev/">web development resources</a> with a few more links</li>
-                  <li>updated the <a href="">site credits</a></li>
-                  <li>the loader page is now skippable lol</li>
-                  <li>other miscellaneous script changes</li>
+                  <li>finally got bridgy to work for me - you can follow this site on the <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>, if you want</li>
+                  <li>hid a little treat on the home page <span aria-hidden="true">:3</span> (hint: try hovering over the identity card)</li>
+                  <li>updated the <a href="/link-gallery.html">link gallery</a></li>
                   <li>see the <a href="/about/changelog/">change log</a> for past updates</li>
                 </ul>
               </p>
@@ -129,12 +138,15 @@
               <div>
                 <h3>subscribe</h3>
                 <ul>
-                    <li><b><a href="https://buttondown.email/jasm1nii" rel="me">newsletter</a></b> - for occasional site-wide update summaries</li>
+                    <li><b><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></b> - for occasional site-wide update summaries</li>
                     <li>
                       <b><a href="/blog/blog.atom">atom feed</a></b> - for blog posts only
                       <br><br>
-                      <a style="text-align: center;" href="http://validator.w3.org/"><img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; display: block;"/></a>
+                      <a style="text-align: center;" href="http://validator.w3.org/">
+                        <img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
+                      </a>
                     </li>
+                    <li><b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></b> - a little bit of both, probably</li>
                 </ul>
               </div>
             </div>
@@ -158,7 +170,9 @@
                     <div id="statuscafe-username"></div>
                     <div id="statuscafe-content"></div>
                     <div>
-                      <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+                      <a href="https://status.cafe">
+                        <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
+                      </a>
                     </div>
                   </div>
               </div>
@@ -282,18 +296,18 @@
                     <img src="https://i.imgur.com/7v5H0TL.png" alt=""> i am <a href="https://macaque.neocities.org/trickyfox/"> angelic ♥</a> <img src="https://i.imgur.com/uAEhywQ.png" alt="">
                   </p>
                   <p>
-                    <a href="https://kalechips.net/responsive/index"><img src="assets/media/main/responsive-website-directory.png" alt="responsive website directory"></a>
+                    <a href="https://kalechips.net/responsive/index"><img src="/assets/media/main/responsive-website-directory.png" alt="responsive website directory"></a>
                   </p>
                   <p>
-                    <a href="https://smoothsailing.asclaria.org/"><img src="assets/media/main/smooth-sailing.png" alt="smooth sailing listings"></a>
+                    <a href="https://smoothsailing.asclaria.org/"><img src="/assets/media/main/smooth-sailing.png" alt="smooth sailing listings"></a>
                   </p>
                   <div id="healinghospital" style="text-align: center;"></div>
                   <div id="autiring" style="text-align: center;"></div>
                   <p style="margin: auto;">
-                    <a href="http://pkmn.caelestis.nu" target="_blank" rel="noopener noreferrer" style="border: 0px none; background: transparent;" title="I Choose You! :: PIPLUP"><img src="assets/media/main/piplup.png" alt="'i choose you!' pokemon clique icon depicting piplup"></a>
+                    <a href="http://pkmn.caelestis.nu" target="_blank" rel="noopener noreferrer" style="border: 0px none; background: transparent;" title="I Choose You! :: PIPLUP"><img src="/assets/media/main/piplup.png" alt="'i choose you!' pokemon clique icon depicting piplup"></a>
                   </p>
                   <p>
-                    <a href="https://melanated.neocities.org/"><img src="assets/media/main/melanated.png" alt="button for melanated, a POC webmaster listing"></a>
+                    <a href="https://melanated.neocities.org/"><img src="/assets/media/main/melanated.png" alt="button for melanated, a POC webmaster listing"></a>
                   </p>
                   <div id="vocaring"></div>
                   <p> <!-- hotline webring -->
@@ -358,9 +372,8 @@
         </ul>
       </noscript>
     </footer>
+    <script async src="/assets/scripts/footer.js"></script>
     
-  <script async src="/assets/scripts/headernav.js"></script>
-  <script async src="/assets/scripts/footer.js"></script>
   <script defer src="/assets/scripts/sticky-note.js"></script>
   <script defer src="/assets/scripts/pretzel.js"></script>
   <script defer src="/assets/scripts/time.js"></script>
@@ -370,8 +383,8 @@
   <script defer src="https://xandra.cc/safonts/webring.js"></script>
   <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
   <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
-  <script defer src="assets/scripts/vocaring.js"></script>
-  <script defer type="text/javascript" src="https://macaque.neocities.org/autiring/onionring-variables.js"></script>
+  <script defer src="/assets/scripts/vocaring.js"></script>
+  <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
   <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
   
   </body>
