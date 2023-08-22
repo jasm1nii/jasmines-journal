@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -55,7 +55,6 @@ button {
     color: inherit;
     border: 1px solid;
     cursor: pointer;
-    transition: all 0.5s;
 }
 button:hover {
     background-color: thistle;

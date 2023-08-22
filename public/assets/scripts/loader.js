@@ -1,6 +1,10 @@
 document.getElementById("loader").innerHTML = `
 <div>
   <span>loading contents...</span>
+  <br>
+  <button onclick="closeLoader()">
+    skip rendering
+  </button>
 </div>
 <style>
 #loader {
@@ -10,12 +14,25 @@ document.getElementById("loader").innerHTML = `
   margin-top: auto;
   width: 100%;
   height: 100vh;
-  font-size: 1.5em;
+  font-size: 2em;
   letter-spacing: .1em;
   color: white;
   background-color: rgba(83, 68, 117, 1);
   top: 0;
   overflow-x: hidden;
+  animation: none;
+}
+#loader button {
+  font: inherit;
+  font-size: .6em;
+  margin: 2em;
+  padding: .5em;
+  background: transparent;
+  color: inherit;
+  border: 1px solid white;
+  opacity: 0;
+  animation: fadeInPage .5s forwards;
+  animation-delay: .25s;
 }
 #loader div {
   margin-top: 40vh;
@@ -26,8 +43,13 @@ document.getElementById("loader").innerHTML = `
 </style>`;
 
 var loader = document.getElementById("loader");
-window.addEventListener("load", function () {
+
+function closeLoader() {
   loader.style.display = "none";
-});
+}
+
+window.addEventListener("load", function () {
+  loader.style.display = "none";});
+
 
 

@@ -40,6 +40,7 @@
   --g1v5x3-background-color: transparent !important;
   --g1v5x3-title-color: var(--font-color-light) !important;
   --button-code-txt: rgb(255, 244, 244);
+  --warning-bg: #e3d7e9;
   --gif-controls-bg: pink;
   --gif-controls-hover-bg: rgb(255, 222, 151);
   --gif-controls-active-bg: rgb(238, 226, 235);
@@ -782,10 +783,13 @@ section {
 
 #warning {
   width: 80%;
-  background-color: #e3d7e9 !important;
+  background-color: var(--warning-bg);
   color: rgb(92, 63, 128);
   padding: 0;
   box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
+}
+section:has(#mybuttonSection) {
+  break-after: always;
 }
 #warning h2 {
   color: #503281;
@@ -1091,8 +1095,11 @@ footer time {
   .main-info, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type, #warning {
     background-color: var(--section-card-dark);
   }
-  #statuscafe, #siteUpdates > ul, #buttonCode, #track {
+  #siteUpdates > ul, #buttonCode, #track {
     background-color: transparent;
+  }
+  #statuscafe {
+    background-color: var(--section-card-dark);
   }
   .button-gallery  {
     background-color: transparent;
@@ -1103,7 +1110,10 @@ footer time {
     border: 1px solid rgb(130, 99, 170);
   }
   #idCard {
-    background-image: url(/assets/media/main/bank-note-dark.svg) !important; text-shadow: 0 0 5px black;
+    background-image: url(/assets/media/main/bank-note-dark.svg); text-shadow: 0 0 5px black; background-color: var(--section-card-dark);
+  }
+  #webringsList {
+    background-color: var(--section-card-dark);
   }
   .time {
     border-bottom: 5px outset rgb(58, 58, 88);
@@ -1117,6 +1127,9 @@ footer time {
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
     box-shadow: var(--last-played-dark-shadow) !important;
+  }
+  #track {
+    background-color: var(--section-card-dark);
   }
   #speaker {
     background-color: var(--last-played-dark-bg) !important;
@@ -1260,6 +1273,9 @@ footer time {
 }
 .light-mode #buttonCode {
   background-color: var(--button-code-txt);
+}
+.light-mode #warning {
+  background-color: var(--warning-bg) !important;
 }
 .light-mode footer {
   color: var(--footer-font);

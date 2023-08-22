@@ -32,23 +32,27 @@
   <body>
     
     <div id="loader"></div>
-    <script src="assets/scripts/loader.js"></script>
+    <script src="/assets/scripts/loader.js"></script>
 
     <div class="board">
       <header>
         <div>
-          <div><h1>jasmine's journal</h1></div>
+          <div>
+            <h1>jasmine's journal</h1>
+          </div>
           <div style="margin-top: auto">
             <button id="themeToggle" onclick="themeToggle()">
               switch theme
             </button>
+            <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
             <p>
               page contents updated
               <time datetime="2023-08-21">21 august 2023</time>
             </p>
           </div>
         </div>
-        <nav id="headernav">
+        <nav>
+          <div id="headernav"></div>
           <noscript>
             <ul>
               <li>
@@ -63,12 +67,10 @@
             </ul>
           </noscript>
         </nav>
-        <script async src="assets/scripts/headernav.js"></script>
-        
       </header>
       
       <style>
-          #headernav ul li:nth-last-child(3) {
+          #headernav ul li:nth-last-child(2) {
             font-weight: 600;
           }
       </style>
@@ -95,9 +97,7 @@
                     image-rendering: pixelated;
                   "
                 />
-
                 <p>copy and paste the following code into your HTML file ↓</p>
-
                 <div id="buttonCode">
                   <code>
                     &lt;a href="https://jasm1nii.xyz/"
@@ -109,7 +109,6 @@
                   </code>
                 </div>
                 <!-- button code END -->
-
                 <p>
                   <small
                     >hotlinking is fine, but self-hosting the image is
@@ -123,13 +122,11 @@
               <div class="main-info" id="warning">
                 <h2>photosensitivity warning</h2>
                 <p>
-                  due to the <em>sheer</em> amount of
-                  <strong>animated GIFs</strong> on this page, all sections
-                  containing them are hidden by default -
+                  animated GIFs are paused by default -
                   <strong>toggle at your own discretion ✨</strong>
                 </p>
                 <div id="gifControls"></div>
-                <script src="assets/scripts/gif-controls.js"></script>
+                <script src="/assets/scripts/gif-controls.js"></script>
               </div>
             </section>
 
@@ -266,7 +263,7 @@
                   <span class="freezeframe">
                     <a href="https://divergentrays.com/"><img src="/assets/media/link-gallery/drbutton2.png" alt="site button for divergent rays"></a>
                     <a href="https://realachao.neocities.org/"><img src="/assets/media/link-gallery/realachao_kirbybutton88x31.png" alt="site button for reala-chao"></a>
-                    <a href="https://mizuki.world"><img src="https://i.imgur.com/Jd5tR3f.gif" alt="site button for mizuki's world"></a> 
+                    <a href="https://mizuki.world"><img src="/assets/media/link-gallery/mizuki.gif" alt="site button for mizuki's world"></a> 
                     <a href="https://bloodtypeoh.neocities.org/" target="_blank"><img src="assets/media/link-gallery/butt_move.gif" class="butt" alt="site button for blood-type-oh"></a>
                     <a href="https://pinkvampyr.neocities.org/"
                       ><img src="assets/media/link-gallery/pinkvampyr.gif" alt="site button for pink-vampyr"
@@ -398,7 +395,8 @@
     </div>
     <!-- layout END -->
 
-    <footer id="footer">
+    <footer>
+      <div id="footer"></div>
       <noscript>
         <p>
           site analytics powered by
@@ -413,14 +411,13 @@
               >jasm1nii on neocities</a
             >
           </li>
-          <li><a href="credits.html">credits</a></li>
+          <li><a href="/credits.html">credits</a></li>
         </ul>
       </noscript>
     </footer>
-    
-    <script async src="assets/scripts/footer.js"></script>
-    <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script defer src="assets/scripts/freezeframe.min.js"></script>
 
+    <script async src="/assets/scripts/headernav.js"></script>
+    <script async src="/assets/scripts/footer.js"></script>
+    <script defer src="/assets/scripts/freezeframe.min.js"></script>
   </body>
 </html>

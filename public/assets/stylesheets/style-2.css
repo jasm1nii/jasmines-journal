@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Instrument Sans";
-  src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 /* animations */
@@ -393,11 +393,6 @@ nav a {
   header nav ul:nth-child(3) {
     margin-left: 0;
     padding-left: 0;
-  }
-  header nav ul:nth-child(3) li:last-child:after {
-    content: ']';
-    padding-left: .25em;
-    font-weight: normal;
   }
 }
 section > nav {

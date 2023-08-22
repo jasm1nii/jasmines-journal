@@ -1,4 +1,4 @@
-document.getElementById("footer").innerHTML =`
+document.querySelector("#footer").innerHTML =`
 <p>
     site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
 </p>

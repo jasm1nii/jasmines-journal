@@ -33,7 +33,6 @@ button {
     color: inherit;
     border: 1px solid;
     cursor: pointer;
-    transition: all 0.5s;
 }
 button:hover {
     background-color: thistle;

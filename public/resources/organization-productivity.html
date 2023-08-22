@@ -1,4 +1,3 @@
-<!-- template for "jasmine's journal" on neocities-->
 <!-- contact: jasm1nii@proton.me -->
 <!-- references to look into: -->
 <!-- https://schema.org/docs/search_results.html?q=date -->
@@ -12,11 +11,11 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../assets/media/itchio-textless-white.svg"
+      href="/assets/media/itchio-textless-white.svg"
     />
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
     <link
-      href="../assets/stylesheets/style-7.css"
+      href="/assets/stylesheets/style-7.css"
       rel="stylesheet"
       type="text/css"
       media="all"
@@ -32,26 +31,13 @@
       name="description"
       content="a catalogue of helpful things for web design, art, and more!"
     />
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://jasm1nii.neocities.org/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="jasmine's resources" />
-    <meta
-      property="og:description"
-      content="a catalogue of helpful things for web design, art, and more!"
-    />
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="jasm1nii.neocities.org" />
-    <meta property="twitter:url" content="https://jasm1nii.neocities.org/" />
-    <meta name="twitter:title" content="jasmine's resources" />
-    <meta
-      name="twitter:description"
-      content="a catalogue of helpful things for web design, art, and more!"
-    />
     <meta name="author" content="jasm1nii">
     <meta name="keywords" content="design resources, web development">
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="layout">
@@ -59,7 +45,10 @@
             <button id="themeToggle" onclick="themeToggle()">
                 switch theme
             </button>
-            <noscript><small>unavailable</small></noscript>
+            <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+            <noscript>
+                <small>unavailable</small>
+                </noscript>
             <h1>jasmine's resources</h1>
             <p>
                 page contents updated
@@ -67,14 +56,14 @@
             </p>
             <nav>
                 <ul>
-                    <li><a href="../../index.html">home</a></li>
-                    <li><a href="../site-map.html">site map</a></li>
+                    <li><a href="/index.html">home</a></li>
+                    <li><a href="/site-map.html">site map</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <nav>
-                <a href="index.html">return to resources index</a>
+                <a href="/resources/">return to resources index</a>
             </nav>
             <article>
               <section>
@@ -166,12 +155,12 @@
               </section>
             </article>
             <nav>
-                <a href="index.html">return to resources index</a>
+                <a href="/resources/">return to resources index</a>
             </nav>
         </main>
     </div>
     <footer>
     </footer>
-    <script src="../../assets/scripts/dark-light-toggle.js"></script>
+
   </body>
 </html>

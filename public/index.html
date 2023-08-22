@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jasmine's journal</title>
-    <link rel="icon" type="image/x-icon" href="assets/media/itchio-textless-white.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-    <link href="assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
@@ -16,7 +16,7 @@
     <link rel="pgpkey" href="0xF427FC36-pub.asc">
     <link href="https://github.com/jasm1nii" rel="me">
     <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
-
+    
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   </head>
@@ -24,8 +24,7 @@
     
     <div id="loader"></div>
     <script src="/assets/scripts/loader.js"></script>
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-
+    
     <div class="board">
       <header>
 
@@ -34,13 +33,15 @@
           <button id="themeToggle" onclick="themeToggle()">
             switch theme
           </button>
+          <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
         </div>
 
-        <nav id="headernav">
+        <nav>
+          <div id="headernav"></div>
           <noscript>
             <ul>
               <li>
-                <a href="site-map.html">site map</a>
+                <a href="/site-map.html">site map</a>
               </li>
               <li>
                 <a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a>
@@ -48,6 +49,11 @@
             </ul>
           </noscript>
         </nav>
+        <style>
+          header nav ul li:first-child {
+            font-weight: 600;
+          }
+        </style> 
         
         <div class="notice-group">
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
@@ -61,14 +67,8 @@
             </noscript>
         </div>
       </header>
-
-      <script src="assets/scripts/headernav.js"></script>
-      <style>
-        #headernav ul li:first-child {
-          font-weight: 600;
-        }
-      </style> 
       
+
       <main>
 
         <div class="page-columns">
@@ -81,12 +81,12 @@
                 <h2>webmaster identity</h2>
                 <div id="idCardPFP">
                   <div>
-                    <img class="u-photo" src="assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the author wearing a hijab, glasses, jewelry, and a collared blouse; drawn against a pink background">
+                    <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the author wearing a hijab, glasses, jewelry, and a collared blouse; drawn against a pink background">
                   </div>
                   <div class="flower-fill" aria-hidden="true">
-                      <img src="assets/media/main/flower.svg" width="40px" alt="">
-                      <img src="assets/media/main/flower.svg" width="40px" alt="">
-                      <img src="assets/media/main/flower.svg" width="40px" alt="">
+                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
                   </div>
                 </div>
               </div>
@@ -117,9 +117,11 @@
                 <ul>
                   <li><b>note</b> - dark mode has yet to be implemented on some pages</li>
                   <li>added more buttons to the <a href="/link-gallery.html">link gallery</a></li>
-                  <li>readded javascript navigation to some subpages</li>
+                  <li>re-added the navigation script to some pages</li>
                   <li>updated <a href="/resources/webdev/">web development resources</a> with a few more links</li>
-                  <li>miscellaneous script changes</li>
+                  <li>updated the <a href="">site credits</a></li>
+                  <li>the loader page is now skippable lol</li>
+                  <li>other miscellaneous script changes</li>
                   <li>see the <a href="/about/changelog/">change log</a> for past updates</li>
                 </ul>
               </p>
@@ -129,7 +131,7 @@
                 <ul>
                     <li><b><a href="https://buttondown.email/jasm1nii" rel="me">newsletter</a></b> - for occasional site-wide update summaries</li>
                     <li>
-                      <b><a href="blog/blog.atom">atom feed</a></b> - for blog posts only
+                      <b><a href="/blog/blog.atom">atom feed</a></b> - for blog posts only
                       <br><br>
                       <a style="text-align: center;" href="http://validator.w3.org/"><img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; display: block;"/></a>
                     </li>
@@ -155,7 +157,9 @@
                   <div id="statuscafe">
                     <div id="statuscafe-username"></div>
                     <div id="statuscafe-content"></div>
-                    <div><a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a></div>
+                    <div>
+                      <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+                    </div>
                   </div>
               </div>
             </div>
@@ -172,7 +176,7 @@
               </div>
               <div id="speaker">
                 <div>
-                  <img src="assets/media/main/speaker.svg" alt="">
+                  <img src="/assets/media/main/speaker.svg" alt="">
                 </div>
                 <div style="margin-top: 10px;">
                   <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
@@ -256,10 +260,10 @@
                     listed by date added<br>(newest to oldest)
                   </p>
                   <p>
-                    <a href="https://pastels.minty.nu/"><img src="assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
+                    <a href="https://pastels.minty.nu/"><img src="/assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
                   </p>
                   <p>
-                    <script src="https://xandra.cc/safonts/webring.js"></script>
+                    
                     <ring-900 site="https://jasm1nii.xyz/"></ring-900>
                   </p>
                   <p> <!-- fediring -->
@@ -325,15 +329,14 @@
           </section>
         </div>
 
-        <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments"></iframe>
+        <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments" loading="lazy"></iframe>
 
       </main>
 
     </div>
 
-    <footer >
+    <footer>
       <div id="footer"></div>
-      <script src="assets/scripts/footer.js"></script>
       <noscript>
         <p>
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
@@ -343,8 +346,8 @@
         <ul>
           <li><time>2023</time> - until hell freezes over</li>
           <li><a href="mailto:jasm1nii@proton.me">jasm1nii@proton.me</a></li>
-          <li><a href="site-map.html">site map</a></li>
-          <li><a href="credits.html">credits</a></li>
+          <li><a href="/site-map.html">site map</a></li>
+          <li><a href="/credits.html">credits</a></li>
           <li>🔨 <del>accessibility</del></li>
           <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a> at <a href="https://jasm1nii.xyz/" rel="me">jasm1nii.xyz</a></li>
           <li>
@@ -355,15 +358,18 @@
         </ul>
       </noscript>
     </footer>
-  
-  <script src="assets/scripts/sticky-note.js"></script>
-  <script src="assets/scripts/pretzel.js"></script>
-  <script src="assets/scripts/time.js"></script>
+    
+  <script src="/assets/scripts/headernav.js"></script>
+  <script src="/assets/scripts/footer.js"></script>
+  <script defer src="/assets/scripts/sticky-note.js"></script>
+  <script defer src="/assets/scripts/pretzel.js"></script>
+  <script defer src="/assets/scripts/time.js"></script>
   <script defer src="https://status.cafe/current-status.js?name=jasm1nii"></script>
-  <script defer src="assets/scripts/lastfm.js"></script>
+  <script defer src="/assets/scripts/lastfm.js"></script>
   <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
+  <script defer src="https://xandra.cc/safonts/webring.js"></script>
   <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
-  <script defer type="text/javascript" src="assets/scripts/onionring-widget-healing-hospital.js"></script>
+  <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
   <script defer src="assets/scripts/vocaring.js"></script>
   <script defer type="text/javascript" src="https://macaque.neocities.org/autiring/onionring-variables.js"></script>
   <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
