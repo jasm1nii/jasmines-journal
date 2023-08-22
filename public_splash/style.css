@@ -86,6 +86,8 @@ h1 {
     text-shadow: 0 0 .5em rgb(99, 35, 129);
     letter-spacing: .1em;
     text-align: center;
+    margin-top: 0;
+    padding-top: 1em;
 }
 h1::after {
     content: '˗ˏˋ ★ ˎˊ˗';
@@ -110,15 +112,11 @@ hr {
     border: 1px dashed plum;
 }
 
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: pink;
     border-radius: 5px;
     }
-    ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: plum;
     }
 
@@ -128,26 +126,21 @@ html {
     text-rendering: geometricPrecision;
 }
 
-.background {
-    background: url(pexels-lara-wehbe-6564097.jpg);
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: fixed;
-}
 body {
-    background-color: var(--bg-color-1);
-    background-size: 100%;
+    background: url(pexels-lara-wehbe-6564097.jpg), var(--bg-color-1);
+    background-size: 100vh, 100%;
+    background-repeat: no-repeat, no-repeat;
     color: rgb(63, 19, 63);
     font-size: 1em;
-    min-width: 50%;
-    max-width: 500px;
-    margin: auto;
+    padding: 0;
+    margin: 0;
+    }
+    main {
+        padding-top: 0;
+        margin-top: 0;
+        top: 0;
     }
     article {
-        margin-top: 5em;
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
@@ -181,11 +174,6 @@ body {
         text-shadow: 0 0 .1em rgb(65, 29, 49);
     }
 
-main {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 25px;
-}
 article::after {
     content: '✩₊˚.⋆☾⋆⁺₊✧*:･ﾟ';
     color: white;
@@ -215,29 +203,3 @@ h3 ~ ul li::before {
     content: '୨♡୧';
     font-weight: 400;
 }
-
-footer {
-    text-align: center;
-    font-size: 0.9em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    }
-    footer ul {
-        padding: 0;
-        list-style-type: none;
-        }
-        footer li:nth-child(1)::before {
-            content: "";
-        }
-        footer li::before {
-            content: "⬩";
-            font-size: 1.25em;
-            margin-right: 1em;
-        }
-        footer li {
-            display: inline-block;
-            margin-right: 1em;
-        }
-    footer time {
-        font-weight: 600;
-    }
