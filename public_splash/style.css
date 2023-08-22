@@ -127,13 +127,21 @@ html {
 }
 
 body {
-    background: url(pexels-lara-wehbe-6564097.jpg), var(--bg-color-1);
-    background-size: 100vh, 100%;
-    background-repeat: no-repeat, no-repeat;
+    background: url(pexels-lara-wehbe-6564097.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     color: rgb(63, 19, 63);
     font-size: 1em;
     padding: 0;
     margin: 0;
+}
+    @media all and (max-width:768px) {
+        body {
+            background-size: auto;
+        }
     }
     main {
         padding-top: 0;
