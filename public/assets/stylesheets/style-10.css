@@ -1,17 +1,11 @@
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;
-    --links-hover-bg: white; 
-}
-:root, :host {
-    --seia-color-bg: transparent !important;
-}
-s-e-i-a {
-    text-transform: lowercase;
+    --links-hover-bg: white;
 }
 
 @keyframes fadeIn {
@@ -39,7 +33,6 @@ button {
     color: inherit;
     border: 1px solid;
     cursor: pointer;
-    transition: all 0.5s;
 }
 button:hover {
     background-color: thistle;
@@ -104,16 +97,20 @@ body {
                 flex-direction: column;
             }
         }
-header {
+
+.sidebar {
     max-width: 12em;
     margin-left: 1em;
-    letter-spacing: .05em;
     position: sticky;
     top: 5%;
     align-self: flex-start;
 }
+header {
+    letter-spacing: .05em;
+    border-bottom: 1px solid;
+}
     @media all and (max-width:768px) {
-        header {
+        .sidebar {
             max-width: 80%;
             margin-left: auto;
             margin-right: auto;
@@ -121,13 +118,20 @@ header {
             position: relative;
         }
     }
-header > div {
+header div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 1em;
-    padding-right: 1em;
 }
+header div details {
+    padding-bottom: 1em;
+}
+    header div details p {
+        border: 1px solid;
+        padding: 1em;
+        letter-spacing: 0;
+        font-size: .9em;
+    }
 
 #themeToggle {
     height: fit-content;
@@ -159,8 +163,8 @@ header nav {
     }
         @media all and (max-width:768px) {
             header nav li {
-                display: inline;
                 margin-right: .5em;
+                display: inline;
             }
             header nav li:last-child::after {
                 content: "✧";
@@ -228,17 +232,61 @@ article {
     border: 1px solid;
     padding-left: 2em;
     padding-right: 2em;
-    padding-bottom: 2em;
-    padding-top: 1.5em;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
 }
     @media all and (max-width:400px) {
         article {
-            border-left: none;
-            border-right: none;
             padding-top: 1em;
         }
     }
+
+section section:has(h3) {
+    margin-left: 1em;
+}
+.subscribe {
+    border-top: 1px dashed;
+    margin-top: 2em;
+    text-align: right;
+}
+#notes article {
+    border: none;
+    padding: 0;
+    margin-left: 1em;
+}
+#notesArchive > article {
+    padding-top: .5em;
+    padding-bottom: 2em;
+}
+#notesArchive .notes-format {
+    display: flex;
+    padding-top: 1em;
+}
+@media all and (max-width:768px) {
+    #notesArchive .notes-format {
+        flex-direction: column;
+    }
+}
+#notesArchive .notes-format time {
+    display: block;
+}
+#notesArchive .u-photo {
+    width: 100%;
+    height: 100%;
+    max-width: calc(15% + 1vw);
+    min-width: 70px;
+    border-radius: 50%;
+    margin-right: 1em;
+    border: 1px solid;
+}
+#notesArchive .h-entry {
+    flex-direction: column;
+    width: 100%;
+}
+#notesArchive .h-entry .e-content {
+    border-bottom: 1px dashed;
+    padding-bottom: 1em;
+}
 main::before {
     content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
     display: block;
@@ -254,52 +302,35 @@ main::after {
     margin-top: 1.5em;
     font-size: x-large;
 }
-h2 {
+article ol {
+    margin-left: .5em;
+}
+article ol li::marker {
+    font-size: xx-large;
+    font-style: italic;
+}
+article ol li {
+    list-style-type: decimal-leading-zero;
+}
+article ol li span {
     border-bottom: 1px solid;
-    padding-bottom: .25em;
-    margin-top: 0;
+    font-size: large;
 }
-.entry time {
-    margin-right: auto;
-    text-align: right;
+article ol li span::before {
+    content: '❝';
+    margin-right: .25em;
+}
+article ol li span::after {
+    content: '❞';
+    margin-left: .25em;
+}
+article ol li span a {
+    color: inherit;
+}
+article ol li time {
     display: block;
-}
-.entry p {
-    text-indent: 2em;
-}
-.entry p img {
-    padding: 1em;
-    display: block;
-    margin: auto;
-    max-width: 70%;
-}
-    @media all and (max-width:768px) {
-        .entry p img {
-            max-width: 100%;
-            margin-left: -1em;
-        }
-    }
-.entry blockquote {
-    border: 1px dashed;
-    padding: 1em;
-    margin-left: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: fit-content;
-}
-section {
-    margin-bottom: 1em;
-}
-#comments, #webmentions {
-    border: 1px solid;
-    padding: 2em;
-    padding-top: 1.5em;
-}
-@media all and (max-width:400px) {
-    #comments, #webmentions { border-left: none; border-right: none; }
-}
-.cactus-editor-textarea::placeholder,.cactus-editor-name > span > input::placeholder, .cactus-container button {
-    text-transform: lowercase;
+    font-size: smaller;
+    margin-top: .5em;
 }
 
 footer {
@@ -358,16 +389,6 @@ footer {
     a {
         color: var(--dark-links);
     }
-    #comments, #webmentions {
-        background-color: var(--dark-bg);
-    }
-    .cactus-container button {
-        color: rgb(165, 165, 173);
-        background-color: rgb(95, 46, 95);
-    }
-    .cactus-container button:last-of-type:hover {
-        background-color: rgb(49, 44, 51);
-    }
 }
 .dark-mode {
     background-color: var(--dark-bg);
@@ -379,18 +400,8 @@ footer {
     .dark-mode a:hover {
         color: black
     }
-    .dark-mode article, .dark-mode #comments, .dark-mode #webmentions {
+    .dark-mode article {
         background-color: var(--dark-bg);
-    }
-    .dark-mode .cactus-container button {
-        color: white;
-        background-color: rgb(95, 46, 95);
-    }
-    .dark-mode .cactus-container button:hover {
-        background-color: rgb(61, 54, 82);
-    }
-    :root .dark-mode, :host .dark-mode {
-        --seia-color-text: white;
     }
 
 @media (prefers-color-scheme: light) {
@@ -398,20 +409,12 @@ footer {
         background-color:  var(--light-bg);
         color: var(--light-font);
     } 
-    
     a {
         color: var(--light-links);
     }
-    .entry {
+    article, header details p {
         background-color: var(--light-bg-article);
     }
-    #comments {
-        background-color: var(--light-bg-article);
-    }
-    :root, :host {
-        --seia-color-text: var(--light-font);
-    }
-    
 }
 .light-mode {
     background-color: var(--light-bg);
@@ -423,20 +426,6 @@ footer {
     .light-mode a:hover {
         color: black;
     }
-    .light-mode article {
+    .light-mode article, .light-mode header details p {
         background-color: var(--light-bg-article);
-    }
-    .light-mode #comments, #webmentions {
-        background-color: var(--light-bg-article);
-    }
-    .light-mode .cactus-container button {
-        background-color: rgb(204, 198, 207);
-        color: black;
-    }
-    .light-mode .cactus-container button:hover {
-        background-color: pink;
-        color: rgb(70, 35, 41);
-    }
-    :root .light-mode, :host .light-mode {
-        --seia-color-text: var(--light-font);
     }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>jasmine's b(rain)log</title>
+    <id>https://jasm1nii.xyz/blog/</id>
+    <link rel="self" href="https://jasm1nii.xyz/blog/notes/notes.xml"></link>
+    <link rel="alternate" href="https://jasm1nii.xyz/blog/notes/index.html"></link>
+    <updated>2023-08-22T00:00:00+00:00</updated>
+    <author>
+        <name>jasmine</name>
+        <uri>https://jasm1nii.xyz/blog</uri>
+    </author>
+    <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
+    <logo>https://jasm1nii.xyz/assets/media/main/07042023%20me.png</logo>
+    <entry>
+        <title>testing a second post</title>
+        <id>https://jasm1nii.xyz/notes/#2</id>
+        <published>2023-08-22T00:00:00+00:00</published>
+        <updated>2023-08-22T00:00:00+00:00</updated>
+        <displayDate>22 August 2023</displayDate>
+        <noteID>2</noteID>
+    </entry>
+    <entry>
+        <title>testing a first microblog post</title>
+        <id>https://jasm1nii.xyz/notes/#1</id>
+        <published>2023-08-22T00:00:00+00:00</published>
+        <updated>2023-08-22T00:00:00+00:00</updated>
+        <displayDate>22 August 2023</displayDate>
+        <noteID>1</noteID>
+    </entry>
+</feed>

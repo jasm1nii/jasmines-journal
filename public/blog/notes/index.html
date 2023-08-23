@@ -1,13 +1,9 @@
-<!-- contact: jasm1nii@proton.me -->
-<!-- references to look into: -->
-<!-- https://schema.org/docs/search_results.html?q=date -->
-
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jasmine's b(rain)log</title>
+    <title>jasmine's notes</title>
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
     <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all">
@@ -28,19 +24,10 @@
                     <button id="themeToggle" onclick="themeToggle()">
                         switch theme
                     </button>
-                    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
                     <noscript>
                         <small>unavailable</small>
                     </noscript>
-                    <h1>jasmine's b(rain)log</h1>
-                    <details>
-                        <summary>
-                            <img src="/assets/media/blog/webmention-button.png" alt="webmentions badge">
-                        </summary>
-                        <p>
-                            this site supports receiving <a href="https://indieweb.org/Webmention">webmentions</a>! two-way display is only enabled on select pages.
-                        </p>
-                    </details>
+                    <h1>jasmine's notes</h1>
                 </div>
                 <nav>
                     <div id="headernav"></div>
@@ -58,55 +45,23 @@
             </header>
         </div>
         <main>
-            <article>
-                <section>
-                    <hgroup>
-                        <h2>articles</h2>
-                    </hgroup>
-                    <ol reversed>
-                        <li>
-                            <span><a href="/blog/2023/august/23/entry.html">[test post] checking if bridgy works</a></span>
-                            <time datetime="2023-08-22">22 august 2023</time>
-                        </li>
-                        <li>
-                            <span><a href="/blog/2023/august/17/entry.html">bye neocities (part 2)</a></span> - updated 18 august 2023
-                            <time datetime="2023-08-17">17 august 2023</time>
-                        </li>
-                        <li>
-                            <span><a href="/blog/2023/august/12/entry.html">bye neocities</a></span>
-                            <time datetime="2023-08-12">12 august 2023</time>
-                        </li>
-                        <li>
-                            <span><a href="/blog/2023/august/09/entry.html">parroting a broken record held together by elmer's glue</a></span>
-                            <time datetime="2023-08-09">9 august 2023</time>
-                        </li>
-                    </ol>
-                </section>
-                <section class="subscribe">
-                    <p>
-                        subscribe via <a href="/blog/blog.atom">atom</a>
-                    </p>
-                </section>
-            </article>
-            <article>
-                <section>
-                    <hgroup>
-                        <h2>notes</h2>
-                    </hgroup>
+            <div>
+                <noscript>
                     <section>
-                        <h3>latest entry</h3>
-                        <div id="notes"></div>
+                        <p>sorry, this archive uses javascript to render the feed from an XML file - <a href="/blog/notes/notes.xml">read its contents here</a>.</p>
                     </section>
-                </section>
-                <section class="subscribe">
+                </noscript>
+                <section>
+                    <h2>archive</h2>
                     <p>
-                        subscribe via <a href="/blog/notes/notes.xml">atom</a> / <a href="/blog/notes/">view archive</a>
+                        subscribe via <a href="/blog/notes/notes.xml">atom</a>
                     </p>
+                    <div id="notesArchive"></div>
+                    <script src="/assets/scripts/notes-archive.js"></script>
                 </section>
-            </article>
+            </div>
         </main>
     </div>
-
     <footer>
         <div id="footer"></div>
         <noscript>
@@ -123,11 +78,22 @@
             </ul>
         </noscript>
     </footer>
-
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <script src="/assets/scripts/headernav.js"></script>
-    <script src="/assets/scripts/notes-preview.js"></script>
-    <script src="/assets/scripts/footer.js"></script>
-    
+    <script>
+        const blogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
 
+        blogSubpage.insertAdjacentHTML(
+        'afterend',
+        '<ul><li>notes</li></ul>',
+        );
+    </script>
+    <style>
+        #headernav ul ul {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+    <script src="/assets/scripts/footer.js"></script>
   </body>
 </html>

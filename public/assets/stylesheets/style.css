@@ -700,6 +700,9 @@ section {
 #idCard .u-featured {
   position: absolute;
 }
+.u-featured img {
+  image-rendering: crisp-edges;
+}
   @media all and (max-width:768px) {
     #idCard .u-featured { left: 0; }
   }
