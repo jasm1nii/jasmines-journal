@@ -15,10 +15,11 @@ function displayNotes(xml, i) {
     var xmlDoc = xml.responseXML; 
     x = xmlDoc.getElementsByTagName("entry");
     document.getElementById("notes").innerHTML =
-    `<article><a href="/blog/notes/#` + x[i].getElementsByTagName("noteID")[0].childNodes[0].nodeValue + `">` +
-    x[i].getElementsByTagName("displayDate")[0].childNodes[0].nodeValue +
-    `</a> - &ldquo;` +
-    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
-    `&rdquo;</article>`;
+    `<article>
+        <time datetime="` + x[i].getElementsByTagName("updated")[0].childNodes[0].nodeValue + `"><a href="` + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + `">` +
+        x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+        `</a></time>
+        <p>` + x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue + `</p>
+    </article>`;
     
 }

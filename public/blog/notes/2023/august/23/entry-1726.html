@@ -45,23 +45,29 @@
             </header>
         </div>
         <main>
-            <div>
-                <noscript>
-                    <section>
-                        <p>sorry, this archive uses javascript to render the feed from an XML file - <a href="/blog/notes/notes.xml">read its contents here</a>.</p>
-                    </section>
-                </noscript>
-                <section>
-                    <h2>archive</h2>
-                    <p>
-                        subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+            <p>
+                subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+            </p>
+            <article>
+                <h2><time datetime="2023-08-23">23 august 2023</time></h2>
+                <div class="h-entry">
+                    <p class="e-content">
+                        hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) <a href="https://stream.indieweb.org/" rel="external" class="p-category">#indieweb</a>
                     </p>
-                    <div id="notesArchive"></div>
-                    <script src="/assets/scripts/notes-archive.js"></script>
-                </section>
-            </div>
+                    <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
+                </div>
+            </article>
+            <section id="webmentions">
+                <h3>webmentions</h3>
+                <s-e-i-a></s-e-i-a>
+            </section>
+            <section id="comments">
+                <h3>comments</h3>
+                <div id="comment-section"></div>
+            </section>
         </main>
     </div>
+
     <footer>
         <div id="footer"></div>
         <noscript>
@@ -78,6 +84,7 @@
             </ul>
         </noscript>
     </footer>
+
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <script src="/assets/scripts/headernav.js"></script>
     <script>
@@ -85,7 +92,7 @@
 
         blogSubpage.insertAdjacentHTML(
         'afterend',
-        '<ul><li>notes</li></ul>',
+        '<ul><li><a href="/blog/notes/index.html">notes</a></li></ul>',
         );
     </script>
     <style>
@@ -94,6 +101,21 @@
             padding-bottom: 0;
         }
     </style>
+    <script type="module" src="https://esm.run/seia" async></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/seia/dist/styles/dark.css" />
+    <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+    <script>
+        initComments({
+          node: document.getElementById("comment-section"),
+          defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+          serverName: "cactus.chat",
+          siteName: "<jasm1niixyz>",
+          commentSectionId: "notes-20230823"
+        })
+      </script>
     <script src="/assets/scripts/footer.js"></script>
   </body>
 </html>

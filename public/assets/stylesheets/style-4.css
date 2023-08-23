@@ -10,9 +10,6 @@
 :root, :host {
     --seia-color-bg: transparent !important;
 }
-s-e-i-a {
-    text-transform: lowercase;
-}
 
 @keyframes fadeIn {
     0% {
@@ -290,6 +287,11 @@ h2 {
 section {
     margin-bottom: 1em;
 }
+section h3 {
+    border-bottom: 1px dashed;
+    margin-top: 0;
+    padding-bottom: .25em;
+}
 #comments, #webmentions {
     border: 1px solid;
     padding: 2em;
@@ -361,12 +363,12 @@ footer {
     #comments, #webmentions {
         background-color: var(--dark-bg);
     }
-    .cactus-container button {
-        color: rgb(165, 165, 173);
-        background-color: rgb(95, 46, 95);
+    #comments button {
+        color: black;
+        background-color: thistle;
     }
-    .cactus-container button:last-of-type:hover {
-        background-color: rgb(49, 44, 51);
+    #comments button:hover {
+        background-color: lightpink;
     }
 }
 .dark-mode {
@@ -382,12 +384,12 @@ footer {
     .dark-mode article, .dark-mode #comments, .dark-mode #webmentions {
         background-color: var(--dark-bg);
     }
-    .dark-mode .cactus-container button {
-        color: white;
-        background-color: rgb(95, 46, 95);
+    .dark-mode #comments button {
+        color: black;
+        background-color: thistle;
     }
-    .dark-mode .cactus-container button:hover {
-        background-color: rgb(61, 54, 82);
+    .dark-mode #comments button:hover {
+        background-color: lightpink;
     }
     :root .dark-mode, :host .dark-mode {
         --seia-color-text: white;
