@@ -15,11 +15,15 @@ document.querySelector("#footer").innerHTML =`
     <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a> at <a href="https://jasm1nii.xyz/" rel="me">jasm1nii.xyz</a></li>
     <li>
         <a href="https://indieweb.org/">
-        <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;"></a>
+        <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;"></a>
+    </li>
+    <li>
+        <a href="https://indieweb.org/Webmention">
+        <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;"></a>
     </li>
 </ul>
 <style>
-    footer ul li:last-child a {
+    footer ul li:has(img) a {
         text-decoration: none;
     }
 </style>

@@ -28,26 +28,19 @@
                     <button id="themeToggle" onclick="themeToggle()">
                         switch theme
                     </button>
-                    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
                     <noscript>
                         <small>unavailable</small>
                     </noscript>
-                    <h1>jasmine's b(rain)log</h1>
-                    <details>
-                        <summary>
-                            <img src="/assets/media/blog/webmention-button.png" alt="webmentions badge">
-                        </summary>
-                        <p>
-                            this site supports receiving <a href="https://indieweb.org/Webmention">webmentions</a>! two-way display is also enabled on select pages.
-                        </p>
-                    </details>
+                    <h1>
+                        jasmine's b(rain)log
+                    </h1>
                 </div>
                 <nav>
                     <div id="headernav"></div>
                     <noscript>
                         <ul>
                             <li>
-                                <a href="/index.html">home</a>
+                                <a href="/">home</a>
                             </li>
                             <li>
                                 <a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a>
@@ -58,11 +51,39 @@
             </header>
         </div>
         <main>
-            <p>
-                follow all blog feeds via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+            <p class="follow">
+                follow all blog feeds via <a href="https://fed.brid.gyweb/jasm1nii.xyz" rel="external me">fediverse</a>
             </p>
             <article>
-                
+                <p class="warning">🔨 this section doesn't have any links yet</p>
+                <h2>pinned tags</h2>
+                <p>inclusive of content from other pages across the site</p>
+                <ul class="tags">
+                    <li>webmastery</li>
+                    <li>personal</li>
+                    <li>art</li>
+                </ul>
+                <section class="subscribe">
+                    <p>browse the tag archive for more</p>
+                </section>
+            </article>
+            <article>
+                <section>
+                    <hgroup>
+                        <h2>notes</h2>
+                    </hgroup>
+                    <section>
+                        <h3>latest entry</h3>
+                        <div id="notes"></div>
+                    </section>
+                </section>
+                <section class="subscribe">
+                    <p>
+                        <a href="/blog/notes/">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
+                    </p>
+                </section>
+            </article>
+            <article>
                 <section>
                     <hgroup>
                         <h2>articles</h2>
@@ -89,20 +110,8 @@
                 </section>
             </article>
             <article>
-                <section>
-                    <hgroup>
-                        <h2>notes</h2>
-                    </hgroup>
-                    <section>
-                        <h3>latest entry</h3>
-                        <div id="notes"></div>
-                    </section>
-                </section>
-                <section class="subscribe">
-                    <p>
-                        <a href="/blog/notes/">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
-                    </p>
-                </section>
+                <h2>off-site writings</h2>
+                <p class="warning">🔨 this section doesn't have any links yet</p>
             </article>
         </main>
     </div>
@@ -124,11 +133,22 @@
         </noscript>
     </footer>
 
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <script src="/assets/scripts/headernav.js"></script>
+    <script>
+        const blogSubpage = document.querySelector('#headernav #blog');
+
+        blogSubpage.insertAdjacentHTML(
+        'beforeend',
+        `<ul>
+            <li><a href="/blog/notes/">notes</a></li>
+            <li>articles</li>
+        </ul>`,
+        );
+    </script>
     <script src="/assets/scripts/notes-preview.js"></script>
     <script type="text/javascript" src="https://webmention.io/js/mentions.js"></script>
     <script src="/assets/scripts/footer.js"></script>
     
-
   </body>
 </html>

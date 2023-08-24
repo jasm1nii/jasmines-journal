@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Instrument Sans";
-  src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -243,32 +243,40 @@ main {
 }
 
 header {
-  margin: auto;
   position: sticky;
   top: 0;
   background-color: inherit;
   z-index: 1;
 }
-header > div {
+header hgroup {
   display: flex;
-  padding: 1em;
   justify-content: space-around;
   flex-direction: row;
 }
-header > div button:not(.notice-group-button) {
+.header-aside {
   margin-top: auto;
   margin-bottom: auto;
 }
 header p {
   letter-spacing:.05em;
-  padding-right: 1em;
 }
 @media all and (max-width:768px) {
   header {
     position: relative;
   }
+  header hgroup {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header-aside {
+    align-self: flex-end;
+  }
 }
 @media all and (max-width:900px) {
+  header hgroup {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   header > div {
     flex-direction: column-reverse;
   }
@@ -378,37 +386,30 @@ h2 {
 
 #follow::before {
   content: "➕";
-  color: gray;
   margin-right: 10px;
 }
 #support::before {
   content: "💕";
-  color: gray;
   margin-right: 10px;
 }
 #otherlinks::before {
   content: "🌐";
-  color: gray;
   margin-right: 10px;
 }
 #trace::before {
   content: "💌";
-  color: gray;
   margin-right: 10px;
 }
 #siteButton::before {
   content: "🏠";
-  color: gray;
   margin-right: 10px;  
 }
 #featuredSites::before {
   content: "⭐";
-  color: gray;
   margin-right: 10px; 
 }
 #mutuals::before {
   content: "💞";
-  color: gray;
   margin-right: 10px;
 }
 
@@ -418,56 +419,62 @@ h2 {
   margin: auto;
   z-index: 1;
 }
-@media all and (max-width:768px) {
-  .notice-group {
-    top: 10%;
-    right: 5%;
-  }
-}
-.notice-group-button {
+.notice-group button {
   background-color: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 2em;
   z-index: 2;
   position: absolute;
   right: 0;
   top: 0;
 }
-.notice-group-button:hover {
+.notice-group button:hover {
   transform: translatey(-5px);
 }
 #notice {
   border: 1px solid var(--sticky-note-border-light);
   background-color: var(--sticky-note-light);
-  max-width: 150px;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
   text-align: center;
   color: var(--sticky-note-font-light);
+  margin-top: 10%;
+  margin-right: 15%;
+  max-width: 180px;
+  max-height: 300px;
+  overflow: auto;
+}
+#notice p {
+  padding-left: 1em;
+  padding-right: 1em;
 }
   @-moz-document url-prefix() {
     #notice {
       font-weight: 400 !important;
     }
   }
-#notice p {
-  padding-left: 1em;
-}
-  @media all and (max-width:768px) {
-    #notice p {
-      text-align: center;
-    }
-  }
 #notice figure {
-  padding: 0;
   margin: auto;
   text-align: center;
 }
-#pretzel {
-  border: white solid 5px;
+#notice figure figcaption {
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
+#pretzel, #pluto {
+  border: solid 2px white;
   outline: 1px solid darkkhaki;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  height: 80%;
+  object-fit: none;
+  filter: brightness(120%);
+}
+#pretzel {
+  object-position: left;
+}
+#pluto {
+  object-position: right;
 }
 
 section {
@@ -767,13 +774,6 @@ section {
   margin-top: 0;
 }
 
-.list-contents {
-  max-height: 150px;
-  padding-right: 20px;
-  margin-right: -10px;
-  overflow: auto;
-}
-
 #warning {
   width: 80%;
   background-color: var(--warning-bg);
@@ -838,7 +838,6 @@ section:has(#mybuttonSection) {
   background-color: transparent !important;
   border-radius: inherit !important;
   padding-top: .25em; padding-bottom: .25em;
-  max-height: 200px;
   overflow: auto;
   margin-left: auto;
   margin-right: auto;
@@ -990,7 +989,7 @@ footer {
   font-size: 1em;
   color: var(--footer-font);
   width: 50%;
-  max-width: 500px;
+  max-width: 700px;
 }
   @media all and (max-width:768px) {
     footer {
@@ -1101,11 +1100,6 @@ footer time {
   .button-gallery  {
     background-color: transparent;
   }
-  #pretzel { border-color: transparent; outline-color: #805c33; }
-  .main-info {
-    box-shadow: 10px 10px rgba(128, 69, 128, .5);
-    border: 1px solid rgb(130, 99, 170);
-  }
   #idCard {
     background-image: url(/assets/media/main/bank-note-dark.svg); text-shadow: 0 0 5px black; background-color: var(--section-card-dark);
   }
@@ -1178,9 +1172,6 @@ footer time {
 .light-mode #notice {
   background-color: var(--sticky-note-light) !important;
   color: var(--sticky-note-font-light) !important;
-}
-.light-mode #pretzel {
-  border-color: white !important;
 }
 .light-mode .board {
   background-color: var(--page-color-light) !important;
@@ -1326,9 +1317,6 @@ footer time {
 }
 .dark-mode #spotifyHomepage {
   background-color: var(--spotify) !important;
-}
-.dark-mode #pretzel {
-  border-color: transparent;
 }
 .dark-mode #guestbookScroller {
   filter:invert(100%) hue-rotate(140deg); border-color: rgb(253, 190, 227);

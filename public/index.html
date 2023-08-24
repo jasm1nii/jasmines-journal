@@ -41,13 +41,15 @@
     <div class="board">
       <header>
 
-        <div>
+        <hgroup>
           <h1>jasmine's journal</h1>
-          <button id="themeToggle" onclick="themeToggle()">
-            switch theme
-          </button>
+          <div class="header-aside">
+            <button id="themeToggle" onclick="themeToggle()">
+              switch theme
+            </button>
+          </div>
           <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-        </div>
+        </hgroup>
 
         <nav>
           <div id="headernav"></div>
@@ -131,13 +133,13 @@
             <div class="main-info" id="siteUpdates">
               <h2>site updates</h2>
               <p>
-                <time datetime="2023-08-22">22 august 2023</time>
                 <ul>
-                  <li>finally got bridgy to work for me - you can follow this site on the <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>, if you want</li>
-                  <li>hid a little treat on the home page <span aria-hidden="true">:3</span> (hint: try hovering over the identity card)</li>
-                  <li>updated the <a href="/link-gallery.html">link gallery</a></li>
-                  <li>added a couple of <a href="/resources/webdev/index.html">web development resources</a> on accessibility</li>
-                  <li>see the <a href="/about/changelog/">change log</a> for past updates</li>
+                  <li>
+                      i'm planning on implementing an AJAX script to make this section easier to manage 🔧
+                  </li>
+                  <li>
+                    in the meantime, you can check out the <a href="/about/changelog/index.html">change log</a>.
+                  </li>
                 </ul>
               </p>
               <hr>
@@ -146,13 +148,13 @@
                 <ul>
                     <li><b><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></b> - for occasional site-wide update summaries</li>
                     <li>
-                      <b><a href="/blog/blog.atom">atom feed</a></b> - for blog posts only
+                      <b>atom feed</b> - <a href="/blog/blog.atom">blog articles</a> / <a href="/blog/notes/notes.xml">microblog notes</a>
                       <br><br>
                       <a style="text-align: center;" href="http://validator.w3.org/">
                         <img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
                       </a>
                     </li>
-                    <li><b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></b> - for microblogs and select page updates</li>
+                    <li><b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse feed</a></b> - an amalgamation of various site contents</li>
                 </ul>
               </div>
             </div>

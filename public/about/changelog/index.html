@@ -18,16 +18,16 @@
             <header>
                 <h1>jasmine's journal</h1>
                 <p class="site-update">
-                    page contents updated <time datetime="2023-08-21">21 august 2023</time>
+                    page contents updated <time datetime="2023-08-24">24 august 2023</time>
                 </p>
                 <nav>
                     <div id="headernav"></div>
                     <noscript>
                         <ul>
                             <li><a href="/">home</a></li>
-                            <li><a href="/about">about</a>
+                            <li><a href="/about/">about</a>
                                 <ul>
-                                    <b><li><a href="/about/changelog">change log</a></li></b>
+                                    <b><li><a href="/about/changelog/">change log</a></li></b>
                                 </ul>
                             </li>
                             <li><a href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
@@ -37,20 +37,7 @@
             </header>
         </div>
 
-        <script src="/assets/scripts/headernav.js"></script>
-        <script>
-            const changelogSubpage = document.querySelector('#headernav ul li:nth-child(2)');
-
-            changelogSubpage.insertAdjacentHTML(
-            'afterend',
-            '<ul><li><a href="/about/changelog">change log</a></li></ul>',
-            );
-        </script>
-        <style>
-            #headernav ul:nth-child(3) {
-                font-weight: 600;
-            }
-        </style>
+        
 
         <div>
             <main>
@@ -63,8 +50,8 @@
                             <ul>
                                 <li>2023
                                     <ul>
-                                        <li><a href="2023/july.html">july</a></li>
-                                        <li><a href="2023/august.html">august</a></li>
+                                        <li><a href="/about/changelog/2023/7.html">july</a></li>
+                                        <li><a href="/about/changelog/2023/8.html">august</a></li>
                                 </li>
                             </ul>
                         </nav>
@@ -72,12 +59,16 @@
             
                 <section>
                         <h2 id="todo">to-do list</h2>
-                            <ul>
-                                <li>add dark mode to more pages</li>
-                                <li>add illustrations to the <a href="../">"about" page</a></li>
-                                <li>art section!!</li>
-                                <li>shrines!!!</li>
-                            </ul>
+                        <p>
+                            nowadays, i prefer to manage the complete list on my private github repository - therefore, it's not the most up-to-date, but here are some planned additions that are of moderate to high priority.
+                        </p>
+                        <ul>
+                            <li>add dark mode to more pages</li>
+                            <li>add illustrations to the <a href="/about/">"about" page</a></li>
+                            <li>launch art page</li>
+                            <li>add some shrines</li>
+                            <li>compose accessibility statement</li>
+                        </ul>
                 </section>
             
                 <section>
@@ -117,10 +108,25 @@
                     </ul>
                 </noscript>
             </footer>
-            <script src="/assets/scripts/footer.js"></script>
+            
         </div>
 
     </div> <!-- .layout END -->
+
+    <script src="/assets/scripts/headernav.js"></script>
+    <script>
+        const changelogSubpage = document.querySelector('#headernav #about');
+        changelogSubpage.insertAdjacentHTML(
+        'beforeend',
+        '<ul><li><a href="/about/changelog">change log</a></li></ul>',
+        );
+    </script>
+    <style>
+        #headernav #about ul {
+            font-weight: 600;
+        }
+    </style>
+    <script src="/assets/scripts/footer.js"></script>
 
 </body>
 </html>

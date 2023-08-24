@@ -146,6 +146,8 @@ header time {
     display: block;
 }
 
+
+
 header nav {
     margin: auto;
     border-top: 1px solid;
@@ -160,6 +162,7 @@ header nav {
     }
     header nav li {
         display: flex;
+        margin-bottom: .25em;
     }
         @media all and (max-width:768px) {
             header nav li {
@@ -170,6 +173,7 @@ header nav {
                 content: "✧";
                 margin-left: .5em;
             }
+            
         }
     header nav li::before {
         content: "✧";
@@ -179,7 +183,10 @@ header nav {
         text-decoration: none;
         padding: 0px 5px 3px 5px;
     }
-    
+    header nav ul ul {
+        padding-top: 0;
+        padding-bottom: .25em;
+    }
     header nav ul ul li::before {
         content: '⟶';
     }
@@ -188,7 +195,15 @@ header nav {
                 display: inline;
                 padding-left: 0;
             }
+            #headernav ul ul li:not(:first-child)::before {
+                content: '/';
+            }
         }
+
+#headernav #blog {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 
 footer .subpage-nav {
     justify-content: space-between;
@@ -264,11 +279,53 @@ section section:has(h3) {
     text-transform: lowercase;
 }
 
+.warning {
+    border: 1px solid rgba(146, 93, 24, 0.25);
+    padding: .75em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(230, 187, 132, 0.25);
+}
+
+.follow {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .subscribe {
     border-top: 1px dashed;
     margin-top: 2em;
     text-align: right;
 }
+
+article:has(.tags) {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tags {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.tags li {
+    list-style: none;
+    display: inline;
+    border: 1px solid;
+    padding: .5em;
+    padding-right: 1em;
+    margin-right: 1em;
+    border-radius: 2em;
+}
+.tags li::before {
+    content: '#';
+    margin-right: .25em;
+    margin-left: .25em;
+}
+
 #notes article {
     border: none;
     padding: 0;

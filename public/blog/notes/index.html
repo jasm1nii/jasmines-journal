@@ -81,11 +81,11 @@
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <script src="/assets/scripts/headernav.js"></script>
     <script>
-        const blogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
+        const blogSubpage = document.querySelector('#headernav #blog');
 
         blogSubpage.insertAdjacentHTML(
         'afterend',
-        '<ul><li>notes</li></ul>',
+        '<ul><li>notes</li><li><a href="/blog/">articles</a></li></ul>',
         );
     </script>
     <style>

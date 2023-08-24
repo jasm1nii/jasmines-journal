@@ -1,11 +1,17 @@
 document.getElementById("notice").innerHTML = `
     <p style="font-size: 1.25em;">
-        <b><i>have you seen him?</i></b>
+        <b><i>have you seen THEM?!</i></b>
     </p>
     <figure>
-        <img src="../assets/media/main/pretzel.png" alt="a gray tabby cat with golden eyes staring off into the distance while lounging on a bed" id="pretzel"/>
+        <img src="/assets/media/main/pluto-pretzel.png" id="pluto" alt="my cat pluto">
         <figcaption>
-            my cat pretzel
+            pluto (she/her)
+        </figcaption>
+    </figure>
+    </figure>
+        <img src="/assets/media/main/pluto-pretzel.png" id="pretzel" alt="my cat pretzel">
+        <figcaption>
+           pretzel (he/him)
         </figcaption>
     </figure>
     <p>
