@@ -380,8 +380,9 @@ nav a {
     display: inline;
   }
   header nav li ul::before {
-    content: '⟶ [';
-    padding-right: .25em;
+    content: '⟶';
+    margin-right: 1em;
+    margin-left: 1em;
   }
   header nav ul:nth-child(2) li::before {
     content: none;

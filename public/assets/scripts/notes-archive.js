@@ -17,7 +17,9 @@ function loadNotes() {
     for (i = 0; i <x.length; i++) { 
     document.getElementById("notesArchive").innerHTML += `<article>
         <div class="notes-format">
-            <img class="u-photo" alt="profile photo" src="/assets/media/main/oingo-boingo.png">
+            <div>
+              <img class="u-photo" alt="profile photo" src="/assets/media/main/oingo-boingo.png">
+            </div>
             <div class="h-entry">
                 <p class="e-content">` +
                     x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue +

@@ -247,6 +247,7 @@ header {
   top: 0;
   background-color: inherit;
   z-index: 1;
+  padding-top: 2%;
 }
 header hgroup {
   display: flex;
@@ -264,12 +265,9 @@ header p {
   header {
     position: relative;
   }
-  header hgroup {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
   .header-aside {
     align-self: flex-end;
+    font-size: smaller;
   }
 }
 @media all and (max-width:900px) {
@@ -443,9 +441,18 @@ h2 {
   max-height: 300px;
   overflow: auto;
 }
+@media all and (max-width:768px) {
+  .notice-group {
+    margin-top: 5%;
+    margin-right: 5%;
+  }
+}
 #notice p {
   padding-left: 1em;
   padding-right: 1em;
+}
+#notice img {
+  image-rendering: crisp-edges;
 }
   @-moz-document url-prefix() {
     #notice {

@@ -146,8 +146,6 @@ header time {
     display: block;
 }
 
-
-
 header nav {
     margin: auto;
     border-top: 1px solid;
@@ -259,6 +257,10 @@ article {
 section section:has(h3) {
     margin-left: 1em;
 }
+section:has(#notesArchive){
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
 #webmentions h3, #comments h3 {
     margin-top: 0;
@@ -296,12 +298,15 @@ section section:has(h3) {
 
 .subscribe {
     border-top: 1px dashed;
-    margin-top: 2em;
     text-align: right;
 }
 
-article:has(.tags) {
-    width: fit-content;
+.articles-list {
+    margin-bottom: 2em;
+}
+
+main > article {
+    max-width: calc(70% + 1vw);
     margin-left: auto;
     margin-right: auto;
 }
@@ -309,15 +314,15 @@ article:has(.tags) {
     margin-left: 0;
     padding-left: 0;
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
 }
 .tags li {
     list-style: none;
-    display: inline;
+    display: inline-flex;
     border: 1px solid;
     padding: .5em;
     padding-right: 1em;
     margin-right: 1em;
+    margin-bottom: 1em;
     border-radius: 2em;
 }
 .tags li::before {
@@ -328,8 +333,18 @@ article:has(.tags) {
 
 #notes article {
     border: none;
-    padding: 0;
-    margin-left: 1em;
+    padding: 1em;
+    display: flex;
+    background-color: rgba(211, 196, 226, 0.24);
+}
+#notes article .u-photo {
+    border-radius: 50%; width: 88px;
+    margin-right: 1em;
+    border: 1px solid;
+}
+#notes article time {
+    border-bottom: 1px dashed;
+    padding-bottom: .25em;
 }
 #notesArchive > article {
     padding-top: .5em;
@@ -340,17 +355,20 @@ article:has(.tags) {
     padding-top: 1em;
 }
 @media all and (max-width:768px) {
-    #notesArchive .notes-format {
+    #notesArchive .notes-format, #notes article {
         flex-direction: column;
+    }
+    #notes article {
+        margin-left: 0;
     }
 }
 #notesArchive .u-photo {
-    width: 100%;
-    height: 100%;
-    max-width: calc(15% + 1vw);
+    width: 50%;
+    max-width: 88px;
     min-width: 70px;
     border-radius: 50%;
     margin-right: 1em;
+    margin-bottom: 1em;
     border: 1px solid;
 }
 #notesArchive .h-entry {
@@ -360,6 +378,7 @@ article:has(.tags) {
 #notesArchive .h-entry .e-content {
     border-bottom: 1px dashed;
     padding-bottom: 1em;
+    margin-top: 0;
 }
 main::before {
     content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
@@ -405,6 +424,12 @@ article ol li time {
     display: block;
     font-size: smaller;
     margin-top: .5em;
+}
+
+#webmentions, #comments {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
