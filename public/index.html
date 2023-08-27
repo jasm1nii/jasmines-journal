@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noai, noimageai">
 
     <title>jasmine's journal</title>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
@@ -16,7 +17,7 @@
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     
     <!-- indie login -->
-    <link href="/pgp-public.asc" rel="pgpkey">
+    <link href="/pgp-public-27082023.asc" rel="pgpkey">
     <link href="https://github.com/jasm1nii" rel="me">
     <link href="mailto:jasm1nii@proton.me" rel="me">
 
@@ -34,11 +35,9 @@
   <body>
     
     <div id="loader"></div>
-    <script src="/assets/scripts/loader.js"></script>
     
     <div class="board">
       <header>
-
         <hgroup>
           <h1>jasmine's journal</h1>
           <div class="header-aside">
@@ -46,9 +45,7 @@
               switch theme
             </button>
           </div>
-          <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
         </hgroup>
-
         <nav>
           <div id="headernav"></div>
           <noscript>
@@ -62,12 +59,6 @@
             </ul>
           </noscript>
         </nav>
-        <script async src="/assets/scripts/headernav.js"></script>
-        <style>
-          header nav ul li:first-child {
-            font-weight: 600;
-          }
-        </style> 
         
         <div class="notice-group">
             <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
@@ -136,7 +127,7 @@
                       i'm planning on implementing an AJAX script to make this section easier to manage 🔧
                   </li>
                   <li>
-                    in the meantime, you can check out the <a href="/about/changelog/index.html">change log</a>.
+                    in the meantime, you can check out the <a href="/about/changelog/">change log</a>.
                   </li>
                 </ul>
               </p>
@@ -378,8 +369,19 @@
         </ul>
       </noscript>
     </footer>
-    <script async src="/assets/scripts/footer.js"></script>
-    
+
+  <script src="/assets/scripts/loader.js"></script>
+  <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+  <script async src="/assets/scripts/headernav.js"></script>
+    <style>
+      header nav ul li:first-child {
+        font-weight: 600;
+      }
+      #headernav #home a {
+        text-decoration: wavy underline 1px;
+      }
+    </style> 
+  <script async src="/assets/scripts/footer.js"></script>
   <script defer src="/assets/scripts/sticky-note.js"></script>
   <script defer src="/assets/scripts/pretzel.js"></script>
   <script defer src="/assets/scripts/time.js"></script>

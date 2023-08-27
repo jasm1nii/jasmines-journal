@@ -171,6 +171,12 @@ header nav {
                 content: "✧";
                 margin-left: .5em;
             }
+            header nav li li:last-child::after {
+                content: none;
+            }
+            header nav ul ul {
+                padding-right: 0;
+            }
             
         }
     header nav li::before {
@@ -180,6 +186,7 @@ header nav {
     header nav a {
         text-decoration: none;
         padding: 0px 5px 3px 5px;
+        height: fit-content;
     }
     header nav ul ul {
         padding-top: 0;
@@ -253,13 +260,35 @@ article {
             padding-top: 1em;
         }
     }
+    article h2 {
+        letter-spacing: .05em;
+    }
 
 section section:has(h3) {
     margin-left: 1em;
 }
-section:has(#notesArchive){
+section:has(#notesArchive) {
     padding-left: 1em;
     padding-right: 1em;
+}
+
+#articlesArchive article {
+    margin-bottom: 1em;
+    padding: 0;
+    border: none;
+}
+#articlesArchive article h3 {
+    margin-top: 0;
+    padding: .5em;
+    background-color: rgba(214, 191, 216, 0.295);
+    letter-spacing: .015em;
+    font-weight: 400;
+}
+#articlesArchive .p-summary, time {
+    margin-left: 1em;
+}
+#articlesArchive .p-summary {
+    font-style: italic;
 }
 
 #webmentions h3, #comments h3 {
@@ -345,6 +374,7 @@ main > article {
 #notes article time {
     border-bottom: 1px dashed;
     padding-bottom: .25em;
+    margin-left: 0;
 }
 #notesArchive > article {
     padding-top: .5em;

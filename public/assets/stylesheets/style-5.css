@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -158,6 +158,7 @@ header {
         }
         header nav li {
             display: flex;
+            margin-bottom: .5em;
         }
             @media all and (max-width:768px) {
                 header nav li {
