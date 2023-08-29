@@ -1002,7 +1002,7 @@ footer {
   font-size: 1em;
   color: var(--footer-font);
   width: 50%;
-  max-width: 700px;
+  max-width: 500px;
 }
   @media all and (max-width:768px) {
     footer {
@@ -1022,7 +1022,7 @@ footer li::before {
    margin-right: 15px;
 }
 footer li {
-   display: inline;
+   display: inline-block;
    margin-right: 15px;
 }
 footer time {
