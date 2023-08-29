@@ -132,11 +132,11 @@ a:hover {
   animation: fadeInSlide 0.75s forwards;
 }
 
-section, #notice, .notice-group-button {
+section, #notice, .notice-group button {
   transition: transform 0.3s;
 }
 
-section:hover, #notice:hover, .notice-group-button:hover {
+section:hover, #notice:hover, .notice-group button:hover {
   transform: translatey(-5px);
 }
 
@@ -432,7 +432,7 @@ h2::before {
   text-align: center;
   color: var(--sticky-note-font-light);
   margin-top: 10%;
-  margin-right: 15%;
+  margin-right: 10%;
   max-width: 180px;
   max-height: 300px;
   overflow: auto;
@@ -503,55 +503,39 @@ section {
 
 #siteUpdates, #subscribe {
   width: 75%;
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
 }
-#siteUpdates hr {
-  margin-top: 1em;
-  margin-bottom: 1em;
+#siteUpdates ul, #subscribe ul {
+  padding: 1em;
+  margin: 0;
 }
+
 #siteUpdates h2::before {
   content: '🆕';
 }
-#siteUpdates > ul {
-  margin: 0;
-  padding-left: 2em;
-  padding-bottom: 1em;
-  padding-top: 1em;
+#siteUpdates ul {
   max-height: 150px;
   overflow: auto;
   border: 1px solid rgb(179, 97, 111);
 }
 #siteUpdates li {
   padding-bottom: 1em;
+  margin-left: 1em;
 }
 
 #subscribe h2::before {
   content: '📮';
 }
 #subscribe ul {
+  list-style: none;
   max-height: 200px;
   overflow: auto;
   border: 1px solid rgb(179, 97, 111);
-  padding-left: 0;
 }
 #subscribe li {
-  margin: .5em;
   margin-bottom: 1em;
   border-bottom: 1px dotted;
   padding-bottom: 1em;
-}
-#siteUpdates div:last-of-type ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-#siteUpdates div:last-of-type p {
-  margin: .25em;
-}
-#siteUpdates h3 {
-  margin: .5em;
-  color: var(--h3-light);
-  letter-spacing: .05em;
 }
 
 #spotifyHomepage {
@@ -983,6 +967,8 @@ section:has(#mybuttonSection) {
 }
 .tip-jar {
   text-align: center;
+  margin-top: 1em;
+  margin-bottom: .5em;
 }
 
 #guestbookScroller {
