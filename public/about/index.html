@@ -23,13 +23,13 @@
             <header>
                 <h1>jasmine's journal</h1>
                 <p class="site-update">
-                    page contents updated <time datetime="2023-08-24">24 august 2023</time>
+                    page contents updated <time datetime="2023-08-29">29 august 2023</time>
                 </p>
                 <nav>
                     <div id="headernav"></div>
                     <noscript>
                         <ul>
-                            <li><a href="/index.html">home</a></li>
+                            <li><a href="/">home</a></li>
                             <li><b><a href="/about">about</a></b>
                                 <ul>
                                     <li><a href="/about/changelog">change log</a></li>
@@ -40,21 +40,6 @@
                     </noscript>
                 </nav>
             </header>
-            <script src="/assets/scripts/headernav.js"></script>
-            
-            <script>
-                const changelogSubpage = document.querySelector('#headernav #about');
-
-                changelogSubpage.insertAdjacentHTML(
-                'beforeend',
-                '<ul><li style="font-weight: normal;"><a href="/about/changelog/">change log</a></li></ul>',
-                );
-            </script>
-            <style>
-                #headernav #about {
-                    font-weight: 600;
-                }
-            </style>
         </div>
         <div>
             <main class="main-2">
@@ -86,7 +71,7 @@
                             
                                 <ul>
                                     <li>
-                                        hand-coded with <b>visual studio code</b> running on <b>windows 10</b>
+                                        hand-coded with <b><a href="https://vscodium.com/" rel="external">vscodium</a></b> running on <b>windows 10</b>
                                     </li>
                                     <li>
                                         tested for viewing with <b>gecko</b> (firefox) and <b>blink</b> (chrome) rendering engines
@@ -119,38 +104,43 @@
                                 </p>
                         </section>
 
-                        <section> <!-- more facts -->
+                        <section id="moreFacts"> <!-- more facts -->
                             <details>
                                 <summary>more facts</summary>
-                                <p>
-                                    <ul>
-                                        <li>i am muslim by faith ☪</li>
-                                        <li>i was raised in the united states until the age of thirteen</li>
-                                        <li>my personality typology is INFP-T 4w5*</li>
-                                        <li>i'm a <em>huge</em> perfume fan - been loving their music since their "dream fighter" era</li>
-                                        <li><span style="color: purple;"><b>purple</b></span> is my favorite color <small>(i hope that's obvious)</small></li>
-                                        <li>i'm a late-diagnosed neurodivergent with AuDHD &infin;</li>
-                                        <li>i took piano lessons as a kid and played clarinet in my junior high band. i still play music occassionally in my free time, but i wish i could do it more often...</li>
-                                        <li>i think "sonic rush" is the best game in the franchise and will not be convinced otherwise</li>
-                                    </ul>
-                                    <sub>
-                                        * i'm aware that <a href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator#Criticism">MBTI and similar typologies have their problems</a> - i just think they're fun to explore!
-                                    </sub>
-                                </p>
+                                <div>
+                                    <p>
+                                        <ul>
+                                            <li>i am muslim by faith ☪</li>
+                                            <li>i was raised in the united states until the age of 13 (but i wasn't born there).</li>
+                                            <li>my personality typology is INFP-T 4w5*.</li>
+                                            <li>i'm a <em>huge</em> perfume fan - been loving their music since their "<a href="https://youtu.be/rBX5YGPNDbs?si=_do_yfgFGN3eXTMf">dream fighter</a>" era!</li>
+                                            <li><span style="color: purple;"><b>purple</b></span> is my favorite color <small>(i hope that's obvious)</small> 💜</li>
+                                            <li>i'm a late-diagnosed neurodivergent with AuDHD &infin;</li>
+                                            <li>i took piano lessons as a kid and played clarinet in my junior high band. i still play music occassionally in my free time, but i wish i could do it more often...</li>
+                                            <li>i think "sonic rush" is the best game in the franchise and will not be convinced otherwise 💥</li>
+                                        </ul>
+                                        <sub>
+                                            * i'm aware that <a href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator#Criticism" rel="external">MBTI and similar typologies have their problems</a> - i just think they're fun to explore!
+                                        </sub>
+                                    </p>
+                                </div>
                             </details>
                         </section>
 
-                        <section> <!-- contact -->
-                            <details>
+                        <section id="contact"> <!-- contact -->
+                            <details open>
                                 <summary>contact</summary>
                                 <dl>
                                     <dt>email</dt>
-                                    <dd><a href="mailto:jasm1nii@proton.me" rel="me">jasm1nii@proton.me</a></dd>
+                                    <p>either of these addresses is fine! use the associated PGP keys (<a href="https://www.maketecheasier.com/pgp-encryption-how-it-works/" rel="external">?</a>) if you need to send an encrypted message.</p>
+                                    <dd><a href="mailto:contact@jasm1nii.xyz" rel="me">contact@jasm1nii.xyz</a> | <a href="https://jasm1nii.xyz/assets/pgp-public-jasm1nii-xyz.asc">download PGP key</a></dd>
+                                    <dd><a href="mailto:jasm1nii@proton.me" rel="me">jasm1nii@proton.me</a> | <a href="https://jasm1nii.xyz/assets/pgp-public-jasm1nii-proton.asc">dowload PGP key</a></dd>
                                 </dl>
                                 <dl>
-                                    <dt>discord, snapchat, and line</dt>
-                                    <dd>ask me about it</dd>
-                                    <dd>i am also on <b>matrix</b> and <b>revolt</b>, but they are rarely used</dd>
+                                    <dt>instant messengers</dt>
+                                    <dd><b>discord, line, and snapchat</b> - ask me about it</dd>
+                                    <dd><b>matrix</b> - @jasm1nii:matrix.org</dd>
+                                    <dd><del><b>revolt</b></del> - not used at the moment</dd>
                                 </dl>
                                 <dl>
                                     <dt>other social media</dt>
@@ -161,7 +151,6 @@
                                     <dd><a href="https://www.instagram.com/jasm1nii/" rel="me">personal instagram</a></dd>
                                     <dd><a href="https://www.instagram.com/jasm1nii.art/" rel="me">art instagram</a></dd>
                                     <dd>(if you really must) <a href="https://twitter.com/jasm1nii" rel="me">twitter</a></dd>
-                                    
                                 </dl>
                             </details>
                         </section>
@@ -169,25 +158,35 @@
                 </article>
             </main>
 
-            <footer id="footer">
-                <script src="/assets/scripts/footer.js"></script>
+            <footer>
+                <div id="footer"></div>
                 <noscript>
                     <p>
                     site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
-                    <br><br>
-                    best viewed on a chromium-based desktop browser
                     </p>
-            
                     <ul>
                         <li><time>2023</time></li>
-                        <li>by <a href="https://neocities.org/site/jasm1nii" rel="author me">jasm1nii on neocities</a></li>
-                        <li><a href="credits.html">credits</a></li>
+                        <li><a href="/credits.html">credits</a></li>
                     </ul>
                 </noscript> 
             </footer>
         </div>
-
     </div>
+
+<script src="/assets/scripts/headernav.js"></script>
+<script>
+    const changelogSubpage = document.querySelector('#headernav #about');
+    changelogSubpage.insertAdjacentHTML(
+    'beforeend',
+    '<ul><li style="font-weight: normal;"><a href="/about/changelog/">change log</a></li></ul>',
+    );
+</script>
+<style>
+    #headernav #about {
+        font-weight: 600;
+    }
+</style>
+<script src="/assets/scripts/footer.js"></script>
 
 </body>
 

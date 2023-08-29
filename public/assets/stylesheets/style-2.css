@@ -38,9 +38,11 @@ header p:hover, h1:hover, h2:hover, h3:hover {
   }
 }
 
+* {
+  scrollbar-width: thin;
+}
 html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-  scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -76,7 +78,7 @@ mark {
 .layout {
   display: flex;
   max-width: min-content;
-  margin: auto auto auto auto;
+  margin: auto auto 5em auto;
 }
 @media all and (max-width:768px) {
   .layout {
@@ -425,34 +427,6 @@ section > nav li:last-child::after {
   content: none;
 }
 
-#githubStats {
-  width: 80%; margin: auto;
-  padding-top: 1em;
-}
-#githubStats > span {
-  display: flex; text-align: center; vertical-align: middle; border: 1px solid rgb(137, 109, 139); margin-bottom: 1em;
-}
-#githubStatsLegend {
-  list-style: none;
-}
-#githubStatsLegend li::before {
-  content: '';
-  outline: 1px solid;
-  width: .5em;
-  height: .5em;
-  display: inline-block;
-  margin-right: .5em;
-}
-#githubStatsLegend li:first-of-type::before {
-  background-color: rgb(235, 207, 235);
-}
-#githubStatsLegend li:nth-of-type(2)::before {
-  background-color: rgb(217, 241, 233);
-}
-#githubStatsLegend li:last-of-type::before {
-  background-color: rgb(196, 218, 236);
-}
-
 summary {
   font-weight: 600;
   font-size: 1.1em;
@@ -473,6 +447,14 @@ section > details summary {
   background-color: rgb(216, 216, 233);
   padding: .5em;
   margin-top: 1em;
+}
+
+#moreFacts details div {
+  max-height: 200px;
+  overflow: auto;
+}
+#contact dl p {
+  margin-left: 1em;
 }
 
 footer {

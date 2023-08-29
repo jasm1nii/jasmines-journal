@@ -10,7 +10,7 @@
   --h2-light: #712357;
   --h3-light: #631863;
   --link-color-light: darkmagenta;
-  --link-hover-bg-color-light: palevioletred;
+  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
   --document-color-light: thistle;
   --page-color-light: #fff6f6;
   --section-card-light: rgb(255, 239, 239);
@@ -114,7 +114,7 @@ a {
   text-decoration-thickness: 1px;
 }
 a:hover {
-  background-color: palevioletred;
+  background-color: var(--link-hover-bg-color-light);
   text-decoration: none;
   color: white !important;
 }
@@ -379,36 +379,32 @@ h2 {
   font-size: 1.25em;
   letter-spacing: .05em;
 }
+h2::before {
+  margin-right: .5em;
+}
 
 /* main-info h2 decoration */
 
 #follow::before {
   content: "➕";
-  margin-right: 10px;
 }
 #support::before {
   content: "💕";
-  margin-right: 10px;
 }
 #otherlinks::before {
   content: "🌐";
-  margin-right: 10px;
 }
 #trace::before {
   content: "💌";
-  margin-right: 10px;
 }
 #siteButton::before {
   content: "🏠";
-  margin-right: 10px;  
 }
 #featuredSites::before {
   content: "⭐";
-  margin-right: 10px; 
 }
 #mutuals::before {
   content: "💞";
-  margin-right: 10px;
 }
 
 .notice-group {
@@ -505,7 +501,7 @@ section {
   }
 }
 
-#siteUpdates {
+#siteUpdates, #subscribe {
   width: 75%;
   padding-bottom: 1.5em;
 }
@@ -515,7 +511,6 @@ section {
 }
 #siteUpdates h2::before {
   content: '🆕';
-  margin-right: .5em;
 }
 #siteUpdates > ul {
   margin: 0;
@@ -523,12 +518,27 @@ section {
   padding-bottom: 1em;
   padding-top: 1em;
   max-height: 150px;
-  overflow-y: auto;
+  overflow: auto;
   border: 1px solid rgb(179, 97, 111);
-  background-color: var(--site-updates-bg-light);
 }
 #siteUpdates li {
+  padding-bottom: 1em;
+}
+
+#subscribe h2::before {
+  content: '📮';
+}
+#subscribe ul {
+  max-height: 200px;
+  overflow: auto;
+  border: 1px solid rgb(179, 97, 111);
+  padding-left: 0;
+}
+#subscribe li {
   margin: .5em;
+  margin-bottom: 1em;
+  border-bottom: 1px dotted;
+  padding-bottom: 1em;
 }
 #siteUpdates div:last-of-type ul {
   list-style: none;
@@ -546,14 +556,10 @@ section {
 
 #spotifyHomepage {
   padding: 0;
-  height: 200px;
-  overflow: auto;
-  overflow-x: hidden;
   box-shadow: var(--spotify-shadow) !important;
   background-color: var(--spotify);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   border: 1px solid purple;
+  max-width: 250px;
 }
 #lastPlayed {
   max-width: 200px;
@@ -576,7 +582,7 @@ section {
   color: rgb(45, 94, 77);
 }
 #lastPlayed h2::before {
-  content: '🎵'
+  content: '🎵';
 }
 #lastPlayed a {
   text-decoration: none;
@@ -670,7 +676,6 @@ section {
 }
 #latestStatusMain h2::before {
   content: '☕';
-  margin-right: .5em;
 }
 
 /* custom main-info styles */
@@ -694,10 +699,13 @@ section {
   background-color: transparent;
 }
 #idCardContent {
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #idCardContent h2 {
-  border: none; font-variant: small-caps; letter-spacing: 1px;
+  border: none;
+  font-variant: small-caps;
+  letter-spacing: 1px;
   color: rgb(94, 75, 92);
 }
 #idCardPFP {
@@ -798,7 +806,6 @@ section:has(#mybuttonSection) {
 }
 #warning h2::before {
   content: '💫';
-  margin-right: .5em;
 }
 #warning p {
   padding-left: 1.5em;
@@ -807,7 +814,6 @@ section:has(#mybuttonSection) {
 }
 #webGarden h2::before {
   content: '🌱';
-  margin-right: .5em;
 }
 #buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
   padding-left: 0;
@@ -895,7 +901,6 @@ section:has(#mybuttonSection) {
 }
 #webrings h2::before {
   content: '🕸';
-  margin-right: .5em;
 }
 #webrings p {
   text-align: center;
@@ -912,9 +917,6 @@ section:has(#mybuttonSection) {
 #webrings a {
   text-decoration: none;
   color: var(--web-rings-links);
-}
-#webrings a:hover {
-  color: white !important;
 }
 #webrings summary {
   margin-left: -2em;
@@ -959,23 +961,27 @@ section:has(#mybuttonSection) {
   padding: 0;
 }
 
-#links, #tipJar, #inboxlinks {
+#links, #inboxlinks {
+  width: 70%;
+}
+#inboxlinks {
   max-width: 200px;
 }
 #links ul, #inboxlinks ul {
-  list-style: none;
-  padding: 5px;
-  margin: 0;
+  padding-left: 2em;
+}
+#links ::marker, #inboxlinks ::marker {
+  content: "🔗";
+  margin-right: .75em;
 }
 #links li, #inboxlinks li {
   padding: .4em;
-  display: flex;
+  height: fit-content;
 }
-#links li:before, #inboxlinks li:before {
-   content: "🔗";
-   margin-right: .75em;
+#links li a, #inboxlinks a {
+  height: fit-content;
 }
-#tipJarButtons {
+.tip-jar {
   text-align: center;
 }
 
@@ -1043,9 +1049,6 @@ footer time {
   :root {
     --g1v5x3-link-color: rgb(146, 53, 146) !important;
   }
-  #webrings a:hover {
-    color: white !important;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1071,7 +1074,7 @@ footer time {
     color: var(--dark-mode-links);
   }
   a:hover {
-    color: white !important;
+    color: white;
   }
   main button {
     background-color: var(--dark-button-bg) !important;
@@ -1165,7 +1168,7 @@ footer time {
   color: var(--link-color-light) !important;
 }
 .light-mode a:hover {
-  color: white !important;
+  color: white;
 }
 .light-mode #themeToggle {
   background-color: #e3d7e9 !important;
@@ -1195,8 +1198,8 @@ footer time {
   background-color: snow !important;
   text-shadow: 0 0 5px white;
 }
-.light-mode #siteUpdates > ul {
-  background-color: var(--site-updates-bg-light) !important;
+.light-mode #siteUpdates > ul, .light-mode #subscribe ul {
+  background-color: var(--site-updates-bg-light);
 }
 .light-mode .time {
   background-color: var(--time-bg);

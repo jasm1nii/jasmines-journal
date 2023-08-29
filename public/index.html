@@ -18,9 +18,9 @@
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     
     <!-- indie login -->
-    <link href="/pgp-public-27082023.asc" rel="pgpkey">
+    <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
     <link href="https://github.com/jasm1nii" rel="me">
-    <link href="mailto:jasm1nii@proton.me" rel="me">
+    <link href="mailto:contact@jasm1nii.xyz" rel="me">
 
     <link rel="openid.delegate" href="https://jasm1nii.xyz/" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
@@ -79,8 +79,7 @@
 
         <div class="page-columns">
 
-          <!-- id card -->
-          <section>
+          <section> <!-- id card -->
             <div class="main-info h-card" id="idCard">
               <div id="idCardContent">
                 <h2>webmaster identity</h2>
@@ -119,7 +118,59 @@
             </div>
           </section>
 
-          <section>
+          <section> <!-- last.fm -->
+              <div class="main-info" id="lastPlayed">
+                <div id="track">
+                  <h2>
+                    last played
+                  </h2>
+                    <p id="song">&#8987;</p>
+                </div>
+                <div id="speaker">
+                  <div>
+                    <img src="/assets/media/main/speaker.svg" alt="">
+                  </div>
+                  <div style="margin-top: 10px;">
+                    <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
+                      last.fm profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+          </section>
+
+          <section> <!-- spotify playlist -->
+            <div class="main-info" id="spotifyHomepage">
+              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="spotify songs on repeat"></iframe>
+            </div>
+          </section>
+
+          <section> <!-- clock -->
+              <div class="time">
+                <p>current time in<br><span style="font-size: 16px;"><b>bandung, indonesia</b></span></p>
+                <div class="clock-display"><p class="clock" timezone="+7"></p></div>
+                <p>timezone: GMT+7</p>
+              </div>
+          </section>
+
+          <section> <!-- status.cafe -->
+              <div class="main-info" id="latestStatus">
+                <div id="latestStatusMain">
+                    <h2>latest status</h2>
+                    <div id="statuscafe">
+                      <div id="statuscafe-username"></div>
+                      <div id="statuscafe-content"></div>
+                      <div>
+                        <a href="https://status.cafe">
+                          <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+
+          <section> <!-- site updates -->
             <div class="main-info" id="siteUpdates">
               <h2>site updates</h2>
               <p>
@@ -132,112 +183,72 @@
                   </li>
                 </ul>
               </p>
-              <hr>
-              <div>
-                <h3>subscribe</h3>
+            </div>
+          </section>
+
+          <section> <!-- subscribe -->
+              <div class="main-info" id="subscribe">
+                <h2>subscribe</h2>
                 <ul>
-                    <li><b><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></b> - for occasional site-wide update summaries</li>
                     <li>
-                      <b>atom feed</b> - <a href="/blog/blog.atom">blog articles</a> / <a href="/blog/notes/notes.xml">microblog notes</a>
+                      <b><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></b> / <b><a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a></b>
+                      <br>
+                      ⤷ for occasional site-wide update summaries.
+                    </li>
+                    <li>
+                      <b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></b>
+                      <br>
+                      ⤷ yes, you can totally follow this site - and <em>only</em> this site, separate from my general purpose mastodon account.
+                    <li>
+                      <b>atom feed</b>
+                      <br>
+                      ⤷ <a href="/blog/blog.atom">blog articles</a> / <a href="/blog/notes/notes.xml">microblog notes</a>
                       <br><br>
                       <a style="text-align: center;" href="http://validator.w3.org/">
                         <img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
                       </a>
                     </li>
-                    <li><b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse feed</a></b> - an amalgamation of various site contents</li>
                 </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- clock -->
-          <section>
-            <div class="time">
-              <p>current time in<br><span style="font-size: 16px;"><b>bandung, indonesia</b></span></p>
-              <div class="clock-display"><p class="clock" timezone="+7"></p></div>
-              <p>timezone: GMT+7</p>
-            </div>
-          </section>
-          
-          <!-- status.cafe -->
-          <section>
-            <div class="main-info" id="latestStatus">
-              <div id="latestStatusMain">
-                  <h2>latest status</h2>
-                  <div id="statuscafe">
-                    <div id="statuscafe-username"></div>
-                    <div id="statuscafe-content"></div>
-                    <div>
-                      <a href="https://status.cafe">
-                        <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
-                      </a>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- last.fm -->
-          <section>
-            <div class="main-info" id="lastPlayed">
-              <div id="track">
-                <h2>
-                  last played
-                </h2>
-                  <p id="song">&#8987;</p>
-              </div>
-              <div id="speaker">
-                <div>
-                  <img src="/assets/media/main/speaker.svg" alt="">
-                </div>
-                <div style="margin-top: 10px;">
-                  <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
-                    last.fm profile
-                  </button>
+                <div class="tip-jar">
+                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
+                  <br><br>
+                  <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script><script type='text/javascript'>(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
                 </div>
               </div>
-              
-            </div>
           </section>
 
-          <!-- spotify playlist -->
-          <section>
-            <div class="main-info" id="spotifyHomepage">
-              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="spotify songs on repeat"></iframe>
-            </div>
-          </section>
-          
-          <!-- my links -->
-          <section>
+          <section> <!-- my links -->
             <div class="main-info" id="links">
               <h2 id="otherlinks">my other links</h2>
               <ul>
                 <li>
-                  <a href="https://jasmineamalia.com/" rel="external me">professional site</a>
+                  <a href="https://jasmineamalia.com/" rel="external me">professional portfolio</a>
+                  <br>
+                  ⤷ illustrations, graphic designs, photography, and miscellaneous work
                 </li>
                 <li>
-                  <a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a>
-                </li>
-                <li>
-                  <a href="https://jasmineamalia.carrd.co/" rel="external me">carrd (even more links)</a>
+                  <a href="https://jasmineamalia.carrd.co/" rel="external me">carrd</a>
+                  <br>
+                  ⤷ social profiles and even more links
                 </li>
               </ul>
             </div>
           </section>
 
-          <!-- anon inbox -->
-          <section>
+          <section> <!-- anon inbox -->
             <div class="main-info" id="inboxlinks">
               <h2 id="trace">anon inbox</h2>
+              <p>
+                i love getting questions! feel free to ask me anything related to the site or myself ↓
+              </p>
                 <ul>
-                  <li><a rel="me external" href="https://tellonym.me/jasmineamalia">tellonym</a></li>
                   <li><a rel="me external" href="https://cohost.org/jasm1nii/ask">cohost</a></li>
+                  <li><a rel="me external" href="https://tellonym.me/jasmineamalia">tellonym</a></li>
                 </ul>
             </div>
           </section>
 
-          <!-- webrings -->
-          <section>
+          <section> <!-- webrings -->
             <div class="main-info" id="webrings">
                 <h2>web rings & listings</h2>
                 <details>
@@ -318,27 +329,6 @@
                 </div>
             </div>
           </section>
-
-          <!-- tip jar -->
-          <section>
-            <div class="main-info" id="tipJar">
-              <h2 id="support">tip jar</h2>
-              <div id="tipJarButtons">
-                <p>
-                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
-                </p>
-                <p>
-                  <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script><script type='text/javascript'>(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
-                </p>
-              </div>
-              <noscript>
-                <ul>
-                  <li><a href="https://ko-fi.com/jasmineamalia" rel="me external">ko-fi (USD)</a></li>
-                  <li><a href="https://trakteer.id/jasmineamalia/tip" rel="me external">trakteer (IDR)</a></li>
-                </ul>
-              </noscript>
-            </div>
-          </section>
         </div>
 
         <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments" loading="lazy"></iframe>
@@ -352,16 +342,12 @@
       <noscript>
         <p>
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
-          <br><br>
-          best viewed on a chromium-based desktop browser
         </p>
         <ul>
           <li><time>2023</time> - until hell freezes over</li>
-          <li><a href="mailto:jasm1nii@proton.me">jasm1nii@proton.me</a></li>
           <li><a href="/site-map.html">site map</a></li>
           <li><a href="/credits.html">credits</a></li>
-          <li>🔨 <del>accessibility</del></li>
-          <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a> at <a href="https://jasm1nii.xyz/" rel="me">jasm1nii.xyz</a></li>
+          <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a></li>
           <li>
             <a href="https://indieweb.org/">
             <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;">

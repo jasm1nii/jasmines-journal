@@ -67,6 +67,9 @@ button ~ p {
     margin-top: .25em;
     font-size: smaller;
 }
+nav button {
+    width: 70%;
+}
 
 ::selection {
     background-color: rgb(248, 208, 170);
