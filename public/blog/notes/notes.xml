@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>jasmine's b(rain)log</title>
+    <title>jasmine's notes</title>
     <id>https://jasm1nii.xyz/blog/</id>
     <link rel="self" href="https://jasm1nii.xyz/blog/notes/notes.xml"></link>
     <link rel="alternate" href="https://jasm1nii.xyz/blog/notes/index.html"></link>
@@ -13,8 +13,8 @@
     <logo>https://jasm1nii.xyz/assets/media/main/07042023%20me.png</logo>
     <entry>
         <title>23 august 2023</title>
-        <id>/blog/notes/2023/august/23/entry-1726.html</id>
-        <link rel="alternate" href="https://jasm1nii.xyz/blog/notes/2023/august/23/entry-1726.html" type="text/html"/>
+        <id>/blog/notes/2023/august/23/entry-1726</id>
+        <link rel="alternate" href="https://jasm1nii.xyz/blog/notes/2023/august/23/entry-1726" type="text/html"/>
         <published>2023-08-23T00:00:00+00:00</published>
         <updated>2023-08-23T00:00:00+00:00</updated>
         <content>hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &#35;indieweb</content>
