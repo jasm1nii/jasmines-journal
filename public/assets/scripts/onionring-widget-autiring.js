@@ -56,27 +56,19 @@ else {
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
-  <table>
-    <tr>
-      <td class='webring-prev'>
-        <a href='${sites[previousIndex]}'>
-          <img src="https://i.imgur.com/nsEaVbm.png" style="image-rendering: pixelated" alt="previous site">
-        </a>
-      </td>
-      <td class='webring-info'>
-        <img src="https://i.imgur.com/wjukjLF.png" style="image-rendering: pixelated" alt="autists online web ring">
-        </br>
-        <span class='webring-links' style="text-align: center;">
-        <small> ${indexText}</small>
-        </span>
-      </td>
-      <td class='webring-next'>
-        <a href='${sites[nextIndex]}'>
-          <img src="https://i.imgur.com/Ayah6ds.png" style="image-rendering: pixelated" alt="next site">
-        </a>
-      </td>
-    </tr>
-  </table>
+    <span>
+      <a href='${sites[previousIndex]}'>
+        <img src="https://i.imgur.com/nsEaVbm.png" style="image-rendering:pixelated" alt="previous site">
+      </a>
+      <img src="https://i.imgur.com/wjukjLF.png" style="image-rendering:pixelated" alt="autists online web ring">
+      <a href='${sites[nextIndex]}'>
+        <img src="https://i.imgur.com/Ayah6ds.png"style="image-rendering:pixelated" alt="next site">
+      </a>
+    </span>
+    <br>
+    <span>
+      <small>${indexText}</small>
+    </span>
   `);
 
 }

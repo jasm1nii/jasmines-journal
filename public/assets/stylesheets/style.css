@@ -201,6 +201,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   max-width: 950px;
+  height: fit-content;
 }
 @media all and (max-width:900px) {
   .board {
@@ -216,24 +217,18 @@ main {
 
 .page-columns {
    columns: 3;
+   column-gap: 0;
    background-image: url(../media/main/ooorganize.svg);
    background-size: 200px !important;
-   height: 100%;
-   padding-top: 5%;
+   width: 100%;
+   padding-top: 3%;
    padding-bottom: 5%;
-   padding-left: 3%;
-   padding-right: 3%;
    overflow: auto;
-}
-.page-columns > section {
-  margin-bottom: 12%;
+   display: inline-block;
 }
 @media all and (max-width:900px) {
   .page-columns {
     columns: 2;
-  }
-  .page-columns > section {
-    margin-bottom: 15%;
   }
 }
 @media all and (max-width:600px) {
@@ -483,6 +478,9 @@ h2::before {
 section {
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  break-inside: avoid;
 }
 .main-info {
   border: 1px solid rgb(190, 133, 141);
@@ -546,6 +544,7 @@ section {
   border: 1px solid purple;
   max-width: 250px;
 }
+
 #lastPlayed {
   max-width: 200px;
   background-color: var(--last-played-bg);
@@ -757,7 +756,9 @@ section {
   width: 200px;
   color: var(--time-font-color);
   padding-top: .1em;
-  margin: auto;
+  padding-bottom: .5em;
+  margin-left: auto;
+  margin-right: auto;
   break-inside: avoid;
 }
 .clock-display {
@@ -882,7 +883,7 @@ section:has(#mybuttonSection) {
   border-color: purple;
   color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
-  max-width: 200px;
+  width: 70%;
 }
 #webrings h2::before {
   content: '🕸';
@@ -916,13 +917,13 @@ section:has(#mybuttonSection) {
 }
 #webringsList {
   border: 1px solid rgb(167, 95, 177);
-  padding: .5em;
+  padding: 1em;
   background: var(--web-rings-bg-light);
   margin-left: auto;
   margin-right: auto;
-  min-width: 90%;
+  width: 85%;
   overflow: auto;
-  max-height: 200px;
+  max-height: 300px;
 }
 #webringsList h3 {
   text-align: center;
@@ -932,7 +933,8 @@ section:has(#mybuttonSection) {
 }
 #webringsList p {
   margin-top: 0.25em;
-  font-size: 0.9em;
+  margin-left: auto;
+  margin-right: auto;
 }
 #webrings figure {
   width: fit-content;
