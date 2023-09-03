@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>jasmine's b(rain)log</title>
+    <title>jasmine's b(rain)log | jasm1nii.xyz</title>
     <subtitle>blog articles by jasmine</subtitle>
-    <id>https://jasm1nii.xyz/blog/</id>
-    <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom"/>
-    <link rel="alternate" href="https://jasm1nii.xyz/blog/articles" type="text/html"/>
-    <updated>2023-09-03T10:56:00+00:00</updated>
+    <id>https://jasm1nii.xyz/blog/articles/</id>
+    <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom/" type="application/atom+xml"/>
+    <link rel="alternate" href="https://jasm1nii.xyz/blog/articles/" type="text/html"/>
+    <updated>2023-09-03T10:56:00+07:00</updated>
     <author>
-        <name>jasmine | jasm1nii.xyz</name>
+        <name>jasmine</name>
         <email>contact@jasm1nii.xyz</email>
-        <uri>https://jasm1nii.xyz/blog/articles/</uri>
+        <uri>https://jasm1nii.xyz/</uri>
     </author>
     <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
-    <logo>https://media.mas.to/masto-public/accounts/avatars/109/323/560/297/355/975/original/f62415bd47ff4ece.png</logo>
+    <logo>https://jasm1nii.xyz/assets/media/main/07042023%20me.png</logo>
     <entry>
         <title>bye neocities (part 2)</title>
         <id>https://jasm1nii.xyz/blog/2023/august/17/entry</id>
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/17/entry" type="text/html"/>
-        <published>2023-08-17T00:00:00+00:00</published>
-        <updated>2023-08-18T00:00:00+00:00</updated>
+        <published>2023-08-17T00:00:00+07:00</published>
+        <updated>2023-08-18T00:00:00+07:00</updated>
         <category term="webmastery" label="Webmastery"/>
         <summary type="html">update - well, that didn't last long!</summary>
     </entry>
@@ -26,8 +26,8 @@
         <title>bye neocities</title>
         <id>https://jasm1nii.xyz/blog/2023/august/12/entry</id>
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/12/entry" type="text/html"/>
-        <published>2023-08-12T00:00:00+00:00</published>
-        <updated>2023-08-12T00:00:00+00:00</updated>
+        <published>2023-08-12T00:00:00+07:00</published>
+        <updated>2023-08-12T00:00:00+07:00</updated>
         <category term="webmastery" label="Webmastery"/>
         <summary type="html">it was a good one month, i guess.</summary>
     </entry>
@@ -35,8 +35,8 @@
         <title>parroting a broken record held together by elmer's glue</title>
         <id>https://jasm1nii.xyz/blog/2023/august/09/entry</id>
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/09/entry" type="text/html"/>
-        <published>2023-08-09T00:00:00+00:00</published>
-        <updated>2023-08-09T00:00:00+00:00</updated>
+        <published>2023-08-09T00:00:00+07:00</published>
+        <updated>2023-08-09T00:00:00+07:00</updated>
         <category term="webmastery" label="Webmastery"/>
         <category term="personal" label="Personal"/>
         <summary type="html">getting started with my first blog post 🐣</summary>

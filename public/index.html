@@ -32,7 +32,6 @@
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    
   </head>
   <body>
     
@@ -52,13 +51,16 @@
           <div id="headernav"></div>
           <noscript>
             <ul>
-              <li>
-                <a href="/site-map.html">site map</a>
-              </li>
-              <li>
-                <a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a>
-              </li>
-            </ul>
+              <li id="home"><a href="/">home</a></li>
+              <li id="about"><a href="/about/">about</a></li>
+              <li id="blog"><a href="/blog/">blog</a></li>
+              <li id="mediaLibrary">🔨 <del>media library</del></li>
+              <li id="art">🔨 <del><a href="/art/">art</a></del></li>
+              <li id="resources"><a href="/resources/">resources</a></li>
+              <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
+              <li id="archive">🔨 <del>archive</del></li>
+              <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
+          </ul>
           </noscript>
         </nav>
         
@@ -178,6 +180,9 @@
                 <ul>
                   <li>
                       reformatted atom feed for blog articles to display HTML content in feed readers.
+                  </li>
+                  <li>
+                    fixed javascript blog feed previews to display links without clicking through.
                   </li>
                   <li>
                     more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
@@ -344,16 +349,36 @@
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
         </p>
         <ul>
-          <li><time>2023</time> - until hell freezes over</li>
-          <li><a href="/site-map.html">site map</a></li>
-          <li><a href="/credits.html">credits</a></li>
-          <li>hosted by <a href="https://www.rumahweb.com/" rel="sponsored">rumahweb</a></li>
-          <li>
-            <a href="https://indieweb.org/">
-            <img src="https://indieweb.org/img/indieweb-badge.png" width="80" height="15" alt="IndieWebCamp" style="image-rendering:pixelated;">
-            </a>
-          </li>
+            <li id="footerCopyright">
+                <time>2023</time> - until hell freezes over
+            </li>
+            <li id="footerIndieweb">
+                <a href="https://indieweb.org/">
+                <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;"></a>
+            </li>
+            <li id="footerWebmentions">
+                <a href="https://indieweb.org/Webmention">
+                <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;"></a>
+            </li>
+            <li id="footerAcccessibility">
+                🔨 <del>accessibility</del>
+            </li>
+            
+            <li id="footerSitemap">
+                <a href="/site-map.html">site map</a>
+            </li>
+            <li id="footerCredits">
+                <a href="/credits.html">credits</a>
+            </li>
+            <li id="footerContact">
+                <a href="/about#contact">contact</a>
+            </li>
         </ul>
+        <style>
+            footer ul li:has(img) a {
+                text-decoration: none;
+            }
+        </style>
       </noscript>
     </footer>
 

@@ -22,7 +22,8 @@ function loadNotes() {
             </div>
             <div class="h-entry">
                 <p class="e-content">` +
-                    x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue +
+                    x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue
+                     +
                 `</p>
                 <time>` + x[i].getElementsByTagName("updated")[0].childNodes[0].nodeValue.substr(0, 10) + `</time>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                 <a href="` + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + `">view post with comments</a>
