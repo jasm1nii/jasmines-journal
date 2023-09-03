@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>jasmine's b(rain)log</title>
+    <subtitle>blog articles by jasmine</subtitle>
     <id>https://jasm1nii.xyz/blog/</id>
-    <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom"></link>
-    <link rel="alternate" href="https://jasm1nii.xyz/blog/articles" type="text/html"></link>
+    <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom"/>
+    <link rel="alternate" href="https://jasm1nii.xyz/blog/articles" type="text/html"/>
     <updated>2023-09-03T10:56:00+00:00</updated>
     <author>
-        <name>jasmine</name>
+        <name>jasmine | jasm1nii.xyz</name>
+        <email>contact@jasm1nii.xyz</email>
         <uri>https://jasm1nii.xyz/blog/articles/</uri>
     </author>
     <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
@@ -17,6 +19,7 @@
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/17/entry" type="text/html"/>
         <published>2023-08-17T00:00:00+00:00</published>
         <updated>2023-08-18T00:00:00+00:00</updated>
+        <category term="webmastery" label="Webmastery"/>
         <summary type="html">update - well, that didn't last long!</summary>
     </entry>
     <entry>
@@ -25,6 +28,7 @@
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/12/entry" type="text/html"/>
         <published>2023-08-12T00:00:00+00:00</published>
         <updated>2023-08-12T00:00:00+00:00</updated>
+        <category term="webmastery" label="Webmastery"/>
         <summary type="html">it was a good one month, i guess.</summary>
     </entry>
     <entry>
@@ -33,6 +37,8 @@
         <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/09/entry" type="text/html"/>
         <published>2023-08-09T00:00:00+00:00</published>
         <updated>2023-08-09T00:00:00+00:00</updated>
+        <category term="webmastery" label="Webmastery"/>
+        <category term="personal" label="Personal"/>
         <summary type="html">getting started with my first blog post 🐣</summary>
     </entry>
 </feed>
