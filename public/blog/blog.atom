@@ -3,31 +3,34 @@
     <title>jasmine's b(rain)log</title>
     <id>https://jasm1nii.xyz/blog/</id>
     <link rel="self" href="https://jasm1nii.xyz/blog/blog.atom"></link>
-    <link rel="alternate" href="https://jasm1nii.xyz/blog/"></link>
-    <updated>2023-08-18T00:00:00+00:00</updated>
+    <link rel="alternate" href="https://jasm1nii.xyz/blog/articles" type="text/html"></link>
+    <updated>2023-09-03T10:56:00+00:00</updated>
     <author>
         <name>jasmine</name>
-        <uri>https://jasm1nii.xyz/blog</uri>
+        <uri>https://jasm1nii.xyz/blog/articles/</uri>
     </author>
     <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
     <logo>https://media.mas.to/masto-public/accounts/avatars/109/323/560/297/355/975/original/f62415bd47ff4ece.png</logo>
     <entry>
         <title>bye neocities (part 2)</title>
-        <id>https://jasm1nii.xyz/blog/2023/august/17/entry.html</id>
+        <id>https://jasm1nii.xyz/blog/2023/august/17/entry</id>
+        <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/17/entry" type="text/html"/>
         <published>2023-08-17T00:00:00+00:00</published>
         <updated>2023-08-18T00:00:00+00:00</updated>
         <summary type="html">update - well, that didn't last long!</summary>
     </entry>
     <entry>
         <title>bye neocities</title>
-        <id>https://jasm1nii.xyz/blog/2023/august/12/entry.html</id>
+        <id>https://jasm1nii.xyz/blog/2023/august/12/entry</id>
+        <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/12/entry" type="text/html"/>
         <published>2023-08-12T00:00:00+00:00</published>
         <updated>2023-08-12T00:00:00+00:00</updated>
         <summary type="html">it was a good one month, i guess.</summary>
     </entry>
     <entry>
         <title>parroting a broken record held together by elmer's glue</title>
-        <id>https://jasm1nii.xyz/blog/2023/august/09/entry.html</id>
+        <id>https://jasm1nii.xyz/blog/2023/august/09/entry</id>
+        <link rel="alternate" href="https://jasm1nii.xyz/blog/2023/august/09/entry" type="text/html"/>
         <published>2023-08-09T00:00:00+00:00</published>
         <updated>2023-08-09T00:00:00+00:00</updated>
         <summary type="html">getting started with my first blog post 🐣</summary>
