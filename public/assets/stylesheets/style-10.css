@@ -320,7 +320,7 @@ section:has(#notesArchive) {
 }
 
 .follow {
-    width: fit-content;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -497,7 +497,7 @@ footer {
             margin-right: 1em;
         }
         footer li {
-            display: inline;
+            display: inline-block;
             margin-right: 1em;
         }
 

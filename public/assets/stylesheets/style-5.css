@@ -381,7 +381,7 @@ footer {
             margin-right: 1em;
         }
         footer li {
-            display: inline;
+            display: inline-block;
             margin-right: 1em;
         }
 
