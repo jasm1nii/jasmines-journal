@@ -31,10 +31,13 @@
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </head>
 
   <body>
+
     <div id="loader"></div>
+    
     <div class="board">
       <header>
         <hgroup>
@@ -42,7 +45,7 @@
             <h1>jasmine's journal</h1>
           </div>
           <div class="header-aside">
-            <button id="themeToggle" onclick="themeToggle()">
+            <button id="themeToggle">
               switch theme
             </button>
             <p>
@@ -68,58 +71,10 @@
           </noscript>
         </nav>
       </header>
-      
-      <style>
-          header nav ul #linkGallery {
-            font-weight: 600;
-          }
-          header nav #linkGallery a {
-            text-decoration: wavy underline 1px;
-          }
-      </style>
 
       <main>
         <article>
           <div class="page-columns">
-            
-            <!-- button -->
-            <section>
-              <div
-                class="main-info"
-                id="mybuttonSection">
-                <h2 id="siteButton">link to this site</h2>
-                <br />
-                <img
-                  src="assets/media/main/jasmines-journal-button.png"
-                  alt="&ldquo;jasmine's journal&rdquo; on neocities"
-                  style="
-                    margin-left: auto;
-                    margin-right: auto;
-                    display: block;
-                    outline: 1px solid gray;
-                    image-rendering: pixelated;
-                  "
-                />
-                <p>copy and paste the following code into your HTML file ↓</p>
-                <div id="buttonCode">
-                  <code>
-                    &lt;a href="https://jasm1nii.xyz/"
-                    target="_blank">&lt;img
-                    src="https://jasm1nii.xyz/assets/media/main/jasmines-journal-button.png"
-                    alt="&amp;ldquo;jasmine's journal&amp;rdquo;"
-                    style="outline: 1px solid gray; image-rendering:
-                    pixelated;"/>&lt;/a>
-                  </code>
-                </div>
-                <!-- button code END -->
-                <p>
-                  <small
-                    >hotlinking is fine, but self-hosting the image is
-                    recommended - media links break <em>all</em> the time.</small
-                  >
-                </p>
-              </div>
-            </section>
 
             <section>
               <div class="main-info" id="warning">
@@ -129,7 +84,7 @@
                   <strong>toggle at your own discretion ✨</strong>
                 </p>
                 <div id="gifControls"></div>
-                
+                <script src="/assets/scripts/gif-controls.js"></script>
               </div>
             </section>
 
@@ -408,6 +363,45 @@
                 </p>
               </div>
             </section>
+            
+            <!-- button -->
+            <section>
+              <div
+                class="main-info"
+                id="mybuttonSection">
+                <h2 id="siteButton">link to this site</h2>
+                <br />
+                <img
+                  src="assets/media/main/jasmines-journal-button.png"
+                  alt="&ldquo;jasmine's journal&rdquo; on neocities"
+                  style="
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                    outline: 1px solid gray;
+                    image-rendering: pixelated;
+                  "
+                />
+                <p>copy and paste the following code into your HTML file ↓</p>
+                <div id="buttonCode">
+                  <code>
+                    &lt;a href="https://jasm1nii.xyz/"
+                    target="_blank">&lt;img
+                    src="https://jasm1nii.xyz/assets/media/main/jasmines-journal-button.png"
+                    alt="&amp;ldquo;jasmine's journal&amp;rdquo;"
+                    style="outline: 1px solid gray; image-rendering:
+                    pixelated;"/>&lt;/a>
+                  </code>
+                </div>
+                <!-- button code END -->
+                <p>
+                  <small
+                    >hotlinking is fine, but self-hosting the image is
+                    recommended - media links break <em>all</em> the time.</small
+                  >
+                </p>
+              </div>
+            </section>
 
           </div>
         </article>
@@ -436,11 +430,17 @@
       </noscript>
     </footer>
 
-    <script async src="/assets/scripts/loader.js"></script>
-    <script async src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script async src="/assets/scripts/headernav.js"></script>
-    <script src="/assets/scripts/gif-controls.js"></script>
-    <script async src="/assets/scripts/footer.js"></script>
+    <script src="/assets/scripts/loader.js"></script>
+    <script src="/assets/scripts/headernav.js"></script>
+    <style>
+      header nav ul #linkGallery {
+        font-weight: 600;
+      }
+      header nav #linkGallery a {
+        text-decoration: wavy underline 1px;
+      }
+    </style>
+    <script src="/assets/scripts/footer.js"></script>
     <script src="/assets/scripts/freezeframe.min.js"></script>
   </body>
 </html>

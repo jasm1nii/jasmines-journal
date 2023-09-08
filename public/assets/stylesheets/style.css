@@ -118,6 +118,10 @@ a:hover {
   text-decoration: none;
   color: white !important;
 }
+ul {
+  margin-left: 0;
+  padding-left: 0;
+}
 
 /* animations */
 
@@ -200,7 +204,7 @@ main {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 950px;
+  max-width: 1100px;
   height: fit-content;
 }
 @media all and (max-width:900px) {
@@ -220,11 +224,11 @@ main {
    column-gap: 0;
    background-image: url(../media/main/ooorganize.svg);
    background-size: 200px !important;
-   width: 100%;
-   padding-top: 3%;
+   padding-top: 30px;
    padding-bottom: 5%;
+   padding-left: 1%;
+   padding-right: 1%;
    overflow: auto;
-   display: inline-block;
 }
 @media all and (max-width:900px) {
   .page-columns {
@@ -320,8 +324,6 @@ h1::before {
 }
 nav {
   margin: auto;
-  padding-top: 5px;
-  padding-bottom: 10px;
   padding-left: 1em;
   padding-right: 1em;
   border-bottom: 1px solid gray;
@@ -332,10 +334,14 @@ nav {
 nav ul {
   margin: 0;
   padding: 0;
+  padding-top: .5em;
+  padding-bottom: 1em;
 }
 nav li {
-  display: inline;
+  display: inline-block;
   margin-right: .5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
   white-space: nowrap;
 }
 nav li::before {
@@ -400,6 +406,31 @@ h2::before {
 }
 #mutuals::before {
   content: "💞";
+}
+#lastPlayed h2::before {
+  content: '🎵';
+}
+#siteUpdates h2::before {
+  content: '🆕';
+}
+#subscribe h2::before {
+  content: '📮';
+}
+#latestStatusMain h2::before {
+  content: '☕';
+}
+#webrings h2::before {
+  content: '🕸';
+}
+#warning h2::before {
+  content: '💫';
+}
+#webGarden h2::before {
+  content: '🌱';
+}
+#bitcafe::before {
+  content: '☕';
+  margin-right: .5em;
 }
 
 .notice-group {
@@ -492,6 +523,7 @@ section {
   background-color: var(--section-card-light);
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   break-inside: avoid;
+  width: 60%;
 }
 @media all and (max-width:900px) {
   .main-info {
@@ -500,7 +532,7 @@ section {
 }
 
 #siteUpdates, #subscribe {
-  width: 75%;
+  width: 70%;
   padding-bottom: 1em;
 }
 #siteUpdates ul, #subscribe ul {
@@ -509,9 +541,6 @@ section {
   margin-bottom: .5em;
 }
 
-#siteUpdates h2::before {
-  content: '🆕';
-}
 #siteUpdates ul {
   max-height: 150px;
   overflow: auto;
@@ -522,9 +551,6 @@ section {
   margin-left: 1em;
 }
 
-#subscribe h2::before {
-  content: '📮';
-}
 #subscribe ul {
   list-style: none;
   max-height: 200px;
@@ -533,8 +559,13 @@ section {
 }
 #subscribe li {
   margin-bottom: 1em;
-  border-bottom: 1px dotted;
   padding-bottom: 1em;
+  border-bottom: 1px dotted;
+}
+#subscribe li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 #spotifyHomepage {
@@ -542,7 +573,7 @@ section {
   box-shadow: var(--spotify-shadow) !important;
   background-color: var(--spotify);
   border: 1px solid purple;
-  max-width: 250px;
+  width: 250px;
 }
 
 #lastPlayed {
@@ -565,9 +596,7 @@ section {
   border-color: rgb(79, 170, 161);
   color: rgb(45, 94, 77);
 }
-#lastPlayed h2::before {
-  content: '🎵';
-}
+
 #lastPlayed a {
   text-decoration: none;
 }
@@ -583,20 +612,18 @@ section {
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
-  padding-top: 5px;
+  padding-top: 15px;
   padding-bottom: 5px;
   border: 1px solid rgb(146, 162, 180);
   border-top: none;
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
 }
-#speaker img {
-  width: 50px;
-  user-select: none;
-  margin-right: 20px;
-}
 #speaker button {
   margin-bottom: 1em;
+  padding: .25em;
+  padding-left: .5em;
+  padding-right: .5em;
   font: inherit;
   font-size: 0.9em;
   border: 1px solid green;
@@ -658,9 +685,7 @@ section {
   padding-left: 1em;
   padding-bottom: 0;
 }
-#latestStatusMain h2::before {
-  content: '☕';
-}
+
 
 /* custom main-info styles */
 #idCard {
@@ -722,8 +747,6 @@ section {
 #idCardBiodata ul {
   list-style: none;
   margin: 0;
-  padding-left: 1em;
-  padding-right: 1em;
   padding-top: .5em;
   padding-bottom: .5em;
   background-color: transparent !important;
@@ -777,6 +800,7 @@ section {
 
 #warning {
   width: 80%;
+  max-width: 250px;
   background-color: var(--warning-bg);
   color: rgb(92, 63, 128);
   padding: 0;
@@ -790,24 +814,23 @@ section:has(#mybuttonSection) {
   padding: 1em;
   border-color: rgb(204, 148, 204);
 }
-#warning h2::before {
-  content: '💫';
-}
 #warning p {
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-bottom: .5em;
 }
-#webGarden h2::before {
-  content: '🌱';
-}
+
 #buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: .5em;
-  width: 90%;
-  max-width: 320px;
+  width: 80%;
 }
+  @media all and (max-width:600px) {
+    #buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
+      min-width: 300px;
+    }
+  }
 #buttonSection h2, #buttonSection p, #mutualsButtonSection h2, #mutualsButtonSection p, #cafeButtonSection h2, #cafeButtonSection p, #mybuttonSection h2, #mybuttonSection p, #webGarden h2, #webGarden p {
   padding-left: 1em;
   padding-right: 1em;
@@ -815,7 +838,7 @@ section:has(#mybuttonSection) {
 #buttonSection p, #mutualsButtonSection p, #cafeButtonSection p {
   text-align: center;
 }
-#mybuttonSection {
+#mybuttonSection, #webGarden {
   max-width: 250px;
 }
 #buttonCode { /* button textarea */
@@ -836,19 +859,16 @@ section:has(#mybuttonSection) {
   text-align: center;
   background-color: transparent !important;
   border-radius: inherit !important;
-  padding-top: .25em; padding-bottom: .25em;
-  overflow: auto;
+  padding-top: .25em;
+  padding-bottom: .25em;
   margin-left: auto;
   margin-right: auto;
-}
-#bitcafe::before {
-  content: '☕';
-  margin-right: .5em;
 }
 
 .ff-container.ff-responsive {
   max-width: 88px;
 }
+
 #gifControls { 
   text-align: center;
   padding-bottom: 2em;
@@ -884,9 +904,6 @@ section:has(#mybuttonSection) {
   color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
   width: 70%;
-}
-#webrings h2::before {
-  content: '🕸';
 }
 #webrings p {
   text-align: center;
@@ -950,8 +967,6 @@ section:has(#mybuttonSection) {
 
 #links, #inboxlinks {
   width: 70%;
-}
-#inboxlinks {
   max-width: 200px;
 }
 #links ul, #inboxlinks ul {
@@ -991,6 +1006,7 @@ footer {
   font-size: 1em;
   color: var(--footer-font);
   width: 50%;
+  height: fit-content;
   max-width: 500px;
 }
   @media all and (max-width:768px) {

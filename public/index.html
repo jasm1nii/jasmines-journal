@@ -32,17 +32,20 @@
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+
+    <link rel="dns-prefetch" href="https://neocities.org/" />
   </head>
   <body>
     
     <div id="loader"></div>
-    
+
     <div class="board">
       <header>
         <hgroup>
           <h1>jasmine's journal</h1>
           <div class="header-aside">
-            <button id="themeToggle" onclick="themeToggle()">
+            <button id="themeToggle">
               switch theme
             </button>
           </div>
@@ -76,7 +79,6 @@
             </noscript>
         </div>
       </header>
-      
 
       <main>
 
@@ -130,14 +132,9 @@
                     <p id="song">&#8987;</p>
                 </div>
                 <div id="speaker">
-                  <div>
-                    <img src="/assets/media/main/speaker.svg" alt="">
-                  </div>
-                  <div style="margin-top: 10px;">
-                    <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
-                      last.fm profile
-                    </button>
-                  </div>
+                  <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
+                    last.fm profile
+                  </button>
                 </div>
               </div>
           </section>
@@ -173,20 +170,13 @@
               </div>
           </section>
 
-
           <section> <!-- site updates -->
             <div class="main-info" id="siteUpdates">
               <h2>site updates</h2>
-                <h3><time>3 september 2023</time></h3>
+                <h3><time datetime="2023-09-08">8 september 2023</time></h3>
                 <ul>
                   <li>
-                      reformatted atom feed for blog articles to display HTML content in feed readers.
-                  </li>
-                  <li>
-                    fixed javascript blog feed previews to display links without clicking through.
-                  </li>
-                  <li>
-                    fixed box shadow breaks on webkit-based tablet browsers.
+                    adjusted width parameters for multiple sections on the home page and "link gallery" page.
                   </li>
                   <li>
                     more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
@@ -194,7 +184,6 @@
                 </ul>
             </div>
           </section>
-
 
           <section> <!-- subscribe -->
               <div class="main-info" id="subscribe">
@@ -208,7 +197,7 @@
                     <li>
                       <b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></b>
                       <br>
-                      ⤷ yes, you can totally follow this site on mastodon (separate from my <a href="https://mas.to/@jasm1nii" rel="external me">general purpose account</a>)
+                      ⤷ a dedicated mastodon profile separate from my <a href="https://mas.to/@jasm1nii" rel="external me">general purpose account</a>
                     <li>
                       <b>atom feed</b>
                       <br>
@@ -232,12 +221,16 @@
               <h2 id="otherlinks">my other links</h2>
               <ul>
                 <li>
-                  <a href="https://jasmineamalia.com/" rel="external me">professional portfolio</a>
+                  <a href="https://jasmineamalia.com/" rel="external me">
+                    <b>professional portfolio</b>
+                  </a>
                   <br>
                   ⤷ illustrations, graphic designs, photography, and miscellaneous work
                 </li>
                 <li>
-                  <a href="https://jasmineamalia.carrd.co/" rel="external me">carrd</a>
+                  <a href="https://jasmineamalia.carrd.co/" rel="external me">
+                    <b>carrd</b>
+                  </a>
                   <br>
                   ⤷ social profiles and even more links
                 </li>
@@ -252,8 +245,8 @@
                 i love getting questions! feel free to ask me anything related to the site or myself ↓
               </p>
                 <ul>
-                  <li><a rel="me external" href="https://cohost.org/jasm1nii/ask">cohost</a> - preferred, but must be logged in to view</li>
-                  <li><a rel="me external" href="https://tellonym.me/jasmineamalia">tellonym</a> - checked once every blue moon</li>
+                  <li><a rel="me external" href="https://cohost.org/jasm1nii/ask"><b>cohost</b></a> - preferred, but must be logged in to view</li>
+                  <li><a rel="me external" href="https://tellonym.me/jasmineamalia"><b>tellonym</b></a> - checked once every blue moon</li>
                 </ul>
             </div>
           </section>
@@ -382,25 +375,19 @@
                 <a href="/about#contact">contact</a>
             </li>
         </ul>
-        <style>
-            footer ul li:has(img) a {
-                text-decoration: none;
-            }
-        </style>
       </noscript>
     </footer>
 
   <script async src="/assets/scripts/loader.js"></script>
-  <script async src="/assets/scripts/dark-light-toggle-jq.js"></script>
   <script async src="/assets/scripts/headernav.js"></script>
-    <style>
-      header nav ul li:first-child {
-        font-weight: 600;
-      }
-      #headernav #home a {
-        text-decoration: wavy underline 1px;
-      }
-    </style> 
+  <style>
+    header nav ul li:first-child {
+      font-weight: 600;
+    }
+    #headernav #home a {
+      text-decoration: wavy underline 1px;
+    }
+  </style>
   <script async src="/assets/scripts/footer.js"></script>
   <script defer src="/assets/scripts/sticky-note.js"></script>
   <script defer src="/assets/scripts/pretzel.js"></script>
