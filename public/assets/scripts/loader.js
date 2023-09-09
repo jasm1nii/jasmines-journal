@@ -45,6 +45,7 @@ document.getElementById("loader").innerHTML = `
 var loader = document.getElementById("loader");
 
 function closeLoader() {
+  window.stop();
   loader.style.display = "none";
 }
 

@@ -30,13 +30,14 @@
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     
     <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/jquery-3.7.1.min.js""></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </head>
 
   <body>
 
     <div id="loader"></div>
+    <script async src="/assets/scripts/loader.js"></script>
     
     <div class="board">
       <header>
@@ -56,6 +57,15 @@
         </hgroup>
         <nav>
           <div id="headernav"></div>
+          <script src="/assets/scripts/headernav.js"></script>
+          <style>
+            header nav ul #linkGallery {
+              font-weight: 600;
+            }
+            header nav #linkGallery a {
+              text-decoration: wavy underline 1px;
+            }
+          </style>
           <noscript>
             <ul>
               <li>
@@ -430,16 +440,6 @@
       </noscript>
     </footer>
 
-    <script src="/assets/scripts/loader.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <style>
-      header nav ul #linkGallery {
-        font-weight: 600;
-      }
-      header nav #linkGallery a {
-        text-decoration: wavy underline 1px;
-      }
-    </style>
     <script src="/assets/scripts/footer.js"></script>
     <script src="/assets/scripts/freezeframe.min.js"></script>
   </body>
