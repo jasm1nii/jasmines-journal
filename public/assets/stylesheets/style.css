@@ -573,8 +573,13 @@ section {
   box-shadow: var(--spotify-shadow) !important;
   background-color: var(--spotify);
   border: 1px solid purple;
-  width: 250px;
+  width: fit-content;
 }
+  @media all and (max-width:768px) {
+    #spotifyHomepage {
+      min-width: fit-content;
+    }
+  }
 
 #lastPlayed {
   max-width: 200px;
@@ -649,6 +654,11 @@ section {
   border-top: 1px solid rgb(194, 167, 194);
   word-wrap: break-word;
   background: rgb(255, 248, 252);
+  font-size: 1.1em;
+}
+#statuscafe hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 #statuscafe div:last-child {
   margin-top: 1em;
@@ -659,8 +669,10 @@ section {
   font-weight: 600;
 }
 #statuscafe-content {
-  padding-left: .5em;
+  padding: .5em;
+  padding-bottom: 0;
 }
+
 #latestStatus {
   padding: 0;
   margin: auto;
@@ -668,7 +680,7 @@ section {
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
-  width: 80%;
+  width: 70%;
 }
 @media all and (max-width:768px) {
   #latestStatus {
@@ -776,7 +788,7 @@ section {
   border-bottom: var(--time-border-bottom);
   border-right: var(--time-border-right);
   outline: 1px solid 	rgb(140, 112, 169);
-  width: 200px;
+  width: 220px;
   color: var(--time-font-color);
   padding-top: .1em;
   padding-bottom: .5em;
@@ -785,17 +797,22 @@ section {
   break-inside: avoid;
 }
 .clock-display {
-  font-size: 36px;
+  font-size: 2.85em;
   color: mintcream;
   letter-spacing: 3px;
   background-color: #374048;
-  width: 120px;
-  margin: auto auto -25px auto;
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: .25em;
+  padding-right: .25em;
   border-top: 3px inset gray;
   border-left: 3px inset gray;
 }
 .clock {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 #warning {
@@ -908,29 +925,23 @@ section:has(#mybuttonSection) {
 #webrings p {
   text-align: center;
 }
-#webrings details p:first-of-type {
-  text-align: left;
-  position: absolute;
-  border: 1px solid;
-  color: black;
-  padding: 1em;
-  width: 200px;
-  background-color: rgb(255, 255, 255);
-}
 #webrings a {
   text-decoration: none;
   color: var(--web-rings-links);
 }
 #webrings summary {
-  margin-left: -2em;
   font-weight: 600;
+  margin: 1em;
 }
-#webrings details {
-  margin-top: 1em;
+#webrings details p {
+  text-align: left;
+  position: absolute;
+  border: 1px solid;
+  color: black;
+  padding: 1em;
   margin-left: 2em;
-}
-#webrings hr {
-  margin-top: 1em;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
 }
 #webringsList {
   border: 1px solid rgb(167, 95, 177);
