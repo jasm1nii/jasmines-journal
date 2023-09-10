@@ -797,6 +797,12 @@ section {
   margin-right: auto;
   break-inside: avoid;
 }
+  @media all and (min-width: 1000px) {
+    #spotifyHomepage {
+      margin-bottom: 10%;
+    }
+  }
+
 .clock-display {
   font-size: 2.85em;
   color: mintcream;
