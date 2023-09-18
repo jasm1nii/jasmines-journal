@@ -14,7 +14,6 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 RewriteEngine on
 
-
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
 
@@ -24,3 +23,12 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 RewriteEngine On
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot) [NC]
 RewriteRule ^ – [F]
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin"
+  Header always set Content-Security-Policy "upgrade-insecure-requests"
+  Header always set Permissions-Policy "accelerometer=(); battery=(); camera=(); encrypted-media=*; geolocation=(); gyroscope=(); magnetometer=(); microphone=(); usb=()"
+</IfModule>

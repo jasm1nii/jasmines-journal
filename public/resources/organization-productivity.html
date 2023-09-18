@@ -42,28 +42,27 @@
   <body>
     <div id="layout">
         <header>
-            <button id="themeToggle" onclick="themeToggle()">
+            <button id="themeToggle">
                 switch theme
             </button>
-            <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
             <noscript>
                 <small>unavailable</small>
-                </noscript>
+            </noscript>
             <h1>jasmine's resources</h1>
             <p>
                 page contents updated
-                <time datetime="2023-08-17">17 august 2023</time>
+                <time datetime="2023-09-18">18 september 2023</time>
             </p>
             <nav>
                 <ul>
-                    <li><a href="/index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li><a href="/site-map.html">site map</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <nav>
-                <a href="/resources/">return to resources index</a>
+                <a href="/resources">return to resources index</a>
             </nav>
             <article>
               <section>
@@ -83,84 +82,50 @@
                     <dd>
                         really helpful for visualizing ideas and mapping them out!
                     </dd>
+                </dl>
+                <h3>note-taking and knowledge management</h3>
+                <dl>
                     <dt><a href="https://affiliate.notion.so/jasm1nii-neocities">notion 👑 🎀</a></dt>
                     <dd>
                         <p>
-                            <details>
-                                <summary>
-                                    this is my go-to app for... almost everything. i basically use it as a second brain.
-                                </summary>
-                                <p>
-                                    it's a note-taking app that can be as simple or as powerful as you need. some use cases from my everyday life:
-                                </p>
-                                    <ul>
-                                        <li>vent journalling</li>
-                                        <li>cataloguing web bookmarks in a browser-agnostic system - my favorite way to use notion</li>
-                                        <li>keeping track of school assignments and making detailed project timelines</li>
-                                        <li>building private wikis with friends</li>
-                                        <li>remembering things in general</li>
-                                    </ul>
-                                <p>
-                                    also, you can export the pages as HTML files! i've yet to use them for web weaving myself, but one could potentially use notion notes as web templates. and with markdown support, drafting blogs would be much easier, too.
-                                </p>
-                            </details>
-                            <br>
-                            <a href="https://affiliate.notion.so/jasm1nii-neocities" rel="external sponsored">
-                                <img src="https://notion.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6c238b0e-b686-4f38-98dc-16c23f61d5c7%2Faffiliate-white.svg?table=block&id=1e6af873-921e-4d53-be6c-a17325212aa7&spaceId=e12b42ac-4e54-476f-a4f5-7d6bdb1e61e2&userId=&cache=v2" alt="notion affiliate badge" width="100">
-                            </a>
+                            this is my go-to app for... almost everything. seamlessly integrates with many third-party apps (like google calendar, dropbox, and github). notes can be exported as PDFs, markdown files, or HTML pages.
                         </p>
+                        <a href="https://affiliate.notion.so/jasm1nii-neocities" rel="external sponsored">
+                            <img src="/assets/media/resources/affiliate-white.svg" alt="notion affiliate badge" width="100">
+                        </a>
                     </dd>
                     <dt>
                         <a href="https://coda.grsm.io/wvrobgf6dq36" rel="external sponsored">coda</a> 🎀
                     </dt>
                     <dd>
-                        <details>
-                            <summary>
-                                i've only used it sparingly, but here are the things that stick out, versus notion:
-                            </summary>
-                            <p>
-                                pros
-                                <ul>
-                                    <li>
-                                        much cheaper to scale for teams, with content limits per page (instead of per team)
-                                    </li>
-                                    <li>
-                                        native form-collection feature
-                                    </li>
-                                    <li>
-                                        easier to onboard others for group projects (in my experience)
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                cons
-                                <ul>
-                                    <li>
-                                        the mobile app leaves much to be desired
-                                    </li>
-                                    <li>
-                                        feels a bit overengineered for individual use
-                                    </li>
-                                </ul>
-                            </p>
-                        </details>
+                        <p>
+                            i've personally found this better suited to team collaboration - much cheaper to scale, as well - but the mobile app is still a bit barebones at the moment.
+                        </p>
                     </dd>
                     <dt>
                         <a href="https://obsidian.md/">obsidian</a>
                     </dt>
                     <dd>
-                        an offline notion alternative - you own your notes. can be used without an account. device syncing is only available on the paid plan.
+                        <p>
+                            you don't even need an account to use this - notes are stored and edited offline. you can even use custom HTML and CSS! but if you're used to detail-rich kanban boards, calendars, and databases (like in notion and coda), you'll need to spend a lot of time finding the right extensions.
+                        </p>
                     </dd>
                 </dl>
               </section>
             </article>
+
             <nav>
-                <a href="/resources/">return to resources index</a>
+                <a href="/resources">return to resources index</a>
             </nav>
         </main>
     </div>
+
     <footer>
+        <div id="footer"></div>
     </footer>
+
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
 
   </body>
 </html>

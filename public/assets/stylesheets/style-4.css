@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -200,6 +200,9 @@ footer .subpage-nav {
 footer .subpage-nav a:first-child:before {
     content: '⟵';
     margin-right: .5em;
+}
+#footer li {
+    display: inline-block;
 }
 
 main {
