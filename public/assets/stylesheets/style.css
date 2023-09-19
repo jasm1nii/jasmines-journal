@@ -40,13 +40,6 @@
   --g1v5x3-background-color: transparent !important;
   --g1v5x3-title-color: var(--font-color-light) !important;
   --button-code-txt: rgb(255, 244, 244);
-  --warning-bg: #e3d7e9;
-  --gif-controls-bg: pink;
-  --gif-controls-hover-bg: rgb(255, 222, 151);
-  --gif-controls-active-bg: rgb(238, 226, 235);
-  --gif-controls-focus-bg: rgb(248, 220, 248);
-  --gif-controls-font: #210a42;
-  --gif-controls-border: 1px solid purple;
   --footer-font: rgb(97, 58, 97);
 }
 
@@ -707,7 +700,6 @@ section {
   padding-bottom: 0;
 }
 
-
 /* custom main-info styles */
 #idCard {
   border: 1px solid rgb(183, 124, 189);
@@ -823,106 +815,6 @@ section {
 .clock {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-#warning {
-  width: 80%;
-  max-width: 250px;
-  background-color: var(--warning-bg);
-  color: rgb(92, 63, 128);
-  padding: 0;
-  box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
-}
-section:has(#mybuttonSection) {
-  break-after: always;
-}
-#warning h2 {
-  color: #503281;
-  padding: 1em;
-  border-color: rgb(204, 148, 204);
-}
-#warning p {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: .5em;
-}
-
-#buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: .5em;
-  width: 80%;
-}
-  @media all and (max-width:600px) {
-    #buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
-      min-width: 300px;
-    }
-  }
-#buttonSection h2, #buttonSection p, #mutualsButtonSection h2, #mutualsButtonSection p, #cafeButtonSection h2, #cafeButtonSection p, #mybuttonSection h2, #mybuttonSection p, #webGarden h2, #webGarden p {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-#buttonSection p, #mutualsButtonSection p, #cafeButtonSection p {
-  text-align: center;
-}
-#mybuttonSection, #webGarden {
-  max-width: 250px;
-}
-#buttonCode { /* button textarea */
-  word-wrap: break-word;
-  height: 80px;
-  overflow: auto;
-  padding: 5px 10px 5px 10px;
-  border: 1px solid gray;
-  text-align: left;
-  resize: vertical;
-  width: 80%;
-  margin: auto;
-  background-color: var(--button-code-txt);
-}
-.button-gallery {
-  margin-top: .75em;
-  margin-bottom: .75em;
-  text-align: center;
-  background-color: transparent !important;
-  border-radius: inherit !important;
-  padding-top: .25em;
-  padding-bottom: .25em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ff-container.ff-responsive {
-  max-width: 88px;
-}
-
-#gifControls { 
-  text-align: center;
-  padding-bottom: 2em;
-  background-color: transparent !important;
-}
-#gifControls button {
-  font: inherit;
-  text-transform: lowercase;
-  margin-right: 1em;
-  background-color: var(--gif-controls-bg);
-  padding: .5em;
-  transition: all 0.5s;
-  color:#210a42;
-  letter-spacing: 0.05em;
-  border-radius: 5px;
-  border: var(--gif-controls-border);
-}
-#gifControls button:hover {
-  background-color: var(--gif-controls-hover-bg);
-  transition: all 0.1s;
-}
-#gifControls button:active {
-  background-color: var(--gif-controls-active-bg);
-  padding: .25em;
-}
-#gifControls button:focus {
-  background-color: var(--gif-controls-focus-bg);
 }
 
 #webrings {
@@ -1078,7 +970,7 @@ footer time {
 }
 
 @media (prefers-color-scheme: dark) {
-  body, #webrings, #warning, .time, #notice, #webrings details p:first-of-type, footer {
+  body, #webrings, .time, #notice, #webrings details p:first-of-type, footer {
     color: white;
   }
   body {
@@ -1093,7 +985,7 @@ footer time {
   h1, header nav {
     color: white;
   }
-  h2, #idCard h2, #latestStatus h2, #lastPlayed h2, #warning h2, #siteUpdates h3 {
+  h2, #idCard h2, #latestStatus h2, #lastPlayed h2, #siteUpdates h3 {
     color: var(--dark-mode-h);
   }
   a, nav a, #webrings a {
@@ -1124,7 +1016,7 @@ footer time {
   .page-columns {
     background: url(/assets/media/main/ooorganize-dark.svg);
   }
-  .main-info, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type, #warning {
+  .main-info, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type {
     background-color: var(--section-card-dark);
   }
   #siteUpdates > ul, #buttonCode, #track {
@@ -1132,9 +1024,6 @@ footer time {
   }
   #statuscafe {
     background-color: var(--section-card-dark);
-  }
-  .button-gallery  {
-    background-color: transparent;
   }
   #idCard {
     background-image: url(/assets/media/main/bank-note-dark.svg); text-shadow: 0 0 5px black; background-color: var(--section-card-dark);
@@ -1281,26 +1170,6 @@ footer time {
 .light-mode main button:hover {
   background-color: lightgoldenrodyellow !important;
 }
-.light-mode #gifControls button {
-  background-color: var(--gif-controls-bg) !important;
-  color: var(--gif-controls-font) !important;
-  border: var(--gif-controls-border)
-}
-.light-mode #gifControls button:hover {
-  background-color: var(--gif-controls-hover-bg) !important;
-}
-.light-mode #gifControls button:active {
-  background-color: var(--gif-controls-active-bg) !important;
-}
-.light-mode #gifControls button:focus {
-  background-color: var(--gif-controls-focus-bg) !important;
-}
-.light-mode #buttonCode {
-  background-color: var(--button-code-txt);
-}
-.light-mode #warning {
-  background-color: var(--warning-bg) !important;
-}
 .light-mode footer {
   color: var(--footer-font);
 }
@@ -1331,12 +1200,9 @@ footer time {
 .dark-mode .page-columns {
   background: url(/assets/media/main/ooorganize-dark.svg);
 }
-.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #warning, .dark-mode #webrings details p {
+.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #webrings details p {
   background-color: var(--section-card-dark) !important;
   color: white !important;
-}
-.dark-mode #warning {
-  box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
 }
 .dark-mode #idCard {
   background-image: url(/assets/media/main/bank-note-dark.svg);
