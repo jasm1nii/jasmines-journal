@@ -45,7 +45,6 @@
   <body>
     
     <div id="loader"></div>
-    <script async src="/assets/scripts/loader.js"></script>
 
     <div class="board">
       <header>
@@ -59,15 +58,6 @@
         </hgroup>
         <nav>
           <div id="headernav"></div>
-          <script src="/assets/scripts/headernav.js"></script>
-          <style>
-            header nav ul li:first-child {
-              font-weight: 600;
-            }
-            #headernav #home a {
-              text-decoration: wavy underline 1px;
-            }
-          </style>
           <noscript>
             <ul>
               <li id="home"><a href="/">home</a></li>
@@ -84,15 +74,15 @@
         </nav>
         
         <div class="notice-group">
-            <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
-            <div id="notice"></div>
-            <noscript>
-              <p>
+          <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
+          <div id="notice"></div>
+          <noscript>
+            <p>
               <b>
                 (javascript is disabled - some site elements may be non-interactive, missing and/or out of date)
               </b>
-              </p>
-            </noscript>
+            </p>
+          </noscript>
         </div>
       </header>
 
@@ -100,10 +90,10 @@
         <article>
           <div class="page-columns">
             <section> <!-- id card -->
-              <div class="main-info h-card" id="idCard">
-                <div id="idCardContent">
+              <div class="card h-card">
+                <div class="pfp-group">
                   <h2>webmaster identity</h2>
-                  <div id="idCardPFP">
+                  <div class="h-card-pfp">
                     <div>
                       <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the webmaster">
                     </div>
@@ -119,34 +109,32 @@
                     </div>
                   </div>
                 </div>
-                <div class="p-note" id="idCardBiodata">
+                <div class="p-note">
                     <p>
                       just call me <a rel="me"><b>jasmine!</b></a> 👋
                     </p>
                     <ul>
-                        <li><span>📍</span> <span>IDN</span></li>
-                        <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
-                        <li><span>🐘</span> <span><b><a href="https://mas.to/@jasm1nii" rel="me">@jasm1nii@mas.to</a></b></span></li>
-                        <!-- additional h-card attributes -->
-                        <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
-                        <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
-                          <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
-                        </span>
+                      <li><span>📍</span> <span>IDN</span></li>
+                      <li><span>🎂</span> <span>1999</span></li>
+                      <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
+                      <!-- additional h-card attributes -->
+                      <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
+                      <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
+                        <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
+                      </span>
                     </ul>
                 </div>
-                <div id="barcode"></div>
+                <div class="barcode"></div>
               </div>
             </section>
 
             <section> <!-- last.fm -->
-              <div class="main-info" id="lastPlayed">
+              <div class="card last-played">
                 <div id="track">
-                  <h2>
-                    last played
-                  </h2>
+                  <h2 id="last-played">last played</h2>
                   <p id="song">&#8987;</p>
                 </div>
-                <div id="speaker">
+                <div class="last-played-child">
                   <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
                     last.fm profile
                   </button>
@@ -155,7 +143,7 @@
             </section>
 
             <section> <!-- spotify playlist -->
-              <div class="main-info" id="spotifyHomepage">
+              <div class="card spotify" id="spotify">
                 <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="spotify songs on repeat"></iframe>
               </div>
             </section>
@@ -177,33 +165,31 @@
             </section>
 
             <section> <!-- status.cafe -->
-              <div class="main-info" id="latestStatus">
-                <div id="latestStatusMain">
-                    <h2>latest status</h2>
-                    <div id="statuscafe">
-                      <div id="statuscafe-username"></div>
-                      <div id="statuscafe-content"></div>
-                      <hr>
-                      <div>
-                        <a href="https://status.cafe">
-                          <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
-                        </a>
-                      </div>
-                    </div>
+              <div class="card latest-status">
+                <h2 id="latest-status">latest status</h2>
+                <div id="statuscafe">
+                  <div id="statuscafe-username"></div>
+                  <div id="statuscafe-content"></div>
+                  <hr>
+                  <div>
+                    <a href="https://status.cafe">
+                      <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
 
             <section> <!-- site updates -->
-              <div class="main-info" id="siteUpdates">
-                <h2>site updates</h2>
-                  <h3><time datetime="2023-09-11">11 september 2023</time></h3>
-                  <ul>
+              <div class="card">
+                <h2 id="site-updates">site updates</h2>
+                  <h3><time datetime="2023-09-19">19 september 2023</time></h3>
+                  <ul class="overflow">
                     <li>
-                      added more buttons to the <a href="/link-gallery.html">link gallery</a>!
+                      purged some more old code from under the hood.
                     </li>
                     <li>
-                      swapped around some sections on the home page.
+                      remove the "anon inbox" section on the home page. follow the breadcrumbs through my other links, if you really wanna 🐱
                     </li>
                     <li>
                       more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
@@ -213,69 +199,63 @@
             </section>
 
             <section> <!-- subscribe -->
-                <div class="main-info" id="subscribe">
-                  <h2>subscribe</h2>
-                  <ul>
-                      <li>
-                        <b><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></b> / <b><a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a></b>
-                        <br>
-                        ⤷ for occasional site-wide update summaries
-                      </li>
-                      <li>
-                        <b><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></b>
-                        <br>
-                        ⤷ a dedicated mastodon profile separate from my <a href="https://mas.to/@jasm1nii" rel="external me">general purpose account</a>
-                      <li>
-                        <b>atom feed</b>
-                        <br>
-                        ⤷ <a href="/blog/blog.atom">blog articles</a> / <a href="/blog/notes/notes.xml">microblog notes</a>
-                        <br><br>
-                        <a style="text-align: center;" href="http://validator.w3.org/">
-                          <img src="/assets/media/main/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
-                        </a>
-                      </li>
-                  </ul>
+                <div class="card">
+                  <h2 id="subscribe">subscribe</h2>
+                  <dl>
+                    <dt>
+                      <a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a> | <a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a>
+                    </dt>
+                    <dd>
+                      for occasional site-wide update summaries
+                    </dd>
+                    <dt>
+                      <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+                    </dt>
+                    <dd>
+                      a dedicated mastodon profile for blog posts only
+                    </dd>
+                    <dt>
+                      atom feed
+                      <br>
+                      <a href="/blog/blog.atom">blog articles</a> | <a href="/blog/notes/notes.xml">microblog notes</a>
+                    </dt>
+                    <dd>
+                      compatible with RSS readers
+                    </dd>
+                  </dl>
+                  <a style="text-align: center;" href="http://validator.w3.org/">
+                    <img src="/assets/media/main/valid-atom.png" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
+                  </a>
                 </div>
             </section>
 
             <section> <!-- my links -->
-              <div class="main-info" id="links">
-                <h2 id="otherlinks">my other links</h2>
-                <ul>
-                  <li>
+              <div class="card">
+                <h2 id="other-links">my other links</h2>
+                <dl class="links">
+                  <dt>
                     <a href="https://jasmineamalia.com/" rel="external me">
                       <b>professional portfolio</b>
                     </a>
-                    <br>
-                    ⤷ illustrations, graphic designs, photography, and miscellaneous work
-                  </li>
-                  <li>
+                  </dt>
+                  <dd>
+                    illustrations, graphic designs, photography, and miscellaneous work
+                  </dd>
+                  <dt>
                     <a href="https://jasmineamalia.carrd.co/" rel="external me">
                       <b>carrd</b>
                     </a>
-                    <br>
-                    ⤷ social profiles and even more links
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section> <!-- anon inbox -->
-              <div class="main-info" id="inboxlinks">
-                <h2 id="trace">anon inbox</h2>
-                <p>
-                  i love getting questions! feel free to ask me anything related to the site or myself ↓
-                </p>
-                  <ul>
-                    <li><a rel="me external" href="https://cohost.org/jasm1nii/ask"><b>cohost</b></a> - preferred, but must be logged in to view</li>
-                    <li><a rel="me external" href="https://tellonym.me/jasmineamalia"><b>tellonym</b></a> - checked once every blue moon</li>
-                  </ul>
+                  </dt>
+                  <dd>
+                    social profiles and even more links
+                  </dd>
+                </dl>
               </div>
             </section>
 
             <section>
-              <div class="main-info" id="support">
-                <h2>tip jar</h2>
+              <div class="card">
+                <h2 id="tip-jar">tip jar</h2>
                 <div class="tip-jar">
                   <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
                   <script type='text/javascript'>kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
@@ -287,8 +267,8 @@
             </section>
 
             <section> <!-- webrings -->
-              <div class="main-info" id="webrings">
-                  <h2>web rings & listings</h2>
+              <div class="card web-rings">
+                  <h2 id="web-rings">web rings & listings</h2>
                   <details>
                     <summary>
                       what's a web ring?
@@ -297,7 +277,7 @@
                       <a href="https://en.wikipedia.org/wiki/Webring"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
                     </p>
                   </details>
-                  <div id="webringsList">
+                  <div class="web-rings-list">
                     <h3>pending</h3>
                     <p>
                       some links may not work yet!
@@ -368,6 +348,7 @@
             </section>
           </div>
         </article>
+        
         <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments" loading="lazy"></iframe>
       </main>
 
@@ -394,7 +375,6 @@
             <li id="footerAcccessibility">
                 🔨 <del>accessibility</del>
             </li>
-            
             <li id="footerSitemap">
                 <a href="/site-map.html">site map</a>
             </li>
@@ -408,12 +388,25 @@
       </noscript>
     </footer>
 
+  <!-- content scripts -->
+  <script async src="/assets/scripts/loader.js"></script>
+  <script src="/assets/scripts/headernav.js"></script>
+    <style>
+      header nav ul li:first-child {
+        font-weight: 600;
+      }
+      #headernav #home a {
+        text-decoration: wavy underline 1px;
+      }
+    </style>
   <script src="/assets/scripts/footer.js"></script>
   <script defer src="/assets/scripts/sticky-note.js"></script>
   <script defer src="/assets/scripts/pretzel.js"></script>
   <script defer src="/assets/scripts/time.js"></script>
   <script defer src="https://status.cafe/current-status.js?name=jasm1nii"></script>
   <script defer src="/assets/scripts/lastfm.js"></script>
+
+  <!-- webrings -->
   <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
   <script defer src="https://xandra.cc/safonts/webring.js"></script>
   <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>

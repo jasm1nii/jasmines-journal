@@ -10,7 +10,7 @@
   --h2-light: #712357;
   --h3-light: #631863;
   --link-color-light: darkmagenta;
-  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
+  --link-hover-bg-light: rgb(216, 112, 147);
   --document-color-light: thistle;
   --page-color-light: #fff6f6;
   --section-card-light: rgb(255, 239, 239);
@@ -37,10 +37,14 @@
   --theme-toggle-hover-bg: #b084bd;
   --theme-toggle-active-bg: #8b4f61;
   --theme-toggle-focus-bg: #a175c5;
-  --g1v5x3-background-color: transparent !important;
-  --g1v5x3-title-color: var(--font-color-light) !important;
   --button-code-txt: rgb(255, 244, 244);
   --footer-font: rgb(97, 58, 97);
+  --overflow-bg-light: rgb(255, 244, 246);
+  --overflow-border: 1px solid rgb(170, 99, 111);
+
+  /* safont webring styles*/
+  --g1v5x3-background-color: transparent !important;
+  --g1v5x3-title-color: var(--font-color-light) !important;
 }
 
 * {
@@ -79,7 +83,6 @@ body ::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  color: var(--font-color-light);
   font-family: var(--font-1);
   font-size: .9em;
   margin: auto;
@@ -100,20 +103,49 @@ hr {
 
 a {
   background-color: transparent;
-  color: darkmagenta;
   transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
 }
 a:hover {
-  background-color: var(--link-hover-bg-color-light);
   text-decoration: none;
   color: white !important;
 }
-ul {
-  margin-left: 0;
-  padding-left: 0;
+.card ul {
+  padding-left: 1em;
+}
+.overflow {
+  max-height: 175px;
+  overflow-y: auto;
+  border: var(--overflow-border);
+  padding-top: 1em;
+  padding-right: 1em;
+}
+.overflow li {
+  margin-left: 1em;
+}
+.card li {
+  margin-bottom: 1em;
+}
+.p-note li {
+  margin-bottom: 0;
+}
+dd::before {
+  content: '⤷';
+}
+dd {
+  margin-top: .5em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+.links dt::before {
+  content: '🔗';
+  margin-right: .5em;
+}
+.links dd {
+  margin-left: 2em;
+  margin-bottom: 1em;
 }
 
 /* animations */
@@ -216,7 +248,7 @@ main {
 .page-columns {
    columns: 3;
    column-gap: 0;
-   background-image: url(../media/main/ooorganize.svg);
+   background-image: url(/assets/media/main/ooorganize.svg);
    background-size: 200px !important;
    padding-top: 30px;
    padding-bottom: 5%;
@@ -375,7 +407,6 @@ nav a {
 }
 
 h2 {
-  color: var(--h2-light);
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
   padding-bottom: .5em;
@@ -386,53 +417,31 @@ h2::before {
   margin-right: .5em;
 }
 
-/* main-info h2 decoration */
+/* h2 decoration */
 
 #follow::before {
   content: "➕";
 }
-#support h2::before {
+#tip-jar::before {
   content: "💕";
 }
-#otherlinks::before {
+#other-links::before {
   content: "🌐";
 }
-#trace::before {
-  content: "💌";
-}
-#siteButton::before {
-  content: "🏠";
-}
-#featuredSites::before {
-  content: "⭐";
-}
-#mutuals::before {
-  content: "💞";
-}
-#lastPlayed h2::before {
+#last-played:before {
   content: '🎵';
 }
-#siteUpdates h2::before {
+#site-updates::before {
   content: '🆕';
 }
-#subscribe h2::before {
+#subscribe::before {
   content: '📮';
 }
-#latestStatusMain h2::before {
+#latest-status::before {
   content: '☕';
 }
-#webrings h2::before {
+#web-rings::before {
   content: '🕸';
-}
-#warning h2::before {
-  content: '💫';
-}
-#webGarden h2::before {
-  content: '🌱';
-}
-#bitcafe::before {
-  content: '☕';
-  margin-right: .5em;
 }
 
 .notice-group {
@@ -515,7 +524,7 @@ section {
   padding-bottom: 40px;
   break-inside: avoid;
 }
-.main-info {
+.card {
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
   padding: 1em;
@@ -528,49 +537,12 @@ section {
   width: 60%;
 }
 @media all and (max-width:900px) {
-  .main-info {
+  .card {
     max-width: 250px;
   }
 }
 
-#siteUpdates, #subscribe {
-  width: 70%;
-  padding-bottom: 1em;
-}
-#siteUpdates ul, #subscribe ul {
-  padding: 1em;
-  margin-top: 1em;
-  margin-bottom: .5em;
-}
-
-#siteUpdates ul {
-  max-height: 150px;
-  overflow: auto;
-  border: 1px solid rgb(179, 97, 111);
-}
-#siteUpdates li {
-  padding-bottom: 1em;
-  margin-left: 1em;
-}
-
-#subscribe ul {
-  list-style: none;
-  max-height: 200px;
-  overflow: auto;
-  border: 1px solid rgb(179, 97, 111);
-}
-#subscribe li {
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-  border-bottom: 1px dotted;
-}
-#subscribe li:last-child {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: none;
-}
-
-#spotifyHomepage {
+.spotify {
   padding: 0;
   box-shadow: var(--spotify-shadow) !important;
   background-color: var(--spotify);
@@ -578,24 +550,20 @@ section {
   width: fit-content;
 }
   @media all and (max-width:768px) {
-    #spotifyHomepage {
+    .spotify {
       min-width: fit-content;
     }
   }
 
-#lastPlayed {
+.last-played {
   max-width: 200px;
-  background-color: var(--last-played-bg);
   outline: var(--last-played-outline);
   text-align: center;
   padding-bottom: 0;
-  box-shadow: var(--last-played-shadow);
   border-top: none;
   border-left: none;
-  border-bottom: var(--last-played-border-bottom);
-  border-right: var(--last-played-border-right);
 }
-#lastPlayed h2 {
+#last-played h2 {
   margin-left: .5em;
   margin-right: .5em;
   margin-bottom: -.25em;
@@ -604,17 +572,16 @@ section {
   color: rgb(45, 94, 77);
 }
 
-#lastPlayed a {
+.last-played a {
   text-decoration: none;
 }
 #track {
-  background-color: linen;
   padding-top: .5em;
   border: 1px solid rgb(113, 135, 160);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#speaker {
+.last-played-child {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,8 +592,9 @@ section {
   border-top: none;
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
+  background-color: inherit;
 }
-#speaker button {
+.last-played-child button {
   margin-bottom: 1em;
   padding: .25em;
   padding-left: .5em;
@@ -638,24 +606,22 @@ section {
   background-color: rgb(230, 240, 248);
   transition: background-color 0.3s;
 }
-#speaker button:hover {
+.last-played-child button:hover {
   background-color: #f5e5c5;
 }
-#speaker button a {
+.last-played-child button a {
   color: rgb(46, 42, 42);
 }
-#speaker button a:hover {
+.last-played-child button a:hover {
   background-color: transparent;
 }
 
 #statuscafe {
   padding: 1em;
-  margin-top: 0.5em;
   margin-left: auto;
   margin-right: auto;
   border-top: 1px solid rgb(194, 167, 194);
   word-wrap: break-word;
-  background: rgb(255, 248, 252);
   font-size: 1.1em;
 }
 #statuscafe hr {
@@ -675,33 +641,26 @@ section {
   padding-bottom: 0;
 }
 
-#latestStatus {
+.latest-status {
   padding: 0;
   margin: auto;
-  background: url(/assets/media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
   width: 70%;
 }
 @media all and (max-width:768px) {
-  #latestStatus {
+  .latest-status {
     min-width: 55%;
   }
 }
-#latestStatusMain {
-  padding-top: 1em;
-  width: 100% !important;
-}
-#latestStatusMain h2 {
-  color: rgb(85, 63, 85);
+#latest-status {
   border: none;
-  padding-left: 1em;
-  padding-bottom: 0;
+  padding: 1em 1em .5em 1em;
 }
 
 /* custom main-info styles */
-#idCard {
+.h-card {
   border: 1px solid rgb(183, 124, 189);
   background: url(/assets/media/main/bank-note.svg);
   background-color: snow;
@@ -709,28 +668,24 @@ section {
   max-width: 200px;
   height: min-content;
 }
-#idCard div {
-  background-color: transparent !important;
-}
-#idCard a[rel="me"] {
+.h-card a[rel="me"] {
   text-decoration: none;
   color: inherit;
 }
-#idCard a[rel="me"]:hover {
+.h-card a[rel="me"]:hover {
   color: inherit;
   background-color: transparent;
 }
-#idCardContent {
+.pfp-group {
   display: flex;
   flex-direction: column;
 }
-#idCardContent h2 {
+.pfp-group h2 {
   border: none;
   font-variant: small-caps;
   letter-spacing: 1px;
-  color: rgb(94, 75, 92);
 }
-#idCardPFP {
+.h-card-pfp {
   display: flex;
   width: fit-content;
 }
@@ -741,40 +696,39 @@ section {
   justify-content: space-around;
   user-select: none;
 }
-#idCard .u-featured {
+.h-card .u-featured {
   position: absolute;
 }
 .u-featured img {
   image-rendering: crisp-edges;
 }
   @media all and (max-width:768px) {
-    #idCard .u-featured { left: 0; }
+    .h-card .u-featured { left: 0; }
   }
-#idCard details summary {
+.h-card details summary {
   list-style: none;
   cursor: pointer;
 }
-#idCardBiodata > p {
+.p-note p {
   margin: 1em;
 }
-#idCardBiodata ul {
+.p-note ul {
   list-style: none;
   margin: 0;
   padding-top: .5em;
   padding-bottom: .5em;
-  background-color: transparent !important;
 }
-#idCardBiodata li {
+.p-note li {
   display: flex;
   flex-direction: row;
   padding-bottom: .5em;
 }
-#idCardBiodata li span:first-of-type {
+.p-note li span:first-of-type {
   width: 1em;
   text-align: center;
   margin-right: 1em;
 }
-#barcode {
+.barcode {
   background: url(/assets/media/main/barcode.svg);
   background-repeat: no-repeat;
   background-position: right;
@@ -817,25 +771,25 @@ section {
   margin-bottom: 0;
 }
 
-#webrings {
+.web-rings {
   background-color: var(--web-rings-card);
   border-color: purple;
   color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
   width: 70%;
 }
-#webrings p {
+.web-rings p {
   text-align: center;
 }
-#webrings a {
+.web-rings a {
   text-decoration: none;
   color: var(--web-rings-links);
 }
-#webrings summary {
+.web-rings summary {
   font-weight: 600;
   margin: 1em;
 }
-#webrings details p {
+.web-rings details p {
   text-align: left;
   position: absolute;
   border: 1px solid;
@@ -845,7 +799,7 @@ section {
   width: 200px;
   background-color: rgb(255, 255, 255);
 }
-#webringsList {
+.web-rings-list {
   border: 1px solid rgb(167, 95, 177);
   padding: 1em;
   background: var(--web-rings-bg-light);
@@ -855,47 +809,29 @@ section {
   overflow: auto;
   max-height: 300px;
 }
-#webringsList h3 {
+.web-rings-list h3 {
   text-align: center;
   padding: 0;
   padding-top: .5em;
   margin: 0;
 }
-#webringsList p {
+.web-rings-list p {
   margin-top: 0.25em;
   margin-left: auto;
   margin-right: auto;
 }
-#webrings figure {
+.web-rings figure {
   width: fit-content;
   margin: 0;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
 }
-#webrings figcaption {
+.web-rings figcaption {
   margin: 0;
   padding: 0;
 }
 
-#links, #inboxlinks {
-  width: 70%;
-  max-width: 200px;
-}
-#links ul, #inboxlinks ul {
-  padding-left: 2em;
-}
-#links ::marker, #inboxlinks ::marker {
-  content: "🔗";
-  margin-right: .75em;
-}
-#links li, #inboxlinks li {
-  padding: .4em;
-  height: fit-content;
-}
-#links li a, #inboxlinks a {
-  height: fit-content;
-}
 .tip-jar {
   text-align: center;
   margin-top: 1em;
@@ -947,11 +883,43 @@ footer time {
   display: inline;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --g1v5x3-link-color: rgb(146, 53, 146) !important;
+  }
+  body {
+    color: var(--font-color-light);
+    background-color: var(--document-color-light);
+  }
+  a {
+    color: var(--link-color-light);
+  }
+  a:hover {
+    background-color: var(--link-hover-bg-light);
+  }
+  h2 {
+    color: var(--h2-light);
+  }
+  .last-played {
+    background-color: var(--last-played-bg);
+    border-bottom: var(--last-played-border-bottom);
+    border-right: var(--last-played-border-right);
+    box-shadow: var(--last-played-shadow) !important;
+  }
+  #track {
+    background-color: linen;
+  }
+  .overflow {
+    background-color: var(--overflow-bg-light);
+  }
+}
+
 :root {
   --page-bg-dark: rgb(13, 13, 14);
   --page-border-dark: #503281;
   --section-card-dark: hsl(255, 5%, 16%);
   --dark-mode-links:  rgb(255, 192, 216);
+  --link-hover-bg-dark: rgba(216, 112, 147, .5);
   --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
   --last-played-dark-bg: rgb(63, 85, 85);
@@ -960,17 +928,8 @@ footer time {
   --last-played-dark-shadow: 10px 10px rgba(53, 90, 146, 0.5);
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--document-color-light);
-  }
-  :root {
-    --g1v5x3-link-color: rgb(146, 53, 146) !important;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
-  body, #webrings, .time, #notice, #webrings details p:first-of-type, footer {
+  body, .web-rings, .time, #notice, .web-rings details p, footer {
     color: white;
   }
   body {
@@ -985,18 +944,17 @@ footer time {
   h1, header nav {
     color: white;
   }
-  h2, #idCard h2, #latestStatus h2, #lastPlayed h2, #siteUpdates h3 {
+  h2 {
     color: var(--dark-mode-h);
   }
-  a, nav a, #webrings a {
+  a, nav a, .web-rings a {
     color: var(--dark-mode-links);
   }
   a:hover {
-    color: white;
+    background-color: var(--link-hover-bg-dark);
   }
   main button {
     background-color: var(--dark-button-bg) !important;
-
     color: rgb(230, 214, 236) !important;
   }
   main button:hover {
@@ -1011,35 +969,29 @@ footer time {
     background-color: #8b4f61;
   }
   .board {
-    background-color: var(--page-bg-dark); border-color: var(--page-border-dark);
+    background-color: var(--page-bg-dark);
+    border-color: var(--page-border-dark);
   }
   .page-columns {
     background: url(/assets/media/main/ooorganize-dark.svg);
   }
-  .main-info, #notice, .time, #lastPlayed,  #webrings, #webrings details p:first-of-type {
+  .card, .overflow, #notice, #track, #statuscafe, .time, .web-rings, .web-rings details p {
     background-color: var(--section-card-dark);
   }
-  #siteUpdates > ul, #buttonCode, #track {
-    background-color: transparent;
-  }
-  #statuscafe {
-    background-color: var(--section-card-dark);
-  }
-  #idCard {
-    background-image: url(/assets/media/main/bank-note-dark.svg); text-shadow: 0 0 5px black; background-color: var(--section-card-dark);
-  }
-  #webringsList {
+  .h-card {
+    background-image: url(/assets/media/main/bank-note-dark.svg);
+    text-shadow: 0 0 5px black;
     background-color: var(--section-card-dark);
   }
   .time {
     border-bottom: 5px outset rgb(58, 58, 88);
     border-right: 5px outset rgb(67, 67, 102);
   }
-  #latestStatusMain {
-    background: url(/assets/media/main/line-in-motion-dark.svg) rgb(52, 39, 58) !important;
+  #latest-status {
+    background: url(/assets/media/main/line-in-motion-dark.svg) rgb(52, 39, 58);
   }
-  #lastPlayed {
-    background-color: var(--last-played-dark-bg) !important;
+  .last-played {
+    background-color: var(--last-played-dark-bg);
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
     box-shadow: var(--last-played-dark-shadow) !important;
@@ -1047,11 +999,8 @@ footer time {
   #track {
     background-color: var(--section-card-dark);
   }
-  #speaker {
-    background-color: var(--last-played-dark-bg) !important;
-  }
-  #speaker div {
-    background-color: transparent !important;
+  .web-rings-list {
+    background-color: var(--section-card-dark);
   }
   #guestbookScroller {
     filter:invert(100%) hue-rotate(140deg);
@@ -1074,16 +1023,16 @@ footer time {
   color: var(--h1-light);
 }
 .light-mode h2 {
-  color: var(--h2-light) !important;
+  color: var(--h2-light);
 }
 .light-mode h3 {
   color: var(--h3-light) !important;
 }
 .light-mode a {
-  color: var(--link-color-light) !important;
+  color: var(--link-color-light);
 }
 .light-mode a:hover {
-  color: white;
+  background-color: var(--link-hover-bg-light);
 }
 .light-mode #themeToggle {
   background-color: #e3d7e9 !important;
@@ -1104,17 +1053,17 @@ footer time {
 .light-mode .page-columns {
   background: url(/assets/media/main/ooorganize.svg);
 }
-.light-mode .main-info {
-  background-color: var(--section-card-light) !important;
+.light-mode .card {
+  background-color: var(--section-card-light);
   color: var(--font-color-light) !important;
 }
-.light-mode #idCard {
+.light-mode .h-card {
   background: url(/assets/media/main/bank-note.svg) !important;
   background-color: snow !important;
   text-shadow: 0 0 5px white;
 }
-.light-mode #siteUpdates > ul, .light-mode #subscribe ul {
-  background-color: var(--site-updates-bg-light);
+.light-mode .overflow {
+  background-color: var(--overflow-bg-light);
 }
 .light-mode .time {
   background-color: var(--time-bg);
@@ -1125,13 +1074,13 @@ footer time {
 .light-mode .clock {
   color: mintcream;
 }
-.light-mode #latestStatusMain {
-  background: url(/assets/media/main/line-in-motion.svg) rgb(238, 225, 238) !important;
+.light-mode #latest-status {
+  background: url(/assets/media/main/line-in-motion.svg) rgb(238, 225, 238);
 }
 .light-mode #statuscafe {
   background-color: snow;
 }
-.light-mode #lastPlayed {
+.light-mode .last-played {
   border-bottom: var(--last-played-border-bottom) !important;
   border-right: var(--last-played-border-right) !important;
   background-color: var(--last-played-bg) !important;
@@ -1139,24 +1088,21 @@ footer time {
 .light-mode #track {
   background-color: linen;
 }
-.light-mode #speaker {
-  background-color: var(--last-played-bg) !important;
-}
-.light-mode #spotifyHomepage {
+.light-mode .spotify {
   background-color: var(--spotify) !important;
 }
-.light-mode #webrings {
+.light-mode .web-rings {
   background-color: var(--web-rings-card) !important;
   color: var(--web-rings-font) !important;
 }
-.light-mode #webrings a {
+.light-mode .web-rings a {
   color: var(--web-rings-links);
 }
-.light-mode #webrings details p:first-of-type {
+.light-mode .web-rings details p {
   background-color: white;
   color: var(--font-color-light);
 }
-.light-mode #webringsList {
+.light-mode .web-rings-list {
   background-color: var(--web-rings-bg-light);
 }
 .light-mode #guestbookScroller {
@@ -1182,17 +1128,18 @@ footer time {
   background-color: black;
   color: white;
 }
-.dark-mode a, .dark-mode #webrings a {
+.dark-mode a, .dark-mode .web-rings a {
   color: var(--dark-mode-links);
 }
 .dark-mode h1 {
   color: white;
 }
 .dark-mode h2, .dark-mode h3 {
-  color: var(--dark-mode-h) !important;
+  color: var(--dark-mode-h);
 }
 .dark-mode .board {
-  background-color: var(--page-bg-dark); border-color: var(--page-border-dark);
+  background-color: var(--page-bg-dark);
+  border-color: var(--page-border-dark);
 }
 .dark-mode nav {
   border-color: #503281;
@@ -1200,11 +1147,11 @@ footer time {
 .dark-mode .page-columns {
   background: url(/assets/media/main/ooorganize-dark.svg);
 }
-.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #notice, .dark-mode .time, .dark-mode #webrings details p {
-  background-color: var(--section-card-dark) !important;
+.dark-mode .card, .dark-mode #notice, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
+  background-color: var(--section-card-dark);
   color: white !important;
 }
-.dark-mode #idCard {
+.dark-mode .h-card {
   background-image: url(/assets/media/main/bank-note-dark.svg);
   background-color: var(--section-card-dark);
   text-shadow: 0 0 5px black;
@@ -1213,11 +1160,15 @@ footer time {
   border-bottom: 5px outset rgb(58, 58, 88);
   border-right: 5px outset rgb(67, 67, 102);
 }
-.dark-mode #lastPlayed {
+.dark-mode .last-played {
   border-bottom: 10px outset rgb(65, 77, 76);
   border-right: 10px outset rgb(55, 63, 62);
+  background-color: var(--last-played-dark-bg) !important;
 }
-.dark-mode #spotifyHomepage {
+.dark-mode #track {
+  background-color: var(--section-card-dark);
+}
+.dark-mode .spotify {
   background-color: var(--spotify) !important;
 }
 .dark-mode #guestbookScroller {
