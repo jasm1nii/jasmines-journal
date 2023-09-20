@@ -1,3 +1,5 @@
+Sitemap: https://jasm1nii.xyz/sitemap.xml
+
 User-agent: GPTBot
 Disallow: /
 

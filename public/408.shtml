@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>try again later</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
-
   <body>
     <main>
       <h1>408 - request timeout</h1>
@@ -19,5 +16,4 @@
       </nav>
     </main>
   </body>
-
 </html>

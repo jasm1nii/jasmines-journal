@@ -99,10 +99,6 @@ a:hover {
   text-decoration: none;
   color: white !important;
 }
-ul {
-  margin-left: 0;
-  padding-left: 0;
-}
 
 /* animations */
 
@@ -111,18 +107,6 @@ ul {
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
-}
-
-.notice-group {
-  animation: fadeInSlide 0.75s forwards;
-}
-
-section, #notice, .notice-group button {
-  transition: transform 0.3s;
-}
-
-section:hover, #notice:hover, .notice-group button:hover {
-  transform: translatey(-5px);
 }
 
 @keyframes fadeInSlide {
@@ -219,15 +203,6 @@ main {
   @media all and (max-width:600px) {
     .page-columns {
       columns: 1;
-    }
-  }
-
-.spacer {
-  height: 8vh;
-}
-  @media all and (max-width:900px) {
-    .spacer {
-      display: none;
     }
   }
 
@@ -363,7 +338,6 @@ nav a {
 }
 
 h2 {
-  color: var(--h2-light);
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
   padding-bottom: .5em;
@@ -376,22 +350,22 @@ h2::before {
 
 /* main-info h2 decoration */
 
-#siteButton::before {
+#link-me::before {
   content: "🏠";
 }
-#featuredSites::before {
+#more-cool-sites::before {
   content: "⭐";
 }
-#mutuals::before {
+#web-friends::before {
   content: "💞";
 }
-#warning h2::before {
+#warning::before {
   content: '💫';
 }
-#webGarden h2::before {
+#web-garden::before {
   content: '🌱';
 }
-#bitcafe::before {
+#cafegoers::before {
   content: '☕';
   margin-right: .5em;
 }
@@ -403,7 +377,7 @@ section {
   padding-bottom: 40px;
   break-inside: avoid;
 }
-.main-info {
+.card {
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
   padding: 1em;
@@ -414,57 +388,33 @@ section {
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   break-inside: avoid;
   width: 60%;
+  max-width: 250px;
 }
-@media all and (max-width:900px) {
-  .main-info {
-    max-width: 250px;
-  }
+.buttons {
+  width: 80%;
+  max-width: 300px;
+  padding: 0;
+  border-radius: 0;
+}
+.buttons h2 {
+  padding: 1em;
+}
+.buttons p {
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-#warning {
-  width: 80%;
-  max-width: 250px;
+.warning {
   background-color: var(--warning-bg);
   color: rgb(92, 63, 128);
-  padding: 0;
   box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
 }
-section:has(#mybuttonSection) {
-  break-after: always;
-}
-#warning h2 {
+#warning {
   color: #503281;
-  padding: 1em;
   border-color: rgb(204, 148, 204);
 }
-#warning p {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: .5em;
-}
 
-#buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: .5em;
-  width: 80%;
-}
-  @media all and (max-width:600px) {
-    #buttonSection, #mutualsButtonSection, #cafeButtonSection, #mybuttonSection, #webGarden {
-      min-width: 300px;
-    }
-  }
-#buttonSection h2, #buttonSection p, #mutualsButtonSection h2, #mutualsButtonSection p, #cafeButtonSection h2, #cafeButtonSection p, #mybuttonSection h2, #mybuttonSection p, #webGarden h2, #webGarden p {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-#buttonSection p, #mutualsButtonSection p, #cafeButtonSection p {
-  text-align: center;
-}
-#mybuttonSection, #webGarden {
-  max-width: 250px;
-}
-#buttonCode { /* button textarea */
+.code { /* button textarea */
   word-wrap: break-word;
   height: 80px;
   overflow: auto;
@@ -472,9 +422,7 @@ section:has(#mybuttonSection) {
   border: 1px solid gray;
   text-align: left;
   resize: vertical;
-  width: 80%;
   margin: auto;
-  background-color: var(--button-code-txt);
 }
 .button-gallery {
   margin-top: .75em;
@@ -494,7 +442,7 @@ section:has(#mybuttonSection) {
 
 #gifControls { 
   text-align: center;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   background-color: transparent !important;
 }
 #gifControls button {
@@ -586,7 +534,7 @@ footer time {
   h1, header nav {
     color: white;
   }
-  h2, #warning h2 {
+  h2 {
     color: var(--dark-mode-h);
   }
   a, nav a {
@@ -616,7 +564,7 @@ footer time {
   .page-columns {
     background: url(/assets/media/main/ooorganize-dark.svg);
   }
-  .main-info, #warning {
+  .card, .warning {
     background-color: var(--section-card-dark);
   }
   .button-gallery  {
@@ -665,7 +613,7 @@ footer time {
 .light-mode .page-columns {
   background: url(/assets/media/main/ooorganize.svg);
 }
-.light-mode .main-info {
+.light-mode .card {
   background-color: var(--section-card-light) !important;
   color: var(--font-color-light) !important;
 }
@@ -690,10 +638,10 @@ footer time {
 .light-mode #gifControls button:focus {
   background-color: var(--gif-controls-focus-bg) !important;
 }
-.light-mode #buttonCode {
+.light-mode .code {
   background-color: var(--button-code-txt);
 }
-.light-mode #warning {
+.light-mode .warning {
   background-color: var(--warning-bg) !important;
 }
 .light-mode footer {
@@ -722,11 +670,11 @@ footer time {
 .dark-mode .page-columns {
   background: url(/assets/media/main/ooorganize-dark.svg);
 }
-.dark-mode .main-info, .dark-mode .main-info div, .dark-mode .main-info ul, .dark-mode #warning {
+.dark-mode .card, .dark-mode .warning {
   background-color: var(--section-card-dark) !important;
   color: white !important;
 }
-.dark-mode #warning {
+.dark-mode .warning {
   box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
 }
 .dark-mode footer {

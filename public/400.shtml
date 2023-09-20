@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nuh uh</title>
     <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
   </head>
-
   <body>
     <main>
       <h1>400 - bad request</h1>
-      <p>
-        you did an oopsie! try checking for errors (like incorrect URL formatting) on your end.
-      </p>
       <nav>
         <a href="index.html">go back home</a>
         <br>
@@ -22,5 +16,4 @@
       </nav>
     </main>
   </body>
-
 </html>
