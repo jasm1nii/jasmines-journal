@@ -7,7 +7,7 @@ function loadArticles() {
         showArchive(this);
       }
     };
-    xhttp.open("GET", "/blog/blog.atom", true);
+    xhttp.open("GET", "/blog/articles/articles.xml", true);
     xhttp.send();
   }
   function showArchive(xml) {

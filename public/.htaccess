@@ -13,10 +13,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 RewriteEngine on
-
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
-
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
@@ -33,3 +31,10 @@ RewriteRule ^ – [F]
   Header always set Permissions-Policy "accelerometer=(); battery=(); camera=(); encrypted-media=*; geolocation=(); gyroscope=(); magnetometer=(); microphone=(); usb=()"
   Header always set Cache-Control "no-cache, no-store, must-revalidate"
 </IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “alt-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-alt-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
