@@ -1,3 +1,5 @@
+/* blog index styles */
+
 @font-face {
     font-family: "Instrument Sans";
     src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
@@ -323,6 +325,7 @@ section:has(#notesArchive) {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .subscribe {

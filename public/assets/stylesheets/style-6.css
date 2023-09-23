@@ -1,8 +1,8 @@
-/* css by jasm1nii on neocities */
+/* credits page */
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 /* animations */
@@ -60,7 +60,7 @@ body {
   background-color: thistle;
   color: #4e494e;
   font-family: 'Instrument Sans', sans-serif;
-  font-size: 14px;
+  font-size: 1em;
 }
 ::selection {
   background-color: rgb(255, 255, 191);
@@ -129,7 +129,7 @@ main {
 h1 {
   color: #4a3b61;
   text-align: left;
-  font-size: 2.5em;
+  font-size: 2em;
   letter-spacing: 1px;
 }
 
@@ -137,7 +137,12 @@ h2 {
   color: #5a5463;
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
-  font-size: 2em;
+  font-size: 1.8em;
+  text-align: right;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
 }
 
 a {

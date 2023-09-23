@@ -1,6 +1,8 @@
+/* about + changelog */
+
 @font-face {
   font-family: "Instrument Sans";
-  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 /* animations */
@@ -60,19 +62,13 @@ body {
   background-color: thistle;
   color: #4e494e;
   font-family: 'Instrument Sans', sans-serif;
-  font-size: 14px;
+  font-size: 1em;
 }
 ::selection {
   background-color: rgb(255, 255, 191);
 }
 mark {
   background-color: rgb(247, 222, 226);
-}
-.mark-2 {
-  background-color: antiquewhite;
-}
-.mark-3 {
-  background-color: rgb(202, 230, 220);
 }
 
 .layout {
@@ -152,7 +148,7 @@ main {
 h1 {
   color: #4a3b61;
   text-align: left;
-  font-size: 2.5em;
+  font-size: 2em;
   letter-spacing: 1px;
 }
 
@@ -160,10 +156,13 @@ h2 {
   color: #5a5463;
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .article-2 h2 {
   text-align: right;
+}
+h1, h2, h3 {
+  font-weight: 500;
 }
 #todo::before {
   content: "📝";
@@ -449,9 +448,9 @@ section > details summary {
   margin-top: 1em;
 }
 
-#moreFacts details div {
-  max-height: 200px;
-  overflow: auto;
+.section-style-2 details div {
+  max-height: 30vh;
+  overflow-y: auto;
 }
 #contact dl p {
   margin-left: 1em;
@@ -464,7 +463,7 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: 14px;
+  font-size: .9em;
   color: rgb(97, 58, 97);
   width: 90%;
 }

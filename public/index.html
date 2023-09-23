@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noai, noimageai">
-
     <title>jasmine's journal</title>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
     <link rel="canonical" href="https://jasm1nii.xyz/"/>
+
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
 
     <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
 
-    <!-- GoatCounter analytics -->
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     
     <!-- indie login -->
     <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
     <link href="mailto:contact@jasm1nii.xyz" rel="me">
-
     <link rel="openid.delegate" href="https://jasm1nii.xyz/" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
     
@@ -47,14 +45,21 @@
 
     <div class="board">
       <header>
-        <hgroup>
-          <h1>jasmine's journal</h1>
-          <div class="header-aside">
-            <button id="themeToggle">
-              switch theme
-            </button>
-          </div>
-        </hgroup>
+        <div class="top">
+          <hgroup>
+            <h1>jasmine's journal</h1>
+          </hgroup>
+          <button id="themeToggle">
+            switch theme
+          </button>
+        </div>
+        <noscript>
+          <p>
+            <b>
+              (javascript is disabled - some site elements may be non-interactive, missing and/or out of date)
+            </b>
+          </p>
+        </noscript>
         <nav>
           <div id="headernav"></div>
           <noscript>
@@ -62,26 +67,15 @@
               <li id="home"><a href="/">home</a></li>
               <li id="about"><a href="/about/">about</a></li>
               <li id="blog"><a href="/blog/">blog</a></li>
-              <li id="mediaLibrary">🔨 <del>media library</del></li>
-              <li id="art">🔨 <del><a href="/art/">art</a></del></li>
               <li id="resources"><a href="/resources/">resources</a></li>
               <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
-              <li id="archive">🔨 <del>archive</del></li>
               <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
           </ul>
           </noscript>
         </nav>
-        
         <div class="notice-group">
-          <button class="notice-group-button" id="floating-button" onclick="hide()">📌</button>
+          <button onclick="hide()">📌</button>
           <div id="notice"></div>
-          <noscript>
-            <p>
-              <b>
-                (javascript is disabled - some site elements may be non-interactive, missing and/or out of date)
-              </b>
-            </p>
-          </noscript>
         </div>
       </header>
 
@@ -97,31 +91,31 @@
                       <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the webmaster">
                     </div>
                     <div class="flower-fill">
-                        <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                        <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                        <details>
-                          <summary>
-                            <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt="">
-                          </summary>
-                          <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme">
-                        </details>
+                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                      <details>
+                        <summary>
+                          <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt=""/>
+                        </summary>
+                        <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme">
+                      </details>
                     </div>
                   </div>
                 </div>
                 <div class="p-note">
-                    <p>
-                      just call me <a rel="me"><b>jasmine!</b></a> 👋
-                    </p>
-                    <ul>
-                      <li><span>📍</span> <span>IDN</span></li>
-                      <li><span>🎂</span> <span>1999</span></li>
-                      <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
-                      <!-- additional h-card attributes -->
-                      <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
-                      <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
-                        <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
-                      </span>
-                    </ul>
+                  <p>
+                    just call me <a rel="me"><b>jasmine!</b></a> 👋
+                  </p>
+                  <ul>
+                    <li><span>📍</span> <span>IDN</span></li>
+                    <li><span>🎂</span> <span>1999</span></li>
+                    <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
+                    <!-- additional h-card attributes -->
+                    <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
+                    <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
+                      <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
+                    </span>
+                  </ul>
                 </div>
                 <div class="barcode"></div>
               </div>
@@ -134,7 +128,7 @@
                   <p id="song">&#8987;</p>
                 </div>
                 <div class="last-played-child">
-                  <button type="button" onclick="window.location.href='https://www.last.fm/user/jasm1nii', '_blank';">
+                  <button onclick="window.location.href='https://www.last.fm/user/jasm1nii';">
                     last.fm profile
                   </button>
                 </div>
@@ -182,27 +176,27 @@
             <section> <!-- site updates -->
               <div class="card">
                 <h2 id="site-updates">site updates</h2>
-                  <h3><time datetime="2023-09-19">19 september 2023</time></h3>
-                  <ul class="overflow">
+                <h3><time datetime="2023-09-23">23 september 2023</time></h3>
+                <div class="overflow">
+                  <ul>
                     <li>
-                      purged some more old code from under the hood.
+                      more pages are now viewable in reader mode!
                     </li>
                     <li>
-                      remove the "anon inbox" section on the home page. follow the breadcrumbs instead, if you must 🐱
-                    </li>
-                    <li>
-                      added more buttons to the link gallery.
+                      adjusted font sizes and weight contrast in various places.
                     </li>
                     <li>
                       more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
                     </li>
                   </ul>
+                </div>
               </div>
             </section>
 
             <section> <!-- subscribe -->
-                <div class="card">
-                  <h2 id="subscribe">subscribe</h2>
+              <div class="card">
+                <h2 id="subscribe">subscribe</h2>
+                <div class="overflow">
                   <dl>
                     <dt>
                       <a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a> | <a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a>
@@ -229,6 +223,7 @@
                     <img src="/assets/media/main/valid-atom.png" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
                   </a>
                 </div>
+              </div>
             </section>
 
             <section> <!-- my links -->
@@ -260,26 +255,26 @@
                 <h2 id="tip-jar">tip jar</h2>
                 <div class="tip-jar">
                   <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                  <script type='text/javascript'>kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
+                  <script type='text/javascript' role="button">kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
                   <br><br>
                   <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script>
-                  <script type='text/javascript'>(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
+                  <script type='text/javascript' role="button">(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
                 </div>
               </div>
             </section>
 
             <section> <!-- webrings -->
               <div class="card web-rings">
-                  <h2 id="web-rings">web rings & listings</h2>
-                  <details>
+                <h2 id="web-rings">web rings & listings</h2>
+                <details>
                     <summary>
                       what's a web ring?
                     </summary>
                     <p>
                       <a href="https://en.wikipedia.org/wiki/Webring"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
                     </p>
-                  </details>
-                  <div class="web-rings-list">
+                </details>
+                <div class="web-rings-list">
                     <h3>pending</h3>
                     <p>
                       some links may not work yet!
@@ -345,7 +340,7 @@
                         <a href="https://hotlinewebring.club/jasm1nii/next" title="next site" aria-label="next site">→</a>
                       </b>
                     </p>
-                  </div>
+                </div>
               </div>
             </section>
           </div>
@@ -363,29 +358,29 @@
           site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
         </p>
         <ul>
-            <li id="footerCopyright">
-                <time>2023</time> - until hell freezes over
-            </li>
-            <li id="footerIndieweb">
-                <a href="https://indieweb.org/">
-                <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;"></a>
-            </li>
-            <li id="footerWebmentions">
-                <a href="https://indieweb.org/Webmention">
-                <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;"></a>
-            </li>
-            <li id="footerAcccessibility">
-                🔨 <del>accessibility</del>
-            </li>
-            <li id="footerSitemap">
-                <a href="/site-map.html">site map</a>
-            </li>
-            <li id="footerCredits">
-                <a href="/credits.html">credits</a>
-            </li>
-            <li id="footerContact">
-                <a href="/about#contact">contact</a>
-            </li>
+          <li id="footerCopyright">
+            <time>2023</time> - until hell freezes over
+          </li>
+          <li id="footerIndieweb">
+            <a href="https://indieweb.org/">
+            <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;"></a>
+          </li>
+          <li id="footerWebmentions">
+            <a href="https://indieweb.org/Webmention">
+            <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;"></a>
+          </li>
+          <li id="footerAcccessibility">
+            🔨 <del>accessibility</del>
+          </li>
+          <li id="footerSitemap">
+            <a href="/site-map.html">site map</a>
+          </li>
+          <li id="footerCredits">
+            <a href="/credits.html">credits</a>
+          </li>
+          <li id="footerContact">
+            <a href="/about#contact">contact</a>
+          </li>
         </ul>
       </noscript>
     </footer>
@@ -411,9 +406,12 @@
   <!-- webrings -->
   <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
   <script defer src="https://xandra.cc/safonts/webring.js"></script>
+
   <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
   <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
+
   <script defer src="/assets/scripts/vocaring.js"></script>
+  
   <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
   <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
   </body>

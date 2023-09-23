@@ -1,6 +1,8 @@
+/* credits */
+
 @font-face {
     font-family: "Instrument Sans";
-    src: url('../fonts/Instrument_Sans/InstrumentSans-Regular.ttf')  format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf')  format('truetype');
 }
 
 :root {
@@ -52,6 +54,9 @@ h3::before {
 h3 ~ ul {
     margin-left: 1em;
 }
+h1, h2, h3 {
+    font-weight: 600;
+}
 
 hr {
     border: 1px dashed plum;
@@ -80,7 +85,7 @@ body {
     font-family: var(--font-1);
     font-size: 1em;
     width: 50%;
-    max-width: 400px;
+    max-width: 700px;
     margin: auto;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
@@ -94,10 +99,12 @@ body {
                 width: fit-content;
             }
         }
-    #layout {
+    .layout {
         background-color: var(--bg-color-2);
         border: 1px solid rgb(163, 120, 127);
-        
+    }
+    .columns {
+        columns: 2;
     }
 
 header {

@@ -1,6 +1,8 @@
+/* home page */
+
 @font-face {
   font-family: "Instrument Sans";
-  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 :root {
@@ -119,11 +121,9 @@ a:hover {
   max-height: 175px;
   overflow-y: auto;
   border: var(--overflow-border);
-  padding-top: 1em;
+  margin-top: 1em;
   padding-right: 1em;
-}
-.overflow li {
-  margin-left: 1em;
+  padding-left: 1em;
 }
 .card li {
   margin-bottom: 1em;
@@ -201,6 +201,8 @@ button {
   background-color: var(--theme-toggle-bg);
   border: 1px solid #8e629b;
   transition: all .5s;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 #themeToggle:hover {
   background-color: var(--theme-toggle-hover-bg);
@@ -282,25 +284,36 @@ header {
   z-index: 1;
   padding-top: 2%;
 }
+header .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+  @media all and (max-width: 350px) {
+    header .top {
+      flex-direction: column;
+      margin-bottom: 5%;
+    }
+    #themeToggle {
+      margin: auto;
+    }
+  }
 header hgroup {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
 }
-.header-aside {
-  margin-top: auto;
-  margin-bottom: auto;
-}
 header p {
   letter-spacing:.05em;
+}
+header noscript p {
+  margin-left: 1em;
 }
 @media all and (max-width:768px) {
   header {
     position: relative;
-  }
-  .header-aside {
-    align-self: flex-end;
-    font-size: smaller;
   }
 }
 @media all and (max-width:900px) {
@@ -412,9 +425,13 @@ h2 {
   padding-bottom: .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
+  font-weight: 600;
 }
 h2::before {
   margin-right: .5em;
+}
+h3 {
+  font-weight: 600;
 }
 
 /* h2 decoration */
@@ -624,14 +641,6 @@ section {
   word-wrap: break-word;
   font-size: 1.1em;
 }
-#statuscafe hr {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-#statuscafe div:last-child {
-  margin-top: 1em;
-  text-align: center;
-}
 #statuscafe-username {
   margin-bottom: .5em;
   font-weight: 600;
@@ -640,7 +649,14 @@ section {
   padding: .5em;
   padding-bottom: 0;
 }
-
+#statuscafe hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+#statuscafe div:last-child {
+  margin-top: 1em;
+  text-align: center;
+}
 .latest-status {
   padding: 0;
   margin: auto;
@@ -659,7 +675,7 @@ section {
   padding: 1em 1em .5em 1em;
 }
 
-/* custom main-info styles */
+/* custom card styles */
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   background: url(/assets/media/main/bank-note.svg);
@@ -696,10 +712,14 @@ section {
   justify-content: space-around;
   user-select: none;
 }
+.flower-fill summary img:hover {
+  filter: hue-rotate(180deg);
+  transition: filter .25s ease-in-out;
+}
 .h-card .u-featured {
   position: absolute;
 }
-.u-featured img {
+.u-featured {
   image-rendering: crisp-edges;
 }
   @media all and (max-width:768px) {

@@ -8,7 +8,6 @@ document.querySelector("#headernav").innerHTML =`
     <li id="art">🔨 <del><a href="/art/">art</a></del></li>
     <li id="resources"><a href="/resources/">resources</a></li>
     <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
-    <li id="archive">🔨 <del>archive</del></li>
     <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
 </ul>
 `;
