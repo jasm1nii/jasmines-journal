@@ -7,25 +7,9 @@
     <title>jasmine's journal</title>
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
     <link rel="canonical" href="https://jasm1nii.xyz/"/>
-
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-
     <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
-
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    
-    <!-- indie login -->
-    <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
-    <link href="mailto:contact@jasm1nii.xyz" rel="me">
-    <link rel="openid.delegate" href="https://jasm1nii.xyz/" />
-    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-    
-    <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
-
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
-    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="/assets/scripts/jquery.js"></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
@@ -38,11 +22,23 @@
     <link rel="preconnect" href="https://macaque.moe/" />
     <link rel="dns-prefetch" href="https://macaque.moe/" />
     <link rel="preload" fetchpriority="low" href="https://macaque.moe/autiring/onionring-variables.js" as="script" type="text/javascript"/>
+
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <!-- indie login -->
+    <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
+    <link href="mailto:contact@jasm1nii.xyz" rel="me">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="openid.delegate" href="https://jasm1nii.xyz/" />
+    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
   </head>
   <body>
-    
     <div id="loader"></div>
-
     <div class="board">
       <header>
         <div class="top">
@@ -60,6 +56,7 @@
             </b>
           </p>
         </noscript>
+
         <nav>
           <div id="headernav"></div>
           <noscript>
@@ -73,6 +70,7 @@
           </ul>
           </noscript>
         </nav>
+
         <div class="notice-group">
           <button onclick="hide()">📌</button>
           <div id="notice"></div>
@@ -84,36 +82,32 @@
           <div class="page-columns">
             <section> <!-- id card -->
               <div class="card h-card">
+                <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
-                  <h2>webmaster identity</h2>
-                  <div class="h-card-pfp">
-                    <div>
-                      <img class="u-photo" src="/assets/media/main/07042023 me.png" width="100%"  alt="a self portrait of the webmaster">
-                    </div>
-                    <div class="flower-fill">
-                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                      <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                      <details>
-                        <summary>
-                          <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt=""/>
-                        </summary>
-                        <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme">
-                      </details>
-                    </div>
+                  <img class="u-photo" src="/assets/media/main/07042023-me.png" alt="a self portrait of the webmaster"/>
+                  <div class="flower-fill">
+                    <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                    <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                    <details>
+                      <summary>
+                        <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt=""/>
+                      </summary>
+                      <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme"/>
+                    </details>
                   </div>
                 </div>
                 <div class="p-note">
                   <p>
-                    just call me <a rel="me"><b>jasmine!</b></a> 👋
+                    just call me <span class="p-name p-given-name"><a rel="me"><b>jasmine</b></a></span>! 👋
                   </p>
                   <ul>
-                    <li><span>📍</span> <span>IDN</span></li>
-                    <li><span>🎂</span> <span>1999</span></li>
-                    <li><span>🎨</span> <span>illustrator & multimedia designer</span></li>
+                    <li><span>📍</span> <span class="p-country-name">IDN</span></li>
+                    <li><span>🎂</span> <span class="dt-bday">1999</span></li>
+                    <li><span>🎨</span> <span class="p-category">illustrator & multimedia designer</span></li>
                     <!-- additional h-card attributes -->
-                    <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1"></a>
+                    <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1" inert></a>
                     <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
-                      <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1"></a>
+                      <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1" inert></a>
                     </span>
                   </ul>
                 </div>
@@ -125,9 +119,12 @@
               <div class="card last-played">
                 <div id="track">
                   <h2 id="last-played">last played</h2>
-                  <p id="song">&#8987;</p>
+                  <p id="song" data-animation>&#8987;</p>
                 </div>
                 <div class="last-played-child">
+                  <button id="js-toggle" title="pause scrolling">
+                    ⏯
+                  </button>
                   <button onclick="window.location.href='https://www.last.fm/user/jasm1nii';">
                     last.fm profile
                   </button>
@@ -163,7 +160,6 @@
                 <div id="statuscafe">
                   <div id="statuscafe-username"></div>
                   <div id="statuscafe-content"></div>
-                  <hr>
                   <div>
                     <a href="https://status.cafe">
                       <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
@@ -176,14 +172,20 @@
             <section> <!-- site updates -->
               <div class="card">
                 <h2 id="site-updates">site updates</h2>
-                <h3><time datetime="2023-09-23">23 september 2023</time></h3>
+                <h3><time datetime="2023-09-25">25 september 2023</time></h3>
                 <div class="overflow">
                   <ul>
                     <li>
-                      more pages are now viewable in reader mode!
+                      added a button to control the scrolling animation on the last.fm widget.
                     </li>
                     <li>
-                      adjusted font sizes and weight contrast in various places.
+                      fixed more accessibility issues with keyboard access.
+                    </li>
+                    <li>
+                      joined the <a href="https://xn--sr8hvo.ws/" rel="external">indieweb webring</a>!
+                    </li>
+                    <li>
+                      added pledge badge for <a href="https://nonbot.org/" rel="external">nonbot</a>.
                     </li>
                     <li>
                       more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
@@ -205,10 +207,10 @@
                       for occasional site-wide update summaries
                     </dd>
                     <dt>
-                      <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+                      <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">mastodon</a>
                     </dt>
                     <dd>
-                      a dedicated mastodon profile for blog posts only
+                      a dedicated profile for blog posts only
                     </dd>
                     <dt>
                       atom feed
@@ -282,13 +284,13 @@
                     <div id="resourceRing"></div>
                     <p> <!-- loop ring --> 
                       <b>
-                        <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site" aria-label="previous site">←</a> 
-                        <a href="https://loop.graycot.dev/webring.html?action=home">loop ring</a> 
-                        <a href="https://loop.graycot.dev/webring.html?action=next" title="next site" aria-label="next site">→</a>
+                        <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site" aria-label="previous site" rel="external">←</a> 
+                        <a href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a> 
+                        <a href="https://loop.graycot.dev/webring.html?action=next" title="next site" aria-label="next site" rel="external">→</a>
                       </b>
                       <br>
-                      [<a href="https://loop.graycot.dev/webring.html?action=rand"> random </a> |
-                      <a href="https://loop.graycot.dev/webring.html?action=list"> member list </a> ]
+                      [<a href="https://loop.graycot.dev/webring.html?action=rand" rel="external"> random </a> |
+                      <a href="https://loop.graycot.dev/webring.html?action=list" rel="external"> member list </a> ]
                     </p>
                     <hr>
                     <h3>joined</h3>
@@ -298,7 +300,10 @@
                       (newest to oldest)
                     </p>
                     <p>
-                      <a href="https://pastels.minty.nu/"><img src="/assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
+                      <a href="https://xn--sr8hvo.ws/previous" rel="external" title="previous site" aria-label="previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" title="next site" aria-label="next site">→</a>
+                    </p>
+                    <p>
+                      <a href="https://pastels.minty.nu/" rel="external"><img src="/assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
                     </p>
                     <p>
                       <ring-900 site="https://jasm1nii.xyz/" style="text-align: center; display: inline-block;"></ring-900>
@@ -346,9 +351,7 @@
           </div>
         </article>
         
-        <iframe id="guestbookScroller" src="https://www.123guestbook.com/scroller.php?id=jasm1nii" frameborder="no" scrolling="no" title="latest guestbook comments" loading="lazy"></iframe>
       </main>
-
     </div>
 
     <footer>
@@ -388,20 +391,21 @@
   <!-- content scripts -->
   <script async src="/assets/scripts/loader.js"></script>
   <script src="/assets/scripts/headernav.js"></script>
-    <style>
-      header nav ul li:first-child {
-        font-weight: 600;
-      }
-      #headernav #home a {
-        text-decoration: wavy underline 1px;
-      }
-    </style>
+  <style>
+    header nav ul li:first-child {
+      font-weight: 600;
+    }
+    #headernav #home a {
+      text-decoration: wavy underline 1px;
+    }
+  </style>
   <script src="/assets/scripts/footer.js"></script>
   <script defer src="/assets/scripts/sticky-note.js"></script>
   <script defer src="/assets/scripts/pretzel.js"></script>
   <script defer src="/assets/scripts/time.js"></script>
   <script defer src="https://status.cafe/current-status.js?name=jasm1nii"></script>
   <script defer src="/assets/scripts/lastfm.js"></script>
+  <script defer src="/assets/scripts/css-animation-toggle.js"></script>
 
   <!-- webrings -->
   <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>

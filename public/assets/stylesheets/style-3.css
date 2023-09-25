@@ -24,7 +24,6 @@ a {
     background-color: transparent;
     color: darkmagenta;
     transition: all 0.2s ease-out;
-    text-decoration: none;
     }
     a:hover {
     background-color: palevioletred;
@@ -84,7 +83,6 @@ body {
     background-color: var(--bg-color-1);
     font-family: var(--font-1);
     font-size: 1em;
-    width: 50%;
     max-width: 700px;
     margin: auto;
     scrollbar-color: pink transparent;
@@ -106,6 +104,11 @@ body {
     .columns {
         columns: 2;
     }
+        @media all and (max-width:650px) {
+            .columns {
+                columns: 1;
+            }
+        }
 
 header {
     letter-spacing: .1em;

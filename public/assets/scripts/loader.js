@@ -23,13 +23,14 @@ document.getElementById("loader").innerHTML = `
   animation: none;
 }
 #loader button {
-  font: inherit;
+  font-family: var(--font-3);
   font-size: .6em;
   margin: 2em;
   padding: .5em;
   background: transparent;
   color: inherit;
-  border: 1px solid white;
+  border: none;
+  border-bottom: 1px solid white;
   opacity: 0;
   animation: fadeInPage .5s forwards;
   animation-delay: .25s;
@@ -41,14 +42,11 @@ document.getElementById("loader").innerHTML = `
   letter-spacing: 0;
 }
 </style>`;
-
 var loader = document.getElementById("loader");
-
 function closeLoader() {
   window.stop();
   loader.style.display = "none";
 }
-
 window.addEventListener("load", function () {
   loader.style.display = "none";});
 

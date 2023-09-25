@@ -4,9 +4,19 @@
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
+@font-face {
+  font-family: "Besley";
+  src: url('/assets/fonts/Besley/Besley-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
+}
 
 :root {
   --font-1: 'Instrument Sans', sans-serif;
+  --font-2: 'Besley', serif;
+  --font-3: 'Inconsolata', monospace;
   --font-color-light: #4e494e;
   --h1-light: #5a5463;
   --h2-light: #712357;
@@ -108,7 +118,6 @@ a:hover {
   animation-fill-mode: forwards;
   animation-delay: 1s;
 }
-
 @keyframes fadeInSlide {
   0% {
       opacity: 0;
@@ -119,7 +128,6 @@ a:hover {
       transform: translatey(5px);
    }
 }
-
 @keyframes fadeInPage {
   0% {
       opacity: 0;
@@ -128,12 +136,18 @@ a:hover {
       opacity: 1;
   }
 }
+section {
+  transition: transform 0.3s;
+}
+section:hover {
+  transform: translatey(-5px);
+}
 
 button {
   cursor: pointer;
 }
 #themeToggle {
-  font: inherit;
+  font-family: var(--font-3);
   color: purple;
   height: fit-content;
   width: fit-content;
@@ -230,7 +244,6 @@ header p {
     position: relative;
   }
   .header-aside {
-    align-self: flex-end;
     font-size: smaller;
   }
 }
@@ -238,6 +251,8 @@ header p {
   header hgroup {
     padding-left: 5%;
     padding-right: 5%;
+    flex-direction: column;
+    text-align: center;
   }
   header > div {
     flex-direction: column-reverse;
@@ -259,8 +274,10 @@ h1 {
   font-size: 2.5em;
   letter-spacing: .05em;
   transition: color 0.3s ease-out;
-  font-family: var(--font-1);
-  font-weight: 600;
+  font-family: var(--font-2);
+  font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
 }
 h1::after {
   content: "ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ";
@@ -275,7 +292,7 @@ h1::before {
   color: thistle;
   margin-right: 0.25em;
 }
-@media all and (max-width:768px) {
+@media all and (max-width:900px) {
   h1 {
     font-size: 2em;
   }

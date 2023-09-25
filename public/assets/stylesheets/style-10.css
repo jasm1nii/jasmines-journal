@@ -1,12 +1,16 @@
-/* blog index styles */
+/* blog index, notes */
 
 @font-face {
     font-family: "Instrument Sans";
-    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Inconsolata";
+    src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 :root {
-    --font-1: 'Instrument Sans', sans-serif;
+    --font-2: 'Inconsolata', monospace;
     --links-hover-bg: white;
 }
 
@@ -70,9 +74,8 @@ html {
 }
 
 body {
-    font-family: var(--font-1);
+    font-family: var(--font-2);
     font-size: 1em;
-    font-weight: 500;
     width: 90%;
     max-width: 800px;
     margin: auto;

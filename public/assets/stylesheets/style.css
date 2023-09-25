@@ -4,9 +4,24 @@
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
+@font-face {
+  font-family: "Besley";
+  src: url('/assets/fonts/Besley/Besley-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Register";
+  src: url('/assets/fonts/register/REGISTER.TTF') format('truetype');
+}
 
 :root {
   --font-1: 'Instrument Sans', sans-serif;
+  --font-2: 'Besley', serif;
+  --font-3: 'Inconsolata', monospace;
+  --font-4: 'Register', sans-serif;
   --font-color-light: #4e494e;
   --h1-light: #5a5463;
   --h2-light: #712357;
@@ -156,30 +171,25 @@ dd {
   animation-fill-mode: forwards;
   animation-delay: 1s;
 }
-
 .notice-group {
   animation: fadeInSlide 0.75s forwards;
 }
-
 section, #notice, .notice-group button {
   transition: transform 0.3s;
 }
-
 section:hover, #notice:hover, .notice-group button:hover {
   transform: translatey(-5px);
 }
-
 @keyframes fadeInSlide {
   0% {
-      opacity: 0;
-      transform: translatey(0);
+    opacity: 0;
+    transform: translatey(0);
   }
   100% {
-      opacity: 1;
-      transform: translatey(5px);
+    opacity: 1;
+    transform: translatey(5px);
    }
 }
-
 @keyframes fadeInPage {
   0% {
       opacity: 0;
@@ -193,7 +203,7 @@ button {
   cursor: pointer;
 }
 #themeToggle {
-  font: inherit;
+  font-family: var(--font-3);
   color: purple;
   height: fit-content;
   width: fit-content;
@@ -291,7 +301,7 @@ header .top {
   margin-left: 5%;
   margin-right: 5%;
 }
-  @media all and (max-width: 350px) {
+  @media all and (max-width: 500px) {
     header .top {
       flex-direction: column;
       margin-bottom: 5%;
@@ -341,8 +351,8 @@ h1 {
   font-size: 2.5em;
   letter-spacing: .05em;
   transition: color 0.3s ease-out;
-  font-family: var(--font-1);
-  font-weight: 600;
+  font-family: var(--font-2);
+  font-weight: 500;
 }
 h1::after {
   content: "ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ";
@@ -425,7 +435,6 @@ h2 {
   padding-bottom: .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
-  font-weight: 600;
 }
 h2::before {
   margin-right: .5em;
@@ -466,6 +475,7 @@ h3 {
   right: 0;
   margin: auto;
   z-index: 1;
+  font-family: var(--font-3);
 }
 .notice-group button {
   background-color: transparent;
@@ -489,7 +499,7 @@ h3 {
   margin-right: 10%;
   max-width: 180px;
   max-height: 300px;
-  overflow: auto;
+  overflow-y: auto;
 }
 @media all and (max-width:768px) {
   .notice-group {
@@ -580,15 +590,14 @@ section {
   border-top: none;
   border-left: none;
 }
-#last-played h2 {
+#last-played {
   margin-left: .5em;
   margin-right: .5em;
   margin-bottom: -.25em;
   font-variant: small-caps;
   border-color: rgb(79, 170, 161);
-  color: rgb(45, 94, 77);
+  font-family: var(--font-1);
 }
-
 .last-played a {
   text-decoration: none;
 }
@@ -597,7 +606,29 @@ section {
   border: 1px solid rgb(113, 135, 160);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-family: var(--font-3);
+  text-transform: lowercase;
+  overflow-x: hidden;
 }
+#song {
+  white-space: nowrap;
+  transform: translateX(0);
+  animation: scroll 10s linear infinite;
+}
+  @keyframes scroll {
+    0% { 
+      transform: translateX(100%); 		
+    }
+    100% { 
+      transform: translateX(-100%); 
+    }
+  }
+  @media (prefers-reduced-motion) {
+    #song {
+      white-space: normal;
+      animation-play-state: paused;
+    }
+  }
 .last-played-child {
   display: flex;
   align-items: center;
@@ -647,7 +678,10 @@ section {
 }
 #statuscafe-content {
   padding: .5em;
-  padding-bottom: 0;
+  font-family: var(--font-3);
+}
+#statuscafe-content::before, #statuscafe-content::after {
+  content: '"';
 }
 #statuscafe hr {
   margin-top: 1.5em;
@@ -692,18 +726,17 @@ section {
   color: inherit;
   background-color: transparent;
 }
-.pfp-group {
-  display: flex;
-  flex-direction: column;
-}
-.pfp-group h2 {
+#webmaster-identity {
   border: none;
   font-variant: small-caps;
   letter-spacing: 1px;
 }
-.h-card-pfp {
+.pfp-group {
   display: flex;
   width: fit-content;
+}
+.u-photo {
+  width: 100%;
 }
 .flower-fill {
   margin-left: 10px;
@@ -771,18 +804,16 @@ section {
   margin-right: auto;
   break-inside: avoid;
 }
-
 .clock-display {
-  font-size: 2.85em;
+  font-size: 3em;
+  font-family: var(--font-4);
   color: mintcream;
-  letter-spacing: 3px;
   background-color: #374048;
   width: fit-content;
   height: fit-content;
   margin-left: auto;
   margin-right: auto;
-  padding-left: .25em;
-  padding-right: .25em;
+  padding: .1em .25em 0em .25em;
   border-top: 3px inset gray;
   border-left: 3px inset gray;
 }
@@ -802,7 +833,6 @@ section {
   text-align: center;
 }
 .web-rings a {
-  text-decoration: none;
   color: var(--web-rings-links);
 }
 .web-rings summary {
@@ -856,14 +886,6 @@ section {
   text-align: center;
   margin-top: 1em;
   margin-bottom: .5em;
-}
-
-#guestbookScroller {
-  width: 100%;
-  height: 15px;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  margin-bottom: 15px;
 }
 
 footer {
@@ -928,6 +950,10 @@ footer time {
   }
   #track {
     background-color: linen;
+  }
+  #statuscafe-content {
+    background-color: rgb(243, 242, 247);
+    color: rgb(24, 14, 39);
   }
   .overflow {
     background-color: var(--overflow-bg-light);
@@ -1010,6 +1036,9 @@ footer time {
   #latest-status {
     background: url(/assets/media/main/line-in-motion-dark.svg) rgb(52, 39, 58);
   }
+  #statuscafe-content {
+    background-color: rgba(255, 255, 255, .1);
+  }
   .last-played {
     background-color: var(--last-played-dark-bg);
     border-bottom: var(--last-played-dark-b-border);
@@ -1022,10 +1051,6 @@ footer time {
   .web-rings-list {
     background-color: var(--section-card-dark);
   }
-  #guestbookScroller {
-    filter:invert(100%) hue-rotate(140deg);
-    border-color: rgb(253, 190, 227);
- }
 }
 
 .light-mode {
@@ -1100,6 +1125,10 @@ footer time {
 .light-mode #statuscafe {
   background-color: snow;
 }
+.light-mode #statuscafe-content {
+  background-color: rgb(243, 242, 247);
+  color: rgb(24, 14, 39);
+}
 .light-mode .last-played {
   border-bottom: var(--last-played-border-bottom) !important;
   border-right: var(--last-played-border-right) !important;
@@ -1124,10 +1153,6 @@ footer time {
 }
 .light-mode .web-rings-list {
   background-color: var(--web-rings-bg-light);
-}
-.light-mode #guestbookScroller {
-  filter: none;
-  border-color: gray;
 }
 .light-mode main button {
   background-color: #f5e9f5 !important;
@@ -1191,8 +1216,8 @@ footer time {
 .dark-mode .spotify {
   background-color: var(--spotify) !important;
 }
-.dark-mode #guestbookScroller {
-  filter:invert(100%) hue-rotate(140deg); border-color: rgb(253, 190, 227);
+.dark-mode #statuscafe-content {
+  background-color: rgba(255, 255, 255, .1);
 }
 .dark-mode footer {
   color: white;

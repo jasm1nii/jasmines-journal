@@ -4,42 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noai, noimageai">
-
     <title>jasmine's journal - link gallery</title>
     <link rel="canonical" href="https://jasm1nii.xyz/link-gallery">
-
-    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg" />
-    <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-
-    <link
-      href="/assets/stylesheets/style-11.css"
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-    />
-
-    <script
-      data-goatcounter="https://jasmineamalia.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"
-    ></script>
-
-    <meta
-      name="description"
-      content="a list of cool websites on the indie web"
-    />
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <meta name="description" content="a list of cool websites on the indie web"/>
     
+    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg" />
+    <link href="/assets/stylesheets/style-11.css" rel="stylesheet" type="text/css" media="all"/>
     <script src="/assets/scripts/watch-color-preference.js"></script>
     <script src="/assets/scripts/jquery.js""></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
 
   <body>
-
     <div id="loader"></div>
-    <script async src="/assets/scripts/loader.js"></script>
-    
     <div class="board">
       <header>
         <hgroup>
@@ -58,15 +39,6 @@
         </hgroup>
         <nav>
           <div id="headernav"></div>
-          <script src="/assets/scripts/headernav.js"></script>
-          <style>
-            header nav ul #linkGallery {
-              font-weight: 600;
-            }
-            header nav #linkGallery a {
-              text-decoration: wavy underline 1px;
-            }
-          </style>
           <noscript>
             <ul>
               <li>
@@ -241,7 +213,7 @@
                         />
                       </svg>
                     </a>
-                    <a href="https://lostletters.neocities.org/" rel="external"><img src="/assets/media/link-gallery/LostLetters88x31.gif"></a>
+                    <a href="https://lostletters.neocities.org/" rel="external"><img src="/assets/media/link-gallery/LostLetters88x31.gif" alt="lost letters on neocities"></a>
                     <a href="https://divergentrays.com/" rel="external"><img src="/assets/media/link-gallery/drbutton2.png" alt="site button for divergent rays"></a>
                     <a href="https://realachao.neocities.org/" rel="external"><img src="/assets/media/link-gallery/realachao_kirbybutton88x31.png" alt="site button for reala-chao"></a>
                     <a href="https://mizuki.world" rel="external"><img src="/assets/media/link-gallery/mizuki.gif" alt="site button for mizuki's world"></a> 
@@ -392,7 +364,7 @@
                 <p>
                   copy and paste the following code into your HTML file ↓
                 </p>
-                <div class="code">
+                <div class="code" tabindex="0">
                   <code>
                     &lt;a href="https://jasm1nii.xyz/">&lt;img src="https://jasm1nii.xyz/assets/media/main/jasmines-journal-button.png" alt="&amp;ldquo;jasmine's journal&amp;rdquo;" style="outline: 1px solid gray; image-rendering:pixelated;"/>&lt;/a>
                   </code>
@@ -433,6 +405,16 @@
       </noscript>
     </footer>
 
+    <script async src="/assets/scripts/loader.js"></script>
+    <script src="/assets/scripts/headernav.js"></script>
+    <style>
+      header nav ul #linkGallery {
+        font-weight: 600;
+      }
+      header nav #linkGallery a {
+        text-decoration: wavy underline 1px;
+      }
+    </style>
     <script src="/assets/scripts/footer.js"></script>
     <script src="/assets/scripts/freezeframe.min.js"></script>
     <script src="/assets/scripts/gif-controls.js"></script>

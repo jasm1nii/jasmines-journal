@@ -1,10 +1,12 @@
+/* blog article entries */
+
 @font-face {
-    font-family: "Instrument Sans";
-    src: url('/assets/fonts/Instrument_Sans/InstrumentSans-Regular.ttf') format('truetype');
+    font-family: "Inconsolata";
+    src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 :root {
-    --font-1: 'Instrument Sans', sans-serif;
+    --font-3: 'Inconsolata', monospace;
     --links-hover-bg: white; 
 }
 :root, :host {
@@ -20,6 +22,40 @@
     }
 }
 
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-width: thin;
+}
+
+body {
+    font-family: var(--font-3);
+    font-size: 1em;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    opacity: 0;
+    animation: fadeIn .5s;
+    animation-fill-mode: forwards;
+    transition: all 0.25s ease-out;
+    }
+        @media all and (max-width:768px) {
+            body {
+                width: fit-content;
+            }
+        }
+    #layout {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+        @media all and (max-width:768px) {
+            #layout {
+                margin-top: 0;
+                flex-direction: column;
+            }
+        }
 a {
     background-color: transparent;
     transition: all 0.2s ease-out;
@@ -64,43 +100,6 @@ hr {
     ::-webkit-scrollbar-thumb:hover {
     background-color: plum;
     }
-
-html {
-    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-    scrollbar-width: thin;
-    text-rendering: optimizeLegibility;
-}
-
-body {
-    font-family: var(--font-1);
-    font-size: 1em;
-    font-weight: 500;
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    scrollbar-color: pink transparent;
-    scrollbar-width: thin;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
-    transition: all 0.25s ease-out;
-    }
-        @media all and (max-width:768px) {
-            body {
-                width: fit-content;
-            }
-        }
-    #layout {
-        margin-top: 5%;
-        display: flex;
-        flex-direction: row-reverse;
-    }
-        @media all and (max-width:768px) {
-            #layout {
-                margin-top: 0;
-                flex-direction: column;
-            }
-        }
 header {
     max-width: 12em;
     margin-left: 1em;
@@ -231,6 +230,8 @@ article {
     padding-bottom: 2em;
     padding-top: 1.5em;
     margin-bottom: 1em;
+    line-height: 1.5;
+    font-size: 1em;
 }
     @media all and (max-width:400px) {
         article {
@@ -276,7 +277,6 @@ h2 {
     @media all and (max-width:768px) {
         .entry p img {
             max-width: 100%;
-            margin-left: -1em;
         }
     }
 .entry blockquote {

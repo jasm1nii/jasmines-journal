@@ -44,45 +44,19 @@ a {
     background-color: rgb(125, 71, 146);
     color: white;
     }
-    
-button {
-  cursor: pointer;
-  background-color: rgb(255, 242, 252);
-  padding: .75em;
-  font-size: 1em;
-  border: 1px solid rgb(141, 92, 100);
-  font-weight: 600;
-  letter-spacing: .05em;
-  color: rgb(122, 65, 122);
-  transition: all .25s ease-in-out;
+p {
+    text-align: center;
 }
-button:hover {
-    background-color: rgb(250, 191, 214);
-    letter-spacing: .1em;
-    color: rgb(44, 3, 3);
-    transition: all .25s ease-in-out;
-}
-button ~ p {
-    letter-spacing: .05em;
-    margin-top: .25em;
-    font-size: smaller;
-}
-nav button {
-    width: 70%;
+p:first-of-type {
+    font-size: larger;
 }
 
 ::selection {
     background-color: rgb(248, 208, 170);
 }
 
-header, h2 {
+header {
     color: rgb(84, 48, 95);
-}
-article h2 {
-    border-bottom: 1px solid purple;
-    text-align: left;
-    margin-top: 0;
-    letter-spacing: 0.1em;
 }
 h1 {
     font-size: 2em;
@@ -104,10 +78,6 @@ h1::after {
         display: block;
         }
     }
-
-hr {
-    border: 1px dashed plum;
-}
 
 ::-webkit-scrollbar-thumb {
     background-color: pink;
@@ -161,23 +131,6 @@ body {
         margin-right: auto;
         margin-bottom: 2em;
         box-shadow: 0 0 1em rgb(180, 149, 194);
-    }
-    article nav {
-        text-align: center;
-    }
-    article dt {
-        font-weight: 600;
-    }
-    article dd ul {
-        margin-left: 0;
-        padding-left: 0;
-    }
-    li::marker {
-        content: '✩࿐  ';
-        font-size: 1.2em;
-        font-weight: 600;
-        color: rgb(255, 255, 255);
-        text-shadow: 0 0 .1em rgb(65, 29, 49);
     }
 
 article::after {

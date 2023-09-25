@@ -2,13 +2,13 @@ document.getElementById("notice").innerHTML = `
     <p style="font-size: 1.25em;">
         <b><i>have you seen THEM?!</i></b>
     </p>
-    <figure>
+    <figure tabindex="0">
         <img src="/assets/media/main/pluto-pretzel.png" id="pluto" alt="my cat pluto">
         <figcaption>
             pluto (she/her)
         </figcaption>
     </figure>
-    </figure>
+    <figure tabindex="0">
         <img src="/assets/media/main/pluto-pretzel.png" id="pretzel" alt="my cat pretzel">
         <figcaption>
            pretzel (he/him)

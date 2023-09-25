@@ -351,6 +351,11 @@ nav li {
   display: block;
   padding-bottom: 1em;
 }
+  @media all and (max-width:768px) {
+    header nav li {
+      padding-bottom: 0;
+    }
+  }
 nav a {
   text-decoration: none;
   color: purple;
@@ -446,6 +451,12 @@ section > details summary {
   background-color: rgb(216, 216, 233);
   padding: .5em;
   margin-top: 1em;
+}
+.data-columns {
+  columns: 2;
+}
+.data-columns dd {
+  break-inside: avoid;
 }
 
 .section-style-2 details div {
