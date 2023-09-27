@@ -9,19 +9,19 @@
     <link rel="canonical" href="https://jasm1nii.xyz/"/>
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
     <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-    <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high"/>
+    <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="/assets/fonts/register/REGISTER.TTF" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
+    <link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" media="all"/>
     <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
 
-    <link rel="preconnect" href="https://neocities.org/" />
-    <link rel="dns-prefetch" href="https://neocities.org/" />
-    <link rel="preconnect" href="https://xandra.cc/" />
-    <link rel="dns-prefetch" href="https://xandra.cc/" />
-    <link rel="preload" fetchpriority="low" href="https://xandra.cc/safonts/webring.js" as="script" type="text/javascript"/>
-    <link rel="preconnect" href="https://macaque.moe/" />
-    <link rel="dns-prefetch" href="https://macaque.moe/" />
-    <link rel="preload" fetchpriority="low" href="https://macaque.moe/autiring/onionring-variables.js" as="script" type="text/javascript"/>
+    <link rel="preconnect dns-prefetch" href="https://i.imgur.com/"/>
+    <link rel="preconnect dns-prefetch" href="https://neocities.org/" />
+    <link rel="preconnect dns-prefetch" href="https://xandra.cc/" />
+    <link rel="preload" href="https://xandra.cc/safonts/webring.js" as="script" type="text/javascript" fetchpriority="low"/>
+    <link rel="preconnect dns-prefetch" href="https://macaque.moe/" />
+    <link rel="preload" href="https://macaque.moe/autiring/onionring-variables.js" as="script" type="text/javascript" fetchpriority="low"/>
 
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -32,19 +32,14 @@
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     <link rel="openid.delegate" href="https://jasm1nii.xyz/" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-    <link href="https://fed.brid.gy/r/https://jasm1nii.xyz/" rel="me">
   </head>
   <body>
-    <div id="loader"></div>
     <div class="board">
       <header>
         <div class="top">
-          <hgroup>
-            <h1>jasmine's journal</h1>
-          </hgroup>
+          <h1>jasmine's journal</h1>
           <button id="themeToggle">
             switch theme
           </button>
@@ -56,7 +51,6 @@
             </b>
           </p>
         </noscript>
-
         <nav>
           <div id="headernav"></div>
           <noscript>
@@ -67,10 +61,9 @@
               <li id="resources"><a href="/resources/">resources</a></li>
               <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
               <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-          </ul>
+            </ul>
           </noscript>
         </nav>
-
         <div class="notice-group">
           <button onclick="hide()">📌</button>
           <div id="notice"></div>
@@ -84,21 +77,24 @@
               <div class="card h-card">
                 <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
-                  <img class="u-photo" src="/assets/media/main/07042023-me.png" alt="a self portrait of the webmaster"/>
+                  <picture>
+                    <source srcset="/assets/media/main/07042023-me_compressed.webp"/>
+                    <img class="u-photo" src="/assets/media/main/07042023-me.png" width="150" height="150" alt="a self portrait of the webmaster" fetchpriority="high"/>
+                  </picture>
                   <div class="flower-fill">
-                    <img src="/assets/media/main/flower.svg" width="40px" alt="">
-                    <img src="/assets/media/main/flower.svg" width="40px" alt="">
+                    <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
+                    <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
                     <details>
                       <summary>
-                        <img src="/assets/media/main/flower.svg" width="40px" title="open for a surprise" alt=""/>
+                        <img src="/assets/media/main/flower.svg" width="40" height="40" title="open for a surprise" alt=""/>
                       </summary>
-                      <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme"/>
+                      <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme" loading="lazy" fetchpriority="low"/>
                     </details>
                   </div>
                 </div>
                 <div class="p-note">
                   <p>
-                    just call me <span class="p-name p-given-name"><a rel="me"><b>jasmine</b></a></span>! 👋
+                    just call me <span class="p-name p-given-name"><a rel="me" href="/about"><b>jasmine</b></a></span>! 👋
                   </p>
                   <ul>
                     <li><span>📍</span> <span class="p-country-name">IDN</span></li>
@@ -106,12 +102,27 @@
                     <li><span>🎨</span> <span class="p-category">illustrator & multimedia designer</span></li>
                     <!-- additional h-card attributes -->
                     <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1" inert></a>
+                    <a rel="me" href="https://fed.brid.gy/r/https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1" inert></a>
                     <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
                       <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1" inert></a>
                     </span>
                   </ul>
                 </div>
                 <div class="barcode"></div>
+              </div>
+            </section>
+
+            <section> <!-- clock -->
+              <div class="time">
+                <p>
+                  current time in<br><span style="font-size: 1.1em;"><b>bandung, indonesia</b></span>
+                </p>
+                <div class="clock-display">
+                  <p class="clock" timezone="+7"></p>
+                </div>
+                <p>
+                  timezone: GMT+7
+                </p>
               </div>
             </section>
 
@@ -131,29 +142,7 @@
                 </div>
               </div>
             </section>
-
-            <section> <!-- spotify playlist -->
-              <div class="card spotify" id="spotify">
-                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1Epp65x2IgCViy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="spotify songs on repeat"></iframe>
-              </div>
-            </section>
-
-            <div class="spacer"></div>
-
-            <section> <!-- clock -->
-              <div class="time">
-                <p>
-                  current time in<br><span style="font-size: 1.1em;"><b>bandung, indonesia</b></span>
-                </p>
-                <div class="clock-display">
-                  <p class="clock" timezone="+7"></p>
-                </div>
-                <p>
-                  timezone: GMT+7
-                </p>
-              </div>
-            </section>
-
+            
             <section> <!-- status.cafe -->
               <div class="card latest-status">
                 <h2 id="latest-status">latest status</h2>
@@ -162,7 +151,7 @@
                   <div id="statuscafe-content"></div>
                   <div>
                     <a href="https://status.cafe">
-                      <img src="https://status.cafe/assets/button.png" alt="Status Cafe"/>
+                      <img src="/assets/media/main/statuscafebutton.png" width="88" height="31" alt="Status Cafe"/>
                     </a>
                   </div>
                 </div>
@@ -222,7 +211,7 @@
                     </dd>
                   </dl>
                   <a style="text-align: center;" href="http://validator.w3.org/">
-                    <img src="/assets/media/main/valid-atom.png" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;"/>
+                    <img src="/assets/media/main/valid-atom.png" width="88" height="31" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;" loading="lazy"/>
                   </a>
                 </div>
               </div>
@@ -256,11 +245,8 @@
               <div class="card">
                 <h2 id="tip-jar">tip jar</h2>
                 <div class="tip-jar">
-                  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                  <script type='text/javascript' role="button">kofiwidget2.init('support with USD', '#66449C', 'S6S8O3MD');kofiwidget2.draw();</script>
-                  <br><br>
-                  <script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js'></script>
-                  <script type='text/javascript' role="button">(function(){var trbtnId=trbtn.init('support with IDR','#BE1E2D','https://trakteer.id/jasmineamalia','https://cdn.trakteer.id/images/embed/trbtn-icon.png','40');trbtn.draw(trbtnId);})();</script>
+                  <button onclick="window.location.href='https://ko-fi.com/jasmineamalia'" role="link">💲 support with USD</button>
+                  <button onclick="window.location.href='https://trakteer.id/jasmineamalia'" role="link">🇮🇩 support with IDR</button>
                 </div>
               </div>
             </section>
@@ -273,7 +259,7 @@
                       what's a web ring?
                     </summary>
                     <p>
-                      <a href="https://en.wikipedia.org/wiki/Webring"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
+                      <a href="https://en.wikipedia.org/wiki/Webring" rel="external"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
                     </p>
                 </details>
                 <div class="web-rings-list">
@@ -303,39 +289,39 @@
                       <a href="https://xn--sr8hvo.ws/previous" rel="external" title="previous site" aria-label="previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" title="next site" aria-label="next site">→</a>
                     </p>
                     <p>
-                      <a href="https://pastels.minty.nu/" rel="external"><img src="/assets/media/main/100x50-mallows.gif" alt="pastel colours fanlisting"></a>
+                      <a href="https://pastels.minty.nu/" rel="external"><img src="/assets/media/main/100x50-mallows.gif" width="100" height="50" alt="pastel colours fanlisting" loading="lazy"></a>
                     </p>
                     <p>
                       <ring-900 site="https://jasm1nii.xyz/" style="text-align: center; display: inline-block;"></ring-900>
                     </p>
-                    <p> <!-- fediring -->
+                    <p>
                       <b>
-                        <a href="https://fediring.net/previous?host=jasm1nii.xyz" title="previous site" aria-label="previous site">←</a>
-                        <a href="https://fediring.net/">fediring</a>
-                        <a href="https://fediring.net/next?host=jasm1nii.xyz" title="next site" aria-label="next site">→</a>
+                        <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" title="previous site" aria-label="previous site">←</a>
+                        <a href="https://fediring.net/" rel="external">fediring</a>
+                        <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" title="next site" aria-label="next site">→</a>
                       </b>
                       <br>
-                      <a href="https://fediring.net/random">random</a>
+                      <a href="https://fediring.net/random" rel="external">random</a>
                     </p>
                     <p>
-                      <a href="https://macaque.neocities.org/trickyfox/">LINKED!</a> <img src="https://i.imgur.com/9nXFJCq.png" alt=""> blaze the cat
+                      <a href="https://macaque.neocities.org/trickyfox/" rel="external">LINKED!</a> <img src="https://i.imgur.com/9nXFJCq.png" width="20" height="20" alt="" loading="lazy"> blaze the cat
                     </p>
                     <p>
-                      <img src="https://i.imgur.com/7v5H0TL.png" alt=""> i am <a href="https://macaque.neocities.org/trickyfox/"> angelic ♥</a> <img src="https://i.imgur.com/uAEhywQ.png" alt="">
+                      <img src="https://i.imgur.com/7v5H0TL.png" width="20" height="20" alt="" loading="lazy"> i am <a href="https://macaque.neocities.org/trickyfox/"> angelic ♥</a> <img src="https://i.imgur.com/uAEhywQ.png" width="20" height="20" alt="" loading="lazy">
                     </p>
                     <p>
-                      <a href="https://kalechips.net/responsive/index"><img src="/assets/media/main/responsive-website-directory.png" alt="responsive website directory"></a>
+                      <a href="https://kalechips.net/responsive/index"><img src="/assets/media/main/responsive-website-directory.png" width="88" height="31" alt="responsive website directory" loading="lazy"></a>
                     </p>
                     <p>
-                      <a href="https://smoothsailing.asclaria.org/"><img src="/assets/media/main/smooth-sailing.png" alt="smooth sailing listings"></a>
+                      <a href="https://smoothsailing.asclaria.org/"><img src="/assets/media/main/smooth-sailing.png" width="88" height="31" alt="smooth sailing listings" loading="lazy"></a>
                     </p>
                     <div id="healinghospital" style="text-align: center; margin-bottom: 2em;"></div>
                     <div id="autiring" style="text-align: center; margin-bottom: 2em;"></div>
                     <p style="margin: auto;">
-                      <a href="http://pkmn.caelestis.nu" target="_blank" rel="noopener noreferrer" style="border: 0px none; background: transparent;" title="I Choose You! :: PIPLUP"><img src="/assets/media/main/piplup.png" alt="'i choose you!' pokemon clique icon depicting piplup"></a>
+                      <a href="http://pkmn.caelestis.nu" target="_blank" rel="noopener noreferrer" style="border: none; background: transparent;" title="I Choose You! :: PIPLUP"><img src="/assets/media/main/piplup.png" alt="'i choose you!' pokemon clique icon depicting piplup" width="56" height="42" loading="lazy"></a>
                     </p>
                     <p style="margin-top: 2em; margin-bottom: 2em;">
-                      <a href="https://melanated.neocities.org/"><img src="/assets/media/main/melanated.png" alt="button for melanated, a POC webmaster listing"></a>
+                      <a href="https://melanated.neocities.org/"><img src="/assets/media/main/melanated.png" width="80" height="15" alt="button for melanated, a POC webmaster listing" loading="lazy"></a>
                     </p>
                     <div id="vocaring"></div>
                     <p style="margin-top: 2em;"> <!-- hotline webring -->
@@ -364,17 +350,6 @@
           <li id="footerCopyright">
             <time>2023</time> - until hell freezes over
           </li>
-          <li id="footerIndieweb">
-            <a href="https://indieweb.org/">
-            <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;"></a>
-          </li>
-          <li id="footerWebmentions">
-            <a href="https://indieweb.org/Webmention">
-            <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;"></a>
-          </li>
-          <li id="footerAcccessibility">
-            🔨 <del>accessibility</del>
-          </li>
           <li id="footerSitemap">
             <a href="/site-map.html">site map</a>
           </li>
@@ -388,36 +363,33 @@
       </noscript>
     </footer>
 
-  <!-- content scripts -->
-  <script async src="/assets/scripts/loader.js"></script>
-  <script src="/assets/scripts/headernav.js"></script>
-  <style>
-    header nav ul li:first-child {
-      font-weight: 600;
-    }
-    #headernav #home a {
-      text-decoration: wavy underline 1px;
-    }
-  </style>
-  <script src="/assets/scripts/footer.js"></script>
-  <script defer src="/assets/scripts/sticky-note.js"></script>
-  <script defer src="/assets/scripts/pretzel.js"></script>
-  <script defer src="/assets/scripts/time.js"></script>
-  <script defer src="https://status.cafe/current-status.js?name=jasm1nii"></script>
-  <script defer src="/assets/scripts/lastfm.js"></script>
-  <script defer src="/assets/scripts/css-animation-toggle.js"></script>
-
-  <!-- webrings -->
-  <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
-  <script defer src="https://xandra.cc/safonts/webring.js"></script>
-
-  <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
-  <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
-
-  <script defer src="/assets/scripts/vocaring.js"></script>
-  
-  <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-  <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
+    <!-- content scripts -->
+    <script src="/assets/scripts/headernav.js"></script>
+    <style>
+      header nav ul li:first-child {
+        font-weight: 600;
+      }
+      #headernav #home a {
+        text-decoration: wavy underline 1px;
+      }
+    </style>
+    <script defer src="/assets/scripts/jquery.js"></script>
+    <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
+    <script defer src="/assets/scripts/sticky-note.js"></script>
+    <script defer src="/assets/scripts/pretzel.js"></script>
+    <script src="/assets/scripts/footer.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/lastfm.js"></script>
+    <script defer src="/assets/scripts/css-animation-toggle.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/status-cafe.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/time.js"></script>
+    <!-- webrings -->
+    <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
+    <script defer src="https://xandra.cc/safonts/webring.js"></script>
+    <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/vocaring.js"></script>
+    <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
   </body>
   
 </html>

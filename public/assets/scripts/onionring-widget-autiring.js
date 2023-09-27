@@ -1,12 +1,10 @@
 // onionring.js is made up of four files - onionring-widget.js (this one!), onionring-index.js, onionring-variables.js and onionring.css
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (ÃƒÂ¨Ã¢â‚¬â„¢Ã…â€œ) house, last updated 2020-11-24
-
 // === ONIONRING-WIDGET ===
 //this file contains the code which builds the widget shown on each page in the ring. ctrl+f 'EDIT THIS' if you're looking to change the actual html of the widget
 
 var tag = document.getElementById(ringID); //find the widget on the page
-
 thisSite = window.location.href; //get the url of the site we're currently on
 thisIndex = null;
 
@@ -28,11 +26,7 @@ function randomSite() {
 //if we didn't find the site in the list, the widget displays a warning instead
 if (thisIndex == null) {
   tag.insertAdjacentHTML('afterbegin', `
-<table>
-  <tr>
-    <td>This site isn't part of the Autists Online webring yet. You should talk to the manager to have your site added to the list!</td>
-  </tr>
-</table>
+<p>This site isn't part of the Autists Online webring yet. You should talk to the manager to have your site added to the list!</p>
   `);
 }
 else {
@@ -58,11 +52,11 @@ else {
   tag.insertAdjacentHTML('afterbegin', `
     <span>
       <a href='${sites[previousIndex]}'>
-        <img src="https://i.imgur.com/nsEaVbm.png" style="image-rendering:pixelated" alt="previous site">
+        <img src="https://i.imgur.com/nsEaVbm.png" width="32" height="15" style="image-rendering:pixelated" alt="previous site" loading="lazy">
       </a>
-      <img src="https://i.imgur.com/wjukjLF.png" style="image-rendering:pixelated" alt="autists online web ring">
+      <img src="https://i.imgur.com/wjukjLF.png" width="96" height="15" style="image-rendering:pixelated" alt="autists online web ring" loading="lazy">
       <a href='${sites[nextIndex]}'>
-        <img src="https://i.imgur.com/Ayah6ds.png"style="image-rendering:pixelated" alt="next site">
+        <img src="https://i.imgur.com/Ayah6ds.png" width="32" height="15" style="image-rendering:pixelated" alt="next site" loading="lazy">
       </a>
     </span>
     <br>

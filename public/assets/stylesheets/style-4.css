@@ -4,7 +4,6 @@
     font-family: "Inconsolata";
     src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
 }
-
 :root {
     --font-3: 'Inconsolata', monospace;
     --links-hover-bg: white; 
@@ -14,25 +13,22 @@
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1;}
 }
 
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
     scrollbar-width: thin;
 }
-
 body {
     font-family: var(--font-3);
+    font-stretch: normal;
     font-size: 1em;
-    width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
     opacity: 0;
@@ -43,6 +39,8 @@ body {
         @media all and (max-width:768px) {
             body {
                 width: fit-content;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     #layout {
@@ -59,7 +57,6 @@ body {
 a {
     background-color: transparent;
     transition: all 0.2s ease-out;
-    text-decoration: none;
     font-weight: 600;
 }
 a:hover {
@@ -88,6 +85,9 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
 }
+summary {
+    margin-left: 1em;
+}
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -102,7 +102,7 @@ hr {
     }
 header {
     max-width: 12em;
-    margin-left: 1em;
+    margin-left: 3em;
     letter-spacing: .05em;
     position: sticky;
     top: 5%;
@@ -137,13 +137,12 @@ header time {
     font-weight: 600;
     display: block;
 }
-
 header nav {
     margin: auto;
     border-top: 1px solid;
     letter-spacing: .1em;
     padding: .25em;
-    font-size: .9em;
+    font-size: 1em;
     }
     header nav ul {
         margin-top: .25em;
@@ -151,7 +150,12 @@ header nav {
         padding: .7em;
     }
     header nav li {
-        display: flex;
+        display: block;
+        margin-top: 1em;
+    }
+    header nav li li {
+        margin-top: 0;
+        margin-left: 1em;
     }
         @media all and (max-width:768px) {
             header nav li {
@@ -162,17 +166,20 @@ header nav {
                 content: "✧";
                 margin-left: .5em;
             }
+            header nav li li:last-child::after {
+                content: none;
+            }
         }
     header nav li::before {
         content: "✧";
         margin-right: .5em;
     }
     header nav a {
-        text-decoration: none;
+        text-decoration: underline dotted;
         padding: 0px 5px 3px 5px;
     }
     
-    header nav ul ul li::before {
+    header nav li li::before {
         content: '⟶';
     }
         @media all and (max-width:768px) {
@@ -205,14 +212,12 @@ footer .subpage-nav a:first-child:before {
 }
 
 main {
-    margin-right: auto;
-    width: 70%;
+    margin: auto;
 }
     @media all and (max-width:768px) {
         main {
             margin-left: auto;
             margin-top: 5%;
-            width: 80%;
         }
         main > p {
             text-align: center;
@@ -224,20 +229,23 @@ main {
         }
     }
 article {
-    border: 1px solid;
+    border: 1px solid gray;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 2em;
     padding-top: 1.5em;
     margin-bottom: 1em;
     line-height: 1.5;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    hyphens: manual;
 }
-    @media all and (max-width:400px) {
+    @media all and (max-width:800px) {
         article {
-            border-left: none;
-            border-right: none;
-            padding-top: 1em;
+            padding: 1em;
+            border: none;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
         }
     }
 main::before {
@@ -252,8 +260,10 @@ main::after {
     content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
     display: block;
     text-align: center;
-    margin-top: 1.5em;
-    font-size: x-large;
+    border-bottom: 1px solid;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: large;
 }
 h2 {
     border-bottom: 1px solid;
@@ -268,17 +278,13 @@ h2 {
 .entry p {
     text-indent: 2em;
 }
-.entry p img {
-    padding: 1em;
+.entry img {
     display: block;
+    padding-top: 1em;
+    padding-bottom: 1em;
     margin: auto;
-    max-width: 70%;
+    max-width: 100%;
 }
-    @media all and (max-width:768px) {
-        .entry p img {
-            max-width: 100%;
-        }
-    }
 .entry blockquote {
     border: 1px dashed;
     padding: 1em;
@@ -286,6 +292,21 @@ h2 {
     margin-top: 2em;
     margin-bottom: 2em;
     width: fit-content;
+}
+article hgroup {
+    border-bottom: 1px solid;
+}
+article hgroup h2 {
+    padding-bottom: 0;
+    margin-bottom: 0.5em;
+    border-bottom: none;
+}
+article hgroup .p-summary {
+    text-indent: 0;
+    font-style: italic;
+    padding-left: 1em;
+    margin-top: 0;
+    background-color: rgba(128, 128, 128, .1);
 }
 section {
     margin-bottom: 1em;
@@ -296,11 +317,11 @@ section h3 {
     padding-bottom: .25em;
 }
 #comments, #webmentions {
-    border: 1px solid;
+    border: 1px solid gray;
     padding: 2em;
     padding-top: 1.5em;
 }
-@media all and (max-width:400px) {
+@media all and (max-width:768px) {
     #comments, #webmentions { border-left: none; border-right: none; }
 }
 .cactus-editor-textarea::placeholder,.cactus-editor-name > span > input::placeholder, .cactus-container button {
@@ -308,11 +329,11 @@ section h3 {
 }
 
 footer {
-    font-size: smaller;
+    font-size: 1em;
     margin-top: 3em;
     margin-bottom: 5em;
     width: 70%;
-    letter-spacing: .05em;text-align: center;
+    text-align: center;
     }
     @media all and (max-width:768px) {
         footer {

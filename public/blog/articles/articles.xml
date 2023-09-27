@@ -5,14 +5,23 @@
     <id>https://jasm1nii.xyz/blog/articles/</id>
     <link rel="self" href="https://jasm1nii.xyz/blog/articles/articles.xml" type="application/atom+xml"/>
     <link rel="alternate" href="https://jasm1nii.xyz/blog/articles" type="text/html"/>
-    <updated>2023-09-03T10:56:00+07:00</updated>
+    <updated>2023-09-26T18:39:00+07:00</updated>
     <author>
         <name>jasmine</name>
         <email>contact@jasm1nii.xyz</email>
         <uri>https://jasm1nii.xyz/</uri>
     </author>
     <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
-    <logo>https://jasm1nii.xyz/assets/media/main/07042023%20me.png</logo>
+    <logo>https://jasm1nii.xyz/assets/media/main/07042023-20me.png</logo>
+    <entry>
+        <title>tummy treats</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/9/26/entry</id>
+        <link rel="alternate" href="https://jasm1nii.xyz/blog/articles/2023/9/26/entry" type="text/html"/>
+        <published>2023-09-26T18:34:00+07:00</published>
+        <updated>2023-09-26T18:39:00+07:00</updated>
+        <category term="food" label="Food"/>
+        <summary type="html">a short food post!</summary>
+    </entry>
     <entry>
         <title>bye neocities (part 2)</title>
         <id>https://jasm1nii.xyz/blog/articles/2023/8/17/entry</id>

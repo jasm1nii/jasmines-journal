@@ -1,5 +1,4 @@
 /* link gallery styles will now go here, separate from the main index page */
-
 @font-face {
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
@@ -45,13 +44,11 @@
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
 }
-
 html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   height: 100%;
   text-rendering: optimizeLegibility;
 }
-
 ::-webkit-scrollbar {
   width: .5em;
   height: .5em;
@@ -59,7 +56,6 @@ html {
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-track-piece {
   background-color: inherit;
 }
@@ -75,7 +71,6 @@ body ::-webkit-scrollbar-thumb {
 body ::-webkit-scrollbar-thumb:hover {
   background-color: plum;
 }
-
 body {
   color: var(--font-color-light);
   font-family: var(--font-1);
@@ -88,14 +83,6 @@ time {
   font-weight: 600;
   display: block;
 }
-hr {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px dashed plum;
-}
-
 a {
   background-color: transparent;
   color: darkmagenta;
@@ -108,6 +95,13 @@ a:hover {
   background-color: var(--link-hover-bg-color-light);
   text-decoration: none;
   color: white !important;
+}
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px dashed plum;
 }
 
 /* animations */
@@ -225,7 +219,6 @@ header {
   top: 0;
   background-color: inherit;
   z-index: 1;
-  padding-top: 2%;
 }
 header hgroup {
   display: flex;
@@ -234,7 +227,6 @@ header hgroup {
 }
 .header-aside {
   margin-top: auto;
-  margin-bottom: auto;
 }
 header p {
   letter-spacing:.05em;
@@ -269,7 +261,6 @@ header p {
 }
 h1 {
   width: fit-content;
-  color: var(--h1-light);
   text-align: left;
   font-size: 2.5em;
   letter-spacing: .05em;
@@ -295,6 +286,7 @@ h1::before {
 @media all and (max-width:900px) {
   h1 {
     font-size: 2em;
+    margin-top: 0;
   }
   h1::before {
     margin-left: auto;
@@ -366,8 +358,7 @@ h2::before {
   margin-right: .5em;
 }
 
-/* main-info h2 decoration */
-
+/* h2 decoration */
 #link-me::before {
   content: "🏠";
 }
@@ -432,7 +423,7 @@ section {
   border-color: rgb(204, 148, 204);
 }
 
-.code { /* button textarea */
+.code {
   word-wrap: break-word;
   height: 80px;
   overflow: auto;
@@ -537,6 +528,9 @@ footer time {
 @media (prefers-color-scheme: light) {
   body {
     background-color: var(--document-color-light);
+  }
+  h1 {
+    color: var(--h1-light);
   }
 }
 

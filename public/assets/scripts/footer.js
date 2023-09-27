@@ -21,7 +21,7 @@ document.querySelector("#footer").innerHTML =`
 </ul>
 <div style="display: inline-flex; align-items: center;">
     <a href="https://nonbot.org/pledged/view/9a37b04c-c60a-41a4-81ee-e8e04110bdf3" rel="external">
-        <img src="https://nonbot.org/images/nonbot_pledged_logo.svg" alt="Human-made Content" height="50">
+        <img src="/assets/media/main/nonbot_pledged_logo.svg" alt="Human-made Content" height="50" width="50">
     </a>
     <a href="https://indieweb.org/" rel="external" style="margin-left: 10px; margin-right: 15px;">
         <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;">

@@ -1,7 +1,6 @@
 // onionring.js is made up of four files - onionring-widget.js (this one!), onionring-index.js, onionring-variables.js and onionring.css
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (è’œ) house, last updated 2020-11-24
-
 // === ONIONRING-WIDGET ===
 //this file contains the code which builds the widget shown on each page in the ring. ctrl+f 'EDIT THIS' if you're looking to change the actual html of the widget
 
@@ -27,9 +26,7 @@ function randomSite() {
 
 //if we didn't find the site in the list, the widget displays a warning instead
 if (thisIndex == null) {
-  tag.insertAdjacentHTML('afterbegin', `
-<a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png"> </a>
-  `);
+  tag.insertAdjacentHTML('afterbegin', `<a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png" width="80" height="40" alt="healing hospital web ring" loading="lazy"> </a>`);
 }
 else {
   //find the 'next' and 'previous' sites in the ring. this code looks complex
@@ -52,11 +49,9 @@ else {
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
-  <a href="${sites[previousIndex]}"> <img src="https://i.imgur.com/7mSNyVJ.png" alt="previous site"> </a>
-  
-  <a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png" alt="healing hospital web ring"> </a>
-  
-  <a href="${sites[nextIndex]}"> <img src="https://i.imgur.com/3H8kJOp.png" alt="next site"> </a>
+  <a href="${sites[previousIndex]}"> <img src="https://i.imgur.com/7mSNyVJ.png" width="40" height="40" alt="previous site" loading="lazy"> </a>
+  <a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png" width="80" height="40" alt="healing hospital web ring" loading="lazy"> </a>
+  <a href="${sites[nextIndex]}"> <img src="https://i.imgur.com/3H8kJOp.png" width="40" height="40" alt="next site" loading="lazy"> </a>
   `);
 
 }
