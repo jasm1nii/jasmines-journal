@@ -45,18 +45,15 @@ margin:var(--g1v5x3-text-margin);
 }
 </style>
 
-<div class="g1v5x3-webring">
-  <div class="g1v5x3-myUniqueClass">
-  </div>
-</div>`;
+<span class="g1v5x3-webring">
+  <div class="g1v5x3-myUniqueClass"></div>
+</span>`;
 
 // not really sure about this stuff, but don't delete it!
 class p1v1g6 extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(w9g5p9.content.cloneNode(true));
-
-    // e.g. https://css-tricks.com
     const thisSite = this.getAttribute("site"); 
     
     fetch(g1v5x3)
@@ -80,7 +77,7 @@ class p1v1g6 extends HTMLElement {
         // In this variable, put the HTML that you want your webring "badge" to use.
         // keep the link 'href' values the same, but change the text!
         const cp = `
-		<p class="title">i'm a <strong>sa</strong><a href="https://xandra.cc/safonts/" target="_new"><em>font</em></a><br></p>
+		    <p class="title">i'm a <strong>sa</strong><a href="https://xandra.cc/safonts/"><em>font</em></a><br></p>
             <p class="nav">
             <a href="${sites[prevSiteIndex].url}">&lt;&lt;</a>
             <a href="${sites[randomSiteIndex].url}">???</a>
@@ -105,14 +102,14 @@ class p1v1g6 extends HTMLElement {
 
 var rootVars = `:root {
   /* background! */
-  --g1v5x3-background-color: #000;
+  --g1v5x3-background-color: transparent;
     /* sizing */
   --g1v5x3-width:150px;
   --g1v5x3-padding: 1rem;
   
   /* title! */
   --g1v5x3-title-font:'Arial';
-  --g1v5x3-title-color: #FFF;
+  --g1v5x3-title-color: var(--font-color-light);
   --g1v5x3-title-size:16px;
   --g1v5x3-title-align:center;
   /* line height & letter spacing */

@@ -22,9 +22,6 @@ document.getElementById("vocaring").innerHTML = `
 #vocaring a:hover {
     background-color: turquoise;
 }
-#vocaring table {
-    margin: 0 auto;
-}
 #vocaring .webring-info {
     text-align: center;
     font-family: 'Tektur', cursive;
@@ -48,16 +45,17 @@ document.getElementById("vocaring").innerHTML = `
     letter-spacing: normal;
 }
 img {
-    user-drag: none;
-    -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    margin-top: 1em;
 }
 </style>
-<table class='vocacontainer' style='text-align: center;'>
-    <tr><td><div class='webring-info'>VOCALOID WEBRING</div><div class='webring-links'><a href='https://webring.adilene.net/' target='_parent'>Index</a> · <a href='https://webring.adilene.net/members.php' target='_parent'>Members</a></div></td></tr>
-    <tr><td style='text-align:center;'><img src='/assets/media/main/vocaloid.png' width="100" height="100" alt="" loading="lazy"></td></tr>
-</table>
+<div class='vocacontainer'>
+    <span class='webring-info'>VOCALOID WEBRING</span>
+    <br>
+    <span class='webring-links'><a href='https://webring.adilene.net/'>Index</a> · <a href='https://webring.adilene.net/members.php'>Members</a></span>
+    <img src='/assets/media/main/vocaloid.png' width="100" height="100" alt="" loading="lazy"/>
+</div>
 `;

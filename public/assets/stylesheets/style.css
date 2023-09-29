@@ -59,9 +59,6 @@
   --footer-font: rgb(97, 58, 97);
   --overflow-bg-light: rgb(255, 244, 246);
   --overflow-border: 1px solid rgb(170, 99, 111);
-  /* safont webring styles*/
-  --g1v5x3-background-color: transparent !important;
-  --g1v5x3-title-color: var(--font-color-light) !important;
 }
 
 * {
@@ -160,18 +157,18 @@ header .top {
       margin: auto;
     }
   }
-h1::before {
-  content: "₊ ⊹";
-  font-weight: 100;
-  color: thistle;
-  margin-right: 0.25em;
-}
+
 h1 {
   font-size: 2.5em;
   font-family: var(--font-2);
   font-weight: 500;
   letter-spacing: .05em;
-  transition: color 0.3s ease-out;
+}  
+h1::before {
+  content: "₊ ⊹";
+  font-weight: 100;
+  color: thistle;
+  margin-right: 0.25em;
 }
 h1::after {
   content: "ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ";
@@ -670,7 +667,6 @@ dd {
   text-align: center;
 }
 
-/* custom card styles */
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   background: url(/assets/media/main/bank-note.svg);
@@ -765,6 +761,10 @@ dd {
   margin-right: auto;
   break-inside: avoid;
 }
+.time .p-locality {
+  font-size: 1.1em;
+  font-weight: 600;
+}
 .clock-display {
   font-size: 3em;
   min-height: 50px;
@@ -782,6 +782,12 @@ dd {
 .clock {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+[alt="Valid Atom 1.0"] {
+  margin: auto;
+  margin-bottom: 1em;
+  display: block;
 }
 
 .tip-jar-links {
