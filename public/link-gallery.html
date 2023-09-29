@@ -8,24 +8,24 @@
     <link rel="canonical" href="https://jasm1nii.xyz/link-gallery">
     <meta name="description" content="a list of cool websites on the indie web"/>
     
-    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg" />
+    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
+    <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high"/>
+    <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link href="/assets/stylesheets/style-11.css" rel="stylesheet" type="text/css" media="all"/>
     <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js""></script>
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
+    <link rel="preconnect dns-prefetch" href="https://neocities.org/"/>
 
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
-    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention"/>
+    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc"/>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </head>
 
   <body>
     <div class="board">
       <header>
         <hgroup>
-          <div>
-            <h1>jasmine's link gallery</h1>
-          </div>
+          <h1>jasmine's link gallery</h1>
           <div class="header-aside">
             <button id="themeToggle">
               switch theme
@@ -37,20 +37,7 @@
           </div>
         </hgroup>
         <nav>
-          <div id="headernav"></div>
-          <noscript>
-            <ul>
-              <li>
-                <b><a href="/index.html">home</a></b>
-              </li>
-              <li>
-                <a href="/site-map.html">site map</a>
-              </li>
-              <li>
-                <a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a>
-              </li>
-            </ul>
-          </noscript>
+          <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
       </header>
 
@@ -78,39 +65,21 @@
                 </p>
                 <div class="button-gallery">
                   <span class="freezeframe">
-                    <a href="https://notprincehamlet.neocities.org/"><img src="/assets/media/link-gallery/notprincehamlet.png" alt="notprincehamlet on neocities"></a>
-                    <a href="https://hexephre.com/" rel="external"><img src="/assets/media/link-gallery/hexephre.png" alt="hexephre's webbed site"></a>
-                    <a href="https://owlsroost.xyz/" rel="external"><img src="/assets/media/link-gallery/OwlBanner.gif" alt="owl's roost"/></a>
-                    <a href="https://bluenight.neocities.org/"><img src="/assets/media/link-gallery/BLUE_NIGHT.gif" alt="blue night on neocities"/></a>
-                    <a href="https://tim-of-the-valley.neocities.org"><img src="/assets/media/link-gallery/tim-button.png" alt="tim of the valley"></a>
-                    <a href="https://cherrywaves.neocities.org/"><img src="/assets/media/link-gallery/cherrywaves.gif" alt="cherrywaves on neocities"></a>
-                    <a href="https://soyatoast.neocities.org/"><img src="/assets/media/link-gallery/soyatoast.png" alt="button for soyatoast on neocities" rel="external"></a>
-                    <a href="https://chocolate-cake.neocities.org/"><img src="/assets/media/link-gallery/chocolate-cake.gif" alt="chocolate-cake on neocities"></a>
-                    <a href="https://nonkiru.art/"><img src="https://nonkiru.art/bunnies/nonkiru.gif" alt="button for nonkiru on neocities"/></a>
-                    <a href="https://ohnno-eggs.neocities.org/"><img
-                        src="https://ohnno-eggs.neocities.org/art/mybutton.png"
-                        alt="ohnno-eggs on neocities"/></a>
-                    <a href="https://meixins.neocities.org/"><img
-                        src="/assets/media/link-gallery/meixins.gif"
-                        style="image-rendering: pixelated"
-                        alt="meixins on neocities"/></a>
-                    <a href="https://juxtajuno.neocities.org/"><img
-                        src="https://juxtajuno.neocities.org/main_assets/templogo.gif"
-                        alt="juno on neocities"/></a>
-                    <a href="https://jeith.neocities.org/"
-                      ><img
-                        src="https://jeith.com/assets/neocities/jeith.gif"
-                        alt="jeith on neocities"
-                    /></a>
-                    <a href="https://owlhari.com/"
-                      ><img
-                        src="https://owlhari.com/collect/linkbtns/owlhari.gif"
-                        alt="button for owlhari on neocities"
-                    /></a>
-                    <a href="https://icecreampizzer.neocities.org/" rel="external"><img
-                        src="https://icecreampizzer.neocities.org/assets/btnz/pizzer.gif"
-                        alt="button for icecreampizzer on neocities"
-                    /></a>
+                    <a href="https://notprincehamlet.neocities.org/" rel="external"><img src="/assets/media/link-gallery/notprincehamlet.png" alt="notprincehamlet on neocities" width="88" height="31" loading="lazy"></a>
+                    <a href="https://hexephre.com/" rel="external"><img src="/assets/media/link-gallery/hexephre.png" alt="hexephre's webbed site" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://owlsroost.xyz/" rel="external"><img src="/assets/media/link-gallery/OwlBanner.gif" alt="owl's roost" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://bluenight.neocities.org/" rel="external"><img src="/assets/media/link-gallery/BLUE_NIGHT.gif" alt="blue night on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://tim-of-the-valley.neocities.org" rel="external"><img src="/assets/media/link-gallery/tim-button.png" alt="tim of the valley" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://cherrywaves.neocities.org/" rel="external"><img src="/assets/media/link-gallery/cherrywaves.gif" alt="cherrywaves on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://soyatoast.neocities.org/" rel="external"><img src="/assets/media/link-gallery/soyatoast.png" alt="button for soyatoast on neocities" rel="external" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://chocolate-cake.neocities.org/" rel="external"><img src="/assets/media/link-gallery/chocolate-cake.gif" alt="chocolate-cake on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://nonkiru.art/" rel="external"><img src="/assets/media/link-gallery/nonkiru.gif" alt="button for nonkiru on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://ohnno-eggs.neocities.org/" rel="external"><img src="/assets/media/link-gallery/shrimpfriedeggs.png" alt="shrimpfriedeggs on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://meixins.neocities.org/" rel="external"><img src="/assets/media/link-gallery/meixins.gif" style="image-rendering: pixelated" alt="meixins on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://juxtajuno.neocities.org/" rel="external"><img src="https://juxtajuno.neocities.org/main_assets/templogo.gif" alt="juno on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://jeith.neocities.org/" rel="external"><img src="https://jeith.com/assets/neocities/jeith.gif" alt="jeith on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://owlhari.com/" rel="external"><img src="https://owlhari.com/collect/linkbtns/owlhari.gif" alt="button for owlhari on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://icecreampizzer.neocities.org/" rel="external"><img src="https://icecreampizzer.neocities.org/assets/btnz/pizzer.gif" alt="button for icecreampizzer on neocities" width="88" height="31" loading="lazy"/></a>
                   </span>
                 </div>
                 <hr>
@@ -125,22 +94,21 @@
             <section>
               <div class="card buttons">
                 <h2 id="cafegoers">32-bit cafegoers</h2>
-                <div class="freezeframe"
-                  style="text-align: center; margin-top: 1em; margin-bottom: 1em;">
+                <div class="freezeframe" style="text-align: center; margin-top: 1em; margin-bottom: 1em;">
                   <p>
                     join the community on <a href="https://32bit.cafe/discord/" rel="external">discord</a>!
                     <br>
                     (<b>18+ only</b>, SFW)
                   </p>
-                  <a href="https://32bit.cafe/" rel="external"><img src="/assets/media/link-gallery/32b-win9x.png" alt="32-bit cafe"/></a>
+                  <a href="https://32bit.cafe/" rel="external"><img src="/assets/media/link-gallery/32b-win9x.png" alt="32-bit cafe" width="88" height="31" loading="lazy"/></a>
                 </div>
                 <hr>
                 <div class="button-gallery">
                   <span class="freezeframe">
-                    <a href="https://justfluffingaround.neocities.org/" rel="external"><img src="/assets/media/link-gallery/justfluffingaroundbutton.png" alt="just-fluffing-around on neocities"></a>
-                    <a href="https://qrunchysnaq.neocities.org/" rel="external"><img src="/assets/media/link-gallery/qrunchybutton4.gif" alt="qrunchysnaq on neocities"/></a>
-                    <a href="https://inkcaps.neocities.org/" rel="external"><img src="/assets/media/link-gallery/inkcapsbutton.gif" alt="inkcaps on neocities"/></a>
-                    <a href="https://fri11s.neocities.org" rel="external" target="_blank" style="display: inline-block; vertical-align: top;">
+                    <a href="https://justfluffingaround.neocities.org/" rel="external"><img src="/assets/media/link-gallery/justfluffingaroundbutton.png" alt="just-fluffing-around on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://qrunchysnaq.neocities.org/" rel="external"><img src="/assets/media/link-gallery/qrunchybutton4.gif" alt="qrunchysnaq on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://inkcaps.neocities.org/" rel="external"><img src="/assets/media/link-gallery/inkcapsbutton.gif" alt="inkcaps on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://fri11s.neocities.org" rel="external" style="display: inline-block; vertical-align: top;">
                       <style>
                         @keyframes cl {
                           0% {
@@ -177,23 +145,21 @@
                       <svg class="frills" xmlns="https://www.w3.org/2000/svg" height="31" width="88">
                         <title>Visit Frills' neocities site</title>
                         <path class="frills-bg" d="M83 0H5a5 5 0 0 0-5 5v21a5 5 0 0 0 5 5h78a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5Z"/>
-                        <path
-                          class="frills-tx"
-                          d="M23.8 17c.5.3.7.8.7 1.6 0 1-.4 1.7-1.2 2-1 .4-2.2.5-3.4.5h-4.2v1.8c0 2.1-.8 3.2-2.5 3.2-1.4 0-2.5-.8-3.3-2.4-.8-1.5-1.2-4-1.2-7.4 0-2 .4-3.9 1.3-5.5 1.6-3 5-5 8.4-5.1 2.8-.2 6.8 1 6.8 4.3s-3.2 3.4-5.7 3.4c-1.7 0-4.1.7-4.1 2.7h3.7c1.5 0 3.4 0 4.7.9Zm6 9.1c-1.2 0-2-.7-2.5-2.2-.7-2.8-1-6.1-.4-9 .3-1.6 1.1-2.8 2.7-2.8 1 0 2 .4 2.2 1.4a4 4 0 0 1 1.7-.8c1.4-.4 2.8-.4 4.1.2 1.4.6 2.8 2.3 2.1 3.9-.4.9-1.2 1.4-2.2 1.4-1.7 0-2.8-1-4.2.5-1.2 1.2-.8 3.3-.9 4.8 0 1.5-1 2.6-2.6 2.6Zm14-14.1c-2 0-3.3-1.8-3.3-3.6 0-2 1.5-3.5 3.4-3.5 2 0 3.4 1.6 3.4 3.5S45.7 12 43.8 12Zm0 14.1c-1.6 0-2.3-1.2-2.4-2.7-.3-2.5-.3-5 0-7.4.2-1.4 1-2.5 2.5-2.5s2.3 1.3 2.5 2.7c.3 2.5.3 5 0 7.4-.3 1.5-.9 2.5-2.6 2.5Zm8.4 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 .8-4.5 3.2-4.5 2.4 0 3.2 3.8 3.3 4.5.3 3.8.2 7.7-.2 11.5-.1 1.8-.9 4.4-3.1 4.4Zm8.3 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 1-4.5 3.3-4.5 2.4 0 3 2.5 3.2 4.5.3 3.8.3 7.7-.1 11.5-.1 1.9-1 4.4-3.2 4.4Zm10 0c-1.8 0-5.6-.5-5.6-3 0-.6.2-1 .6-1.4.4-.3 1-.5 1.5-.5 1 0 1.5.8 2.3.9.6 0 .9-.7.3-1l-2.1-.9c-1.4-.8-2.7-1.8-2.6-3.5 0-1.7 1.6-3 3.1-3.7 2-.8 4.3-.7 6.4-.1 1.3.4 2.9 1.5 2.9 3 0 1.6-1.9 2.3-3.2 1.5-.4-.2-1.3-.5-1.5 0-.1.5.2.8.6.9 1.1.4 2 .9 2.7 1.4a3 3 0 0 1 1 2.4c0 1.2-.5 2.2-1.7 3-1.2.7-2.7 1-4.7 1Z"/>
+                        <path class="frills-tx" d="M23.8 17c.5.3.7.8.7 1.6 0 1-.4 1.7-1.2 2-1 .4-2.2.5-3.4.5h-4.2v1.8c0 2.1-.8 3.2-2.5 3.2-1.4 0-2.5-.8-3.3-2.4-.8-1.5-1.2-4-1.2-7.4 0-2 .4-3.9 1.3-5.5 1.6-3 5-5 8.4-5.1 2.8-.2 6.8 1 6.8 4.3s-3.2 3.4-5.7 3.4c-1.7 0-4.1.7-4.1 2.7h3.7c1.5 0 3.4 0 4.7.9Zm6 9.1c-1.2 0-2-.7-2.5-2.2-.7-2.8-1-6.1-.4-9 .3-1.6 1.1-2.8 2.7-2.8 1 0 2 .4 2.2 1.4a4 4 0 0 1 1.7-.8c1.4-.4 2.8-.4 4.1.2 1.4.6 2.8 2.3 2.1 3.9-.4.9-1.2 1.4-2.2 1.4-1.7 0-2.8-1-4.2.5-1.2 1.2-.8 3.3-.9 4.8 0 1.5-1 2.6-2.6 2.6Zm14-14.1c-2 0-3.3-1.8-3.3-3.6 0-2 1.5-3.5 3.4-3.5 2 0 3.4 1.6 3.4 3.5S45.7 12 43.8 12Zm0 14.1c-1.6 0-2.3-1.2-2.4-2.7-.3-2.5-.3-5 0-7.4.2-1.4 1-2.5 2.5-2.5s2.3 1.3 2.5 2.7c.3 2.5.3 5 0 7.4-.3 1.5-.9 2.5-2.6 2.5Zm8.4 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 .8-4.5 3.2-4.5 2.4 0 3.2 3.8 3.3 4.5.3 3.8.2 7.7-.2 11.5-.1 1.8-.9 4.4-3.1 4.4Zm8.3 0c-2.3 0-3-2.4-3.2-4.3a58 58 0 0 1 0-11.6c.2-2 1-4.5 3.3-4.5 2.4 0 3 2.5 3.2 4.5.3 3.8.3 7.7-.1 11.5-.1 1.9-1 4.4-3.2 4.4Zm10 0c-1.8 0-5.6-.5-5.6-3 0-.6.2-1 .6-1.4.4-.3 1-.5 1.5-.5 1 0 1.5.8 2.3.9.6 0 .9-.7.3-1l-2.1-.9c-1.4-.8-2.7-1.8-2.6-3.5 0-1.7 1.6-3 3.1-3.7 2-.8 4.3-.7 6.4-.1 1.3.4 2.9 1.5 2.9 3 0 1.6-1.9 2.3-3.2 1.5-.4-.2-1.3-.5-1.5 0-.1.5.2.8.6.9 1.1.4 2 .9 2.7 1.4a3 3 0 0 1 1 2.4c0 1.2-.5 2.2-1.7 3-1.2.7-2.7 1-4.7 1Z"/>
                         <path fill="hsl(332, 70%, 60%)" d="M76.2 4.2a2 2 0 0 1 1.5 1.5 2 2 0 0 1 1.6-1.5V4a2 2 0 0 1-1.5-1.5h-.1A2 2 0 0 1 76.2 4c-.1 0-.1.1 0 .2Z"/>
                         <path fill="hsl(332, 70%, 70%)" d="M71 7.3a3.7 3.7 0 0 1 2.6 2.6h.3a3.7 3.7 0 0 1 2.6-2.6c.1 0 .1-.2 0-.2a3.6 3.6 0 0 1-2.6-2.7h-.3A3.7 3.7 0 0 1 71 7.1c-.1 0-.1.1 0 .2Z"/>
                         <path fill="hsl(332, 70%, 80%)" d="M75.4 11.4a5.5 5.5 0 0 1 4 4h.3a5.5 5.5 0 0 1 4-4v-.3a5.5 5.5 0 0 1-4-4c0-.1-.3-.1-.4 0a5.5 5.5 0 0 1-3.9 4c-.2 0-.2.3 0 .3Z"/>
                       </svg>
                     </a>
-                    <a href="https://lostletters.neocities.org/" rel="external"><img src="/assets/media/link-gallery/LostLetters88x31.gif" alt="lost letters on neocities"></a>
-                    <a href="https://divergentrays.com/" rel="external"><img src="/assets/media/link-gallery/drbutton2.png" alt="site button for divergent rays"></a>
-                    <a href="https://realachao.neocities.org/" rel="external"><img src="/assets/media/link-gallery/realachao_kirbybutton88x31.png" alt="site button for reala-chao"></a>
-                    <a href="https://mizuki.world" rel="external"><img src="/assets/media/link-gallery/mizuki.gif" alt="site button for mizuki's world"></a> 
-                    <a href="https://bloodtypeoh.neocities.org/" target="_blank"><img src="assets/media/link-gallery/butt_move.gif" class="butt" alt="site button for blood-type-oh"></a>
-                    <a href="https://pinkvampyr.neocities.org/"><img src="assets/media/link-gallery/pinkvampyr.gif" alt="site button for pink-vampyr"/></a>
-                    <a href="https://sanguineroyal.com/"><img src="https://iili.io/HLETghF.png" alt="site button for sanguine-royal"/></a>
-                    <a href="https://hillhouse.neocities.org"><img src="/assets/media/link-gallery/hillhouse3.png" width="88" height="31" alt="website badge for hillhouse on neocities" style="image-rendering: pixelated"/></a>
-                    <a href="https://xandra.cc/"><img src="assets/media/link-gallery/88x31-by-rosedryad.png" alt="site button for museum of alexandra"></a>
+                    <a href="https://lostletters.neocities.org/" rel="external"><img src="/assets/media/link-gallery/LostLetters88x31.gif" alt="lost letters on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://divergentrays.com/" rel="external"><img src="/assets/media/link-gallery/drbutton2.png" alt="site button for divergent rays" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://realachao.neocities.org/" rel="external"><img src="/assets/media/link-gallery/realachao_kirbybutton88x31.png" alt="site button for reala-chao" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://mizuki.world" rel="external"><img src="/assets/media/link-gallery/mizuki.gif" alt="site button for mizuki's world" width="88" height="31"/></a> 
+                    <a href="https://bloodtypeoh.neocities.org/"><img src="assets/media/link-gallery/butt_move.gif" class="butt" alt="site button for bloodtypeoh" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://pinkvampyr.neocities.org/"><img src="assets/media/link-gallery/pinkvampyr.gif" alt="site button for pink-vampyr" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://sanguineroyal.com/"><img src="https://iili.io/HLETghF.png" alt="site button for sanguine-royal" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://hillhouse.neocities.org"><img src="/assets/media/link-gallery/hillhouse3.png" width="88" height="31" alt="website badge for hillhouse on neocities" style="image-rendering: pixelated" loading="lazy"/></a>
+                    <a href="https://xandra.cc/"><img src="assets/media/link-gallery/88x31-by-rosedryad.png" alt="site button for museum of alexandra" width="88" height="31" loading="lazy"/></a>
                   </span>
                 </div>
               </div>
@@ -205,104 +171,34 @@
                 <h2 id="more-cool-sites">more cool sites</h2>
                 <div class="button-gallery">
                   <span class="freezeframe">
-                    <a href="https://kalechips.net/" rel="external"><img src="/assets/media/link-gallery/kalechips.png" alt="kalechips"/></a>
-                    <a href="https://dimden.dev/" rel="external"><img src="https://dimden.dev/services/images/88x31.gif" alt="dimden's hotel on neocities"/></a>
-                    <a href="https://debtdeath.neocities.org/" rel="external"><img src="/assets/media/link-gallery/debtdeath-2-button.png" alt="debtdeath on neocities"/></a>
-                    <a href="https://adilene.net/"><img src="/assets/media/link-gallery/adilene-sitebutton.png" alt="virtual diva on neocities"></a>
-                    <a href="https://lalala-doomsday.neocities.org/"><img src="/assets/media/link-gallery/starry_button.gif" alt="doomsday-bird on neocities"></a>
-                    <a href="https://solinus.neocities.org"><img src="https://solinus.neocities.org/img/Button.png" alt="solinus on neocities"></a>
-                    <a href="https://cinnamuff.neocities.org/"><img src="https://cinnamuff.neocities.org/cinnamuffbtn.png" alt="cinnamuff on neocities"></a>
-                    <a href="https://cloverbell.neocities.org/" target="blank"><img src="https://cloverbell.neocities.org/n_n/cloverbell.gif" alt="cloverbell on neocities"></a>
-                    <a href="https://fearoffun.neocities.org/" target="_blank"
-                      ><img
-                        style="border-radius: 5px"
-                        src="https://fearoffun.neocities.org/media/stamp-1.gif"
-                        alt="fearoffun"/></a>
-                    <a href="https://starrs.neocities.org/"
-                      ><img
-                        src="/assets/media/link-gallery/tiny_space.gif"
-                        alt="a tiny space on neocities"
-                    /></a>
-                    <a href="https://gnomes.neocities.org/"
-                      ><img
-                        alt="Gnome Watch"
-                        src="https://gnomes.neocities.org/Button.gif"
-                        width="88px"/></a>
-                    <a href="https://bechnokid.neocities.org/"><img
-                        src="/assets/media/link-gallery/bechnokid.jpg"
-                        alt="bechnokid on neocities"/></a>
-                    <a href="https://cherubiims.neocities.org" target="_blank"
-                      ><img
-                        src="https://cherubiims.neocities.org/cherubbutton.gif"
-                        alt="button for cherubiims on neocities"/></a>
-                    <a href="https://freakphone.net"><img
-                        src="https://freakphone.net/freakbutton2.gif"
-                        alt="button for freak phone on neocities"/></a>
-                    <a href="https://www.bikobatanari.art/"><img
-                        src="/assets/media/link-gallery/bikobatanari.gif" alt="button for bikobatanari on neocities"></a>
-                    <a href="https://irony-machine.neocities.org/"><img
-                        src="https://irony-machine.neocities.org/buttons/buttons/irony-machine.png"
-                        alt="button for irony machine on neocities"/></a>
-                    <a href="https://aegi.neocities.org/"
-                      ><img
-                        src="https://aegi.neocities.org/images/aegi_button.gif"
-                        alt="button for aegi on neocities"
-                    /></a>
-                    <a href="https://fuchi.neocities.org/"
-                      ><img
-                        src="https://fuchi.neocities.org/fuchibutton.jpeg"
-                        target="_blank" alt="button for fuchi on neocities"/></a>
-                    <a href="https://chaodamacy.neocities.org/"
-                      ><img
-                        src="https://chaodamacy.neocities.org/linkimg/cdimg.png"
-                        alt="button for chaodamacy on neocities"
-                    /></a>
-                    <a href="https://waterfall.neocities.org"
-                      ><img
-                        src="https://waterfall.neocities.org/images/waterfallbuttonpurple.png"
-                        alt="button for waterfall on neocities"
-                    /></a>
-                    <a href="https://nenrikido.neocities.org/"
-                      ><img
-                        src="https://dl.dropbox.com/s/265wg2om8bjr5g6/nenrikido_button.gif"
-                        alt="button for nenrikido on neocities"
-                    /></a>
-                    <a href="https://maya.land/"
-                      ><img
-                        src="/assets/media/link-gallery/maya dot land.png"
-                        alt="maya land on neocities"
-                    /></a>
-                    <a href="https://macchiato.neocities.org" target="_blank"
-                      ><img
-                        src="https://macchiato.neocities.org/images/assets/button.png"
-                        title="macchiato"
-                        alt="button for macchiato on neocities"
-                    /></a>
-                    <a href="https://shishka.neocities.org/"
-                      ><img
-                        src="https://shishka.neocities.org/shishka/img/shishka-ulala.gif"
-                        alt="button for shiska on neocities"
-                    /></a>
-                    <a href="https://sadgrl.online/" target="_blank"
-                      ><img
-                        src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif"
-                        alt="button for sadness on neocities"
-                    /></a>
-                    <a href="https://entranceorexit.net/" target="_blank"
-                      ><img
-                        src="https://entranceorexit.net/img/eoe_button.png"
-                        alt="button for entrance or exit"
-                    /></a>
-                    <a href="https://oekaki.cinni.net/"
-                      ><img
-                        src="https://cinni.net/images/button/cinni-oekaki-88x31.gif"
-                        alt="button for cinni's oekaki on neocities"
-                    /></a>
-                    <a href="https://cinni.net/directory/" target="_blank">
-                      <img
-                        src="https://cinni.net/directory/img/88x31.png"
-                        alt="button for ichigo directory on neocities"
-                    /></a>
+                    <a href="https://kalechips.net/" rel="external"><img src="/assets/media/link-gallery/kalechips.png" alt="kalechips" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://dimden.dev/" rel="external"><img src="/assets/media/link-gallery/dimden.gif" alt="dimden's hotel on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://debtdeath.neocities.org/" rel="external"><img src="/assets/media/link-gallery/debtdeath-2-button.png" alt="debtdeath on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://adilene.net/"><img src="/assets/media/link-gallery/adilene-sitebutton.png" alt="virtual diva on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://lalala-doomsday.neocities.org/"><img src="/assets/media/link-gallery/starry_button.gif" alt="doomsday-bird on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://solinus.neocities.org"><img src="https://solinus.neocities.org/img/Button.png" alt="solinus on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://cinnamuff.neocities.org/"><img src="https://cinnamuff.neocities.org/cinnamuffbtn.png" alt="cinnamuff on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://cloverbell.neocities.org/"><img src="https://cloverbell.neocities.org/n_n/cloverbell.gif" alt="cloverbell on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://fearoffun.neocities.org/"><img style="border-radius: 5px" src="https://fearoffun.neocities.org/media/stamp-1.gif" alt="fearoffun" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://starrs.neocities.org/"><img src="/assets/media/link-gallery/tiny_space.gif" alt="a tiny space on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://gnomes.neocities.org/"><img alt="Gnome Watch" src="https://gnomes.neocities.org/Button.gif" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://bechnokid.neocities.org/"><img src="/assets/media/link-gallery/bechnokid.jpg" alt="bechnokid on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://cherubiims.neocities.org"><img src="https://cherubiims.neocities.org/cherubbutton.gif" alt="button for cherubiims on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://freakphone.net"><img src="https://freakphone.net/freakbutton2.gif" alt="button for freak phone on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://www.bikobatanari.art/"><img src="/assets/media/link-gallery/bikobatanari.gif" alt="button for bikobatanari on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://irony-machine.neocities.org/"><img src="https://irony-machine.neocities.org/buttons/buttons/irony-machine.png" alt="button for irony machine on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://aegi.neocities.org/"><img src="https://aegi.neocities.org/images/aegi_button.gif" alt="button for aegi on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://fuchi.neocities.org/"><img src="https://fuchi.neocities.org/fuchibutton.jpeg" alt="button for fuchi on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://chaodamacy.neocities.org/"><img src="https://chaodamacy.neocities.org/linkimg/cdimg.png" alt="button for chaodamacy on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://crowaes.neocities.org/"><img src="/assets/media/link-gallery/waterfallbuttonpurple.png" alt="crowaes (formerly waterfall) on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://nenrikido.neocities.org/"><img src="/assets/media/link-gallery/nenrikido_button.gif" alt="button for nenrikido on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://maya.land/"><img src="/assets/media/link-gallery/maya dot land.png" alt="maya land on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://macchiato.neocities.org"><img src="https://macchiato.neocities.org/images/assets/button.png" title="macchiato" alt="button for macchiato on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://shishka.neocities.org/"><img src="https://shishka.neocities.org/shishka/img/shishka-ulala.gif" alt="button for shiska on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://sadgrl.online/"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif" alt="button for sadness on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://entranceorexit.net/"><img src="https://entranceorexit.net/img/eoe_button.png" alt="button for entrance or exit" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://oekaki.cinni.net/"><img src="https://cinni.net/images/button/cinni-oekaki-88x31.gif" alt="button for cinni's oekaki on neocities" width="88" height="31" loading="lazy"/></a>
+                    <a href="https://cinni.net/directory/"><img src="https://cinni.net/directory/img/88x31.png" alt="button for ichigo directory on neocities" width="88" height="31" loading="lazy"/></a>
                   </span>
                 </div>
               </div>
@@ -317,25 +213,21 @@
               </div>
             </section>
             
-            <!-- button -->
             <section>
               <div class="card my-button">
                 <h2 id="link-me">link to this site</h2>
-                <br />
-                <img src="/assets/media/main/jasmines-journal-button.png" alt="&ldquo;jasmine's journal&rdquo; on neocities" style="margin-left: auto; margin-right: auto; display: block; outline: 1px solid gray;image-rendering: pixelated;" loading="lazy"/>
+                <br/>
+                <img src="/assets/media/main/jasmines-journal-button.png" alt="&ldquo;jasmine's journal&rdquo; on neocities" style="margin-left: auto; margin-right: auto; display: block; outline: 1px solid gray;image-rendering: pixelated;" width="88" height="31" loading="lazy"/>
                 <p>
                   copy and paste the following code into your HTML file ↓
                 </p>
                 <div class="code" tabindex="0">
                   <code>
-                    &lt;a href="https://jasm1nii.xyz/">&lt;img src="https://jasm1nii.xyz/assets/media/main/jasmines-journal-button.png" alt="&amp;ldquo;jasmine's journal&amp;rdquo;" style="outline: 1px solid gray; image-rendering:pixelated;"/>&lt;/a>
+                    &lt;a href="https://jasm1nii.xyz/" rel="external">&lt;img src="https://jasm1nii.xyz/assets/media/main/jasmines-journal-button.png" alt="&amp;ldquo;jasmine's journal&amp;rdquo;" style="outline: 1px solid gray; image-rendering: pixelated;" width="88" height="31" loading="lazy"/>&lt;/a>
                   </code>
                 </div>
-                <!-- button code END -->
                 <p>
-                  <small
-                    >hotlinking is fine, but self-hosting the image is
-                    recommended.
+                  <small>hotlinking is fine, but self-hosting the image is recommended.</small>
                 </p>
               </div>
             </section>
@@ -344,40 +236,14 @@
         </article>
       </main>
     </div>
-    <!-- layout END -->
 
     <footer>
-      <div id="footer"></div>
-      <noscript>
-        <p>
-          site analytics powered by
-          <a href="https://www.goatcounter.com/">goat counter</a> <br /><br />
-          best viewed on a chromium-based desktop browser
-        </p>
-        <ul>
-          <li><time>2023</time></li>
-          <li>
-            by
-            <a href="https://neocities.org/site/jasm1nii" rel="author me"
-              >jasm1nii on neocities</a
-            >
-          </li>
-          <li><a href="/credits.html">credits</a></li>
-        </ul>
-      </noscript>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
-    <script src="/assets/scripts/headernav.js"></script>
-    <style>
-      header nav ul #linkGallery {
-        font-weight: 600;
-      }
-      header nav #linkGallery a {
-        text-decoration: wavy underline 1px;
-      }
-    </style>
-    <script src="/assets/scripts/footer.js"></script>
     <script src="/assets/scripts/freezeframe.min.js"></script>
     <script src="/assets/scripts/gif-controls.js"></script>
+    <script src="/assets/scripts/jquery.js""></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </body>
 </html>

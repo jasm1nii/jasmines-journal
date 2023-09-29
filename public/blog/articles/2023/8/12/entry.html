@@ -9,7 +9,6 @@
       type="image/x-icon"
       href="assets/media/itchio-textless-white.svg"
     />
-    <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
     <link
       href="/assets/stylesheets/style-4.css"
       rel="stylesheet"
@@ -20,7 +19,7 @@
     <script
       data-goatcounter="https://jasmineamalia.goatcounter.com/count"
       async
-      src="//gc.zgo.at/count.js"
+      src="https://gc.zgo.at/count.js"
     ></script>
 
     <meta
@@ -32,9 +31,6 @@
 
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
   </head>
   <body>
     <div id="layout">
@@ -48,8 +44,8 @@
           </noscript>
           <h1>b(rain)log entry</h1>
         </div>
-        <nav>
-          <div id="headernav"></div>
+        <nav aria-label="primary">
+          <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
       </header>
       <main>
@@ -71,7 +67,7 @@
               my own time.
             </p>
             <p>
-              for now, please abstain from linking to my old URL at <a href="https://jasm1nii.neocities.org/">https://jasm1nii.neocities.org/</a> until further notice - you can link to this one, instead.
+              for now, please abstain from linking to my old URL at <a href="https://jasm1nii.neocities.org/" rel="external me">https://jasm1nii.neocities.org/</a> until further notice - you can link to this one, instead.
             </p>
           </section>
         </article>
@@ -79,20 +75,12 @@
     </div>
 
     <footer>
-      <div id="footer"></div>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
+    <script src="index.js"></script>
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="/assets/scripts/jquery.js"></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-      const blogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
-
-      blogSubpage.insertAdjacentHTML(
-      'afterend',
-      '<ul><li>2023 / august / 12</li></ul>',
-      );
-    </script>
-    <script src="/assets/scripts/footer.js"></script>
-
   </body>
 </html>

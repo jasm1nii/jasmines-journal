@@ -1,12 +1,10 @@
 /* about + changelog */
-
 @font-face {
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 /* animations */
-
 header, main, footer {
   opacity: 0;
   animation: fadeInPage .5s;
@@ -19,7 +17,6 @@ header p, h1, h2, h3 {
 header p:hover, h1:hover, h2:hover, h3:hover {
   color: rgb(124, 36, 98);
 }
-
 @keyframes fadeInSlide {
   0% {
       opacity: 0;
@@ -30,7 +27,6 @@ header p:hover, h1:hover, h2:hover, h3:hover {
       transform: translatey(5px);
    }
 }
-
 @keyframes fadeInPage {
   0% {
       opacity: 0;

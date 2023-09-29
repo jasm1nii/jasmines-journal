@@ -8,7 +8,6 @@
     font-family: "Inconsolata";
     src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
 }
-
 :root {
     --font-2: 'Inconsolata', monospace;
     --links-hover-bg: white;

@@ -22,12 +22,18 @@ RewriteEngine On
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot) [NC]
 RewriteRule ^ – [F]
 
+Options +Includes
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+AddHandler server-parsed .html
+
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin"
-  Header always set Content-Security-Policy "upgrade-insecure-requests"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;"
   Header always set Permissions-Policy "accelerometer=(),battery=(),camera=(),encrypted-media=*,geolocation=(),gyroscope=(),magnetometer=(),microphone=(),usb=()"
   Header always set Cache-Control "no-cache, no-store, must-revalidate"
 </IfModule>

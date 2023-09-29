@@ -11,9 +11,7 @@
     <meta name="description" content="a short food post!"/>
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention"/>
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <div id="layout">
@@ -27,8 +25,8 @@
           </noscript>
           <h1>b(rain)log entry</h1>
         </div>
-        <nav>
-          <div id="headernav"></div>
+        <nav aria-label="primary">
+          <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
       </header>
       <main>
@@ -127,98 +125,6 @@
                 <img src="IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae" style="max-width: 50%;"/>
               </section>
             </section>
-            <style>
-              .entry img {
-                filter:
-                  drop-shadow(5px 5px white)
-                  drop-shadow(-5px 5px white)
-                  drop-shadow(0px -10px white)
-                  drop-shadow(5px 5px 10px rgb(92, 64, 92));
-                width: 75%;
-                transition: .5s ease;
-              }
-              .scrapbook > section {
-                display: flex;
-              }
-              .scrapbook section:nth-of-type(odd) {
-                flex-direction: row-reverse;
-              }
-              .scrapbook section:nth-of-type(odd) img {
-                margin-left: 0;
-              }
-              .scrapbook section:nth-of-type(even) img {
-                margin-right: 0;
-              }
-              .scrapbook img:hover {
-                filter: 
-                  drop-shadow(5px 5px white)
-                  drop-shadow(-5px 5px white)
-                  drop-shadow(0px -10px white)
-                  drop-shadow(5px 5px 10px rgb(92, 64, 92))
-                  brightness(110%) contrast(110%);
-              }
-              .scrapbook section section {
-                position: absolute;
-                z-index: 1;
-                border: 1px solid;
-                padding: 1em;
-                max-width: 200px;
-                align-self: center;
-                box-shadow: 5px 5px 10px rgba(255, 192, 203, .5);
-                transition: .5s ease;
-              }
-              .scrapbook section section:hover {
-                transform:translateY(-5px);
-              }
-              .scrapbook ~ p, dl, ul {
-                font-size: smaller;
-              }
-              .scrapbook p {
-                text-indent: 0;
-                font-size: smaller;
-              }
-              .scrapbook h3 {
-                background-color: aliceblue;
-                color: rgb(16, 4, 31);
-                border: 1px solid;
-                margin-left: -1em;
-                padding-left: .5em;
-              }
-              .scrapbook h4 {
-                border-bottom: 2px dotted;
-              }
-              .scrapbook h5 {
-                background-color: rgba(118, 214, 182, 0.2);
-                margin-bottom: 0;
-              }
-              @media all and (max-width:600px) {
-                .scrapbook section {
-                  flex-direction: column !important;
-                }
-                .scrapbook section section {
-                  position: relative;
-                }
-                .scrapbook section img {
-                  margin: auto !important;
-                }
-              }
-              @media (prefers-color-scheme: light) {
-                .scrapbook section section {
-                  background-color: white;
-                }
-              }
-              .light-mode .scrapbook section section {
-                background-color: white;
-              }
-              @media (prefers-color-scheme: dark) {
-                .scrapbook section section {
-                  background-color: rgb(26, 25, 27);
-                }
-              }
-              .dark-mode .scrapbook section section {
-                background-color: rgb(26, 25, 27);
-              }
-            </style>
             </section>
           </section>
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
@@ -234,31 +140,16 @@
       </main>
     </div>
     <footer>
-      <div id="footer"></div>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-      const blogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
-      blogSubpage.insertAdjacentHTML(
-        'beforeend',
-        '<ul><li>2023 / september / 26</li></ul>',
-      );
-    </script>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <script type="module" src="https://esm.run/seia" async></script>
     <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
-    <script>
-      initComments({
-        node: document.getElementById("comment-section"),
-        defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
-        serverName: "cactus.chat",
-        siteName: "<jasm1niixyz>",
-        commentSectionId: "blog-20230926"
-      })
-    </script>
-    <script src="/assets/scripts/footer.js"></script>
-
+    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css"/>
+    <script src="index.js"></script>
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="/assets/scripts/jquery.js"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </body>
 </html>

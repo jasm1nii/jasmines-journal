@@ -1,15 +1,18 @@
 /* link gallery styles will now go here, separate from the main index page */
 @font-face {
-  font-family: "Instrument Sans";
-  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
-}
-@font-face {
   font-family: "Besley";
+  font-display: swap;
   src: url('/assets/fonts/Besley/Besley-VariableFont_wght.ttf') format('truetype');
 }
 @font-face {
   font-family: "Inconsolata";
+  font-display: swap;
   src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-display: swap;
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 :root {
@@ -222,8 +225,12 @@ header {
 }
 header hgroup {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .header-aside {
   margin-top: auto;
@@ -235,19 +242,18 @@ header p {
   header {
     position: relative;
   }
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .header-aside {
     font-size: smaller;
   }
 }
 @media all and (max-width:900px) {
   header hgroup {
-    padding-left: 5%;
-    padding-right: 5%;
     flex-direction: column;
     text-align: center;
-  }
-  header > div {
-    flex-direction: column-reverse;
   }
 }
 @media all and (max-width:768px) {
@@ -267,15 +273,6 @@ h1 {
   transition: color 0.3s ease-out;
   font-family: var(--font-2);
   font-weight: 500;
-  margin-left: auto;
-  margin-right: auto;
-}
-h1::after {
-  content: "ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ";
-  margin-left: 0.25em;
-  font-weight: 100;
-  color: thistle;
-  white-space: pre;
 }
 h1::before {
   content: "₊ ⊹";
@@ -336,6 +333,12 @@ nav a {
   text-decoration: none;
   color: purple;
   padding: 0px 5px 3px 5px;
+}
+header nav ul #linkGallery {
+  font-weight: 600;
+}
+header nav #linkGallery a {
+  text-decoration: wavy underline 1px;
 }
 @media all and (max-width:768px) {
   nav {
@@ -424,14 +427,13 @@ section {
 }
 
 .code {
-  word-wrap: break-word;
-  height: 80px;
-  overflow: auto;
-  padding: 5px 10px 5px 10px;
+  word-break: break-all;
   border: 1px solid gray;
   text-align: left;
   resize: vertical;
   margin: auto;
+  overflow-y: scroll;
+  max-height: 80px;
 }
 .button-gallery {
   margin-top: .75em;
@@ -473,10 +475,14 @@ section {
 }
 #gifControls button:active {
   background-color: var(--gif-controls-active-bg);
-  padding: .25em;
 }
 #gifControls button:focus {
   background-color: var(--gif-controls-focus-bg);
+}
+@container (max-width: 210px) {
+  #play-gif {
+      margin-bottom: 1em;
+  }
 }
 
 footer {

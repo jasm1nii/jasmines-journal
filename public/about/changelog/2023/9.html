@@ -3,14 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>jasmine's journal - change log</title>
+        <title>september 2023 change log | jasmine's journal</title>
         <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
         <link href="/assets/stylesheets/style-2.css" rel="stylesheet" type="text/css" media="all">
-        <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
         <meta name="description" content="the personal sandbox of a multifaceted internet creative">
         <meta name="robots" content="noindex">
-        <script src="/assets/scripts/watch-color-preference.js"></script>
-        <script src="/assets/scripts/jquery.js""></script>
     </head>
     <body>
 
@@ -19,22 +17,7 @@
                 <header>
                     <h1>jasmine's journal</h1>
                     <nav>
-                        <div id="headernav"></div>
-                        <noscript>
-                            <ul>
-                                <li>
-                                    <a href="/">home</a>
-                                </li>
-                                <li>
-                                    <a href="/about">about</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/about/changelog">change log</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </noscript>
+                        <!--#include virtual="/assets/includes/headernav.shtml"-->
                     </nav>
                 </header>
             </div>
@@ -43,6 +26,37 @@
                 <main>
                     <article>
                         <h2>change log</h2>
+                        <section>
+                            <h3><time datetime="2023-09-28">28 september 2023</time></h3>
+                            <ul>
+                              <li>
+                                significantly improved loading time by compressing images, specifying preload and fetch directives, as well as deleting some javascript!
+                              </li>
+                              <li>
+                                reduced cumulative layout shift by a substantial margin.
+                              </li>
+                              <li>
+                                joined <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external">accessible net</a>!
+                              </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3><time datetime="2023-09-25">25 september 2023</time></h3>
+                            <ul>
+                                <li>
+                                  added a button to control the scrolling animation on the last.fm widget.
+                                </li>
+                                <li>
+                                  fixed more accessibility issues with keyboard access.
+                                </li>
+                                <li>
+                                  joined the <a href="https://xn--sr8hvo.ws/" rel="external">indieweb webring</a>!
+                                </li>
+                                <li>
+                                  added pledge badge for <a href="https://nonbot.org/" rel="external">nonbot</a>.
+                                </li>
+                            </ul>
+                        </section>
                         <section>
                             <h3><time datetime="2023-09-24">24 september 2023</time></h3>
                             <ul>
@@ -164,21 +178,13 @@
                     <nav>
                         <a href="/about/changelog/">⟵ return to change log index</a>
                     </nav>
-                    <div id="footer"></div>
+                    <!--#include virtual="/assets/includes/footer.shtml"-->
                 </footer>
 
             </div>
         </div>
 
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-        const changelogSubpage = document.querySelector('#headernav #about')
-        changelogSubpage.insertAdjacentHTML(
-        'beforeend',
-        '<ul><li><a href="/about/changelog">change log</a> / <b>september 2023</b></ul>',
-        );
-    </script>
-    <script src="/assets/scripts/footer.js"></script>
-
+        <script src="/assets/scripts/watch-color-preference.js"></script>
+        <script src="/assets/scripts/jquery.js""></script>
     </body>
 </html>

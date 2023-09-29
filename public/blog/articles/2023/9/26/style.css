@@ -1,0 +1,90 @@
+.entry img {
+    filter:
+      drop-shadow(5px 5px white)
+      drop-shadow(-5px 5px white)
+      drop-shadow(0px -10px white)
+      drop-shadow(5px 5px 10px rgb(92, 64, 92));
+    width: 75%;
+    transition: .5s ease;
+  }
+  .scrapbook > section {
+    display: flex;
+  }
+  .scrapbook section:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
+  .scrapbook section:nth-of-type(odd) img {
+    margin-left: 0;
+  }
+  .scrapbook section:nth-of-type(even) img {
+    margin-right: 0;
+  }
+  .scrapbook img:hover {
+    filter: 
+      drop-shadow(5px 5px white)
+      drop-shadow(-5px 5px white)
+      drop-shadow(0px -10px white)
+      drop-shadow(5px 5px 10px rgb(92, 64, 92))
+      brightness(110%) contrast(110%);
+  }
+  .scrapbook section section {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid;
+    padding: 1em;
+    max-width: 200px;
+    align-self: center;
+    box-shadow: 5px 5px 10px rgba(255, 192, 203, .5);
+    transition: .5s ease;
+  }
+  .scrapbook section section:hover {
+    transform:translateY(-5px);
+  }
+  .scrapbook ~ p, dl, ul {
+    font-size: smaller;
+  }
+  .scrapbook p {
+    text-indent: 0;
+    font-size: smaller;
+  }
+  .scrapbook h3 {
+    background-color: aliceblue;
+    color: rgb(16, 4, 31);
+    border: 1px solid;
+    margin-left: -1em;
+    padding-left: .5em;
+  }
+  .scrapbook h4 {
+    border-bottom: 2px dotted;
+  }
+  .scrapbook h5 {
+    background-color: rgba(118, 214, 182, 0.2);
+    margin-bottom: 0;
+  }
+  @media all and (max-width:600px) {
+    .scrapbook section {
+      flex-direction: column !important;
+    }
+    .scrapbook section section {
+      position: relative;
+    }
+    .scrapbook section img {
+      margin: auto !important;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    .scrapbook section section {
+      background-color: white;
+    }
+  }
+  .light-mode .scrapbook section section {
+    background-color: white;
+  }
+  @media (prefers-color-scheme: dark) {
+    .scrapbook section section {
+      background-color: rgb(26, 25, 27);
+    }
+  }
+  .dark-mode .scrapbook section section {
+    background-color: rgb(26, 25, 27);
+  }

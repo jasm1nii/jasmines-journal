@@ -7,9 +7,7 @@
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
     <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all">
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
   </head>
@@ -27,14 +25,7 @@
                     <h1>jasmine's notes</h1>
                 </div>
                 <nav>
-                    <div id="headernav"></div>
-                    <noscript>
-                        <ul>
-                            <li>
-                                <a href="/">home</a>
-                            </li>
-                        </ul>
-                    </noscript>
+                    <!--#include virtual="/assets/includes/headernav.shtml"-->
                 </nav>
             </header>
         </div>
@@ -42,7 +33,9 @@
             <div>
                 <noscript>
                     <section>
-                        <p>sorry, this archive uses javascript to render the feed from an XML file - <a href="/blog/notes/notes.xml">read its contents here</a>.</p>
+                        <p>
+                            sorry, this archive uses javascript to render the feed from an XML file - <a href="/blog/notes/notes.xml">read its contents here</a>.
+                        </p>
                     </section>
                 </noscript>
                 <section>
@@ -50,48 +43,17 @@
                         subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
                     </p>
                     <div id="notesArchive"></div>
-                    <script src="/assets/scripts/notes-archive.js"></script>
                 </section>
             </div>
         </main>
     </div>
     <footer>
-        <div id="footer"></div>
-        <noscript>
-            <p>
-                site analytics powered by <a href="https://www.goatcounter.com/" rel="external">goat counter</a>
-                <br><br>
-                best viewed on a chromium-based desktop browser
-            </p>
-            <ul>
-                <li><time>2023</time> - until hell freezes over</li>
-                <li><a href="mailto:jasm1nii@proton.me">jasm1nii@proton.me</a></li>
-                <li><a href="/site-map.html">site map</a></li>
-                <li><a href="/credits.html">credits</a></li>
-            </ul>
-        </noscript>
+        <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
+    <script src="index.js"></script>
+    <script src="/assets/scripts/notes-archive.js"></script>
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="/assets/scripts/jquery.js"></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-        const blogSubpage = document.querySelector('#headernav #blog');
-
-        blogSubpage.insertAdjacentHTML(
-        'beforeend',
-        `<ul>
-            <li><a href="/blog/notes/" style="
-            text-decoration: wavy underline;
-            text-underline-offset: .25em;">notes</a></li>
-            <li><a href="/blog/articles/">articles</a></li>
-        </ul>`,
-        );
-    </script>
-    <style>
-        #headernav ul ul {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    </style>
-    <script src="/assets/scripts/footer.js"></script>
   </body>
 </html>

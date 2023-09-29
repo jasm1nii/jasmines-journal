@@ -22,9 +22,7 @@
       href="https://webmention.io/jasm1nii.xyz/webmention"
     />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <div id="layout">
@@ -39,8 +37,8 @@
           </noscript>
           <h1>b(rain)log entry</h1>
         </div>
-        <nav>
-          <div id="headernav"></div>
+        <nav aria-label="primary">
+          <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
       </header>
 
@@ -91,12 +89,12 @@
             </p>
             <p>
               so with that said, i’ll continue mirroring “jasmine’s journal” to
-              <a href="https://jasm1nii.ichi.city/"
+              <a href="https://jasm1nii.ichi.city/" rel="external"
                 >https://jasm1nii.ichi.city/</a
               >
               for as long as i’m able to, or at least until i hit the upper
               limit of my allotted storage space (<a
-                href="https://10mbmanifesto.neocities.org/"
+                href="https://10mbmanifesto.neocities.org/" rel="external"
                 >10 megabytes</a
               >, to be exact). for reference, this website takes up a grand
               total of around 4 MB on my hard drive, but it will likely explode
@@ -116,7 +114,7 @@
               </summary>
               <p>
                 wanna store your files on a service that isn’t google drive? dropbox’s free tier starts off at 2 GB, but you can get 500 MB extra storage space if you use
-                <a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9">my referral link</a> and download dropbox for desktop.
+                <a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="external">my referral link</a> and download dropbox for desktop.
               </p>
             </details>
             <p>
@@ -133,31 +131,14 @@
     </div>
 
     <footer>
-      <div id="footer"></div>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
-    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-      const changelogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
-
-      changelogSubpage.insertAdjacentHTML(
-        'afterend',
-        '<ul><li>2023 / august / 17</li></ul>',
-      );
-    </script>
     <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
-    <script>
-      initComments({
-        node: document.getElementById("comment-section"),
-        defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
-        serverName: "cactus.chat",
-        siteName: "<jasm1niixyz>",
-        commentSectionId: "blog-20230817"
-      })
-    </script>
-    <script src="/assets/scripts/footer.js"></script>
-
+    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css"/>
+    <script src="index.js"></script>
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="/assets/scripts/jquery.js"></script>
+    <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
   </body>
 </html>

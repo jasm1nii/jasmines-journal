@@ -7,11 +7,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
 document.getElementById("gifControls").innerHTML =`
 <button id="play-gif">Play GIFs</button>
 <button id="stop-gif">Stop GIFs</button>
-<style>
-@container (max-width: 210px) {
-    #play-gif {
-        margin-bottom: 1em;
-    }
-}
-</style>
 `;

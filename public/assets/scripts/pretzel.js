@@ -1,5 +1,7 @@
 document.getElementById("notice").innerHTML = `
-    <p style="font-size: 1.25em;"><b><i>have you seen THEM?!</i></b></p>
+    <p style="font-size: 1.25em;">
+        <b><i>have you seen THEM?!</i></b>
+    </p>
     <figure tabindex="0">
         <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pluto" alt="my cat pluto"/>
         <figcaption>

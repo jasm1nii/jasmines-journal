@@ -13,17 +13,16 @@
     <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/register/REGISTER.TTF" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
+    <link rel="preload" href="/assets/media/main/07042023-me_compressed.webp" as="image" type="image/webp" fetchpriority="high"/>
     <link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" media="all"/>
-    <script src="/assets/scripts/watch-color-preference.js"></script>
 
     <link rel="preconnect dns-prefetch" href="https://i.imgur.com/"/>
     <link rel="preconnect dns-prefetch" href="https://neocities.org/" />
     <link rel="preconnect dns-prefetch" href="https://xandra.cc/" />
-    <link rel="preload" href="https://xandra.cc/safonts/webring.js" as="script" type="text/javascript" fetchpriority="low"/>
     <link rel="preconnect dns-prefetch" href="https://macaque.moe/" />
     <link rel="preload" href="https://macaque.moe/autiring/onionring-variables.js" as="script" type="text/javascript" fetchpriority="low"/>
 
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <!-- indie login -->
     <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
@@ -37,7 +36,7 @@
   </head>
   <body>
     <div class="board">
-      <header>
+      <header aria-label="jasmine's journal">
         <div class="top">
           <h1>jasmine's journal</h1>
           <button id="themeToggle">
@@ -51,21 +50,11 @@
             </b>
           </p>
         </noscript>
-        <nav>
-          <div id="headernav"></div>
-          <noscript>
-            <ul>
-              <li id="home"><a href="/">home</a></li>
-              <li id="about"><a href="/about/">about</a></li>
-              <li id="blog"><a href="/blog/">blog</a></li>
-              <li id="resources"><a href="/resources/">resources</a></li>
-              <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
-              <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
-            </ul>
-          </noscript>
+        <nav aria-label="primary">
+          <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
-        <div class="notice-group">
-          <button onclick="hide()">📌</button>
+        <div class="notice-group" role="dialog" aria-label="notice">
+          <button id="pin" aria-expanded="true">📌</button>
           <div id="notice"></div>
         </div>
       </header>
@@ -73,13 +62,13 @@
       <main>
         <article>
           <div class="page-columns">
-            <section> <!-- id card -->
+            <section aria-labelledby="webmaster-identity">
               <div class="card h-card">
                 <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
                   <picture>
                     <source srcset="/assets/media/main/07042023-me_compressed.webp"/>
-                    <img class="u-photo" src="/assets/media/main/07042023-me.png" width="150" height="150" alt="a self portrait of the webmaster" fetchpriority="high"/>
+                    <img class="u-photo" src="/assets/media/main/07042023-me.png" width="150" height="150" alt="a self portrait of the webmaster"/>
                   </picture>
                   <div class="flower-fill">
                     <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
@@ -112,9 +101,9 @@
               </div>
             </section>
 
-            <section> <!-- clock -->
+            <section aria-labelledby="current-time">
               <div class="time">
-                <p>
+                <p id="current-time">
                   current time in<br><span style="font-size: 1.1em;"><b>bandung, indonesia</b></span>
                 </p>
                 <div class="clock-display">
@@ -126,24 +115,24 @@
               </div>
             </section>
 
-            <section> <!-- last.fm -->
+            <section aria-labelledby="last-played">
               <div class="card last-played">
                 <div id="track">
                   <h2 id="last-played">last played</h2>
                   <p id="song" data-animation>&#8987;</p>
                 </div>
                 <div class="last-played-child">
-                  <button id="js-toggle" title="pause scrolling">
+                  <button id="js-toggle" title="pause scrolling" aria-controls="song" aria-pressed="false">
                     ⏯
                   </button>
-                  <button onclick="window.location.href='https://www.last.fm/user/jasm1nii';">
+                  <button id="last-fm-profile" role="link">
                     last.fm profile
                   </button>
                 </div>
               </div>
             </section>
             
-            <section> <!-- status.cafe -->
+            <section aria-labelledby="latest-status">
               <div class="card latest-status">
                 <h2 id="latest-status">latest status</h2>
                 <div id="statuscafe">
@@ -158,23 +147,17 @@
               </div>
             </section>
 
-            <section> <!-- site updates -->
+            <section aria-labelledby="site-updates">
               <div class="card">
                 <h2 id="site-updates">site updates</h2>
-                <h3><time datetime="2023-09-25">25 september 2023</time></h3>
+                <h3><time datetime="2023-09-29">29 september 2023</time></h3>
                 <div class="overflow">
                   <ul>
                     <li>
-                      added a button to control the scrolling animation on the last.fm widget.
+                      beefed up the HTTP security headers.
                     </li>
                     <li>
-                      fixed more accessibility issues with keyboard access.
-                    </li>
-                    <li>
-                      joined the <a href="https://xn--sr8hvo.ws/" rel="external">indieweb webring</a>!
-                    </li>
-                    <li>
-                      added pledge badge for <a href="https://nonbot.org/" rel="external">nonbot</a>.
+                      finally replaced all the javascript headers and footers with server-side includes!
                     </li>
                     <li>
                       more details and past changes can be found on the <a href="/about/changelog/">change log</a>.
@@ -184,55 +167,38 @@
               </div>
             </section>
 
-            <section> <!-- subscribe -->
+            <section aria-labelledby="subscribe">
               <div class="card">
                 <h2 id="subscribe">subscribe</h2>
                 <div class="overflow">
-                  <dl>
-                    <dt>
-                      <a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a> | <a href="https://neocities.org/site/jasm1nii" rel="external me">neocities profile</a>
-                    </dt>
-                    <dd>
-                      for occasional site-wide update summaries
-                    </dd>
-                    <dt>
-                      <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">mastodon</a>
-                    </dt>
-                    <dd>
-                      a dedicated profile for blog posts only
-                    </dd>
-                    <dt>
-                      atom feed
-                      <br>
-                      <a href="/blog/articles/articles.xml">blog articles</a> | <a href="/blog/notes/notes.xml">microblog notes</a>
-                    </dt>
-                    <dd>
-                      compatible with RSS readers
-                    </dd>
-                  </dl>
-                  <a style="text-align: center;" href="http://validator.w3.org/">
-                    <img src="/assets/media/main/valid-atom.png" width="88" height="31" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;" loading="lazy"/>
-                  </a>
+                  <ul>
+                    <li><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></li>
+                    <li><a href="https://neocities.org/site/jasm1nii" rel="external me">neocities</a></li>
+                    <li><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">mastodon</a></li>
+                    <li>atom feeds
+                      <ul>
+                        <li><a href="/blog/articles/articles.xml">blog articles</a></li>
+                        <li><a href="/blog/notes/notes.xml">microblog notes</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a style="text-align: center;" href="http://validator.w3.org/"><img src="/assets/media/main/valid-atom.png" width="88" height="31" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" style="margin: auto; margin-bottom: 1em; display: block;" loading="lazy"/></a>
                 </div>
               </div>
             </section>
 
-            <section> <!-- my links -->
+            <section aria-labelledby="other-links">
               <div class="card">
                 <h2 id="other-links">my other links</h2>
                 <dl class="links">
                   <dt>
-                    <a href="https://jasmineamalia.com/" rel="external me">
-                      <b>professional portfolio</b>
-                    </a>
+                    <a href="https://jasmineamalia.com/" rel="external me">professional portfolio</a>
                   </dt>
                   <dd>
                     illustrations, graphic designs, photography, and miscellaneous work
                   </dd>
                   <dt>
-                    <a href="https://jasmineamalia.carrd.co/" rel="external me">
-                      <b>carrd</b>
-                    </a>
+                    <a href="https://jasmineamalia.carrd.co/" rel="external me">carrd</a>
                   </dt>
                   <dd>
                     social profiles and even more links
@@ -240,50 +206,51 @@
                 </dl>
               </div>
             </section>
-
-            <section>
+            <section aria-labelledby="tip-jar">
               <div class="card">
                 <h2 id="tip-jar">tip jar</h2>
-                <div class="tip-jar">
-                  <button onclick="window.location.href='https://ko-fi.com/jasmineamalia'" role="link">💲 support with USD</button>
-                  <button onclick="window.location.href='https://trakteer.id/jasmineamalia'" role="link">🇮🇩 support with IDR</button>
+                <div class="tip-jar-links">
+                  <button id="kofi" title="ko-fi" role="link">💲 support with USD</button>
+                  <button id="trakteer" title="trakteer" role="link">🇮🇩 support with IDR</button>
                 </div>
               </div>
             </section>
-
-            <section> <!-- webrings -->
+            <section aria-labelledby="web-rings">
               <div class="card web-rings">
                 <h2 id="web-rings">web rings & listings</h2>
-                <details>
-                    <summary>
-                      what's a web ring?
-                    </summary>
-                    <p>
-                      <a href="https://en.wikipedia.org/wiki/Webring" rel="external"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
-                    </p>
+                <details aria-label="about web rings">
+                  <summary>
+                    what's a web ring?
+                  </summary>
+                  <p>
+                    <a href="https://en.wikipedia.org/wiki/Webring" rel="external"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
+                  </p>
                 </details>
-                <div class="web-rings-list">
-                    <h3>pending</h3>
+                <section class="web-rings-list">
+                  <section aria-labelledby="pending-web-rings">
+                    <h3 id="pending-web-rings">pending</h3>
                     <p>
                       some links may not work yet!
                     </p>
-                    <div id="resourceRing"></div>
-                    <p> <!-- loop ring --> 
-                      <b>
+                    <div role="list">
+                      <div id="resourceRing" role="listitem"></div>
+                      <p role="listitem">
                         <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site" aria-label="previous site" rel="external">←</a> 
                         <a href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a> 
                         <a href="https://loop.graycot.dev/webring.html?action=next" title="next site" aria-label="next site" rel="external">→</a>
-                      </b>
-                      <br>
-                      [<a href="https://loop.graycot.dev/webring.html?action=rand" rel="external"> random </a> |
-                      <a href="https://loop.graycot.dev/webring.html?action=list" rel="external"> member list </a> ]
-                    </p>
-                    <hr>
-                    <h3>joined</h3>
+                        <br>
+                        [<a href="https://loop.graycot.dev/webring.html?action=rand" rel="external"> random </a> |
+                        <a href="https://loop.graycot.dev/webring.html?action=list" rel="external"> member list </a> ]
+                      </p>
+                    </div>
+                  </section>
+                  <section aria-labelledby="joined-web-rings">
+                    <h3 id="joined-web-rings">joined</h3>
                     <p>
-                      listed by date added
-                      <br>
-                      (newest to oldest)
+                      listed by date added<br>(newest to oldest)
+                    </p>
+                    <p>
+                      <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external"><img src="/assets/media/main/accessiblenet88x31.png" alt="accessible net" width="88" height="31"/></a>
                     </p>
                     <p>
                       <a href="https://xn--sr8hvo.ws/previous" rel="external" title="previous site" aria-label="previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" title="next site" aria-label="next site">→</a>
@@ -295,11 +262,9 @@
                       <ring-900 site="https://jasm1nii.xyz/" style="text-align: center; display: inline-block;"></ring-900>
                     </p>
                     <p>
-                      <b>
-                        <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" title="previous site" aria-label="previous site">←</a>
-                        <a href="https://fediring.net/" rel="external">fediring</a>
-                        <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" title="next site" aria-label="next site">→</a>
-                      </b>
+                      <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" title="previous site" aria-label="previous site">←</a>
+                      <a href="https://fediring.net/" rel="external">fediring</a>
+                      <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" title="next site" aria-label="next site">→</a>
                       <br>
                       <a href="https://fediring.net/random" rel="external">random</a>
                     </p>
@@ -325,12 +290,11 @@
                     </p>
                     <div id="vocaring"></div>
                     <p style="margin-top: 2em;"> <!-- hotline webring -->
-                      <b>
-                        <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site" aria-label="previous site">←</a>
-                        <a href="https://hotlinewebring.club/">hotline webring</a>
-                        <a href="https://hotlinewebring.club/jasm1nii/next" title="next site" aria-label="next site">→</a>
-                      </b>
+                      <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site" aria-label="previous site">←</a>
+                      <a href="https://hotlinewebring.club/">hotline webring</a>
+                      <a href="https://hotlinewebring.club/jasm1nii/next" title="next site" aria-label="next site">→</a>
                     </p>
+                  </section>
                 </div>
               </div>
             </section>
@@ -341,50 +305,22 @@
     </div>
 
     <footer>
-      <div id="footer"></div>
-      <noscript>
-        <p>
-          site analytics powered by <a href="https://www.goatcounter.com/">goat counter</a>
-        </p>
-        <ul>
-          <li id="footerCopyright">
-            <time>2023</time> - until hell freezes over
-          </li>
-          <li id="footerSitemap">
-            <a href="/site-map.html">site map</a>
-          </li>
-          <li id="footerCredits">
-            <a href="/credits.html">credits</a>
-          </li>
-          <li id="footerContact">
-            <a href="/about#contact">contact</a>
-          </li>
-        </ul>
-      </noscript>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
     <!-- content scripts -->
-    <script src="/assets/scripts/headernav.js"></script>
-    <style>
-      header nav ul li:first-child {
-        font-weight: 600;
-      }
-      #headernav #home a {
-        text-decoration: wavy underline 1px;
-      }
-    </style>
     <script defer src="/assets/scripts/jquery.js"></script>
     <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script defer src="/assets/scripts/sticky-note.js"></script>
+    <script defer src="/assets/scripts/watch-color-preference.js"></script>
+    <script defer src="/assets/scripts/index.js"></script>
     <script defer src="/assets/scripts/pretzel.js"></script>
-    <script src="/assets/scripts/footer.js"></script>
-    <script defer type="text/javascript" src="/assets/scripts/lastfm.js"></script>
     <script defer src="/assets/scripts/css-animation-toggle.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/lastfm.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/status-cafe.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/time.js"></script>
     <!-- webrings -->
     <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
-    <script defer src="https://xandra.cc/safonts/webring.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/safonts-webring.js"></script>
     <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/vocaring.js"></script>

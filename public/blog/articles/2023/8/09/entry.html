@@ -6,10 +6,9 @@
     <title>jasmine's b(rain)log</title>
 
     <link rel="icon" type="image/x-icon" href="assets/media/itchio-textless-white.svg">
-    <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
     <link href="/assets/stylesheets/style-4.css" rel="stylesheet" type="text/css" media="all">
 
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <meta name="description" content="the personal sandbox of a multifaceted internet creative">
     <meta name="author" content="jasm1nii">
@@ -17,9 +16,6 @@
 
     <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
     <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
-
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="/assets/scripts/jquery.js"></script>
   </head>
   <body>
     <div id="layout">
@@ -34,8 +30,8 @@
               </noscript>
               <h1>b(rain)log entry</h1>
             </div>
-            <nav>
-              <div id="headernav"></div>
+            <nav aria-label="primary">
+                <!--#include virtual="/assets/includes/headernav.shtml"-->
             </nav>
         </header>
         
@@ -50,7 +46,7 @@
                             </summary>
                             <p>
                                 the staple of every USian classroom, only good for cruddy papier-mâché, and nothing more:
-                                <img src="https://edfoundationlake.com/wp-content/uploads/2020/05/5d24cfd529de5.jpg" height="200px" alt="a photo of elmer's washable school glue">
+                                <img src="elmers.jpg" height="200px" alt="a photo of elmer's washable school glue">
                             </p>
                             <hr>
                         </details>
@@ -79,20 +75,13 @@
     </div>
 
     <footer>
-        <div id="footer"></div>
+        <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
 
+    <script src="index.js"></script>
+    <script src="/assets/scripts/watch-color-preference.js"></script>
+    <script src="/assets/scripts/jquery.js"></script>
     <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script src="/assets/scripts/headernav.js"></script>
-    <script>
-        const blogSubpage = document.querySelector('#headernav ul li:nth-child(3)');
-
-        blogSubpage.insertAdjacentHTML(
-        'afterend',
-        '<ul><li>2023 / august / 09</li></ul>',
-        );
-    </script>
-    <script src="/assets/scripts/footer.js"></script>
 
   </body>
 </html>

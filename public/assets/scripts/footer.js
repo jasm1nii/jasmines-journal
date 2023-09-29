@@ -21,18 +21,16 @@ document.querySelector("#footer").innerHTML =`
 </ul>
 <div style="display: inline-flex; align-items: center;">
     <a href="https://nonbot.org/pledged/view/9a37b04c-c60a-41a4-81ee-e8e04110bdf3" rel="external">
-        <img src="/assets/media/main/nonbot_pledged_logo.svg" alt="Human-made Content" height="50" width="50">
+        <img src="/assets/media/main/nonbot_pledged_logo.svg" alt="human-made content" height="50" width="50" loading="lazy">
     </a>
     <a href="https://indieweb.org/" rel="external" style="margin-left: 10px; margin-right: 15px;">
-        <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;">
+        <img src="/assets/media/main/indieweb-badge.png" width="80" height="15" alt="part of the indie web" style="image-rendering:pixelated;" loading="lazy">
     </a>
     <a href="https://indieweb.org/Webmention" rel="external">
-        <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;">
+        <img src="/assets/media/main/webmention-button.png" width="80" height="15" alt="supports webmentions" style="image-rendering:pixelated;" loading="lazy">
     </a>
 </div>
 <style>
-    footer ul li:has(img) a {
-        text-decoration: none;
-    }
+    footer a img { text-decoration: none }
 </style>
 `;

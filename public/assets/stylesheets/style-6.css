@@ -6,7 +6,6 @@
 }
 
 /* animations */
-
 header, main, footer {
   opacity: 0;
   animation: fadeInPage .5s;
@@ -362,4 +361,10 @@ footer li::before {
 }
 footer time {
   font-weight: 600;
+}
+#footerCredits {
+  font-weight: 600;
+}
+#footerCredits a {
+  text-decoration: none;
 }
