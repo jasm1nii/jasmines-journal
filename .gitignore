@@ -1,5 +1,5 @@
 *.code-workspace
 .vscode
 desktop.ini
-notes/
-archive/
+/notes/
+/archive/
