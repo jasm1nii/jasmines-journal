@@ -99,6 +99,15 @@ a:hover {
   text-decoration: none;
   color: white !important;
 }
+img {
+  image-rendering: pixelated;
+}
+p img {
+  display: block;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
 hr {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -108,7 +117,6 @@ hr {
 }
 
 /* animations */
-
 .board, header, main, footer {
   opacity: 0;
   animation: fadeInPage .5s;

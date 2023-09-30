@@ -1,0 +1,36 @@
+@keyframes cl {
+    0% {
+      fill: hsl(0, 70%, 70%);
+    }
+    20% {
+      fill: hsl(51, 70%, 70%);
+    }
+    40% {
+      fill: hsl(102, 70%, 70%);
+    }
+    60% {
+      fill: hsl(153, 70%, 70%);
+    }
+    80% {
+      fill: hsl(204, 70%, 70%);
+    }
+    100% {
+      fill: hsl(255, 70%, 70%);
+    }
+  }
+  .frills-tx {
+    fill: hsl(330, 70%, 70%);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .frills-tx {
+      animation: cl 10s 0s infinite forwards alternate;
+    }
+  }
+  .frills-bg {
+    fill: hsl(330, 4%, 9%);
+  }
+
+.fri11s {
+    display: inline-block;
+    vertical-align: top;
+}

@@ -13,7 +13,6 @@
     <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/register/REGISTER.TTF" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
-    <link rel="preload" href="/assets/media/main/07042023-me_compressed.webp" as="image" type="image/webp" fetchpriority="high"/>
     <link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" media="all"/>
 
     <link rel="preconnect dns-prefetch" href="https://i.imgur.com/"/>
@@ -66,10 +65,7 @@
               <div class="card h-card">
                 <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
-                  <picture>
-                    <source srcset="/assets/media/main/07042023-me_compressed.webp"/>
-                    <img class="u-photo" src="/assets/media/main/07042023-me.png" width="150" height="150" alt="a self portrait of the webmaster"/>
-                  </picture>
+                  <img class="u-photo" src="/assets/media/main/07042023-me_compressed.webp" width="150" height="150" alt="a self portrait of the webmaster" fetchpriority="high"/>
                   <div class="flower-fill">
                     <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
                     <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
@@ -139,7 +135,7 @@
                   <div id="statuscafe-username"></div>
                   <div id="statuscafe-content"></div>
                   <div>
-                    <a href="https://status.cafe">
+                    <a href="https://status.cafe" rel="external">
                       <img src="/assets/media/main/statuscafebutton.png" width="88" height="31" alt="Status Cafe"/>
                     </a>
                   </div>
@@ -288,7 +284,7 @@
                     <p>
                       <a href="https://melanated.neocities.org/"><img src="/assets/media/main/melanated.png" width="80" height="15" alt="button for melanated, a POC webmaster listing" loading="lazy"></a>
                     </p>
-                    <p id="vocaring"></p>
+                    <div id="vocaring"></div>
                     <p>
                       <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site" aria-label="previous site">←</a>
                       <a href="https://hotlinewebring.club/">hotline webring</a>
@@ -309,21 +305,21 @@
     </footer>
 
     <!-- content scripts -->
-    <script defer src="/assets/scripts/jquery.js"></script>
-    <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
-    <script defer src="/assets/scripts/watch-color-preference.js"></script>
     <script defer src="/assets/scripts/index.js"></script>
     <script defer src="/assets/scripts/pretzel.js"></script>
-    <script defer src="/assets/scripts/css-animation-toggle.js"></script>
-    <script defer type="text/javascript" src="/assets/scripts/lastfm.js"></script>
-    <script defer type="text/javascript" src="/assets/scripts/status-cafe.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/time.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/lastfm.js"></script>
+    <script defer src="/assets/scripts/css-animation-toggle.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/status-cafe.js"></script>
+    <script defer src="/assets/scripts/watch-color-preference.js"></script>
+    <script defer src="/assets/scripts/jquery.js"></script>
+    <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <!-- webrings -->
-    <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/safonts-webring.js"></script>
+    <script defer type="text/javascript" src="/assets/scripts/vocaring.js"></script>
+    <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
     <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>
-    <script defer type="text/javascript" src="/assets/scripts/vocaring.js"></script>
     <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/onionring-widget-autiring.js"></script>
   </body>

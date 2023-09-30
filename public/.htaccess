@@ -33,9 +33,11 @@ AddHandler server-parsed .html
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin"
-  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; form-action 'none';"
   Header always set Permissions-Policy "accelerometer=(),battery=(),camera=(),encrypted-media=*,geolocation=(),gyroscope=(),magnetometer=(),microphone=(),usb=()"
   Header always set Cache-Control "no-cache, no-store, must-revalidate"
+  Header always set Cross-Origin-Embedder-Policy "unsafe-none"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
 </IfModule>
 
 # php -- BEGIN cPanel-generated handler, do not edit

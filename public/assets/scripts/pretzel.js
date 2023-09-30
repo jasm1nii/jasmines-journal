@@ -1,7 +1,5 @@
 document.getElementById("notice").innerHTML = `
-    <p style="font-size: 1.25em;">
-        <b><i>have you seen THEM?!</i></b>
-    </p>
+    <p><b><i>have you seen THEM?!</i></b></p>
     <figure tabindex="0">
         <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pluto" alt="my cat pluto"/>
         <figcaption>
@@ -15,6 +13,6 @@ document.getElementById("notice").innerHTML = `
         </figcaption>
     </figure>
     <p><b>now you have!</b></p>
-    <hr style="border-color: goldenrod;">
+    <hr>
     <p><small>click the pushpin to hide this notice.</small></p>
 `;

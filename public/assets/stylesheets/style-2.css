@@ -147,7 +147,6 @@ h1 {
   font-size: 2em;
   letter-spacing: 1px;
 }
-
 h2 {
   color: #5a5463;
   padding-bottom: 10px;
@@ -179,6 +178,15 @@ h1, h2, h3 {
   content: "❗";
   color: gray;
   margin-right: 10px;
+}
+
+.soundcloud {
+  padding-top: 1.5em;
+}
+[alt="most used languages widget"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* h3 */

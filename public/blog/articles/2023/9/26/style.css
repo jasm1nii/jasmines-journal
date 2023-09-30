@@ -72,6 +72,11 @@
       margin: auto !important;
     }
   }
+  @media all and (min-width:600px) {
+    .scrapbook img {
+      max-width: 50%;
+    }
+  }
   @media (prefers-color-scheme: light) {
     .scrapbook section section {
       background-color: white;
