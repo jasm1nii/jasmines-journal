@@ -12,16 +12,16 @@
     <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high"/>
     <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
-    <link rel="preload" href="/assets/fonts/register/REGISTER.TTF" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
+    <link rel="preload" href="/assets/fonts/register/Register.ttf" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
     <link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" media="all"/>
 
-    <link rel="preconnect dns-prefetch" href="https://i.imgur.com/"/>
     <link rel="preconnect dns-prefetch" href="https://neocities.org/" />
     <link rel="preconnect dns-prefetch" href="https://xandra.cc/" />
     <link rel="preconnect dns-prefetch" href="https://macaque.moe/" />
     <link rel="preload" href="https://macaque.moe/autiring/onionring-variables.js" as="script" type="text/javascript" fetchpriority="low"/>
 
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <meta name="wot-verification" content="6d5699a273ff6e28a517"/>
 
     <!-- indie login -->
     <link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey">
@@ -35,9 +35,9 @@
   </head>
   <body>
     <div class="board">
-      <header aria-label="jasmine's journal">
+      <header>
         <div class="top">
-          <h1>jasmine's journal</h1>
+          <h1 aria-label="jasmine's journal">jasmine's journal</h1>
           <button id="themeToggle">
             switch theme
           </button>
@@ -52,7 +52,7 @@
         <nav aria-label="primary">
           <!--#include virtual="/assets/includes/headernav.shtml"-->
         </nav>
-        <div class="notice-group" role="dialog" aria-label="notice">
+        <div class="notice-group" aria-label="notice">
           <button id="pin" aria-expanded="true">📌</button>
           <div id="notice"></div>
         </div>
@@ -65,13 +65,13 @@
               <div class="card h-card">
                 <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
-                  <img class="u-photo" src="/assets/media/main/07042023-me_compressed.webp" width="150" height="150" alt="a self portrait of the webmaster" fetchpriority="high"/>
+                  <img class="u-photo" src="/assets/media/main/07042023-me_compressed.webp" width="170" height="170" alt="a self portrait of the webmaster" fetchpriority="high"/>
                   <div class="flower-fill">
-                    <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
-                    <img src="/assets/media/main/flower.svg" width="40" height="40" alt="">
+                    <img src="/assets/media/main/flower.svg" width="50" height="50" alt="">
+                    <img src="/assets/media/main/flower.svg" width="50" height="50" alt="">
                     <details>
                       <summary>
-                        <img src="/assets/media/main/flower.svg" width="40" height="40" title="open for a surprise" alt=""/>
+                        <img src="/assets/media/main/flower.svg" width="50" height="50" title="open for a surprise" alt=""/>
                       </summary>
                       <img class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme" loading="lazy" fetchpriority="low"/>
                     </details>
@@ -79,14 +79,15 @@
                 </div>
                 <div class="p-note">
                   <p>
-                    just call me <span class="p-name p-given-name"><a rel="me" href="/about"><b>jasmine</b></a></span>! 👋
+                    just call me <span class="p-name p-given-name"><b>jasmine</b></span><span aria-hidden="true">! 👋</span>
                   </p>
                   <ul>
-                    <li><span>📍</span> <span class="p-country-name">IDN</span></li>
-                    <li><span>🎂</span> <span class="dt-bday">1999</span></li>
-                    <li><span>🎨</span> <span class="p-category">illustrator & multimedia designer</span></li>
+                    <li><span role="img" aria-label="location">📍</span> <span class="p-country-name">indonesia</span></li>
+                    <li><span role="img" aria-label="birthday">🎂</span> <span class="dt-bday">1999</span></li>
+                    <li><span role="img" aria-label="occupation">🎨</span> <span class="p-category">illustrator & multimedia designer</span></li>
                     <!-- additional h-card attributes -->
                     <a class="u-url" href="acct:jasmine@jasm1nii.xyz" aria-hidden="true" tabindex="-1" inert></a>
+                    <a rel="me" href="/about" aria-hidden="true" tabindex="-1" inert>jasmine</a>
                     <a rel="me" href="https://fed.brid.gy/r/https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1" inert></a>
                     <span class="u-url u-uid" aria-hidden="true" tabindex="-1">
                       <a href="https://jasm1nii.xyz/" aria-hidden="true" tabindex="-1" inert></a>
@@ -114,23 +115,19 @@
             <section aria-labelledby="last-played">
               <div class="card last-played">
                 <div id="track">
-                  <h2 id="last-played">last played</h2>
+                  <h2 id="last-played"><span aria-hidden="true">🎵</span> last played</h2>
                   <p id="song" data-animation>&#8987;</p>
                 </div>
                 <div class="last-played-child">
-                  <button id="js-toggle" title="pause scrolling" aria-controls="song" aria-pressed="false">
-                    ⏯
-                  </button>
-                  <button id="last-fm-profile" role="link">
-                    last.fm profile
-                  </button>
+                  <button id="js-toggle" title="pause scroll animation" aria-label="pause scroll animation" aria-controls="song" aria-pressed="false">⏯</button>
+                  <a href="https://www.last.fm/user/jasm1nii" id="last-fm-profile" rel="external me" class="button-style">last.fm profile</a>
                 </div>
               </div>
             </section>
             
             <section aria-labelledby="latest-status">
               <div class="card latest-status">
-                <h2 id="latest-status">latest status</h2>
+                <h2 id="latest-status"><span aria-hidden="true">☕</span> latest status</h2>
                 <div id="statuscafe">
                   <div id="statuscafe-username"></div>
                   <div id="statuscafe-content"></div>
@@ -145,9 +142,27 @@
 
             <section aria-labelledby="site-updates">
               <div class="card">
-                <h2 id="site-updates">site updates</h2>
-                <h3><time datetime="2023-09-29">29 september 2023</time></h3>
+                <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
                 <div class="overflow">
+                  <h3><time datetime="2023-10-03">3 October 2023</time></h3>
+                  <ul>
+                    <li>
+                      made text <span aria-hidden="true">✨</span> bigger <span aria-hidden="true">✨</span>
+                    </li>
+                    <li>
+                      some layout fixes.
+                    </li>
+                  </ul>
+                  <h3><time datetime="2023-10-02">2 October 2023</time></h3>
+                  <ul>
+                    <li>
+                      buttondown is blocked in indonesia now, so i've migrated newsletter services.
+                    </li>
+                    <li>
+                      there is now a dedicated "subscribe" page.
+                    </li>
+                  </ul>
+                  <h3><time datetime="2023-09-29">29 september 2023</time></h3>
                   <ul>
                     <li>
                       beefed up the HTTP security headers.
@@ -163,135 +178,115 @@
               </div>
             </section>
 
-            <section aria-labelledby="subscribe">
-              <div class="card">
-                <h2 id="subscribe">subscribe</h2>
-                <div class="overflow">
-                  <ul>
-                    <li><a href="https://buttondown.email/jasm1nii" rel="external me">newsletter</a></li>
-                    <li><a href="https://neocities.org/site/jasm1nii" rel="external me">neocities</a></li>
-                    <li><a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">mastodon</a></li>
-                    <li>atom feeds
-                      <ul>
-                        <li><a href="/blog/articles/articles.xml">blog articles</a></li>
-                        <li><a href="/blog/notes/notes.xml">microblog notes</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <a href="http://validator.w3.org/">
-                    <img src="/assets/media/main/valid-atom.png" width="88" height="31" alt="Valid Atom 1.0" title="Validate my Atom 1.0 feed" loading="lazy"/>
-                  </a>
-                </div>
-              </div>
-            </section>
-
             <section aria-labelledby="other-links">
               <div class="card">
-                <h2 id="other-links">my other links</h2>
+                <h2 id="other-links"><span aria-hidden="true">🌐</span> my other links</h2>
                 <dl class="links">
                   <dt>
                     <a href="https://jasmineamalia.com/" rel="external me">professional portfolio</a>
                   </dt>
                   <dd>
-                    illustrations, graphic designs, photography, and miscellaneous work
+                    <span aria-hidden="true">⤷</span> illustrations, graphic designs, photography, and miscellaneous work
                   </dd>
                   <dt>
                     <a href="https://jasmineamalia.carrd.co/" rel="external me">carrd</a>
                   </dt>
                   <dd>
-                    social profiles and even more links
+                    <span aria-hidden="true">⤷</span> social profiles and even more links
                   </dd>
                 </dl>
               </div>
             </section>
+
             <section aria-labelledby="tip-jar">
               <div class="card">
-                <h2 id="tip-jar">tip jar</h2>
-                <div class="tip-jar-links">
-                  <button id="kofi" title="ko-fi" role="link">💲 support with USD</button>
-                  <button id="trakteer" title="trakteer" role="link">🇮🇩 support with IDR</button>
-                </div>
+                <h2 id="tip-jar"><span aria-hidden="true">💕</span> tip jar</h2>
+                <ul>
+                  <li>
+                    <a href="https://ko-fi.com/jasmineamalia" id="ko-fi" title="ko-fi" rel="external" class="button-style"><span aria-hidden="true">💲</span> support with USD</a>
+                  </li>
+                  <li>
+                    <a href="https://trakteer.id/jasmineamalia" id="trakteer" title="trakteer" rel="external" class="button-style"><span aria-hidden="true">🇮🇩</span> support with IDR</a>
+                  </li>
+                </ul>
               </div>
             </section>
+            
             <section aria-labelledby="web-rings">
               <div class="card web-rings">
-                <h2 id="web-rings">web rings & listings</h2>
-                <details aria-label="about web rings">
+                <h2 id="web-rings"><span aria-hidden="true">🕸</span> web rings & listings</h2>
+                <details>
                   <summary>
                     what's a web ring?
                   </summary>
                   <p>
-                    <a href="https://en.wikipedia.org/wiki/Webring" rel="external"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>...and the next one! <small>... and the next one after that! <small>... it just keeps going!</small></small></small>
+                    <a href="https://en.wikipedia.org/wiki/Webring" rel="external"><dfn>web rings</dfn></a> (or webrings) are groups of interconnected websites - each with a specific theme - that links its members together in an endless loop. click the navigational arrows to go to the next site! <small>&hellip; and the next one! <small>&hellip; and the next one after that! <small>&hellip; it just keeps going!</small></small></small>
                   </p>
                 </details>
                 <section class="web-rings-list">
                   <section aria-labelledby="pending-web-rings">
                     <h3 id="pending-web-rings">pending</h3>
+                    <div id="resourceRing"></div>
                     <p>
-                      some links may not work yet!
+                      <a href="https://loop.graycot.dev/webring.html?action=prev" aria-label="loop ring: previous site" rel="external">←</a><a href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a><a href="https://loop.graycot.dev/webring.html?action=next" aria-label="loop ring: next site" rel="external">→</a>
+                      <br/>
+                      <a href="https://loop.graycot.dev/webring.html?action=rand" rel="external" aria-label="loop ring: random site"><small>random</small></a> <span aria-hidden="true">|</span>
+                      <a href="https://loop.graycot.dev/webring.html?action=list" rel="external" aria-label="loop ring: member list"><small>member list</small></a>
                     </p>
-                    <div role="list">
-                      <div id="resourceRing" role="listitem"></div>
-                      <p role="listitem">
-                        <a href="https://loop.graycot.dev/webring.html?action=prev" title="previous site" aria-label="previous site" rel="external">←</a> 
-                        <a href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a> 
-                        <a href="https://loop.graycot.dev/webring.html?action=next" title="next site" aria-label="next site" rel="external">→</a>
-                        <br>
-                        [<a href="https://loop.graycot.dev/webring.html?action=rand" rel="external"> random </a> |
-                        <a href="https://loop.graycot.dev/webring.html?action=list" rel="external"> member list </a> ]
-                      </p>
-                    </div>
                   </section>
                   <section aria-labelledby="joined-web-rings">
                     <h3 id="joined-web-rings">joined</h3>
                     <p>
-                      listed by date added<br>(newest to oldest)
+                      <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external"><img src="/assets/media/main/accessiblenet88x31.png" alt="accessible net directory" width="88" height="31"/></a>
                     </p>
                     <p>
-                      <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external"><img src="/assets/media/main/accessiblenet88x31.png" alt="accessible net" width="88" height="31"/></a>
+                      <a href="https://xn--sr8hvo.ws/previous" rel="external" aria-label="indieweb ring: previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">indieweb ring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" aria-label="indieweb ring: next site">→</a>
                     </p>
                     <p>
-                      <a href="https://xn--sr8hvo.ws/previous" rel="external" title="previous site" aria-label="previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" title="next site" aria-label="next site">→</a>
-                    </p>
-                    <p>
-                      <a href="https://pastels.minty.nu/" rel="external"><img src="/assets/media/main/100x50-mallows.gif" width="100" height="50" alt="pastel colours fanlisting" loading="lazy"></a>
+                      <a href="https://pastels.minty.nu/" rel="external"><img src="/assets/media/main/100x50-mallows.gif" width="100" height="50" alt="pastel colours fanlisting" loading="lazy"/></a>
                     </p>
                     <ring-900 site="https://jasm1nii.xyz/"></ring-900>
                     <p>
-                      <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" title="previous site" aria-label="previous site">←</a>
+                      <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" aria-label="fediring: previous site">←</a>
                       <a href="https://fediring.net/" rel="external">fediring</a>
-                      <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" title="next site" aria-label="next site">→</a>
+                      <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" aria-label="fediring: next site">→</a>
                       <br>
-                      <a href="https://fediring.net/random" rel="external">random</a>
+                      <a href="https://fediring.net/random" rel="external" aria-label="fediring: random site"><small>random</small></a>
                     </p>
                     <p>
-                      <a href="https://macaque.neocities.org/trickyfox/" rel="external">LINKED!</a> <img src="https://i.imgur.com/9nXFJCq.png" width="20" height="20" alt="" loading="lazy"> blaze the cat
+                      <a href="https://macaque.moe/trickyfox/" rel="external" aria-label="linked clique">LINKED!</a> <img src="/assets/media/main/linked.png" width="20" height="20" alt="" loading="lazy"/> blaze the cat
                     </p>
                     <p>
-                      <img src="https://i.imgur.com/7v5H0TL.png" width="20" height="20" alt="" loading="lazy"> i am <a href="https://macaque.neocities.org/trickyfox/"> angelic ♥</a> <img src="https://i.imgur.com/uAEhywQ.png" width="20" height="20" alt="" loading="lazy">
+                      <img src="/assets/media/main/angelic-left.png" width="20" height="20" alt="" loading="lazy"/><span class="string">i am<a href="https://macaque.moe/trickyfox/" rel="external">angelic <span aria-hidden="true">♥</span></a></span> <img src="/assets/media/main/angelic-right.png" width="20" height="20" alt="" loading="lazy"/>
                     </p>
                     <p>
-                      <a href="https://kalechips.net/responsive/index"><img src="/assets/media/main/responsive-website-directory.png" width="88" height="31" alt="responsive website directory" loading="lazy"></a>
+                      <a href="https://kalechips.net/responsive/index" rel="external"><img src="/assets/media/main/responsive-website-directory.png" width="88" height="31" alt="responsive website directory" loading="lazy"/></a>
                     </p>
                     <p>
-                      <a href="https://smoothsailing.asclaria.org/"><img src="/assets/media/main/smooth-sailing.png" width="88" height="31" alt="smooth sailing listings" loading="lazy"></a>
+                      <a href="https://smoothsailing.asclaria.org/" rel="external"><img src="/assets/media/main/smooth-sailing.png" width="88" height="31" alt="smooth sailing listings" loading="lazy"/></a>
                     </p>
                     <p id="healinghospital"></p>
                     <p id="autiring"></p>
                     <p>
-                      <a href="http://pkmn.caelestis.nu" target="_blank" rel="noopener noreferrer" title="I Choose You! :: PIPLUP"><img src="/assets/media/main/piplup.png" alt="'i choose you!' pokemon clique icon depicting piplup" width="56" height="42" loading="lazy"></a>
+                      <a href="http://pkmn.caelestis.nu" rel="external noopener noreferrer" title="I Choose You!"><img src="/assets/media/main/piplup.png" alt="piplup" width="56" height="42" loading="lazy"/></a>
                     </p>
                     <p>
-                      <a href="https://melanated.neocities.org/"><img src="/assets/media/main/melanated.png" width="80" height="15" alt="button for melanated, a POC webmaster listing" loading="lazy"></a>
+                      <a href="https://melanated.neocities.org/" rel="external"><img src="/assets/media/main/melanated.png" width="80" height="15" alt="melanated: POC webmaster listing" loading="lazy"/></a>
                     </p>
-                    <div id="vocaring"></div>
+                    <p id="vocaring">
+                      <span class="title">VOCALOID WEBRING</span>
+                      <br/>
+                      <span>
+                        <a href='https://webring.adilene.net/' rel="external" aria-label="vocaloid webring: index">index</a> <span aria-hidden="true">|</span> <a href='https://webring.adilene.net/members.php' rel="external" aria-label="vocaloid webring: members">members</a>
+                      </span>
+                      <br/>
+                      <img src='/assets/media/main/vocaloid.png' width="100" height="100" alt="" loading="lazy"/>
+                    </p>
                     <p>
-                      <a href="https://hotlinewebring.club/jasm1nii/previous" title="previous site" aria-label="previous site">←</a>
-                      <a href="https://hotlinewebring.club/">hotline webring</a>
-                      <a href="https://hotlinewebring.club/jasm1nii/next" title="next site" aria-label="next site">→</a>
+                      <a href="https://hotlinewebring.club/jasm1nii/previous" rel="external" aria-label="hotline webring: previous site">←</a><a href="https://hotlinewebring.club/" rel="external">hotline webring</a><a href="https://hotlinewebring.club/jasm1nii/next" rel="external" aria-label="hotline webring: next site">→</a>
                     </p>
                   </section>
-                </div>
+                </section>
               </div>
             </section>
           </div>
@@ -316,7 +311,6 @@
     <script defer src="/assets/scripts/dark-light-toggle-jq.js"></script>
     <!-- webrings -->
     <script defer type="text/javascript" src="/assets/scripts/safonts-webring.js"></script>
-    <script defer type="text/javascript" src="/assets/scripts/vocaring.js"></script>
     <script defer type="text/javascript" src="https://pixelsafari.neocities.org/webring/resourcering.js"></script>
     <script defer type="text/javascript" src="https://mizuki.world/healinghospital/onionring-variables.js"></script>
     <script defer type="text/javascript" src="/assets/scripts/onionring-widget-healing-hospital.js"></script>

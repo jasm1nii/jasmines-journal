@@ -7,7 +7,7 @@ document.getElementById("notice").innerHTML = `
         </figcaption>
     </figure>
     <figure tabindex="0">
-        <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pretzel" alt="my cat pretzel">
+        <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pretzel" alt="my cat pretzel" loading="lazy"/>
         <figcaption>
            pretzel (he/him)
         </figcaption>

@@ -5,7 +5,7 @@ function dateToText(date) {
     if (minutes < 10) minutes = '0'+minutes;
     //if  seconds < 10) seconds = '0'+seconds;
     if (hours < 10) hours = '0'+hours;
-    return innerHTML = hours + `<span class="semicolon">:</span>` + minutes; // + ":" + seconds;
+    return innerHTML = hours + `:` + minutes; // + ":" + seconds;
 }
 function updateClocks() {
 	for (var i = 0; i < window.arrClocks.length; i++) {

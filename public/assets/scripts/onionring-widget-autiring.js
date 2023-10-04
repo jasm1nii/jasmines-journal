@@ -25,8 +25,7 @@ function randomSite() {
 
 //if we didn't find the site in the list, the widget displays a warning instead
 if (thisIndex == null) {
-  tag.insertAdjacentHTML('afterbegin', `
-<p>This site isn't part of the Autists Online webring yet. You should talk to the manager to have your site added to the list!</p>
+  tag.insertAdjacentHTML('afterbegin', `This site isn't part of the Autists Online webring yet. You should talk to the manager to have your site added to the list!
   `);
 }
 else {
@@ -39,30 +38,14 @@ else {
   indexText = ""
   //if you've chosen to include an index, this builds the link to that
   if (useIndex) {
-    indexText = `<a href='${indexPage}'>index</a>`;
-  }
-
-  randomText = ""
-  //if you've chosen to include a random button, this builds the link that does that
-  if (useRandom) {
-    randomText = `<a href='javascript:void(0)' onclick='randomSite()'>random</a> | `;
+    indexText = `<a href='${indexPage}' rel="external" aria-label="autists online: index">index</a>`;
   }
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
-    <span>
-      <a href='${sites[previousIndex]}'>
-        <img src="https://i.imgur.com/nsEaVbm.png" width="32" height="15" style="image-rendering:pixelated" alt="previous site" loading="lazy">
-      </a>
-      <img src="https://i.imgur.com/wjukjLF.png" width="96" height="15" style="image-rendering:pixelated" alt="autists online web ring" loading="lazy">
-      <a href='${sites[nextIndex]}'>
-        <img src="https://i.imgur.com/Ayah6ds.png" width="32" height="15" style="image-rendering:pixelated" alt="next site" loading="lazy">
-      </a>
-    </span>
-    <br>
-    <span>
+      <a href='${sites[previousIndex]}' rel="external"><img src="/assets/media/main/autiring-left.png" width="32" height="15" alt="autists online webring: previous site" loading="lazy"/></a><img src="/assets/media/main/autiring.png" width="96" height="15" alt="autists online webring logo" loading="lazy"/><a href='${sites[nextIndex]}' rel="external" title="next site"><img src="/assets/media/main/autiring-right.png" width="32" height="15" alt="autists online webring: next site" loading="lazy"/></a>
+      <br/>
       <small>${indexText}</small>
-    </span>
   `);
 
 }

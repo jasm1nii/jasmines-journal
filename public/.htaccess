@@ -1,25 +1,23 @@
 RewriteEngine on
+
 RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
-RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www\.
 RewriteRule ^(.*)$ http://jasm1nii.xyz/$1 [R=301,L]
 
 Options -MultiViews
-RewriteEngine On
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-RewriteEngine on
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
-RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot) [NC]
+RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
 
 Options +Includes
@@ -33,7 +31,7 @@ AddHandler server-parsed .html
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin"
-  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; form-action 'none';"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; form-action 'self';"
   Header always set Permissions-Policy "accelerometer=(),battery=(),camera=(),encrypted-media=*,geolocation=(),gyroscope=(),magnetometer=(),microphone=(),usb=()"
   Header always set Cache-Control "no-cache, no-store, must-revalidate"
   Header always set Cross-Origin-Embedder-Policy "unsafe-none"

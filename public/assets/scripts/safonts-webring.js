@@ -4,31 +4,22 @@ const w9g5p9 = document.createElement("template");
 
 // this is our webring styling
 w9g5p9.innerHTML = `
+<p class="g1v5x3-myUniqueClass"></p>
 <style>
 .g1v5x3-myUniqueClass {
-  font-family:var(--g1v5x3-text-family);
-  font-size:var(--g1v5x3-text-size);
-  color:var(--g1v5x3-text-color);
+  font-size: var(--g1v5x3-text-size);
+  color: var(--g1v5x3-text-color);
   text-align: center;
-  margin-bottom: 1em;
-}
-.g1v5x3-myUniqueClass .title {
-  font-size:var(--g1v5x3-title-size);
-  line-height:var(--g1v5x3-title-height);
-  letter-spacing:var(--g1v5x3-title-spacing);
-  margin:var(--g1v5x3-title-margin);
-  text-align:var(--g1v5x3-title-align);
-  font-weight:var(--g1v5x3-title-weight);
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgb(138, 85, 138);
 }
 .g1v5x3-myUniqueClass a {
-  color:var(--g1v5x3-link-color);
-  font-size:var(--g1v5x3-link-size);
+  color: var(--g1v5x3-link-color);
+  font-size: larger;
 }
 </style>
-
-<div class="g1v5x3-webring">
-  <div class="g1v5x3-myUniqueClass"></div>
-</div>`;
+`;
 
 // not really sure about this stuff, but don't delete it!
 class p1v1g6 extends HTMLElement {
@@ -58,12 +49,13 @@ class p1v1g6 extends HTMLElement {
         // In this variable, put the HTML that you want your webring "badge" to use.
         // keep the link 'href' values the same, but change the text!
         const cp = `
-		    <p class="title">i'm a <strong>sa</strong><a href="https://xandra.cc/safonts/"><em>font</em></a></p>
+          <span class="title">i'm a <a href="https://xandra.cc/safonts/" rel="external"><b>sa</b><i>font</i></a></span>
+          <br/>
           <span class="nav">
-            <a href="${sites[prevSiteIndex].url}">&lt;&lt;</a>
-            <a href="${sites[randomSiteIndex].url}">???</a>
-            <a href="https://xandra.cc/safonts/members.html">...</a>
-            <a href="${sites[nextSiteIndex].url}">&gt;&gt;</a>
+            <a href="${sites[prevSiteIndex].url}" rel="external" aria-label="safonts webring: previous site">&lt;&lt;</a>
+            <a href="${sites[randomSiteIndex].url}" rel="external" aria-label="safonts webring: random site">???</a>
+            <a href="https://xandra.cc/safonts/members.html" rel="external" aria-label="safonts webring: index">...</a>
+            <a href="${sites[nextSiteIndex].url}" rel="external" aria-label="safonts webring: next site">&gt;&gt;</a>
           </span>
         `;
 

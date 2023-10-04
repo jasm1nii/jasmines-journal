@@ -183,10 +183,11 @@ h1, h2, h3 {
 .soundcloud {
   padding-top: 1.5em;
 }
-[alt="most used languages widget"] {
+.badges {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 /* h3 */

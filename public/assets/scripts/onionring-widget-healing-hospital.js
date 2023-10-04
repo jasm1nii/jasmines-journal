@@ -26,7 +26,7 @@ function randomSite() {
 
 //if we didn't find the site in the list, the widget displays a warning instead
 if (thisIndex == null) {
-  tag.insertAdjacentHTML('afterbegin', `<a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png" width="80" height="40" alt="healing hospital web ring" loading="lazy"> </a>`);
+  tag.insertAdjacentHTML('afterbegin', `<a href="https://mizuki.world/healinghospital" rel="external"><img src="/assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring" loading="lazy"/></a>`);
 }
 else {
   //find the 'next' and 'previous' sites in the ring. this code looks complex
@@ -35,23 +35,11 @@ else {
   previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
   nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
 
-  indexText = ""
-  //if you've chosen to include an index, this builds the link to that
-  if (useIndex) {
-    indexText = `<a href='${indexPage}'>index</a> | `;
-  }
-
-  randomText = ""
-  //if you've chosen to include a random button, this builds the link that does that
-  if (useRandom) {
-    randomText = `<a href='javascript:void(0)' onclick='randomSite()'>random</a> | `;
-  }
-
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
-  <a href="${sites[previousIndex]}"> <img src="https://i.imgur.com/7mSNyVJ.png" width="40" height="40" alt="previous site" loading="lazy"> </a>
-  <a href="https://mizuki.world/healinghospital"> <img src="https://i.imgur.com/QsHx5at.png" width="80" height="40" alt="healing hospital web ring" loading="lazy"> </a>
-  <a href="${sites[nextIndex]}"> <img src="https://i.imgur.com/3H8kJOp.png" width="40" height="40" alt="next site" loading="lazy"> </a>
+  <a href="${sites[previousIndex]}" rel="external"><img src="/assets/media/main/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>
+  <a href="https://mizuki.world/healinghospital" rel="external"><img src="/assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>
+  <a href="${sites[nextIndex]}" rel="external"><img src="/assets/media/main/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>
   `);
 
 }
