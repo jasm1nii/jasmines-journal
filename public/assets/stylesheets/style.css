@@ -48,13 +48,6 @@
   --web-rings-font: rgb(92, 39, 92);
   --web-rings-links: rgb(122, 78, 180);
   --web-rings-bg-light: rgb(255, 233, 251);
-  --sticky-note-light: cornsilk;
-  --sticky-note-font-light: rgb(94, 82, 53);
-  --sticky-note-border-light: darkgoldenrod;
-  --theme-toggle-bg: #e3d7e9;
-  --theme-toggle-hover-bg: #b084bd;
-  --theme-toggle-active-bg: #8b4f61;
-  --theme-toggle-focus-bg: #a175c5;
   --footer-font: rgb(97, 58, 97);
   --overflow-bg-light: rgb(255, 244, 246);
   --overflow-border: 1px solid rgb(170, 99, 111);
@@ -109,6 +102,9 @@ body {
 main {
   margin: auto;
 }
+main a {
+  font-weight: 600;
+}
 .board {
   border: 1px solid purple;
   background-color: #fff6f6;
@@ -137,25 +133,23 @@ h1 {
   font-family: var(--font-2);
   font-weight: 500;
   letter-spacing: .05em;
-}  
-h1::before {
-  content: "\208A\20\22B9";
-  font-weight: 100;
-  color: thistle;
-  margin-right: 0.25em;
+  margin-bottom: 0;
 }
-h1::after {
-  content: "\B18\28\A6D\20\141B\20\29\2501\2606\FF9F\2E\2A\FF65\FF61\FF9F";
-  margin-left: 0.25em;
+.ascii-img {
+  vertical-align: middle;
+  user-select: none;
+}
+header hgroup p {
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  letter-spacing: .05em;
+  margin-top: 0;
+}
+header .ascii {
   font-weight: 100;
-  color: thistle;
+  color: rgb(182, 149, 182);
+  user-select: none;
   white-space: pre;
-}
-header p {
-  letter-spacing:.05em;
-}
-header noscript p {
-  margin-left: 1em;
 }
 nav {
   margin: auto;
@@ -208,9 +202,6 @@ header nav ul li:first-child {
   .board {
     max-width: 700px;
   }
-  header > div {
-    flex-direction: column-reverse;
-  }
 }
 @media all and (max-width:768px) {
   .board {
@@ -220,17 +211,13 @@ header nav ul li:first-child {
   }
   header {
     position: relative;
+    padding-top: 5%;
   }
-  h1 {
-    margin-left: auto;
-    margin-right: auto;
+  header h1 {
+    line-height: 1.5em;
   }
-  h1::before {
-    margin-left: auto;
-    display: flex;
-  }
-  h1::after {
-    display: flex;
+  header hgroup p {
+    font-size: clamp(1em, 3vw, 1.75em);
   }
   nav {
     padding-left: 5%;
@@ -245,6 +232,13 @@ header nav ul li:first-child {
   }
   h1 {
     margin-top: 0;
+    font-size: 2em;
+  }
+  header hgroup {
+    text-align: center;
+  }
+  header hgroup p {
+    margin-left: -10vw;
   }
   #themeToggle {
     margin: auto;
@@ -320,86 +314,6 @@ button:active, .button-style:active {
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
-}
-
-.notice-group {
-  position: absolute;
-  right: 0;
-  margin: auto;
-  z-index: 1;
-  font-family: var(--font-3);
-}
-.notice-group button {
-  background-color: transparent !important;
-  color: inherit;
-  border: none;
-  font-size: 2em;
-  z-index: 2;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.notice-group button:hover {
-  background-color: transparent !important;
-  transform: translatey(-5px);
-}
-#notice {
-  border: 1px solid var(--sticky-note-border-light);
-  background-color: var(--sticky-note-light);
-  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
-  text-align: center;
-  color: var(--sticky-note-font-light);
-  margin-top: 10%;
-  margin-right: 10%;
-  max-width: 180px;
-  max-height: 300px;
-  overflow-y: auto;
-  scrollbar-color: rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192);
-}
-@media all and (max-width:768px) {
-  .notice-group {
-    margin-top: 5%;
-    margin-right: 5%;
-  }
-}
-#notice p {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-#notice p:first-of-type {
-  font-size: 1.5em;
-  margin-bottom: 0;
-}
-#notice img {
-  image-rendering: crisp-edges;
-}
-#notice figure {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-#notice figure figcaption {
-  margin-top: .5em;
-  margin-bottom: 1em;
-}
-#pretzel, #pluto {
-  border: solid 2px white;
-  outline: 1px solid darkkhaki;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  height: 80%;
-  object-fit: none;
-  filter: brightness(120%);
-}
-#pretzel {
-  object-position: left;
-}
-#pluto {
-  object-position: right;
-}
-#notice hr {
-  border-color: goldenrod;
 }
 
 .page-columns > section {
@@ -592,13 +506,12 @@ dd [aria-hidden="true"] {
 #statuscafe-content::before, #statuscafe-content::after {
   content: '"';
 }
-#statuscafe hr {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
 #statuscafe div:last-child {
   margin-top: 1em;
   text-align: center;
+}
+[alt="Status Cafe"] {
+  image-rendering: crisp-edges;
 }
 
 .h-card {
@@ -627,8 +540,11 @@ dd [aria-hidden="true"] {
   width: fit-content;
   margin-top: 0;
 }
-.u-photo {
-  margin-top: 0;
+.lcp-fill {
+  width: 175px;
+  height: 175px;
+  background-color: pink;
+  position: relative;
 }
 .flower-fill {
   margin-left: 10px;
@@ -741,7 +657,7 @@ dd [aria-hidden="true"] {
   border-color: purple;
   color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
-  min-width: 260px;
+  min-width: 275px;
 }
 .web-rings p {
   text-align: center;
@@ -809,6 +725,7 @@ background-color: #d452db1f;
   border-top: 1px solid rgb(138, 85, 138);
   border-bottom: none;
 }
+
 #vocaring {
   font-family: var(--font-3);
   font-stretch: semi-expanded;
@@ -870,11 +787,43 @@ footer time {
 footer a img {
   text-decoration: none
 }
+.card footer {
+  width: 100%;
+  text-align: left;
+  margin-top: 2em;
+  padding: 1em 0px 1.5em;
+  border-top: 1px dashed thistle;
+}
+
+.notice-group {
+  position: absolute;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  font-family: var(--font-3);
+}
+.notice-group button {
+  background-color: transparent !important;
+  color: inherit;
+  border: none;
+  font-size: 2em;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.notice-group button:hover {
+  background-color: transparent !important;
+  transform: translatey(-5px);
+}
+@media all and (max-width:768px) {
+  .notice-group {
+    margin-top: 5%;
+    margin-right: 5%;
+  }
+}
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --g1v5x3-link-color: rgb(146, 53, 146) !important;
-  }
   body {
     color: var(--font-color-light);
     background-color: var(--document-color-light);
@@ -925,14 +874,11 @@ footer a img {
 }
 
 @media (prefers-color-scheme: dark) {
-  body, .web-rings, .time, #notice, .web-rings details p, footer {
+  body, .web-rings, .time, .web-rings details p, footer {
     color: white;
   }
   body {
     background-color: black;
-  }
-  :root {
-    --g1v5x3-title-color: white !important;
   }
   header nav {
     border-color: #503281;
@@ -970,7 +916,7 @@ footer a img {
   .page-columns {
     background: url(/assets/media/main/ooorganize-dark.svg);
   }
-  .card, .overflow, #notice, #track, #statuscafe, .time, .web-rings, .web-rings details p {
+  .card, .overflow, #track, #statuscafe, .time, .web-rings, .web-rings details p {
     background-color: var(--section-card-dark);
   }
   .h-card {
@@ -1005,10 +951,6 @@ footer a img {
   background-color: var(--document-color-light);
   color: var(--font-color-light);
 }
-:root .light-mode{
-  --g1v5x3-title-color: var(--font-color-light);
-  --g1v5x3-link-color: rgb(160, 47, 160);
-}
 .light-mode nav {
   color: var(--font-color-light);
 }
@@ -1029,10 +971,6 @@ footer a img {
 }
 .light-mode .button-style:hover {
   color: purple !important;
-}
-.light-mode #notice {
-  background-color: var(--sticky-note-light) !important;
-  color: var(--sticky-note-font-light) !important;
 }
 .light-mode .board {
   background-color: var(--page-color-light) !important;
@@ -1104,10 +1042,6 @@ footer a img {
   color: var(--footer-font);
 }
 
-:root .dark-mode {
-  --g1v5x3-link-color: rgb(230, 80, 230);
-  --g1v5x3-title-color: white;
-}
 .dark-mode {
   background-color: black;
   color: white;
@@ -1131,7 +1065,7 @@ footer a img {
 .dark-mode .page-columns {
   background: url(/assets/media/main/ooorganize-dark.svg);
 }
-.dark-mode .card, .dark-mode #notice, .dark-mode .overflow, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
+.dark-mode .card, .dark-mode .overflow, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
   background-color: var(--section-card-dark);
   color: white !important;
 }
@@ -1197,12 +1131,6 @@ body ::-webkit-scrollbar-thumb:hover {
 }
 header nav::-webkit-scrollbar-thumb {
   background-color: #a175c573;
-}
-#notice::-webkit-scrollbar-thumb {
-  background-color: rgba(192, 169, 110, 0.61);
-}
-#notice::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(192, 142, 96);
 }
 .web-rings-list::-webkit-scrollbar-thumb {
   background-color: rgb(155, 96, 155);

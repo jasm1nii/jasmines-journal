@@ -4,7 +4,7 @@ $(document).ready(function(){
     if(localStorage.theme) {
         $('body').addClass( localStorage.theme );
     } 
-    else{
+    else {
         $('body').addClass('light-mode'); // set default theme. No need to set via php now
     }
 
@@ -19,5 +19,4 @@ $(document).ready(function(){
             localStorage.theme = 'light-mode';
          }
        });
-
 });

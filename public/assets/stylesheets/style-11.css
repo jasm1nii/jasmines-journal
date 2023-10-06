@@ -191,7 +191,7 @@ header hgroup p {
     text-align: center;
   }
   h1::before {
-    margin-left: auto;
+    display: none;
   }
   header hgroup p {
     margin-top: 0;
@@ -376,9 +376,6 @@ section {
   margin-right: auto;
 }
 
-.ff-container.ff-responsive {
-  max-width: 88px;
-}
 @keyframes cl {
   0% {
     fill: hsl(0, 70%, 70%);
