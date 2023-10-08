@@ -1,12 +1,8 @@
+Options -MultiViews +Includes
 RewriteEngine on
-
-RewriteBase /
-RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
 RewriteCond %{HTTP_HOST} ^www\.
 RewriteRule ^(.*)$ http://jasm1nii.xyz/$1 [R=301,L]
-
-Options -MultiViews
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -14,29 +10,23 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
+
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
 
-Options +Includes
+RewriteCond %{HTTP_REFERER} lolcow.farm [NC,OR]
+RewriteCond %{HTTP_REFERER} pawoo.net [NC]
+RewriteRule .* - [F]
+
+RewriteBase /
+RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
+
 AddType text/html .shtml
 AddOutputFilter INCLUDES .shtml
 AddHandler server-parsed .html
-
-<IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-XSS-Protection "1; mode=block"
-  Header always set Referrer-Policy "strict-origin"
-  Header always set Content-Security-Policy "upgrade-insecure-requests; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://*.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; form-action 'self';"
-  Header always set Permissions-Policy "accelerometer=(),battery=(),camera=(),encrypted-media=*,geolocation=(),gyroscope=(),magnetometer=(),microphone=(),usb=()"
-  Header always set Cache-Control "no-cache, no-store, must-revalidate"
-  Header always set Cross-Origin-Embedder-Policy "unsafe-none"
-  Header always set Cross-Origin-Opener-Policy "same-origin"
-</IfModule>
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “alt-php82” package as the default “PHP” programming language.
@@ -44,3 +34,119 @@ AddHandler server-parsed .html
   AddHandler application/x-httpd-alt-php82 .php .php8 .phtml
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml font/ttf text/plain text/html text/css text/javascript text/xml
+
+  <IfModule mod_headers.c>
+    # Serve brotli compressed CSS files if they exist and the client accepts brotli.
+    RewriteCond "%{HTTP:Accept-encoding}" "br"
+    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
+    RewriteRule "^(.*)\.css"              "$1\.css\.br" [QSA]
+
+    # Serve brotli compressed JS files if they exist and the client accepts brotli.
+    RewriteCond "%{HTTP:Accept-encoding}" "br"
+    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
+    RewriteRule "^(.*)\.js"               "$1\.js\.br" [QSA]
+
+    # Serve brotli compressed .ttf files if they exist and the client accepts brotli.
+    RewriteCond "%{HTTP:Accept-encoding}" "br"
+    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
+    RewriteRule "^(.*)\.ttf"               "$1\.ttf\.br" [QSA]
+
+    # Serve correct content types, and prevent double compression.
+    RewriteRule "\.css\.br$" "-" [T=text/css,E=no-brotli:1]
+    RewriteRule "\.js\.br$"  "-" [T=text/javascript,E=no-brotli:1]
+    RewriteRule "\.ttf\.br$"  "-" [T=font/ttf,E=no-brotli:1]
+
+    <FilesMatch "(\.js\.br|\.css\.br|\.ttf\.br)$">
+      # Serve correct encoding type.
+      Header append Content-Encoding br
+      # Force proxies to cache brotli & non-brotli files separately.
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Cache-Control "public, no-cache, stale-if-error=86400"
+  Header always set Content-Language "en"
+
+  Header always set Content-Security-Policy "upgrade-insecure-requests; sandbox allow-same-origin allow-scripts allow-modals allow-forms allow-downloads allow-top-navigation-by-user-activation; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://pixelsafari.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; media-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/ https://*.ytimg.com/ https://*.youtube.com/ https://*.ggpht.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; manifest-src 'none'; worker-src 'none'; form-action 'self'; report-uri https://jasm1niixyz.report-uri.com/r/d/csp/enforce;"
+
+  Header always set Cross-Origin-Embedder-Policy "unsafe-none"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "cross-origin"
+  Header always set NEL "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
+  
+  Header always set Permissions-Policy "autoplay=*, ambient-light-sensor=(), accelerometer=(), battery=(), camera=(), cross-origin-isolated=*, display-capture=(), document-domain=(),encrypted-media=*, execution-while-not-rendered=(), execution-while-out-of-viewport=*, fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=*, navigation-override=*, payment=(), picture-in-picture=*, publickey-credentials-get=*, screen-wake-lock=(), sync-xhr=*, usb=(), web-share=*, xr-spatial-tracking=(), clipboard-read=*, clipboard-write=*, gamepad=*, speaker-selection=*"
+
+  Header always set Referrer-Policy "strict-origin"
+  Header always set Report-To "{\"group\":\"default\",\"max_age\":31536000,\"endpoints\":[{\"url\":\"https://jasm1niixyz.report-uri.com/a/d/g\"}],\"include_subdomains\":true}"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  Header always set X-Powered-By "medium spicy fried rice"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+
+  ExpiresByType audio/3gpp "modification plus 1 year"
+  ExpiresByType audio/3gpp2 "modification plus 1 year"
+  ExpiresByType audio/aac "modification plus 1 year"
+  ExpiresByType audio/asc "modification plus 1 year"
+  ExpiresByType audio/aptx "modification plus 1 year"
+  ExpiresByType audio/mp4 "modification plus 1 year"
+  ExpiresByType audio/mpeg "modification plus 1 year"
+  ExpiresByType audio/ogg "modification plus 1 year"
+  ExpiresByType audio/opus "modification plus 1 year"
+  ExpiresByType audio/tone "modification plus 1 year"
+  ExpiresByType audio/vorbis "modification plus 1 year"
+  ExpiresByType audio/wav "modification plus 1 year"
+  ExpiresByType audio/webm "modification plus 1 year"
+
+  ExpiresByType application/json "access plus 1 day"
+  ExpiresByType application/xml "modification plus 1 day"
+  ExpiresByType application/atom+xml "modification plus 1 day"
+  ExpiresByType application/xhtml+xml "modification plus 1 day"
+  ExpiresByType application/x-httpd-php "modification plus 1 day"
+  ExpiresByType application/sql "modification plus 1 day"
+  ExpiresByType application/pgp-encrypted "modification plus 1 day"
+  ExpiresByType application/pgp-keys "modification plus 1 day"
+  ExpiresByType application/pgp-signature "modification plus 1 day"
+  ExpiresByType application/pdf "modification plus 1 year"
+
+  ExpiresByType font/otf "modification plus 1 year"
+  ExpiresByType font/ttf "modification plus 1 year"
+  ExpiresByType font/woff "modification plus 1 year"
+  ExpiresByType font/woff2 "modification plus 1 year"
+
+  ExpiresByType image/apng "modification plus 1 year"
+  ExpiresByType image/avif "modification plus 1 year"
+  ExpiresByType image/bmp "modification plus 1 year"
+  ExpiresByType image/gif "modification plus 1 year"
+  ExpiresByType image/jpeg "modification plus 1 year"
+  ExpiresByType image/png "modification plus 1 year"
+  ExpiresByType image/svg+xml "modification plus 1 year"
+  ExpiresByType image/webp "modification plus 1 year"
+  ExpiresByType image/x-icon "modification plus 1 year"
+
+  ExpiresByType multipart/form-data "modification plus 1 year"
+  ExpiresByType text/plain "modification plus 1 day"
+  ExpiresByType text/css "modification plus 1 hour"
+  ExpiresByType text/csv "modification plus 1 year"
+  ExpiresByType text/html "modification plus 1 hour"
+  ExpiresByType text/javascript "modification plus 1 hour"
+  ExpiresByType text/markdown "modification plus 1 day"
+  ExpiresByType text/xml "modification plus 1 day"
+
+  ExpiresByType video/3gpp "modification plus 1 year"
+  ExpiresByType video/3gpp2 "modification plus 1 year"
+  ExpiresByType video/mp4 "modification plus 1 year"
+  ExpiresByType video/mpeg "modification plus 1 year"
+  ExpiresByType video/ogg "modification plus 1 year"
+  ExpiresByType video/webm "modification plus 1 year"
+</IfModule>

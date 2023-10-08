@@ -12,11 +12,13 @@
     <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" src="https://gc.zgo.at/count.js" async></script>
 
     <link rel="preload" href="/assets/media/main/07042023-me_compressed.webp" as="image" type="image/webp" fetchpriority="high"/>
-    <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" fetchpriority="high" crossorigin/>
-    <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
-    <link rel="preload" href="/assets/fonts/register/Register.ttf" as="font" type="font/ttf" crossorigin fetchpriority="low"/>
+    <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" media="all"/>
+    <noscript>
+      <link rel="stylesheet" href="/assets/stylesheets/style-noscript.css" type="text/css" media="all"/>
+    </noscript>
     <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
     
     <!-- indie login -->
@@ -40,9 +42,7 @@
               <p>(javascript is disabled - some site elements may be non-interactive, missing and/or out of date)</p>
             </noscript>
           </hgroup>
-          <button id="themeToggle">
-            switch theme
-          </button>
+          <button id="themeToggle" type="button">switch theme</button>
         </div>
         <nav aria-label="primary">
           <!--#include virtual="/assets/includes/headernav.shtml"-->
@@ -60,18 +60,20 @@
               <div class="card h-card">
                 <h2 id="webmaster-identity">webmaster identity</h2>
                 <div class="pfp-group">
-                  <div class="lcp-fill">
-                    <img class="u-photo" src="/assets/media/main/07042023-me_compressed.webp" width="175" height="175" alt="a self portrait of the webmaster"/>
-                  </div>
+                  <img class="u-photo" src="/assets/media/main/07042023-me_compressed.webp" width="175" height="175" alt="a self portrait of the webmaster"/>
                   <div class="flower-fill">
                     <img src="/assets/media/main/flower.svg" width="50" height="50" alt=""/>
                     <img src="/assets/media/main/flower.svg" width="50" height="50" alt=""/>
-                    <details>
-                      <summary>
-                        <img src="/assets/media/main/flower.svg" width="50" height="50" title="open for a surprise" alt=""/>
-                      </summary>
-                      <img fetchpriority="low" class="u-featured" src="/assets/media/main/la-creatura.png" alt="an ASCII drawing of the autism creature meme" loading="lazy"/>
-                    </details>
+                    <div id="surprise">
+                      <noscript>
+                        <details>
+                          <summary>
+                            <img src="/assets/media/main/flower.svg" width="50" height="50" alt="" title="open for a surprise!"/>
+                          </summary>
+                          <img src="/assets/media/main/la-creatura.png" loading="lazy" class="u-featured" alt="ASCII art of the autism creature"/>
+                        </details>
+                      </noscript>
+                    </div>
                   </div>
                 </div>
                 <div class="p-note">
@@ -116,7 +118,7 @@
                   <p id="song" data-animation>&#8987;</p>
                 </div>
                 <div class="last-played-child">
-                  <button id="js-toggle" title="pause scroll animation" aria-label="pause scroll animation" aria-controls="song" aria-pressed="false">⏯</button>
+                  <button type="button" id="js-toggle" title="pause scroll animation" aria-label="pause scroll animation" aria-controls="song" aria-pressed="false">⏯</button>
                   <a href="https://www.last.fm/user/jasm1nii" id="last-fm-profile" rel="external me" class="button-style">last.fm profile</a>
                 </div>
               </div>

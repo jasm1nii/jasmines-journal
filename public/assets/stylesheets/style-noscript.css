@@ -1,0 +1,16 @@
+header hgroup p {
+    font-size: .9em;
+    margin-left: auto;
+  }
+.flower-fill details::marker{
+    list-style: none;
+}
+.flower-fill summary img:hover {
+    filter: hue-rotate(180deg);
+    transition: filter .25s ease-in-out;
+    cursor: pointer;
+}
+.u-featured {
+    position: absolute;
+    margin-left: -250px;
+}

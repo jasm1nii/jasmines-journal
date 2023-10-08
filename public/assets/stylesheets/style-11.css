@@ -65,7 +65,6 @@ body {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
 }
 @keyframes fadeInSlide {
   0% {
@@ -347,11 +346,9 @@ section {
 
 .warning {
   background-color: var(--warning-bg);
-  color: rgb(92, 63, 128);
   box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
 }
 #warning {
-  color: #503281;
   border-color: rgb(204, 148, 204);
 }
 
@@ -682,6 +679,20 @@ footer time {
 }
 .dark-mode .warning {
   box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
+}
+.dark-mode button {
+  background-color: var(--dark-button-bg);
+  color: rgb(230, 214, 236);
+}
+.dark-mode button:hover {
+  background-color: #712357;
+}
+.dark-mode button:active {
+  background-color: rgb(207, 102, 102);
+  color: white;
+}
+.dark-mode button:focus {
+  background-color: #8b4f61;
 }
 .dark-mode footer {
   color: white;

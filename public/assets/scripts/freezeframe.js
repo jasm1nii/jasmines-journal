@@ -1000,3 +1000,14 @@
     },
   ]).default;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const e = new Freezeframe();
+  document.getElementById("play-gif").addEventListener("click", function () { e.start() });
+  document.getElementById("stop-gif").addEventListener("click", function () { e.stop() });
+});
+
+document.getElementById("gifControls").innerHTML =`
+<button id="play-gif">Play GIFs</button>
+<button id="stop-gif">Stop GIFs</button>
+`;

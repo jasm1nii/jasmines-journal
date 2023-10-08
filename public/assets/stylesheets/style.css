@@ -14,11 +14,6 @@
   font-display: swap;
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
-@font-face {
-  font-family: "Register";
-  font-display: swap;
-  src: url('/assets/fonts/register/Register.ttf') format('truetype');
-}
 
 :root {
   --font-1: 'Instrument Sans', sans-serif;
@@ -297,6 +292,7 @@ a:hover {
 }
 button {
   cursor: pointer;
+  transition: all .5s ease;
 }
 button:active, .button-style:active {
   transition: all .1s ease;
@@ -309,11 +305,6 @@ button:active, .button-style:active {
   border: 1px solid #8e629b;
   margin-top: auto;
   margin-bottom: auto;
-  transition: all .5s;
-}
-::selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
 }
 
 .page-columns > section {
@@ -330,7 +321,6 @@ button:active, .button-style:active {
   margin-left: auto;
   margin-right: auto;
   height: min-content;
-  background-color: var(--section-card-light);
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   break-inside: avoid;
   width: 60%;
@@ -365,34 +355,6 @@ button:active, .button-style:active {
   padding-left: 1em;
   margin-top: 1em;
 }
-time {
-  font-weight: 600;
-  display: block;
-}
-hr {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px dashed plum;
-}
-dd {
-  margin-top: .5em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-}
-dd [aria-hidden="true"] {
-  user-select: none;
-}
-.links dt::before {
-  content: '🔗';
-  margin-right: .5em;
-}
-.links dd {
-  margin-left: 2em;
-  margin-bottom: 1em;
-}
-
 .last-played {
   max-width: 200px;
   outline: var(--last-played-outline);
@@ -522,14 +484,6 @@ dd [aria-hidden="true"] {
   width: 225px;
   height: min-content;
 }
-.h-card a[rel="me"] {
-  text-decoration: none;
-  color: inherit;
-}
-.h-card a[rel="me"]:hover {
-  color: inherit;
-  background-color: transparent;
-}
 #webmaster-identity {
   border: none;
   font-variant: small-caps;
@@ -540,12 +494,6 @@ dd [aria-hidden="true"] {
   width: fit-content;
   margin-top: 0;
 }
-.lcp-fill {
-  width: 175px;
-  height: 175px;
-  background-color: pink;
-  position: relative;
-}
 .flower-fill {
   margin-left: 10px;
   display: flex;
@@ -553,24 +501,7 @@ dd [aria-hidden="true"] {
   user-select: none;
 }
 .flower-fill img {
-  margin-top: 7px;
-}
-.flower-fill summary img:hover {
-  filter: hue-rotate(180deg);
-  transition: filter .25s ease-in-out;
-}
-.h-card .u-featured {
-  position: absolute;
-}
-.u-featured {
-  image-rendering: crisp-edges;
-}
-  @media all and (max-width:768px) {
-    .h-card .u-featured { left: 0; }
-  }
-.h-card details summary {
-  list-style: none;
-  cursor: pointer;
+  margin-bottom: 7px;
 }
 .h-card [rel="me"] {
   opacity: 0;
@@ -613,8 +544,7 @@ dd [aria-hidden="true"] {
   color: var(--time-font-color);
   padding-top: .1em;
   padding-bottom: .5em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   break-inside: avoid;
 }
 .time .p-locality {
@@ -622,22 +552,20 @@ dd [aria-hidden="true"] {
   font-weight: 600;
 }
 .clock-display {
-  font-size: 3em;
+  font-size: 3.5em;
   min-height: 50px;
-  font-family: var(--font-4);
+  font-family: var(--font-3);
   color: mintcream;
   background-color: #374048;
   width: fit-content;
   height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  padding: .1em .25em 0em .25em;
+  margin: auto;
+  padding: 0em .25em;
   border-top: 3px inset gray;
   border-left: 3px inset gray;
 }
 .clock {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
 }
 
 #tip-jar + ul {
@@ -663,7 +591,6 @@ dd [aria-hidden="true"] {
   text-align: center;
 }
 .web-rings a {
-  color: var(--web-rings-links);
   font-weight: 600;
   font-size: larger;
   display: inline-block;
@@ -684,11 +611,9 @@ dd [aria-hidden="true"] {
   padding: 1em;
   margin-left: 2em;
   width: 200px;
-  background-color: rgb(255, 255, 255);
 }
 .web-rings-list {
   border: 1px solid rgb(167, 95, 177);
-  background: var(--web-rings-bg-light);
   margin-left: auto;
   margin-right: auto;
   overflow: auto;
@@ -705,12 +630,12 @@ dd [aria-hidden="true"] {
   font-weight: 600;
 }
 [aria-labelledby="pending-web-rings"] {
-background-color: #d452db1f;
+  background-color: #d452db1f;
 }
 .web-rings-list p {
   margin: 0 auto;
-  border-bottom: 1px solid rgb(138, 85, 138);
   padding: .5em;
+  border-bottom: 1px solid rgb(138, 85, 138);
 }
 .web-rings-list p:first-of-type {
   border-top: 1px solid rgb(138, 85, 138);
@@ -725,7 +650,6 @@ background-color: #d452db1f;
   border-top: 1px solid rgb(138, 85, 138);
   border-bottom: none;
 }
-
 #vocaring {
   font-family: var(--font-3);
   font-stretch: semi-expanded;
@@ -747,6 +671,13 @@ background-color: #d452db1f;
 #vocaring img {
   margin: 1em auto .5em;
 }
+.card footer {
+  width: 100%;
+  text-align: left;
+  margin-top: 2em;
+  padding: 1em 0px 1.5em;
+  border-top: 1px dashed thistle;
+}
 
 footer {
   margin-top: 3em;
@@ -755,7 +686,6 @@ footer {
   padding-bottom: 2em;
   text-align: center;
   font-size: 1em;
-  color: var(--footer-font);
   width: 50%;
   height: fit-content;
   max-width: 500px;
@@ -787,12 +717,30 @@ footer time {
 footer a img {
   text-decoration: none
 }
-.card footer {
-  width: 100%;
-  text-align: left;
-  margin-top: 2em;
-  padding: 1em 0px 1.5em;
-  border-top: 1px dashed thistle;
+
+time {
+  font-weight: 600;
+  display: block;
+}
+hr {
+  margin-top: 0.5em auto;
+  border: 1px dashed plum;
+}
+dd {
+  margin-top: .5em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+dd [aria-hidden="true"] {
+  user-select: none;
+}
+.links dt::before {
+  content: '🔗';
+  margin-right: .5em;
+}
+.links dd {
+  margin-left: 2em;
+  margin-bottom: 1em;
 }
 
 .notice-group {
@@ -824,6 +772,10 @@ footer a img {
 }
 
 @media (prefers-color-scheme: light) {
+  :root {
+    --sticky-note-bg: cornsilk !important;
+    --sticky-note-font: rgb(78, 61, 19) !important;
+  }
   body {
     color: var(--font-color-light);
     background-color: var(--document-color-light);
@@ -835,7 +787,7 @@ footer a img {
     background-color: var(--link-hover-bg-light);
   }
   .button-style:hover {
-    color: purple !important;
+    color: purple;
   }
   h1 {
     color: var(--h1-light);
@@ -874,6 +826,9 @@ footer a img {
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --sticky-note-bg: var(--section-card-dark) !important;
+  }
   body, .web-rings, .time, .web-rings details p, footer {
     color: white;
   }
@@ -947,6 +902,9 @@ footer a img {
   }
 }
 
+:root .light-mode {
+  --sticky-note-bg: cornsilk !important;
+}
 .light-mode {
   background-color: var(--document-color-light);
   color: var(--font-color-light);
@@ -961,7 +919,7 @@ footer a img {
   color: var(--h2-light);
 }
 .light-mode h3 {
-  color: var(--h3-light) !important;
+  color: var(--h3-light);
 }
 .light-mode a {
   color: var(--link-color-light);
@@ -973,18 +931,18 @@ footer a img {
   color: purple !important;
 }
 .light-mode .board {
-  background-color: var(--page-color-light) !important;
+  background-color: var(--page-color-light);
 }
 .light-mode .page-columns {
   background: url(/assets/media/main/ooorganize.svg);
 }
 .light-mode .card {
   background-color: var(--section-card-light);
-  color: var(--font-color-light) !important;
+  color: var(--font-color-light);
 }
 .light-mode .h-card {
-  background: url(/assets/media/main/bank-note.svg) !important;
-  background-color: snow !important;
+  background: url(/assets/media/main/bank-note.svg);
+  background-color: snow;
   text-shadow: 0 0 5px white;
 }
 .light-mode .overflow {
@@ -1010,16 +968,16 @@ footer a img {
   color: rgb(24, 14, 39);
 }
 .light-mode .last-played {
-  border-bottom: var(--last-played-border-bottom) !important;
-  border-right: var(--last-played-border-right) !important;
-  background-color: var(--last-played-bg) !important;
+  border-bottom: var(--last-played-border-bottom);
+  border-right: var(--last-played-border-right);
+  background-color: var(--last-played-bg);
 }
 .light-mode #track {
   background-color: linen;
 }
 .light-mode .web-rings {
-  background-color: var(--web-rings-card) !important;
-  color: var(--web-rings-font) !important;
+  background-color: var(--web-rings-card);
+  color: var(--web-rings-font);
 }
 .light-mode .web-rings a {
   color: var(--web-rings-links);
@@ -1042,6 +1000,10 @@ footer a img {
   color: var(--footer-font);
 }
 
+:root .dark-mode {
+  --sticky-note-bg: var(--section-card-dark) !important;
+  --sticky-note-font: white !important;
+}
 .dark-mode {
   background-color: black;
   color: white;
@@ -1067,7 +1029,7 @@ footer a img {
 }
 .dark-mode .card, .dark-mode .overflow, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
   background-color: var(--section-card-dark);
-  color: white !important;
+  color: white;
 }
 .dark-mode .h-card {
   background-image: url(/assets/media/main/bank-note-dark.svg);
@@ -1081,7 +1043,7 @@ footer a img {
 .dark-mode .last-played {
   border-bottom: 10px outset rgb(65, 77, 76);
   border-right: 10px outset rgb(55, 63, 62);
-  background-color: var(--last-played-dark-bg) !important;
+  background-color: var(--last-played-dark-bg);
 }
 .dark-mode #track {
   background-color: var(--section-card-dark);
@@ -1140,4 +1102,8 @@ header nav::-webkit-scrollbar-thumb {
 }
 .web-rings-list::-webkit-scrollbar-track-piece {
   background-color: rgba(112, 23, 134, 0.281);
+}
+::selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
 }
