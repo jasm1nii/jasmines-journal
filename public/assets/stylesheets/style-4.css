@@ -1,8 +1,12 @@
 /* blog article entries */
-
+@import url('/assets/stylesheets/cactus-chat.css');
 @font-face {
     font-family: "Inconsolata";
     src: url('/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1;}
 }
 :root {
     --font-3: 'Inconsolata', monospace;
@@ -11,12 +15,6 @@
 :root, :host {
     --seia-color-bg: transparent !important;
 }
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1;}
-}
-
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
     scrollbar-width: thin;

@@ -1,5 +1,4 @@
 loadArticles(0);
-
 function loadArticles() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -26,5 +25,5 @@ function loadArticles() {
         <a href="` + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + `">view post</a>
       </div>
     </article>`;
-    }
-  }
+    };
+  };

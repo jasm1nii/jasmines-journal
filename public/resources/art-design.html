@@ -1,62 +1,27 @@
-<!-- contact: jasm1nii@proton.me -->
-<!-- references to look into: -->
-<!-- https://schema.org/docs/search_results.html?q=date -->
-
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--#include virtual="/assets/includes/head.shtml"-->
     <title>jasmine's resources</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/assets/media/itchio-textless-white.svg"
-    />
-    <!-- favicon source: https://openmoji.org/library/emoji-270F/-->
-    <link
-      href="/assets/stylesheets/style-7.css"
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-    />
-    <!-- GoatCounter analytics -->
-    <script
-      data-goatcounter="https://jasmineamalia.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"
-    ></script>
-    <!-- Open Graph -->
-    <meta
-      name="description"
-      content="a catalogue of helpful things for web design, art, and more!"
-    />
+    <link href="/assets/stylesheets/style-7.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
     <meta name="author" content="jasm1nii">
     <meta name="keywords" content="design resources, web development">
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-    <script src="/assets/scripts/watch-color-preference.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="layout">
         <header>
-            <button id="themeToggle">
-                switch theme
-            </button>
-            <script src="/assets/scripts/dark-light-toggle-jq.js"></script>
-            <noscript>
-              <small>unavailable</small>
-            </noscript>
+            <button id="themeToggle" type="button">switch theme</button>
+            <noscript><small>unavailable</small></noscript>
             <h1>jasmine's resources</h1>
             <p>
                 page contents updated
                 <time datetime="2023-08-17">17 august 2023</time>
             </p>
             <nav>
-                <ul>
-                    <li><a href="/">home</a></li>
-                    <li><a href="/site-map.html">site map</a></li>
-                </ul>
+              <!--#include virtual="/assets/includes/headernav.shtml"-->
             </nav>
         </header>
         <main>
@@ -144,12 +109,9 @@
             </nav>
         </main>
     </div>
-
     <footer>
-      <div id="footer"></div>
+      <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
-    
-    <script src="/assets/scripts/footer.js"></script>
-
+    <script src="/assets/scripts/theme-switcher.js"></script>
   </body>
 </html>

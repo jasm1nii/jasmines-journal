@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--#include virtual="/assets/includes/head.shtml"-->
     <title>jasmine's notes</title>
-    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg">
-    <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/seia/dist/styles/dark.css"/>
-    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css"/>
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-    <meta name="description" content="the personal sandbox of a multifaceted internet creative">
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention" />
-    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc" />
+    <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/2023/09/03/entry-1316"/>
+    <meta name="description" content="note from 3 september 2023"/>
   </head>
   <body>
     <div id="layout">
         <div class="sidebar">
             <header>
                 <div>
-                    <button id="themeToggle">
-                        switch theme
-                    </button>
-                    <noscript>
-                        <small>unavailable</small>
-                    </noscript>
+                    <button id="themeToggle" type="button">switch theme</button>
+                    <noscript><small>unavailable</small></noscript>
                     <h1>jasmine's notes</h1>
                 </div>
                 <nav>
@@ -39,7 +31,6 @@
                         check out these cool web pages made by the 32-bit cafe community for our <a href="https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html">august code jam 💻</a> <a href="https://stream.indieweb.org/" rel="external" class="p-category">#indieweb</a>
                     </p>
                     <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
-                    <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/2023/09/03/entry-1316"/>
                 </div>
                 <p class="subscribe">
                     subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
@@ -47,7 +38,7 @@
             </article>
             <section id="webmentions">
                 <h3>webmentions</h3>
-                <s-e-i-a></s-e-i-a>
+                <!--#include virtual="/assets/includes/webmentions-module.shtml"-->
             </section>
             <section id="comments">
                 <h3>comments</h3>
@@ -55,13 +46,12 @@
             </section>
         </main>
     </div>
-
     <footer>
         <!--#include virtual="/assets/includes/footer.shtml"-->
     </footer>
-    
-    <script type="module" src="https://esm.run/seia" async></script>
-    <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+
+    <!--#include virtual="/assets/includes/webmentions-script.shtml"-->
+    <!--#include virtual="/assets/includes/comments-script.shtml"-->
     <script src="index.js"></script>
     <script src="/assets/scripts/theme-switcher.js"></script>
   </body>

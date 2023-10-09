@@ -94,7 +94,7 @@ const surprise = document.getElementById('surprise');
     src:'/assets/media/main/la-creatura.png',
     width:'auto',
     height:'auto',
-    alt:'',
+    alt:'ASCII art of the autism creature',
     class:'u-featured'
   };
   const yipee = d.createElement('img');
@@ -259,5 +259,177 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
     // whatever 'customElement' you define MUST be unique
     // do not use the name 'webring-css' or you will conflict with other webrings
     window.customElements.define("ring-900", p1v1g6);
+  };
+  { //// healing hospital
+    // part 1 source: https://mizuki.world/healinghospital/onionring-variables.js
+    var sites = [
+      'https://mizuki.world',
+      'https://free-butterfly.neocities.org/',
+      'https://sleepy-sage.neocities.org/',
+      'https://maaar.space/',
+      'https://macaque.moe/',
+      'https://sanguineroyal.com/',
+      'https://strawberry-gashes.neocities.org',
+      'https://jasm1nii.xyz/',
+      'https://tsuinosora.neocities.org/',
+      ];
+      var ringName = 'Healing Hospital Webring';
+      var ringID = 'healinghospital';
+
+    //// part 2 source: https://mizuki.world/healinghospital/onionring-widget.js
+    var tag = document.getElementById('healinghospital');
+    thisSite = window.location.href;
+    thisIndex = null;
+    for (i = 0; i < sites.length; i++) {
+      if (thisSite.startsWith(sites[i])) {
+      thisIndex = i;
+      break;
+      };
+    };
+    previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
+    nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+    tag.insertAdjacentHTML('afterbegin', `
+      <a href="${sites[previousIndex]}" rel="external"><img src="/assets/media/main/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>
+      <a href="https://mizuki.world/healinghospital" rel="external"><img src="/assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>
+      <a href="${sites[nextIndex]}" rel="external"><img src="/assets/media/main/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>
+    `);
+  };
+  { //// autiring
+    // part 1 source: https://macaque.moe/autiring/onionring-variables.js
+    var sites = [
+      'https://macaque.moe/',
+      'https://sunwukong.neocities.org/',
+      'https://feelingmachine.moe/',
+      'https://laikacore.neocities.org/',
+      'https://diluculo.neocities.org/',
+      'https://controlcoreangel.neocities.org/',
+      'https://patchworkofshadows.neocities.org/',
+      'https://monkiebusiness.neocities.org/',
+      'https://chipsfunfun.neocities.org/',
+      'https://vhswarehouse.neocities.org/',
+      'https://fluffylor.neocities.org/',
+      'https://suntooth.online/',
+      'https://sunnyday.neocities.org/',
+      'https://mothcore.neocities.org/',
+      'https://faeriebottled97.neocities.org/',
+      'https://onlywonder.net/',
+      'https://choiyoona.neocities.org/',
+      'https://braigwen.neocities.org/',
+      'https://pathwbeast.neocities.org/',
+      'https://themby.neocities.org/',
+      'https://servetier.neocities.org/',
+      'https://killing-machine.neocities.org/',
+      'https://korekiyovillage.neocities.org/',
+      'https://the-bat-house.neocities.org/',
+      'https://axelcentral.neocities.org/',
+      'https://infamousblackcoat.neocities.org/',
+      'https://superkirbylover.neocities.org/',
+      'https://foreverliketh.is/',
+      'https://mirrorteru.neocities.org/',
+      'https://rayofhope.neocities.org/',
+      'https://kyomakus.online/',
+      'https://thechillzone.neocities.org/',
+      'https://ghostingpen.neocities.org/',
+      'https://falconiforme.neocities.org/',
+      'https://neonriser.neocities.org/',
+      'https://uhf-channel-27.neocities.org/',
+      'https://arsenicteddy.neocities.org/',
+      'https://sillyalien.neocities.org/',
+      'https://followthewhiterabbit.neocities.org/',
+      'https://portfiend.quest/',
+      'https://cadeion.neocities.org/',
+      'https://mizuki.world/',
+      'https://sunny-cities.neocities.org/',
+      'https://retrovampz.neocities.org/',
+      'https://nonkiru.art/',
+      'https://martin-is-a-real-person.neocities.org/',
+      'https://xp-zone.neocities.org/',
+      'https://radiationcat.neocities.org/',
+      'https://worldsaddress.neocities.org/',
+      'https://timephone.neocities.org/',
+      'https://transbro.neocities.org/',
+      'https://strawberry-gashes.neocities.org/',
+      'https://gensoukai.net/',
+      'https://waxynwane.neocities.org/',
+      'https://mizunotic.neocities.org/',
+      'https://melankorin.net/',
+      'https://grulovia.neocities.org/',
+      'https://milkywaytrain.neocities.org/',
+      'https://cvnnbl.neocities.org/',
+      'https://wappydog.neocities.org/',
+      'https://cinders-stuff.neocities.org/',
+      'https://juxtajuno.neocities.org/',
+      'https://dicey.neocities.org/',
+      'https://www.royalchapelarchive.net/',
+      'https://confettiguts.neocities.org/',
+      'https://mikufan3939.neocities.org/',
+      'https://www.autisticasfxxk.com/',
+      'https://milestailsprower.neocities.org/',
+      'https://qso404.neocities.org/',
+      'https://thecatingrey.neocities.org/',
+      'https://daedrms.neocities.org/',
+      'https://punkwasp.leprd.space/',
+      'https://frequency-modulator.neocities.org/',
+      'https://nimravidae.neocities.org/',
+      'https://pokeau.com/',
+      'https://magneticdogz.neocities.org/',
+      'https://shinyexe.neocities.org/',
+      'https://debtdeath.neocities.org/',
+      'https://item64.neocities.org/',
+      'https://vurren.neocities.org/',
+      'https://pinkvampyr.leprd.space/',
+      'https://1dkreally.neocities.org/',
+      'https://nickolox.neocities.org/',
+      'https://emeowly.gay/',
+      'https://zombiigutz.neocities.org/',
+      'https://jasm1nii.xyz/',
+      'https://jubiland.neocities.org/',
+      'https://wolfsite.neocities.org/',
+      'https://butt0n-z.neocities.org/',
+      'https://grlrot.neocities.org/',
+      'https://candypop-garden.neocities.org/',
+      'https://natmsearch.neocities.org/',
+      'https://foofoai.neocities.org/',
+      'https://wyrm.quest/',
+      'https://notprincehamlet.neocities.org/',
+      'https://crisis.city/',
+      'https://freekittie.neocities.org/',
+      'https://jaybirds.neocities.org/',
+      'https://dhampirave.neocities.org/',
+      'https://keplari.neocities.org/',
+      'https://itpuddle.com/',
+      'https://roselle.neocities.org/',
+      'https://pizzacatdelights.neocities.org/',
+      'https://tsumugsfish.neocities.org/',
+      'https://bigtub.neocities.org/',
+      'https://owlsroost.xyz/',
+      'https://neonnights.neocities.org/',
+      'https://candykiller.neocities.org/',
+      'https://tsuinosora.neocities.org/',
+      'https://interstellar-shipwreck.neocities.org/',
+      'https://foggybear42.neocities.org/',
+      'https://crystepsi.com/',
+      'https://ironminer888.neocities.org/',
+      'https://ctrl64.neocities.org/',
+      'https://f3r4l-c4tg1rl.neocities.org/',
+    ];
+    var ringName = 'Autists Online';
+    var ringID = 'autiring';
+      
+    // part 2 source: https://macaque.moe/autiring/onionring-widget.js
+    var tag = document.getElementById('autiring');
+    thisSite = window.location.href;
+    thisIndex = null;
+    for (i = 0; i < sites.length; i++) {
+      if (thisSite.startsWith(sites[i])) {
+      thisIndex = i;
+      break;
+      };
+    };
+    previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
+    nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+    tag.insertAdjacentHTML('afterbegin', `
+      <a href='${sites[previousIndex]}' rel="external"><img src="/assets/media/main/autiring-left.png" width="32" height="15" alt="autists online webring: previous site" loading="lazy"/></a><a href="https://macaque.moe/autiring/index.html" rel="external"><img src="/assets/media/main/autiring.png" width="96" height="15" alt="autists online webring: index" loading="lazy"/></a><a href='${sites[nextIndex]}' rel="external" title="next site"><img src="/assets/media/main/autiring-right.png" width="32" height="15" alt="autists online webring: next site" loading="lazy"/></a>
+    `);
   };
 };

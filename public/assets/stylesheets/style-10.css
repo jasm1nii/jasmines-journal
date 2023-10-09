@@ -1,5 +1,5 @@
 /* blog index, notes */
-
+@import url('/assets/stylesheets/cactus-chat.css');
 @font-face {
     font-family: "Instrument Sans";
     src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');

@@ -1,16 +1,14 @@
 getNotes(0);
-
 function getNotes(i) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             displayNotes(this, i);
-        }
+        };
     };
     xmlhttp.open("GET", "/blog/notes/notes.xml", true);
     xmlhttp.send();
-}
-
+};
 function displayNotes(xml, i) {
     var xmlDoc = xml.responseXML; 
     x = xmlDoc.getElementsByTagName("entry");
@@ -26,5 +24,4 @@ function displayNotes(xml, i) {
             <p>` + x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue + `</p>
         </div>
     </article>`;
-    
-}
+};

@@ -72,22 +72,23 @@ AddHandler server-parsed .html
   Header always set Cache-Control "public, no-cache, stale-if-error=86400"
   Header always set Content-Language "en"
 
-  Header always set Content-Security-Policy "upgrade-insecure-requests; sandbox allow-same-origin allow-scripts allow-modals allow-forms allow-downloads allow-top-navigation-by-user-activation; default-src https: 'self'; script-src 'self' https://gc.zgo.at/ https://pixelsafari.neocities.org/ https://macaque.moe/ https://mizuki.world/ https://latest.cactus.chat/ https://esm.run/seia https://cdn.jsdelivr.net/npm/seia/+esm https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; media-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/ https://*.ytimg.com/ https://*.youtube.com/ https://*.ggpht.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; manifest-src 'none'; worker-src 'none'; form-action 'self'; report-uri https://jasm1niixyz.report-uri.com/r/d/csp/enforce;"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; sandbox allow-same-origin allow-scripts allow-modals allow-forms allow-downloads allow-top-navigation-by-user-activation; default-src https: 'self'; script-src 'self' https://pixelsafari.neocities.org/ https://latest.cactus.chat/ https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; object-src 'none'; child-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/; base-uri 'self'; frame-src https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/; media-src 'self' https://*.soundcloud.com/ https://*.sndcdn.com/ https://*.spotifycdn.com/ https://*.spotify.com/ https://*.ytimg.com/ https://*.youtube.com/ https://*.ggpht.com/; frame-ancestors 'none'; style-src https: 'self' 'unsafe-inline'; font-src 'self'; manifest-src 'none'; worker-src 'none'; form-action 'self' https://*.audienceful.com; report-uri https://jasm1niixyz.report-uri.com/r/d/csp/enforce;"
 
   Header always set Cross-Origin-Embedder-Policy "unsafe-none"
   Header always set Cross-Origin-Opener-Policy "same-origin"
   Header always set Cross-Origin-Resource-Policy "cross-origin"
-  Header always set NEL "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
   
   Header always set Permissions-Policy "autoplay=*, ambient-light-sensor=(), accelerometer=(), battery=(), camera=(), cross-origin-isolated=*, display-capture=(), document-domain=(),encrypted-media=*, execution-while-not-rendered=(), execution-while-out-of-viewport=*, fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=*, navigation-override=*, payment=(), picture-in-picture=*, publickey-credentials-get=*, screen-wake-lock=(), sync-xhr=*, usb=(), web-share=*, xr-spatial-tracking=(), clipboard-read=*, clipboard-write=*, gamepad=*, speaker-selection=*"
 
   Header always set Referrer-Policy "strict-origin"
-  Header always set Report-To "{\"group\":\"default\",\"max_age\":31536000,\"endpoints\":[{\"url\":\"https://jasm1niixyz.report-uri.com/a/d/g\"}],\"include_subdomains\":true}"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
   Header always set X-Powered-By "medium spicy fried rice"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set X-XSS-Protection "1; mode=block"
+  
+  Header always set Report-To "{\"group\":\"default\",\"max_age\":31536000,\"endpoints\":[{\"url\":\"https://jasm1niixyz.report-uri.com/a/d/g\"}],\"include_subdomains\":true}"
+  Header always set NEL "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
 </IfModule>
 
 <IfModule mod_expires.c>

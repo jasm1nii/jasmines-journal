@@ -3,20 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noai, noimageai">
+    <!--#include virtual="/assets/includes/head.shtml"-->
     <title>link gallery | jasmine's journal</title>
     <meta name="description" content="a list of cool websites on the indie web"/>
-    <link rel="canonical" href="https://jasm1nii.xyz/link-gallery">
-    <script data-goatcounter="https://jasmineamalia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-    
+    <link rel="canonical" href="https://jasm1nii.xyz/link-gallery"/>
     <link rel="preload" href="/assets/fonts/Besley/Besley-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high"/>
     <link rel="preload" href="/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="/assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf" as="font" type="font/ttf" crossorigin/>
     <link href="/assets/stylesheets/style-11.css" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="icon" type="image/x-icon" href="/assets/media/itchio-textless-white.svg"/>
-
-    <link rel="webmention" href="https://webmention.io/jasm1nii.xyz/webmention"/>
-    <link rel="pingback" href="https://webmention.io/jasm1nii.xyz/xmlrpc"/>
   </head>
 
   <body>
@@ -27,10 +21,10 @@
             <h1>jasmine's link gallery</h1>
             <p>
               page contents updated
-              <time datetime="2023-09-19">19 september 2023</time>
+              <time datetime="2023-10-09">9 october 2023</time>
             </p>
           </hgroup>
-          <button id="themeToggle">switch theme</button>
+          <button id="themeToggle" type="button">switch theme</button>
         </div>
         <nav>
           <!--#include virtual="/assets/includes/headernav.shtml"-->
@@ -48,7 +42,10 @@
                   animated GIFs are paused by default -
                   <strong>toggle at your own discretion ✨</strong>
                 </p>
-                <div id="gifControls"></div>
+                <div id="gifControls">
+                  <button id="play-gif" type="button">Play GIFs</button>
+                  <button id="stop-gif" type="button">Stop GIFs</button>
+                </div>
               </div>
             </section>
 
@@ -98,7 +95,9 @@
                 <hr>
                 <div class="button-gallery">
                   <span class="freezeframe">
-                    <a href="https://justfluffingaround.neocities.org/" rel="external"><img src="/assets/media/link-gallery/justfluffingaroundbutton.png" alt="just-fluffing-around on neocities" width="88" height="31" /></a>
+                    <a href="https://nickolox.neocities.org/" rel="external"><img src="/assets/media/link-gallery/nickolox.gif" alt="nickolox" width="88" height="31"/></a>
+                    <a href="https://whiona.me/" rel="external"><img src="/assets/media/link-gallery/whiona_button.png" alt="whiona.me" width="88" height="31"/></a>
+                    <a href="https://justfluffingaround.neocities.org/" rel="external"><img src="/assets/media/link-gallery/justfluffingaroundbutton.png" alt="justfluffingaround on neocities" width="88" height="31"/></a>
                     <a href="https://qrunchysnaq.neocities.org/" rel="external"><img src="/assets/media/link-gallery/qrunchybutton4.gif" alt="qrunchysnaq on neocities" width="88" height="31" /></a>
                     <a href="https://inkcaps.neocities.org/" rel="external"><img src="/assets/media/link-gallery/inkcapsbutton.gif" alt="inkcaps on neocities" width="88" height="31" /></a>
                     <a href="https://fri11s.neocities.org" rel="external">
