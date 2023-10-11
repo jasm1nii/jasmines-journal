@@ -10,23 +10,6 @@ header, main, footer {
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
 }
-header p, h1, h2, h3 {
-  color: inherit;
-  transition: color 0.3s ease-out;
-}
-header p:hover, h1:hover, h2:hover, h3:hover {
-  color: rgb(124, 36, 98);
-}
-@keyframes fadeInSlide {
-  0% {
-      opacity: 0;
-      transform: translatey(0);
-  }
-  100% {
-      opacity: 1;
-      transform: translatey(5px);
-   }
-}
 @keyframes fadeInPage {
   0% {
       opacity: 0;
@@ -42,6 +25,15 @@ header p:hover, h1:hover, h2:hover, h3:hover {
 html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
 }
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.1em;
+  font-stretch: 95%;
+  line-height: 1.5em;
+}
+::selection {
+  background-color: rgb(255, 255, 191);
+}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -53,26 +45,15 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: plum;
 }
-
-body {
-  background-color: thistle;
-  color: #4e494e;
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 1em;
-}
-::selection {
-  background-color: rgb(255, 255, 191);
-}
-mark {
-  background-color: rgb(247, 222, 226);
-}
-
 .layout {
   display: flex;
   max-width: min-content;
   margin: auto auto 5em auto;
 }
 @media all and (max-width:768px) {
+  body {
+    font-size: 1.1em;
+  }
   .layout {
     flex-direction: column;
     max-width: none;
@@ -85,9 +66,6 @@ header {
   position: sticky;
   top: 5%;
 }
-header p {
-  color: rgb(56, 36, 56);
-}
 @media all and (max-width:768px) {
   header {
     margin: 5% auto 25px auto;
@@ -97,8 +75,12 @@ header p {
     position: static;
   }
 }
+header nav ul {
+  max-height: 30vh;
+  overflow: auto;
+}
 header nav::after {
-  content: '•☽────✧˖°˖☆˖°˖✧────☾•';
+  content: '✧˖°˖☆────☾•';
   writing-mode: vertical-lr;
   display: inline-flex;
   line-height: 500%;
@@ -111,13 +93,11 @@ header nav::after {
   }
 }
 main {
-  width: max-content;
-  max-width: 500px;
+  width: clamp(600px, 35vw, 700px);
   margin: 3em;
   padding: 2em;
   padding-top: 1em;
-  background-color: whitesmoke;
-  border: 1px solid purple;
+  border: 1px solid;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
 }
 .main-2 {
@@ -142,13 +122,12 @@ main {
 }
 
 h1 {
-  color: #4a3b61;
   text-align: left;
   font-size: 2em;
   letter-spacing: 1px;
+  line-height: normal;
 }
 h2 {
-  color: #5a5463;
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
   font-size: 1.5em;
@@ -179,17 +158,9 @@ h1, h2, h3 {
   color: gray;
   margin-right: 10px;
 }
-
 .soundcloud {
   padding-top: 1.5em;
 }
-.badges {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 /* h3 */
 #log::before {
     content: "⟶";
@@ -197,24 +168,8 @@ h1, h2, h3 {
     text-decoration-style: none;
 }
 
-/* p */
-#important {
-  border: 1px solid rgb(187, 142, 59);
-  padding: 1em;
-  font-weight: 600;
-  background-color: rgb(241, 230, 225);
-  color: rgb(78, 57, 18);
-  width: fit-content;
-}
-@media all and (max-width:768px) {
-  #important {
-    margin: auto;
-  }
-}
-
 a {
   background-color: transparent;
-  color: darkmagenta;
   transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
@@ -234,7 +189,7 @@ section ul {
   padding: 0;
 }
 section li {
-  border-bottom: 1px solid rgb(223, 212, 212);
+  border-bottom: 1px solid;
   padding: 1em;
 }
 section li:first-child {
@@ -249,24 +204,19 @@ section nav li {
   padding: 0;
 }
 section h3 {
-  background-color: rgb(227, 219, 230);
   padding: .5em;
-  color: rgb(107, 72, 128);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 #owo::before {
   content: "( ͡o ω ͡o )" ;
-  color: rgb(173, 123, 173);
   margin-right: 0.25em;
   text-transform: none;
 }
 h4 {
   text-transform: uppercase;
   letter-spacing: .1em;
-  background-color: antiquewhite;
   padding: .5em;
-  color: rgb(119, 95, 35)
 }
 h4::before {
   content: '☆';
@@ -287,7 +237,6 @@ hr {
 }
 
 /* semantic tag styling */
-
 article > section h2::before {
   content:'｡ﾟ☆: *.☽ .* :☆ﾟ. ───';
   font-size: x-large;
@@ -300,7 +249,6 @@ article::after {
   font-size: larger;
   text-align: center;
   display: block;
-  color: rgb(169, 121, 179);
 }
 article > nav a::before {
   content: "⟵";
@@ -308,7 +256,6 @@ article > nav a::before {
 }
 .article-2 > section {
   border: 1px solid purple;
-  background-color: whitesmoke;
   margin-top: 2em;
   margin-bottom: 2em;
   padding-left: 1.5em;
@@ -342,7 +289,6 @@ header nav ul:first-child {
   border-bottom: 1px solid rgb(207, 145, 207);
   border-top: 1px solid rgb(207, 145, 207);
   padding: 1em;
-  color: rgb(76, 15, 95);
 }
 header nav ul:nth-child(3) {
   padding-top: 0;
@@ -361,10 +307,6 @@ nav li {
       padding-bottom: 0;
     }
   }
-nav a {
-  text-decoration: none;
-  color: purple;
-}
 #archiveNav li {
   margin-right: 0;
   font-weight: 600;
@@ -442,7 +384,9 @@ summary {
 }
 details dt {
   margin-left: 1em;
+  margin-bottom: 1em;
   font-weight: 600;
+  font-size: larger;
 }
 details dd {
   font-weight: normal;
@@ -453,7 +397,6 @@ details dd::before {
   margin-right: .5em;
 }
 section > details summary {
-  background-color: rgb(216, 216, 233);
   padding: .5em;
   margin-top: 1em;
 }
@@ -463,13 +406,31 @@ section > details summary {
 .data-columns dd {
   break-inside: avoid;
 }
-
+@media all and (max-width:768px) {
+  .data-columns {
+    columns: 1;
+  }
+  dd {
+    margin-bottom: 1em;
+  }
+}
 .section-style-2 details div {
   max-height: 30vh;
   overflow-y: auto;
 }
 #contact dl p {
   margin-left: 1em;
+}
+button {
+  background-color: rgba(255, 192, 239, 0.493);
+  border: 1px solid purple;
+  font-size: 1em;
+  padding: .5em;
+  border-radius: 5px;
+}
+#themeSwitch {
+  display: block;
+  margin-bottom: 1em;
 }
 
 footer {
@@ -479,9 +440,9 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: .9em;
-  color: rgb(97, 58, 97);
+  font-size: .8em;
   width: 90%;
+  opacity: .8;
 }
 footer nav {
   border-bottom: 1px solid rgb(177, 137, 177);
@@ -509,4 +470,176 @@ footer li::before {
 }
 footer time {
   font-weight: 600;
+}
+
+:root {
+  --light-body-bg: thistle;
+  --light-font-1: #4e494e;
+  --light-font-2: rgb(56, 36, 56);
+  --light-main-bg: whitesmoke;
+  --light-main-border: purple;
+  --light-h1: #4a3b61;
+  --light-h2: #5a5463;
+  --light-h3: rgb(107, 72, 128);
+  --light-h3-before: rgb(173, 123, 173);
+  --light-h3-bg: rgb(227, 219, 230);
+  --light-h4: color: rgb(119, 95, 35);
+  --light-h4-bg: antiquewhite;
+  --light-a: darkmagenta;
+  --light-decor: rgb(169, 121, 179);
+  --light-section-bg:  whitesmoke;
+  --light-summary-bg: rgb(216, 216, 233);
+  --light-li-border: rgb(223, 212, 212);
+  --light-headernav: rgb(76, 15, 95);
+}
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--light-font-1);
+    background-color: var(--light-body-bg);
+  }
+  header {
+    & p {
+      color: var(--light-font-2);
+    }
+    & nav ul:first-child {
+      color: var(--light-headernav);
+    }
+  }
+  main {
+    background-color: var(--light-main-bg);
+    border-color: var(--light-main-border);
+  }
+  h1 {
+    color: var(--light-h1);
+  }
+  h2 {
+    color: var(--light-h2);
+  }
+  h3 {
+    color: var(--light-h3);
+    background-color: var(--light-h3-bg);
+  }
+  h3::before {
+    color: var(--light-h3-before);
+  }
+  h4 {
+    color: var(--light-h4);
+    background-color: var(--light-h4-bg);
+  }
+  article::after {
+    color: var(--light-decor);
+  }
+  .article-2 > section {
+    background-color: var(--light-section-bg);
+  }
+  section li {
+    border-color: var(--light-li-border);
+  }
+  section > details summary {
+    background-color: var(--light-summary-bg);
+  }
+  a {
+    color: var(--light-a);
+  }
+}
+.light-mode {
+  color: var(--light-font-1);
+  background-color: var(--light-body-bg);
+  & header {
+    & p {
+      color: var(--light-font-2);
+    }
+    & nav ul:first-child {
+      color: var(--light-headernav);
+    }
+  }
+  & main {
+    background-color: var(--light-main-bg);
+    border-color: var(--light-main-border);
+  }
+  & .main-2 {
+    background-color: transparent;
+    background-color: transparent;
+  }
+  & h1 {
+    color: var(--light-h1);
+  }
+  & h2 {
+    color: var(--light-h2);
+  }
+  & h3 {
+    color: var(--light-h3);
+    background-color: var(--light-h3-bg);
+  }
+  & h3::before {
+    color: var(--light-h3-before);
+  }
+  & h4 {
+    color: var(--light-h4);
+    background-color: var(--light-h4-bg);
+  }
+  & article::after {
+    color: var(--light-decor);
+  }
+  & .article-2 section {
+    background-color: var(--light-section-bg);
+  }
+  & section li {
+    border-color: var(--light-li-border);
+  }
+  & section > details summary {
+    background-color: var(--light-summary-bg);
+  }
+  & a {
+    color: var(--light-a);
+  }
+  & a:hover {
+    color: white;
+  }
+}
+
+:root {
+  --dark-a: pink;
+  --dark-main-bg: rgb(34, 30, 30);
+  --dark-main-border: purple;
+  --dark-li-border: purple;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  .article-2 section, main {
+    background-color: var(--dark-main-bg);
+    border-color: var(--dark-main-border);
+  }
+  section li {
+    border-color: var(--dark-li-border);
+  }
+  a {
+    color: var(--dark-a);
+  }
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+  & .article-2 section, main {
+    background-color: var(--dark-main-bg);
+    border-color: var(--dark-main-border);
+  }
+  & .main-2 {
+    background-color: transparent;
+  }
+  & section li {
+    border-color: var(--dark-li-border);
+  }
+  & a {
+    color: var(--dark-a);
+  }
+  & header *, h2, h3, h4, summary {
+    color: white;
+  }
+  & h3, h4, summary {
+    background-color: transparent;
+  }
 }

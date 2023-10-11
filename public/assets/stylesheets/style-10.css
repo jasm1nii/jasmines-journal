@@ -43,17 +43,15 @@ button:hover {
     background-color: thistle;
     color: black;
 }
-
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
 hr {
     border: 1px dashed pink;
     margin-top: 2em;
     margin-bottom: 2em;
 }
-
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -74,7 +72,7 @@ html {
 
 body {
     font-family: var(--font-2);
-    font-size: 1em;
+    font-size: 1.1em;
     width: 90%;
     max-width: 800px;
     margin: auto;
@@ -122,26 +120,20 @@ header {
             position: relative;
         }
     }
-header div {
+header hgroup {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
-header div details {
-    padding-bottom: 1em;
-}
-    header div details p {
-        border: 1px solid;
-        padding: 1em;
-        letter-spacing: 0;
-        font-size: .9em;
-    }
-
 #themeToggle {
     height: fit-content;
     width: fit-content;
 }
-
+#themeSwitch {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding: .5em;
+}
 header h1 {
     font-size: 2em;
 }
@@ -149,13 +141,11 @@ header time {
     font-weight: 600;
     display: block;
 }
-
 header nav {
     margin: auto;
     border-top: 1px solid;
     letter-spacing: .1em;
     padding: .25em;
-    font-size: .9em;
     }
     header nav ul {
         margin-top: .25em;
@@ -169,7 +159,8 @@ header nav {
         @media all and (max-width:768px) {
             header nav li {
                 margin-right: .5em;
-                display: inline;
+                display: inline-block;
+                height: fit-content;
             }
             header nav li:last-child::after {
                 content: "✧";
@@ -208,12 +199,6 @@ header nav {
                 content: '/';
             }
         }
-
-#headernav #blog {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
 footer .subpage-nav {
     justify-content: space-between;
     display: flex;
@@ -286,7 +271,7 @@ section:has(#notesArchive) {
     padding: .5em;
     background-color: rgba(214, 191, 216, 0.295);
     letter-spacing: .015em;
-    font-weight: 400;
+    font-weight: 600;
 }
 #articlesArchive .p-summary, time {
     margin-left: 1em;
@@ -322,19 +307,16 @@ section:has(#notesArchive) {
     margin-right: auto;
     background-color: rgba(230, 187, 132, 0.25);
 }
-
 .follow {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-
 .subscribe {
     border-top: 1px dashed;
     text-align: right;
 }
-
 .articles-list {
     margin-bottom: 2em;
 }

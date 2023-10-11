@@ -1,5 +1,4 @@
 /* credits page */
-
 @font-face {
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
@@ -11,14 +10,6 @@ header, main, footer {
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
 }
-header p, h1, h2, h3 {
-  color: inherit;
-  transition: color 0.3s ease-out;
-}
-header p:hover, h1:hover, h2:hover, h3:hover {
-  color: rgb(124, 36, 98);
-}
-
 @keyframes fadeInSlide {
   0% {
       opacity: 0;
@@ -29,7 +20,6 @@ header p:hover, h1:hover, h2:hover, h3:hover {
       transform: translatey(5px);
    }
 }
-
 @keyframes fadeInPage {
   0% {
       opacity: 0;
@@ -43,41 +33,14 @@ html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   scrollbar-width: thin;
 }
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
-}
-
 body {
-  background-color: thistle;
-  color: #4e494e;
   font-family: 'Instrument Sans', sans-serif;
   font-size: 1em;
 }
-::selection {
-  background-color: rgb(255, 255, 191);
-}
-mark {
-  background-color: rgb(247, 222, 226);
-}
-.mark-2 {
-  background-color: antiquewhite;
-}
-.mark-3 {
-  background-color: rgb(202, 230, 220);
-}
-
 .layout {
   display: flex;
   max-width: min-content;
-  margin: auto auto auto auto;
+  margin: auto;
 }
 @media all and (max-width:768px) {
   .layout {
@@ -87,13 +50,11 @@ mark {
 }
 
 header {
-  margin: 50px auto auto auto;
+  margin: auto;
+  margin-top: 50px;
   padding-left: 50px;
   position: sticky;
   top: 5%;
-}
-header p {
-  color: rgb(56, 36, 56);
 }
 @media all and (max-width:768px) {
   header {
@@ -110,8 +71,7 @@ main {
   margin: 3em;
   padding: 2em;
   padding-top: 1em;
-  background-color: whitesmoke;
-  border: 1px solid purple;
+  border: 1px solid;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
 }
 @media all and (max-width:768px) {
@@ -124,49 +84,26 @@ main {
     padding-right: 1em;
   }
 }
-
 h1 {
-  color: #4a3b61;
   text-align: left;
   font-size: 2em;
   letter-spacing: 1px;
 }
-
 h2 {
-  color: #5a5463;
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
   font-size: 1.8em;
   text-align: right;
 }
-
 h1, h2, h3, h4 {
   font-weight: 600;
 }
-
-a {
-  background-color: transparent;
-  color: darkmagenta;
-  transition: all 0.2s ease-out;
-  text-decoration-style: dashed;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-a:hover {
-  background-color: palevioletred;
-  text-decoration: none;
-  color: white;
-}
-button {
-  cursor: pointer;
-}
-
 section ul {
   list-style-position: inside;
   padding: 0;
 }
 section li {
-  border-bottom: 1px solid rgb(223, 212, 212);
+  border-bottom: 1px solid;
   padding: 1em;
 }
 section li:first-child {
@@ -180,19 +117,10 @@ section nav li {
   border: none;
   padding: 0;
 }
-section h3 {
-  background-color: rgb(227, 219, 230);
+h3, h4 {
   padding: .5em;
-  color: rgb(107, 72, 128);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-h4 {
   text-transform: uppercase;
   letter-spacing: .1em;
-  background-color: antiquewhite;
-  padding: .5em;
-  color: rgb(119, 95, 35)
 }
 h4::before {
   content: '☆';
@@ -203,17 +131,7 @@ h4::after {
   margin-left: .5em;
 }
 
-hr {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px dashed plum;
-}
-
 /* semantic tag styling */
-
 article > section h2::before {
   content:'｡ﾟ☆: *.☽ .* :☆ﾟ. ───';
   font-size: x-large;
@@ -240,10 +158,9 @@ header nav li::before {
   margin-right: .5em;
 }
 nav ul {
-  border-bottom: 1px solid rgb(207, 145, 207);
-  border-top: 1px solid rgb(207, 145, 207);
+  border-bottom: 1px solid;
+  border-top: 1px solid;
   padding: 1em;
-  color: rgb(76, 15, 95);
 }
 nav li {
   display: block;
@@ -251,8 +168,7 @@ nav li {
 }
 nav a {
   text-decoration: none;
-  color: purple;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px;
   margin-left: -5px;
 }
 @media all and (max-width:768px) {
@@ -309,26 +225,13 @@ section > nav li:last-child::after {
   content: none;
 }
 
-summary {
-  font-weight: 600;
-  font-size: 1.1em;
-}
-details dt {
-  margin-left: 1em;
-  font-weight: 600;
-}
-details dd {
-  font-weight: normal;
-  margin-left: 2em;
-}
-details dd::before {
-  content: '☆ »';
-  margin-right: .5em;
-}
-section > details summary {
-  background-color: rgb(216, 216, 233);
+button {
   padding: .5em;
-  margin-top: 1em;
+  font-size: 1.2em;
+  background-color: rgba(128, 0, 128, 0.267);
+  border: 1px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 footer {
@@ -342,7 +245,6 @@ footer {
   color: rgb(97, 58, 97);
   width: 90%;
 }
-
 footer ul {
    padding: 0;
    list-style-type: none;
@@ -364,7 +266,201 @@ footer time {
 }
 #footerCredits {
   font-weight: 600;
+  & a {
+    text-decoration: none;
+  }
 }
-#footerCredits a {
-  text-decoration: none;
+a {
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  &:hover {
+    background-color: palevioletred;
+    text-decoration: none;
+    color: white;
+  }
+}
+::selection {
+  background-color: rgb(255, 255, 191);
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: plum;
+}
+
+:root {
+  --light-bg-1: thistle;
+  --light-bg-2: whitesmoke;
+  --light-border-1: purple;
+  --light-font-1: #4e494e;
+  --light-font-2: rgb(56, 36, 56);;
+  --light-h1: #4a3b61;
+  --light-h2: #5a5463;
+  --light-h3: rgb(107, 72, 128);
+  --light-h3-bg: rgb(227, 219, 230);
+  --light-h4: rgb(119, 95, 35);
+  --light-h4-bg: antiquewhite;
+  --light-nav-a: purple;
+  --light-nav-ul: rgb(76, 15, 95);
+  --light-nav-border: border-color: rgb(207, 145, 207);
+  --light-li-border: rgb(223, 212, 212);
+  --light-a: darkmagenta;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-bg-1);
+    color: var(--light-font-1);
+  }
+  header {
+    & p {
+      color: var(--light-font-2);
+    }
+  }
+  main {
+    background-color: var(--light-bg-2);
+    border-color: var(--light-border-1);
+  }
+  h1 {
+    color: var(--light-h1);
+  }
+  h2 {
+    color: var(--light-h2);
+  }
+  h3 {
+    background-color: var(--light-h3-bg);
+    color: var(--light-h3);
+  }
+  h4 {
+    background-color: var(--light-h4-bg);
+    color: var(--light-h4);
+  }
+  nav {
+    & a {
+      color: var(--light-a);
+    }
+    & ul {
+      color: var(--light-nav-ul);
+      border-color: var(--light-nav-border);
+    }
+  }
+  section {
+    & li {
+      border-color:  var(--light-li-border);
+    }
+  }
+  a {
+    color: var(--light-a);
+  }
+}
+
+.light-mode {
+  background-color: var(--light-bg-1);
+  color: var(--light-font-1);
+  & main {
+    background-color: var(--light-bg-2);
+    border-color: var(--light-border-1);
+  }
+  & header {
+    & p {
+      color: var(--light-font-2);
+    }
+  }
+  & h1 {
+    color: var(--light-h1);
+  }
+  & h2 {
+    color: var(--light-h2);
+  }
+  & h3 {
+    background-color: var(--light-h3-bg);
+    color: var(--light-h3);
+  }
+  & h4 {
+    background-color: var(--light-h4-bg);
+    color: var(--light-h4);
+  }
+  & nav {
+    & a {
+      color: var(--light-a);
+    }
+    & ul {
+      color: var(--light-nav-ul);
+      border-color: var(--light-nav-border);
+    }
+  }
+  & section {
+    & li {
+      border-color:  var(--light-li-border);
+    }
+  }
+  & a {
+    color: var(--light-a);
+  }
+}
+
+:root {
+  --dark-main-bg: #19181a;
+  --dark-main-border: rgb(56, 36, 56);
+  --dark-li-border: rgb(80, 53, 80);
+  --dark-a: pink;
+  --dark-h3-bg: #6b266538;
+  --dark-h4-bg: rgba(179, 118, 128, 0.171);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  main {
+    background-color: var(--dark-main-bg);
+    border-color: var(--dark-main-border);
+  }
+  section {
+    & li {
+      border-color: var(--dark-li-border);
+    }
+  }
+  h3 {
+    background-color: var(--dark-h3-bg);
+  }
+  h4 {
+    background-color: var(--dark-h4-bg);
+  }
+  a {
+    color: var(--dark-a);
+  }
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  & main {
+    background-color: var(--dark-main-bg);
+    border-color: var(--dark-main-border);
+  }
+  & section {
+    & li {
+      border-color: var(--dark-li-border);
+    }
+  }
+  & h3 {
+    background-color: var(--dark-h3-bg);
+  }
+  & h4 {
+    background-color: var(--dark-h4-bg);
+  }
+  & a {
+    color: var(--dark-a);
+  }
 }
