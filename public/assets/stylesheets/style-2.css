@@ -1,56 +1,68 @@
+@charset "UTF-8";
 /* about + changelog */
 @font-face {
   font-family: "Instrument Sans";
-  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
+  src: url("/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
 }
-
 /* animations */
 header, main, footer {
   opacity: 0;
-  animation: fadeInPage .5s;
+  animation: fadeInPage 0.5s;
   animation-fill-mode: forwards;
 }
+
 @keyframes fadeInPage {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
-
 * {
   scrollbar-width: thin;
 }
+
 html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
 }
+
 body {
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: "Instrument Sans", sans-serif;
   font-size: 1.1em;
   font-stretch: 95%;
   line-height: 1.5em;
 }
+
+::-moz-selection {
+  background-color: rgb(255, 255, 191);
+}
+
 ::selection {
   background-color: rgb(255, 255, 191);
 }
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
+::-webkit-scrollbar:hover {
+  background-color: plum;
+}
+
 ::-webkit-scrollbar-thumb {
   background-color: pink;
   border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
-}
+
 .layout {
   display: flex;
+  max-width: -moz-min-content;
   max-width: min-content;
   margin: auto auto 5em auto;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   body {
     font-size: 1.1em;
   }
@@ -59,14 +71,14 @@ body {
     max-width: none;
   }
 }
-
 header {
   margin: 50px auto auto auto;
   padding-left: 50px;
   position: sticky;
   top: 5%;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   header {
     margin: 5% auto 25px auto;
     padding-left: 5%;
@@ -79,15 +91,17 @@ header nav ul {
   max-height: 30vh;
   overflow: auto;
 }
+
 header nav::after {
-  content: '✧˖°˖☆────☾•';
+  content: "✧˖°˖☆────☾•";
   writing-mode: vertical-lr;
   display: inline-flex;
   line-height: 500%;
   font-size: x-large;
   color: rgb(162, 118, 175);
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   header nav::after {
     content: none;
   }
@@ -100,13 +114,15 @@ main {
   border: 1px solid;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
 }
+
 .main-2 {
   background: none;
   border: none;
   box-shadow: none;
   padding: 0;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   main {
     margin: auto;
     width: 80%;
@@ -116,56 +132,66 @@ main {
     padding-right: 1em;
   }
   .main-2 {
+    min-width: -moz-fit-content;
     min-width: fit-content;
+    height: -moz-max-content;
     height: max-content;
   }
 }
-
 h1 {
   text-align: left;
   font-size: 2em;
   letter-spacing: 1px;
   line-height: normal;
 }
+
 h2 {
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
   font-size: 1.5em;
 }
+
 .article-2 h2 {
   text-align: right;
 }
+
 h1, h2, h3 {
   font-weight: 500;
 }
+
 #todo::before {
   content: "📝";
   color: gray;
   margin-right: 10px;
 }
+
 #changelog::before {
   content: "🔨";
   color: gray;
-  margin-right: 10px;  
+  margin-right: 10px;
 }
-#knownIssues::before{
+
+#knownIssues::before {
   content: "💫";
   color: gray;
   margin-right: 10px;
 }
+
 #report::before {
   content: "❗";
   color: gray;
   margin-right: 10px;
 }
+
 .soundcloud {
   padding-top: 1.5em;
 }
+
 /* h3 */
 #log::before {
-    content: "⟶";
-    margin-right: 0.5em;
-    text-decoration-style: none;
+  content: "⟶";
+  margin-right: 0.5em;
+  text-decoration-style: none;
 }
 
 a {
@@ -175,11 +201,13 @@ a {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
+
 a:hover {
   background-color: palevioletred;
   text-decoration: none;
   color: white;
 }
+
 button {
   cursor: pointer;
 }
@@ -188,43 +216,52 @@ section ul {
   list-style-position: inside;
   padding: 0;
 }
+
 section li {
   border-bottom: 1px solid;
   padding: 1em;
 }
+
 section li:first-child {
   padding-top: 0;
 }
+
 section li li {
   border: none;
   padding-bottom: 0;
 }
+
 section nav li {
   border: none;
   padding: 0;
 }
+
 section h3 {
-  padding: .5em;
+  padding: 0.5em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
 #owo::before {
-  content: "( ͡o ω ͡o )" ;
+  content: "( ͡o ω ͡o )";
   margin-right: 0.25em;
   text-transform: none;
 }
+
 h4 {
   text-transform: uppercase;
-  letter-spacing: .1em;
-  padding: .5em;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
 }
+
 h4::before {
-  content: '☆';
-  margin-right: .5em;
+  content: "☆";
+  margin-right: 0.5em;
 }
+
 h4::after {
-  content: '☆';
-  margin-left: .5em;
+  content: "☆";
+  margin-left: 0.5em;
 }
 
 hr {
@@ -238,22 +275,25 @@ hr {
 
 /* semantic tag styling */
 article > section h2::before {
-  content:'｡ﾟ☆: *.☽ .* :☆ﾟ. ───';
+  content: "｡ﾟ☆: *.☽ .* :☆ﾟ. ───";
   font-size: x-large;
   padding-top: 1em;
-  margin-right: .5em;
+  margin-right: 0.5em;
   font-weight: 400;
 }
+
 article::after {
-  content: '︶⊹︶︶⠀୨୧⠀︶︶⊹︶ ୨୧ ︶⊹︶︶⠀୨୧ ︶︶⊹︶';
+  content: "︶⊹︶︶⠀୨୧⠀︶︶⊹︶ ୨୧ ︶⊹︶︶⠀୨୧ ︶︶⊹︶";
   font-size: larger;
   text-align: center;
   display: block;
 }
+
 article > nav a::before {
   content: "⟵";
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
+
 .article-2 > section {
   border: 1px solid purple;
   margin-top: 2em;
@@ -262,7 +302,8 @@ article > nav a::before {
   padding-right: 1.5em;
   padding-bottom: 2em;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   .article-2 > section {
     max-width: 500px;
   }
@@ -271,50 +312,61 @@ article > nav a::before {
   font-weight: 600;
   display: block;
 }
+
 header nav ul {
   padding: 1em;
 }
+
 header nav ul li ul {
   border: none;
   padding-bottom: 0;
 }
+
 header nav ul li ul li {
   padding-bottom: 0;
 }
+
 header nav ul li::before {
-  content:'୨୧';
-  margin-right: .5em;
+  content: "୨୧";
+  margin-right: 0.5em;
 }
+
 header nav ul:first-child {
   border-bottom: 1px solid rgb(207, 145, 207);
   border-top: 1px solid rgb(207, 145, 207);
   padding: 1em;
 }
+
 header nav ul:nth-child(3) {
   padding-top: 0;
   padding-bottom: 0;
   margin-left: 1em;
 }
+
 header nav ul:nth-child(3) li::before {
-  content: '⟶';
+  content: "⟶";
 }
+
 nav li {
   display: block;
   padding-bottom: 1em;
 }
-  @media all and (max-width:768px) {
-    header nav li {
-      padding-bottom: 0;
-    }
+
+@media all and (max-width: 768px) {
+  header nav li {
+    padding-bottom: 0;
   }
+}
 #archiveNav li {
   margin-right: 0;
   font-weight: 600;
 }
+
 #archiveNav li ul {
   margin-left: 1em;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   header > nav ul {
     padding: 0;
   }
@@ -333,7 +385,7 @@ nav li {
     display: inline;
   }
   header nav li ul::before {
-    content: '⟶';
+    content: "⟶";
     margin-right: 1em;
     margin-left: 1em;
   }
@@ -352,28 +404,34 @@ nav li {
 section > nav {
   display: initial;
 }
+
 section > nav ul {
   display: initial;
   border: none;
   font-weight: 600;
 }
+
 section > nav li {
   display: initial;
   font-weight: normal;
 }
+
 section > nav li:first-child::before {
   content: "⟶";
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
+
 #archiveNav li li::before {
   content: none;
 }
+
 section > nav li::after {
   content: "•";
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
+
 section > nav li:last-child::after {
   content: none;
 }
@@ -382,33 +440,43 @@ summary {
   font-weight: 600;
   font-size: 1.1em;
 }
+
 details dt {
   margin-left: 1em;
   margin-bottom: 1em;
   font-weight: 600;
   font-size: larger;
 }
+
 details dd {
   font-weight: normal;
   margin-left: 2em;
 }
+
 details dd::before {
-  content: '☆ »';
-  margin-right: .5em;
+  content: "☆ »";
+  margin-right: 0.5em;
 }
+
 section > details summary {
-  padding: .5em;
+  padding: 0.5em;
   margin-top: 1em;
 }
+
 .data-columns {
-  columns: 2;
+  -moz-columns: 2;
+       columns: 2;
 }
+
 .data-columns dd {
-  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
-@media all and (max-width:768px) {
+
+@media all and (max-width: 768px) {
   .data-columns {
-    columns: 1;
+    -moz-columns: 1;
+         columns: 1;
   }
   dd {
     margin-bottom: 1em;
@@ -418,16 +486,19 @@ section > details summary {
   max-height: 30vh;
   overflow-y: auto;
 }
+
 #contact dl p {
   margin-left: 1em;
 }
+
 button {
   background-color: rgba(255, 192, 239, 0.493);
   border: 1px solid purple;
   font-size: 1em;
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 5px;
 }
+
 #themeSwitch {
   display: block;
   margin-bottom: 1em;
@@ -440,10 +511,11 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: .8em;
+  font-size: 0.8em;
   width: 90%;
-  opacity: .8;
+  opacity: 0.8;
 }
+
 footer nav {
   border-bottom: 1px solid rgb(177, 137, 177);
   padding-bottom: 1em;
@@ -453,21 +525,25 @@ footer nav {
 }
 
 footer ul {
-   padding: 0;
-   list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 }
+
 footer li {
-   display: inline-block;
-   margin-right: 15px;
+  display: inline-block;
+  margin-right: 15px;
 }
+
 footer li:nth-child(1)::before {
-   content: "";
+  content: "";
 }
+
 footer li::before {
-   content: "⬩";
-   font-size: 20px;
-   margin-right: 15px;
+  content: "⬩";
+  font-size: 20px;
+  margin-right: 15px;
 }
+
 footer time {
   font-weight: 600;
 }
@@ -487,23 +563,22 @@ footer time {
   --light-h4-bg: antiquewhite;
   --light-a: darkmagenta;
   --light-decor: rgb(169, 121, 179);
-  --light-section-bg:  whitesmoke;
+  --light-section-bg: whitesmoke;
   --light-summary-bg: rgb(216, 216, 233);
   --light-li-border: rgb(223, 212, 212);
   --light-headernav: rgb(76, 15, 95);
 }
+
 @media (prefers-color-scheme: light) {
   body {
     color: var(--light-font-1);
     background-color: var(--light-body-bg);
   }
-  header {
-    & p {
-      color: var(--light-font-2);
-    }
-    & nav ul:first-child {
-      color: var(--light-headernav);
-    }
+  header p {
+    color: var(--light-font-2);
+  }
+  header nav ul:first-child {
+    color: var(--light-headernav);
   }
   main {
     background-color: var(--light-main-bg);
@@ -545,57 +620,55 @@ footer time {
 .light-mode {
   color: var(--light-font-1);
   background-color: var(--light-body-bg);
-  & header {
-    & p {
-      color: var(--light-font-2);
-    }
-    & nav ul:first-child {
-      color: var(--light-headernav);
-    }
-  }
-  & main {
-    background-color: var(--light-main-bg);
-    border-color: var(--light-main-border);
-  }
-  & .main-2 {
-    background-color: transparent;
-    background-color: transparent;
-  }
-  & h1 {
-    color: var(--light-h1);
-  }
-  & h2 {
-    color: var(--light-h2);
-  }
-  & h3 {
-    color: var(--light-h3);
-    background-color: var(--light-h3-bg);
-  }
-  & h3::before {
-    color: var(--light-h3-before);
-  }
-  & h4 {
-    color: var(--light-h4);
-    background-color: var(--light-h4-bg);
-  }
-  & article::after {
-    color: var(--light-decor);
-  }
-  & .article-2 section {
-    background-color: var(--light-section-bg);
-  }
-  & section li {
-    border-color: var(--light-li-border);
-  }
-  & section > details summary {
-    background-color: var(--light-summary-bg);
-  }
-  & a {
-    color: var(--light-a);
-  }
-  & a:hover {
-    color: white;
-  }
+}
+.light-mode header p {
+  color: var(--light-font-2);
+}
+.light-mode header nav ul:first-child {
+  color: var(--light-headernav);
+}
+.light-mode main {
+  background-color: var(--light-main-bg);
+  border-color: var(--light-main-border);
+}
+.light-mode .main-2 {
+  background-color: transparent;
+  background-color: transparent;
+}
+.light-mode h1 {
+  color: var(--light-h1);
+}
+.light-mode h2 {
+  color: var(--light-h2);
+}
+.light-mode h3 {
+  color: var(--light-h3);
+  background-color: var(--light-h3-bg);
+}
+.light-mode h3::before {
+  color: var(--light-h3-before);
+}
+.light-mode h4 {
+  color: var(--light-h4);
+  background-color: var(--light-h4-bg);
+}
+.light-mode article::after {
+  color: var(--light-decor);
+}
+.light-mode .article-2 section {
+  background-color: var(--light-section-bg);
+}
+.light-mode section li {
+  border-color: var(--light-li-border);
+}
+.light-mode section > details summary {
+  background-color: var(--light-summary-bg);
+}
+.light-mode a {
+  color: var(--light-a);
+}
+.light-mode a:hover {
+  color: white;
 }
 
 :root {
@@ -604,6 +677,7 @@ footer time {
   --dark-main-border: purple;
   --dark-li-border: purple;
 }
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
@@ -623,23 +697,23 @@ footer time {
 .dark-mode {
   background-color: black;
   color: white;
-  & .article-2 section, main {
-    background-color: var(--dark-main-bg);
-    border-color: var(--dark-main-border);
-  }
-  & .main-2 {
-    background-color: transparent;
-  }
-  & section li {
-    border-color: var(--dark-li-border);
-  }
-  & a {
-    color: var(--dark-a);
-  }
-  & header *, h2, h3, h4, summary {
-    color: white;
-  }
-  & h3, h4, summary {
-    background-color: transparent;
-  }
 }
+.dark-mode .article-2 section, .dark-mode main {
+  background-color: var(--dark-main-bg);
+  border-color: var(--dark-main-border);
+}
+.dark-mode .main-2 {
+  background-color: transparent;
+}
+.dark-mode section li {
+  border-color: var(--dark-li-border);
+}
+.dark-mode a {
+  color: var(--dark-a);
+}
+.dark-mode header *, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode summary {
+  color: white;
+}
+.dark-mode h3, .dark-mode h4, .dark-mode summary {
+  background-color: transparent;
+}/*# sourceMappingURL=style-2.css.map */

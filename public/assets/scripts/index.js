@@ -13,13 +13,13 @@ const notice = document.querySelector("#notice");
   notice.innerHTML = `
     <p><b><i>have you seen THEM?!</i></b></p>
     <figure tabindex="0">
-      <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pluto" alt="my cat pluto"/>
+      <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pluto" alt="my cat pluto"/>
       <figcaption>
         pluto (she/her)
       </figcaption>
     </figure>
     <figure tabindex="0">
-      <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="100" height="100" id="pretzel" alt="my cat pretzel"/>
+      <img src="/assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pretzel" alt="my cat pretzel"/>
       <figcaption>
         pretzel (he/him)
       </figcaption>
@@ -194,6 +194,53 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
 };
 
 { // webrings
+  { /// re:source ring
+    // source: https://pixelsafari.neocities.org/webring/resourcering.js
+    var resourceRing_members = [
+      'https://pixelsafari.neocities.org/',
+      'https://www.thefrugalgamer.net/resources.php',
+      'https://choiyoona.neocities.org/resources',
+      'https://foreverliketh.is/',
+      'https://favicons.neocities.org/',
+      'https://bechnokid.neocities.org/home',
+      'https://jasm1nii.xyz/',
+      'https://pixelglade.net/',
+      'https://shinyexe.neocities.org/',
+      'https://trinityexe.neocities.org/homepage'
+    ]
+    var resourceRing_ringurl = "https://pixelsafari.neocities.org/webring/"; // 
+    var resourceRing_badgeurl = "/assets/media/main/resourcering.png";
+    var resourceRing_prevurl = "/assets/media/main//resourceringprev.png";
+    var resourceRing_nexturl = "/assets/media/main/resourceringnext.png";
+    var resourceRing_randomurl = "/assets/media/main/resourceringrandom.png";
+
+    var displayElement = document.getElementById("resourceRing"); 
+    var currentLocation = window.location.href;
+    var siteIndex = resourceRing_members.indexOf(currentLocation);
+
+    var beforeID;
+    var afterID;
+    if (siteIndex == 0) {
+      beforeID = resourceRing_members.length - 1;
+    }
+    else {
+      beforeID = siteIndex - 1;
+    }
+    if (siteIndex == resourceRing_members.length - 1) {
+      afterID = 0;
+    }
+    else {
+      afterID = siteIndex + 1;
+    }
+    var randomID;
+    randomID = Math.floor(Math.random() * resourceRing_members.length);
+    
+    displayElement.innerHTML =
+      `<span><a href='` + resourceRing_ringurl + `'><img alt='Badge: resourceRing webring' src='` + resourceRing_badgeurl + `' width='88' height='31' loading='lazy'/></a></span>` +
+      `<span><a href='` + resourceRing_members[beforeID] + `'><img alt='Previous' src='` + resourceRing_prevurl + `' height='31' width='22' loading='lazy'/></a>` +
+      `<a href='` + resourceRing_members[randomID] + `'><img alt='Random' src='` + resourceRing_randomurl + `' height='31' width='44' loading='lazy'/></a>` +
+      `<a href='` + resourceRing_members[afterID] + `'><img alt='Next' src='` + resourceRing_nexturl + `' height='31' width='22' loading='lazy'/></a></span>`;
+  };
   { //// safonts
     const g1v5x3 = `https://xandra.cc/safonts/webring.json`;
     const w9g5p9 = document.createElement("template");
