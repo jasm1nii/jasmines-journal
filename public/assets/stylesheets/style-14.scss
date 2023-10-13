@@ -1,10 +1,10 @@
-/* credits page */
+/* accessibility page */
 @font-face {
   font-family: "Instrument Sans";
   src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
-/* animations */
+/*animations*/
 header, main, footer {
   opacity: 0;
   animation: fadeInPage .5s;
@@ -23,55 +23,103 @@ html {
   scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   scrollbar-width: thin;
 }
+
+/* layout */
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: auto;
+  margin-top: 8vh;
+  width: 80%;
+  max-width: fit-content;
+}
+header {
+  position: fixed;
+  width: min-content;
+}
+main {
+  padding: 2em;
+  padding-top: 1em;
+  height: fit-content;
+}
+main, main + footer {
+  grid-column: 2;
+  max-width: 500px;
+}
+@media all and (max-width:768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin-top: 5%;
+  }
+}
+
 body {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 1em;
 }
-.layout {
-  display: flex;
-  max-width: min-content;
-  margin: auto;
-}
-@media all and (max-width:768px) {
-  .layout {
-    flex-direction: column;
-    max-width: none;
+header {
+  & time {
+    font-weight: 600;
+  }
+  & nav ul {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: purple;
+    padding: 1em;
+    padding-top: 1.5em;
+  }
+  & nav li {
+    display: block;
+    margin-bottom: 1em;
+  }
+  & nav li::before {
+    content:'୨୧';
+    margin-right: .5em;
+  }
+  & nav a {
+    text-decoration: none;
+    padding: 0px 5px;
+    margin-left: -5px;
   }
 }
-
-header {
-  margin: auto;
-  margin-top: 50px;
-  padding-left: 50px;
-  position: sticky;
-  top: 5%;
+main {
+  border: 1px solid;
+  box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
+  font-size: 1.1em;
+  font-stretch: 98%;
+  letter-spacing: .03em;
+  line-height: 1.5em;
+  & li {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
 }
 @media all and (max-width:768px) {
   header {
-    margin: 5% auto 25px auto;
+    margin: auto;
     padding-left: 5%;
     padding-right: 5%;
     width: 85%;
     position: static;
+    & nav ul {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      border: none;
+    }
+    & nav li {
+      margin-right: 1em;
+      margin-bottom: .5em;
+      display: inline;
+      flex-direction: row;
+    }
   }
-}
-main {
-  width: max-content;
-  max-width: 500px;
-  margin: 3em;
-  padding: 2em;
-  padding-top: 1em;
-  border: 1px solid;
-  box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
-}
-@media all and (max-width:768px) {
   main {
     margin: auto;
-    width: 80%;
-    padding-top: 0;
-    padding-bottom: 1.5em;
-    padding-left: 1.5em;
-    padding-right: 1em;
+    padding: 0 1em 1.5em;
+    max-width: none;
   }
 }
 h1 {
@@ -88,136 +136,43 @@ h2 {
 h1, h2, h3, h4 {
   font-weight: 600;
 }
-section ul {
-  list-style-position: inside;
-  padding: 0;
-}
-section li {
-  border-bottom: 1px solid;
-  padding: 1em;
-}
-section li:first-child {
-  padding-top: 0;
-}
-section li li {
-  border: none;
-  padding-bottom: 0;
-}
-section nav li {
-  border: none;
-  padding: 0;
-}
 h3, h4 {
   padding: .5em;
   text-transform: uppercase;
   letter-spacing: .1em;
 }
-h4::before {
-  content: '☆';
-  margin-right: .5em;
-}
-h4::after {
-  content: '☆';
-  margin-left: .5em;
-}
-
-/* semantic tag styling */
-article > section h2::before {
-  content:'｡ﾟ☆: *.☽ .* :☆ﾟ. ───';
-  font-size: x-large;
-  padding-top: 1em;
-  margin-right: .5em;
-  font-weight: 400;
-}
-article > nav a::before {
-  content: "⟵";
-  margin-right: .5em;
-}
-.site-update time {
-  font-weight: 600;
-  display: block;
-}
-header nav ul {
-  padding-top: 1.5em;
-}
-header nav ul li ul {
-  border: none;
-}
-header nav li::before {
-  content:'୨୧';
-  margin-right: .5em;
-}
-nav ul {
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  padding: 1em;
-}
-nav li {
-  display: block;
-  margin-bottom: 1em;
-}
-nav a {
-  text-decoration: none;
-  padding: 0px 5px;
-  margin-left: -5px;
-}
-@media all and (max-width:768px) {
-  header nav ul {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    border: none;
-  }
-  nav li {
-    margin-right: 1em;
-    display: inline;
-    flex-direction: row;
-    margin-bottom: 0;
-  }
-}
-
-button {
-  padding: .5em;
-  font-size: 1.2em;
-  background-color: rgba(128, 0, 128, 0.267);
-  border: 1px solid purple;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-footer {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
+main + footer {
+  margin: 5vh auto;
   text-align: center;
   font-size: 1em;
-  width: 90%;
+  width: 80%;
+  & ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  & li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  & li::before {
+    content: "⬩";
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  & li:nth-child(1)::before {
+    content: "";
+  }
+  & time {
+    font-weight: 600;
+  }
 }
-footer ul {
-   padding: 0;
-   list-style-type: none;
-}
-footer li {
-   display: inline-block;
-   margin-right: 1em;
-}
-footer li:nth-child(1)::before {
-   content: "";
-}
-footer li::before {
-   content: "⬩";
-   font-size: 20px;
-   margin-right: 15px;
-}
-footer time {
+#footerAccessibility a {
+  text-decoration: none;
   font-weight: 600;
 }
-#footerCredits {
-  font-weight: 600;
-  & a {
-    text-decoration: none;
+@media all and (max-width:768px) {
+  main + footer {
+    width: 90%;
   }
 }
 a {
@@ -229,11 +184,20 @@ a {
   &:hover {
     background-color: palevioletred;
     text-decoration: none;
-    color: white;
+    color: white !important;
   }
 }
+button {
+  padding: .5em;
+  font-size: 1.2em;
+  background-color: rgba(128, 0, 128, 0.267);
+  border: 1px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
+}
 ::selection {
-  background-color: rgb(255, 255, 191);
+  background-color: rgb(255, 231, 179);
+  color: black !important;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -248,10 +212,10 @@ a {
 }
 
 :root {
-  --light-bg-1: thistle;
+  --light-bg-1: rgb(228, 207, 228);
   --light-bg-2: whitesmoke;
   --light-border-1: purple;
-  --light-font-1: #4e494e;
+  --light-font-1: #221f22;
   --light-font-2: rgb(56, 36, 56);;
   --light-h1: #4a3b61;
   --light-h2: #5a5463;

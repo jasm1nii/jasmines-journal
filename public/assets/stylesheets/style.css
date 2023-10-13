@@ -49,7 +49,7 @@
 }
 
 /* animations */
-.board, header, main, footer {
+body {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
@@ -96,9 +96,9 @@ body {
 }
 main {
   margin: auto;
-}
-main a {
-  font-weight: 600;
+  & a {
+    font-weight: 600;
+  }
 }
 .board {
   border: 1px solid purple;
@@ -385,7 +385,7 @@ button:active, .button-style:active {
 #song {
   white-space: nowrap;
   transform: translateX(0);
-  animation: scroll 10s linear infinite;
+  animation: scroll 15s linear infinite;
   font-weight: 500;
 }
   @keyframes scroll {
@@ -393,7 +393,7 @@ button:active, .button-style:active {
       transform: translateX(100%); 		
     }
     100% { 
-      transform: translateX(-100%); 
+      transform: translateX(-150%); 
     }
   }
   @media (prefers-reduced-motion) {

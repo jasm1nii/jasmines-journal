@@ -6,8 +6,8 @@ document.querySelector("#footer").innerHTML =`
     <li id="footerCopyright">
         <time>2023</time> - until hell freezes over
     </li>
-    <li id="footerAcccessibility">
-        🔨 <del>accessibility</del>
+    <li id="footerAccessibility">
+        <a href="/accessibility.html">accessibility</a>
     </li>
     <li id="footerSitemap">
         <a href="/site-map.html">site map</a>

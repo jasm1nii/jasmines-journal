@@ -7,7 +7,7 @@
             <time>2023</time> - until hell freezes over
         </li>
         <li id="footerAcccessibility">
-            <span role="img" aria-label="work in progress">🔨</span> <del>accessibility</del>
+            <a href="/accessibility.html">accessibility</a>
         </li>
         <li id="footerSitemap">
             <a href="/site-map.html">site map</a>
