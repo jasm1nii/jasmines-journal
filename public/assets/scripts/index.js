@@ -95,7 +95,8 @@ const surprise = document.getElementById('surprise');
     width:'auto',
     height:'auto',
     alt:'ASCII art of the autism creature',
-    class:'u-featured'
+    class:'u-featured',
+    loading: 'lazy'
   };
   const yipee = d.createElement('img');
   for (let attr in creatureAttr) { 
