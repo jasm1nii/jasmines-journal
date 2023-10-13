@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     # When the dist_dir is ready, deploy it to neocities
     - name: Deploy to Neocities
-      uses: bcomnes/deploy-to-neocities@v1.1.17
+      uses: bcomnes/deploy-to-neocities@v1.1.19
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true
