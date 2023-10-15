@@ -1,5 +1,5 @@
-<link href="/assets/pgp-public-jasm1nii-xyz.asc" rel="pgpkey"/>
-<link href="mailto:contact@jasm1nii.xyz" rel="me"/>
+<link href="https://jasm1nii.xyz/assets/pgp-public-jasm1nii-xyz.asc" rel="authn pgpkey"/>
+<link href="mailto:contact@jasm1nii.xyz" rel="authn me"/>
 <link rel="authorization_endpoint" href="https://indieauth.com/auth"/>
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token"/>
 <link rel="openid.delegate" href="https://jasm1nii.xyz/"/>

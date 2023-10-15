@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  // #include virtual="/assets/includes/head.shtml"
+  title
+    block post title
+    |  | jasmine's journal
+  link(rel='stylesheet' href='/assets/stylesheets/style-4.css' type='text/css' media='all')
+  block post styles
+  block bridgy slug
+  meta(name='author' content='jasm1nii')
+  meta(name='keywords' content='blog')
+  block meta summary
+body
+  #layout
+    header
+      div
+        button#themeSwitch(type='button') switch theme
+        h1 b(rain)log entry
+      nav(aria-label='primary')
+        // #include virtual="/assets/includes/headernav.shtml"
+    main
+      article.entry.h-entry
+        hgroup
+          h2.p-name
+            block post title
+          p.p-summary
+            block post summary
+        block publish date
+        section.e-content
+          block post content
+        |
+        |
+        a.u-bridgy-fed(href='https://fed.brid.gy/' aria-hidden='true' tabindex='-1')
+      section#webmentions
+        h3 webmentions
+        // #include virtual="/assets/includes/webmentions-module.shtml"
+      section#comments
+        #comment-section
+  footer
+    // #include virtual="/assets/includes/footer.shtml"
+  // #include virtual="/assets/includes/webmentions-script.shtml"
+  // #include virtual="/assets/includes/comments-script.shtml"
+  script(src='index.js')
+  script(src='/assets/scripts/theme-switcher-v2.js')

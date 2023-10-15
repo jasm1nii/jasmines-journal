@@ -1,5 +1,6 @@
 *.code-workspace
 .vscode
+.php_tmp
 desktop.ini
 /notes/
 /archive/

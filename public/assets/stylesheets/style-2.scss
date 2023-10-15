@@ -1,5 +1,5 @@
 /* about + changelog */
-@import url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2');
+@use 'font-2';
 
 /* animations */
 header, main, footer {
@@ -25,7 +25,6 @@ html {
 body {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 1.1em;
-  font-stretch: 95%;
   line-height: 1.5em;
 }
 ::selection {
@@ -172,11 +171,11 @@ a {
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-}
-a:hover {
-  background-color: palevioletred;
-  text-decoration: none;
-  color: white;
+  &:hover {
+    background-color: palevioletred;
+    text-decoration: none;
+    color: white !important;
+  }
 }
 button {
   cursor: pointer;
