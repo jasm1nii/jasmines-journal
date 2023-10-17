@@ -53,11 +53,17 @@ $curl_validate_certificate = true;
 // Use for exluding non-html files to increase performance and save bandwidth.
 $blacklist = array(
     "*.jpg",
+    "*.png",
+    "*.gif",
+    "*.webp",
     "*.css",
     "*.js",
+    "*.json",
     "*.txt",
     "*.shtml",
     "*.ttf",
+    "*.woff",
+    "*.woff2",
     "*.asc",
     "*.pgp",
     "*.gpg",

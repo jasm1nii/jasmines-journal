@@ -42,9 +42,7 @@
                                     // glob:
                                     // https://www.php.net/manual/en/function.glob.php
                             $dir = __DIR__.'/';
-
                             foreach(array_reverse(glob($dir . '*/*/*/*.html')) as $entry) {
-
                                 $entry_content = file_get_contents($entry);
                                 $entry_dom = new DOMDocument;
                                 libxml_use_internal_errors(true);

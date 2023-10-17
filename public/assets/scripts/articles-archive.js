@@ -17,11 +17,7 @@ function loadArticles() {
     document.getElementById("articlesArchive").innerHTML +=
     `<article>
       <div class="h-entry">
-        <h3 class="p-name">&ldquo; ` + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + ` &rdquo;</h3>
-        <p class="p-summary">` +
-          x[i].getElementsByTagName("summary")[0].childNodes[0].nodeValue +
-        `</p>
-        <time>` + x[i].getElementsByTagName("updated")[0].childNodes[0].nodeValue.substr(0, 10) + `</time>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+        <h3 class="p-name">&ldquo; ` + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + ` &rdquo;</h3><time>` + x[i].getElementsByTagName("updated")[0].childNodes[0].nodeValue.substr(0, 10) + `</time>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
         <a href="` + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + `">view post</a>
       </div>
     </article>`;
