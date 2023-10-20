@@ -151,7 +151,8 @@
         $entry->addChild('published',$published);
 
         $content = $data[$i]['content'];
-        $entry->addChild('content', nl2br(preg_replace("/\n\s+/", "",(htmlspecialchars($content, ENT_XML1)))));
+        $content_child = $entry->addChild('content', nl2br(preg_replace("/\n\s+/", "",(htmlspecialchars($content, ENT_XML1)))));
+        $content_child->addAttribute('type','html');
     }
 
     echo $sxe->saveXML($blog_root . DIRECTORY_SEPARATOR . $file);

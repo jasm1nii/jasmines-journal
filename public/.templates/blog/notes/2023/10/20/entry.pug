@@ -1,0 +1,19 @@
+extends ../../../entry-template
+
+//- empty blocks will be omitted
+
+block post title
+  | 20 october 2023
+
+block meta description
+  meta(name='description' content='note from friday, 20 october 2023')
+
+block publish date
+  time.dt-published.dt-updated(datetime='2023-10-20') 20 october 2023
+
+block post content 
+  | was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... 
+  a(href='https://github.com/jasm1nii/xml-feed-generator' rel='external me') check it out!
+
+block bridgy slug
+  link(rel='alternate' type='application/activity+json' href='https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/2023/10/20/entry.html')

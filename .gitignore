@@ -2,6 +2,16 @@
 .vscode
 .php_tmp
 desktop.ini
-/notes/
-/archive/
-public/cgi-bin/feed-generator/draft.php
+/my-notes/
+/my-archive/
+my-archive/123guestbook.html
+my-archive/htaccess gzip settings.txt
+my-archive/index-h1-ascii.ai
+my-archive/loader.js
+my-archive/notes-preview.js
+my-notes/.obsidian/app.json
+my-notes/.obsidian/appearance.json
+my-notes/.obsidian/core-plugins-migration.json
+my-notes/.obsidian/core-plugins.json
+my-notes/.obsidian/hotkeys.json
+my-notes/.obsidian/workspace.json

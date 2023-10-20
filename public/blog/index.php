@@ -53,7 +53,7 @@
                                     ?>">
                                         <?php
                                             $notes_title = $notes_doc->getElementsByTagName('title')->item(1)->textContent;
-                                            echo $notes_title;
+                                            echo str_replace(" | jasmine's notes","",$notes_title);
                                         ?>
                                     </a></time>
                                 </h3>
