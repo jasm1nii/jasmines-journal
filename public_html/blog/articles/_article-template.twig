@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ include('/public_html/assets/includes/head.shtml') }}
+    <title>{% block title %}{% endblock %} | jasmine's b(rain)log</title>
+    <link rel="stylesheet" href="/assets/stylesheets/style-4.css" type="text/css" media="all"/>
+    {% block custom_styles %}
+    {% endblock %}
+    {% block alt_link_bridgy %}
+    {% endblock %}
+    <meta name="author" content="jasmine"/>
+    <meta name="keywords" content="blog"/>
+    <meta name="description" content="{% block summary %}{% endblock %}"/>
+  </head>
+  <body>
+    <div id="layout">
+      <header>
+        <hgroup>
+          <h1>b(rain)log entry</h1>
+        </hgroup>
+        <nav aria-label="primary">
+          {{ include('/public_html/assets/includes/headernav.shtml') }}
+        </nav>
+      </header>
+      <main>
+        <article class="entry h-entry">
+          <hgroup>
+            <h2 class="p-name">
+              {{ block('title') }}
+            </h2>
+            {% block updated %}
+            {% endblock %}
+            <time class="dt-published" datetime="{{ block('published')|date() }}">published {% block published %}{% endblock %}</time>
+            <p class="p-summary">
+              {{ block('summary') }}
+            </p>
+          </hgroup>
+          <section class="e-content">
+              {% block content %}
+              {% endblock %}
+          </section>
+          <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
+        </article>
+        <section id="webmentions">
+          <h3>webmentions</h3>
+          {{ include('/public_html/assets/includes/webmentions-module.shtml') }}
+        </section>
+        <section id="comments">
+          <h3>comments</h3>
+          <div id="comment-section"></div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      {{ include('/public_html/assets/includes/footer.shtml') }}
+    </footer>
+
+    {{ include('/public_html/assets/includes/webmentions-script.shtml') }}
+    {{ include('/public_html/assets/includes/comments-script.shtml') }}
+    <script src="index.js"></script>
+    <script src="/assets/scripts/theme-switcher-v2.js"></script>
+  </body>
+</html>

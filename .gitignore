@@ -2,4 +2,4 @@
 .vscode
 .php_tmp
 desktop.ini
-private
+._secret-stuff

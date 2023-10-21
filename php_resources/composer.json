@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "twig/markdown-extra": "^3.7",
+        "league/commonmark": "^2.4",
+        "twig/intl-extra": "^3.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "nodejs-php-fallback/nodejs-php-fallback": true
+        }
+    }
+}

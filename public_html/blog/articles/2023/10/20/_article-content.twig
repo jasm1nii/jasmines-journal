@@ -1,0 +1,31 @@
+{% extends '/public_html/blog/articles/_article-template.twig' %}
+
+{% block custom_styles %}
+    {# <link rel="stylesheet" href="style.css" type="text/css" media="all"/> #}
+{% endblock %}
+
+{% block alt_link_bridgy %}
+    {# <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles/2023/09/26/entry"/> #}
+{% endblock %}
+
+{% block title %}
+    written in markdown for twig!
+{% endblock %}
+
+{% block updated %}
+    {# <time class="dt-updated" datetime="">updated</time> #}
+{% endblock %}
+
+{% block published %}
+    21 october 2023, 1:00 PM
+{% endblock %}
+
+{% block summary %}
+    i love frameworks!!
+{% endblock %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        {{ include('/public_html/blog/articles/2023/10/20/_article-body.md') }}
+    {% endapply %}
+{% endblock %}
