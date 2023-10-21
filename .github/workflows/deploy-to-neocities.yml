@@ -8,7 +8,7 @@ on:
       - master
     # only run deploys when public changes
     paths:
-      - 'public_splash/**'
+      - 'public_neocities/**'
 
 jobs:
   deploy:

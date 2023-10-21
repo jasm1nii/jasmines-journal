@@ -39,8 +39,8 @@
     ## because the values of $blog_root and $blog_entries will be used for generating entry links, forward slashes are a *must*.
     $blog_root = $site_root.'/blog/articles';
 
-    ## then, specify a pattern that matches the path of each individual page. for example, this will match /YYYY/MM/DD/entry (any file extension).
-    $blog_entries = $blog_root.'/*/*/*/[entry]*';
+    ## then, specify a pattern that matches the path of each individual page. for example, this will match /YYYY/MM/DD/entry.
+    $blog_entries = $blog_root.'/*/*/*/entry.html';
 
     /* -------------------- */
 
