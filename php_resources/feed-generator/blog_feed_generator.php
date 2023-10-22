@@ -40,7 +40,7 @@
     $blog_root = $site_root.'/blog/articles';
 
     ## then, specify a pattern that matches the path of each individual page. for example, this will match /YYYY/MM/DD/entry.
-    $blog_entries = $blog_root.'/*/*/*/entry.html';
+    $blog_entries = $blog_root.'/*/*/*/[entry]*';
 
     /* -------------------- */
 

@@ -1,8 +1,18 @@
 <?php
     date_default_timezone_set($timezone);
+    
+    $i = 0;
+    foreach ((glob($blog_entries.'.php')) as $article_php) {
+        ob_start();
+        include $article_php;
+        $compiled = ob_get_contents();
+        ob_end_clean();
+        file_put_contents($article_php.'_generator-tmp.html', $compiled);
+        if(++$i > ($max_entries-1) ) break;
+    }
 
     $i = 0;
-    foreach ((glob($blog_entries)) as $article) {
+    foreach ((glob($blog_entries.'html')) as $article) {
         $article_content = file_get_contents($article);
         // force libxml to parse all HTML elements, including HTML 5. by default, the extension can only read valid HTML 4.
         libxml_use_internal_errors(true);
@@ -88,6 +98,7 @@
         }
 
         if(++$i > ($max_entries-1) ) break;
+
         $data[$i] = [
             'title'=>$title_data,
             'id'=>$id_data,
@@ -155,8 +166,15 @@
         $content_child->addAttribute('type','html');
     }
 
-    echo $sxe->saveXML($blog_root . DIRECTORY_SEPARATOR . $file);
+    $sxe->saveXML($blog_root . DIRECTORY_SEPARATOR . $file);
+
+    $del_tmp = unlink($article_php.'_generator-tmp.html');
 
     echo    nl2br(strtoupper(date("h:i:sa")) . ' - Feed successfully generated in ' . realpath($blog_root) . DIRECTORY_SEPARATOR . $file . "\n");
+    if ($del_tmp) {
+        echo 'Temporary generator files successfully deleted.';
+    } else {
+        echo 'Temporary generator files could not be automatically deleted - check your directories to delete them manually.';
+    }
     echo    'Validate your feed at https://validator.w3.org/feed/';
 ?>

@@ -56,10 +56,10 @@
               <p class="p-summary">{{ summary }}</p>
             {% endif %}
           </hgroup>
-
+          
           <section class="e-content">
-              {% block content %}
-              {% endblock %}
+            {% block content %}
+            {% endblock %}
           </section>
 
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
@@ -77,7 +77,7 @@
         <section id="comments">
           <h3>comments</h3>
           {% if enable_comments == true %}
-            <div id="comment-section"></div>
+            <div id="comment-section" data-comments-id="blog-{{ published|date("Ymd") }}"></div>
           {% else %}
             <p>comments are disabled.</p>
           {% endif %}
@@ -95,7 +95,7 @@
     {% if enable_comments == true %}
       {{ include('/public_html/assets/includes/comments-script.shtml') }}
     {% endif %}
-    <script src="index.js"></script>
+    <script src="entry.js"></script>
     <script src="/assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* blog article entries */
+@import url('/assets/stylesheets/cactus-chat.css');
 @font-face {
   font-family: "Inconsolata";
   font-display: swap;
