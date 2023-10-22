@@ -25,4 +25,7 @@
 
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+
+    $blog_root = '/public_html/blog/articles';
+    $microblog_root = '/public_html/blog/notes';
 ?>

@@ -1,0 +1,29 @@
+{% extends '/php_resources/_templates/note_layout.html.twig' %}
+
+{% set title = 'testing out markdown for twig!' %}
+
+{% set summary = 'i love templating languages!!' %}
+
+{% set keywords = 'blog, test, webdev' %}
+
+{# % set updated = '21 october 2023, 1:00 PM' % #}
+
+{% set published = '21 october 2023, 12:00 PM' %}
+
+{% set slug = '/yyyy/mm/dd/template' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        this is a test post written in twig!
+    {% endapply %}
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style = false %}
+
+{% set publish_to_bridgy = false %}
+
+{% set enable_webmentions = false %}
+
+{% set enable_comments = false %}

@@ -1,25 +1,29 @@
 {% extends '/php_resources/_templates/article_layout.html.twig' %}
 
-{% set custom_style = false %}
-
-{% set slug = '/2023/10/20/test' %}
-
 {% set title = 'testing out markdown for twig!' %}
-
-{% set keywords = 'blog, test, webdev' %}
 
 {% set summary = 'i love templating languages!!' %}
 
-{% set updated = '21 october 2023, 1:00 PM' %}
+{% set keywords = 'blog, test, webdev' %}
+
+{# % set updated = '21 october 2023, 1:00 PM' % #}
 
 {% set published = '21 october 2023, 12:00 PM' %}
 
+{% set slug = '/yyyy/mm/dd/test' %}
+
 {% block content %}
     {% apply markdown_to_html %}
-        {{ include('/public_html/blog/articles/2023/10/22/entry_content.md') }}
+        {{ include('/public_html/blog/articles/yyyy/mm/dd/entry_content.md') }}
     {% endapply %}
 {% endblock %}
 
+{# optional #}
+
+{% set custom_style = false %}
+
+{% set publish_to_bridgy = false %}
+
 {% set enable_webmentions = false %}
 
-{% set enable_comments = true %}
+{% set enable_comments = false %}

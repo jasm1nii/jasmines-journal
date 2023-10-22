@@ -4,66 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ include('/public_html/assets/includes/head.shtml') }}
-
-    <title>{% if title is defined %}{{ title }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
-
-    <link rel="stylesheet" href="/assets/stylesheets/style-4.css" type="text/css" media="all"/>
-
+    <title>{% if published is defined %}{{ published }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
+    <link rel="stylesheet" href="/assets/stylesheets/style-10.css" type="text/css" media="all"/>
     {% if custom_style == true %}
       <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
     {% endif %}
 
     {% if slug is defined %}
-      <link rel="canonical" href="https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
+      <link rel="canonical" href="https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
       {% if publish_to_bridgy == true %}
-        <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
+        <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
       {% endif %}
     {% endif %}
 
     <meta name="author" content="jasmine"/>
-
-    <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}blog{% endif %}"/>
-
-    {% if summary is defined %}
-      <meta name="description" content="{{ summary }}"/>
-    {% endif %}
+    <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}microblog{% endif %}"/>
+    <meta name="description" content="note from {{ published }}"/>
   </head>
   <body>
     <div id="layout">
       <header>
         <hgroup>
-          <h1>b(rain)log entry</h1>
+          <h1>jasmine&apos;s notes</h1>
         </hgroup>
         <nav aria-label="primary">
           {{ include('/public_html/assets/includes/headernav.shtml') }}
         </nav>
       </header>
 
-      <main>
-        <article class="entry h-entry">
-          <hgroup>
-            <h2 class="p-name">
-              {% if title is defined %}
-                {{ title }}
-              {% else %}
-                untitled
-              {% endif %}
-            </h2>
+      <main class="notes-entry">
+        <article>
+          <h2><time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time></h2>
+
+          <div class="h-entry">
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
             {% endif %}
-            {% if published is defined %}
-              <time class="dt-published" datetime="{{ published|date() }}">published {{ published }}</time>
-            {% endif %}
-            {% if summary is defined %}
-              <p class="p-summary">{{ summary }}</p>
-            {% endif %}
-          </hgroup>
-          
-          <section class="e-content">
-            {% block content %}
-            {% endblock %}
-          </section>
+            <p class="e-content">{% block content %}{% endblock %}</p>
+          </div>
 
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
         </article>
