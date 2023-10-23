@@ -1,0 +1,46 @@
+{
+    "name": "phug/facade",
+    "type": "library",
+    "keywords": ["phug", "compiler", "template", "dialect", "html", "views", "render", "presentation", "jade", "pug", "html", "php", "phtml"],
+    "description": "Pug (ex-Jade) facade engine for PHP, HTML template engine structured by indentation",
+    "license": "MIT",
+    "homepage": "http://phug-lang.com",
+    "authors": [
+        {
+            "name": "kylekatarnls",
+            "homepage": "http://github.com/kylekatarnls"
+        },
+        {
+            "name": "Torben Koehn",
+            "email": "torben@talesoft.codes"
+        }
+    ],
+    "support": {
+        "email": "support@phug-lang.com",
+        "issues": "https://github.com/phug-php/phug/issues",
+        "source": "https://github.com/phug-php/phug",
+        "docs": "http://phug-lang.com/docs"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "phug/invoker": "^1.5",
+        "phug/renderer": "^1.3",
+        "phug/util": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Phug\\Test\\": "./tests/Phug/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-{% extends '/layouts/note_layout.html.twig' %}
+{% extends '/layouts/blog_note_layout.html.twig' %}
 
 {% set title = 'testing out markdown for twig!' %}
 
@@ -13,9 +13,7 @@
 {% set slug = '/yyyy/mm/dd/template' %}
 
 {% block content %}
-    {% apply markdown_to_html %}
-        this is a test post written in twig!
-    {% endapply %}
+    this is a test post written in twig!
 {% endblock %}
 
 {# optional #}
