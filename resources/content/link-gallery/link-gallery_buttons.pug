@@ -1,0 +1,6 @@
+- var base = '/_assets/media/link-gallery'
+
+mixin mutual(link, image, alt_text)
+    a(href=link): img(src=base+image, alt=alt_text, width="88", height="31")
+
++mutual("https://notprincehamlet.neocities.org/", "/notprincehamlet.png", "notprincehamlet on neocities")
