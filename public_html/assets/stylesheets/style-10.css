@@ -233,6 +233,12 @@ header nav ul ul li::before {
     content: "/";
   }
 }
+#headernav #blog > a {
+  -webkit-text-decoration: wavy underline;
+          text-decoration: wavy underline;
+  text-underline-offset: 0.25em;
+}
+
 footer .subpage-nav {
   justify-content: space-between;
   display: flex;

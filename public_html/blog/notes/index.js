@@ -1,4 +1,4 @@
-const blogSubpage = document.querySelector('#headernav #blog');
+const   blogSubpage = document.querySelector('#headernav #blog');
         blogSubpage.insertAdjacentHTML(
             'beforeend',
             `<ul>
@@ -13,4 +13,4 @@ const blogSubpage = document.querySelector('#headernav #blog');
                     padding-bottom: 0;
                 }
             </style>`,
-            );
+        );

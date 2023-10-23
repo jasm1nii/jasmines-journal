@@ -1,14 +1,18 @@
 <?php
     date_default_timezone_set($timezone);
     
-    $i = 0;
-    foreach ((glob($blog_entries.'.php')) as $article_php) {
-        ob_start();
-        include $article_php;
-        $compiled = ob_get_contents();
-        ob_end_clean();
-        file_put_contents($article_php.'_generator-tmp.html', $compiled);
-        if(++$i > ($max_entries-1) ) break;
+    if (glob($blog_entries.'.php')) {
+        $i = 0;
+        foreach ((glob($blog_entries.'.php')) as $article_php) {
+            ob_start();
+            include $article_php;
+            $compiled = ob_get_contents();
+            ob_end_clean();
+            file_put_contents($article_php.'_generator-tmp.html', $compiled);
+            if(++$i > ($max_entries-1) ) break;
+        }
+    } else {
+        $article_php = null;
     }
 
     $i = 0;
@@ -168,13 +172,16 @@
 
     $sxe->saveXML($blog_root . DIRECTORY_SEPARATOR . $file);
 
-    $del_tmp = unlink($article_php.'_generator-tmp.html');
-
     echo    nl2br(strtoupper(date("h:i:sa")) . ' - Feed successfully generated in ' . realpath($blog_root) . DIRECTORY_SEPARATOR . $file . "\n");
-    if ($del_tmp) {
-        echo 'Temporary generator files successfully deleted.';
-    } else {
-        echo 'Temporary generator files could not be automatically deleted - check your directories to delete them manually.';
+
+    if(file_exists($article_php)) {
+        $del_tmp = unlink($article_php.'_generator-tmp.html');
+        if ($del_tmp) {
+            echo 'Temporary generator files successfully deleted.';
+        } else {
+            echo 'Temporary generator files could not be automatically deleted - check your directories to delete them manually.';
+        }
     }
+
     echo    'Validate your feed at https://validator.w3.org/feed/';
 ?>

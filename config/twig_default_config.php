@@ -1,7 +1,7 @@
 <?php
-    require_once dirname(__DIR__,1).'/vendor/autoload.php';
+    require_once dirname(__DIR__,1).'/src/vendor/autoload.php';
 
-    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,2));
+    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,1));
 
     use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Intl\IntlExtension;
@@ -25,7 +25,4 @@
 
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
-
-    $blog_root = '/public_html/blog/articles';
-    $microblog_root = '/public_html/blog/notes';
 ?>
