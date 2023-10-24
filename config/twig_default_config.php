@@ -6,7 +6,9 @@
     use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Intl\IntlExtension;
 
-    $twig = new \Twig\Environment($loader);
+    $twig = new \Twig\Environment($loader, [
+        'cache'=>'/resources/cache'
+    ]);
     
     $twig->addExtension(new MarkdownExtension());
     $twig->addExtension(new IntlExtension());

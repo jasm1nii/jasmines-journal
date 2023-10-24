@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!--#include virtual="/assets/includes/head.shtml"-->
+        <?php include dirname(__DIR__,2).'/resources/includes/head.shtml'?>
         <title>subscribe | jasmine's journal</title>
         <meta name="description" content="subscription feeds for my little webbed site"/>
         <link rel="canonical" href="https://jasm1nii.xyz/subscribe"/>
-        <link rel="stylesheet" href="/assets/stylesheets/style-12.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/_assets/stylesheets/subscribe.css" type="text/css" media="all"/>
     </head>
     <body>
         <div class="layout">
@@ -17,7 +17,7 @@
                     <button id="themeToggle" type="button">switch theme</button>
                 </div>
                 <nav aria-label="primary">
-                    <!--#include virtual="/assets/includes/headernav.shtml"-->
+                    <?php include dirname(__DIR__,2).'/resources/includes/headernav.shtml'?>
                 </nav>
             </header>
             <main>
@@ -68,9 +68,9 @@
                 </article>
             </main>
             <footer>
-                <!--#include virtual="/assets/includes/footer.shtml"-->
+                <?php include dirname(__DIR__,2).'/resources/includes/footer.shtml'?>
             </footer>
         </div>
-        <script src="/assets/scripts/theme-switcher.js"></script>
+        <script src="/_assets/scripts/theme-switcher.js"></script>
     </body>
 </html>

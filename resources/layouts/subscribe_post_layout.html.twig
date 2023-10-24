@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="robots" content="noindex"/>
-        <!--#include virtual="/assets/includes/head.shtml"-->
+        {{ include('/resources/includes/head.shtml') }}
         <title>subscribe | jasmine's journal</title>
         <meta name="description" content="subscription success!"/>
-        <link rel="stylesheet" href="/assets/stylesheets/style-13.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="/_assets/stylesheets/subscribe_post.css" type="text/css" media="all"/>
     </head>
     <body>
         <div class="layout">
@@ -20,13 +20,12 @@
             <main>
                 <article>
                     <section>
-                        <h2>yippee!!</h2>
-                        <p>thanks for subscribing!</p>
-                        <p><a href="/">return home</a></p>
+                        <h2>{{ h2 }}</h2>
+                        <p>{{ message }}</p>
                     </section>
                 </article>
             </main>
         </div>
-        <script src="/assets/scripts/theme-switcher.js"></script>
+        <script src="/_assets/scripts/theme-switcher.js"></script>
     </body>
 </html>
