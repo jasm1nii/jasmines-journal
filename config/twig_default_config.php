@@ -6,9 +6,7 @@
     use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Intl\IntlExtension;
 
-    $twig = new \Twig\Environment($loader, [
-        'cache'=>'/resources/cache'
-    ]);
+    $twig = new \Twig\Environment($loader);
     
     $twig->addExtension(new MarkdownExtension());
     $twig->addExtension(new IntlExtension());
@@ -27,4 +25,6 @@
 
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+
+    $blog_article_layout = '/resources/layouts/blog_article_layout.html.twig';
 ?>

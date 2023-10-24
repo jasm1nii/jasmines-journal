@@ -54,24 +54,14 @@
                     </hgroup>
                     <ol reversed class="articles-list">
                         <?php
-                            require_once dirname(__DIR__,3).'/src/vendor/autoload.php';
-                            use Twig\Extra\Intl\IntlExtension;
+                            require_once dirname(__DIR__,3).'/config/twig_default_config.php';
 
                             $source = dirname(__DIR__,3).'/resources/content/blog/articles';
-                            $loader_1 = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,3));
-                            $list = "/resources/templates/blog/articles/articles_index.html.twig";
+
+                            $layout = "/resources/templates/blog/articles/articles_index.html.twig";
 
                             foreach ((glob($source.'/*/*/*/*.twig')) as $article) {
-                                $loader_2 = new \Twig\Loader\ArrayLoader([
-                                    'base.html' => "{{ include('".$list."') }}",
-                                    'entries.html' =>"{% extends 'base.html' %}".file_get_contents($article)
-                                ]);
-                                $loader = new \Twig\Loader\ChainLoader([$loader_1,$loader_2]);
-                                
-                                $twig = new \Twig\Environment($loader);
-                                $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
-
-                                echo $twig->render('entries.html');
+                                echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout]);
                             }
                         ?>
                     </ol>
