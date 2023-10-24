@@ -1,4 +1,4 @@
-/* about + changelog */
+/* changelog */
 @use 'font_instrument-sans';
 
 /* animations */
@@ -92,8 +92,10 @@ header nav::after {
 main {
   width: clamp(500px, 35vw, 700px);
   margin: 3em;
+  margin-bottom: 0px;
   padding: 2em;
   padding-top: 1em;
+  padding-bottom: 0px;
 }
 @media all and (max-width:768px) {
   main {
@@ -190,6 +192,7 @@ section nav li {
   padding: 0;
 }
 section h3 {
+  margin-top: 0px;
   padding: .5em;
   text-transform: uppercase;
   letter-spacing: 0.1em;

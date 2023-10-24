@@ -1,0 +1,159 @@
+{% extends '/resources/layouts/changelog_layout.html.twig' %}
+
+{% set date = "september 2023" %}
+
+{% block changelog %}
+    <section>
+        <h3><time datetime="2023-09-29">29 september 2023</time></h3>
+        <ul>
+          <li>
+            beefed up the HTTP security headers.
+          </li>
+          <li>
+            finally replaced all the javascript headers and footers with server-side includes!
+          </li>
+        </ul>
+        <h3><time datetime="2023-09-28">28 september 2023</time></h3>
+        <ul>
+          <li>
+            significantly improved loading time by compressing images, specifying preload and fetch directives, as well as deleting some javascript!
+          </li>
+          <li>
+            reduced cumulative layout shift by a substantial margin.
+          </li>
+          <li>
+            joined <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external">accessible net</a>!
+          </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-25">25 september 2023</time></h3>
+        <ul>
+            <li>
+              added a button to control the scrolling animation on the last.fm widget.
+            </li>
+            <li>
+              fixed more accessibility issues with keyboard access.
+            </li>
+            <li>
+              joined the <a href="https://xn--sr8hvo.ws/" rel="external">indieweb webring</a>!
+            </li>
+            <li>
+              added pledge badge for <a href="https://nonbot.org/" rel="external">nonbot</a>.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-24">24 september 2023</time></h3>
+        <ul>
+            <li>
+              trying out some new fonts on the home page and blog pages!!
+            </li>
+            <li>
+              removed guestbook scroller iframe to eliminate instances of the depreciated <code>&lt;marquee&gt;</code> element.
+            </li>
+            <li>
+              tweaked some animations and styling here and there.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-23">23 september 2023</time></h3>
+        <ul>
+            <li>
+                updated HTTP security headers.
+            </li>
+            <li>
+               adjusted text size across several pages for improved readability.
+            </li>
+            <li>
+                added more semantic markup for reader mode compatibility where applicable.
+            </li>
+            <li>
+                updated the "about" and "site map" pages.
+            </li>
+            <li>
+                fixed issue where sticky note contents were not tabbable.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-19">19 september 2023</time></h3>
+        <ul>
+            <li>
+              purged some more old code from under the hood.
+            </li>
+            <li>
+              remove the "anon inbox" section on the home page. follow the breadcrumbs instead, if you must 🐱
+            </li>
+            <li>
+              added more buttons to the link gallery.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-11">11 september 2023</time></h3>
+        <ul>
+            <li>
+                updated the link gallery with more buttons!
+            </li>
+            <li>
+                rearranged some sections on the home page.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-09">9 september 2023</time></h3>
+        <ul>
+            <li>
+                optimized perceived loading latency on the home page.
+            </li>
+            <li>
+                <a href="https://jquery.com/" rel="external">jquery</a> version 3.7.1 will be gradually rolled out across the site to replace version 3.7.0; going forward, the script will also be hosted onsite instead of being delivered via <abbr title="content delivery network">CDN</abbr>.
+            </li>
+            <li>
+                small text edits on the about page.
+            </li>
+            <li>
+                closing the preloader screen by clicking "skip rendering" will now properly abort requests to external domains that have failed to connect.
+            </li>
+            <li>
+                improved the color contrast of selected text in dark mode.
+            </li>
+            <li>
+                other minor style changes.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-08">8 september 2023</time></h3>
+        <ul>
+            <li>
+                fixed margin and padding parameters for various elements on the homepage and link gallery page.
+            </li>
+            <li>
+                rearranged sections on the link gallery page.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-04">4 september 2023</time></h3>
+        <ul>
+            <li>
+                minor text edits on the homepage and <a href="/about/">about page</a>.
+            </li>
+            <li>
+                a few additions to the <a href="/resources/">resources page</a>.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-09-03">3 september 2023</time></h3>
+        <ul>
+            <li>reformatted atom feed for blog articles to display HTML content in feed readers.</li>
+            <li>fixed javascript blog feeds to display links.</li>
+            <li>updated <code>&lt;noscript&gt;</code> placeholder content on the homepage.</li>
+            <li>fixed box shadow breaks on webkit-based tablet browsers.</li>
+        </ul>
+    </section>
+{% endblock %}

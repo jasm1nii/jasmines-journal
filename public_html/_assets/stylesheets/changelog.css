@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* about + changelog */
+/* changelog */
 @font-face {
   font-family: "Instrument Sans";
   font-display: swap;
@@ -111,8 +111,10 @@ header nav::after {
 main {
   width: clamp(500px, 35vw, 700px);
   margin: 3em;
+  margin-bottom: 0px;
   padding: 2em;
   padding-top: 1em;
+  padding-bottom: 0px;
 }
 
 @media all and (max-width: 768px) {
@@ -223,6 +225,7 @@ section nav li {
 }
 
 section h3 {
+  margin-top: 0px;
   padding: 0.5em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
