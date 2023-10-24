@@ -185,7 +185,7 @@ header hgroup p {
     margin-left: 0;
   }
 }
-#themeToggle {
+#themeSwitch {
   font-family: var(--font-3);
   height: fit-content;
   width: fit-content;
@@ -553,7 +553,7 @@ footer time {
     border-color: var(--page-border-dark);
   }
   .page-columns {
-    background: url('/assets/media/main/ooorganize-dark.svg');
+    background: url('/_assets/media/main/ooorganize-dark.svg');
   }
   .card, .warning {
     background-color: var(--section-card-dark);
@@ -602,7 +602,7 @@ footer time {
   background-color: var(--page-color-light) !important;
 }
 .light-mode .page-columns {
-  background: url('/assets/media/main/ooorganize.svg');
+  background: url('/_assets/media/main/ooorganize.svg');
 }
 .light-mode .card {
   background-color: var(--section-card-light) !important;
@@ -659,7 +659,7 @@ footer time {
   border-color: #503281;
 }
 .dark-mode .page-columns {
-  background: url('/assets/media/main/ooorganize-dark.svg');
+  background: url('/_assets/media/main/ooorganize-dark.svg');
 }
 .dark-mode .card, .dark-mode .warning {
   background-color: var(--section-card-dark) !important;
