@@ -53,36 +53,26 @@
                         <h2>articles</h2>
                     </hgroup>
                     <ol reversed class="articles-list">
-                        <li>i broke something in the backend lol bear with me</li>
                         <?php
-                            /* lmao oops this wont work anymore with my twig templates
-                            // references:
-                                // directory functions:
-                                // https://www.php.net/manual/en/book.dir.php
-                                    // glob:
-                                    // https://www.php.net/manual/en/function.glob.php
-                            $dir = __DIR__.'/';
-                            foreach(array_reverse(glob($dir . the path)) as $entry) {
-                                $entry_content = file_get_contents($entry);
-                                $entry_dom = new DOMDocument;
-                                libxml_use_internal_errors(true);
-                                $entry_dom->loadHTML($entry_content);
+                            require_once dirname(__DIR__,3).'/src/vendor/autoload.php';
+                            use Twig\Extra\Intl\IntlExtension;
 
-                                $title = $entry_dom->getElementsByTagName('h2');
-                                $time = $entry_dom->getElementsByTagName('time');                    
+                            $source = dirname(__DIR__,3).'/resources/content/blog/articles';
+                            $loader_1 = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,3));
+                            $list = "/resources/templates/blog/articles/articles_index.html.twig";
 
-                                foreach ($title as $title_text) {
-                                    echo    '<li>
-                                                <h3>
-                                                    <a href="https://jasm1nii.xyz/blog/articles/', ltrim($entry, $dir) . '">' . $title_text->nodeValue .'</a>
-                                                </h3>';
-                                    foreach ($time as $time_text) {
-                                        echo    '<time datetime="' . $time_text->getAttribute('datetime') .'">' . $time_text->nodeValue . '</time>';
-                                    }
-                                    echo    '</li>';
-                                }
+                            foreach ((glob($source.'/*/*/*/*.twig')) as $article) {
+                                $loader_2 = new \Twig\Loader\ArrayLoader([
+                                    'base.html' => "{{ include('".$list."') }}",
+                                    'entries.html' =>"{% extends 'base.html' %}".file_get_contents($article)
+                                ]);
+                                $loader = new \Twig\Loader\ChainLoader([$loader_1,$loader_2]);
+                                
+                                $twig = new \Twig\Environment($loader);
+                                $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
+
+                                echo $twig->render('entries.html');
                             }
-                            */
                         ?>
                     </ol>
                 </section>
