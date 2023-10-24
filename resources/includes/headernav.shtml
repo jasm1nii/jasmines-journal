@@ -1,10 +1,10 @@
 <div id="headernav" aria-label="pages">
     <ul>
         <li id="home"><a href="/">home</a></li>
-        <li id="about"><a href="/about/">about</a></li>
-        <li id="blog"><a href="/blog/">blog</a></li>
-        <li id="resources"><a href="/resources/">resources</a></li>
-        <li id="linkGallery"><a href="/link-gallery.html">link gallery</a></li>
+        <li id="about"><a href="/about">about</a></li>
+        <li id="blog"><a href="/blog">blog</a></li>
+        <li id="resources"><a href="/resources">resources</a></li>
+        <li id="linkGallery"><a href="/link-gallery">link gallery</a></li>
         <li id="guestbook"><a rel="me external" href="https://jasm1nii.123guestbook.com/">guestbook</a></li>
         <li id="subscribe"><a href="/subscribe">subscribe</a></li>
     </ul>

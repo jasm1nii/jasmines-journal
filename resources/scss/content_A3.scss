@@ -1,0 +1,439 @@
+/* resource subpage level 2 */
+
+@use 'font_instrument-sans';
+
+:root {
+    --font-1: 'Instrument Sans', sans-serif;
+    --links-hover-bg: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* copied from inline style tag */
+@media all and (max-width:768px) {
+    article {
+        min-width: 90%;
+    }
+    article ul {
+        margin-left: 0;
+    }
+}
+
+article {
+    width: 60%; margin-left: auto; margin-right: auto;
+}
+article nav {
+    margin-bottom: 1em;
+}
+footer {
+    padding: 1em;
+    margin-left: auto; margin-right: auto; text-align: center;
+}
+/**/
+
+a {
+    background-color: transparent;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover {
+    background-color: var(--links-hover-bg);
+    color: black;
+}
+button {
+    font: inherit;
+    background-color: inherit;
+    color: inherit;
+    border: 1px solid;
+    cursor: pointer;
+}
+button:hover {
+    background-color: thistle;
+    color: black;
+}
+
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+::-webkit-scrollbar {
+    width: .4em;
+    height: .4em;
+    }
+    ::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
+    }
+
+html {
+    scrollbar-color: rgb(184, 140, 184) transparent;
+    scrollbar-width: thin;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-1);
+    font-size: 1em;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    opacity: 0;
+    animation: fadeIn .5s;
+    animation-fill-mode: forwards;
+    transition: all 0.25s ease-out;
+    }
+        @media all and (max-width:768px) {
+            body {
+                width: fit-content;
+            }
+        }
+    #layout {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+        @media all and (max-width:768px) {
+            #layout {
+                margin-top: 0;
+                flex-direction: column;
+            }
+        }
+body > nav {
+    text-align: center;
+}
+body > nav:first-of-type {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+body > nav:last-of-type {
+    margin-top: 1em;
+    margin-bottom: 5em;
+}
+
+header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+}
+    @media all and (max-width:768px) {
+        header {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+            position: relative;
+            }
+        }
+    @media all and (max-width:768px) {
+        #themeToggle {
+            height: fit-content;
+            }
+        }
+
+    header h1 {
+        font-size: 1.5em;
+        padding-top: 1em;
+    }
+    header time {
+        font-weight: 600;
+        display: block;
+    }
+
+    header nav {
+        margin: auto;
+        border-top: 1px solid;
+        letter-spacing: .1em;
+        padding: .25em;
+        font-size: .9em;
+        }
+        header nav ul {
+            margin-top: .25em;
+            margin-bottom: .25em;
+            padding: .7em;
+        }
+        header nav li {
+            display: flex;
+        }
+            @media all and (max-width:768px) {
+                header nav li {
+                    display: inline;
+                    margin-right: .5em;
+                }
+                header nav li:last-child::after {
+                    content: "✧";
+                    margin-left: .5em;
+                }
+            }
+        header nav li::before {
+            content: "✧";
+            margin-right: .5em;
+        }
+        
+        header nav a {
+            text-decoration: none;
+            padding: 0px 5px 3px 5px;
+        }
+
+main {
+    margin-right: auto;
+    width: 70%;
+}
+    @media all and (max-width:768px) {
+        main {
+            margin-left: auto;
+            margin-top: 5%;
+            width: 80%;
+        }
+    }
+    @media all and (max-width:500px) {
+        main {
+            width: fit-content;
+        }
+    }
+
+main > nav {
+    text-align: center;
+}
+    main > nav::before {
+        content: '⟵';
+        margin-right: .5em;
+    }
+
+article {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+article::before {
+    content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
+    display: block;
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: x-large;
+}
+article::after {
+    content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
+    display: block;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 1em;
+}
+    article ol {
+        margin-left: .5em;
+    }
+    article ol li::marker {
+        font-size: xx-large;
+        font-style: italic;
+    }
+    article ol li {
+        list-style-type: decimal-leading-zero;
+    }
+    article ol li span {
+        border-bottom: 1px solid;
+        font-size: large;
+    }
+    article ol li span::before {
+        content: '❝';
+        margin-right: .25em;
+    }
+    article ol li span::after {
+        content: '❞';
+        margin-left: .25em;
+    }
+    article ol li span a {
+        color: inherit;
+    }
+    article ol li time {
+        display: block;
+        font-size: smaller;
+        margin-top: .5em;
+    }
+    
+section {
+    border: 1px solid;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+}
+    section h2 {
+        background-color: rgba(110, 60, 139, 0.233);
+        padding: 1em;
+        margin-top: 0;
+        text-align: right;
+    }
+    section h3 {
+        padding: 1em;
+        background-color: rgba(216, 112, 147, 0.2);
+    }
+    section h4 {
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-bottom: .5em;
+        border-bottom: 1px solid;
+    }
+    
+    section ul {
+        margin-left: 2em;
+        margin-top: 0;
+    }
+    section li {
+        margin-bottom: 1em;
+    }
+
+section section {
+    border: none;
+}
+section section section {
+    padding-bottom: 0;
+}
+h3 ~ section {
+    padding-left: 1em;
+}
+h3 ~ p {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+h4 ~ section {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+h4 + section details {
+    padding-left: 2em;
+}
+
+#legend dt::before {
+    content: none;
+}
+#legend dd {
+    margin-left: 2.5em;
+}
+dt {
+    margin-top: 1em;
+    margin-bottom: .5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+dt::before {
+    content: '‧₊˚✩彡';
+    margin-right: .5em;
+}
+dd {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+details p {
+    margin-left: 3em;
+}
+
+footer {
+    margin-bottom: 2em;
+    width: 70%;
+    letter-spacing: .05em;
+    }
+    @media all and (max-width:768px) {
+        footer {
+            text-align: center;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    footer time {
+        font-weight: 600;
+    }
+    footer ul {
+        padding: 0;
+        list-style-type: none;
+        }
+        footer li:nth-child(1)::before {
+            content: none;
+        }
+        footer li::before {
+            content: "⬩";
+            font-size: 1.25em;
+            margin-right: 1em;
+        }
+        footer li {
+            display: inline;
+            margin-right: 1em;
+        }
+
+:root {
+    --dark-font: white;
+    --light-font: rgb(63, 48, 48);
+    --dark-bg: black;
+    --light-bg: rgb(232, 221, 235);
+    --light-bg-article: ghostwhite;
+    --dark-links: rgb(255, 166, 181);
+    --dark-links-hover: rgb(255, 234, 176);
+    --light-links: rgb(88, 24, 56);
+    --light-links-hover: rgb(140, 42, 221);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg);
+        color: var(--dark-font);
+        }
+    a {
+        color: var(--dark-links);
+    }
+}
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+}
+    .dark-mode a {
+        color: var(--dark-links);
+    }
+    .dark-mode a:hover {
+        color: black
+    }
+    .dark-mode section {
+        background-color: var(--dark-bg);
+    }
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color:  var(--light-bg);
+        color: var(--light-font);
+    } 
+    a {
+        color: var(--light-links);
+    }
+    section {
+        background-color: var(--light-bg-article);
+    }
+}
+.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-font);
+}
+    .light-mode a {
+        color: var(--light-links);
+    }
+    .light-mode a:hover {
+        color: black;
+    }
+    .light-mode section {
+        background-color: var(--light-bg-article);
+    }

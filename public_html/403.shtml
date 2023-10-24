@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>absolutely haram</title>
-    <link href="/assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/_assets/stylesheets/not_found.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
     <main>
@@ -12,11 +12,7 @@
       <p>
         not for your eyes, buddy.
       </p>
-      <nav>
-        <a href="/index.html">go back home</a>
-        <br>
-        <a href="/site-map.html">site map</a>
-      </nav>
+      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
     </main>
   </body>
 </html>
