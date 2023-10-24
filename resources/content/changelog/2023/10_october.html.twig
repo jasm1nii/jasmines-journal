@@ -1,0 +1,39 @@
+{% extends '/resources/layouts/changelog_layout.html.twig' %}
+
+{% set date = "october 2023" %}
+
+{% block changelog %}
+    <section>
+        <h3><time datetime="2023-10-04">4 october 2023</time></h3>
+        <ul>
+        <li>
+            tweaked scrollbar colors for webkit-based browsers.
+        </li>
+        <li>
+            styled the web rings section on the home page a bit more and enlarged the size of links for easier navigation.
+        </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-10-03">3 october 2023</time></h3>
+        <ul>
+            <li>
+                made text <span aria-hidden="true">✨</span> bigger! <span aria-hidden="true">✨</span>
+            </li>
+            <li>
+                other miscellaneous layout and accessibility fixes.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3><time datetime="2023-10-02">2 october 2023</time></h3>
+        <ul>
+            <li>
+                buttondown is blocked in indonesia now, so i've migrated newsletter services.
+            </li>
+            <li>
+                there is now a dedicated "subscribe" page.
+            </li>
+        </ul>
+    </section>
+{% endblock %}

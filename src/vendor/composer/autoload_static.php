@@ -125,6 +125,7 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/..' . '/js-transformer/js-transformer/src',
         1 => __DIR__ . '/..' . '/pug-php/pug/src',
+        2 => __DIR__ . '/..' . '/pug/twig/src',
     );
 
     public static $prefixesPsr0 = array (

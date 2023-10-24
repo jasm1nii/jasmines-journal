@@ -21,5 +21,5 @@ return array(
     'League\\Config\\' => array($vendorDir . '/league/config/src'),
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
     'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),
-    '' => array($vendorDir . '/js-transformer/js-transformer/src', $vendorDir . '/pug-php/pug/src'),
+    '' => array($vendorDir . '/js-transformer/js-transformer/src', $vendorDir . '/pug-php/pug/src', $vendorDir . '/pug/twig/src'),
 );

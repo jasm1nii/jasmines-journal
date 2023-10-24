@@ -1,7 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>{{ date }} change log | jasmine's journal</title>
         <meta name="description" content="updates to the website"/>
         <meta name="robots" content="noindex"/>
+        <link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
     </head>
+</html>
+<body>
+    <div class="layout">
+        <div>
+            <header>
+                <hgroup>
+                  <h1>jasmine's journal</h1>
+                </hgroup>
+                <nav>
+                    {{ include('/resources/includes/headernav.shtml') }}
+                </nav>
+            </header>
+        </div>
+        <div>
+            <main>
+                <article>
+                    <h2>change log</h2>
+                    {% block changelog %}
+                    {% endblock %}
+                </article>
+            </main>
+            <footer>
+                <nav>
+                    <a href="/about/changelog">⟵ return to change log index</a>
+                </nav>
+                {{ include('/resources/includes/footer.shtml') }}
+            </footer>
+        </div>
+    </div>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
+    </body>
 </html>

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ include('/public_html/assets/includes/head.shtml') }}
+    {{ include('/resources/includes/head.shtml') }}
 
     <title>{% if title is defined %}{{ title }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
 
-    <link rel="stylesheet" href="/_assets/stylesheets/style-4.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/_assets/stylesheets/article_entry.css" type="text/css" media="all"/>
 
     {% if custom_style == true %}
       <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
