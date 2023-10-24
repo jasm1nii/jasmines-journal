@@ -8,12 +8,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php include  __DIR__.'/../assets/includes/head.shtml'?>
+    <?php include dirname(__DIR__,2).'/resources/includes/head.shtml'?>
     <title>jasmine's b(rain)log</title>
     <meta name="description" content="my web of thoughts" />
     <meta name="author" content="jasm1nii" />
     <meta name="keywords" content="blog" />
-    <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
     <div id="layout">
@@ -25,7 +25,7 @@
                 <nav>
                     <?php
                         $nav = new DOMDocument;
-                        $nav->loadHTMLFile(__DIR__.'/../assets/includes/headernav.shtml');
+                        $nav->loadHTMLFile(dirname(__DIR__,2).'/resources/includes/headernav.shtml');
                         $blog_index = $nav->getElementById('blog');
                         $blog_subindex = $nav->createElement('ul');
                         $blog_index->appendChild($blog_subindex);
@@ -60,7 +60,7 @@
                     <div id="notes">
                         <article>
                             <div>
-                                <img src="/assets/media/main/oingo-boingo.png" alt="profile picture" class="u-photo" />
+                                <img src="/_assets/media/main/oingo-boingo.png" alt="profile picture" class="u-photo" />
                             </div>
                             <div>
                                 <h3 class="p-name">
@@ -92,7 +92,7 @@
                 </section>
                 <section class="subscribe">
                     <p>
-                        <a href="/blog/notes/">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
+                        <a href="/blog/notes">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
                     </p>
                 </section>
             </article>
@@ -105,17 +105,22 @@
                 </section>
                 <section class="subscribe">
                     <p>
-                        <a href="/blog/articles/">view archive</a> / subscribe via <a
-                            href="/blog/articles/articles.xml">atom</a>
+                        <a href="/blog/articles">view archive</a> / subscribe via <a href="/blog/articles/articles.xml">atom</a>
                     </p>
                 </section>
             </article>
         </main>
     </div>
     <footer>
-        <?php include  __DIR__.'/../assets/includes/footer.shtml'?>
+        <?php include dirname(__DIR__,2).'/resources/includes/footer.shtml'?>
     </footer>
-    <script src="/assets/scripts/articles-archive.js"></script>
-    <script src="/assets/scripts/theme-switcher-v2.js"></script>
+    <style>
+        #headernav #blog > a {
+            text-decoration: wavy underline;
+            text-underline-offset: .25em;
+        }
+    </style>
+    <script src="/_assets/scripts/articles-archive.js"></script>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
 </body>
 </html>

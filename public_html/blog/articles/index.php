@@ -3,28 +3,46 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <?php include  __DIR__.'/../../assets/includes/head.shtml'?>
+    <?php include dirname(__DIR__,3).'/resources/includes/head.shtml';?>
     <title>jasmine's b(rain)log</title>
     <meta name="description" content="my online diary"/>
-    <link href="/assets/stylesheets/style-10.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
     <div id="layout">
         <div class="sidebar">
             <header>
-                <div>
-                    <button id="themeToggle">
-                        switch theme
-                    </button>
-                    <noscript>
-                        <small>unavailable</small>
-                    </noscript>
+                <hgroup>
                     <h1>
                         jasmine's b(rain)log
                     </h1>
-                </div>
+                </hgroup>
                 <nav aria-label="primary">
-                    <?php include __DIR__.'/../../assets/includes/headernav.shtml'?>
+                    <?php
+                        $nav = new DOMDocument;
+                        $nav->loadHTMLFile(dirname(__DIR__,3).'/resources/includes/headernav.shtml');
+                        $blog_index = $nav->getElementById('blog');
+                        $blog_subindex = $nav->createElement('ul');
+                        $blog_index->appendChild($blog_subindex);
+
+                        $articles_index = $nav->createElement('li');
+                        $blog_subindex->appendChild($articles_index);
+                        $articles_a = $nav->createElement('a','articles');
+                        $articles_a_href = $nav->createAttribute('href');
+                        $articles_a_href->value = '/blog/articles';
+                        $articles_a->appendChild($articles_a_href);
+                        $articles_index->appendChild($articles_a);
+
+                        $notes_index = $nav->createElement('li');
+                        $blog_subindex->appendChild($notes_index);
+                        $notes_a = $nav->createElement('a','notes');
+                        $notes_a_href = $nav->createAttribute('href');
+                        $notes_a_href->value = '/blog/articles';
+                        $notes_a->appendChild($notes_a_href);
+                        $notes_index->appendChild($notes_a);
+
+                        echo $nav->saveHTML();
+                    ?>
                 </nav>
             </header>
         </div>
@@ -35,14 +53,16 @@
                         <h2>articles</h2>
                     </hgroup>
                     <ol reversed class="articles-list">
+                        <li>i broke something in the backend lol bear with me</li>
                         <?php
+                            /* lmao oops this wont work anymore with my twig templates
                             // references:
                                 // directory functions:
                                 // https://www.php.net/manual/en/book.dir.php
                                     // glob:
                                     // https://www.php.net/manual/en/function.glob.php
                             $dir = __DIR__.'/';
-                            foreach(array_reverse(glob($dir . '*/*/*/*.html')) as $entry) {
+                            foreach(array_reverse(glob($dir . the path)) as $entry) {
                                 $entry_content = file_get_contents($entry);
                                 $entry_dom = new DOMDocument;
                                 libxml_use_internal_errors(true);
@@ -62,6 +82,7 @@
                                     echo    '</li>';
                                 }
                             }
+                            */
                         ?>
                     </ol>
                 </section>
@@ -69,9 +90,14 @@
         </main>
     </div>
     <footer>
-        <?php include  __DIR__.'/../../assets/includes/footer.shtml'?>
+        <?php include dirname(__DIR__,3).'/resources/includes/footer.shtml'?>
     </footer>
-    <script src="index.js"></script>
-    <script src="/assets/scripts/theme-switcher.js"></script>
+    <style>
+        #headernav #blog li:first-child > a {
+            text-decoration: wavy underline;
+            text-underline-offset: .25em;
+        }
+    </style>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>
