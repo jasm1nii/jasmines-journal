@@ -4,19 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ include('/resources/includes/head.shtml') }}
-    <title>{% if published is defined %}{{ published }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
-    <link rel="stylesheet" href="/_assets/stylesheets/style-10.css" type="text/css" media="all"/>
+    <title>{{ published }} | jasmine's notes</title>
+    <link rel="stylesheet" href="/_assets/stylesheets/blog_index.css" type="text/css" media="all"/>
     {% if custom_style == true %}
       <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
     {% endif %}
-
-    {% if slug is defined %}
-      <link rel="canonical" href="https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
-      {% if publish_to_bridgy == true %}
-        <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
-      {% endif %}
+    <link rel="canonical" href="https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
+    {% if publish_to_bridgy == true %}
+      <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
     {% endif %}
-
     <meta name="author" content="jasmine"/>
     <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}microblog{% endif %}"/>
     <meta name="description" content="note from {{ published }}"/>
@@ -58,7 +54,7 @@
         <section id="comments">
           <h3>comments</h3>
           {% if enable_comments == true %}
-            <div id="comment-section" data-comments-id="blog-{{ published|date("Ymd") }}"></div>
+            <div id="comment-section" data-comments-id="notes-{{ published|date("Ymd") }}"></div>
           {% else %}
             <p>comments are disabled.</p>
           {% endif %}
