@@ -7,8 +7,11 @@
     use Twig\Extra\Markdown\MarkdownRuntime;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
-    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,1));
-    $twig = new \Twig\Environment($loader);
+    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,1),getcwd());
+    $twig = new \Twig\Environment($loader,[
+        'cache'=>dirname(__DIR__,1).'/resources/cache',
+        'auto_reload'=>true
+    ]);
     
     $twig->addExtension(new MarkdownExtension());
     $twig->addExtension(new IntlExtension());

@@ -149,6 +149,10 @@
               <div class="card">
                 <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
                 <div class="overflow">
+                  <h3><time datetime="2023-10-25">25 october 2023</time></h3>
+                  <ul>
+                    <li>huge overhaul of the backend - rewrote a lot of code in PHP and twig!</li>
+                  </ul>
                   <h3><time datetime="2023-10-11">12 october 2023</time></h3>
                   <ul>
                     <li>published my <a href="/accessibility">accessibility statement!</a></li>

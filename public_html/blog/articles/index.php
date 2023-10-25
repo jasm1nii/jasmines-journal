@@ -53,16 +53,17 @@
                         <h2>articles</h2>
                     </hgroup>
                     <ol reversed class="articles-list">
+                        <li>currently reworking the index script! sorry for the inconvenience!</li>
                         <?php
-                            require_once dirname(__DIR__,3).'/config/twig_default_config.php';
+                            /*require_once dirname(__DIR__,3).'/config/twig_default_config.php';
 
                             $source = dirname(__DIR__,3).'/resources/content/blog/articles';
 
                             $layout = "/resources/templates/blog/articles/articles_index.html.twig";
 
-                            foreach ((glob($source.'/*/*/*/*.twig')) as $article) {
+                            foreach ((glob($source.the twig files)) as $article) {
                                 echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout]);
-                            }
+                            }*/
                         ?>
                     </ol>
                 </section>

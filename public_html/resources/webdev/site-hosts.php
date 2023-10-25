@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--#include virtual="/assets/includes/head.shtml"-->
+    <?php include_once dirname(__DIR__,3).'/resources/includes/head.shtml'; ?>
     <title>jasmine's resources</title>
-    <link href="/assets/stylesheets/style-8.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/_assets/stylesheets/content_A3.css" rel="stylesheet" type="text/css" media="all"/>
     <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
   </head>
   <body>
     <header>
-        <button id="themeToggle" type="button">switch theme</button>
-        <noscript><small>unavailable</small></noscript>
-        <h1>site hosting services</h1>
-        <p>
-            last updated <time datetime="2023-08-15">15 august 2023</time>
-        </p>
+        <hgroup>
+            <h1>site hosting services</h1>
+            <p>
+                last updated <time datetime="2023-08-15">15 august 2023</time>
+            </p>
+        </hgroup>
+        <nav>
+            <a href="/resources/webdev">⟵ back to web development</a>
+        </nav>
     </header>
     <article>
-        <nav>
-            <a href="index.html">⟵ back to web development</a>
-        </nav>
         <section>
             <h2>static sites only</h2>
             <dl>
@@ -92,6 +92,6 @@
             <a href="index.html">⟵ back to web development</a>
         </nav>
     </footer>
-    <script src="/assets/scripts/theme-switcher.js"></script>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>
