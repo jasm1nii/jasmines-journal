@@ -14,15 +14,20 @@ RewriteRule ^(.*)  /%1%2 [R=302,L]
 RewriteCond %{REQUEST_URI} !(/$|\.) [NC]
 RewriteRule ^  %{REQUEST_URI}/ [R=302,L]
 
+RewriteBase /
+RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
+
+RewriteBase /blog/articles/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/articles/_router.php [L]
+
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
 
 RewriteCond %{HTTP_REFERER} lolcow.farm [NC,OR]
 RewriteCond %{HTTP_REFERER} pawoo.net [NC]
 RewriteRule .* - [F]
-
-RewriteBase /
-RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
 AddType text/html .shtml
 AddOutputFilter INCLUDES .shtml
