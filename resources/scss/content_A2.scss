@@ -25,6 +25,10 @@ a:hover {
     background-color: var(--links-hover-bg);
     color: black;
 }
+p, dl {
+    padding-left: 1em;
+    padding-right: 1em;
+}
 button {
     font: inherit;
     background-color: inherit;
@@ -35,6 +39,10 @@ button {
 button:hover {
     background-color: thistle;
     color: black;
+}
+#themeSwitch {
+    padding: .5em;
+    margin-bottom: 1em;
 }
 
 ::selection {
@@ -67,7 +75,9 @@ html {
 
 body {
     font-family: var(--font-1);
-    font-size: 1em;
+    font-size: 1.1em;
+    font-stretch: 95%;
+    line-height: 1.5em;
     max-width: fit-content;
     margin: auto;
     scrollbar-color: pink transparent;
@@ -93,23 +103,15 @@ body {
                 flex-direction: column;
             }
         }
-body > nav {
-    text-align: center;
-}
-body > nav:first-of-type {
-    margin-top: 3em;
-    margin-bottom: 1em;
-}
-body > nav:last-of-type {
-    margin-top: 1em;
-    margin-bottom: 5em;
-}
 header {
     margin-left: 3em;
     letter-spacing: .05em;
     align-self: flex-start;
     position: sticky;
     top: 2em;
+    & p {
+        padding-left: 0;
+    }
 }
     @media all and (max-width:768px) {
         header {
@@ -139,8 +141,8 @@ header {
         margin: auto;
         border-top: 1px solid;
         letter-spacing: .1em;
-        padding: .25em;
-        font-size: .9em;
+        padding: .5em;
+        font-size: 1em;
         }
         header nav ul {
             margin-top: .25em;
@@ -149,6 +151,7 @@ header {
         }
         header nav li {
             display: flex;
+            margin-bottom: 1em;
         }
             @media all and (max-width:768px) {
                 header nav li {
@@ -201,14 +204,6 @@ footer .subpage-nav a:first-child:before {
         main {
             width: fit-content;
         }
-    }
-
-main > nav {
-    text-align: center;
-}
-    main > nav::before {
-        content: '⟵';
-        margin-right: .5em;
     }
 
 article {
@@ -265,7 +260,7 @@ article::after {
     }
     
 section {
-    border: 1px solid;
+    border: 1px solid rgb(119, 61, 119);
     padding-bottom: 1em;
 }
     section h2 {
@@ -336,6 +331,7 @@ dt::before {
 dd {
     margin-left: 1em;
     margin-right: 1em;
+    margin-bottom: 2em;
 }
 details p {
     margin-left: 1em;

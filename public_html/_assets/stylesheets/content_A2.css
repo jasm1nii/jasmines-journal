@@ -30,6 +30,11 @@ a:hover {
   color: black;
 }
 
+p, dl {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 button {
   font: inherit;
   background-color: inherit;
@@ -41,6 +46,11 @@ button {
 button:hover {
   background-color: thistle;
   color: black;
+}
+
+#themeSwitch {
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
 
 ::-moz-selection {
@@ -81,7 +91,9 @@ html {
 
 body {
   font-family: var(--font-1);
-  font-size: 1em;
+  font-size: 1.1em;
+  font-stretch: 95%;
+  line-height: 1.5em;
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: auto;
@@ -111,26 +123,15 @@ body {
     flex-direction: column;
   }
 }
-body > nav {
-  text-align: center;
-}
-
-body > nav:first-of-type {
-  margin-top: 3em;
-  margin-bottom: 1em;
-}
-
-body > nav:last-of-type {
-  margin-top: 1em;
-  margin-bottom: 5em;
-}
-
 header {
   margin-left: 3em;
   letter-spacing: 0.05em;
   align-self: flex-start;
   position: sticky;
   top: 2em;
+}
+header p {
+  padding-left: 0;
 }
 
 @media all and (max-width: 768px) {
@@ -163,8 +164,8 @@ header nav {
   margin: auto;
   border-top: 1px solid;
   letter-spacing: 0.1em;
-  padding: 0.25em;
-  font-size: 0.9em;
+  padding: 0.5em;
+  font-size: 1em;
 }
 
 header nav ul {
@@ -175,6 +176,7 @@ header nav ul {
 
 header nav li {
   display: flex;
+  margin-bottom: 1em;
 }
 
 @media all and (max-width: 768px) {
@@ -230,15 +232,6 @@ footer .subpage-nav a:first-child:before {
     width: fit-content;
   }
 }
-main > nav {
-  text-align: center;
-}
-
-main > nav::before {
-  content: "⟵";
-  margin-right: 0.5em;
-}
-
 article {
   padding-bottom: 2em;
   padding-top: 2em;
@@ -302,7 +295,7 @@ article ol li time {
 }
 
 section {
-  border: 1px solid;
+  border: 1px solid rgb(119, 61, 119);
   padding-bottom: 1em;
 }
 
@@ -387,6 +380,7 @@ dt::before {
 dd {
   margin-left: 1em;
   margin-right: 1em;
+  margin-bottom: 2em;
 }
 
 details p {

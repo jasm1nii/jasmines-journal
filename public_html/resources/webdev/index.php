@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--#include virtual="/assets/includes/head.shtml"-->
+    <?php include_once dirname(__DIR__,3).'/resources/includes/head.shtml'; ?>
     <title>jasmine's resources</title>
-    <link href="/assets/stylesheets/style-7.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/_assets/stylesheets/content_A2.css" rel="stylesheet" type="text/css" media="all"/>
     <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
   </head>
   <body>
     <div id="layout">
         <header>
-            <button id="themeToggle" type="button">switch theme</button>
-            <noscript><small>unavailable</small></noscript>
-            <h1>jasmine's resources</h1>
-            <p>
-                page contents updated
-                <time datetime="2023-09-10">10 september 2023</time>
-            </p>
+            <hgroup>
+                <h1>jasmine's resources</h1>
+                <p>
+                    page contents updated
+                    <time datetime="2023-09-10">10 september 2023</time>
+                </p>
+            </hgroup>
             <nav>
-                <!--#include virtual="/assets/includes/headernav.shtml"-->
+                <?php include_once dirname(__DIR__,3).'/resources/includes/headernav.shtml'; ?>
             </nav>
         </header>
         <main>
@@ -233,14 +233,11 @@
 
                 </section>
             </article>
-            <nav>
-                <a href="/resources/">return to resources index</a>
-            </nav>
         </main>
     </div>
     <footer>
-        <!--#include virtual="/assets/includes/footer.shtml"-->
+        <?php include dirname(__DIR__,3).'/resources/includes/footer.shtml';?>
     </footer>
-    <script src="/assets/scripts/theme-switcher.js"></script>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>

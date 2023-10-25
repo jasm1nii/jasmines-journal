@@ -44,7 +44,6 @@ footer {
   text-align: center;
 }
 
-/**/
 a {
   background-color: transparent;
   transition: all 0.2s ease-out;
@@ -68,6 +67,12 @@ button {
 button:hover {
   background-color: thistle;
   color: black;
+}
+
+#themeSwitch {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1.1em;
 }
 
 ::-moz-selection {
@@ -108,8 +113,8 @@ html {
 
 body {
   font-family: var(--font-1);
-  font-size: 1em;
-  width: 90%;
+  font-size: 1.1em;
+  line-height: 1.5em;
   max-width: 800px;
   margin: auto;
   scrollbar-color: pink transparent;
@@ -188,8 +193,10 @@ header nav {
   margin: auto;
   border-top: 1px solid;
   letter-spacing: 0.1em;
-  padding: 0.25em;
+  padding: 1em;
   font-size: 0.9em;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 header nav ul {
@@ -240,15 +247,6 @@ main {
     width: fit-content;
   }
 }
-main > nav {
-  text-align: center;
-}
-
-main > nav::before {
-  content: "⟵";
-  margin-right: 0.5em;
-}
-
 article {
   padding-bottom: 2em;
   padding-top: 2em;
@@ -309,7 +307,7 @@ article ol li time {
 }
 
 section {
-  border: 1px solid;
+  border: 1px solid purple;
   padding-bottom: 1em;
   margin-bottom: 2em;
 }
