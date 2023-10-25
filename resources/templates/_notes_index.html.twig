@@ -1,0 +1,14 @@
+<article>
+    <div class="notes-format">
+        <div>
+          <img class="u-photo" alt="" src="/_assets/media/main/oingo-boingo.png"/>
+        </div>
+        <div class="h-entry">
+            <p class="e-content">
+                {% block content %}
+                {% endblock %}
+            </p>
+            <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="https://jasm1nii.xyz/blog/notes{{ slug }}">view post with comments</a>
+        </div>
+    </div>
+</article>

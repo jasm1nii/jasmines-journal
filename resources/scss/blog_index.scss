@@ -357,43 +357,37 @@ main > article {
     padding-bottom: .25em;
     margin-left: 0;
 }
-#notesArchive > article {
-    padding-top: .5em;
-    padding-bottom: 2em;
-}
-#notesArchive .notes-format {
+.notes-format {
     display: flex;
+    flex-direction: row;
     padding-top: 1em;
+    & .u-photo {
+        width: 50%;
+        max-width: 88px;
+        min-width: 70px;
+        border-radius: 50%;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        border: 1px solid;
+    }
+    & .h-entry {
+        flex-direction: column;
+        width: 100%;
+        & .e-content {
+            border-bottom: 1px dashed;
+            padding-bottom: 1em;
+            margin-top: 0;
+        }
+    }
+    & time {
+        margin-left: 0;
+        padding-left: 0;
+    }
 }
 @media all and (max-width:768px) {
-    #notesArchive .notes-format, #notes article {
+    .notes-format {
         flex-direction: column;
     }
-    #notes article {
-        margin-left: 0;
-    }
-}
-#notesArchive .u-photo {
-    width: 50%;
-    max-width: 88px;
-    min-width: 70px;
-    border-radius: 50%;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    border: 1px solid;
-}
-#notesArchive .h-entry {
-    flex-direction: column;
-    width: 100%;
-}
-#notesArchive .h-entry .e-content {
-    border-bottom: 1px dashed;
-    padding-bottom: 1em;
-    margin-top: 0;
-}
-.notes-entry article h2 time {
-    margin-left: 0;
-    padding-left: 0;
 }
 main::before {
     content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';

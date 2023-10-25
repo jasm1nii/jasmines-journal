@@ -47,9 +47,17 @@
         <main>
             <div>
                 <section>
-                    <p>
-                        currently reworking this page!
-                    </p>
+                    <?php
+                        require_once dirname(__DIR__,3).'/config/twig_default_config.php';
+
+                        $source = dirname(__DIR__,3).'/resources/content/blog/notes';
+
+                        $layout = "/resources/templates/_notes_index.html.twig";
+
+                        foreach ((glob($source.'/*/*/*/entry.html.twig')) as $article) {
+                            echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout]);
+                        }
+                    ?>
                 </section>
                 <section>
                     <p>
