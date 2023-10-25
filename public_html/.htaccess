@@ -17,15 +17,9 @@ RewriteRule ^  %{REQUEST_URI}/ [R=302,L]
 RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
-RewriteBase /blog/articles/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (articles)+ /blog/articles/_router.php [L]
-
-RewriteBase /blog/notes/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (notes)+ /blog/notes/_router.php [L]
+RewriteRule ^(.*) /_router.php [L]
 
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
