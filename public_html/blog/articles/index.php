@@ -61,7 +61,12 @@
                             $layout = "/resources/templates/_articles_index.html.twig";
 
                             foreach ((glob($source.'/*/*/*/entry.html.twig')) as $article) {
-                                echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout]);
+                                $content_path = ltrim($article,dirname(__DIR__,3));
+
+                                $slug_1 = rtrim($content_path,'.html.twig');
+                                $slug_2 = ltrim($slug_1,'/resources/content/blog/articles');
+
+                                echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout,'slug'=>$slug_2]);
                             }
                         ?>
                     </ol>
