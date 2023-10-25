@@ -44,6 +44,9 @@
 
         <section id="webmentions">
           <h3>webmentions</h3>
+          {% if webmentions_301 == true %}
+            <p>this post has moved to a new URL - webmentions from the previous one could not be carried over.</p>
+          {% endif %}
           {% if enable_webmentions == true %}
             {{ include('/resources/includes/webmentions-module.shtml') }}
           {% else %}
