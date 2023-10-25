@@ -1,0 +1,111 @@
+{% extends layout %}
+
+{% set title = 'tummy treats' %}
+
+{% set summary = 'a short food post!' %}
+
+{% set keywords = 'blog, food' %}
+
+{% set published = '26 september 2023' %}
+
+{% block content %}
+    <section>
+    <p>
+      what's cookin'? 🍳
+    </p>
+    <p>
+      a little intermezzo - if you haven't noticed already, i changed the typeface for my blog entries! 
+    </p>
+    <p>
+      <details>
+        <summary>why the change?</summary>
+        <p>
+      in short, i wanted the "tone" of my published writing to match that of my drafts.
+        </p>
+        <p>
+      i started experimenting with monospace type for writing in notion and obsidian some time ago, and the difference was night and day. perhaps this is due to the more "polished" appearance of sans serif type&shy;faces, but allowing my personal thoughts to flow onto the page felt... <em>much</em> harder, for some reason. and while i quite like instrument sans - which is the typeface that i used before (and still use for the rest of my website) - my thinking just didn't read back as naturally to me.
+        </p>
+      </details>
+    </p>
+    </section>
+    <hr>
+    <section>
+        <p>
+            anyways...! i wanted to post something easy this time around and talk about something other than webmastery, so here's a mini food log of my meals from the past few weeks!
+        </p>
+        <section class="scrapbook">
+        <section>
+            <section>
+                <h3>5 august</h3>
+                <h4>chicken fried rice 🌶</h4>
+                <p>current the most frequently ordered item 👑</p>
+            </section>
+            <img src="{{ src }}IMG_20230805_185717_compressed.webp" alt="fried rice"/>
+        </section>
+        <section>
+            <section>
+                <h3>25 august</h3>
+                <h4>rice porridge 🌶</h4>
+                <h5>toppings</h5>
+                <ul>
+                    <li>shredded chicken</li>
+                    <li>hard-boiled egg</li>
+                    <li>chopped scallion (fresh & fried)</li>
+                    <li>fried peanuts</li>
+                    <li>sweet soy sauce</li>
+                    <li>chili sauce</li>
+                </ul>
+            </section>
+            <img src="{{ src }}IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/>
+        </section>
+        <section>
+            <section>
+                <h3>30 august</h3>
+                <h4>mcdonald's</h4>
+                <h5>order menu</h5>
+                <ul>
+                    <li>special balado burger 🌶🌶🌶 (it's even more orange in real life) - too spicy, never ordering again!</li>
+                    <li>medium fries</li>
+                    <li>tamarind soda 👍</li>
+                </ul>
+            </section>
+            <div>
+                <img src="{{ src }}IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/>
+                <img src="{{ src }}IMG_20230830_160844_compressed.webp" alt="french fries with soda"/>
+            </div>
+        </section>
+        <section>
+            <section>
+                <h3>5 september</h3>
+                <h4>A&W</h4>
+                <h5>order menu</h5>
+                <ul>
+                    <li>mango veggie pocket*</li>
+                    <li>curly fries</li>
+                    <li>soft serve ice cream*</li>
+                </ul>
+                <p><small>* not pictured, because i was super hungry.</small></p>
+            </section>
+            <img src="{{ src }}IMG_20230905_164554_compressed.webp" alt="A&W curly fries"/>
+        </section>
+        <section>
+            <section>
+                <h3>15 september</h3>
+                <h4>mixue kiwi smoothie sundae 👍</h4>
+                <p>so citrusy and fresh 😋</p>
+            </section>
+            <img src="{{ src }}IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/>
+        </section>
+        </section>
+    </section>
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style = true %}
+
+{% set publish_to_bridgy = false %}
+
+{% set enable_webmentions = true %}
+
+{% set enable_comments = true %}

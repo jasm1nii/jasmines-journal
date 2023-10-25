@@ -46,13 +46,11 @@
         </div>
         <main>
             <div>
-                <noscript>
-                    <section>
-                        <p>
-                            sorry, this archive uses javascript to render the feed from an XML file - <a href="/blog/notes/notes.xml">read its contents here</a>.
-                        </p>
-                    </section>
-                </noscript>
+                <section>
+                    <p>
+                        currently reworking this page!
+                    </p>
+                </section>
                 <section>
                     <p>
                         subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
@@ -65,8 +63,6 @@
     <footer>
         <?php include dirname(__DIR__,3).'/resources/includes/footer.shtml'?>
     </footer>
-    <script src="index.js"></script>
-    <script src="/_assets/scripts/notes-archive.js"></script>
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>

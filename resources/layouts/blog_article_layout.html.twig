@@ -10,18 +10,15 @@
     <link rel="stylesheet" href="/_assets/stylesheets/article_entry.css" type="text/css" media="all"/>
 
     {% if custom_style == true %}
-      <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+      <link rel="stylesheet" href="/_assets/stylesheets/{{ slug|trim('/entry', 'right') }}/style.css" type="text/css" media="all"/>
     {% endif %}
 
-    {% if slug is defined %}
-      <link rel="canonical" href="https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
-      {% if publish_to_bridgy == true %}
-        <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
-      {% endif %}
+    <link rel="canonical" href="https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
+    {% if publish_to_bridgy == true %}
+      <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
     {% endif %}
 
     <meta name="author" content="jasmine"/>
-
     <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}blog{% endif %}"/>
 
     {% if summary is defined %}

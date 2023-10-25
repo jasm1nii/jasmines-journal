@@ -4,6 +4,8 @@
     $url_slug = rtrim($request,'/');
 
     $content = '/resources/content'.$url_slug.'.html.twig';
+
+    $image_root = '/_assets/media'.rtrim($url_slug,'/entry').'/';
     
     $source = dirname(__DIR__,3).$content;
 
@@ -12,8 +14,8 @@
 
         $layout = $twig->load('/resources/layouts/blog_article_layout.html.twig');
 
-        echo $twig->render($content,['layout'=>$layout]);
+        echo $twig->render($content,['layout'=>$layout,'slug'=>$url_slug, 'src'=>$image_root]);
     } else {
-        echo 'not here';
+        http_response_code(404);
     }
 ?>
