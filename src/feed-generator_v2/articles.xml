@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
+    <title>jasmine's b(rain)log | jasm1nii.xyz</title>
+    <subtitle>blog articles by jasmine</subtitle>
+    <updated>2023-10-26T14:55:07+07:00</updated>
+    <id>https://jasm1nii.xyz/blog/articles</id>
+    <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/blog/articles/articles.xml"/>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
+    <author>
+        <name>jasmine</name>
+        <email>contact@jasm1nii.xyz</email>
+        <uri>https://jasm1nii.xyz/</uri>
+    </author>
+    <rights>© 2023 - jasmine amalia</rights>
+    <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
+    <logo>https://jasm1nii.xyz/assets/media/main/07042023-me_compressed.webp</logo>    
+    <entry>
+        <title>tummy treats</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/9/26/entry</id>
+        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/articles/2023/9/26/entry"/>
+        <updated>2023-09-26T00:00:00+07:00</updated>
+        <published>2023-09-26T00:00:00+07:00</published>
+        <summary>a short food post!</summary>
+    </entry>    
+    <entry>
+        <title>bye neocities (part 2)</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/17/entry</id>
+        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/articles/2023/8/17/entry"/>
+        <updated>2023-08-18T00:00:00+07:00</updated>
+        <published>2023-08-17T00:00:00+07:00</published>
+        <summary>new beginnings</summary>
+    </entry>    
+    <entry>
+        <title>bye neocities</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/12/entry</id>
+        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/articles/2023/8/12/entry"/>
+        <updated>2023-08-12T00:00:00+07:00</updated>
+        <published>2023-08-12T00:00:00+07:00</published>
+        <summary>an unexpected change</summary>
+    </entry>    
+    <entry>
+        <title>parroting a broken record held together by elmer&#039;s glue</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/09/entry</id>
+        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/articles/2023/8/09/entry"/>
+        <updated>2023-08-09T00:00:00+07:00</updated>
+        <published>2023-08-09T00:00:00+07:00</published>
+        <summary>a first post</summary>
+    </entry>
+</feed>
