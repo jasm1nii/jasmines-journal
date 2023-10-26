@@ -1,48 +1,55 @@
 <?php
     $request = $_SERVER['REQUEST_URI'];
-    $_404 = __DIR__.'/404.shtml';
+    function _404() {
+        http_response_code(404);
+        require_once __DIR__.'/404.shtml';
+    }
 
     $twig_settings = dirname(__DIR__,1).'/config/twig_default_config.php';
 
-    $url_slug = rtrim($request,'/');
-    $content = '/resources/content'.$url_slug.'.html.twig';
-    $image_root = '/_assets/media'.rtrim($url_slug,'/entry').'/';
-    $source = dirname(__DIR__,1).$content;
-
     switch ($request) {
-        case str_contains($request,'/blog/articles/'):
-            if (file_exists($source)) {
-                require_once $twig_settings;
+        case str_contains($request,'/'.'blog/'):
+            $slug = rtrim($request,'/');
+            $blog_content = '/resources/content'.$slug.'.html.twig';
+            $document_source = dirname(__DIR__,1).$blog_content;
+            $media_source = '/_assets/media'.rtrim($slug,'/entry').'/';
 
-                $layout = $twig->load('/resources/layouts/blog_article_layout.html.twig');
+            $article_layout = '/resources/layouts/blog_article_layout.html.twig';
+            $note_layout = '/resources/layouts/blog_note_layout.html.twig';
 
-                echo $twig->render($content,['layout'=>$layout,'slug'=>$url_slug, 'src'=>$image_root]);
-
-            } else {
-                http_response_code(404);
-                require_once $_404;
-
+            if (str_contains($request,'/'.'articles/')) {
+                if (file_exists($document_source)) {
+                    require_once $twig_settings;
+                    $layout = $twig->load($article_layout);
+                    echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
+                } else {
+                    _404();
+                }
             }
-
+            if (str_contains($request,'/'.'notes/')) {
+                if (file_exists($document_source)) {
+                    require_once $twig_settings;
+                    $layout = $twig->load($note_layout);
+                    echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
+                } else {
+                    _404();
+                }
+            }
             break;
 
-        case str_contains($request, '/blog/notes/');
-            if (file_exists($source)) {
+        case str_contains($request, '/about/changelog/');
+            $path_1 = ltrim($request,'/about');
+            $path_2 = rtrim($path_1,'/');
+            $document_source = dirname(__DIR__,1).'/resources/content/'.$path_2.'.html.twig';
+            if (file_exists($document_source)) {
                 require_once $twig_settings;
-        
-                $layout = $twig->load('/resources/layouts/blog_note_layout.html.twig');
-        
-                echo $twig->render($content,['layout'=>$layout,'slug'=>$url_slug, 'src'=>$image_root]);
-
+                echo $twig->render('/resources/content/'.$path_2.'.html.twig');
             } else {
-                http_response_code(404);
-                require_once $_404;
+                _404();
             }
-
             break;
 
         default:
-           http_response_code(404);
-           require_once $_404;
-   }   
+            _404();
+   }
 ?>

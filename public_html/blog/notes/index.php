@@ -54,7 +54,10 @@
 
                         $layout = "/resources/templates/_notes_index.html.twig";
 
-                        foreach ((glob($source.'/*/*/*/entry.html.twig')) as $article) {
+                        $files = glob($source."/*/*/*/entry.html.twig");
+                        asort($files, SORT_NATURAL);
+
+                        foreach (array_reverse($files) as $article) {
                             $content_path = ltrim($article,dirname(__DIR__,3));
 
                             $slug_1 = rtrim($content_path,'.html.twig');

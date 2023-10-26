@@ -60,13 +60,16 @@
 
                             $layout = "/resources/templates/_articles_index.html.twig";
 
-                            foreach ((glob($source.'/*/*/*/entry.html.twig')) as $article) {
+                            $files = glob($source."/*/*/*/entry.html.twig");
+                            asort($files, SORT_NATURAL);
+
+                            foreach (array_reverse($files) as $article) {
                                 $content_path = ltrim($article,dirname(__DIR__,3));
 
                                 $slug_1 = rtrim($content_path,'.html.twig');
                                 $slug_2 = ltrim($slug_1,'/resources/content/blog/articles');
 
-                                echo $twig->render(ltrim($article,dirname(__DIR__,3)), ['layout'=>$layout,'slug'=>$slug_2]);
+                                echo $twig->render($content_path, ['layout'=>$layout,'slug'=>$slug_2]);
                             }
                         ?>
                     </ol>
