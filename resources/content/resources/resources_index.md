@@ -1,0 +1,85 @@
+## [art & design](/resources/art-design)
+
+## [organization & productivity](/resources/organization-productivity)
+
+## [web development](/resources/webdev)
+
+## blogging platforms
+
+- [multiverse](https://multiverse.plus/) 👑
+
+    **note:** as of july 2023, the service is no longer actively maintained. some functionality has been known to be broken at the time of writing.
+
+    compose scrapbook-style posts that can be exported to SVG and PNG image formats.
+
+- [thoughts.page](https://thoughts.page/)
+
+    post microblogs to your own feed that's private by default.
+
+- [bear blog](https://bearblog.dev/)
+
+    a blazingly fast and minimal blogging platform.
+
+- [write.as](https://write.as/)
+
+    another aesthetically clean publishing service that allows users to post anonymously without an account.
+
+- [write.freely](https://writefreely.org/)
+
+    the self-hosted version of write.as - requires your own server and some technical knowledge to set up.
+
+## wellness
+
+- [finch](https://app.befinch.com/share/cnYR) 👑 ⭐
+
+    a virtual pet for your mental health!
+
+    <details>
+    <summary>
+        referral code for cute bonus items~
+    </summary>
+    <p>
+        AJGZGGHH58
+    </p>
+    </details>
+    &nbsp;
+
+- [yoga with adriene](https://www.youtube.com/user/yogawithadriene) 👑
+
+    <details>
+    <summary>
+        yoga practice videos and guided meditations for all levels.
+    </summary>
+    <p>
+        this channel was one of the first i was exposed to when starting my health journey early in the pandemic. i absolutely <em>hated</em> exercise before then, but adriene's videos made movement so much more joyful for me.
+    </p>
+    </details>
+    &nbsp;
+
+- [hybrid calisthenics](https://www.youtube.com/@HybridCalisthenics)
+
+    another youtube channel with a really wholesome approach to staying fit over the long term - mostly strength-focused exercises.
+
+## neurodiversity
+
+- [public neurodiversity support center](https://coda.io/@mykola-bilokonsky/public-neurodiversity-support-center)
+
+    a wealth of information on different neurotypes, from plurality to ADHD - also offers coaching and counselling.
+
+- [embrace autism](https://embrace-autism.com/autism-tests/)
+
+    resources for autistic adults, curated by autistics.
+
+## miscellaneous
+
+- <a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="sponsored">dropbox</a> ⭐
+
+    if you don't have an account yet, sign up via referral link and download the desktop app to bump up your free storage limit by 500 MB <span aria-hidden="true">૮ ˶ᵔ ᵕ ᵔ˶ ა</span>
+
+- [your world of text](https://www.yourworldoftext.com/)
+
+    a site for freeform text posting.
+
+- [fraidycat](https://fraidyc.at/)
+
+    follow anyone from almost any major social media service without an account.

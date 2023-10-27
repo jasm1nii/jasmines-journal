@@ -19,10 +19,10 @@ a {
     transition: all 0.2s ease-out;
     text-decoration: none;
     font-weight: 600;
-}
-a:hover {
-    background-color: var(--links-hover-bg);
-    color: black;
+    &:hover {
+        background-color: var(--links-hover-bg);
+        color: black;
+    }
 }
 button {
     font: inherit;
@@ -30,44 +30,21 @@ button {
     color: inherit;
     border: 1px solid;
     cursor: pointer; 
-}
-button:hover {
-    background-color: thistle;
-    color: black;
+    &:hover {
+        background-color: thistle;
+        color: black;
+    }
 }
 #themeSwitch {
     padding: .5em;
     margin-bottom: 1em;
 }
 
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
-hr {
-    border: 1px dashed pink;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-::-webkit-scrollbar {
-    width: .4em;
-    height: .4em;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: pink;
-    border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-    background-color: plum;
-    }
-
 html {
     scrollbar-color: rgb(184, 140, 184) transparent;
     scrollbar-width: thin;
     text-rendering: optimizeLegibility;
 }
-
 body {
     font-family: var(--font-1);
     font-size: 1.1em;
@@ -80,34 +57,22 @@ body {
     animation: fadeIn .5s;
     animation-fill-mode: forwards;
     transition: all 0.25s ease-out;
+}
+#layout {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+@media all and (max-width:768px) {
+    body {
+        width: fit-content;
     }
-        @media all and (max-width:768px) {
-            body {
-                width: fit-content;
-            }
-        }
     #layout {
-        margin-top: 5%;
-        display: flex;
-        flex-direction: row-reverse;
+        margin-top: 0;
+        flex-direction: column;
     }
-        @media all and (max-width:768px) {
-            #layout {
-                margin-top: 0;
-                flex-direction: column;
-            }
-        }
-body > nav {
-    text-align: center;
 }
-body > nav:first-of-type {
-    margin-top: 3em;
-    margin-bottom: 1em;
-}
-body > nav:last-of-type {
-    margin-top: 1em;
-    margin-bottom: 5em;
-}
+
 header {
     max-width: 12em;
     margin-left: 1em;
@@ -115,94 +80,73 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 2em;
-}
-    @media all and (max-width:768px) {
-        header {
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 5%;
-            position: relative;
-        }
-    }
-    header > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-        @media all and (max-width:768px) {
-            #themeToggle {
-                height: fit-content;
-            }
-        }
-    header h1 {
+    & h1 {
         font-size: 1.5em;
     }
-    header time {
+    & time {
         font-weight: 600;
         display: block;
     }
-
-    header nav {
+    & nav {
         margin: auto;
         border-top: 1px solid;
         letter-spacing: .1em;
         padding: .25em;
         font-size: .9em;
-        }
-        header nav ul {
+        & ul {
             margin-top: .25em;
             margin-bottom: .25em;
             padding: .7em;
         }
-        header nav li {
+        & li {
             display: flex;
             margin-bottom: .5em;
+            &::before {
+                content: "✧";
+                margin-right: .5em;
+            } 
         }
-            @media all and (max-width:768px) {
-                header nav li {
-                    display: inline;
-                    margin-right: .5em;
-                }
-                header nav li:last-child::after {
-                    content: "✧";
-                    margin-left: .5em;
-                }
-            }
-        header nav li::before {
-            content: "✧";
-            margin-right: .5em;
-        }
-        
-        header nav a {
+        & a {
             text-decoration: none;
             padding: 0px 5px 3px 5px;
         }
-
-footer .subpage-nav {
-    justify-content: space-between;
-    display: flex;
+    }
 }
-    @media all and (max-width:500px) {
-        footer .subpage-nav {
+@media all and (max-width:768px) {
+    header {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        position: relative;
+        & nav li {
             display: inline;
+            margin-right: .5em;
+            &:last-child::after {
+                content: "✧";
+                margin-left: .5em;
             }
-        footer .subpage-nav a {
-            margin-right: 2em;
-            margin-left: 2em;
-            line-height: 2.5em;
         }
     }
-footer .subpage-nav a:first-child:before {
-    content: '⟵';
-    margin-right: .5em;
 }
 
 main {
     margin-right: auto;
     width: 70%;
+    &::before {
+        content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
+        display: block;
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: x-large;
+    }
+    &::after {
+        content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
+        display: block;
+        text-align: center;
+        font-size: x-large;
+        margin-top: 2em;
+    }
 }
     @media all and (max-width:768px) {
         main {
@@ -217,132 +161,23 @@ main {
         }
     }
 
-main > nav {
-    text-align: center;
-}
-    main > nav::before {
-        content: '⟵';
-        margin-right: .5em;
-    }
-
 article {
     padding: 1em;
+    border: 1px solid rgb(143, 117, 143);
+    & ul {
+        margin-bottom: 2em;
+    }
 }
-article > h1 {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2em;
+h2 {
+    background-color: rgba(110, 60, 139, 0.233);
+    padding: 1em;
+    margin-top: 0;
 }
-    @media all and (max-width:768px) {
-        article > h1 { text-align: center; }
-    }
-article::before {
-    content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
-    display: block;
-    text-align: center;
-    margin-bottom: 2em;
-    font-size: x-large;
+h2:nth-of-type(2n), section:nth-child(2n) h2 {
+    text-align: right;
 }
-article::after {
-    content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
-    display: block;
-    text-align: center;
-    font-size: x-large;
-}
-    article ol {
-        margin-left: .5em;
-    }
-    article ol li::marker {
-        font-size: xx-large;
-        font-style: italic;
-    }
-    article ol li {
-        list-style-type: decimal-leading-zero;
-    }
-    article ol li span {
-        border-bottom: 1px solid;
-        font-size: large;
-    }
-    article ol li span::before {
-        content: '❝';
-        margin-right: .25em;
-    }
-    article ol li span::after {
-        content: '❞';
-        margin-left: .25em;
-    }
-    article ol li span a {
-        color: inherit;
-    }
-    article ol li time {
-        display: block;
-        font-size: smaller;
-        margin-top: .5em;
-    }
-section {
-    margin-bottom: 1.5em;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 5%;
-}
-    section h2 {
-        background-color: rgba(110, 60, 139, 0.233);
-        padding: 1em;
-        margin-top: 0;
-    }
-    section + h2 {
-        border: 1px solid;
-    }
-    section:nth-child(2n) h2 {
-        text-align: right;
-    }
-    article > section > h2:nth-of-type(2n) {
-        text-align: right;
-    }
-    section section {
-        padding: 0;
-    }
-    section h3 {
-        padding: 1em;
-        background-color: rgba(216, 112, 147, 0.2);
-    }
-    section section p {
-        margin-left: 1em;
-    }
-    section h4 {
-        margin-left: 1em;
-        margin-right: 1em;
-        padding-bottom: .5em;
-        border-bottom: 1px solid;
-    }
-    section ul {
-        margin-left: 2em;
-        margin-top: 0;
-    }
-    section li {
-        margin-bottom: 1em;
-    }
-
-#legend dt::before {
-    content: none;
-}
-#legend dd {
-    margin-left: 2.5em;
-}
-dt {
-    margin-top: 1em;
-    margin-bottom: .5em;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-dt::before {
-    content: '‧₊˚✩彡';
-    margin-right: .5em;
-}
-dd {
-    margin-left: 1em;
-    margin-right: 1em;
+h3 {
+    background-color: rgba(216, 112, 147, 0.2);
 }
 details p {
     margin-left: 3em;
@@ -355,35 +190,36 @@ footer {
     width: 70%;
     letter-spacing: .05em;
     border-top: 1px solid;
-    }
-    @media all and (max-width:768px) {
-        footer {
-            text-align: center;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            border: none;
-        }
-    }
-    footer time {
+    & time {
         font-weight: 600;
     }
-    footer ul {
+    & ul {
         padding: 0;
         list-style-type: none;
-        }
-        footer li:nth-child(1)::before {
+    }
+    & li {
+        display: inline-block;
+        margin-right: 1em;
+        &:nth-child(1)::before {
             content: none;
         }
-        footer li::before {
+        &::before {
             content: "⬩";
             font-size: 1.25em;
             margin-right: 1em;
         }
-        footer li {
-            display: inline-block;
-            margin-right: 1em;
-        }
+    }
+}
+
+@media all and (max-width:768px) {
+    footer {
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+    }
+}
 
 :root {
     --dark-font: white;
@@ -397,51 +233,77 @@ footer {
     --light-links-hover: rgb(140, 42, 221);
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--dark-bg);
-        color: var(--dark-font);
-        }
-    a {
-        color: var(--dark-links);
-    }
-}
-.dark-mode {
+@mixin dark-mode-body {
     background-color: var(--dark-bg);
     color: var(--dark-font);
 }
-    .dark-mode a {
-        color: var(--dark-links);
-    }
-    .dark-mode a:hover {
-        color: black
-    }
-    .dark-mode section {
+@mixin dark-mode {
+    article {
         background-color: var(--dark-bg);
     }
+    a {
+        color: var(--dark-links);
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
+}
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
+    color: var(--light-font);
+}
+@mixin light-mode {
+    article {
+        background-color: var(--light-bg-article);
+    }
+    a {
+        color: var(--light-links);
+        &:hover {
+            color: black;
+        }
+    }
+}
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color:  var(--light-bg);
-        color: var(--light-font);
+        @include light-mode-body();
     } 
-    a {
-        color: var(--light-links);
-    }
-    section {
-        background-color: var(--light-bg-article);
-    }
+    @include light-mode();
 }
 .light-mode {
-    background-color: var(--light-bg);
-    color: var(--light-font);
+    @include light-mode-body();
+    @include light-mode();
 }
-    .light-mode a {
-        color: var(--light-links);
+
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+::-webkit-scrollbar {
+    width: .4em;
+    height: .4em;
     }
-    .light-mode a:hover {
-        color: black;
+    ::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
     }
-    .light-mode section {
-        background-color: var(--light-bg-article);
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
     }
