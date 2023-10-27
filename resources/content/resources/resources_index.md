@@ -14,7 +14,7 @@ view this section at [/resources/webdev](/resources/webdev)
 
 - [multiverse](https://multiverse.plus/) 👑
 
-    **note:** as of july 2023, the service is no longer actively maintained. some functionality has been known to be broken at the time of writing.
+    **note:** as of july 2023, the service is no longer actively maintained. some functionality is known to be impaired at the time of writing.
 
     compose scrapbook-style posts that can be exported to SVG and PNG image formats.
 
