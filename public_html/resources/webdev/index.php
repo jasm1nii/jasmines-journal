@@ -57,7 +57,7 @@
                                     <details>
                                         <summary>what are static websites?</summary>
                                         <p>
-                                            <dfn>static sites</dfn> are made with client-side languages, such as HTML, CSS, and javascript. they display the same content to every user, and can only be changed by editing each individual page, unlike <i><a href="https://blog.hubspot.com/website/static-vs-dynamic-website" rel="external">dynamic sites</a></i>.
+                                            <dfn>static sites</dfn> are made with client-side languages, such as HTML, CSS, and javascript, and they display the same content to every user. in general, their contents can only be changed by editing each individual page, unlike <i><a href="https://blog.hubspot.com/website/static-vs-dynamic-website" rel="external">dynamic sites</a></i>.
                                         </p>
                                     </details>
                                     <p>
@@ -220,7 +220,7 @@
                                 <dd>
                                     a community of personal web enthusiasts - they also run a <a href="https://32bit.cafe/discord/">discord server</a>! <b>18+ only, SFW</b>
                                     <br><br>
-                                    <a href="https://32bit.cafe/discord/" rel="external"><img src="../../assets/media/resources/32b-win9x.png" alt="32-bit cafe button"></a>
+                                    <a href="https://32bit.cafe/discord/" rel="external"><img src="/_assets/media/resources/32b-win9x.png" alt="32-bit cafe button"></a>
                                 </dd>
                                 <dt><a href="https://tinytools.directory/">tiny tools</a></dt>
                                 <dd>

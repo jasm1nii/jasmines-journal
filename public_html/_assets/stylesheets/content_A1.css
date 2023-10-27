@@ -40,11 +40,6 @@ button:hover {
   color: black;
 }
 
-#themeSwitch {
-  padding: 0.5em;
-  margin-bottom: 1em;
-}
-
 html {
   scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
@@ -69,7 +64,7 @@ body {
   margin-top: 5%;
   display: flex;
   flex-direction: row-reverse;
-  max-width: 1300px;
+  max-width: 1100px;
 }
 
 #left-col-group {
@@ -78,12 +73,13 @@ body {
 }
 
 #guide {
-  margin-right: 2.5%;
+  margin-right: 5%;
   margin-bottom: 5% !important;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 #guide h2 {
   background-color: transparent !important;
-  text-decoration: underline;
   padding-left: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -139,6 +135,10 @@ body {
   }
 }
 header {
+  display: flex;
+  flex-direction: column;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   margin-left: 5%;
   align-self: flex-start;
   position: sticky;
@@ -153,7 +153,6 @@ header time {
   display: block;
 }
 header nav {
-  margin: auto;
   border-top: 1px solid;
   border-bottom: 1px solid;
   letter-spacing: 0.1em;
@@ -177,6 +176,14 @@ header nav a {
   padding: 0px 5px 3px 5px;
 }
 
+#themeSwitch {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  width: -moz-fit-content;
+  width: fit-content;
+  order: -1;
+}
+
 @media all and (max-width: 768px) {
   header {
     max-width: 80%;
@@ -193,6 +200,9 @@ header nav a {
   header nav li:last-child::after {
     content: "✧";
     margin-left: 0.5em;
+  }
+  #themeSwitch {
+    margin-left: auto;
   }
 }
 @media all and (min-width: 1100px) {
@@ -213,7 +223,6 @@ header nav a {
   }
 }
 article {
-  padding: 1em;
   border: 1px solid rgb(143, 117, 143);
   line-height: 1.5em;
 }
@@ -252,8 +261,7 @@ main h2:not(#legend h2) + p::before {
 #legend {
   padding: 1em 2em;
   margin-bottom: 1em;
-  background-color: rgba(255, 192, 203, 0.178);
-  border: 1px dashed rgb(148, 126, 148);
+  border: 2px dashed rgb(141, 102, 141);
 }
 #legend h2 {
   font-size: 1.2em;
@@ -329,7 +337,7 @@ footer li::before {
     background-color: var(--dark-bg);
     color: var(--dark-font);
   }
-  article {
+  article, #legend {
     background-color: var(--dark-bg);
   }
   a {
@@ -343,7 +351,7 @@ footer li::before {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
-.dark-mode article {
+.dark-mode article, .dark-mode #legend {
   background-color: var(--dark-bg);
 }
 .dark-mode a {
@@ -358,7 +366,7 @@ footer li::before {
     background-color: var(--light-bg);
     color: var(--light-font);
   }
-  article {
+  article, #legend {
     background-color: var(--light-bg-article);
   }
   a {
@@ -372,7 +380,7 @@ footer li::before {
   background-color: var(--light-bg);
   color: var(--light-font);
 }
-.light-mode article {
+.light-mode article, .light-mode #legend {
   background-color: var(--light-bg-article);
 }
 .light-mode a {

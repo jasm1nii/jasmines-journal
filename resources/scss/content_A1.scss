@@ -34,10 +34,6 @@ button {
         color: black;
     }
 }
-#themeSwitch {
-    padding: .5em;
-    margin-bottom: 1em;
-}
 
 html {
     scrollbar-color: rgb(184, 140, 184) transparent;
@@ -61,18 +57,18 @@ body {
     margin-top: 5%;
     display: flex;
     flex-direction: row-reverse;
-    max-width: 1300px;
+    max-width: 1100px;
 }
 #left-col-group {
     display: flex;
     flex-direction: row;
 }
 #guide {
-    margin-right: 2.5%;
+    margin-right: 5%;
     margin-bottom: 5% !important;
+    max-width: fit-content;
     & h2 {
         background-color: transparent !important;
-        text-decoration: underline;
         padding-left: 0 !important;
         padding-bottom: 0 !important;
     }
@@ -129,6 +125,9 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
     margin-left: 5%;
     align-self: flex-start;
     position: sticky;
@@ -142,7 +141,6 @@ header {
         display: block;
     }
     & nav {
-        margin: auto;
         border-top: 1px solid;
         border-bottom: 1px solid;
         letter-spacing: .1em;
@@ -166,6 +164,12 @@ header {
         }
     }
 }
+#themeSwitch {
+    padding: .5em;
+    margin-bottom: 1em;
+    width: fit-content;
+    order: -1;
+}
 @media all and (max-width:768px) {
     header {
         max-width: 80%;
@@ -182,6 +186,9 @@ header {
                 margin-left: .5em;
             }
         }
+    }
+    #themeSwitch {
+        margin-left: auto;
     }
 }
 @media all and (min-width: 1100px) {
@@ -202,7 +209,6 @@ header {
     }
 }
 article {
-    padding: 1em;
     border: 1px solid rgb(143, 117, 143);
     line-height: 1.5em;
     & ul {
@@ -239,8 +245,7 @@ main h2:not(#legend h2) {
 #legend {
     padding: 1em 2em;
     margin-bottom: 1em;
-    background-color: rgba(255, 192, 203, 0.178);
-    border: 1px dashed rgb(148, 126, 148);
+    border: 2px dashed rgb(141, 102, 141);
     & h2 {
         font-size: 1.2em;
         margin-bottom: 1.5em;
@@ -315,7 +320,7 @@ footer {
     color: var(--dark-font);
 }
 @mixin dark-mode {
-    article {
+    article, #legend {
         background-color: var(--dark-bg);
     }
     a {
@@ -342,7 +347,7 @@ footer {
     color: var(--light-font);
 }
 @mixin light-mode {
-    article {
+    article, #legend {
         background-color: var(--light-bg-article);
     }
     a {

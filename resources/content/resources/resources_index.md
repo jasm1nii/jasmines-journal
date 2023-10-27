@@ -20,11 +20,11 @@ view this section at [/resources/webdev](/resources/webdev)
 
 - [thoughts.page](https://thoughts.page/)
 
-    post microblogs to your own feed that's private by default.
+    post microblogs to your a semi-private profile - URLs are public, but not discoverable via feed.
 
 - [bear blog](https://bearblog.dev/)
 
-    a blazingly fast and minimal blogging platform.
+    a super lightweight and minimalist blogging platform.
 
 - [write.as](https://write.as/)
 
