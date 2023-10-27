@@ -1,10 +1,16 @@
-## [art & design](/resources/art-design)
+## <span id="art-design">art & design</span>
 
-## [organization & productivity](/resources/organization-productivity)
+view this section at [/resources/art-design](/resources/art-design)
 
-## [web development](/resources/webdev)
+## <span id="organization-productivity">organization & productivity</span>
 
-## blogging platforms
+view this section at [/resources/organization-productivity](/resources/organization-productivity)
+
+## <span id="web-development">web development</span>
+
+view this section at [/resources/webdev](/resources/webdev)
+
+## <span id="blogging-platforms">blogging platforms</span>
 
 - [multiverse](https://multiverse.plus/) 👑
 
@@ -28,7 +34,7 @@
 
     the self-hosted version of write.as - requires your own server and some technical knowledge to set up.
 
-## wellness
+## <span id="wellness">wellness</span>
 
 - [finch](https://app.befinch.com/share/cnYR) 👑 ⭐
 
@@ -42,7 +48,6 @@
         AJGZGGHH58
     </p>
     </details>
-    &nbsp;
 
 - [yoga with adriene](https://www.youtube.com/user/yogawithadriene) 👑
 
@@ -54,13 +59,12 @@
         this channel was one of the first i was exposed to when starting my health journey early in the pandemic. i absolutely <em>hated</em> exercise before then, but adriene's videos made movement so much more joyful for me.
     </p>
     </details>
-    &nbsp;
 
 - [hybrid calisthenics](https://www.youtube.com/@HybridCalisthenics)
 
     another youtube channel with a really wholesome approach to staying fit over the long term - mostly strength-focused exercises.
 
-## neurodiversity
+## <span id="neurodiversity">neurodiversity</span>
 
 - [public neurodiversity support center](https://coda.io/@mykola-bilokonsky/public-neurodiversity-support-center)
 
@@ -70,7 +74,7 @@
 
     resources for autistic adults, curated by autistics.
 
-## miscellaneous
+## <span id="miscellaneous">miscellaneous</span>
 
 - <a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="sponsored">dropbox</a> ⭐
 

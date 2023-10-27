@@ -17,7 +17,6 @@
 a {
     background-color: transparent;
     transition: all 0.2s ease-out;
-    text-decoration: none;
     font-weight: 600;
     &:hover {
         background-color: var(--links-hover-bg);
@@ -48,9 +47,8 @@ html {
 body {
     font-family: var(--font-1);
     font-size: 1.1em;
-    width: 100%;
-    max-width: 800px;
     margin: auto;
+    width: 90%;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
     opacity: 0;
@@ -59,29 +57,85 @@ body {
     transition: all 0.25s ease-out;
 }
 #layout {
+    margin: auto;
     margin-top: 5%;
     display: flex;
     flex-direction: row-reverse;
+    max-width: 1300px;
+}
+#left-col-group {
+    display: flex;
+    flex-direction: row;
+}
+#guide {
+    margin-right: 2.5%;
+    margin-bottom: 5% !important;
+    & h2 {
+        background-color: transparent !important;
+        text-decoration: underline;
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    & ol, ul {
+        padding-left: 1em;
+    }
+    & li {
+        padding-left: 0;
+        margin-left: 0;
+        margin-bottom: 1em;
+        &:first-child {
+            margin-top: 1em;
+        }
+    }
+}
+@media all and (min-width:768px) {
+    #guide {
+        width: 60%;
+        top: 2em;
+        position: sticky;
+        align-self: flex-start;
+    }
+}
+@media all and (max-width:1100px) {
+    #left-col-group {
+        flex-direction: column;
+    }
+    #guide {
+        position: relative;
+        top: 0;
+        width: 80%;
+        margin: auto;
+        font-size: larger;
+    }
 }
 @media all and (max-width:768px) {
     body {
         width: fit-content;
     }
     #layout {
-        margin-top: 0;
+        margin-top: 5%;
         flex-direction: column;
+    }
+    #guide {
+        $border-style: 8px double rgba(122, 90, 122, 0.479);
+        font-size: 1.2em;
+        border-top: $border-style;
+        border-bottom: $border-style;
+        padding-bottom: 1em;
+        & li {
+            margin-left: 1em;
+        }
     }
 }
 
 header {
-    max-width: 12em;
-    margin-left: 1em;
-    letter-spacing: .05em;
+    margin-left: 5%;
     align-self: flex-start;
     position: sticky;
     top: 2em;
     & h1 {
-        font-size: 1.5em;
+        font-size: 1.75em;
+        letter-spacing: .05em;
     }
     & time {
         font-weight: 600;
@@ -90,9 +144,9 @@ header {
     & nav {
         margin: auto;
         border-top: 1px solid;
+        border-bottom: 1px solid;
         letter-spacing: .1em;
         padding: .25em;
-        font-size: .9em;
         & ul {
             margin-top: .25em;
             margin-bottom: .25em;
@@ -117,10 +171,11 @@ header {
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5%;
+        margin-bottom: 10%;
         position: relative;
+        top: 0;
         & nav li {
-            display: inline;
+            display: inline-flex;
             margin-right: .5em;
             &:last-child::after {
                 content: "✧";
@@ -129,55 +184,74 @@ header {
         }
     }
 }
-
-main {
-    margin-right: auto;
-    width: 70%;
-    &::before {
-        content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
-        display: block;
-        text-align: center;
-        margin-bottom: 2em;
-        font-size: x-large;
-    }
-    &::after {
-        content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
-        display: block;
-        text-align: center;
-        font-size: x-large;
-        margin-top: 2em;
+@media all and (min-width: 1100px) {
+    main {
+        max-width: 75vw;
     }
 }
-    @media all and (max-width:768px) {
-        main {
-            margin-left: auto;
-            margin-top: 5%;
-            width: 80%;
-        }
+@media all and (max-width:768px) {
+    main {
+        max-width: 90vw;
+        margin: auto;
+        margin-top: 5%;
     }
-    @media all and (max-width:500px) {
-        main {
-            width: fit-content;
-        }
+}
+@media all and (max-width:500px) {
+    main {
+        max-width: none;
     }
-
+}
 article {
     padding: 1em;
     border: 1px solid rgb(143, 117, 143);
+    line-height: 1.5em;
     & ul {
         margin-bottom: 2em;
     }
+    & li p:first-child {
+        font-size: 1.2em;
+    }
+    & > p:first-child {
+        padding: 1em 2em;
+    }
 }
-h2 {
+main h2:not(#legend h2) {
     background-color: rgba(110, 60, 139, 0.233);
     padding: 1em;
     margin-top: 0;
+    &:nth-of-type(2n) {
+        text-align: right;
+    }
+    & + p {
+        margin: 2em;
+        font-style: italic;
+        &::before {
+            content: '\2192';
+            margin-right: .5em;
+        }
+    }
 }
-h2:nth-of-type(2n), section:nth-child(2n) h2 {
-    text-align: right;
+@media all and (max-width:768px) {
+    main h2:not(#legend h2) {
+        font-size: 1.75em;
+    }
 }
-h3 {
-    background-color: rgba(216, 112, 147, 0.2);
+#legend {
+    padding: 1em 2em;
+    margin-bottom: 1em;
+    background-color: rgba(255, 192, 203, 0.178);
+    border: 1px dashed rgb(148, 126, 148);
+    & h2 {
+        font-size: 1.2em;
+        margin-bottom: 1.5em;
+        text-transform: uppercase;
+        text-decoration: 1.5px wavy underline rgb(167, 121, 168);
+        text-underline-offset: .5em;
+        letter-spacing: .2em;
+    }
+    & li p {
+        font-size: 1em;
+    }
 }
 details p {
     margin-left: 3em;
@@ -185,9 +259,11 @@ details p {
 
 footer {
     font-size: smaller;
-    margin-top: 3em;
-    margin-bottom: 5em;
-    width: 70%;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 7em;
+    margin-bottom: 3em;
     letter-spacing: .05em;
     border-top: 1px solid;
     & time {
@@ -213,6 +289,7 @@ footer {
 
 @media all and (max-width:768px) {
     footer {
+        font-size: inherit;
         text-align: center;
         width: 80%;
         margin-left: auto;

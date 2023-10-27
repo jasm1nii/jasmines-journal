@@ -21,7 +21,6 @@
 a {
   background-color: transparent;
   transition: all 0.2s ease-out;
-  text-decoration: none;
   font-weight: 600;
 }
 a:hover {
@@ -55,9 +54,8 @@ html {
 body {
   font-family: var(--font-1);
   font-size: 1.1em;
-  width: 100%;
-  max-width: 800px;
   margin: auto;
+  width: 90%;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
   opacity: 0;
@@ -67,31 +65,88 @@ body {
 }
 
 #layout {
+  margin: auto;
   margin-top: 5%;
   display: flex;
   flex-direction: row-reverse;
+  max-width: 1300px;
 }
 
+#left-col-group {
+  display: flex;
+  flex-direction: row;
+}
+
+#guide {
+  margin-right: 2.5%;
+  margin-bottom: 5% !important;
+}
+#guide h2 {
+  background-color: transparent !important;
+  text-decoration: underline;
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+#guide ol, #guide ul {
+  padding-left: 1em;
+}
+#guide li {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+#guide li:first-child {
+  margin-top: 1em;
+}
+
+@media all and (min-width: 768px) {
+  #guide {
+    width: 60%;
+    top: 2em;
+    position: sticky;
+    align-self: flex-start;
+  }
+}
+@media all and (max-width: 1100px) {
+  #left-col-group {
+    flex-direction: column;
+  }
+  #guide {
+    position: relative;
+    top: 0;
+    width: 80%;
+    margin: auto;
+    font-size: larger;
+  }
+}
 @media all and (max-width: 768px) {
   body {
     width: -moz-fit-content;
     width: fit-content;
   }
   #layout {
-    margin-top: 0;
+    margin-top: 5%;
     flex-direction: column;
+  }
+  #guide {
+    font-size: 1.2em;
+    border-top: 8px double rgba(122, 90, 122, 0.479);
+    border-bottom: 8px double rgba(122, 90, 122, 0.479);
+    padding-bottom: 1em;
+  }
+  #guide li {
+    margin-left: 1em;
   }
 }
 header {
-  max-width: 12em;
-  margin-left: 1em;
-  letter-spacing: 0.05em;
+  margin-left: 5%;
   align-self: flex-start;
   position: sticky;
   top: 2em;
 }
 header h1 {
-  font-size: 1.5em;
+  font-size: 1.75em;
+  letter-spacing: 0.05em;
 }
 header time {
   font-weight: 600;
@@ -100,9 +155,9 @@ header time {
 header nav {
   margin: auto;
   border-top: 1px solid;
+  border-bottom: 1px solid;
   letter-spacing: 0.1em;
   padding: 0.25em;
-  font-size: 0.9em;
 }
 header nav ul {
   margin-top: 0.25em;
@@ -127,11 +182,12 @@ header nav a {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-bottom: 10%;
     position: relative;
+    top: 0;
   }
   header nav li {
-    display: inline;
+    display: inline-flex;
     margin-right: 0.5em;
   }
   header nav li:last-child::after {
@@ -139,58 +195,77 @@ header nav a {
     margin-left: 0.5em;
   }
 }
-main {
-  margin-right: auto;
-  width: 70%;
+@media all and (min-width: 1100px) {
+  main {
+    max-width: 75vw;
+  }
 }
-main::before {
-  content: "︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵";
-  display: block;
-  text-align: center;
-  margin-bottom: 2em;
-  font-size: x-large;
-}
-main::after {
-  content: "⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆";
-  display: block;
-  text-align: center;
-  font-size: x-large;
-  margin-top: 2em;
-}
-
 @media all and (max-width: 768px) {
   main {
-    margin-left: auto;
+    max-width: 90vw;
+    margin: auto;
     margin-top: 5%;
-    width: 80%;
   }
 }
 @media all and (max-width: 500px) {
   main {
-    width: -moz-fit-content;
-    width: fit-content;
+    max-width: none;
   }
 }
 article {
   padding: 1em;
   border: 1px solid rgb(143, 117, 143);
+  line-height: 1.5em;
 }
 article ul {
   margin-bottom: 2em;
 }
+article li p:first-child {
+  font-size: 1.2em;
+}
+article > p:first-child {
+  padding: 1em 2em;
+}
 
-h2 {
+main h2:not(#legend h2) {
   background-color: rgba(110, 60, 139, 0.233);
   padding: 1em;
   margin-top: 0;
 }
-
-h2:nth-of-type(2n), section:nth-child(2n) h2 {
+main h2:not(#legend h2):nth-of-type(2n) {
   text-align: right;
 }
+main h2:not(#legend h2) + p {
+  margin: 2em;
+  font-style: italic;
+}
+main h2:not(#legend h2) + p::before {
+  content: "→";
+  margin-right: 0.5em;
+}
 
-h3 {
-  background-color: rgba(216, 112, 147, 0.2);
+@media all and (max-width: 768px) {
+  main h2:not(#legend h2) {
+    font-size: 1.75em;
+  }
+}
+#legend {
+  padding: 1em 2em;
+  margin-bottom: 1em;
+  background-color: rgba(255, 192, 203, 0.178);
+  border: 1px dashed rgb(148, 126, 148);
+}
+#legend h2 {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  -webkit-text-decoration: 1.5px wavy underline rgb(167, 121, 168);
+          text-decoration: 1.5px wavy underline rgb(167, 121, 168);
+  text-underline-offset: 0.5em;
+  letter-spacing: 0.2em;
+}
+#legend li p {
+  font-size: 1em;
 }
 
 details p {
@@ -199,9 +274,11 @@ details p {
 
 footer {
   font-size: smaller;
-  margin-top: 3em;
-  margin-bottom: 5em;
-  width: 70%;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 7em;
+  margin-bottom: 3em;
   letter-spacing: 0.05em;
   border-top: 1px solid;
 }
@@ -227,6 +304,7 @@ footer li::before {
 
 @media all and (max-width: 768px) {
   footer {
+    font-size: inherit;
     text-align: center;
     width: 80%;
     margin-left: auto;
