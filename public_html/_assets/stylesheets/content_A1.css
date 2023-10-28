@@ -112,6 +112,7 @@ body {
     top: 0;
     width: 80%;
     margin: auto;
+    margin-left: 10vw;
     font-size: larger;
   }
 }
@@ -220,6 +221,7 @@ header nav a {
 article {
   border: 1px solid rgb(143, 117, 143);
   line-height: 1.5em;
+  padding-bottom: 1em;
 }
 article ul {
   margin-bottom: 2em;

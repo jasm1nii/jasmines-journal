@@ -281,7 +281,7 @@ button:active, .button-style:active {
   margin-left: auto;
   margin-right: auto;
   height: min-content;
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
+  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   break-inside: avoid;
   width: 70%;
   & ul {
@@ -314,6 +314,7 @@ button:active, .button-style:active {
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   height: min-content;
   min-width: 250px;
+  font-size: 1.1em;
   & [rel="me"] {
     opacity: 0;
   }
@@ -336,8 +337,12 @@ button:active, .button-style:active {
   flex-direction: column;
   user-select: none;
   & img:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
+}
+.u-featured {
+  width: 290px !important;
+  height: 341px !important;
 }
 .p-note {
   letter-spacing: .025em;
@@ -346,6 +351,8 @@ button:active, .button-style:active {
     margin: .75em;
   }
   & ul {
+    width: 85%;
+    font-size: 1.1em;
     list-style: none;
     padding: 0;
     padding-left: .5em;
@@ -385,6 +392,7 @@ button:active, .button-style:active {
   padding-right: 1em;
 }
 .last-played {
+  max-width: 225px;
   font-size: 1.1em;
   outline: var(--last-played-outline);
   text-align: center;
@@ -740,6 +748,11 @@ dd {
     }
   }
 }
+#notice {
+  & p:first-child {
+    font-size: x-large;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -811,26 +824,22 @@ dd {
   --last-played-dark-b-border: 10px outset rgb(40, 44, 44);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sticky-note-bg: var(--section-card-dark) !important;
-  }
-  body, .web-rings, .time, .web-rings details p, footer {
+@mixin dark-mode {
+  h1, header nav, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
     color: white;
   }
-  body {
-    background-color: black;
+  header {
+    & nav {
+      border-color: #503281;
+      & a {
+        color: var(--dark-mode-links);
+      }
+    }
   }
-  header nav {
-    border-color: #503281;
-  }
-  h1, header nav {
-    color: white;
-  }
-  h2 {
+  h2, h3 {
     color: var(--dark-mode-h);
   }
-  a, nav a, .web-rings a {
+  a, .web-rings a {
     color: var(--dark-mode-links);
   }
   a:hover {
@@ -839,16 +848,16 @@ dd {
   button, .button-style {
     background-color: var(--dark-button-bg);
     color: rgb(230, 214, 236);
-  }
-  button:hover, .button-style:hover {
-    background-color: #712357;
-  }
-  button:active, .button-style:active {
-    background-color: rgb(207, 102, 102);
-    color: white;
-  }
-  button:focus, .button-style:focus {
-    background-color: #8b4f61;
+    &:hover {
+      background-color: #712357;
+    }
+    &:active {
+      background-color: rgb(207, 102, 102);
+      color: white;
+    }
+    &:focus {
+      background-color: #8b4f61;
+    }
   }
   .board {
     background-color: var(--page-bg-dark);
@@ -857,8 +866,9 @@ dd {
   .page-columns {
     background: url('/_assets/media/main/ooorganize-dark.svg');
   }
-  .card, .overflow, #track, #statuscafe, .time, .web-rings, .web-rings details p {
+  .card, #track, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
     background-color: var(--section-card-dark);
+    color: white;
   }
   .h-card {
     background-image: url('/_assets/media/main/bank-note-dark.svg');
@@ -880,12 +890,20 @@ dd {
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
   }
-  #track {
-    background-color: var(--section-card-dark);
+}
+@mixin dark-mode-body {
+  color: white;
+  background-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sticky-note-bg: var(--section-card-dark);
   }
-  .web-rings-list {
-    background-color: var(--section-card-dark);
+  body {
+    @include dark-mode-body();
   }
+  @include dark-mode();
 }
 
 :root .light-mode {
@@ -994,66 +1012,6 @@ dd {
   --sticky-note-font: white !important;
 }
 .dark-mode {
-  background-color: black;
-  color: white;
-}
-.dark-mode a, .dark-mode .web-rings a {
-  color: var(--dark-mode-links);
-}
-.dark-mode h1, .dark-mode #statuscafe-content {
-  color: white;
-}
-.dark-mode h2, .dark-mode h3 {
-  color: var(--dark-mode-h);
-}
-.dark-mode .board {
-  background-color: var(--page-bg-dark);
-  border-color: var(--page-border-dark);
-}
-.dark-mode nav {
-  border-color: #503281;
-}
-.dark-mode .page-columns {
-  background: url('/_assets/media/main/ooorganize-dark.svg');
-}
-.dark-mode .card, .dark-mode .overflow, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
-  background-color: var(--section-card-dark);
-  color: white;
-}
-.dark-mode .h-card {
-  background-image: url('/_assets/media/main/bank-note-dark.svg');
-  background-color: var(--section-card-dark);
-  text-shadow: 0 0 5px black;
-}
-.dark-mode .time {
-  border-bottom: 5px outset rgb(58, 58, 88);
-  border-right: 5px outset rgb(67, 67, 102);
-}
-.dark-mode .last-played {
-  border-bottom: 10px outset rgb(65, 77, 76);
-  border-right: 10px outset rgb(55, 63, 62);
-  background-color: var(--last-played-dark-bg);
-}
-.dark-mode #track {
-  background-color: var(--section-card-dark);
-}
-.dark-mode #statuscafe-content {
-  background-color: rgba(255, 255, 255, .1);
-}
-.dark-mode button, .dark-mode .button-style {
-  background-color: var(--dark-button-bg);
-  color: rgb(230, 214, 236);
-}
-.dark-mode button:hover, .dark-mode .button-style:hover {
-  background-color: #712357;
-}
-.dark-mode button:active, .dark-mode .button-style:active {
-  background-color: rgb(207, 102, 102);
-  color: white;
-}
-.dark-mode button:focus, .dark-mode .button-style:focus {
-  background-color: #8b4f61;
-}
-.dark-mode footer {
-  color: white;
+  @include dark-mode-body();
+  @include dark-mode();
 }

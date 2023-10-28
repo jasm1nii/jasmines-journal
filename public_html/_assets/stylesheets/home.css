@@ -319,7 +319,7 @@ button:active, .button-style:active {
   margin-right: auto;
   height: -moz-min-content;
   height: min-content;
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
+  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   width: 70%;
@@ -354,6 +354,7 @@ button:active, .button-style:active {
   height: -moz-min-content;
   height: min-content;
   min-width: 250px;
+  font-size: 1.1em;
 }
 .h-card [rel=me] {
   opacity: 0;
@@ -383,7 +384,12 @@ button:active, .button-style:active {
           user-select: none;
 }
 .flower-fill img:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.u-featured {
+  width: 290px !important;
+  height: 341px !important;
 }
 
 .p-note {
@@ -394,6 +400,8 @@ button:active, .button-style:active {
   margin: 0.75em;
 }
 .p-note ul {
+  width: 85%;
+  font-size: 1.1em;
   list-style: none;
   padding: 0;
   padding-left: 0.5em;
@@ -436,6 +444,7 @@ button:active, .button-style:active {
 }
 
 .last-played {
+  max-width: 225px;
   font-size: 1.1em;
   outline: var(--last-played-outline);
   text-align: center;
@@ -821,6 +830,10 @@ dd [aria-hidden=true] {
   transform: translatey(-5px);
 }
 
+#notice p:first-child {
+  font-size: x-large;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --sticky-note-bg: cornsilk !important;
@@ -891,6 +904,9 @@ dd [aria-hidden=true] {
   header {
     position: relative;
   }
+  #webmaster-identity {
+    font-size: 1.25em;
+  }
   .h-card {
     max-width: 300px;
   }
@@ -909,6 +925,9 @@ dd [aria-hidden=true] {
   }
   .latest-status {
     max-width: 350px;
+  }
+  [aria-labelledby=note-to-visitors] {
+    max-width: 450px;
   }
   [aria-labelledby=tip-jar] {
     max-width: 420px;
@@ -1026,6 +1045,28 @@ dd [aria-hidden=true] {
   body {
     font-size: 1em;
   }
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.75em;
+  }
+  .p-note ul {
+    width: 100%;
+  }
+  .time {
+    min-width: 200px;
+  }
+  .last-played {
+    max-width: 240px;
+  }
+  .clock-display {
+    width: 90%;
+  }
+  .clock {
+    font-size: 3.2em;
+  }
+  .overflow {
+    max-height: 40vh;
+  }
 }
 :root {
   --page-bg-dark: rgb(13, 13, 14);
@@ -1042,24 +1083,25 @@ dd [aria-hidden=true] {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sticky-note-bg: var(--section-card-dark) !important;
-  }
-  body, .web-rings, .time, .web-rings details p, footer {
-    color: white;
+    --sticky-note-bg: var(--section-card-dark);
   }
   body {
+    color: white;
     background-color: black;
+  }
+  h1, header nav, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
+    color: white;
   }
   header nav {
     border-color: #503281;
   }
-  h1, header nav {
-    color: white;
+  header nav a {
+    color: var(--dark-mode-links);
   }
-  h2 {
+  h2, h3 {
     color: var(--dark-mode-h);
   }
-  a, nav a, .web-rings a {
+  a, .web-rings a {
     color: var(--dark-mode-links);
   }
   a:hover {
@@ -1086,8 +1128,9 @@ dd [aria-hidden=true] {
   .page-columns {
     background: url("/_assets/media/main/ooorganize-dark.svg");
   }
-  .card, .overflow, #track, #statuscafe, .time, .web-rings, .web-rings details p {
+  .card, #track, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
     background-color: var(--section-card-dark);
+    color: white;
   }
   .h-card {
     background-image: url("/_assets/media/main/bank-note-dark.svg");
@@ -1108,12 +1151,6 @@ dd [aria-hidden=true] {
     background-color: var(--last-played-dark-bg);
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
-  }
-  #track {
-    background-color: var(--section-card-dark);
-  }
-  .web-rings-list {
-    background-color: var(--section-card-dark);
   }
 }
 :root .light-mode {
@@ -1250,83 +1287,69 @@ dd [aria-hidden=true] {
 }
 
 .dark-mode {
+  color: white;
   background-color: black;
+}
+.dark-mode h1, .dark-mode header nav, .dark-mode #statuscafe-content, .dark-mode .web-rings, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode footer {
   color: white;
 }
-
-.dark-mode a, .dark-mode .web-rings a {
+.dark-mode header nav {
+  border-color: #503281;
+}
+.dark-mode header nav a {
   color: var(--dark-mode-links);
 }
-
-.dark-mode h1, .dark-mode #statuscafe-content {
-  color: white;
-}
-
 .dark-mode h2, .dark-mode h3 {
   color: var(--dark-mode-h);
 }
-
-.dark-mode .board {
-  background-color: var(--page-bg-dark);
-  border-color: var(--page-border-dark);
+.dark-mode a, .dark-mode .web-rings a {
+  color: var(--dark-mode-links);
 }
-
-.dark-mode nav {
-  border-color: #503281;
+.dark-mode a:hover {
+  background-color: var(--link-hover-bg-dark);
 }
-
-.dark-mode .page-columns {
-  background: url("/_assets/media/main/ooorganize-dark.svg");
-}
-
-.dark-mode .card, .dark-mode .overflow, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
-  background-color: var(--section-card-dark);
-  color: white;
-}
-
-.dark-mode .h-card {
-  background-image: url("/_assets/media/main/bank-note-dark.svg");
-  background-color: var(--section-card-dark);
-  text-shadow: 0 0 5px black;
-}
-
-.dark-mode .time {
-  border-bottom: 5px outset rgb(58, 58, 88);
-  border-right: 5px outset rgb(67, 67, 102);
-}
-
-.dark-mode .last-played {
-  border-bottom: 10px outset rgb(65, 77, 76);
-  border-right: 10px outset rgb(55, 63, 62);
-  background-color: var(--last-played-dark-bg);
-}
-
-.dark-mode #track {
-  background-color: var(--section-card-dark);
-}
-
-.dark-mode #statuscafe-content {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 .dark-mode button, .dark-mode .button-style {
   background-color: var(--dark-button-bg);
   color: rgb(230, 214, 236);
 }
-
 .dark-mode button:hover, .dark-mode .button-style:hover {
   background-color: #712357;
 }
-
 .dark-mode button:active, .dark-mode .button-style:active {
   background-color: rgb(207, 102, 102);
   color: white;
 }
-
 .dark-mode button:focus, .dark-mode .button-style:focus {
   background-color: #8b4f61;
 }
-
-.dark-mode footer {
+.dark-mode .board {
+  background-color: var(--page-bg-dark);
+  border-color: var(--page-border-dark);
+}
+.dark-mode .page-columns {
+  background: url("/_assets/media/main/ooorganize-dark.svg");
+}
+.dark-mode .card, .dark-mode #track, .dark-mode #statuscafe, .dark-mode .time, .dark-mode .web-rings, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
+  background-color: var(--section-card-dark);
   color: white;
+}
+.dark-mode .h-card {
+  background-image: url("/_assets/media/main/bank-note-dark.svg");
+  text-shadow: 0 0 5px black;
+  background-color: var(--section-card-dark);
+}
+.dark-mode .time {
+  border-bottom: 5px outset rgb(58, 58, 88);
+  border-right: 5px outset rgb(67, 67, 102);
+}
+.dark-mode #latest-status {
+  background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
+}
+.dark-mode #statuscafe-content {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.dark-mode .last-played {
+  background-color: var(--last-played-dark-bg);
+  border-bottom: var(--last-played-dark-b-border);
+  border-right: var(--last-played-dark-r-border);
 }/*# sourceMappingURL=home.css.map */

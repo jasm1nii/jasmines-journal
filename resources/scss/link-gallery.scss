@@ -166,7 +166,7 @@ header hgroup p {
   align-self: center;
 }
 @media all and (max-width:900px) {
-  .header-top, header hgroup {
+  header hgroup {
     flex-direction: column;
   }
   .header-top {
@@ -259,8 +259,8 @@ header nav #linkGallery a {
     }
   }
   #themeSwitch {
-    margin-top: 3vh;
-    margin-left: auto;
+    margin-top: 2vh;
+    margin-bottom: auto;
   }
 }
 

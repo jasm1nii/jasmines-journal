@@ -15,6 +15,9 @@
         header {
             position: relative;
         }
+        #webmaster-identity {
+            font-size: 1.25em;
+        }
         .h-card {
             max-width: 300px;
         }
@@ -33,6 +36,9 @@
         }
         .latest-status {
             max-width: 350px;
+        }
+        [aria-labelledby="note-to-visitors"] {
+            max-width: 450px;
         }
         [aria-labelledby="tip-jar"] {
             max-width: 420px;

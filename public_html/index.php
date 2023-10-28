@@ -55,13 +55,13 @@
                 <div class="pfp-group">
                   <img class="u-photo" src="<?=$img_root?>/07042023-me_compressed.webp" width="190" height="190" alt="a self portrait of the webmaster"/>
                   <div class="flower-fill">
-                    <img src="<?=$img_root?>/flower.svg" width="50" height="50" alt=""/>
-                    <img src="<?=$img_root?>/flower.svg" width="50" height="50" alt=""/>
+                    <img src="<?=$img_root?>/flower.svg" width="55" height="55" alt=""/>
+                    <img src="<?=$img_root?>/flower.svg" width="55" height="55" alt=""/>
                     <div id="surprise">
                       <noscript>
                         <details>
                           <summary>
-                            <img src="<?=$img_root?>/flower.svg" width="50" height="50" alt="" title="open for a surprise!"/>
+                            <img src="<?=$img_root?>/flower.svg" width="55" height="55" alt="" title="open for a surprise!"/>
                           </summary>
                           <img src="<?=$img_root?>/la-creatura.png" loading="lazy" class="u-featured" alt="ASCII art of the autism creature"/>
                         </details>

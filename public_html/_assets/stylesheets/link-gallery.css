@@ -230,7 +230,7 @@ header hgroup p {
 }
 
 @media all and (max-width: 900px) {
-  .header-top, header hgroup {
+  header hgroup {
     flex-direction: column;
   }
   .header-top {
@@ -335,8 +335,8 @@ header nav #linkGallery a {
     background-color: rgba(255, 192, 203, 0.445);
   }
   #themeSwitch {
-    margin-top: 3vh;
-    margin-left: auto;
+    margin-top: 2vh;
+    margin-bottom: auto;
   }
 }
 h2 {

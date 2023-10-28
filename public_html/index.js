@@ -78,8 +78,8 @@ const surprise = document.getElementById('surprise');
 
   const flwrAttr = {
           src:'/_assets/media/main/flower.svg',
-          width:50,
-          height:50,
+          width:55,
+          height:55,
           alt:'',
         };
   const flower = d.createElement('img');
@@ -92,8 +92,8 @@ const surprise = document.getElementById('surprise');
 
   const creatureAttr = {
     src:'/_assets/media/main/la-creatura.png',
-    width:'auto',
-    height:'auto',
+    width:'290',
+    height:'341',
     alt:'ASCII art of the autism creature',
     class:'u-featured',
     loading: 'lazy'
