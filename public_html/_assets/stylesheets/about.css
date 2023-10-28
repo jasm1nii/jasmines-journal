@@ -30,13 +30,14 @@ header, main, footer {
 }
 
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+  scrollbar-color: rgb(184, 140, 184) transparent;
 }
 
 body {
   font-family: "Instrument Sans", sans-serif;
   font-size: 1.1em;
   line-height: 1.5em;
+  margin: auto;
 }
 
 .layout {
@@ -154,7 +155,7 @@ main {
 @media all and (max-width: 768px) {
   main {
     margin: auto;
-    width: 90vw;
+    width: 100vw;
   }
 }
 h1, h2, h3 {
@@ -266,22 +267,19 @@ article > section {
   padding-bottom: 2em;
 }
 
-@media all and (max-width: 768px) {
-  article > section {
-    max-width: 500px;
-  }
-}
 #languages {
   margin: 1.5em auto;
 }
 #languages img {
   display: block;
   margin: auto;
+  width: 100%;
 }
 #languages figcaption {
   text-align: center;
   display: block;
   margin: auto;
+  margin-top: 1em;
 }
 
 summary {

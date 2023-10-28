@@ -212,7 +212,7 @@ header nav a {
 }
 @media all and (max-width: 768px) {
   main {
-    max-width: 90vw;
+    max-width: 100vw;
     margin: auto;
     margin-top: 5%;
   }
