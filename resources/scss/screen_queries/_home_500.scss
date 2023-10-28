@@ -27,6 +27,11 @@
             font-size: larger !important;
             margin: 0 0 3vh 0 !important;
         }
+        .page-columns {
+            & > section {
+                padding-bottom: 10vh;
+            }
+        }
         #webmaster-identity {
             font-size: 1.25em;
         }

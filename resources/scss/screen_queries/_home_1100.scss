@@ -5,6 +5,9 @@
         }
         .page-columns {
             columns: 2;
+            & > section {
+                padding-bottom: 5vh;
+            }
         }
         .board {
             margin-top: 0;
@@ -19,8 +22,20 @@
             width: 200px;
             height: 200px;
         }
+        .time {
+            min-width: 260px;
+        }
         .clock-display {
-            width: 100%;
+            width: 80%;
+        }
+        .last-played {
+            max-width: 270px;
+        }
+        .latest-status {
+            max-width: 350px;
+        }
+        [aria-labelledby="tip-jar"] {
+            max-width: 420px;
         }
     }
 }

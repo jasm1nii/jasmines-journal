@@ -882,6 +882,9 @@ dd [aria-hidden=true] {
     -moz-columns: 2;
          columns: 2;
   }
+  .page-columns > section {
+    padding-bottom: 5vh;
+  }
   .board {
     margin-top: 0;
   }
@@ -895,8 +898,20 @@ dd [aria-hidden=true] {
     width: 200px;
     height: 200px;
   }
+  .time {
+    min-width: 260px;
+  }
   .clock-display {
-    width: 100%;
+    width: 80%;
+  }
+  .last-played {
+    max-width: 270px;
+  }
+  .latest-status {
+    max-width: 350px;
+  }
+  [aria-labelledby=tip-jar] {
+    max-width: 420px;
   }
 }
 @media all and (max-width: 900px) {
@@ -989,6 +1004,9 @@ dd [aria-hidden=true] {
   #themeSwitch {
     font-size: larger !important;
     margin: 0 0 3vh 0 !important;
+  }
+  .page-columns > section {
+    padding-bottom: 10vh;
   }
   #webmaster-identity {
     font-size: 1.25em;
