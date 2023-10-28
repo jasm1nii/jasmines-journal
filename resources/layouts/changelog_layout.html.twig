@@ -14,7 +14,8 @@
         <div>
             <header>
                 <hgroup>
-                  <h1>jasmine's journal</h1>
+                  <h1>change log</h1>
+                  <p class="subtitle">jasmine's journal</p>
                 </hgroup>
                 <nav>
                     {{ include('/resources/includes/headernav.shtml') }}
@@ -24,7 +25,7 @@
         <div>
             <main>
                 <article>
-                    <h2>change log</h2>
+                    <h2>{{ date }}</h2>
                     {% block changelog %}
                     {% endblock %}
                 </article>

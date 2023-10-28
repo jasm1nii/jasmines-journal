@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <?php include_once dirname(__DIR__,3).'/resources/includes/head.shtml'; ?>
-    <title>jasmine's journal - change log</title>
+    <title>change log | jasmine's journal</title>
     <meta name="description" content="updates to the website"/>
     <link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
@@ -13,7 +13,8 @@
         <div>
             <header>
                 <hgroup>
-                    <h1>jasmine's journal</h1>
+                    <h1>change log</h1>
+                    <p class="subtitle">jasmine's journal</p>
                     <p class="site-update">
                         page contents updated <time datetime="2023-10-13">13 october 2023</time>
                     </p>
@@ -43,7 +44,7 @@
             <main>
                 <article>
                     <section>
-                        <h2 id="changelog">change log</h2>
+                        <h2 id="changelog">archive</h2>
                         <nav id="archiveNav">
                             <ul>
                                 <li>2023

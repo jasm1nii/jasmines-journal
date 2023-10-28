@@ -30,16 +30,16 @@
                     <a href="/">home</a> ⟶ current status, my other websites, web rings & site listings
                   </li>
                   <li>
-                    <a href="/about/">about</a> ⟶ the website, the
+                    <a href="/about">about</a> ⟶ the website, the
                     webmaster (<a href="/about#contact">contact info</a>)
                     <ul>
-                      <li><a href="/about/changelog/">change log</a></li>
+                      <li><a href="/about/changelog">change log</a></li>
                     </ul>
                   </li>
-                  <li><a href="/blog/">blog</a>
+                  <li><a href="/blog">blog</a>
                     <ul>
-                      <li><a href="/blog/notes/">notes</a></li>
-                      <li><a href="/blog/articles/">articles</a></li>
+                      <li><a href="/blog/notes">notes</a></li>
+                      <li><a href="/blog/articles">articles</a></li>
                     </ul>
                   </li>
                   <li><a href="/resources/">resources</a> ⟶ blogging services, wellness, neurodiversity

@@ -72,64 +72,71 @@ header {
     padding-right: 1em;
     letter-spacing: .1em;
     display: flex;
-    flex-direction: column-reverse;
-}
-header hgroup {
-    display: flex;
-    justify-content: space-between;
-}
-header hgroup p {
-    text-align: right;
-    align-self: center;
-}
-    @media all and (max-width:768px) {
-        header hgroup {
-            flex-direction: column;
+    flex-direction: column;
+        & hgroup {
+        display: flex;
+        justify-content: space-between;
+            & p {
+                text-align: right;
+                align-self: center;
+            }
         }
-        header hgroup p {
+        & time {
+            font-weight: 600;
+            display: block;
+        }
+}
+@media all and (max-width:768px) {
+    header hgroup {
+        flex-direction: column;
+        & p {
             text-align: left;
             align-self: normal;
         }
     }
-header time {
-    font-weight: 600;
-    display: block;
 }
 main {
     padding: 2% 5% 8%;
-    & ul {
+    & ul:first-child {
         padding-left: 0;
+        list-style: none;
     }
 }
 li {
-    display: block;
     margin-top: 1em;
     margin-bottom: 1em;
+    padding-left: 1em;
     line-height: 1.5em;
-}
-li::before {
-    content: '₊˚⊹♡';
-    margin-right: .5em;
-    color: rgb(177, 147, 152);
-    font-weight: 600;
+    list-style-position: outside;
+    & ::marker {
+        content: '₊˚⊹♡';
+    }
+    & li {
+        margin-bottom: 0;
+        & ::marker {
+            content: '˚⊹';
+        }
+    }
+    & li {
+        & ul {
+            padding-left: 0;
+        }
+        & li {
+            & ::marker {
+                content: '⊹';
+            }
+        }
+    }
 }
 ul:first-child > li {
     border-bottom: 1px solid;
     padding: 2em 0 3em;
 }
-li ul li::before {
-    content: '⋆ ˚｡⋆୨୧˚';
-    font-weight: 400;
-}
-ul ul ul li::before {
-    content: '⊹'
-}
-li li li {
-    margin-left: 1em;
-}
-h3 ~ ul li::before {
-    content: '୨♡୧';
-    font-weight: 400;
+h3 ~ ul {
+    padding-left: 1em;
+    & ::marker {
+        content: '୨♡୧';
+    }
 }
 a {
     background-color: transparent;
@@ -139,71 +146,60 @@ a {
     transition: all 0.2s ease-out;
     text-decoration: underline dashed 1px;
     text-underline-offset: .3em;
+    &:hover {
+        background-color: palevioletred;
+        color: white !important;
     }
-    a:hover {
-    background-color: palevioletred;
-    color: white !important;
-    }
+}
+
 button {
-  cursor: pointer;
-  padding: .5em;
-  font: inherit;
-  border: 1px solid rgb(126, 98, 126);
-  background-color: rgba(212, 103, 167, 0.192);
-  transition: all .5s ease;
-}
-button:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.514);
-}
-button:active {
-    background-color: rgba(255, 189, 127, 0.253);
-    filter: brightness(110%);
-    box-shadow: 0px 0px 10px rgb(255, 255, 0);
+    cursor: pointer;
+    padding: .5em;
+    font: inherit;
+    border: 1px solid rgb(126, 98, 126);
+    background-color: rgba(212, 103, 167, 0.192);
+    transition: all .5s ease;
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.514);
+    }
+    &:active {
+        background-color: rgba(255, 189, 127, 0.253);
+        filter: brightness(110%);
+        box-shadow: 0px 0px 10px rgb(255, 255, 0);
+    }
 }
 #themeSwitch {
     display: block;
     margin-left: auto;
     border-radius: 50%;
 }
-::selection {
-    background-color: rgb(248, 208, 170);
-}
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: pink;
-    border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-    background-color: plum;
-    }
+
 footer {
     text-align: center;
     font-size: 0.9em;
     margin-top: 3em;
     margin-bottom: 3em;
-    }
-    footer ul {
+    & ul {
         padding: 0;
         list-style-type: none;
-        }
-        footer li:nth-child(1)::before {
-            content: none;
-        }
-        footer li::before {
+    }
+    & li {
+        display: inline-block;
+        margin-right: 1em;
+        &::before {
             content: "⬩";
             font-size: 1.25em;
             margin-right: 1em;
         }
-        footer li {
-            display: inline-block;
-            margin-right: 1em;
+        &:nth-child(1)::before {
+            content: none;
         }
-    footer time {
+    }
+    & time {
         font-weight: 600;
     }
+}
+
 :root {
     --light-border-color-1: rgb(163, 120, 127);
     --light-heading: rgb(77, 28, 92);
@@ -211,10 +207,7 @@ footer {
     --light-a-2: rgb(187, 77, 159);
     --light-a-3: rgb(161, 103, 179);
 }
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--bg-color-1);
-    }
+@mixin light-mode {
     .layout {
         background-color: var(--bg-color-2);
         border-color: var(--light-border-color-1);
@@ -225,33 +218,31 @@ footer {
     a {
         color: var(--light-a);
     }
-    li li a {
-        color: var(--light-a-2);
+    li li {
+        & a {
+            color: var(--light-a-2);
+        }
+        & li a {
+            color: var(--light-a-3);
+        }
     }
-    li li li a {
-        color: var(--light-a-3);
+}
+@mixin light-mode-body {
+    background-color: var(--bg-color-1);
+    color: initial;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
     }
+    @include light-mode();
 }
 .light-mode {
-    color: initial;
-    background-color: var(--bg-color-1);
-    & .layout {
-        background-color: var(--bg-color-2);
-        border-color: var(--light-border-color-1);
-    }
-    & header, h2, h3 {
-        color: var(--light-heading);
-    }
-    & a {
-        color: var(--light-a);
-    }
-    & li li a {
-        color: var(--light-a-2);
-    }
-    & li li li a {
-        color: var(--light-a-3);
-    }
+    @include light-mode-body();
+    @include light-mode();
 }
+
 :root {
     --dark-border-c-1: rgb(54, 34, 54);
     --dark-border-c-2: rgb(163, 113, 121);
@@ -260,11 +251,7 @@ footer {
     --dark-a-2: rgb(218, 144, 218);
     --dark-a-3: rgb(173, 105, 194);
 }
-@media (prefers-color-scheme: dark) {
-    body {
-        color: white;
-        background-color: black;
-    }
+@mixin dark-mode {
     .layout {
         border-color: var(--dark-border-c-1);
         background-color: var(--dark-bg-c-2);
@@ -272,33 +259,44 @@ footer {
     a {
         color: var(--dark-a-1);
     }
-    li li a {
-        color: var(--dark-a-2);
-    }
-    li li li a {
-        color: var(--dark-a-3);
+    li li {
+        & a {
+            color: var(--dark-a-2);
+        }
+        & li a {
+            color: var(--dark-a-3);
+        }
     }
     ul:first-child > li {
         border-color: var(--dark-border-c-2);
     }
 }
-.dark-mode {
+@mixin dark-mode-body {
     color: white;
     background-color: black;
-    & .layout {
-        border-color: var(--dark-border-c-1);
-        background-color: var(--dark-bg-c-2);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
     }
-    & a {
-        color: var(--dark-a-1);
-    }
-    & li li a {
-        color: var(--dark-a-2);
-    }
-    & li li li a {
-        color: var(--dark-a-3);
-    }
-    & ul:first-child > li {
-        border-color: var(--dark-border-c-2);
-    }
+    @include dark-mode();
+}
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+::selection {
+    background-color: rgb(248, 208, 170);
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
 }

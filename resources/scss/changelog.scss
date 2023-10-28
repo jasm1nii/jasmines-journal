@@ -76,14 +76,6 @@ header nav ul {
   max-height: 30vh;
   overflow: auto;
 }
-header nav::after {
-  content: '✧˖°˖☆────☾•';
-  writing-mode: vertical-lr;
-  display: inline-flex;
-  line-height: 500%;
-  font-size: x-large;
-  color: rgb(162, 118, 175);
-}
 @media all and (max-width:768px) {
   header nav::after {
     content: none;
@@ -118,6 +110,9 @@ h1 {
   font-size: 2em;
   letter-spacing: 1px;
   line-height: normal;
+}
+.subtitle {
+  font-size: x-large;
 }
 h2 {
   padding-bottom: 10px;
@@ -369,8 +364,8 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: .8em;
-  width: 90%;
+  font-size: .9em;
+  width: 80%;
   opacity: .8;
 }
 footer nav {
@@ -380,7 +375,6 @@ footer nav {
   margin-left: auto;
   margin-right: auto;
 }
-
 footer ul {
    padding: 0;
    list-style-type: none;

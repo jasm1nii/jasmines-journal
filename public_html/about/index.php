@@ -129,7 +129,7 @@
                                     by experience, i'm <em>much</em> more accustomed to outputting non-interactive visual work, such as illustrations, graphic designs, and motion art - but i hope to show more of that here as this site comes together! <span aria-hidden="true">&#10023;</span>
                                 </p>
                                 <footer>
-                                    * save for tumblr, but it never really caught on for some reason...
+                                    <small>* save for tumblr, but it never really caught on for some reason...</small>
                                 </footer>
                         </section>
                         </section>

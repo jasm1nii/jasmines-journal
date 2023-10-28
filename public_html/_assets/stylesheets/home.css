@@ -356,6 +356,7 @@ button:active, .button-style:active {
   padding: 0.5em;
   border: 1px solid #8e629b;
   border-radius: 5px;
+  order: 2;
 }
 
 .page-columns > section {

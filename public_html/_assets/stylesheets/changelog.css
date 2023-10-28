@@ -94,15 +94,6 @@ header nav ul {
   overflow: auto;
 }
 
-header nav::after {
-  content: "✧˖°˖☆────☾•";
-  writing-mode: vertical-lr;
-  display: inline-flex;
-  line-height: 500%;
-  font-size: x-large;
-  color: rgb(162, 118, 175);
-}
-
 @media all and (max-width: 768px) {
   header nav::after {
     content: none;
@@ -138,6 +129,10 @@ h1 {
   font-size: 2em;
   letter-spacing: 1px;
   line-height: normal;
+}
+
+.subtitle {
+  font-size: x-large;
 }
 
 h2 {
@@ -424,8 +419,8 @@ footer {
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: 0.8em;
-  width: 90%;
+  font-size: 0.9em;
+  width: 80%;
   opacity: 0.8;
 }
 

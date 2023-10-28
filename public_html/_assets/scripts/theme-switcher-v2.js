@@ -10,7 +10,7 @@ const   page = document.body;
 const   themeSwitch = document.createElement('button');
         themeSwitch.setAttribute('type', 'button');
         themeSwitch.setAttribute('id', 'themeSwitch');
-document.querySelector('hgroup').insertAdjacentElement('afterend',themeSwitch);
+document.querySelector('hgroup').insertAdjacentElement('beforebegin',themeSwitch);
 
 // set default theme
 if(localStorage.theme) {

@@ -69,7 +69,7 @@ body {
 }
 main {
   margin: auto;
-  background: url(/assets/media/main/ooorganize.svg);
+  background: url(/_assets/media/main/ooorganize.svg);
   background-size: 200px;
 }
 main article {
@@ -119,8 +119,9 @@ article > section:hover {
   grid-row-end: span 2;
 }
 
-.header-flex {
+#header-controls {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 1em 2em;
 }
@@ -131,22 +132,21 @@ h1 {
   letter-spacing: .05em;
   margin-bottom: .25em;
   line-height: 1.25em;
+  text-align: right;
 }
-#themeToggle {
+#themeSwitch {
   height: fit-content;
   font-size: smaller;
   margin: auto 0;
 }
 @media all and (max-width:768px) {
-  .header-flex {
+  #header-controls {
     flex-direction: column;
-    text-align: center;
-    margin-bottom: 1em;
   }
   h1 {
-    margin: 1em auto;
+    text-align: center;
   }
-  #themeToggle {
+  #themeSwitch {
     margin: auto;
   }
 }

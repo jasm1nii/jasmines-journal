@@ -12,9 +12,10 @@
     <body>
         <div class="layout">
             <header>
-                <div class="header-flex">
-                    <h1 id="title">subscribe to jasmine's journal</h1>
-                    <button id="themeToggle" type="button">switch theme</button>
+                <div id="header-controls">
+                    <hgroup>
+                        <h1>subscription feeds</h1>
+                    </hgroup>
                 </div>
                 <nav aria-label="primary">
                     <?php include dirname(__DIR__,2).'/resources/includes/headernav.shtml'?>
@@ -71,6 +72,6 @@
                 <?php include dirname(__DIR__,2).'/resources/includes/footer.shtml'?>
             </footer>
         </div>
-        <script src="/_assets/scripts/theme-switcher.js"></script>
+        <script src="/_assets/scripts/theme-switcher-v2.js"></script>
     </body>
 </html>

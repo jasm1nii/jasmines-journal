@@ -88,17 +88,19 @@ header {
   padding-right: 1em;
   letter-spacing: 0.1em;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
-
 header hgroup {
   display: flex;
   justify-content: space-between;
 }
-
 header hgroup p {
   text-align: right;
   align-self: center;
+}
+header time {
+  font-weight: 600;
+  display: block;
 }
 
 @media all and (max-width: 768px) {
@@ -110,30 +112,35 @@ header hgroup p {
     align-self: normal;
   }
 }
-header time {
-  font-weight: 600;
-  display: block;
-}
-
 main {
   padding: 2% 5% 8%;
 }
-main ul {
+main ul:first-child {
   padding-left: 0;
+  list-style: none;
 }
 
 li {
-  display: block;
   margin-top: 1em;
   margin-bottom: 1em;
+  padding-left: 1em;
   line-height: 1.5em;
+  list-style-position: outside;
 }
-
-li::before {
+li ::marker {
   content: "₊˚⊹♡";
-  margin-right: 0.5em;
-  color: rgb(177, 147, 152);
-  font-weight: 600;
+}
+li li {
+  margin-bottom: 0;
+}
+li li ::marker {
+  content: "˚⊹";
+}
+li li ul {
+  padding-left: 0;
+}
+li li li ::marker {
+  content: "⊹";
 }
 
 ul:first-child > li {
@@ -141,22 +148,11 @@ ul:first-child > li {
   padding: 2em 0 3em;
 }
 
-li ul li::before {
-  content: "⋆ ˚｡⋆୨୧˚";
-  font-weight: 400;
+h3 ~ ul {
+  padding-left: 1em;
 }
-
-ul ul ul li::before {
-  content: "⊹";
-}
-
-li li li {
-  margin-left: 1em;
-}
-
-h3 ~ ul li::before {
+h3 ~ ul ::marker {
   content: "୨♡୧";
-  font-weight: 400;
 }
 
 a {
@@ -169,7 +165,6 @@ a {
           text-decoration: underline dashed 1px;
   text-underline-offset: 0.3em;
 }
-
 a:hover {
   background-color: palevioletred;
   color: white !important;
@@ -183,11 +178,9 @@ button {
   background-color: rgba(212, 103, 167, 0.192);
   transition: all 0.5s ease;
 }
-
 button:hover {
   box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.514);
 }
-
 button:active {
   background-color: rgba(255, 189, 127, 0.253);
   filter: brightness(110%);
@@ -200,55 +193,28 @@ button:active {
   border-radius: 50%;
 }
 
-::-moz-selection {
-  background-color: rgb(248, 208, 170);
-}
-
-::selection {
-  background-color: rgb(248, 208, 170);
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
-}
-
 footer {
   text-align: center;
   font-size: 0.9em;
   margin-top: 3em;
   margin-bottom: 3em;
 }
-
 footer ul {
   padding: 0;
   list-style-type: none;
 }
-
-footer li:nth-child(1)::before {
-  content: none;
+footer li {
+  display: inline-block;
+  margin-right: 1em;
 }
-
 footer li::before {
   content: "⬩";
   font-size: 1.25em;
   margin-right: 1em;
 }
-
-footer li {
-  display: inline-block;
-  margin-right: 1em;
+footer li:nth-child(1)::before {
+  content: none;
 }
-
 footer time {
   font-weight: 600;
 }
@@ -264,6 +230,7 @@ footer time {
 @media (prefers-color-scheme: light) {
   body {
     background-color: var(--bg-color-1);
+    color: initial;
   }
   .layout {
     background-color: var(--bg-color-2);
@@ -283,8 +250,8 @@ footer time {
   }
 }
 .light-mode {
-  color: initial;
   background-color: var(--bg-color-1);
+  color: initial;
 }
 .light-mode .layout {
   background-color: var(--bg-color-2);
@@ -353,4 +320,26 @@ footer time {
 }
 .dark-mode ul:first-child > li {
   border-color: var(--dark-border-c-2);
+}
+
+::-moz-selection {
+  background-color: rgb(248, 208, 170);
+}
+
+::selection {
+  background-color: rgb(248, 208, 170);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: plum;
 }/*# sourceMappingURL=sitemap.css.map */
