@@ -289,6 +289,14 @@ footer {
 }
 
 @media all and (max-width:768px) {
+    article {
+        border: none;
+    }
+    #legend {
+        width: 70vw;
+        margin: auto;
+        margin-bottom: 10vh;
+    }
     footer {
         font-size: inherit;
         text-align: center;

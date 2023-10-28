@@ -32,7 +32,7 @@ body {
 .layout {
   display: flex;
   max-width: min-content;
-  margin: auto auto 5em auto;
+  margin: auto;
 }
 @media all and (max-width:768px) {
   body {
@@ -139,7 +139,6 @@ h1 {
 main {
   width: clamp(600px, 35vw, 700px);
   margin: 0 3em;
-  padding-top: 1em;
 }
 @media all and (max-width:768px) {
   main {
@@ -213,7 +212,17 @@ button {
 }
 
 .soundcloud {
-  padding-top: 1.5em;
+  & h2 {
+    padding-top: .5em;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 1em;
+    border-bottom: none;
+    &::before {
+      content: none;
+    }
+  }
 }
 
 section {
@@ -296,6 +305,10 @@ section > details summary {
   break-inside: avoid;
 }
 @media all and (max-width:768px) {
+  section {
+    border-left: none !important;
+    border-right: none !important;
+  }
   .data-columns {
     columns: 1;
   }
@@ -312,7 +325,8 @@ section > details summary {
 }
 
 footer:not(main footer) {
-  margin-top: 2em;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;

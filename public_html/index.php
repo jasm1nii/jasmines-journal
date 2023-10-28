@@ -75,7 +75,6 @@
                   </p>
                   <ul>
                     <li><span role="img" aria-label="location">📍</span> <span class="p-country-name">indonesia</span></li>
-                    <li><span role="img" aria-label="birthday">🎂</span> <span class="dt-bday">1999</span></li>
                     <li><span role="img" aria-label="occupation">🎨</span> <span class="p-category">illustrator & multimedia designer</span></li>
                   </ul>
                   <div class="hidden">
