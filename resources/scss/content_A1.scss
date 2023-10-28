@@ -203,16 +203,12 @@ header {
         margin-top: 5%;
     }
 }
-@media all and (max-width:500px) {
-    main {
-        max-width: none;
-    }
-}
 article {
     border: 1px solid rgb(143, 117, 143);
     line-height: 1.5em;
     & ul {
         margin-bottom: 2em;
+        padding-right: 2em;
     }
     & li p:first-child {
         font-size: 1.2em;

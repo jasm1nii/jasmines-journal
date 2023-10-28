@@ -1,5 +1,10 @@
 @charset "UTF-8";
-/* about + changelog */
+/* about */
+@font-face {
+  font-family: "Besley";
+  font-display: swap;
+  src: url("/_assets/fonts/Besley/Besley-VariableFont_wght.woff2") format("woff2"), url("/_assets/fonts/Besley/Besley.woff") format("woff"), url("/_assets/fonts/Besley/Besley-VariableFont_wght.ttf") format("truetype");
+}
 @font-face {
   font-family: "Instrument Sans";
   font-display: swap;
@@ -34,29 +39,6 @@ body {
   line-height: 1.5em;
 }
 
-::-moz-selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-
-::selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar:hover {
-  background-color: plum;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
-
 .layout {
   display: flex;
   max-width: -moz-min-content;
@@ -79,6 +61,53 @@ header {
   position: sticky;
   top: 5%;
 }
+header nav {
+  font-weight: 500;
+}
+header nav ul {
+  padding: 1em;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+header nav ul:first-child {
+  border-bottom: 1px solid rgb(207, 145, 207);
+  border-top: 1px solid rgb(207, 145, 207);
+  padding: 1em;
+}
+header nav ul li::before {
+  content: "୨୧";
+  margin-right: 0.5em;
+}
+header nav ul li {
+  display: block;
+  padding-bottom: 1em;
+}
+header nav ul li ul {
+  border: none;
+  padding-bottom: 0;
+}
+header nav ul li ul li {
+  padding-bottom: 0;
+}
+
+h1 {
+  font-family: Besley, serif;
+  text-align: left;
+  font-size: 2em;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+  opacity: 0.8;
+}
+
+#h1-main {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.site-update time {
+  font-weight: 600;
+  display: block;
+}
 
 @media all and (max-width: 768px) {
   header {
@@ -88,40 +117,40 @@ header {
     width: 85%;
     position: static;
   }
-}
-header nav ul {
-  max-height: 30vh;
-  overflow: auto;
-}
-
-header nav::after {
-  content: "✧˖°˖☆────☾•";
-  writing-mode: vertical-lr;
-  display: inline-flex;
-  line-height: 500%;
-  font-size: x-large;
-  color: rgb(162, 118, 175);
-}
-
-@media all and (max-width: 768px) {
-  header nav::after {
+  header nav ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+  }
+  header nav ul:nth-child(2) li {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  header nav ul:nth-child(2) li::before {
     content: none;
+  }
+  header nav li {
+    padding-bottom: 0;
+    margin-right: 1em;
+    margin-bottom: 0;
+    display: inline;
+    flex-direction: row;
+  }
+  header nav li ul, header nav li li {
+    display: inline;
+  }
+  header nav li ul::before, header nav li li::before {
+    content: "⟶";
+    margin-right: 1em;
+    margin-left: 1em;
   }
 }
 main {
   width: clamp(600px, 35vw, 700px);
-  margin: 3em;
+  margin: 0 3em;
   padding: 2em;
   padding-top: 1em;
-  border: 1px solid;
-  box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
-}
-
-.main-2 {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
 }
 
 @media all and (max-width: 768px) {
@@ -133,67 +162,49 @@ main {
     padding-left: 1.5em;
     padding-right: 1em;
   }
-  .main-2 {
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    height: -moz-max-content;
-    height: max-content;
-  }
 }
-h1 {
-  text-align: left;
-  font-size: 2em;
-  letter-spacing: 1px;
-  line-height: normal;
+h1, h2, h3 {
+  font-weight: 500;
 }
 
 h2 {
   padding-bottom: 10px;
   border-bottom: 1px solid hotpink;
   font-size: 1.5em;
-}
-
-.article-2 h2 {
   text-align: right;
 }
-
-h1, h2, h3 {
-  font-weight: 500;
-}
-
-#todo::before {
-  content: "📝";
-  color: gray;
-  margin-right: 10px;
-}
-
-#changelog::before {
-  content: "🔨";
-  color: gray;
-  margin-right: 10px;
-}
-
-#knownIssues::before {
-  content: "💫";
-  color: gray;
-  margin-right: 10px;
-}
-
-#report::before {
-  content: "❗";
-  color: gray;
-  margin-right: 10px;
-}
-
-.soundcloud {
-  padding-top: 1.5em;
-}
-
-/* h3 */
-#log::before {
-  content: "⟶";
+h2::before {
+  content: "｡ﾟ☆: *.☽ .* :☆ﾟ. ───";
+  font-size: x-large;
+  padding-top: 1em;
   margin-right: 0.5em;
-  text-decoration-style: none;
+  font-weight: 400;
+}
+
+h3 {
+  padding: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#owo::before {
+  content: "( ͡o ω ͡o )";
+  margin-right: 0.25em;
+  text-transform: none;
+}
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+}
+h4::before {
+  content: "☆";
+  margin-right: 0.5em;
+}
+h4::after {
+  content: "☆";
+  margin-left: 0.5em;
 }
 
 a {
@@ -211,58 +222,36 @@ a:hover {
 
 button {
   cursor: pointer;
+  background-color: rgba(255, 192, 239, 0.493);
+  border: 1px solid purple;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+#themeSwitch {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.soundcloud {
+  padding-top: 1.5em;
 }
 
 section ul {
   list-style-position: inside;
   padding: 0;
 }
-
 section li {
   border-bottom: 1px solid;
   padding: 1em;
 }
-
 section li:first-child {
   padding-top: 0;
 }
-
 section li li {
   border: none;
   padding-bottom: 0;
-}
-
-section nav li {
-  border: none;
-  padding: 0;
-}
-
-section h3 {
-  padding: 0.5em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-#owo::before {
-  content: "( ͡o ω ͡o )";
-  margin-right: 0.25em;
-  text-transform: none;
-}
-
-h4 {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.5em;
-}
-
-h4::before {
-  content: "☆";
-  margin-right: 0.5em;
-}
-
-h4::after {
-  content: "☆";
-  margin-left: 0.5em;
 }
 
 hr {
@@ -274,21 +263,7 @@ hr {
   border: 1px dashed plum;
 }
 
-/* semantic tag styling */
-article > section h2::before {
-  content: "｡ﾟ☆: *.☽ .* :☆ﾟ. ───";
-  font-size: x-large;
-  padding-top: 1em;
-  margin-right: 0.5em;
-  font-weight: 400;
-}
-
-article > nav a::before {
-  content: "⟵";
-  margin-right: 0.5em;
-}
-
-.article-2 > section {
+article > section {
   border: 1px solid purple;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -298,136 +273,21 @@ article > nav a::before {
 }
 
 @media all and (max-width: 768px) {
-  .article-2 > section {
+  article > section {
     max-width: 500px;
   }
 }
-.site-update time {
-  font-weight: 600;
+#languages {
+  margin: 1.5em auto;
+}
+#languages img {
   display: block;
+  margin: auto;
 }
-
-header nav ul {
-  padding: 1em;
-}
-
-header nav ul li ul {
-  border: none;
-  padding-bottom: 0;
-}
-
-header nav ul li ul li {
-  padding-bottom: 0;
-}
-
-header nav ul li::before {
-  content: "୨୧";
-  margin-right: 0.5em;
-}
-
-header nav ul:first-child {
-  border-bottom: 1px solid rgb(207, 145, 207);
-  border-top: 1px solid rgb(207, 145, 207);
-  padding: 1em;
-}
-
-header nav ul:nth-child(3) {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-left: 1em;
-}
-
-header nav ul:nth-child(3) li::before {
-  content: "⟶";
-}
-
-nav li {
+#languages figcaption {
+  text-align: center;
   display: block;
-  padding-bottom: 1em;
-}
-
-@media all and (max-width: 768px) {
-  header nav li {
-    padding-bottom: 0;
-  }
-}
-#archiveNav li {
-  margin-right: 0;
-  font-weight: 600;
-}
-
-#archiveNav li ul {
-  margin-left: 1em;
-}
-
-@media all and (max-width: 768px) {
-  header > nav ul {
-    padding: 0;
-  }
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    border: none;
-  }
-  nav ul li {
-    margin-right: 1em;
-    display: inline;
-    flex-direction: row;
-    margin-bottom: 0;
-  }
-  header nav li ul {
-    display: inline;
-  }
-  header nav li ul::before {
-    content: "⟶";
-    margin-right: 1em;
-    margin-left: 1em;
-  }
-  header nav ul:nth-child(2) li::before {
-    content: none;
-  }
-  header nav ul:nth-child(2) li {
-    margin-right: 0;
-    padding-right: 0;
-  }
-  header nav ul:nth-child(3) {
-    margin-left: 0;
-    padding-left: 0;
-  }
-}
-section > nav {
-  display: initial;
-}
-
-section > nav ul {
-  display: initial;
-  border: none;
-  font-weight: 600;
-}
-
-section > nav li {
-  display: initial;
-  font-weight: normal;
-}
-
-section > nav li:first-child::before {
-  content: "⟶";
-  margin-right: 0.5em;
-  margin-left: 0.5em;
-}
-
-#archiveNav li li::before {
-  content: none;
-}
-
-section > nav li::after {
-  content: "•";
-  margin-right: 0.5em;
-  margin-left: 0.5em;
-}
-
-section > nav li:last-child::after {
-  content: none;
+  margin: auto;
 }
 
 summary {
@@ -485,65 +345,36 @@ section > details summary {
   margin-left: 1em;
 }
 
-button {
-  background-color: rgba(255, 192, 239, 0.493);
-  border: 1px solid purple;
-  font-size: 1em;
-  padding: 0.5em;
-  border-radius: 5px;
-}
-
-#themeSwitch {
-  display: block;
-  margin-bottom: 1em;
-}
-
-footer {
+footer:not(main footer) {
   margin-top: 2em;
-  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;
   text-align: center;
-  font-size: 0.8em;
   width: 90%;
   opacity: 0.8;
 }
-
-footer nav {
-  border-bottom: 1px solid rgb(177, 137, 177);
-  padding-bottom: 1em;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer ul {
+footer:not(main footer) ul {
   padding: 0;
   list-style-type: none;
 }
-
-footer li {
+footer:not(main footer) li {
   display: inline-block;
   margin-right: 15px;
 }
-
-footer li:nth-child(1)::before {
-  content: "";
-}
-
-footer li::before {
+footer:not(main footer) li::before {
   content: "⬩";
   font-size: 20px;
   margin-right: 15px;
 }
-
-footer time {
+footer:not(main footer) li:first-child::before {
+  content: none;
+}
+footer:not(main footer) time {
   font-weight: 600;
 }
 
 :root {
-  --light-body-bg: thistle;
   --light-font-1: #4e494e;
   --light-font-2: rgb(56, 36, 56);
   --light-main-bg: whitesmoke;
@@ -566,7 +397,7 @@ footer time {
 @media (prefers-color-scheme: light) {
   body {
     color: var(--light-font-1);
-    background-color: var(--light-body-bg);
+    background-color: rgb(228, 205, 228);
   }
   header p {
     color: var(--light-font-2);
@@ -574,12 +405,11 @@ footer time {
   header nav ul:first-child {
     color: var(--light-headernav);
   }
-  main {
-    background-color: var(--light-main-bg);
-    border-color: var(--light-main-border);
-  }
   h1 {
     color: var(--light-h1);
+  }
+  #h1-main {
+    color: rgb(125, 53, 139);
   }
   h2 {
     color: var(--light-h2);
@@ -591,14 +421,14 @@ footer time {
   h3::before {
     color: var(--light-h3-before);
   }
-  h4 {
+  h4, summary {
     color: var(--light-h4);
     background-color: var(--light-h4-bg);
   }
   article::after {
     color: var(--light-decor);
   }
-  .article-2 > section {
+  article section {
     background-color: var(--light-section-bg);
   }
   section li {
@@ -610,10 +440,13 @@ footer time {
   a {
     color: var(--light-a);
   }
+  a:hover {
+    color: white;
+  }
 }
 .light-mode {
   color: var(--light-font-1);
-  background-color: var(--light-body-bg);
+  background-color: rgb(228, 205, 228);
 }
 .light-mode header p {
   color: var(--light-font-2);
@@ -621,16 +454,11 @@ footer time {
 .light-mode header nav ul:first-child {
   color: var(--light-headernav);
 }
-.light-mode main {
-  background-color: var(--light-main-bg);
-  border-color: var(--light-main-border);
-}
-.light-mode .main-2 {
-  background-color: transparent;
-  background-color: transparent;
-}
 .light-mode h1 {
   color: var(--light-h1);
+}
+.light-mode #h1-main {
+  color: rgb(125, 53, 139);
 }
 .light-mode h2 {
   color: var(--light-h2);
@@ -642,14 +470,14 @@ footer time {
 .light-mode h3::before {
   color: var(--light-h3-before);
 }
-.light-mode h4 {
+.light-mode h4, .light-mode summary {
   color: var(--light-h4);
   background-color: var(--light-h4-bg);
 }
 .light-mode article::after {
   color: var(--light-decor);
 }
-.light-mode .article-2 section {
+.light-mode article section {
   background-color: var(--light-section-bg);
 }
 .light-mode section li {
@@ -677,12 +505,21 @@ footer time {
     background-color: black;
     color: white;
   }
-  .article-2 section, main {
+  article section {
     background-color: var(--dark-main-bg);
     border-color: var(--dark-main-border);
   }
-  section li {
+  article section li {
     border-color: var(--dark-li-border);
+  }
+  #h1-main {
+    color: rgb(221, 192, 255);
+  }
+  header, h2, h3, h4, summary {
+    color: white;
+  }
+  h3, h4, summary {
+    background-color: transparent;
   }
   a {
     color: var(--dark-a);
@@ -692,22 +529,45 @@ footer time {
   background-color: black;
   color: white;
 }
-.dark-mode .article-2 section, .dark-mode main {
+.dark-mode article section {
   background-color: var(--dark-main-bg);
   border-color: var(--dark-main-border);
 }
-.dark-mode .main-2 {
-  background-color: transparent;
-}
-.dark-mode section li {
+.dark-mode article section li {
   border-color: var(--dark-li-border);
 }
-.dark-mode a {
-  color: var(--dark-a);
+.dark-mode #h1-main {
+  color: rgb(221, 192, 255);
 }
-.dark-mode header *, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode summary {
+.dark-mode header, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode summary {
   color: white;
 }
 .dark-mode h3, .dark-mode h4, .dark-mode summary {
   background-color: transparent;
+}
+.dark-mode a {
+  color: var(--dark-a);
+}
+
+::-moz-selection {
+  background-color: rgb(255, 255, 191);
+  color: black;
+}
+
+::selection {
+  background-color: rgb(255, 255, 191);
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar:hover {
+  background-color: plum;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 5px;
 }/*# sourceMappingURL=about.css.map */
