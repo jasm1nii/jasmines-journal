@@ -3,6 +3,12 @@
 @use 'font_inconsolata';
 @use 'font_instrument-sans';
 
+@use 'screen_queries/home_1100' as *;
+@use 'screen_queries/home_900' as *;
+@use 'screen_queries/home_768' as *;
+@use 'screen_queries/home_500' as *;
+@use 'screen_queries/home_400' as *;
+
 :root {
   --font-1: 'Instrument Sans', sans-serif;
   --font-2: 'Besley', serif;
@@ -202,92 +208,16 @@ nav {
     background-color: #a175c573;
   }
 }
-@media all and (max-width:900px) {
-  .board {
-    max-width: 700px;
-  }
-  h1 {
-    line-height: 1.5em;
-  }
-  header {
-    & p {
-      margin: 3vh auto;
-    }
-  }
-}
-@media all and (max-width:768px) {
-  .board {
-    margin-top: 0;
-    max-width: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-  }
-  header {
-    position: relative;
-    padding-top: 0;
-    & hgroup {
-      margin-right: 20vw;
-      & p {
-        font-size: clamp(1.5em, 3vw, 1.75em);
-        line-height: 1.5em;
-      }
-    }
-  }
-  h1 {
-    line-height: 1.75em;
-  }
-  nav {
-    padding-left: 5%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-@media all and (max-width: 500px) {
-  header {
-    & hgroup {
-      margin-right: 0;
-    }
-    & .top {
-      width: 80%;
-      margin: auto;
-    }
-  }
-  h1 {
-    margin-top: 0;
-    font-size: 2.2em;
-  }
-  .ascii-img {
-    width: 100%;
-  }
-  p .ascii-img {
-    display: none;
-  }
-  #themeSwitch {
-    font-size: larger !important;
-    margin: 0 0 3vh 0 !important;
-  }
-}
 .page-columns {
   columns: 3;
   column-gap: 0;
   background-image: url('/_assets/media/main/ooorganize.svg');
   background-size: 200px !important;
-  padding-top: 10vh;
+  padding-top: 5vh;
   padding-bottom: 5%;
   padding-left: 1%;
   padding-right: 1%;
 }
- @media all and (max-width:970px) {
-   .page-columns {
-     columns: 2;
-   }
- }
- @media all and (max-width:700px) {
-   .page-columns {
-     columns: 1;
-   }
- }
 h2 {
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
@@ -340,7 +270,8 @@ button:active, .button-style:active {
 .page-columns > section {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 12vh;
+  padding-top: 5px;
+  padding-bottom: 10vh;
   break-inside: avoid;
 }
 .card {
@@ -352,7 +283,7 @@ button:active, .button-style:active {
   height: min-content;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   break-inside: avoid;
-  width: 60%;
+  width: 70%;
   & ul {
     padding-left: 1em;
     padding-top: 1em;
@@ -375,18 +306,14 @@ button:active, .button-style:active {
     border-top: 1px dashed thistle;
   }
 }
-@media all and (max-width:900px) {
-  .card {
-    max-width: 275px;
-  }
-}
+
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   background: url('/_assets/media/main/bank-note.svg');
   background-color: snow;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
-  width: 240px;
   height: min-content;
+  min-width: 250px;
   & [rel="me"] {
     opacity: 0;
   }
@@ -439,7 +366,6 @@ button:active, .button-style:active {
     display: none;
   }
 }
-
 .barcode {
   background: url('/_assets/media/main/barcode.svg');
   background-repeat: no-repeat;
@@ -447,15 +373,18 @@ button:active, .button-style:active {
   height: 2em;
 }
 .overflow {
-  max-height: 175px;
+  max-height: 30vh;
   overflow-y: auto;
   border: var(--overflow-border);
   padding-right: 1em;
   padding-left: 1em;
   margin-top: 1em;
 }
+[aria-labelledby="note-to-visitors"] p {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 .last-played {
-  max-width: 250px;
   font-size: 1.1em;
   outline: var(--last-played-outline);
   text-align: center;
@@ -493,20 +422,20 @@ button:active, .button-style:active {
   animation: scroll 15s linear infinite;
   font-weight: 500;
 }
-  @keyframes scroll {
-    0% { 
-      transform: translateX(100%); 		
-    }
-    100% { 
-      transform: translateX(-150%); 
-    }
+@keyframes scroll {
+  0% { 
+    transform: translateX(100%); 		
   }
-  @media (prefers-reduced-motion) {
-    #song {
-      white-space: normal;
-      animation-play-state: paused;
-    }
+  100% { 
+    transform: translateX(-150%); 
   }
+}
+@media (prefers-reduced-motion) {
+  #song {
+    white-space: normal;
+    animation-play-state: paused;
+  }
+}
 .last-played-child {
   display: flex;
   align-items: center;
@@ -529,17 +458,12 @@ button:active, .button-style:active {
   transition: background-color 0.3s;
 }
 .latest-status {
+  width: 80%;
   padding: 0;
   margin: auto;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
-  width: 70%;
-}
-@media all and (max-width:768px) {
-  .latest-status {
-    min-width: 55%;
-  }
 }
 #latest-status {
   border: none;
@@ -577,8 +501,7 @@ button:active, .button-style:active {
   text-align: center;
   width: 60%;
   max-width: 240px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: .25em 1em .25em;
   background-color: var(--time-bg);
   box-shadow: 10px 10px rgba(147, 112, 219, 50%);
@@ -765,11 +688,6 @@ footer {
     text-decoration: none;
   }
 }
-@media all and (max-width:768px) {
-  footer {
-    width: 90%;
-  }
-}
 
 time {
   font-weight: 600;
@@ -820,12 +738,6 @@ dd {
       background-color: transparent !important;
       transform: translatey(-5px);
     }
-  }
-}
-@media all and (max-width:768px) {
-  .notice-group {
-    margin-top: 5%;
-    margin-right: 5%;
   }
 }
 
@@ -879,6 +791,12 @@ dd {
 ::-webkit-scrollbar-track-piece {
   background-color: inherit;
 }
+
+@include screen-1100;
+@include screen-900;
+@include screen-768;
+@include screen-500;
+@include screen-400;
 
 :root {
   --page-bg-dark: rgb(13, 13, 14);

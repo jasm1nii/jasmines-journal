@@ -1,0 +1,26 @@
+@mixin screen-1100 {
+    @media all and (max-width:1100px) {
+        body {
+            font-size: 1.2em;
+        }
+        .page-columns {
+            columns: 2;
+        }
+        .board {
+            margin-top: 0;
+        }
+        header {
+            position: relative;
+        }
+        .h-card {
+            max-width: 300px;
+        }
+        .u-photo {
+            width: 200px;
+            height: 200px;
+        }
+        .clock-display {
+            width: 100%;
+        }
+    }
+}

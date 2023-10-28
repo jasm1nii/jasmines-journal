@@ -1,0 +1,7 @@
+@mixin screen-400 {
+    @media all and (max-width:400px) {
+        body {
+            font-size: 1em;
+        }
+    }
+}

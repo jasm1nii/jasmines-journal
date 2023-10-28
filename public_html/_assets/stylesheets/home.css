@@ -230,68 +230,6 @@ nav::-webkit-scrollbar-thumb {
   background-color: rgba(161, 117, 197, 0.4509803922);
 }
 
-@media all and (max-width: 900px) {
-  .board {
-    max-width: 700px;
-  }
-  h1 {
-    line-height: 1.5em;
-  }
-  header p {
-    margin: 3vh auto;
-  }
-}
-@media all and (max-width: 768px) {
-  .board {
-    margin-top: 0;
-    max-width: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-  }
-  header {
-    position: relative;
-    padding-top: 0;
-  }
-  header hgroup {
-    margin-right: 20vw;
-  }
-  header hgroup p {
-    font-size: clamp(1.5em, 3vw, 1.75em);
-    line-height: 1.5em;
-  }
-  h1 {
-    line-height: 1.75em;
-  }
-  nav {
-    padding-left: 5%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-@media all and (max-width: 500px) {
-  header hgroup {
-    margin-right: 0;
-  }
-  header .top {
-    width: 80%;
-    margin: auto;
-  }
-  h1 {
-    margin-top: 0;
-    font-size: 2.2em;
-  }
-  .ascii-img {
-    width: 100%;
-  }
-  p .ascii-img {
-    display: none;
-  }
-  #themeSwitch {
-    font-size: larger !important;
-    margin: 0 0 3vh 0 !important;
-  }
-}
 .page-columns {
   -moz-columns: 3;
        columns: 3;
@@ -299,24 +237,12 @@ nav::-webkit-scrollbar-thumb {
        column-gap: 0;
   background-image: url("/_assets/media/main/ooorganize.svg");
   background-size: 200px !important;
-  padding-top: 10vh;
+  padding-top: 5vh;
   padding-bottom: 5%;
   padding-left: 1%;
   padding-right: 1%;
 }
 
-@media all and (max-width: 970px) {
-  .page-columns {
-    -moz-columns: 2;
-         columns: 2;
-  }
-}
-@media all and (max-width: 700px) {
-  .page-columns {
-    -moz-columns: 1;
-         columns: 1;
-  }
-}
 h2 {
   margin: 0;
   border-bottom: 1px solid rgb(233, 166, 205);
@@ -379,7 +305,8 @@ button:active, .button-style:active {
 .page-columns > section {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 12vh;
+  padding-top: 5px;
+  padding-bottom: 10vh;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
 }
@@ -395,7 +322,7 @@ button:active, .button-style:active {
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
-  width: 60%;
+  width: 70%;
 }
 .card ul {
   padding-left: 1em;
@@ -419,19 +346,14 @@ button:active, .button-style:active {
   border-top: 1px dashed thistle;
 }
 
-@media all and (max-width: 900px) {
-  .card {
-    max-width: 275px;
-  }
-}
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   background: url("/_assets/media/main/bank-note.svg");
   background-color: snow;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
-  width: 240px;
   height: -moz-min-content;
   height: min-content;
+  min-width: 250px;
 }
 .h-card [rel=me] {
   opacity: 0;
@@ -500,7 +422,7 @@ button:active, .button-style:active {
 }
 
 .overflow {
-  max-height: 175px;
+  max-height: 30vh;
   overflow-y: auto;
   border: var(--overflow-border);
   padding-right: 1em;
@@ -508,8 +430,12 @@ button:active, .button-style:active {
   margin-top: 1em;
 }
 
+[aria-labelledby=note-to-visitors] p {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .last-played {
-  max-width: 250px;
   font-size: 1.1em;
   outline: var(--last-played-outline);
   text-align: center;
@@ -589,19 +515,14 @@ button:active, .button-style:active {
 }
 
 .latest-status {
+  width: 80%;
   padding: 0;
   margin: auto;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
   box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
-  width: 70%;
 }
 
-@media all and (max-width: 768px) {
-  .latest-status {
-    min-width: 55%;
-  }
-}
 #latest-status {
   border: none;
   padding: 1em 1em 0.5em 1em;
@@ -643,8 +564,7 @@ button:active, .button-style:active {
   text-align: center;
   width: 60%;
   max-width: 240px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 0.25em 1em 0.25em;
   background-color: var(--time-bg);
   box-shadow: 10px 10px rgba(147, 112, 219, 0.5);
@@ -840,11 +760,6 @@ footer a img {
   text-decoration: none;
 }
 
-@media all and (max-width: 768px) {
-  footer {
-    width: 90%;
-  }
-}
 time {
   font-weight: 600;
 }
@@ -906,12 +821,6 @@ dd [aria-hidden=true] {
   transform: translatey(-5px);
 }
 
-@media all and (max-width: 768px) {
-  .notice-group {
-    margin-top: 5%;
-    margin-right: 5%;
-  }
-}
 @media (prefers-color-scheme: light) {
   :root {
     --sticky-note-bg: cornsilk !important;
@@ -965,6 +874,141 @@ dd [aria-hidden=true] {
   background-color: inherit;
 }
 
+@media all and (max-width: 1100px) {
+  body {
+    font-size: 1.2em;
+  }
+  .page-columns {
+    -moz-columns: 2;
+         columns: 2;
+  }
+  .board {
+    margin-top: 0;
+  }
+  header {
+    position: relative;
+  }
+  .h-card {
+    max-width: 300px;
+  }
+  .u-photo {
+    width: 200px;
+    height: 200px;
+  }
+  .clock-display {
+    width: 100%;
+  }
+}
+@media all and (max-width: 900px) {
+  .board {
+    max-width: 700px;
+    border-top: none;
+  }
+  h1 {
+    line-height: 1.5em;
+  }
+  header .top {
+    padding: 1vh;
+  }
+  header p {
+    margin: 3vh auto;
+  }
+  .card {
+    max-width: 275px;
+  }
+  .p-locality {
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+@media all and (max-width: 768px) {
+  .board {
+    margin-top: 0;
+    max-width: none;
+    border-left: none;
+    border-right: none;
+  }
+  header {
+    position: relative;
+    padding-top: 0;
+  }
+  header hgroup {
+    margin-right: 20vw;
+  }
+  header hgroup p {
+    font-size: clamp(1.5em, 3vw, 1.75em);
+    line-height: 1.5em;
+  }
+  h1 {
+    line-height: 1.75em;
+  }
+  nav {
+    padding-left: 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .notice-group {
+    margin-top: 5%;
+    margin-right: 5%;
+  }
+  .latest-status {
+    min-width: 55%;
+  }
+  footer {
+    width: 90%;
+  }
+}
+@media all and (max-width: 700px) {
+  .page-columns {
+    -moz-columns: 1;
+         columns: 1;
+  }
+}
+@media all and (max-width: 500px) {
+  header hgroup {
+    margin-right: 0;
+  }
+  header hgroup p {
+    font-size: 1.25em;
+  }
+  header .top {
+    width: 80%;
+    margin: auto;
+    padding-top: 3vh;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 2.2em;
+  }
+  .ascii-img {
+    width: 100%;
+  }
+  p .ascii-img {
+    display: none;
+  }
+  #themeSwitch {
+    font-size: larger !important;
+    margin: 0 0 3vh 0 !important;
+  }
+  #webmaster-identity {
+    font-size: 1.25em;
+  }
+  .flower-fill img {
+    width: 55px;
+    height: 55px;
+  }
+  .clock-display {
+    width: 80%;
+  }
+  .latest-status {
+    min-width: 80vw;
+  }
+}
+@media all and (max-width: 400px) {
+  body {
+    font-size: 1em;
+  }
+}
 :root {
   --page-bg-dark: rgb(13, 13, 14);
   --page-border-dark: #503281;

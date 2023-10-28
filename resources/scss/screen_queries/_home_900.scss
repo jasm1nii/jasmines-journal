@@ -1,0 +1,26 @@
+@mixin screen-900 {
+    @media all and (max-width:900px) {
+        .board {
+            max-width: 700px;
+            border-top: none;
+        }
+        h1 {
+            line-height: 1.5em;
+        }
+        header {
+            & .top {
+                padding: 1vh;
+            }
+            & p {
+                margin: 3vh auto;
+            }
+        }
+        .card {
+            max-width: 275px;
+        }
+        .p-locality {
+            font-size: 1em;
+            font-weight: 600;
+        }
+    }
+}
