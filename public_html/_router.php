@@ -20,7 +20,9 @@
             if (str_contains($request,'/'.'articles/')) {
                 if (file_exists($document_source)) {
                     require_once $twig_settings;
+
                     $layout = $twig->load($article_layout);
+
                     echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
                 } else {
                     _404();
@@ -29,7 +31,9 @@
             if (str_contains($request,'/'.'notes/')) {
                 if (file_exists($document_source)) {
                     require_once $twig_settings;
+
                     $layout = $twig->load($note_layout);
+
                     echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
                 } else {
                     _404();
@@ -43,7 +47,13 @@
             $document_source = dirname(__DIR__,1).'/resources/content/'.$path_2.'.html.twig';
             if (file_exists($document_source)) {
                 require_once $twig_settings;
-                echo $twig->render('/resources/content/'.$path_2.'.html.twig');
+
+                $layout = $twig->load('/resources/layouts/changelog_layout.html.twig');
+
+                include dirname(__DIR__,1).'/resources/includes/_changelog_nav.php';
+                $nav_html = $nav->saveHTML();
+
+                echo $twig->render('/resources/content/'.$path_2.'.html.twig',['layout'=>$layout,'nav'=>$nav_html]);
             } else {
                 _404();
             }

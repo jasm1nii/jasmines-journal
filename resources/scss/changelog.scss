@@ -27,21 +27,6 @@ body {
   font-size: 1.1em;
   line-height: 1.5em;
 }
-::selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  &:hover {
-    background-color: plum;
-  }
-}
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
 .layout {
   display: flex;
   max-width: min-content;
@@ -60,6 +45,7 @@ body {
 header {
   margin: 50px auto auto auto;
   padding-left: 50px;
+  width: 15vw;
   position: sticky;
   top: 5%;
 }
@@ -70,15 +56,6 @@ header {
     padding-right: 5%;
     width: 85%;
     position: static;
-  }
-}
-header nav ul {
-  max-height: 30vh;
-  overflow: auto;
-}
-@media all and (max-width:768px) {
-  header nav::after {
-    content: none;
   }
 }
 main {
@@ -115,11 +92,13 @@ h1 {
   font-size: x-large;
 }
 h2 {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   padding-top: 0px;
   margin-top: 0px;
   border-bottom: 1px solid hotpink;
-  font-size: 1.5em;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
 }
 h1, h2, h3 {
   font-weight: 500;
@@ -134,7 +113,7 @@ h1, h2, h3 {
   color: gray;
   margin-right: 10px;  
 }
-#knownIssues::before{
+#knownIssues::before {
   content: "💫";
   color: gray;
   margin-right: 10px;
@@ -358,7 +337,6 @@ button {
 }
 
 footer {
-  margin-top: 2em;
   margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
@@ -370,10 +348,12 @@ footer {
 }
 footer nav {
   border-bottom: 1px solid rgb(177, 137, 177);
-  padding-bottom: 1em;
-  width: 80%;
+  padding-bottom: 3em;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 3em;
+  font-size: larger;
 }
 footer ul {
    padding: 0;
@@ -550,4 +530,19 @@ footer time {
   & h3, h4, summary {
     background-color: transparent;
   }
+}
+::selection {
+  background-color: rgb(255, 255, 191);
+  color: black;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  &:hover {
+    background-color: plum;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 5px;
 }
