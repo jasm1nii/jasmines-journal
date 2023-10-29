@@ -1,0 +1,43 @@
+@mixin clock {
+    :root {
+        --time-bg: lavender;
+        --time-font-color: #685c7c;
+        --time-border-bottom: 5px outset rgb(199, 199, 236);
+        --time-border-right: 5px outset rgb(242, 242, 255);    
+    }
+    .time {
+        border-radius: 10px;
+        text-align: center;
+        width: 60%;
+        max-width: 240px;
+        margin: auto;
+        padding: .25em 1em .25em;
+        background-color: var(--time-bg);
+        box-shadow: 10px 10px rgba(147, 112, 219, 50%);
+        border-bottom: var(--time-border-bottom);
+        border-right: var(--time-border-right);
+        outline: 1px solid 	rgb(140, 112, 169);
+        color: var(--time-font-color);
+        break-inside: avoid;
+        font-size: 1.1em;
+    }
+    .p-locality {
+        font-size: 1.3em;
+    }
+    .clock-display {
+        color: mintcream;
+        background-color: #374048;
+        border-top: 3px inset gray;
+        border-left: 3px inset gray;
+        min-height: 50px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1.5em;
+    }
+    .clock {
+        font-size: 3em;
+        letter-spacing: .1em;
+        margin: 0;
+    }
+}

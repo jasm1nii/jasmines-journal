@@ -3,6 +3,13 @@
 @use 'font_inconsolata';
 @use 'font_instrument-sans';
 
+@use 'components/sticky-note' as *;
+@use 'components/card_hcard' as *;
+@use 'components/card_clock' as *;
+@use 'components/card_last-played' as *;
+@use 'components/card_status-cafe' as *;
+@use 'components/card_webrings' as *;
+
 @use 'screen_queries/home_1100' as *;
 @use 'screen_queries/home_900' as *;
 @use 'screen_queries/home_768' as *;
@@ -23,19 +30,6 @@
   --page-color-light: #fff6f6;
   --section-card-light: rgb(255, 239, 239);
   --site-updates-bg-light: #fff5f5;
-  --time-bg: lavender;
-  --time-font-color: #685c7c;
-  --time-border-bottom: 5px outset rgb(199, 199, 236);
-  --time-border-right: 5px outset rgb(242, 242, 255);
-  --last-played-bg: #b8dce0;
-  --last-played-border-right: 10px outset rgb(189, 235, 232);
-  --last-played-border-bottom: 10px outset rgb(155, 211, 207);
-  --last-played-shadow: 10px 10px rgba(98, 136, 194, 0.5);
-  --last-played-outline: 1px solid rgb(125, 143, 137);
-  --web-rings-card: #f5ddff;
-  --web-rings-font: rgb(92, 39, 92);
-  --web-rings-links: rgb(122, 78, 180);
-  --web-rings-bg-light: rgb(255, 233, 251);
   --footer-font: rgb(97, 58, 97);
   --overflow-bg-light: rgb(255, 244, 246);
   --overflow-border: 1px solid rgb(170, 99, 111);
@@ -47,13 +41,10 @@ body {
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
 }
-.notice-group {
-  animation: fadeInSlide 0.75s forwards;
-}
-.page-columns > section, #notice, .notice-group button {
+.page-columns > section {
   transition: transform 0.3s;
 }
-.page-columns > section:hover, #notice:hover, .notice-group button:hover {
+.page-columns > section:hover {
   transform: translatey(-5px);
 }
 @keyframes fadeInSlide {
@@ -102,6 +93,9 @@ body {
     }
   }
 }
+
+@include sticky-note();
+
 main {
   margin: auto;
   & a {
@@ -306,79 +300,6 @@ button:active, .button-style:active {
     border-top: 1px dashed thistle;
   }
 }
-
-.h-card {
-  border: 1px solid rgb(183, 124, 189);
-  background: url('/_assets/media/main/bank-note.svg');
-  background-color: snow;
-  box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
-  height: min-content;
-  min-width: 250px;
-  font-size: 1.1em;
-  & [rel="me"] {
-    opacity: 0;
-  }
-}
-#webmaster-identity {
-  border: none;
-  font-variant: small-caps;
-  letter-spacing: 1px;
-  font-size: 1.5em;
-}
-.pfp-group {
-  display: flex;
-  width: fit-content;
-  margin-top: 0;
-}
-.flower-fill {
-  margin-left: 10px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  user-select: none;
-  & img:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
-.u-featured {
-  width: 290px !important;
-  height: 341px !important;
-}
-.p-note {
-  letter-spacing: .025em;
-  & p {
-    font-size: 1.1em;
-    margin: .75em;
-  }
-  & ul {
-    width: 85%;
-    font-size: 1.1em;
-    list-style: none;
-    padding: 0;
-    padding-left: .5em;
-    margin: 0;
-    margin-bottom: 1.5em;
-  }
-  & li {
-    margin-bottom: .5em;
-    display: flex;
-    flex-direction: row;
-    & span:first-of-type {
-      width: 1em;
-      text-align: center;
-      margin-right: 1em;
-    }
-  }
-  & .hidden {
-    display: none;
-  }
-}
-.barcode {
-  background: url('/_assets/media/main/barcode.svg');
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 2em;
-}
 .overflow {
   max-height: 30vh;
   overflow-y: auto;
@@ -387,158 +308,19 @@ button:active, .button-style:active {
   padding-left: 1em;
   margin-top: 1em;
 }
+
+@include h-card();
+
 [aria-labelledby="note-to-visitors"] p {
   padding-left: 1em;
   padding-right: 1em;
 }
-.last-played {
-  max-width: 225px;
-  font-size: 1.1em;
-  outline: var(--last-played-outline);
-  text-align: center;
-  padding-bottom: 5px;
-  border-top: none;
-  border-left: none;
-  box-shadow: var(--last-played-shadow) !important;
-  & .button-style {
-    font-size: smaller;
-    border-radius: 5px;
-    margin-left: 5px;
-    padding: .75em 1em;
-    border: 1px solid green;
-  }
-}
-#last-played {
-  margin-left: .5em;
-  margin-right: .5em;
-  font-variant: small-caps;
-  border-color: rgb(79, 170, 161);
-  font-family: var(--font-1);
-}
-#track {
-  padding-top: .5em;
-  border: 1px solid rgb(113, 135, 160);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-family: var(--font-3);
-  text-transform: lowercase;
-  overflow-x: hidden;
-}
-#song {
-  white-space: nowrap;
-  transform: translateX(0);
-  animation: scroll 15s linear infinite;
-  font-weight: 500;
-}
-@keyframes scroll {
-  0% { 
-    transform: translateX(100%); 		
-  }
-  100% { 
-    transform: translateX(-150%); 
-  }
-}
-@media (prefers-reduced-motion) {
-  #song {
-    white-space: normal;
-    animation-play-state: paused;
-  }
-}
-.last-played-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  padding: 15px 0px;
-  border: 1px solid rgb(146, 162, 180);
-  border-top: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: inherit;
-}
-#js-toggle {
-  padding: .6em 1em;
-  font: inherit;
-  font-weight: 600;
-  font-stretch: semi-expanded;
-  border: 1px solid green;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-.latest-status {
-  width: 80%;
-  padding: 0;
-  margin: auto;
-  border: 1px solid rgb(175, 140, 175);
-  border-radius: 0;
-  box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
-}
-#latest-status {
-  border: none;
-  padding: 1em 1em .5em 1em;
-}
-#statuscafe {
-  padding: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  border-top: 1px solid rgb(194, 167, 194);
-  font-size: 1.1em;
-}
-#statuscafe-username {
-  margin-bottom: .5em;
-  font-weight: 600;
-  min-height: 1em;
-}
-#statuscafe-content {
-  padding: .5em;
-  font-family: var(--font-3);
-  min-height: 50px;
-  word-wrap: break-word;
-}
-#statuscafe-content::before, #statuscafe-content::after {
-  content: '"';
-}
-#statuscafe-content + * {
-  margin: auto;
-  margin-top: 1.5em;
-  text-align: center;
-}
 
-.time {
-  border-radius: 10px;
-  text-align: center;
-  width: 60%;
-  max-width: 240px;
-  margin: auto;
-  padding: .25em 1em .25em;
-  background-color: var(--time-bg);
-  box-shadow: 10px 10px rgba(147, 112, 219, 50%);
-  border-bottom: var(--time-border-bottom);
-  border-right: var(--time-border-right);
-  outline: 1px solid 	rgb(140, 112, 169);
-  color: var(--time-font-color);
-  break-inside: avoid;
-  font-size: 1.1em;
-}
-.p-locality {
-  font-size: 1.3em;
-}
-.clock-display {
-  color: mintcream;
-  background-color: #374048;
-  border-top: 3px inset gray;
-  border-left: 3px inset gray;
-  min-height: 50px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 1.5em;
-}
-.clock {
-  font-size: 3em;
-  letter-spacing: .1em;
-  margin: 0;
-}
+@include clock();
+
+@include last-played();
+
+@include status-cafe();
 
 #tip-jar + ul {
   list-style: none;
@@ -553,115 +335,7 @@ button:active, .button-style:active {
   }
 }
 
-.web-rings {
-  background-color: var(--web-rings-card);
-  border-color: purple;
-  color: var(--web-rings-font);
-  box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
-  min-width: 275px;
-  & details {
-    & p {
-      text-align: left;
-      position: absolute;
-      border: 1px solid;
-      color: black;
-      padding: 1em;
-      margin-left: 2em;
-      width: 200px;
-    }
-  }
-  & summary {
-    font-weight: 600;
-    margin: 1em;
-  }
-  & p {
-    text-align: center;
-  }
-  & a {
-    font-weight: 600;
-    font-size: larger;
-    display: inline-block;
-    padding: .5em;
-  }
-}
-.string {
-  margin-left: .75em;
-}
-.web-rings-list {
-  border: 1px solid rgb(167, 95, 177);
-  margin-left: auto;
-  margin-right: auto;
-  overflow: auto;
-  max-height: 300px;
-  scrollbar-color: rgb(171, 113, 189) rgba(167, 49, 167, 0.315);
-  scrollbar-width: thin;
-  & h3 {
-    text-align: center;
-    padding: .75em;
-    margin-top: 0;
-    letter-spacing: .2em;
-    font-stretch: expanded;
-    font-weight: 600;
-  }
-  & p {
-    margin: 0 auto;
-    padding: .5em;
-    border-bottom: 1px solid rgb(138, 85, 138);
-    &:first-of-type {
-      border-top: 1px solid rgb(138, 85, 138);
-    }
-  }
-  & img {
-    image-rendering: pixelated;
-  }
-  & ::-webkit-scrollbar-thumb {
-  background-color: rgb(155, 96, 155);
-    &:hover {
-      background-color: purple;
-    }
-  }
-  & ::-webkit-scrollbar-track-piece {
-    background-color: rgba(112, 23, 134, 0.281);
-  }
-}
-
-[aria-labelledby="pending-web-rings"] {
-  background-color: #d452db1f;
-}
-[aria-labelledby="joined-web-rings"] p:last-of-type {
-  border-top: 1px solid rgb(138, 85, 138);
-  border-bottom: none;
-}
-#resourceRing {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 1em;
-  & a {
-    padding: 0;
-  }
-}
-#vocaring {
-  font-family: var(--font-3);
-  font-stretch: semi-expanded;
-  border: 1px solid rgb(22, 128, 117);
-  margin: 2em auto;
-  padding-top: 1em;
-  background-color: rgba(64, 224, 208, 0.178);
-  width: 70%;
-  & .title {
-    font-size: 1.5em;
-    font-weight: 600;
-    font-stretch: expanded;
-  }
-  & a {
-    display: inline;
-    padding: 0px;
-  }
-  & img {
-    margin: 1em auto .5em;
-  }
-}
+@include web-rings();
 
 footer {
   margin-top: 3em;
@@ -726,74 +400,6 @@ dd {
   background-color: rgb(248, 208, 170);
   color: black;
 }
-
-.notice-group {
-  position: absolute;
-  right: 0;
-  margin: auto;
-  z-index: 1;
-  font-family: var(--font-3);
-  & button {
-    background-color: transparent !important;
-    color: inherit;
-    border: none;
-    font-size: 2em;
-    z-index: 2;
-    position: absolute;
-    right: 0;
-    top: 0;
-    &:hover {
-      background-color: transparent !important;
-      transform: translatey(-5px);
-    }
-  }
-}
-#notice {
-  & p:first-child {
-    font-size: x-large;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --sticky-note-bg: cornsilk !important;
-    --sticky-note-font: rgb(78, 61, 19) !important;
-  }
-  body {
-    color: var(--font-color-light);
-    background-color: var(--document-color-light);
-  }
-  a {
-    color: var(--link-color-light);
-  }
-  a:hover {
-    background-color: var(--link-hover-bg-light);
-  }
-  .button-style:hover {
-    color: purple;
-  }
-  h1, header p {
-    color: var(--h1-light);
-  }
-  h2 {
-    color: var(--h2-light);
-  }
-  .last-played {
-    background-color: var(--last-played-bg);
-    border-bottom: var(--last-played-border-bottom);
-    border-right: var(--last-played-border-right);
-  }
-  #track {
-    background-color: linen;
-  }
-  #statuscafe-content {
-    background-color: rgb(243, 242, 247);
-    color: rgb(24, 14, 39);
-  }
-  .overflow {
-    background-color: var(--overflow-bg-light);
-  }
-}
 ::-webkit-scrollbar {
   width: .5em;
   height: .5em;
@@ -811,6 +417,118 @@ dd {
 @include screen-500;
 @include screen-400;
 
+@mixin light-mode {
+  a {
+    color: var(--link-color-light);
+    &:hover {
+      background-color: var(--link-hover-bg-light);
+    }
+  }
+  button, .button-style {
+    background-color: #f5e9f5;
+    color: rgb(51, 44, 44);
+    &:hover {
+      background-color: lightgoldenrodyellow;
+    }
+  }
+  .board {
+    background-color: var(--page-color-light);
+  }
+  h1, header p {
+    color: var(--h1-light);
+  }
+  nav {
+    color: var(--font-color-light);
+  }
+  .page-columns {
+    background: url('/_assets/media/main/ooorganize.svg');
+  }
+  .card {
+    background-color: var(--section-card-light);
+    color: var(--font-color-light);
+  }
+  .h-card {
+    background: url('/_assets/media/main/bank-note.svg');
+    background-color: snow;
+    text-shadow: 0 0 5px white;
+  }
+  h2 {
+    color: var(--h2-light);
+  }
+  h3 {
+    color: var(--h3-light);
+  }
+  .time {
+    background-color: var(--time-bg);
+    color: var(--time-font-color);
+    border-bottom: var(--time-border-bottom);
+    border-right: var(--time-border-right);
+  }
+  .clock {
+    color: mintcream;
+  }
+  .last-played {
+    background-color: var(--last-played-bg);
+    border-bottom: var(--last-played-border-bottom);
+    border-right: var(--last-played-border-right);
+  }
+  #track {
+    background-color: linen;
+  }
+  #latest-status {
+    background: url('/_assets/media/main/line-in-motion.svg') rgb(238, 225, 238);
+  }
+  #statuscafe {
+    background-color: snow;
+  }
+  #statuscafe-content {
+    background-color: rgb(243, 242, 247);
+    color: rgb(24, 14, 39);
+  }
+  .overflow {
+    background-color: var(--overflow-bg-light);
+  }
+  .webrings {
+    background-color: var(--web-rings-card);
+    color: var(--web-rings-font);
+    & a {
+      color: var(--web-rings-links);
+    }
+    & details p {
+      background-color: white;
+      color: var(--font-color-light);
+    }
+  }
+  .web-rings-list {
+    background-color: var(--web-rings-bg-light);
+  }
+  footer {
+    color: var(--footer-font);
+  }
+}
+@mixin light-mode-body {
+  color: var(--font-color-light);
+  background-color: var(--document-color-light);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --sticky-note-bg: cornsilk !important;
+    --sticky-note-font: rgb(78, 61, 19) !important;
+  }
+  body {
+    @include light-mode-body();
+  }
+  @include light-mode();
+}
+:root .light-mode {
+  --sticky-note-bg: cornsilk !important;
+}
+.light-mode {
+  @include light-mode-body();
+  @include light-mode();
+}
+
 :root {
   --page-bg-dark: rgb(13, 13, 14);
   --page-border-dark: #503281;
@@ -819,9 +537,6 @@ dd {
   --link-hover-bg-dark: rgba(216, 112, 147, .5);
   --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
-  --last-played-dark-bg: rgb(63, 85, 85);
-  --last-played-dark-r-border: 10px outset rgb(77, 90, 88);
-  --last-played-dark-b-border: 10px outset rgb(40, 44, 44);
 }
 
 @mixin dark-mode {
@@ -866,7 +581,7 @@ dd {
   .page-columns {
     background: url('/_assets/media/main/ooorganize-dark.svg');
   }
-  .card, #track, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
+  .card, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
     background-color: var(--section-card-dark);
     color: white;
   }
@@ -890,6 +605,9 @@ dd {
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
   }
+  #track {
+    background-color: #232629;
+  }
 }
 @mixin dark-mode-body {
   color: white;
@@ -904,107 +622,6 @@ dd {
     @include dark-mode-body();
   }
   @include dark-mode();
-}
-
-:root .light-mode {
-  --sticky-note-bg: cornsilk !important;
-}
-.light-mode {
-  background-color: var(--document-color-light);
-  color: var(--font-color-light);
-  & h1, header p {
-    color: var(--h1-light);
-  }
-}
-.light-mode nav {
-  color: var(--font-color-light);
-}
-.light-mode h1 {
-  color: var(--h1-light);
-}
-.light-mode h2 {
-  color: var(--h2-light);
-}
-.light-mode h3 {
-  color: var(--h3-light);
-}
-.light-mode a {
-  color: var(--link-color-light);
-}
-.light-mode a:hover {
-  background-color: var(--link-hover-bg-light);
-}
-.light-mode .button-style:hover {
-  color: purple !important;
-}
-.light-mode .board {
-  background-color: var(--page-color-light);
-}
-.light-mode .page-columns {
-  background: url('/_assets/media/main/ooorganize.svg');
-}
-.light-mode .card {
-  background-color: var(--section-card-light);
-  color: var(--font-color-light);
-}
-.light-mode .h-card {
-  background: url('/_assets/media/main/bank-note.svg');
-  background-color: snow;
-  text-shadow: 0 0 5px white;
-}
-.light-mode .overflow {
-  background-color: var(--overflow-bg-light);
-}
-.light-mode .time {
-  background-color: var(--time-bg);
-  color: var(--time-font-color);
-  border-bottom: var(--time-border-bottom);
-  border-right: var(--time-border-right);
-}
-.light-mode .clock {
-  color: mintcream;
-}
-.light-mode #latest-status {
-  background: url('/_assets/media/main/line-in-motion.svg') rgb(238, 225, 238);
-}
-.light-mode #statuscafe {
-  background-color: snow;
-}
-.light-mode #statuscafe-content {
-  background-color: rgb(243, 242, 247);
-  color: rgb(24, 14, 39);
-}
-.light-mode .last-played {
-  border-bottom: var(--last-played-border-bottom);
-  border-right: var(--last-played-border-right);
-  background-color: var(--last-played-bg);
-}
-.light-mode #track {
-  background-color: linen;
-}
-.light-mode .web-rings {
-  background-color: var(--web-rings-card);
-  color: var(--web-rings-font);
-}
-.light-mode .web-rings a {
-  color: var(--web-rings-links);
-}
-.light-mode .web-rings details p {
-  background-color: white;
-  color: var(--font-color-light);
-}
-.light-mode .web-rings-list {
-  background-color: var(--web-rings-bg-light);
-}
-.light-mode button, .light-mode .button-style {
-  background-color: #f5e9f5;
-  color: rgb(51, 44, 44);
-}
-.light-mode button:hover, .light-mode .button-style:hover {
-  background-color: lightgoldenrodyellow;
-}
-.light-mode footer {
-  color: var(--footer-font);
 }
 
 :root .dark-mode {
