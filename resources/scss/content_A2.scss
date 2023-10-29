@@ -20,14 +20,10 @@ a {
     transition: all 0.2s ease-out;
     text-decoration: none;
     font-weight: 600;
-}
-a:hover {
-    background-color: var(--links-hover-bg);
-    color: black;
-}
-p, dl {
-    padding-left: 1em;
-    padding-right: 1em;
+    &:hover {
+        background-color: var(--links-hover-bg);
+        color: black;
+    }
 }
 button {
     font: inherit;
@@ -35,37 +31,15 @@ button {
     color: inherit;
     border: 1px solid;
     cursor: pointer;
-}
-button:hover {
-    background-color: thistle;
-    color: black;
+    &:hover {
+        background-color: thistle;
+        color: black;
+    }
 }
 #themeSwitch {
     padding: .5em;
     margin-bottom: 1em;
 }
-
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
-hr {
-    border: 1px dashed pink;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-::-webkit-scrollbar {
-    width: .4em;
-    height: .4em;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: pink;
-    border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-    background-color: plum;
-    }
 
 html {
     scrollbar-color: rgb(184, 140, 184) transparent;
@@ -86,255 +60,107 @@ body {
     animation: fadeIn .5s;
     animation-fill-mode: forwards;
     transition: all 0.25s ease-out;
-    }
-        @media all and (max-width:768px) {
-            body {
-                width: fit-content;
-            }
-        }
-    #layout {
-        margin-top: 5%;
-        display: flex;
-        flex-direction: row-reverse;
-    }
-        @media all and (max-width:768px) {
-            #layout {
-                margin-top: 0;
-                flex-direction: column;
-            }
-        }
+} 
+#layout {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
 header {
     margin-left: 3em;
     letter-spacing: .05em;
     align-self: flex-start;
     position: sticky;
     top: 2em;
+    & h1 {
+        font-size: 1.5em;
+    }
     & p {
         padding-left: 0;
     }
-}
-    @media all and (max-width:768px) {
-        header {
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 5%;
-            position: relative;
-            text-align: center;
-            }
-        }
-        @media all and (max-width:768px) {
-            #themeToggle {
-                height: fit-content;
-                margin-bottom: 1em;
-            }
-        }
-    header h1 {
-        font-size: 1.5em;
-    }
-    header time {
+    & time {
         font-weight: 600;
         display: block;
     }
-
-    header nav {
+    & nav {
         margin: auto;
         border-top: 1px solid;
         letter-spacing: .1em;
         padding: .5em;
         font-size: 1em;
-        }
-        header nav ul {
+        & ul {
             margin-top: .25em;
             margin-bottom: .25em;
-            padding: .7em;
+            padding: .7em;    
         }
-        header nav li {
+        & li {
             display: flex;
             margin-bottom: 1em;
-        }
-            @media all and (max-width:768px) {
-                header nav li {
-                    display: inline;
-                    margin-right: .5em;
-                }
-                header nav li:last-child::after {
-                    content: "✧";
-                    margin-left: .5em;
-                }
+            &::before {
+                content: "✧";
+                margin-right: .5em;
             }
-        header nav li::before {
-            content: "✧";
-            margin-right: .5em;
         }
-        
-        header nav a {
+        & a {
             text-decoration: none;
             padding: 0px 5px 3px 5px;
         }
-
-footer .subpage-nav {
-    justify-content: space-between;
-    display: flex;
-}
-    @media all and (max-width:500px) {
-        footer .subpage-nav {
-            display: inline;
-            }
-        footer .subpage-nav a {
-            margin-right: 2em;
-            margin-left: 2em;
-            line-height: 2.5em;
-        }
     }
-footer .subpage-nav a:first-child:before {
-    content: '⟵';
-    margin-right: .5em;
 }
 
-
-    @media all and (max-width:768px) {
-        main {
-            margin-top: 5%;
-            margin-right: 1em;
-            margin-left: 1em;
-        }
-    }
-    @media all and (max-width:500px) {
-        main {
-            width: fit-content;
-        }
-    }
-
-article {
-    padding-bottom: 2em;
-    padding-top: 2em;
+article, #legend {
+    padding-bottom: 1em;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-}
-
-article::before {
-    content: '︵‿ ⊹ ︵‿୨ ♡ ୧‿︵ ⊹ ‿︵';
-    display: block;
-    text-align: center;
-    margin-bottom: 2em;
-    font-size: x-large;
-}
-article::after {
-    content: '⋆⁺｡˚⋆˙‧₊☽ ◯ ☾₊‧˙⋆˚｡⁺⋆';
-    display: block;
-    text-align: center;
-    font-size: x-large;
-    padding-top: 1.5em;
-}
-    article ol {
-        margin-left: .5em;
-    }
-    article ol li::marker {
-        font-size: xx-large;
-        font-style: italic;
-    }
-    article ol li {
-        list-style-type: decimal-leading-zero;
-    }
-    article ol li span {
-        border-bottom: 1px solid;
-        font-size: large;
-    }
-    article ol li span::before {
-        content: '❝';
-        margin-right: .25em;
-    }
-    article ol li span::after {
-        content: '❞';
-        margin-left: .25em;
-    }
-    article ol li span a {
-        color: inherit;
-    }
-    article ol li time {
-        display: block;
-        font-size: smaller;
-        margin-top: .5em;
-    }
-    
-section {
+    margin-bottom: 5%;
     border: 1px solid rgb(119, 61, 119);
-    padding-bottom: 1em;
 }
-    section h2 {
-        background-color: rgba(110, 60, 139, 0.233);
-        padding: 1em;
-        margin-top: 0;
+#legend {
+    & summary {
+        margin: 1em 2em .25em;
+        font-size: 1em;
+        font-weight: 600;
         text-align: right;
+        text-transform: uppercase;
+        letter-spacing: .1em;
     }
-    section h3 {
-        padding: 1em;
-        background-color: rgba(216, 112, 147, 0.2);
+    & h2 {
+        margin-top: 1em;
     }
-    section h4 {
-        margin-left: 1em;
-        margin-right: 1em;
-        padding-bottom: .5em;
-        border-bottom: 1px solid;
-    }
-    
-    section ul {
-        margin-left: 2em;
+}
+h2 {
+    background-color: rgba(110, 60, 139, 0.233);
+    padding: 1em;
+    margin-top: 2em;
+    text-align: right;
+    &:first-of-type {
         margin-top: 0;
     }
-    section li {
-        margin-bottom: 1em;
-    }
+}
+h3 {
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    background-color: rgba(216, 112, 147, 0.2);
+}
+h4 {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid;
+}
 
-section section {
-    border: none;
-}
-section section section {
-    padding-bottom: 0;
-}
-h3 ~ section {
-    padding-left: 1em;
-}
-h3 ~ p {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-    }
-h4 ~ section {
+p {
     padding-left: 1em;
     padding-right: 1em;
 }
-h4 + section details {
-    padding-left: 2em;
-}
-h4 + section dl {
-    margin-left: -1em;
-}
-
-#legend dt::before {
-    content: none;
-}
-#legend dd {
-    margin-left: 2.5em;
-}
-dt {
-    margin-top: 1em;
-    margin-bottom: .5em;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-dt::before {
-    content: '‧₊˚✩彡';
-    margin-right: .5em;
-}
-dd {
-    margin-left: 1em;
-    margin-right: 1em;
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
     margin-bottom: 2em;
-}
-details p {
-    margin-left: 1em;
 }
 
 footer {
@@ -344,35 +170,89 @@ footer {
     max-width: 500px;
     letter-spacing: .05em;
     border-top: 1px solid;
-    }
-    @media all and (max-width:768px) {
-        footer {
-            text-align: center;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            border: none;
-        }
-    }
-    footer time {
+    & time {
         font-weight: 600;
     }
-    footer ul {
+    & ul {
         padding: 0;
         list-style-type: none;
-        }
-        footer li:nth-child(1)::before {
-            content: none;
-        }
-        footer li::before {
+    }
+    & li {
+        display: inline;
+        margin-right: 1em;
+        &::before {
             content: "⬩";
             font-size: 1.25em;
             margin-right: 1em;
         }
-        footer li {
-            display: inline;
-            margin-right: 1em;
+        &:first-child::before {
+            content: none;
         }
+    }
+}
+
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+::-webkit-scrollbar {
+    width: .4em;
+    height: .4em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
+}
+
+@media all and (max-width:768px) {
+    body {
+        width: fit-content;
+    }
+    header {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        position: relative;
+        text-align: center;
+        & nav li {
+            display: inline;
+            margin-right: .5em;
+            &:last-child:after {
+                content: "✧";
+                margin-left: .5em;
+            }
+        }
+    }
+    #themeToggle {
+        height: fit-content;
+        margin-bottom: 1em;
+    }
+    #layout {
+        margin-top: 0;
+        flex-direction: column;
+    }
+    main {
+        margin-top: 15%;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    footer {
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+    }
+}
+@media all and (max-width:500px) {
+    main {
+        width: fit-content;
+    }
+}
 
 :root {
     --dark-font: white;
@@ -409,28 +289,29 @@ footer {
         background-color: var(--dark-bg);
     }
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-color:  var(--light-bg);
-        color: var(--light-font);
-    } 
+@mixin light-mode {
+    article, #legend {
+        background-color: var(--light-bg-article);
+    }
     a {
         color: var(--light-links);
-    }
-    section {
-        background-color: var(--light-bg-article);
+        &:hover {
+            color: black;
+        }
     }
 }
-.light-mode {
-    background-color: var(--light-bg);
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
     color: var(--light-font);
 }
-    .light-mode a {
-        color: var(--light-links);
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
     }
-    .light-mode a:hover {
-        color: black;
-    }
-    .light-mode section {
-        background-color: var(--light-bg-article);
-    }
+    @include light-mode();
+}
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}

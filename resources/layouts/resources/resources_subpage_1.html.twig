@@ -28,9 +28,14 @@
             </header>
             <main>
                 <aside id="legend">
-                    {% apply markdown_to_html %}
-                        {{ include('/resources/content/resources/_legend.md') }}
-                    {% endapply %}
+                    <details>
+                        <summary>
+                            show legend
+                        </summary>
+                        {% apply markdown_to_html %}
+                            {{ include('/resources/content/resources/_legend.md') }}
+                        {% endapply %}
+                    </details>
                 </aside>
                 <article>
                     {% block content %}

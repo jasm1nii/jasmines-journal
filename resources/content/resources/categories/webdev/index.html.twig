@@ -3,4 +3,7 @@
 {% set title = "web development" %}
 
 {% block content %}
+    {% apply markdown_to_html %}
+        {{ content }}
+    {% endapply %}
 {% endblock %}

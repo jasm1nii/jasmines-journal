@@ -4,16 +4,6 @@
 
 {% block content %}
     {% apply markdown_to_html %}
-        ### illustration programs
-
-        - [heavypaint](https://www.heavypaint.com/) 👑
-
-            i think the built-in brush textures are really cool!
-
-        ### reference tools
-
-        ### assets
-
-        ### miscellaneous
+        {{ content|raw }}
     {% endapply %}
-{% endblock %}
+{% endblock %} 

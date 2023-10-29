@@ -5,7 +5,7 @@
         require_once __DIR__.'/404.shtml';
     }
 
-    $twig_settings = dirname(__DIR__,1).'/config/twig_default_config.php';
+    require_once dirname(__DIR__,1).'/config/twig_default_config.php';
 
     switch ($request) {
         case str_contains($request,'/'.'blog/'):
@@ -19,11 +19,14 @@
 
             if (str_contains($request,'/'.'articles/')) {
                 if (file_exists($document_source)) {
-                    require_once $twig_settings;
 
                     $layout = $twig->load($article_layout);
 
-                    echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
+                    echo $twig->render($blog_content,
+                        [
+                            'layout'=>$layout,'slug'=>$slug,
+                            'src'=>$media_source
+                        ]);
 
                 } else {
                     _404();
@@ -31,67 +34,130 @@
             }
             if (str_contains($request,'/'.'notes/')) {
                 if (file_exists($document_source)) {
-                    require_once $twig_settings;
 
                     $layout = $twig->load($note_layout);
 
-                    echo $twig->render($blog_content,['layout'=>$layout,'slug'=>$slug, 'src'=>$media_source]);
+                    echo $twig->render($blog_content,
+                        [
+                            'layout'=>$layout,
+                            'slug'=>$slug,
+                            'src'=>$media_source
+                        ]);
                     
                 } else {
                     _404();
                 }
             }
+
             break;
 
-        case str_contains($request, '/about/changelog/');
+        case str_contains($request, '/about/changelog/'):
             $path_1 = ltrim($request,'/about');
             $path_2 = rtrim($path_1,'/');
             $document_source = dirname(__DIR__,1).'/resources/content/'.$path_2.'.html.twig';
 
             if (file_exists($document_source)) {
-                require_once $twig_settings;
 
                 $layout = $twig->load('/resources/layouts/changelog_layout.html.twig');
+
                 include dirname(__DIR__,1).'/resources/includes/_changelog_nav.php';
                 $nav_html = $nav->saveHTML();
 
-                echo $twig->render('/resources/content/'.$path_2.'.html.twig',['layout'=>$layout,'nav'=>$nav_html]);
+                echo $twig->render('/resources/content/'.$path_2.'.html.twig',
+                    [
+                        'layout'=>$layout,
+                        'nav'=>$nav_html
+                    ]);
 
             } else {
                 _404();
             }
+
             break;
 
-        case str_contains($request, '/'.'resources/');
+        case str_ends_with($request, '/'.'resources/'):
+        case str_ends_with($request, '/'.'resources'):
+
+            $updated = filemtime(dirname(__DIR__,1).'/resources/content/resources/resources_index.md');
+
+            echo $twig->render('/resources/layouts/resources/resources_index.html.twig',
+                [
+                    'updated'=>$updated
+                ]);
+
+            break;
+
+        case str_contains($request, '/'.'resources/'):
             $path_1 = ltrim($request,'/resources');
             $path_2 = rtrim($path_1,'/');
-            $doc_src = dirname(__DIR__,1). '/resources/content/resources/categories/'.$path_2.'.html.twig';
+
+            $doc_dir = dirname(__DIR__,1).'/resources/content/resources/categories/';
+            $doc_src = $doc_dir.$path_2.'.html.twig';
 
             if (file_exists($doc_src)) {
-                require_once $twig_settings;
-
-                $updated = filemtime($doc_src);
+                
                 $layout = $twig->load('/resources/layouts/resources/resources_subpage_1.html.twig');
 
-                echo $twig->render(ltrim($doc_src, dirname(__DIR__,1)),['layout'=>$layout,'updated'=>$updated]);
+                $markdown_src = $doc_dir.$path_2.'.md';
+                if (file_exists($markdown_src)) {
+                    $content = file_get_contents($markdown_src);
+                    $updated = filemtime($markdown_src);
+                } else {
+                    $content = null;
+                    $updated = filemtime($doc_src);
+                }
+
+                echo $twig->render(ltrim($doc_src, dirname(__DIR__,1)),
+                    [
+                        'layout'=>$layout,
+                        'updated'=>$updated,
+                        'content'=>$content
+                    ]);
 
             } elseif (preg_match('/\/(resources)\/.+/', $request, $matches)) {
+
                 $category_src = preg_split('/\/(resources)\//',$matches[0]);
-                $doc_src = dirname(__DIR__,1). '/resources/content/resources/categories/'.$category_src[1];
+                
+                $doc_src = $doc_dir.$category_src[1];
                 $category_index = $doc_src.'index.html.twig';
 
                 if (file_exists($category_index)) {
-                    require_once $twig_settings;
 
-                    $updated = filemtime($doc_src);
                     $layout = $twig->load('/resources/layouts/resources/resources_subpage_1.html.twig');
+                    $updated = filemtime($doc_src);
 
-                    echo $twig->render(ltrim($category_index, dirname(__DIR__,1)),['layout'=>$layout,'updated'=>$updated]);
+                    echo $twig->render(ltrim($category_index, dirname(__DIR__,1)),
+                    [
+                        'layout'=>$layout,
+                        'updated'=>$updated
+                    ]);
+
+                } else {
+
+                    $category_page = rtrim($category_src[1],'/');
+                    preg_match('/.+\//', $category_page, $category_url);
+                    $doc_src = $doc_dir.$category_page.'.html.twig';
+
+                    if (file_exists($doc_src)) {
+
+                        $layout = $twig->load('/resources/layouts/resources/resources_subpage_2.html.twig');
+                        $updated = filemtime($doc_src);
+
+                        echo $twig->render(ltrim($doc_src, dirname(__DIR__,1)),[
+                            'layout'=>$layout,
+                            'updated'=>$updated,
+                            'category_url'=>'/'.'resources/'.$category_url[0]
+                        ]);
+
+                    } else {
+                        _404();
+                    }
                 }
 
             } else {
                 _404();
             }
+
             break;
 
         default:
