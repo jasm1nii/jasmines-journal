@@ -27,10 +27,14 @@
                 </nav>
             </header>
             <main>
-                <article>
+                <aside id="legend">
                     {% apply markdown_to_html %}
-                        {{ content }}
+                        {{ include('/resources/content/resources/_legend.md') }}
                     {% endapply %}
+                </aside>
+                <article>
+                    {% block content %}
+                    {% endblock %}
                 </article>
             </main>
         </div>

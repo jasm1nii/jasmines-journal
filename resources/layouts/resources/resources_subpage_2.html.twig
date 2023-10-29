@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <?php include_once dirname(__DIR__,3).'/resources/includes/head.shtml'; ?>
+        {{ include('/resources/includes/head.shtml') }}
         <title>{{ title }} | jasmine's resources</title>
         <link href="/_assets/stylesheets/content_A3.css" rel="stylesheet" type="text/css" media="all"/>
         <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
@@ -21,9 +21,8 @@
             </nav>
         </header>
         <article>
-            {% apply markdown_to_html %}
-                {{ content }}
-            {% endapply %}
+            {% block content %}
+            {% endblock %}
         </article>
         <footer>
             <nav>
