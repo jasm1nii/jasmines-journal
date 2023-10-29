@@ -40,13 +40,14 @@
         <nav aria-label="primary">
           <?php include_once dirname(__DIR__,1).'/resources/includes/headernav.shtml'; ?>
         </nav>
-        <div class="notice-group" aria-label="notice">
-          <button id="pin" aria-expanded="true">📌</button>
-          <div id="notice"></div>
-        </div>
       </header>
-
       <main>
+        <aside>
+          <div class="notice-group" aria-label="notice">
+            <button id="pin" aria-expanded="true">📌</button>
+            <div id="notice"></div>
+          </div>
+        </aside>
         <article>
           <div class="page-columns">
             <section aria-labelledby="webmaster-identity">

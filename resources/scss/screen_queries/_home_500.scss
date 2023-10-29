@@ -27,6 +27,14 @@
             font-size: larger !important;
             margin: 0 0 3vh 0 !important;
         }
+        .notice-group {
+            top: 120vh;
+            right: -5vw;
+            margin-right: 10vw;
+        }
+        #notice {
+            width: 50vw;
+        }
         .page-columns {
             & > section {
                 padding-bottom: 10vh;

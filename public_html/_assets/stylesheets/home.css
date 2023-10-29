@@ -44,7 +44,6 @@ body {
 .page-columns > section {
   transition: transform 0.3s;
 }
-
 .page-columns > section:hover {
   transform: translatey(-5px);
 }
@@ -99,8 +98,8 @@ body ::-webkit-scrollbar-thumb:hover {
 
 .notice-group {
   position: absolute;
-  right: 0;
-  margin: auto;
+  top: 28vh;
+  right: 5vw;
   z-index: 1;
   font-family: var(--font-3);
   animation: fadeInSlide 0.75s forwards;
@@ -140,7 +139,6 @@ main a {
 
 .board {
   border: 1px solid purple;
-  background-color: #fff6f6;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin-top: 5%;
   margin-left: auto;
@@ -152,9 +150,6 @@ main a {
 
 header {
   background-color: inherit;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 header .top {
   display: flex;
@@ -252,7 +247,6 @@ nav::-webkit-scrollbar-thumb {
        columns: 3;
   -moz-column-gap: 0;
        column-gap: 0;
-  background-image: url("/_assets/media/main/ooorganize.svg");
   background-size: 200px !important;
   padding-top: 5vh;
   padding-bottom: 5%;
@@ -674,9 +668,7 @@ button:active, .button-style:active {
 }
 
 .web-rings {
-  background-color: var(--web-rings-card);
   border-color: purple;
-  color: var(--web-rings-font);
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
   min-width: 275px;
 }
@@ -1010,6 +1002,14 @@ dd [aria-hidden=true] {
     font-size: larger !important;
     margin: 0 0 3vh 0 !important;
   }
+  .notice-group {
+    top: 120vh;
+    right: -5vw;
+    margin-right: 10vw;
+  }
+  #notice {
+    width: 50vw;
+  }
   .page-columns > section {
     padding-bottom: 10vh;
   }
@@ -1146,6 +1146,10 @@ dd [aria-hidden=true] {
   }
   .web-rings-list {
     background-color: var(--web-rings-bg-light);
+    color: var(--web-rings-font);
+  }
+  .web-rings-list a {
+    color: var(--web-rings-links);
   }
   footer {
     color: var(--footer-font);
@@ -1242,6 +1246,10 @@ dd [aria-hidden=true] {
 }
 .light-mode .web-rings-list {
   background-color: var(--web-rings-bg-light);
+  color: var(--web-rings-font);
+}
+.light-mode .web-rings-list a {
+  color: var(--web-rings-links);
 }
 .light-mode footer {
   color: var(--footer-font);

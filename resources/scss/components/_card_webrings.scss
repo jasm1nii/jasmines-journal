@@ -6,9 +6,7 @@
         --web-rings-bg-light: rgb(255, 233, 251);
     }
     .web-rings {
-        background-color: var(--web-rings-card);
         border-color: purple;
-        color: var(--web-rings-font);
         box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
         min-width: 275px;
         & details {

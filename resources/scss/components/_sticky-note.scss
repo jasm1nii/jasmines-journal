@@ -1,8 +1,8 @@
 @mixin sticky-note {
     .notice-group {
         position: absolute;
-        right: 0;
-        margin: auto;
+        top: 28vh;
+        right: 5vw;
         z-index: 1;
         font-family: var(--font-3);
         animation: fadeInSlide 0.75s forwards;
