@@ -1,108 +1,63 @@
+<section>
+
 ## getting started
 
 ### site hosting services
 
-it's a good idea to figure out your needs firsthand before deciding where to host your website.
+*view the full list: [/resources/webdev/site-hosts](/resources/webdev/site-hosts)*
 
-do you prefer something that comes with an intuitive site builder, or would you rather work with raw code - mayhaps even do some backend magic with node.js or PHP? check out a list of options at [/resources/webdev/site-hosts](/resources/webdev/site-hosts).
 
-### site templates
+### coding help
 
-if you decide to go down the route of hand-coding everything with vanilla HTML and CSS, you can check out these HTML templates to get started quickly:
+- [w3schools](https://www.w3schools.com/)
 
-- pre-made layouts:
-    - [nonkiru's layouts](https://nonkiru.art/layouts)
-    - [sadgrl's layouts](https://sadgrl.online/webmastery/layouts/)
+    learn all the frontend languages (HTML, CSS and javascript) in addition to server-side programming (PHP, SQL, and more).
 
-- [sadgrl's layout builder](https://sadgrl.online/projects/layout-builder/)
+- [MDN web docs](https://developer.mozilla.org/en-US/docs/Learn)
 
-### coding tutorials
+    a more in-depth reference for frontend development, with additional documentation on web accessibility.
 
-work in progress 🔨
+- [freeCodeCamp](https://www.freecodecamp.org/)
+
+- [the modern javascript tutorial](https://javascript.info/)
+
+- [PHP manual](https://www.php.net/docs.php)
+
 
 ### code editors
 
-- [brackets](https://brackets.io/)
+*view the full list: [/resources/webdev/code-editors](/resources/webdev/code-editors).*
 
-    very lightweight and beginner-friendly with built-in live HTML preview support.
 
-- [visual studio code](https://code.visualstudio.com/)
+### templates & templating tools
 
-    the most widely used code editor for desktop. for the newcomers, bechnokid has also posted an easy-to-follow [tutorial](https://bechnokid.neocities.org/resources/tut_vscode).
+*view the full list: [/resources/webdev/code-templates-tools](/resources/webdev/code-templates-tools).*
 
-- [vscodium](https://vscodium.com/) 👑
+these resources can help keep your code more consistent and reduce the redundancy of typing straight HTML for every single page.
 
-    the open source version of visual studio code without tracking. it maintains the exact same interface as the original, and many vscode extensions are also available for vscodium.
-
-- [GNU emacs](https://www.gnu.org/software/emacs/)
-
-- [notepad++](https://notepad-plus-plus.org/)
-
-#### web-based (no downloading required)
-
-- [visual studio code web](https://vscode.dev/)
-
-    a fully featured online <abbr title="integrated development environment">IDE</abbr>.
-
-- [W3Schools online code editor](https://www.w3schools.com/tryit/)
-
-    a simple interface with support for backend languages, such as python, PHP, and java.
-
-- [codepen](https://codepen.io/)
-
-    includes built-in support for SASS and pug. note that published code is public by default on the free plan.
-
-- [phoenix](https://phcode.dev/)
-
-- [webmaker](https://webmaker.app/)
 
 ### accessibility references
 
-- [the ultimate *** website](https://theultimatemotherfuckingwebsite.com/)
+**a free internet is an accessible internet** - consider how your site will appear to assistive technology users and non-desktop devices.
+
+- [the ultimate *** website](https://theultimatemotherfuckingwebsite.com/) 👑
 
     i actually found this site from [frills' accessibility master post!](https://fri11s.neocities.org/blog/accessibility/)
 
-- for checking the accessibility of my website, i personally use both of the following:
+- for checking the accessibility of my website, i personally use the following tools in tandem:
 
     - [<abbr title="web accessibility evaluation tool">WAVE</abbr>](https://wave.webaim.org/)
 
     - [axe browser extensions by deque](https://www.deque.com/axe/browser-extensions/)
 
-## developer tools
 
-- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
+</section>
 
-### code editor extensions
-
-- [prettier](https://prettier.io/)
-
-    a tool for making your code look super clean! also available as a VS code extension.
-
-- [VS code pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) 👑
-
-    🐈🐕🐓🐢🤖📎
+<section>
 
 ## code libraries
 
 for a list of things that i've used specifically on this site (including graphics), refer to the ["credits" page](/credits). more UI assets can be found on the ["art & design" resources page](/resources/art-design).
-
-### <abbr title="HyperText Markup Language">HTML</abbr> & javascript
-
-- [page crypt](https://www.maxlaumeister.com/pagecrypt/) 👑
-
-    password protect your static HTML pages - you should only use this if your host doesn't allow for access configuration on the server side.
-
-- [zonelets](https://zonelets.net/)
-
-    a blogging engine designed for neocities, but can technically be used on any static site.
-
-- [oring](https://github.com/Graycot/Oring)
-
-    an open source web ring template.
-
-- [collectibles.js](https://github.com/MaxLaumeister/collectibles.js)
-
-    add an item collection game to your website!
 
 ### <abbr title="Cascading Stylesheets">CSS</abbr>
 
@@ -110,43 +65,51 @@ for a list of things that i've used specifically on this site (including graphic
 
     2.7k+ open source CSS elements.
 
-- [neumorphism CSS generator](https://neumorphism.io/)
-
-    need i say more? unless you're unfamiliar with the style - in that case, [read more here](https://neumorphism.io/).
-
 - [animate.css](https://animate.style/)
 
     a pure CSS library of predefined animations - takes the work out of setting keyframes for simple transitions.
 
-## site widgets
 
-### guestbooks and comment boxes
+</section>
 
-- [ayano's neocities comment widget](https://virtualobserver.moe/ayano/comment-widget)
+<section>
 
-    requires google forms, but is fully customizable as far as i know.
+## site features
 
-- [HTML comment box](https://www.htmlcommentbox.com/)
+- [page crypt](https://www.maxlaumeister.com/pagecrypt/) 👑
 
-    one of the more stylish options out of the box; most elements can be customized, but branding is not removable for free users.
+    password protect your static HTML pages - you should only use this if your host doesn't allow for access configuration on the server side.
 
-- [cactus comments](https://cactus.chat/)
+- [collectibles.js](https://github.com/MaxLaumeister/collectibles.js)
 
-    open source comment box with [matrix](https://matrix.org/) account integration (required). can be used with static site generators, such as hugo etc.
+    add an item collection game to your website!
 
-- [123guestbook](https://www.123guestbook.com/)
 
-    very limited customization options and a bit dated appearance-wise, but provides IP blocking, email collection, inbox notifications, custom input fields, as well as manual comment approval.
+### comments
 
-- [disqus](https://disqus.com/)
+*view the full list: [/resources/webdev/site-comments](/resources/webdev/site-comments).*
 
-    while being very feature-rich, the styling is not customizable at all. needs the plus plan to remove advertisements.
 
-## content protection
+</section>
 
-- [a guide for blocking <abbr title="artificial intelligence">AI</abbr>/<abbr title="machine learning">ML</abbr> scraper bots](https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/)
+<section>
 
-## additional resources
+## miscellaneous
+
+- [a guide for blocking <abbr title="artificial intelligence">AI</abbr>/<abbr title="machine learning">ML</abbr> scraper bots](https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/) 👑
+
+- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
+
+- [oring](https://github.com/Graycot/Oring)
+
+    an open source web ring template.
+
+
+</section>
+
+<section>
+
+## even more resources
 
 - [tiny tools](https://tinytools.directory/)
 
@@ -161,3 +124,6 @@ for a list of things that i've used specifically on this site (including graphic
 - [32-bit cafe](https://32bit.cafe/) 👑
 
     a community of personal web enthusiasts - they also run a [discord server!](https://32bit.cafe/discord/) **18+ only, <abbr title="safe for work">SFW</abbr>.**
+
+
+</section>

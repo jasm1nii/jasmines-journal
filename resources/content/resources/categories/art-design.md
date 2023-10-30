@@ -1,3 +1,5 @@
+<article>
+
 ## illustration programs
 
 - [heavypaint](https://www.heavypaint.com/) 👑
@@ -17,6 +19,10 @@
 - [grafx2](http://grafx2.chez.com/)
 
 - [pixilart](https://www.pixilart.com/) - runs in the browser
+
+</article>
+
+<article>
     
 ## reference tools
 
@@ -31,6 +37,10 @@
 - [templatemaker](https://www.templatemaker.nl/en/)
 
     create nets of 3D objects - ideal for foldable paper crafts and related projects
+
+</article>
+
+<article>
 
 ## graphic assets
 
@@ -74,6 +84,10 @@
 
     hi-res stock photos and textures - all free to use.
 
+</article>
+
+<article>
+
 ## miscellaneous
 
 - [glaze](https://glaze.cs.uchicago.edu/) 👑
@@ -86,6 +100,12 @@
     you're gonna need a LOT of bandwidth for this; the initial installer is nearly **3 GB** in size, with 4 GB of additional resources that need to be downloaded on the first launch.
     </details>
 
+</article>
+
+<article>
+
 ## more resources
 
 - ["awesome design tools" on github](https://github.com/goabstract/Awesome-Design-Tools)
+
+</article>
