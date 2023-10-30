@@ -1,9 +1,11 @@
 {% extends layout %}
 
-{% set title = "art & design" %}
+{% set title = "site hosts" %}
+
+{% set parent_name = "web development" %}
 
 {% block content %}
     {% apply markdown_to_html %}
-        {{ content|raw }}
+        {{ content }}
     {% endapply %}
 {% endblock %}

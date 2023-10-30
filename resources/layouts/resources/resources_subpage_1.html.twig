@@ -16,6 +16,9 @@
             <header>
                 <hgroup>
                     <h1>{{ title }}</h1>
+                    {% if parent_name is defined %}
+                        <p id="parent-category-name">{{ parent_name }}</p>
+                    {% endif %}
                     <p>jasmine's resources</p>
                     <p>
                         last updated:
@@ -27,6 +30,11 @@
                 </nav>
             </header>
             <main>
+                {% if parent != null %}
+                    <nav>
+                        return to <a href="{{ parent }}">{{ parent }}</a>
+                    </nav>
+                {% endif %}
                 <aside id="legend">
                     <details>
                         <summary>
