@@ -1,6 +1,10 @@
 @font-face {
-    font-family: "Instrument Sans";
-    src: url('/fonts/Instrument_Sans/InstrumentSans-Regular.ttf')  format('truetype');
+    font-family: "Inconsolata";
+    font-display: swap;
+    src:
+        url('/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2') format('woff2'),
+        url('/_assets/fonts/Inconsolata/Inconsolata.woff') format('woff'),
+        url('/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
 }
 
 :root {
@@ -35,7 +39,7 @@ article {
 
 a {
     background-color: transparent;
-    color: darkmagenta;
+    color: rgb(230, 167, 255);
     transition: all 0.2s ease-out;
     text-decoration: underline 1px dashed;
     text-underline-offset: .3em;
@@ -94,13 +98,11 @@ html {
 }
 
 body {
-    background: url(pexels-lara-wehbe-6564097.jpg);
-    background-size: cover;
-    background-position: center;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    color: rgb(63, 19, 63);
+    background-color: rgb(36, 30, 36);
+    color: rgb(255, 255, 255);
     font-size: 1em;
     padding: 0;
     margin: 0;
