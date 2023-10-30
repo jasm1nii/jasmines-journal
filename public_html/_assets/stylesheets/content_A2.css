@@ -122,6 +122,8 @@ header nav a {
 
 #parent-category-name {
   font-size: larger;
+  font-weight: 500;
+  margin: 0;
 }
 
 section, #legend, main nav {
@@ -260,7 +262,10 @@ footer li:first-child::before {
     margin-right: auto;
     margin-top: 5%;
     position: relative;
-    text-align: center;
+    text-align: right;
+  }
+  header nav {
+    text-align: left;
   }
   header nav li {
     display: inline;
@@ -270,19 +275,19 @@ footer li:first-child::before {
     content: "✧";
     margin-left: 0.5em;
   }
-  #themeToggle {
-    height: -moz-fit-content;
-    height: fit-content;
-    margin-bottom: 1em;
-  }
   #layout {
     margin-top: 0;
     flex-direction: column;
   }
   main {
     margin-top: 15%;
-    margin-right: 1em;
-    margin-left: 1em;
+  }
+  section {
+    border-right: none;
+    border-left: none;
+  }
+  #legend, main nav {
+    margin: 5vh 5vw;
   }
   footer {
     text-align: center;

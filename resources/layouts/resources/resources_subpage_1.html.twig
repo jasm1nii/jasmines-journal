@@ -15,11 +15,12 @@
         <div id="layout">
             <header>
                 <hgroup>
-                    <h1>{{ title }}</h1>
+                    <p>jasmine's resources</p>
                     {% if parent_name is defined %}
                         <p id="parent-category-name">{{ parent_name }}</p>
                     {% endif %}
-                    <p>jasmine's resources</p>
+                    </p>
+                    <h1>{{ title }}</h1>
                     <p>
                         last updated:
                         <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
@@ -45,8 +46,10 @@
                         {% endapply %}
                     </details>
                 </aside>
-                {% block content %}
-                {% endblock %}
+                <article>
+                    {% block content %}
+                    {% endblock %}
+                </article>
             </main>
         </div>
         <footer>

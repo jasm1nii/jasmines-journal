@@ -36,7 +36,7 @@
 
 - [sass](https://sass-lang.com/)
 
-    a CSS preprocessor - super useful for polyfilling nested styles and vendor prefixes for older browsers. sass variables are also much more flexible that regular CSS variables.
+    a CSS preprocessor - super useful for polyfilling nested styles and vendor prefixes for older browsers. sass variables are also much more flexible than regular CSS variables.
     
     sass can be precompiled with [compile hero](https://github.com/Wscats/compile-hero) or [live sass compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) for vscode.
 
