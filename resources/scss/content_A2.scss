@@ -114,6 +114,8 @@ header {
 
 #parent-category-name {
     font-size: larger;
+    font-weight: 500;
+    margin: 0;
 }
 
 section, #legend, main nav {
@@ -237,7 +239,10 @@ footer {
         margin-right: auto;
         margin-top: 5%;
         position: relative;
-        text-align: center;
+        text-align: right;
+        & nav {
+            text-align: left;
+        }
         & nav li {
             display: inline;
             margin-right: .5em;
@@ -247,18 +252,19 @@ footer {
             }
         }
     }
-    #themeToggle {
-        height: fit-content;
-        margin-bottom: 1em;
-    }
     #layout {
         margin-top: 0;
         flex-direction: column;
     }
     main {
         margin-top: 15%;
-        margin-right: 1em;
-        margin-left: 1em;
+    }
+    section {
+        border-right: none;
+        border-left: none;
+    }
+    #legend, main nav {
+        margin: 5vh 5vw;
     }
     footer {
         text-align: center;
