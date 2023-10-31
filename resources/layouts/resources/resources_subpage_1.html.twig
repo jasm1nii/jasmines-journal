@@ -42,13 +42,17 @@
                             show legend
                         </summary>
                         {% apply markdown_to_html %}
-                            {{ include('/resources/content/resources/_legend.md') }}
+                            {{ legend|raw }}
                         {% endapply %}
                     </details>
                 </aside>
                 <article>
-                    {% block content %}
-                    {% endblock %}
+                    {% if content != null %}
+                        {{ content|raw }}
+                    {% else %}
+                        {% block content %}
+                        {% endblock %}
+                    {% endif %}
                 </article>
             </main>
         </div>

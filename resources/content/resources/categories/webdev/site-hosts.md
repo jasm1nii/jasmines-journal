@@ -1,3 +1,11 @@
+<section id="toc">
+
+<h2>table of contents</h2>
+
+[TOC]
+
+</section>
+
 <section>
 
 ## static sites only

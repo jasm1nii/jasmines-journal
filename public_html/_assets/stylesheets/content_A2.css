@@ -126,7 +126,7 @@ header nav a {
   margin: 0;
 }
 
-section, #legend, main nav {
+section, #legend, main nav, #toc {
   padding-bottom: 1.5em;
   max-width: 500px;
   margin-left: auto;
@@ -139,6 +139,9 @@ main nav {
   padding: 1.5em;
 }
 
+#legend {
+  order: 2;
+}
 #legend summary {
   margin: 1em 2em 0;
   font-size: 1em;

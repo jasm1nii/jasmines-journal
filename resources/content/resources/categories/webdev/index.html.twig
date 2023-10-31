@@ -1,9 +1,3 @@
 {% extends layout %}
 
 {% set title = "web development" %}
-
-{% block content %}
-    {% apply markdown_to_html %}
-        {{ content|raw }}
-    {% endapply %}
-{% endblock %}

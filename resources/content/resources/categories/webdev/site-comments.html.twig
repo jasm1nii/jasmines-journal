@@ -3,9 +3,3 @@
 {% set title = "site comments" %}
 
 {% set parent_name = "web development" %}
-
-{% block content %}
-    {% apply markdown_to_html %}
-        {{ content|raw }}
-    {% endapply %}
-{% endblock %}
