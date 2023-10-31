@@ -31,5 +31,5 @@
     $commonmark_env->addExtension(new TableOfContentsExtension());
 
     // Instantiate the converter engine and start converting some Markdown!
-    $commonmark_converter = new MarkdownConverter($commonmark_env);
+    $commonmark = new MarkdownConverter($commonmark_env);
 ?>

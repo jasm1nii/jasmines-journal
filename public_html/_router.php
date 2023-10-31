@@ -16,52 +16,45 @@
 
     switch ($request) {
         case str_contains($request,'/'.'blog/'):
-            $slug = rtrim($request,'/');
-            $blog_content = $content_dir.$slug.'.html.twig';
-            $document_source = $server_root.$blog_content;
-            $media_source = '/_assets/media'.rtrim($slug,'/entry').'/';
 
             $article_layout = $layouts_dir.'/blog_article_layout.html.twig';
             $note_layout = $layouts_dir.'/blog_note_layout.html.twig';
 
-            if (str_contains($request,'/'.'articles/')) {
-                if (file_exists($document_source)) {
+            function renderBlogLayout($type) {
+                global $request, $server_root, $twig, $content_dir;
 
-                    $layout = $twig->load($article_layout);
+                $slug = rtrim($request,'/');
+                $blog_content = $content_dir.$slug.'.html.twig';
+                $document_source = $server_root.$blog_content;
+
+                if (file_exists($document_source)) {
 
                     echo $twig->render($blog_content,
                         [
-                            'layout'=>$layout,
+                            'layout'=>$twig->load($type),
                             'slug'=>$slug,
-                            'src'=>$media_source
+                            'src'=>'/_assets/media'.rtrim($slug,'/entry').'/'
                         ]);
-
                 } else {
                     _404();
                 }
             }
-            if (str_contains($request,'/'.'notes/')) {
-                if (file_exists($document_source)) {
 
-                    $layout = $twig->load($note_layout);
+            if (str_contains($request,'/'.'articles/')) {
+                renderBlogLayout($article_layout);
 
-                    echo $twig->render($blog_content,
-                        [
-                            'layout'=>$layout,
-                            'slug'=>$slug,
-                            'src'=>$media_source
-                        ]);
-                    
-                } else {
-                    _404();
-                }
+            } elseif (str_contains($request,'/'.'notes/')) {
+                renderBlogLayout($note_layout);
+
+            } else {
+                _404();
             }
 
             break;
 
         case str_contains($request, '/about/changelog/'):
             $path_1 = ltrim($request,'/about');
-            $path_2 = rtrim($path_1,'/');
+            $path_2 = '/'.rtrim($path_1,'/');
             $document_source = $server_root.$content_dir.$path_2.'.html.twig';
 
             if (file_exists($document_source)) {
@@ -86,11 +79,9 @@
         case str_ends_with($request, '/'.'resources/'):
         case str_ends_with($request, '/'.'resources'):
 
-            $updated = filemtime($server_root.'/resources/content/resources/resources_index.md');
-
             echo $twig->render($layouts_dir.'/resources/resources_index.html.twig',
                 [
-                    'updated'=>$updated
+                    'updated'=>filemtime($server_root.$content_dir.'/resources/resources_index.md')
                 ]);
 
             break;
@@ -99,12 +90,19 @@
 
             $path = preg_split(('/\/(resources)\//'),$request);
             $file_base = rtrim($path[1],"/");
-
             $category = $server_root.$content_dir.'/resources/categories/';
-            $subpage = $category.$file_base.'.html.twig';
 
-            function renderPage($page) {
-                global $request, $server_root, $twig, $layouts_dir, $content_dir, $content, $updated;
+            function renderPage($markdown_file, $twig_file) {
+                global $request, $server_root, $twig, $commonmark, $layouts_dir, $content_dir;
+
+                if (file_exists($markdown_file)) {
+                    $content = $commonmark->convert(file_get_contents($markdown_file));
+                    $updated = filemtime($markdown_file);
+
+                } else {
+                    $content = null;
+                    $updated = filemtime($twig_file);
+                }
 
                 $url = preg_split('/\//',$request);
                 if (!empty($url[3])) {
@@ -113,7 +111,7 @@
                     $parent = null;
                 }
 
-                echo $twig->render(ltrim($page, $server_root),
+                echo $twig->render(ltrim($twig_file, $server_root),
                     [
                         'layout'=>$twig->load($layouts_dir.'/resources/resources_subpage_1.html.twig'),
                         'updated'=>$updated,
@@ -123,42 +121,19 @@
                     ]);
             }
 
+            $subpage = $category.$file_base.'.html.twig';
+            
             if (file_exists($subpage)) {
-                
-                $markdown = $category.$file_base.'.md';
-                
-                if (file_exists($markdown)) {
-                    $content = $commonmark_converter->convert(file_get_contents($markdown));
-                    $updated = filemtime($markdown);
-
-                } else {
-                    $content = null;
-                    $updated = filemtime($subpage);
-                }
-
-                renderPage($subpage);
+                renderPage($category.$file_base.'.md',$subpage);
 
             } elseif (preg_match('/\/(resources)\/.+/', $request, $matches)) {
 
                 $path = preg_split('/\/(resources)\//',$matches[0]);
-                
                 $file_base = $category.$path[1];
                 $index = $file_base.'index.html.twig';
 
                 if (file_exists($index)) {
-
-                    $markdown = $file_base.'index.md';
-
-                    if (file_exists($markdown)) {
-                        $content = $commonmark_converter->convert(file_get_contents($markdown));
-                        $updated = filemtime($markdown);
-
-                    } else {
-                        $content = null;
-                        $updated = filemtime($index);
-                    }
-
-                    renderPage($index);
+                    renderPage($file_base.'index.md',$index);
 
                 } else {
                     _404();
