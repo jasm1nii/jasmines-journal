@@ -15,8 +15,17 @@
     $content_dir = '/resources/content';
 
     switch ($request) {
-        case str_contains($request,'/'.'blog/'):
+        case str_contains($request, '/link-gallery'):
+            $link_gallery = '/link-gallery/index.html.twig';
 
+            echo $twig->render($content_dir.$link_gallery,
+                [
+                    'updated'=>stat($server_root.$content_dir.'/link-gallery')['mtime']
+                ]);
+                
+            break;
+
+        case str_contains($request,'/'.'blog/'):
             $article_layout = $layouts_dir.'/blog_article_layout.html.twig';
             $note_layout = $layouts_dir.'/blog_note_layout.html.twig';
 
