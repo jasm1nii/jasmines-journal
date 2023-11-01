@@ -1,6 +1,16 @@
 <section>
 
+<h2>table of contents</h2>
+
+[TOC]
+
+</section>
+
+<section>
+
 ## illustration programs
+
+### painting
 
 - [heavypaint](https://www.heavypaint.com/) 👑
 

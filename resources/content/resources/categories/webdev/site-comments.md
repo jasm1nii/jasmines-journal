@@ -1,5 +1,13 @@
 <section>
 
+<h2>table of contents</h2>
+
+[TOC]
+
+</section>
+
+<section>
+
 ## onsite
 
 - [ayano's neocities comment widget](https://virtualobserver.moe/ayano/comment-widget)

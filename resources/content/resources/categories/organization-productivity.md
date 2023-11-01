@@ -1,3 +1,15 @@
+<section>
+
+<h2>table of contents</h2>
+
+[TOC]
+
+</section>
+
+<section>
+
+## time tracking & accountability
+
 - [toggl track](https://toggl.com/)
 
     a time tracking app for web and mobile - can track time by project and be used for logging billable minutes.
@@ -14,11 +26,15 @@
 
     habit tracking app with public and private sharing settings - available for desktop browsers and iOS.
 
+</section>
+
+<section>
+
+## notes and knowledge management
+
 - [milanote](https://www.milanote.com/refer/rcB9bGTYRYfxh0S1uO) ⭐
 
     really helpful for visualizing ideas and mapping them out!
-
-## note-taking and knowledge management
 
 - <a href="https://affiliate.notion.so/jasm1nii-neocities" rel="sponsored">notion</a> 👑 🎀
 
@@ -35,3 +51,5 @@
 - [obsidian](https://obsidian.md/)
 
     you don't even need an account to use this - notes are stored and edited offline. you can even use custom HTML and CSS! but if you're used to detail-rich kanban boards, calendars, and databases (like in notion and coda), you'll need to spend a lot of time finding the right extensions.
+
+</section>

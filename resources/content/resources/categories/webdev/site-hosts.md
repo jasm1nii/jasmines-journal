@@ -1,4 +1,4 @@
-<section id="toc">
+<section>
 
 <h2>table of contents</h2>
 
