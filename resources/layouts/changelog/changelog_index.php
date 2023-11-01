@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <?php include_once dirname(__DIR__,3).'/resources/includes/head.shtml'; ?>
+    <?php include_once dirname(__DIR__,2).'/includes/head.shtml'; ?>
     <title>change log | jasmine's journal</title>
     <meta name="description" content="updates to the website"/>
     <link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
@@ -16,12 +16,12 @@
                     <h1>change log</h1>
                     <p class="subtitle">jasmine's journal</p>
                     <p class="site-update">
-                        page contents updated <time datetime="2023-10-13">13 october 2023</time>
+                        last updated <time datetime="<?= date(DATE_ATOM,filemtime(__FILE__)) ?>"><?= strtolower(date("j F Y",filemtime(__FILE__))) ?></time>
                     </p>
                 </hgroup>
                 <nav>
                     <?php
-                        include dirname(__DIR__,3).'/resources/includes/_changelog_nav.php';
+                        include dirname(__DIR__,2).'/includes/_changelog_nav.php';
                         echo $nav->saveHTML();
                     ?>
                 </nav>
@@ -34,14 +34,9 @@
                         <h2 id="changelog">archive</h2>
                         <nav id="archiveNav">
                             <ul>
-                                <li>2023
-                                    <ul>
-                                        <li><a href="/about/changelog/2023/7">july</a></li>
-                                        <li><a href="/about/changelog/2023/8">august</a></li>
-                                        <li><a href="/about/changelog/2023/9">september</a></li>
-                                        <li><a href="/about/changelog/2023/10">october</a></li>
-                                    </ul>
-                                </li>
+                                <?php
+                                    include dirname(__DIR__,2).'/includes/_changelog_archive.php';
+                                ?>
                             </ul>
                         </nav>
                     </section>
@@ -65,7 +60,7 @@
                 </article>
             </main>
             <footer>
-                <?php include dirname(__DIR__,3).'/resources/includes/footer.shtml';?>
+                <?php include dirname(__DIR__,2).'/includes/footer.shtml';?>
             </footer>
         </div>
     </div>

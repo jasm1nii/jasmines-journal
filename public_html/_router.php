@@ -16,9 +16,9 @@
 
     switch ($request) {
         case str_contains($request, '/link-gallery'):
-            $link_gallery = '/link-gallery/index.html.twig';
+            $link_gallery = '/link-gallery_layout.html.twig';
 
-            echo $twig->render($content_dir.$link_gallery,
+            echo $twig->render($layouts_dir.$link_gallery,
                 [
                     'updated'=>stat($server_root.$content_dir.'/link-gallery')['mtime']
                 ]);
@@ -61,21 +61,24 @@
 
             break;
 
+        case str_ends_with($request, '/about/changelog/');
+            require $server_root.$layouts_dir.'/changelog/changelog_index.php';
+
+            break;
+
         case str_contains($request, '/about/changelog/'):
-            $path_1 = ltrim($request,'/about');
-            $path_2 = '/'.rtrim($path_1,'/');
-            $document_source = $server_root.$content_dir.$path_2.'.html.twig';
+            $path = ltrim($request,'/about');
+            $file = '/'.rtrim($path,'/');
+            $document_source = $server_root.$content_dir.$file.'.html.twig';
 
             if (file_exists($document_source)) {
-
-                $layout = $twig->load($layouts_dir.'/changelog_layout.html.twig');
 
                 include $server_root.'/resources/includes/_changelog_nav.php';
                 $nav_html = $nav->saveHTML();
 
-                echo $twig->render($content_dir.$path_2.'.html.twig',
+                echo $twig->render($content_dir.$file.'.html.twig',
                     [
-                        'layout'=>$layout,
+                        'layout'=>$twig->load($layouts_dir.'/changelog/changelog_subpage.html.twig'),
                         'nav'=>$nav_html
                     ]);
 

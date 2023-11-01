@@ -1,0 +1,10 @@
+<li>
+    {% for year in years %}
+        {{ year }}
+        <ul>
+            {% for month in months %}
+                <li><a href="/about/changelog/{{ year }}/{{ month|date("n") }}">{{ month }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</li>
