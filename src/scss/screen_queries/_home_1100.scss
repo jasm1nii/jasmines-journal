@@ -1,0 +1,47 @@
+@mixin screen-1100 {
+    @media all and (max-width:1100px) {
+        body {
+            font-size: 1.2em;
+        }
+        .page-columns {
+            columns: 2;
+            & > section {
+                padding-bottom: 5vh;
+            }
+        }
+        .board {
+            margin-top: 0;
+        }
+        header {
+            position: relative;
+        }
+        #webmaster-identity {
+            font-size: 1.25em;
+        }
+        .h-card {
+            max-width: 300px;
+        }
+        .u-photo {
+            width: 200px;
+            height: 200px;
+        }
+        .time {
+            min-width: 260px;
+        }
+        .clock-display {
+            width: 80%;
+        }
+        .last-played {
+            max-width: 270px;
+        }
+        .latest-status {
+            max-width: 350px;
+        }
+        [aria-labelledby="note-to-visitors"] {
+            max-width: 450px;
+        }
+        [aria-labelledby="tip-jar"] {
+            max-width: 420px;
+        }
+    }
+}

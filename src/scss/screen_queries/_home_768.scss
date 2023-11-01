@@ -1,0 +1,44 @@
+@mixin screen-768 {
+    @media all and (max-width:768px) {
+        .board {
+            margin-top: 0;
+            max-width: none;
+            border-left: none;
+            border-right: none;
+        }
+        header {
+            position: relative;
+            padding-top: 0;
+            & hgroup {
+                margin-right: 20vw;
+                & p {
+                font-size: clamp(1.5em, 3vw, 1.75em);
+                line-height: 1.5em;
+                }
+            }
+        }
+        h1 {
+            line-height: 1.75em;
+        }
+        nav {
+            padding-left: 5%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .notice-group {
+            margin-top: 5%;
+            margin-right: 5%;
+        }
+        .latest-status {
+            min-width: 55%;
+        }
+        footer {
+            width: 90%;
+        }
+    }
+    @media all and (max-width:700px) {
+        .page-columns {
+          columns: 1;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@mixin status-cafe {
+    .latest-status {
+        width: 80%;
+        padding: 0;
+        margin: auto;
+        border: 1px solid rgb(175, 140, 175);
+        border-radius: 0;
+        box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
+    }
+    #latest-status {
+        border: none;
+        padding: 1em 1em .5em 1em;
+    }
+    #statuscafe {
+        padding: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 1px solid rgb(194, 167, 194);
+        font-size: 1.1em;
+    }
+    #statuscafe-username {
+        margin-bottom: .5em;
+        font-weight: 600;
+        min-height: 1em;
+    }
+    #statuscafe-content {
+        padding: .5em;
+        font-family: var(--font-3);
+        min-height: 50px;
+        word-wrap: break-word;
+    }
+    #statuscafe-content::before, #statuscafe-content::after {
+        content: '"';
+    }
+    #statuscafe-content + * {
+        margin: auto;
+        margin-top: 1.5em;
+        text-align: center;
+    }
+}

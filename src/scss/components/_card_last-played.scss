@@ -1,0 +1,86 @@
+@mixin last-played {
+    :root {
+        --last-played-bg: #b8dce0;
+        --last-played-border-right: 10px outset rgb(189, 235, 232);
+        --last-played-border-bottom: 10px outset rgb(155, 211, 207);
+        --last-played-shadow: 10px 10px rgba(98, 136, 194, 0.5);
+        --last-played-outline: 1px solid rgb(125, 143, 137);
+        --last-played-dark-bg: rgb(63, 85, 85);
+        --last-played-dark-r-border: 10px outset rgb(77, 90, 88);
+        --last-played-dark-b-border: 10px outset rgb(40, 44, 44);
+    }
+    .last-played {
+        max-width: 225px;
+        font-size: 1.1em;
+        outline: var(--last-played-outline);
+        text-align: center;
+        padding-bottom: 5px;
+        border-top: none;
+        border-left: none;
+        box-shadow: var(--last-played-shadow) !important;
+        & .button-style {
+            font-size: smaller;
+            border-radius: 5px;
+            margin-left: 5px;
+            padding: .75em 1em;
+            border: 1px solid green;
+        }
+    }
+    #last-played {
+        margin-left: .5em;
+        margin-right: .5em;
+        font-variant: small-caps;
+        border-color: rgb(79, 170, 161);
+        font-family: var(--font-1);
+    }
+    #track {
+        padding-top: .5em;
+        border: 1px solid rgb(113, 135, 160);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-family: var(--font-3);
+        text-transform: lowercase;
+        overflow-x: hidden;
+    }
+    #song {
+        white-space: nowrap;
+        transform: translateX(0);
+        animation: scroll 15s linear infinite;
+        font-weight: 500;
+    }
+    @keyframes scroll {
+        0% { 
+            transform: translateX(100%); 		
+        }
+        100% { 
+            transform: translateX(-150%); 
+        }
+    }
+    @media (prefers-reduced-motion) {
+        #song {
+            white-space: normal;
+            animation-play-state: paused;
+        }
+    }
+    .last-played-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        padding: 15px 0px;
+        border: 1px solid rgb(146, 162, 180);
+        border-top: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: inherit;
+    }
+    #js-toggle {
+        padding: .6em 1em;
+        font: inherit;
+        font-weight: 600;
+        font-stretch: semi-expanded;
+        border: 1px solid green;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+}
