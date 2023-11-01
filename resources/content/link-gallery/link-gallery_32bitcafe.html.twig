@@ -1,0 +1,81 @@
+{% set cafe_sites = [
+    {
+        href:"https://nickolox.neocities.org/",
+        src:"nickolox.gif",
+        alt:"nickolox"
+    },
+    {
+        href:"https://whiona.me/",
+        src:"whiona_button.png",
+        alt:"whiona"
+    },
+    {
+        href:"https://justfluffingaround.neocities.org/",
+        src:"justfluffingaroundbutton.png",
+        alt:"just fluffing around"
+    },
+    {
+        href:"https://qrunchysnaq.neocities.org/",
+        src:"qrunchybutton4.gif",
+        alt:"qrunchysnaq"
+    },
+    {
+        href:"https://inkcaps.neocities.org/",
+        src:"inkcapsbutton.gif",
+        alt:"inkcaps"
+    },
+    {
+        href:"https://fri11s.dev",
+        src:"fri11s.png",
+        alt:"fri11s"
+    },
+    {
+        href:"https://lostletters.neocities.org/",
+        src:"LostLetters88x31.gif",
+        alt:"lost letters"
+    },
+    {
+        href:"https://divergentrays.com/",
+        src:"drbutton2.png",
+        alt:"divergent rays"
+    },
+    {
+        href:"https://realachao.neocities.org/",
+        src:"realachao_kirbybutton88x31.png",
+        alt:"realachao"
+    },
+    {
+        href:"https://mizuki.world",
+        src:"mizuki.gif",
+        alt:"mizuki's world"
+    },
+    {
+        href:"https://bloodtypeoh.neocities.org/",
+        src:"butt_move.gif",
+        alt:"bloodtypeoh"
+    },
+    {
+        href:"https://pinkvampyr.neocities.org/",
+        src:"pinkvampyr.gif",
+        alt:"pinkvampyr"
+    },
+    {
+        href:"https://sanguineroyal.com/",
+        src:"sanguine-royal.png",
+        alt:"sanguine royal"
+    },
+    {
+        href:"https://hillhouse.neocities.org",
+        src:"hillhouse3.png",
+        alt:"hillhouse"
+    },
+    {
+        href:"https://xandra.cc/",
+        src:"88x31-by-rosedryad.png",
+        alt:"museum of alexandra"
+    }
+] %}
+
+{% for site in cafe_sites %}
+    <a href="{{ site.href }}" rel="external"><img src="/_assets/media/link-gallery/{{ site.src }}" alt="{{ site.alt }}" width="88" height="31"/></a>
+{% endfor %}
