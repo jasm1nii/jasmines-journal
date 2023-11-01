@@ -1,9 +1,0 @@
-    
-    <entry>
-        <title>{{ published }}</title>
-        <id>https://jasm1nii.xyz/blog/notes/{{ slug }}</id>
-        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
-        <updated>{% if updated is defined %}{{ updated|date() }}{% else %}{{ published|date() }}{% endif %}</updated>
-        <published>{{ published|date() }}</published>
-        <summary>a note from {{ published }}</summary>
-    </entry>
