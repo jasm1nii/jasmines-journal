@@ -3,11 +3,7 @@
         "twig/twig": "^3.0",
         "twig/markdown-extra": "^3.7",
         "league/commonmark": "^2.4",
-        "twig/intl-extra": "^3.7",
-        "pug-php/pug": "^3.5",
-        "js-phpize/js-phpize-phug": "^2.2",
-        "phug/js-transformer-filter": "^1.2",
-        "pug/twig": "^1.2"
+        "twig/intl-extra": "^3.7"
     },
     "config": {
         "allow-plugins": {

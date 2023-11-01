@@ -7,10 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
     );
 
@@ -26,18 +25,11 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Intl\\' => 23,
         ),
         'P' => 
         array (
             'Psr\\EventDispatcher\\' => 20,
-            'Phug\\Util\\' => 10,
-            'Phug\\' => 5,
-        ),
-        'N' => 
-        array (
-            'NodejsPhpFallback\\' => 18,
         ),
         'L' => 
         array (
@@ -75,10 +67,6 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Component\\VarDumper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
         'Symfony\\Component\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/intl',
@@ -86,27 +74,6 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
-        ),
-        'Phug\\Util\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phug/phug/src/Phug/Util/Util',
-        ),
-        'Phug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phug/phug/src/Phug/Ast',
-            1 => __DIR__ . '/..' . '/phug/phug/src/Phug/Compiler',
-            2 => __DIR__ . '/..' . '/phug/phug/src/Phug/DependencyInjection',
-            3 => __DIR__ . '/..' . '/phug/phug/src/Phug/Event',
-            4 => __DIR__ . '/..' . '/phug/phug/src/Phug/Formatter',
-            5 => __DIR__ . '/..' . '/phug/phug/src/Phug/Invoker',
-            6 => __DIR__ . '/..' . '/phug/phug/src/Phug/Lexer',
-            7 => __DIR__ . '/..' . '/phug/phug/src/Phug/Parser',
-            8 => __DIR__ . '/..' . '/phug/phug/src/Phug/Reader',
-            9 => __DIR__ . '/..' . '/phug/phug/src/Phug/Renderer',
-        ),
-        'NodejsPhpFallback\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nodejs-php-fallback/nodejs-php-fallback/src/NodejsPhpFallback',
         ),
         'League\\Config\\' => 
         array (
@@ -120,42 +87,6 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/js-transformer/js-transformer/src',
-        1 => __DIR__ . '/..' . '/pug-php/pug/src',
-        2 => __DIR__ . '/..' . '/pug/twig/src',
-    );
-
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Pug\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/pug-php/pug/src',
-            ),
-            'Phug\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/phug/js-transformer-filter/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'JsPhpize' => 
-            array (
-                0 => __DIR__ . '/..' . '/js-phpize/js-phpize/src',
-                1 => __DIR__ . '/..' . '/js-phpize/js-phpize-phug/src',
-            ),
-            'Jade\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/pug-php/pug/src',
-            ),
-        ),
-    );
-
-    public static $fallbackDirsPsr0 = array (
-        0 => __DIR__ . '/..' . '/phug/phug/src/Phug/Phug',
     );
 
     public static $classMap = array (
@@ -230,9 +161,6 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355::$classMap;
 
         }, null, ClassLoader::class);

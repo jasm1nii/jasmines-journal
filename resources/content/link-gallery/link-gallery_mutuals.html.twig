@@ -1,0 +1,86 @@
+{% set mutuals_sites = [
+    {
+        href:"https://kalechips.net/",
+        src:"kalechips.png",
+        alt:"kalechips"
+    },
+    {
+        href:"https://notprincehamlet.neocities.org/",
+        src:"notprincehamlet.png",
+        alt:"notprincehamlet"
+    },
+    {
+        href:"https://hexephre.com/",
+        src:"hexephre.png",
+        alt:"hexephre's webbed site'"
+    },
+    {
+        href:"https://owlsroost.xyz/",
+        src:"OwlBanner.gif",
+        alt:"owl's roost"
+    },
+    {
+        href:"https://bluenight.neocities.org/",
+        src:"BLUE_NIGHT.gif",
+        alt:"blue night"
+    },
+    {
+        href:"https://tim-of-the-valley.neocities.org",
+        src:"tim-button.png",
+        alt:"time-of-the-valley"
+    },
+    {
+        href:"https://cherrywaves.neocities.org/",
+        src:"cherrywaves.gif",
+        alt:"cherry waves"
+    },
+    {
+        href:"https://soyatoast.neocities.org/",
+        src:"soyatoast.png",
+        alt:"soyatoast"
+    },
+    {
+        href:"https://chocolate-cake.neocities.org/",
+        src:"chocolate-cake.gif",
+        alt:"chocolate cake"
+    },
+    {
+        href:"https://nonkiru.art/",
+        src:"nonkiru.gif",
+        alt:"nonkiru"
+    },
+    {
+        href:"https://shrimpfriedeggs.neocities.org/",
+        src:"shrimpfriedeggs.png",
+        alt:"shrimp fried eggs"
+    },
+    {
+        href:"https://meixins.neocities.org/",
+        src:"meixins.gif",
+        alt:"meixins"
+    },
+    {
+        href:"https://juxtajuno.neocities.org/",
+        src:"juxtajuno.gif",
+        alt:"juxtajuno"
+    },
+    {
+        href:"https://jeith.neocities.org/",
+        src:"jeith.jpeg",
+        alt:"jeith"
+    },
+    {
+        href:"https://owlhari.com/",
+        src:"owlhari.gif",
+        alt:"owlhari"
+    },
+    {
+        href:"https://icecreampizzer.neocities.org/",
+        src:"pizzer.gif",
+        alt:"icecreampizzer"
+    }
+] %}
+
+{% for site in mutuals_sites %}
+    <a href="{{ site.href }}" rel="external"><img src="/_assets/media/link-gallery/{{ site.src }}" alt="{{ site.alt }}" width="88" height="31"/></a>
+{% endfor %}
