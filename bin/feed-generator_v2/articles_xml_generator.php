@@ -12,8 +12,9 @@
     foreach (array_reverse($files) as $article) {
         $path = ltrim($article, $server_root);
         $slug = ltrim(rtrim($path,'.html.twig'),'/resources/content/blog/articles');
+        $media_src = "https://jasm1nii.xyz/_assets/media/blog/articles/".rtrim($slug, "entry");
 
-        echo $twig->render($path, ['layout'=>$layout,'slug'=>$slug]);
+        echo $twig->render($path, ['layout'=>$layout,'slug'=>$slug, 'src'=>$media_src]);
     }
 
     $target_dir = $server_root.'/tests';

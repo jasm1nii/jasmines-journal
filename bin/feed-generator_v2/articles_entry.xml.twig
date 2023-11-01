@@ -2,8 +2,11 @@
     <entry>
         <title>{{ title }}</title>
         <id>https://jasm1nii.xyz/blog/articles/{{ slug }}</id>
-        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/{{ slug }}"/>
         <updated>{% if updated is defined %}{{ updated|date() }}{% else %}{{ published|date() }}{% endif %}</updated>
         <published>{{ published|date() }}</published>
         <summary>{{ summary }}</summary>
+        <content type="html">
+            {{ block('content')|e|spaceless }}
+        </content>
     </entry>
