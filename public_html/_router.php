@@ -154,7 +154,7 @@
             $file_base = rtrim($path[1],"/");
             $category = SITE_ROOT.Template::Content.'/resources/categories/';
 
-            function renderPage($markdown_file, $twig_file) {
+            function renderResourcesPage($markdown_file, $twig_file) {
                 global $twig;
 
                 if (file_exists($markdown_file)) {
@@ -187,7 +187,7 @@
             $page = $category.$file_base.'.html.twig';
             
             if (file_exists($page)) {
-                renderPage($category.$file_base.'.md',$page);
+                renderResourcesPage($category.$file_base.'.md',$page);
 
             } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
 
@@ -196,7 +196,7 @@
                 $page = $file_base.'index.html.twig';
 
                 if (file_exists($page)) {
-                    renderPage($file_base.'index.md',$page);
+                    renderResourcesPage($file_base.'index.md',$page);
 
                 } else {
                     Route::NotFound();
