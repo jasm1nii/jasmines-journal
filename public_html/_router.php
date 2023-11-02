@@ -1,40 +1,52 @@
 <?php
-    $request = $_SERVER['REQUEST_URI'];
+    define("REQUEST", $_SERVER['REQUEST_URI']);
+    define("SITE_ROOT", dirname(__DIR__,1));
 
-    function _404() {
-        http_response_code(404);
-        require_once __DIR__.'/404.shtml';
+    class Route {
+        const Blog = "/blog/";
+        const BlogArticles = "/articles/";
+        const BlogNotes = "/notes/";
+        const Changelog = "/about/changelog/";
+        const LinkGallery = "/link-gallery";
+        const Resources = "/resources/";
+        public static function NotFound() {
+            http_response_code(404);
+            require_once __DIR__.'/404.shtml';
+        }
     }
 
-    $server_root = dirname(__DIR__,1);
+    class Template {
+        const Layouts = "/resources/layouts";
+        const Includes = "/resources/includes";
+        const Content = "/resources/content";
+    }
 
-    require_once $server_root.'/config/twig_default_config.php';
-    require_once $server_root.'/config/commonmark_toc_config.php';
+    class RenderConfig {
+        const Twig = SITE_ROOT."/config/twig_default_config.php";
+        const MarkdownWithTOC = SITE_ROOT."/config/commonmark_toc_config.php";
+    }
 
-    $layouts_dir = '/resources/layouts';
-    $content_dir = '/resources/content';
+    require_once RenderConfig::Twig;
 
-    switch ($request) {
-        case str_contains($request, '/link-gallery'):
-            $link_gallery = '/link-gallery_layout.html.twig';
-
-            echo $twig->render($layouts_dir.$link_gallery,
+    switch (REQUEST) {
+        case str_contains(REQUEST, Route::LinkGallery):
+            echo $twig->render(Template::Layouts.'/link-gallery_layout.html.twig',
                 [
-                    'updated'=>stat($server_root.$content_dir.'/link-gallery')['mtime']
+                    'updated'=>stat(SITE_ROOT.Template::Content.'/link-gallery')['mtime']
                 ]);
                 
             break;
 
-        case str_contains($request,'/'.'blog/'):
-            $article_layout = $layouts_dir.'/blog_article_layout.html.twig';
-            $note_layout = $layouts_dir.'/blog_note_layout.html.twig';
+        case str_contains(REQUEST, Route::Blog):
+            $article_layout = Template::Layouts.'/blog_article_layout.html.twig';
+            $note_layout = Template::Layouts.'/blog_note_layout.html.twig';
 
             function renderBlogLayout($type) {
-                global $request, $server_root, $twig, $content_dir;
+                global $twig;
 
-                $slug = rtrim($request,'/');
-                $blog_content = $content_dir.$slug.'.html.twig';
-                $document_source = $server_root.$blog_content;
+                $slug = rtrim(REQUEST,'/');
+                $blog_content = Template::Content.$slug.'.html.twig';
+                $document_source = SITE_ROOT.$blog_content;
 
                 if (file_exists($document_source)) {
 
@@ -45,69 +57,68 @@
                             'src'=>'/_assets/media'.rtrim($slug,'/entry').'/'
                         ]);
                 } else {
-                    _404();
+                    Route::NotFound();
                 }
             }
 
-            if (str_contains($request,'/'.'articles/')) {
+            if (str_contains(REQUEST, Route::BlogArticles)) {
                 renderBlogLayout($article_layout);
 
-            } elseif (str_contains($request,'/'.'notes/')) {
+            } elseif (str_contains(REQUEST, Route::BlogNotes)) {
                 renderBlogLayout($note_layout);
 
             } else {
-                _404();
+                Route::NotFound();
             }
 
             break;
 
-        case str_ends_with($request, '/about/changelog/');
-            require $server_root.$layouts_dir.'/changelog/changelog_index.php';
-
+        case str_ends_with(REQUEST, Route::Changelog):
+            require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
             break;
 
-        case str_contains($request, '/about/changelog/'):
-            $path = ltrim($request,'/about');
+        case str_contains(REQUEST, Route::Changelog):
+            $path = ltrim(REQUEST,'/about');
             $file = '/'.rtrim($path,'/');
-            $document_source = $server_root.$content_dir.$file.'.html.twig';
+            $document_source = SITE_ROOT.Template::Content.$file.'.html.twig';
 
             if (file_exists($document_source)) {
 
-                include $server_root.'/resources/includes/_changelog_nav.php';
+                include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
                 $nav_html = $nav->saveHTML();
 
-                echo $twig->render($content_dir.$file.'.html.twig',
+                echo $twig->render(Template::Content.$file.'.html.twig',
                     [
-                        'layout'=>$twig->load($layouts_dir.'/changelog/changelog_subpage.html.twig'),
+                        'layout'=>$twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig'),
                         'nav'=>$nav_html
                     ]);
 
             } else {
-                _404();
+                Route::NotFound();
             }
 
             break;
 
-        case str_ends_with($request, '/'.'resources/'):
-        case str_ends_with($request, '/'.'resources'):
+        case str_ends_with(REQUEST, Route::Resources):
 
-            echo $twig->render($layouts_dir.'/resources/resources_index.html.twig',
+            echo $twig->render(Template::Layouts.'/resources/resources_index.html.twig',
                 [
-                    'updated'=>filemtime($server_root.$content_dir.'/resources/resources_index.md')
+                    'updated'=>filemtime(SITE_ROOT.Template::Content.'/resources/resources_index.md')
                 ]);
 
             break;
 
-        case str_contains($request, '/'.'resources/'):
+        case str_contains(REQUEST, Route::Resources):
 
-            $path = preg_split(('/\/(resources)\//'),$request);
+            $path = preg_split(('/\/(resources)\//'),REQUEST);
             $file_base = rtrim($path[1],"/");
-            $category = $server_root.$content_dir.'/resources/categories/';
+            $category = SITE_ROOT.Template::Content.'/resources/categories/';
 
             function renderPage($markdown_file, $twig_file) {
-                global $request, $server_root, $twig, $commonmark, $layouts_dir, $content_dir;
+                global $twig;
 
                 if (file_exists($markdown_file)) {
+                    require_once RenderConfig::MarkdownWithTOC;
                     $content = $commonmark->convert(file_get_contents($markdown_file));
                     $updated = filemtime($markdown_file);
 
@@ -116,48 +127,48 @@
                     $updated = filemtime($twig_file);
                 }
 
-                $url = preg_split('/\//',$request);
+                $url = preg_split('/\//',REQUEST);
                 if (!empty($url[3])) {
                     $parent = '/'.$url[1].'/'.$url[2];
                 } else {
                     $parent = null;
                 }
 
-                echo $twig->render(ltrim($twig_file, $server_root),
+                echo $twig->render(ltrim($twig_file, SITE_ROOT),
                     [
-                        'layout'=>$twig->load($layouts_dir.'/resources/resources_subpage_1.html.twig'),
+                        'layout'=>$twig->load(Template::Layouts.'/resources/resources_subpage_1.html.twig'),
                         'updated'=>$updated,
-                        'legend'=>file_get_contents($server_root.$content_dir.'/resources/_legend.md'),
+                        'legend'=>file_get_contents(SITE_ROOT.Template::Content.'/resources/_legend.md'),
                         'content'=>$content,
                         'parent'=>$parent
                     ]);
             }
 
-            $subpage = $category.$file_base.'.html.twig';
+            $page = $category.$file_base.'.html.twig';
             
-            if (file_exists($subpage)) {
-                renderPage($category.$file_base.'.md',$subpage);
+            if (file_exists($page)) {
+                renderPage($category.$file_base.'.md',$page);
 
-            } elseif (preg_match('/\/(resources)\/.+/', $request, $matches)) {
+            } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
 
                 $path = preg_split('/\/(resources)\//',$matches[0]);
                 $file_base = $category.$path[1];
-                $index = $file_base.'index.html.twig';
+                $page = $file_base.'index.html.twig';
 
-                if (file_exists($index)) {
-                    renderPage($file_base.'index.md',$index);
+                if (file_exists($page)) {
+                    renderPage($file_base.'index.md',$page);
 
                 } else {
-                    _404();
+                    Route::NotFound();
                 }
                 
             } else {
-                _404();
+                Route::NotFound();
             }
 
             break;
 
         default:
-            _404();
+            Route::NotFound();
    }
 ?>
