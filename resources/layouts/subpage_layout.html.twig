@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {{ include("/resources/includes/head.shtml") }}
+        <title>{{ title }} | jasmine's journal</title>
+        <link rel="canonical" href="https://jasm1nii.xyz/{{ slug }}"/>
+        <meta name="description" content="{{ description }}"/>
+        <meta property="og:description" content="{{ description }}"/>
+        <link href="/_assets/stylesheets/content_B1.css" rel="stylesheet" type="text/css" media="all"/>
+    </head>
+    <body>
+        <header>
+            <hgroup>
+                <h1>jasmine's journal</h1>
+                <p>last updated: <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time></p>
+            </hgroup>
+            <nav>
+                {{ include('/resources/includes/headernav.shtml') }}
+            </nav>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <h2>{{ title }}</h2>
+                    {% if content != null %}
+                        {{ content }}
+                    {% else %}
+                        {% block content %}
+                        {% endblock %}
+                    {% endif %}
+                </section>
+            </article>
+        </main>
+        <footer>
+            {{ include('/resources/includes/footer.shtml') }}
+        </footer>
+        <script src="/_assets/scripts/theme-switcher-v2.js"></script>
+    </body>
+</html>
