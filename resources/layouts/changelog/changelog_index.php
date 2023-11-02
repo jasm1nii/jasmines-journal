@@ -1,8 +1,11 @@
 <?php
     define("ROOT", dirname(__DIR__,2));
+
     require dirname(__DIR__,3) . '/src/vendor/autoload.php';
     use League\CommonMark\CommonMarkConverter;
     $converter = new CommonMarkConverter();
+
+    define("MARKDOWN_SOURCE", ROOT.'/content/changelog/index.md');
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +26,7 @@
                     <h1>change log</h1>
                     <p class="subtitle">jasmine's journal</p>
                     <p class="site-update">
-                        last updated <time datetime="<?= date(DATE_ATOM,filemtime(__FILE__)) ?>"><?= strtolower(date("j F Y",filemtime(__FILE__))) ?></time>
+                        last updated <time datetime="<?= date(DATE_ATOM,filemtime(MARKDOWN_SOURCE)) ?>"><?= strtolower(date("j F Y",filemtime(MARKDOWN_SOURCE))) ?></time>
                     </p>
                 </hgroup>
                 <nav>
@@ -47,12 +50,7 @@
                             </ul>
                         </nav>
                     </section>
-                    <section>
-                        <?= $converter->convert(file_get_contents(ROOT.'/content/changelog/index/to-do.md')); ?>
-                    </section>
-                    <section>
-                        <?= $converter->convert(file_get_contents(ROOT.'/content/changelog/index/known-issues.md')); ?>
-                    </section>
+                    <?= $converter->convert(file_get_contents(MARKDOWN_SOURCE)); ?>
                 </article>
             </main>
             <footer>

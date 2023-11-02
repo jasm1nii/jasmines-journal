@@ -3,7 +3,7 @@
     define("SITE_ROOT", dirname(__DIR__,1));
 
     class Route {
-        const About = "/about";
+        const About = "/about/";
         const Blog = "/blog/";
         const BlogArticles = "/articles/";
         const BlogNotes = "/notes/";
@@ -50,7 +50,7 @@
     }
 
     switch (REQUEST) {
-        case str_starts_with(REQUEST, Route::About):
+        case str_ends_with(REQUEST, Route::About):
 
             include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
             $nav_html = $nav->saveHTML();
