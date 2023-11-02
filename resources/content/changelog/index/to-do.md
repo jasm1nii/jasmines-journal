@@ -2,6 +2,6 @@
 
 nowadays, i prefer to manage the complete list on my private github repository - therefore, this page isn't the most up-to-date, but here are some planned additions that are of moderate to high priority.
 
-- add illustrations to the <a href="/about/">"about" page</a></li>
+- add illustrations to the "about" page
 - launch art page
 - add some shrines

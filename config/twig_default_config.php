@@ -26,4 +26,8 @@
 
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+
+    $twig->addGlobal("head",file_get_contents(dirname(__DIR__,1).'/resources/includes/head.shtml'));
+    $twig->addGlobal("headernav", file_get_contents(dirname(__DIR__,1).'/resources/includes/headernav.shtml'));
+    $twig->addGlobal("footer", file_get_contents(dirname(__DIR__,1).'/resources/includes/footer.shtml'));
 ?>
