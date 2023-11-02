@@ -1,8 +1,3 @@
-<?php
-    $notes_xml = file_get_contents(__DIR__.'/notes/notes.xml');
-    $notes_doc = new DOMDocument();
-    $notes_doc->loadXML($notes_xml);
-?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -59,6 +54,11 @@
                     </hgroup>
                     <div id="notes">
                         <article>
+                        <?php
+                            $notes_xml = file_get_contents(__DIR__.'/notes/notes.xml');
+                            $notes_doc = new DOMDocument();
+                            $notes_doc->loadXML($notes_xml);
+                        ?>
                             <div>
                                 <img src="/_assets/media/main/oingo-boingo.png" alt="profile picture" class="u-photo" />
                             </div>
@@ -101,7 +101,29 @@
                     <hgroup>
                         <h2>articles</h2>
                     </hgroup>
-                    <div id="articlesArchive"></div>
+                    <div id="articlesArchive">
+                        <?php
+                            require_once dirname(__DIR__,2).'/config/twig_default_config.php';
+
+                            $source = dirname(__DIR__,2).'/resources/content/blog/articles';
+
+                            $layout = "/resources/includes/_blog_index_2.html.twig";
+
+                            $files = glob($source."/*/*/*/entry.html.twig");
+                            asort($files, SORT_NATURAL);
+
+                            $i = 0;
+                            foreach (array_reverse($files) as $article) {
+                                $content_path = ltrim($article,dirname(__DIR__,2));
+
+                                $slug_1 = rtrim($content_path,'.html.twig');
+                                $slug_2 = ltrim($slug_1,'/resources/content/blog/articles');
+
+                                echo $twig->render($content_path, ['layout'=>$layout,'slug'=>$slug_2]);
+                                if(++$i > 4) break;
+                            }
+                        ?>
+                    </div>
                 </section>
                 <section class="subscribe">
                     <p>
@@ -120,7 +142,6 @@
             text-underline-offset: .25em;
         }
     </style>
-    <script src="/_assets/scripts/articles-archive.js"></script>
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
 </body>
 </html>
