@@ -15,7 +15,7 @@
       <p>
         this page does not exist or has moved to a new URL - try checking the site map.
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

@@ -12,7 +12,7 @@
       <p>
         it's me, not you.
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

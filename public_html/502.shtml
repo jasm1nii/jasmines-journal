@@ -12,7 +12,7 @@
       <p>
         the server received an invalid response 🤷‍♀️
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>406 - not acceptable</h1>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>400 - bad request</h1>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

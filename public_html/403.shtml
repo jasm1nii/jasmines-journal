@@ -12,7 +12,7 @@
       <p>
         not for your eyes, buddy.
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

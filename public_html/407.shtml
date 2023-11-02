@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>407 - proxy authentication required</h1>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

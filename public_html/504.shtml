@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>504 - gateway timeout</h1>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

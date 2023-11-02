@@ -12,7 +12,7 @@
       <p>
         the server is either undergoing maintenance, or is currently overloaded.
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

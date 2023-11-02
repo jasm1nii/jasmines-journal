@@ -12,7 +12,7 @@
       <p>
         please complete your transaction before proceeding 💸
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>

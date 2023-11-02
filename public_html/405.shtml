@@ -12,7 +12,7 @@
       <p>
         try something else!
       </p>
-      <!--#include virtual="/_assets/includes/error_footer.shtml"-->
+      
     </main>
   </body>
 </html>
