@@ -12,6 +12,7 @@
         const LinkGallery = "/link-gallery";
         const Accessibility = "/accessibility";
         const Credits = "/credits";
+        const SiteMap = "/site-map";
         public static function NotFound() {
             http_response_code(404);
             require_once __DIR__.'/404.shtml';
@@ -30,6 +31,7 @@
         const BlogArticle =  Template::Layouts.'/blog_article_layout.html.twig';
         const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
         const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
+        const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
     }
 
     class RenderConfig {
@@ -39,14 +41,16 @@
 
     require_once RenderConfig::Twig;
 
-    function renderPage($page, $slug) {
-        global $twig;
-        echo $twig->render($page,
-            [
-                "layout" => Layout::Subpage,
-                "slug" => $slug,
-                "updated" => filemtime(SITE_ROOT.$page)
-            ]);
+    class View {
+        public static function renderPage($layout, $page, $slug) {
+            global $twig;
+            echo $twig->render($page,
+                [
+                    "layout" => $layout,
+                    "slug" => $slug,
+                    "updated" => filemtime(SITE_ROOT.$page)
+                ]);
+        }
     }
 
     switch (REQUEST) {
@@ -209,12 +213,17 @@
             break;
 
         case str_starts_with(REQUEST, Route::Accessibility):
-            renderPage(Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
+            View::renderPage(Layout::Subpage, Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
 
             break;
 
         case str_starts_with(REQUEST, Route::Credits):
-            renderPage(Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
+            View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
+
+            break;
+        
+        case str_starts_with(REQUEST, Route::SiteMap):
+            View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
 
             break;
         

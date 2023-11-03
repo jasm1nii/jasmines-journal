@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ head|raw }}
+    <title>site map | jasmine's journal</title>
+    <meta name="description" content="site map for my webbed site"/>
+    <link rel="canonical" href="https://jasm1nii.xyz/site-map"/>
+    <link href="/_assets/stylesheets/sitemap.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>jasmine's journal</h1>
+        <p>
+          updated <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+        </p>
+      </hgroup>
+    </header>
+    <div class="layout">
+      <main>
+        <article>
+            <section>
+              <h2>site map</h2>
+              <div class="columns">
+                {{ block('content') }}
+              </div>
+            </section>
+        </article>
+      </main>
+    </div>
+    <footer>
+      <p>
+        site analytics powered by
+        <a href="https://www.goatcounter.com/" rel="external">goat counter</a>
+      </p>
+      <ul>
+        <li><time>2023</time> - until hell freezes over</li>
+      </ul>
+    </footer>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
+  </body>
+</html>
