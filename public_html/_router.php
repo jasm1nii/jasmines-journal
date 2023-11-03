@@ -13,6 +13,7 @@
         const Accessibility = "/accessibility";
         const Credits = "/credits";
         const SiteMap = "/site-map";
+        const Guestbook = "/guestbook";
         public static function NotFound() {
             http_response_code(404);
             require_once __DIR__.'/404.shtml';
@@ -32,6 +33,7 @@
         const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
         const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
         const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
+        const Guestbook = Template::Layouts.'/guestbook_layout.html.twig';
     }
 
     class RenderConfig {
@@ -213,17 +215,26 @@
             break;
 
         case str_starts_with(REQUEST, Route::Accessibility):
+
             View::renderPage(Layout::Subpage, Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
 
             break;
 
         case str_starts_with(REQUEST, Route::Credits):
-            View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
 
+            View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
+            
             break;
         
         case str_starts_with(REQUEST, Route::SiteMap):
+
             View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
+
+            break;
+
+        case str_starts_with(REQUEST, Route::Guestbook):
+
+            View::renderPage(null, Layout::Guestbook, null);
 
             break;
         

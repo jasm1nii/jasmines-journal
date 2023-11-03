@@ -1,0 +1,43 @@
+@import url("cactus-chat.css");
+@font-face {
+  font-family: "Besley";
+  font-display: swap;
+  src: url("/_assets/fonts/Besley/Besley-VariableFont_wght.woff2") format("woff2"), url("/_assets/fonts/Besley/Besley.woff") format("woff"), url("/_assets/fonts/Besley/Besley-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-display: swap;
+  src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+header, main, footer {
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+}
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+  display: grid;
+  max-width: 500px;
+  margin: auto;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+header nav ul li {
+  margin: auto;
+}
+
+h1 {
+  font-family: "Besley", serif;
+}/*# sourceMappingURL=guestbook.css.map */

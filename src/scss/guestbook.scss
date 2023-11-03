@@ -1,0 +1,27 @@
+@use 'assets/font_besley';
+@use 'assets/font_instrument-sans';
+
+@use 'animations/fade-in';
+
+@import url("cactus-chat.css");
+
+body {
+    font-family: "Instrument Sans", sans-serif;
+    display: grid;
+    max-width: 500px;
+    margin: auto;
+}
+
+header {
+    & nav ul {
+        display: flex;
+        flex-direction: row;
+        & li {
+            margin: auto;
+        }
+    }
+}
+
+h1 {
+    font-family: "Besley", serif;
+}
