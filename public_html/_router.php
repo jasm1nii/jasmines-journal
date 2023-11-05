@@ -13,7 +13,7 @@
         const Accessibility = "/accessibility";
         const Credits = "/credits";
         const SiteMap = "/site-map";
-        const Guestbook = "/guestbook";
+        const Guestbook = "/guestbook/";
         public static function NotFound() {
             http_response_code(404);
             require_once __DIR__.'/404.shtml';
@@ -33,12 +33,25 @@
         const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
         const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
         const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
-        const Guestbook = Template::Layouts.'/guestbook_layout.html.twig';
+        const Guestbook = Template::Layouts.'/guestbook_layout.php';
     }
 
     class RenderConfig {
         const Twig = SITE_ROOT."/config/twig_default_config.php";
         const MarkdownWithTOC = SITE_ROOT."/config/commonmark_toc_config.php";
+    }
+
+    class Includes {
+        const IncludesRoot = SITE_ROOT.Template::Includes;
+        public static function Head() {
+            include self::IncludesRoot.'/head.shtml';
+        }
+        public static function HeaderNav() {
+            include self::IncludesRoot.'/headernav.shtml';
+        }
+        public static function Footer() {
+            include self::IncludesRoot.'/footer.shtml';
+        }
     }
 
     require_once RenderConfig::Twig;
@@ -232,9 +245,17 @@
 
             break;
 
-        case str_starts_with(REQUEST, Route::Guestbook):
+        case str_ends_with(REQUEST, Route::Guestbook):
+        case str_ends_with(REQUEST, Route::Guestbook.'success/'):
+        case str_ends_with(REQUEST, Route::Guestbook.'error/'):
 
-            View::renderPage(null, Layout::Guestbook, null);
+            require SITE_ROOT.Layout::Guestbook;
+
+            break;
+
+        case str_ends_with(REQUEST, "/guestbook/post/"):
+
+            require SITE_ROOT.'/resources/includes/_guestbook_submit.php';
 
             break;
         

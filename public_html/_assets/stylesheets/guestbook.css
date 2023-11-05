@@ -26,10 +26,15 @@ header, main, footer {
 body {
   font-family: "Instrument Sans", sans-serif;
   display: grid;
-  max-width: 500px;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
+  width: 90vw;
 }
 
+header {
+  grid-row: 1;
+  margin-top: 3vh;
+}
 header nav ul {
   display: flex;
   flex-direction: row;
@@ -40,4 +45,63 @@ header nav ul li {
 
 h1 {
   font-family: "Besley", serif;
+}
+
+main {
+  grid-row: 2;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  -moz-column-gap: 2vw;
+       column-gap: 2vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+form input {
+  width: 50%;
+}
+form input, form textarea {
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+form label {
+  font-size: larger;
+  font-weight: 600;
+}
+form label[for=message]::after {
+  content: "*";
+  margin-left: 0.25em;
+  color: red;
+  font-size: larger;
+}
+
+.message {
+  margin-bottom: 3em;
+  font-size: smaller;
+}
+
+.message-content {
+  font-size: larger;
+  margin-left: 1em;
+}
+.message-content + footer {
+  text-align: right;
+}
+
+main + footer {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: right;
+}
+main + footer ul {
+  display: flex;
+}
+main + footer li {
+  display: flex;
+  text-align: right;
+  margin-left: auto;
 }/*# sourceMappingURL=guestbook.css.map */
