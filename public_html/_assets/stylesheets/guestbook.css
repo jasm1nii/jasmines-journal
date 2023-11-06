@@ -107,7 +107,7 @@ form input {
 }
 form input[type=submit] {
   grid-column: 3;
-  grid-row: 9;
+  grid-row: 7;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -116,7 +116,7 @@ form input[type=submit] {
   margin-right: 0;
 }
 form textarea {
-  height: 100%;
+  height: 12vh;
 }
 
 .messages {
