@@ -51,32 +51,76 @@ main {
   grid-row: 2;
   grid-column: span 2;
   display: grid;
-  grid-template-columns: 50% 1fr;
-  -moz-column-gap: 2vw;
-       column-gap: 2vw;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
+}
+
+.form {
+  position: sticky;
+  top: 8vh;
+  align-self: self-start;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 0.5em;
-}
-form input {
-  width: 50%;
+  max-width: 550px;
 }
 form input, form textarea {
   padding: 0.5em;
   margin-bottom: 1em;
 }
+form label:nth-of-type(1), form input:nth-of-type(1) {
+  grid-row: 1;
+}
+form label:nth-of-type(2), form input:nth-of-type(2) {
+  grid-row: 2;
+}
+form label:nth-of-type(3), form input:nth-of-type(3) {
+  grid-row: 3;
+}
+form label:nth-of-type(4), form input:nth-of-type(4) {
+  grid-row: 4;
+}
 form label {
   font-size: larger;
   font-weight: 600;
+  grid-column: 1;
+}
+form label::after {
+  margin-left: 0.25em;
+}
+form label[for=message] {
+  grid-column: span 3;
 }
 form label[for=message]::after {
   content: "*";
-  margin-left: 0.25em;
   color: red;
   font-size: larger;
+}
+form label[for=message] ~ textarea, form label[for=message] ~ span {
+  grid-column: span 3;
+}
+form input {
+  grid-column: 2/4;
+}
+form input[type=submit] {
+  grid-column: 3;
+  grid-row: 9;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  margin-right: 0;
+}
+form textarea {
+  height: 100%;
+}
+
+.messages {
+  grid-column: 2;
 }
 
 .message {

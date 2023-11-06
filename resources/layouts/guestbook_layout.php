@@ -20,29 +20,39 @@
             </nav>
         </header>
         <main>
-            <section id="form">
+            <section class="form">
                 <?php
-                    if ($_SERVER['REQUEST_URI'] == '/guestbook/success/') {
-                        echo "<p class='success'>message sent - pending approval</p>";
-                    } elseif ($_SERVER['REQUEST_URI'] == '/guestbook/error/') {
-                        echo "<p class='error'>the message should not contain any HTML tags!</p>";
+                    if (isset($_SERVER['HTTP_REFERER'])) {
+                        if ($_SERVER['REQUEST_URI'] == '/guestbook/success/') {
+                            echo "<p class='success'>message sent - pending approval</p>";
+                        } elseif (str_contains($_SERVER['REQUEST_URI'], "has_html")) {
+                            echo "<p class='error'>the message should not contain any HTML tags!</p>";
+                        } elseif (str_contains($_SERVER['REQUEST_URI'], "time_too_short")) {
+                            echo "<p class='error'>request interval is too short - please wait a bit longer.</p>";
+                        }
                     }
                 ?>
+                <h2>leave a message!</h2>
+                <p>submissions are approved manually - remember to be kind 💕</p>
                 <form name="post_message" method="post" action="/guestbook/post/" enctype="multipart/form-data">
                     <label for="name">name</label>
-                    <span>leave blank to post as "anonymous"</span>
-                    <input id="name" type="text" name="name" autocomplete="name" maxlength="300"/>
+                    <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
+
                     <label for="email">email</label>
-                    <span>will not be displayed</span>
-                    <input id="email" type="email" name="email" autocomplete="email" maxlength="300"/>
+                    <input id="email" type="email" name="email" autocomplete="email" maxlength="300" placeholder="optional - will not be displayed"/>
+
                     <label for="website">website</label>
-                    <input id="website" type="url" name="website" autocomplete="url" maxlength="300"/>
+                    <input id="website" type="url" name="website" autocomplete="url" maxlength="300" placeholder="optional"/>
+
                     <label for="message">message</label>
-                    <textarea id="message" name="message" rows="5" maxlength="3000" placeholder="3000 characters max" required></textarea>
-                    <input type="submit" value="submit"/>  
+                    <span>supports text formatting with <a href="https://www.markdownguide.org/cheat-sheet/" rel="external">markdown!</a></span>
+                    <textarea id="message" name="message" maxlength="3000" required></textarea>
+
+                    <input type="hidden" name="timestamp" value="<?= $_SERVER['REQUEST_TIME'] ?>"/>
+                    <input type="submit" value="submit"/>
                 </form>
             </section>
-            <section id="comments">
+            <section class="messages">
                 <?php
                     include dirname(__DIR__,1).'/includes/_guestbook_show.php';
                 ?>
