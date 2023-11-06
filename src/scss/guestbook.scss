@@ -31,31 +31,67 @@ main {
     grid-row: 2;
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 50% 1fr;
-    column-gap: 2vw;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5vw;
+}
+
+.form {
+    position: sticky;
+    top: 8vh;
+    align-self: self-start;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     row-gap: .5em;
-    & input {
-        width: 50%;
-    }
+    max-width: 550px;
     & input, textarea {
         padding: .5em;
         margin-bottom: 1em;
     }
+    @for $i from 1 through 4 {
+        & label:nth-of-type(#{$i}), input:nth-of-type(#{$i}) {
+            grid-row: $i;
+        }
+    }
     & label {
         font-size: larger;
         font-weight: 600;
+        grid-column: 1;
+        &::after {
+            margin-left: .25em;
+        }
     }
-    & label[for="message"]::after {
-        content: "*";
-        margin-left: .25em;
-        color: red;
-        font-size: larger;
+    & label[for="message"] {
+        $grid: span 3;
+        grid-column: $grid;
+        &::after {
+            content: "*";
+            color: red;
+            font-size: larger;
+        }
+        & ~ textarea, ~ span {
+            grid-column: $grid;
+        }
     }
+    & input {
+        grid-column: 2 / 4;
+        &[type="submit"] {
+            grid-column: 3;
+            grid-row: 9;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+            margin-right: 0;
+        }
+    }
+    & textarea {
+        height: 100%;
+    }
+}
+
+.messages {
+    grid-column: 2;
 }
 
 .message {

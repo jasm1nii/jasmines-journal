@@ -36,11 +36,6 @@
         const Guestbook = Template::Layouts.'/guestbook_layout.php';
     }
 
-    class RenderConfig {
-        const Twig = SITE_ROOT."/config/twig_default_config.php";
-        const MarkdownWithTOC = SITE_ROOT."/config/commonmark_toc_config.php";
-    }
-
     class Includes {
         const IncludesRoot = SITE_ROOT.Template::Includes;
         public static function Head() {
@@ -52,6 +47,12 @@
         public static function Footer() {
             include self::IncludesRoot.'/footer.shtml';
         }
+    }
+
+    class RenderConfig {
+        const Twig = SITE_ROOT."/config/twig_default_config.php";
+        const MarkdownComments = SITE_ROOT."/config/commonmark_comments_config.php";
+        const MarkdownWithTOC = SITE_ROOT."/config/commonmark_toc_config.php";
     }
 
     require_once RenderConfig::Twig;
@@ -230,33 +231,33 @@
         case str_starts_with(REQUEST, Route::Accessibility):
 
             View::renderPage(Layout::Subpage, Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
-
             break;
 
         case str_starts_with(REQUEST, Route::Credits):
 
             View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
-            
             break;
         
         case str_starts_with(REQUEST, Route::SiteMap):
 
             View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
-
             break;
 
         case str_ends_with(REQUEST, Route::Guestbook):
-        case str_ends_with(REQUEST, Route::Guestbook.'success/'):
-        case str_ends_with(REQUEST, Route::Guestbook.'error/'):
-
+        case str_starts_with(REQUEST, Route::Guestbook.'success'):
+        case str_starts_with(REQUEST, Route::Guestbook.'error'):
+            if (REQUEST == '/guestbook/' || isset($_SERVER['HTTP_REFERER'])) {
+                session_start();
+                $_SESSION['form_start'] = true;
+            } elseif (!isset($_SERVER['HTTP_REFERER'])) {
+                header('Location: /guestbook');
+            }
             require SITE_ROOT.Layout::Guestbook;
-
             break;
 
         case str_ends_with(REQUEST, "/guestbook/post/"):
 
             require SITE_ROOT.'/resources/includes/_guestbook_submit.php';
-
             break;
         
         default:
