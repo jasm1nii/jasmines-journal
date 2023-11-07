@@ -19,6 +19,7 @@
 }
 body {
   font-family: "Instrument Sans", sans-serif;
+  font-size: 1.1em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
@@ -26,10 +27,18 @@ body {
   max-width: 1200px;
 }
 
+a {
+  transition: all 0.25s;
+}
+a:hover {
+  letter-spacing: 0.1em;
+}
+
 header {
   grid-row: 1;
   margin-top: 3vh;
   display: grid;
+  font-family: "Besley", serif;
 }
 header #themeSwitch {
   width: -moz-fit-content;
@@ -38,10 +47,13 @@ header #themeSwitch {
   height: fit-content;
   padding: 0.5em;
   margin: auto 0;
+  background: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 1em;
 }
 header hgroup {
   grid-column: 2/10;
-  font-family: "Besley", serif;
 }
 header hgroup h1 {
   margin-bottom: 0;
@@ -54,14 +66,17 @@ header nav {
   grid-column: 1/10;
 }
 header nav ul {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 0;
   padding-left: 0;
   list-style-position: inside;
 }
 header nav li {
-  margin: auto;
+  margin-right: 1em;
+  width: -moz-max-content;
+  width: max-content;
 }
 header nav li::marker {
   content: "✦ ";
@@ -81,7 +96,7 @@ main {
 
 .form {
   position: sticky;
-  bottom: 25vh;
+  bottom: 20vh;
   align-self: self-end;
   margin-left: auto;
   margin-right: auto;
@@ -106,6 +121,9 @@ form {
 form input, form textarea {
   padding: 0.5em;
   margin-bottom: 1em;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1em;
 }
 form label:nth-of-type(1), form input:nth-of-type(1) {
   grid-row: 1;
@@ -149,6 +167,7 @@ form input[type=submit] {
   height: fit-content;
   margin: auto;
   margin-right: 0;
+  cursor: pointer;
 }
 form textarea {
   height: 12vh;
@@ -158,6 +177,10 @@ form textarea {
   position: relative;
   margin-top: min(10vh, -150px);
 }
+.messages a {
+  -webkit-text-decoration: 1px underline dashed;
+          text-decoration: 1px underline dashed;
+}
 .messages nav {
   text-align: center;
   margin: 2em auto;
@@ -165,14 +188,18 @@ form textarea {
   flex-direction: row;
   width: -moz-fit-content;
   width: fit-content;
+  align-items: center;
+  letter-spacing: 0.1em;
 }
 .messages nav span {
   width: -moz-fit-content;
   width: fit-content;
   margin-right: 1em;
 }
-.messages nav .current a {
-  color: red;
+.messages nav span a {
+  display: inline-block;
+  padding: 1em;
+  font-weight: 600;
 }
 
 .message {
@@ -200,24 +227,45 @@ main + footer {
   text-align: right;
   margin-top: 5em;
   margin-bottom: 3em;
+  margin-left: auto;
+  width: 80%;
+  font-size: smaller;
 }
-main + footer ul {
-  display: flex;
-  list-style-position: inside;
+main + footer #footer {
+  display: grid;
 }
-main + footer li {
+main + footer #footer div {
+  width: -moz-fit-content;
+  width: fit-content;
   margin-left: auto;
 }
+main + footer ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-position: inside;
+  margin-right: -1em;
+}
+main + footer li {
+  margin-bottom: 1em;
+  margin-right: 1em;
+  margin-left: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1400px) {
   header {
     margin-top: 1vh;
   }
+  header #themeSwitch {
+    grid-column: 1;
+    margin: auto auto;
+  }
   header hgroup {
-    grid-column: 2/3;
+    grid-column: 2/5;
   }
   header nav {
-    grid-column: 1/3;
+    grid-column: 1/5;
   }
   header nav ul {
     flex-wrap: wrap;
@@ -231,11 +279,19 @@ main + footer li {
     top: 2vh;
     align-self: self-start;
   }
+  .messages {
+    margin-top: min(5vh, -200px);
+  }
+  main + footer {
+    margin-bottom: 0;
+    width: 100%;
+  }
 }
 @media all and (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
     grid-column: 1;
+    width: 90vw;
   }
   header #themeSwitch {
     grid-column: 2/2;
@@ -246,8 +302,7 @@ main + footer li {
     grid-row: 1;
   }
   header nav {
-    width: 90vw;
-    grid-column: 1/3;
+    grid-column: 1/2;
   }
   header ul {
     flex-wrap: wrap;
@@ -267,6 +322,11 @@ main + footer li {
     grid-column: 1;
     text-align: center;
     width: 100%;
+    margin: auto;
+    margin-bottom: 3vh;
+  }
+  main + footer div {
+    margin: auto;
   }
   main + footer ul {
     flex-wrap: wrap;
@@ -275,5 +335,40 @@ main + footer li {
   }
   main + footer li {
     margin-right: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  a {
+    color: rgb(228, 160, 255);
+  }
+  a:hover {
+    color: rgb(255, 135, 155);
+  }
+  form input, form textarea {
+    background-color: transparent;
+    color: inherit;
+    border-color: rgb(92, 73, 109);
+  }
+  .messages nav a:hover {
+    background-color: rgb(223, 155, 223);
+    color: black;
+  }
+  .messages .current a {
+    background-color: rgb(255, 234, 164);
+    color: black;
+  }
+  .messages .current a:hover {
+    background-color: pink;
+  }
+  .message {
+    border-color: rgb(97, 42, 97);
+    background-color: rgb(24, 22, 22);
+  }
+  .message a {
+    color: rgb(219, 176, 243);
   }
 }/*# sourceMappingURL=guestbook.css.map */

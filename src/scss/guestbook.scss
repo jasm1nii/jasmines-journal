@@ -2,16 +2,27 @@
 @use 'assets/font_instrument-sans';
 
 @use 'animations/fade-in' as *;
-@use 'screen_queries/guestbook/1100' as *;
+@use 'screen_queries/guestbook/1400' as *;
 @use 'screen_queries/guestbook/768' as *;
+
+@use 'themes/guestbook/dark' as *;
+@use 'themes/guestbook/light' as *;
 
 body {
     font-family: "Instrument Sans", sans-serif;
+    font-size: 1.1em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;
     width: 90vw;
     max-width: 1200px;
+}
+
+a {
+    transition: all .25s;
+    &:hover {
+        letter-spacing: .1em;
+    }
 }
 
 @mixin heading-font {
@@ -22,15 +33,19 @@ header {
     grid-row: 1;
     margin-top: 3vh;
     display: grid;
+    @include heading-font();
     & #themeSwitch {
         width: fit-content;
         height: fit-content;
         padding: .5em;
         margin: auto 0;
+        background: transparent;
+        border: 1px solid gray;
+        cursor: pointer;
+        font-size: 1em;
     }
     & hgroup {
         grid-column: 2 / 10;
-        @include heading-font();
         & h1 {
             margin-bottom: 0;
         }
@@ -42,14 +57,16 @@ header {
     & nav {
         grid-column: 1 / 10;
         & ul {
-            display: flex;
+            display: inline-flex;
             flex-direction: row;
+            flex-wrap: wrap;
             margin-left: 0;
             padding-left: 0;
             list-style-position: inside;
         }
         & li {
-            margin: auto;
+            margin-right: 1em;
+            width: max-content;
             &::marker {
                 content: "✦ ";
             }
@@ -68,7 +85,7 @@ main {
 
 .form {
     position: sticky;
-    bottom: 25vh;
+    bottom: 20vh;
     align-self: self-end;
     margin-left: auto;
     margin-right: auto;
@@ -91,6 +108,9 @@ form {
     & input, textarea {
         padding: .5em;
         margin-bottom: 1em;
+        border: 1px solid;
+        border-radius: 5px;
+        font-size: 1em;
     }
     @for $i from 1 through 4 {
         & label:nth-of-type(#{$i}), input:nth-of-type(#{$i}) {
@@ -125,6 +145,7 @@ form {
             height: fit-content;
             margin: auto;
             margin-right: 0;
+            cursor: pointer;
         }
     }
     & textarea {
@@ -135,18 +156,25 @@ form {
 .messages {
     position: relative;
     margin-top: min(10vh, -150px);
+    & a {
+        text-decoration: 1px underline dashed;
+    }
     & nav {
         text-align: center;
         margin: 2em auto;
         display: flex;
         flex-direction: row;
         width: fit-content;
+        align-items: center;
+        letter-spacing: .1em;
         & span {
             width: fit-content;
             margin-right: 1em;
-        }
-        & .current a {
-            color: red;
+            & a {
+                display: inline-block;
+                padding: 1em;
+                font-weight: 600;
+            }
         }
     }
 }
@@ -163,7 +191,7 @@ form {
         font-size: smaller;  
     }
     & .content {
-    margin-left: 1em;
+        margin-left: 1em;
         & + footer {
             text-align: right;
         }
@@ -176,14 +204,36 @@ main + footer {
     text-align: right;
     margin-top: 5em;
     margin-bottom: 3em;
+    margin-left: auto;
+    width: 80%;
+    font-size: smaller;
+    & #footer {
+        display: grid;
+        & div {
+            width: fit-content;
+            margin-left: auto;
+        }
+    }
     & ul {
-        display: flex;
+        display: inline-flex;
+        flex-wrap: wrap;
         list-style-position: inside;
+        margin-right: -1em;
     }
     & li {
+        margin-bottom: 1em;
+        margin-right: 1em;
         margin-left: auto;
+        width: fit-content;
     }
 }
 
-@include screen-1100();
+@include screen-1400();
 @include screen-768();
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-body();
+    }
+    @include dark();
+}
