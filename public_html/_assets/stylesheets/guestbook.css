@@ -27,20 +27,15 @@ body {
   max-width: 1200px;
 }
 
-a {
+a, #themeSwitch, input[type=submit] {
   transition: all 0.25s;
 }
+
 a:hover {
   letter-spacing: 0.1em;
 }
 
-header {
-  grid-row: 1;
-  margin-top: 3vh;
-  display: grid;
-  font-family: "Besley", serif;
-}
-header #themeSwitch {
+#themeSwitch {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -48,9 +43,16 @@ header #themeSwitch {
   padding: 0.5em;
   margin: auto 0;
   background: transparent;
-  border: 1px solid gray;
+  border: 1px solid;
   cursor: pointer;
   font-size: 1em;
+}
+
+header {
+  grid-row: 1;
+  margin-top: 3vh;
+  display: grid;
+  font-family: "Besley", serif;
 }
 header hgroup {
   grid-column: 2/10;
@@ -61,6 +63,7 @@ header hgroup h1 {
 header hgroup p {
   margin-top: 0;
   font-size: larger;
+  font-weight: 500;
 }
 header nav {
   grid-column: 1/10;
@@ -96,11 +99,12 @@ main {
 
 .form {
   position: sticky;
-  bottom: 20vh;
+  bottom: 15vh;
   align-self: self-end;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  font-weight: 500;
 }
 .form .dialog {
   border: 1px solid;
@@ -109,8 +113,9 @@ main {
   padding: 1em;
   margin: 2em auto;
 }
-.form h2 + p {
-  width: 70%;
+.form h2 {
+  -webkit-text-decoration: 1.5px underline wavy;
+          text-decoration: 1.5px underline wavy;
 }
 
 form {
@@ -170,7 +175,9 @@ form input[type=submit] {
   cursor: pointer;
 }
 form textarea {
-  height: 12vh;
+  height: 15vh;
+  font-size: larger;
+  margin-top: 1em;
 }
 
 .messages {
@@ -178,8 +185,8 @@ form textarea {
   margin-top: min(10vh, -150px);
 }
 .messages a {
-  -webkit-text-decoration: 1px underline dashed;
-          text-decoration: 1px underline dashed;
+  -webkit-text-decoration: 1.5px underline dashed;
+          text-decoration: 1.5px underline dashed;
 }
 .messages nav {
   text-align: center;
@@ -200,6 +207,8 @@ form textarea {
   display: inline-block;
   padding: 1em;
   font-weight: 600;
+  -webkit-text-decoration: 1.5px underline solid;
+          text-decoration: 1.5px underline solid;
 }
 
 .message {
@@ -216,6 +225,9 @@ form textarea {
 }
 .message .content {
   margin-left: 1em;
+  font-weight: 450;
+  font-stretch: 95%;
+  letter-spacing: 0.025em;
 }
 .message .content + footer {
   text-align: right;
@@ -229,7 +241,7 @@ main + footer {
   margin-bottom: 3em;
   margin-left: auto;
   width: 80%;
-  font-size: smaller;
+  font-size: 0.9em;
 }
 main + footer #footer {
   display: grid;
@@ -348,6 +360,12 @@ main + footer li {
   a:hover {
     color: rgb(255, 135, 155);
   }
+  #themeSwitch:hover, input[type=submit]:hover {
+    background-color: rgb(94, 75, 148);
+  }
+  #themeSwitch {
+    border-color: rgb(84, 46, 95);
+  }
   form input, form textarea {
     background-color: transparent;
     color: inherit;
@@ -371,4 +389,116 @@ main + footer li {
   .message a {
     color: rgb(219, 176, 243);
   }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(240, 220, 240);
+    color: rgb(48, 5, 48);
+  }
+  body a {
+    color: rgb(105, 38, 72);
+  }
+  body a:hover {
+    color: rgb(179, 48, 113);
+  }
+  body #themeSwitch:hover, body input[type=submit]:hover {
+    background-color: rgb(190, 241, 224);
+  }
+  body #themeSwitch {
+    border-color: purple;
+    background-color: rgb(252, 240, 255);
+  }
+  body input, body textarea {
+    background-color: rgb(253, 249, 255);
+  }
+  body .messages nav a:hover {
+    background-color: rgb(148, 97, 148);
+    color: rgb(255, 255, 255);
+  }
+  body .messages .current a {
+    background-color: rgb(255, 243, 207);
+    color: black;
+  }
+  body .messages .current a:hover {
+    background-color: rgb(199, 114, 128);
+  }
+  body .message {
+    background-color: rgb(255, 240, 250);
+    box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.3);
+  }
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.dark-mode a {
+  color: rgb(228, 160, 255);
+}
+.dark-mode a:hover {
+  color: rgb(255, 135, 155);
+}
+.dark-mode #themeSwitch:hover, .dark-mode input[type=submit]:hover {
+  background-color: rgb(94, 75, 148);
+}
+.dark-mode #themeSwitch {
+  border-color: rgb(84, 46, 95);
+}
+.dark-mode form input, .dark-mode form textarea {
+  background-color: transparent;
+  color: inherit;
+  border-color: rgb(92, 73, 109);
+}
+.dark-mode .messages nav a:hover {
+  background-color: rgb(223, 155, 223);
+  color: black;
+}
+.dark-mode .messages .current a {
+  background-color: rgb(255, 234, 164);
+  color: black;
+}
+.dark-mode .messages .current a:hover {
+  background-color: pink;
+}
+.dark-mode .message {
+  border-color: rgb(97, 42, 97);
+  background-color: rgb(24, 22, 22);
+}
+.dark-mode .message a {
+  color: rgb(219, 176, 243);
+}
+
+.light-mode {
+  background-color: rgb(240, 220, 240);
+  color: rgb(48, 5, 48);
+}
+.light-mode a {
+  color: rgb(105, 38, 72);
+}
+.light-mode a:hover {
+  color: rgb(179, 48, 113);
+}
+.light-mode #themeSwitch:hover, .light-mode input[type=submit]:hover {
+  background-color: rgb(190, 241, 224);
+}
+.light-mode #themeSwitch {
+  border-color: purple;
+  background-color: rgb(252, 240, 255);
+}
+.light-mode input, .light-mode textarea {
+  background-color: rgb(253, 249, 255);
+}
+.light-mode .messages nav a:hover {
+  background-color: rgb(148, 97, 148);
+  color: rgb(255, 255, 255);
+}
+.light-mode .messages .current a {
+  background-color: rgb(255, 243, 207);
+  color: black;
+}
+.light-mode .messages .current a:hover {
+  background-color: rgb(199, 114, 128);
+}
+.light-mode .message {
+  background-color: rgb(255, 240, 250);
+  box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.3);
 }/*# sourceMappingURL=guestbook.css.map */

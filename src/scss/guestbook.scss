@@ -18,15 +18,28 @@ body {
     max-width: 1200px;
 }
 
-a {
+@mixin heading-font {
+    font-family: "Besley", serif;
+}
+
+a, #themeSwitch, input[type="submit"] {
     transition: all .25s;
+}
+
+a {
     &:hover {
         letter-spacing: .1em;
     }
 }
-
-@mixin heading-font {
-    font-family: "Besley", serif;
+#themeSwitch {
+    width: fit-content;
+    height: fit-content;
+    padding: .5em;
+    margin: auto 0;
+    background: transparent;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1em;
 }
 
 header {
@@ -34,16 +47,6 @@ header {
     margin-top: 3vh;
     display: grid;
     @include heading-font();
-    & #themeSwitch {
-        width: fit-content;
-        height: fit-content;
-        padding: .5em;
-        margin: auto 0;
-        background: transparent;
-        border: 1px solid gray;
-        cursor: pointer;
-        font-size: 1em;
-    }
     & hgroup {
         grid-column: 2 / 10;
         & h1 {
@@ -52,6 +55,7 @@ header {
         & p {
             margin-top: 0;
             font-size: larger;
+            font-weight: 500;
         }
     }
     & nav {
@@ -85,19 +89,20 @@ main {
 
 .form {
     position: sticky;
-    bottom: 20vh;
+    bottom: 15vh;
     align-self: self-end;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    font-weight: 500;
     & .dialog {
         border: 1px solid;
         width: fit-content;
         padding: 1em;
         margin: 2em auto;
     }
-    & h2 + p {
-        width: 70%;
+    & h2 {
+        text-decoration: 1.5px underline wavy;
     }
 }
 
@@ -149,7 +154,9 @@ form {
         }
     }
     & textarea {
-        height: 12vh;
+        height: 15vh;
+        font-size: larger;
+        margin-top: 1em;
     }
 }
 
@@ -157,7 +164,7 @@ form {
     position: relative;
     margin-top: min(10vh, -150px);
     & a {
-        text-decoration: 1px underline dashed;
+        text-decoration: 1.5px underline dashed;
     }
     & nav {
         text-align: center;
@@ -174,6 +181,7 @@ form {
                 display: inline-block;
                 padding: 1em;
                 font-weight: 600;
+                text-decoration: 1.5px underline solid;
             }
         }
     }
@@ -192,6 +200,9 @@ form {
     }
     & .content {
         margin-left: 1em;
+        font-weight: 450;
+        font-stretch: 95%;
+        letter-spacing: .025em;
         & + footer {
             text-align: right;
         }
@@ -206,7 +217,7 @@ main + footer {
     margin-bottom: 3em;
     margin-left: auto;
     width: 80%;
-    font-size: smaller;
+    font-size: .9em;
     & #footer {
         display: grid;
         & div {
@@ -236,4 +247,21 @@ main + footer {
         @include dark-body();
     }
     @include dark();
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-body();
+        @include light();
+    }
+}
+
+.dark-mode {
+    @include dark-body();
+    @include dark();
+}
+
+.light-mode {
+    @include light-body();
+    @include light();
 }

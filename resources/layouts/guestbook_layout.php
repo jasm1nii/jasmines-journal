@@ -32,10 +32,8 @@
                         }
                     }
                 ?>
-                <h2>leave a message!</h2>
-                <p>
-                    submissions will be reviewed manually.
-                </p>
+                <h2>leave a trace!</h2>
+                <span>submissions will be reviewed manually.</span>
                 <form name="post_message" method="post" action="/guestbook/post/" enctype="multipart/form-data">
                     <label for="name">name</label>
                     <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
