@@ -50,9 +50,11 @@
     }
 
     class RenderConfig {
-        const Twig = SITE_ROOT."/config/twig_default_config.php";
-        const MarkdownComments = SITE_ROOT."/config/commonmark_comments_config.php";
-        const MarkdownWithTOC = SITE_ROOT."/config/commonmark_toc_config.php";
+        const Config = SITE_ROOT."/config";
+        const Ini = self::Config."/db.ini";
+        const Twig = self::Config."/twig_default_config.php";
+        const MarkdownComments = self::Config."/commonmark_comments_config.php";
+        const MarkdownWithTOC = self::Config."/commonmark_toc_config.php";
     }
 
     require_once RenderConfig::Twig;

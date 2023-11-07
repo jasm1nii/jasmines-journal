@@ -3,10 +3,9 @@
         $page = 0;
     }
     $rows = $page * 10;
-
+    
+    $db = parse_ini_file(RenderConfig::Ini, true);
     $servername = "localhost";
-    $db = parse_ini_file(dirname(__DIR__,2)."/config/db.ini", true);
-
     $dbname = $db['guestbook']['name'];
     $table = $db['guestbook']['table'];
     $user_show = $db['guestbook']['user'];
@@ -15,7 +14,7 @@
     $guestbook_show = new PDO("mysql:host=$servername;dbname=$dbname", $user_show, $pass_show);
 
     $sql_show = $guestbook_show->prepare(
-        "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`
+        "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
             FROM `$table`
             WHERE `Moderation Status`='Approved'
             ORDER BY `ID` DESC
@@ -26,19 +25,35 @@
     $sql_show->setFetchMode(PDO::FETCH_ASSOC);
     $msg_arr = $sql_show->fetchAll();
 
+    include RenderConfig::MarkdownComments;
+
     for ($i=0; $i < count($msg_arr); $i++) {
         $v = $msg_arr[$i];
-        include RenderConfig::MarkdownComments;
+        
+        $msg = "<section class='message'><hgroup><h2 id='{$v['ID']}'>#{$v['ID']} &#x2022; ";
+        $name = htmlspecialchars($v['Name'], ENT_QUOTES, "UTF-8", false);
 
-        echo "<section class='message'><hgroup><h2 id='{$v['ID']}'>#{$v['ID']} &#x2022; " . htmlspecialchars($v['Name'], ENT_QUOTES, "UTF-8", false) . "&nbsp;";
+        if ($v['User Privilege'] == 'Admin') {
+            $name .= "&nbsp;👑";
+        }
+        
+        if ($v['Website'] !== null) {
+            $msg .= "<a href='{$v['Website']}'>{$name}</a>";
+        } else {
+            $msg .= $name;
+        }
+
+        $msg .= "&nbsp;";
 
         if ($v['Parent ID'] !== null) {
-            echo "(in reply to <a href='#{$v['Parent ID']}'>#{$v['Parent ID']}</a>)";
-        }  
+            $msg .= "<span class='reply-context'>(in reply to <a href='#{$v['Parent ID']}'>#{$v['Parent ID']}</a>)</span>";
+        }
 
         $md_comment = $commonmark->convert($v['Comment']);
 
-        echo "</h2></hgroup><section class='message-content'>" . $md_comment . "</section><footer><time>{$v['Date']}</time></footer></section>";
+        $msg .= "</h2></hgroup><section class='content'>" . $md_comment . "</section><footer><time>{$v['Date']}</time></footer></section>";
+
+        echo $msg;
     }
 
     $sql_count = $guestbook_show->prepare(
@@ -55,21 +70,23 @@
     $nav_total = intdiv($max_pages, 10);
     $nav_entries = range(1, $nav_total);
 
-    echo "<nav><span>page</span>";
+    $nav = "<nav><span>page</span>";
 
     for ($i=0; $i < (count($nav_entries)); $i++) {
 
         $page_num = $nav_entries[$i];
 
         if ($page_num == $page || (($page + 1) == 1 && 1 == $page_num)) {
-            echo "<span class='current'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
+            $nav .= "<span class='current'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
             continue;
         }
 
-        echo "<span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
+        $nav .= "<span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
     }
 
-    echo "</nav>";
+    $nav .= "</nav>";
+
+    echo $nav;
 
     unset($user_show, $pass_show);
     $guestbook_show = null;

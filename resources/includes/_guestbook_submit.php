@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $db = parse_ini_file(dirname(__DIR__,2)."/config/db.ini", true);
+    $db = parse_ini_file(RenderConfig::Ini, true);
     $dbname = $db['guestbook']['name'];
     $table = $db['guestbook']['table'];
 
@@ -42,11 +42,13 @@
             unset($user_post, $pass_post);
             $guestbook_post = null;
 
-            /*$to = 'contact@jasm1nii.xyz';
-            $subject = 'new guestbook message!';
-            $message = "{$sender_name} - {$sender_email} - {$sender_url} - {$sender_message}";
-            $headers = 'From: system@jasm1nii.xyz';
-            mail($to, $subject, $message, $headers);*/
+            if ($db['env']['prod'] == true) {
+                $to = 'contact@jasm1nii.xyz';
+                $subject = 'new guestbook message!';
+                $message = "{$sender_name} - {$sender_email} - {$sender_url} - {$sender_message}";
+                $headers = 'From: system@jasm1nii.xyz';
+                mail($to, $subject, $message, $headers);
+            }
 
             unset($_POST);
             header('Location: /guestbook/success');

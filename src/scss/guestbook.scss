@@ -2,8 +2,7 @@
 @use 'assets/font_instrument-sans';
 
 @use 'animations/fade-in' as *;
-
-@import url("cactus-chat.css");
+@use 'screen_queries/guestbook/400' as *;
 
 body {
     font-family: "Instrument Sans", sans-serif;
@@ -11,22 +10,51 @@ body {
     grid-template-columns: 1fr 1fr;
     margin: auto;
     width: 90vw;
+    max-width: 1200px;
+}
+
+@mixin heading-font {
+    font-family: "Besley", serif;
 }
 
 header {
     grid-row: 1;
     margin-top: 3vh;
-    & nav ul {
-        display: flex;
-        flex-direction: row;
+    display: grid;
+    & #themeSwitch {
+        width: fit-content;
+        height: fit-content;
+        padding: .5em;
+        margin: auto 0;
+    }
+    & hgroup {
+        grid-column: 2 / 10;
+        @include heading-font();
+        & h1 {
+            margin-bottom: 0;
+        }
+        & p {
+            margin-top: 0;
+            font-size: larger;
+        }
+    }
+    & nav {
+        grid-column: 1 / 10;
+        & ul {
+            display: flex;
+            flex-direction: row;
+            margin-left: 0;
+            padding-left: 0;
+        }
         & li {
             margin: auto;
+            &::marker {
+                content: "✦ ";
+            }
         }
     }
 }
-h1 {
-    font-family: "Besley", serif;
-}
+
 main {
     grid-row: 2;
     grid-column: span 2;
@@ -38,8 +66,8 @@ main {
 
 .form {
     position: sticky;
-    top: 8vh;
-    align-self: self-start;
+    bottom: 25vh;
+    align-self: self-end;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -57,6 +85,7 @@ main {
 form {
     display: grid;
     row-gap: .5em;
+    margin-top: 2em;
     & input, textarea {
         padding: .5em;
         margin-bottom: 1em;
@@ -102,7 +131,8 @@ form {
 }
 
 .messages {
-    grid-column: 2;
+    position: relative;
+    margin-top: min(10vh, -150px);
     & nav {
         text-align: center;
         margin: 2em auto;
@@ -120,14 +150,21 @@ form {
 }
 
 .message {
+    border: 1px solid;
+    padding: .25em 1em 1em 1em;
     margin-bottom: 3em;
-    font-size: smaller;
-}
-.message-content {
-    font-size: larger;
+    & h2 {
+        font-size: 1.25em;
+        @include heading-font();
+    }
+    & .reply-context {
+        font-size: smaller;  
+    }
+    & .content {
     margin-left: 1em;
-    & + footer {
-        text-align: right;
+        & + footer {
+            text-align: right;
+        }
     }
 }
 
@@ -135,12 +172,14 @@ main + footer {
     grid-row: 3;
     grid-column: 2;
     text-align: right;
+    margin-top: 5em;
+    margin-bottom: 3em;
     & ul {
         display: flex;
     }
     & li {
-        display: flex;
-        text-align: right;
         margin-left: auto;
     }
 }
+
+@include screen-400();
