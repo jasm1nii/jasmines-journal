@@ -53,6 +53,12 @@
                 </form>
             </section>
             <section class="messages">
+                <details id="issues">
+                    <summary>known issues</summary>
+                    <ul>
+                        <li>permalinks to individual comments don't work yet - will get around to that whenever.</li>
+                    </ul>
+                </details>
                 <?php
                     include dirname(__DIR__,1).'/includes/_guestbook_show.php';
                 ?>

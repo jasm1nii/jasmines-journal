@@ -211,6 +211,12 @@ form textarea {
           text-decoration: 1.5px underline solid;
 }
 
+#issues {
+  border-bottom: 1px solid;
+  margin-bottom: 3em;
+  padding: 1em;
+}
+
 .message {
   border: 1px solid;
   padding: 0.25em 1em 1em 1em;

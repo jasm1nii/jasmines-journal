@@ -46,7 +46,7 @@
         $msg .= "&nbsp;";
 
         if ($v['Parent ID'] !== null) {
-            $msg .= "<span class='reply-context'>(in reply to <a href='#{$v['Parent ID']}'>#{$v['Parent ID']}</a>)</span>";
+            $msg .= "<span class='reply-context'>(in reply to <a href='/guestbook/comment/{$v['Parent ID']}'>#{$v['Parent ID']}</a>)</span>";
         }
 
         $md_comment = $commonmark->convert($v['Comment']);
