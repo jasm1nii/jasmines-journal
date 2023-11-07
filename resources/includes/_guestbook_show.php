@@ -1,15 +1,18 @@
 <?php
+    if (!isset($page) || $page == 1) {
+        $page = 0;
+    }
+    $rows = $page * 10;
+
     $servername = "localhost";
     $db = parse_ini_file(dirname(__DIR__,2)."/config/db.ini", true);
 
     $dbname = $db['guestbook']['name'];
-    $table = 'public_test';
+    $table = $db['guestbook']['table'];
     $user_show = $db['guestbook']['user'];
     $pass_show = $db['guestbook']['password'];
 
     $guestbook_show = new PDO("mysql:host=$servername;dbname=$dbname", $user_show, $pass_show);
-
-    $rows = $page * 10;
 
     $sql_show = $guestbook_show->prepare(
         "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`
@@ -31,7 +34,7 @@
 
         if ($v['Parent ID'] !== null) {
             echo "(in reply to <a href='#{$v['Parent ID']}'>#{$v['Parent ID']}</a>)";
-        }
+        }  
 
         $md_comment = $commonmark->convert($v['Comment']);
 
@@ -55,7 +58,7 @@
     echo "<nav><span>page</span>";
 
     for ($i=0; $i < (count($nav_entries)); $i++) {
-        
+
         $page_num = $nav_entries[$i];
 
         if ($page_num == $page || (($page + 1) == 1 && 1 == $page_num)) {
