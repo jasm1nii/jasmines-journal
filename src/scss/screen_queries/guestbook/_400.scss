@@ -1,0 +1,50 @@
+@mixin screen-400 {
+    @media all and (max-width: 400px) {
+        main {
+            grid-template-columns: 1fr;
+            grid-column: 1;
+        }
+        header {
+            & #themeSwitch {
+                grid-column: 2 / 2;
+                margin: auto auto;
+            }
+            & hgroup {
+                grid-column: 1 / 2;
+                grid-row: 1;
+            }
+            & nav {
+                width: 90vw;
+                grid-column: 1 / 3;
+            }
+            & ul {
+                flex-wrap: wrap;
+            }
+            & li {
+                margin-left: 10em;
+                padding: .5em;
+            }
+        }
+        .form {
+            position: static;
+            margin-bottom: 3em;
+            width: 100%;
+        }
+        .messages {
+            margin-top: auto;
+        }
+        main + footer {
+            grid-column: 1;
+            text-align: center;
+            width: 100%;
+            & ul {
+                flex-wrap: wrap;
+                margin: auto;
+                padding-left: 0;
+            }
+            & li {
+                margin-right: auto;
+            }
+        }
+    }
+}
