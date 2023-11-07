@@ -34,7 +34,7 @@
                 ?>
                 <h2>leave a message!</h2>
                 <p>
-                    submissions will be manually reviewed.
+                    submissions will be reviewed manually.
                 </p>
                 <form name="post_message" method="post" action="/guestbook/post/" enctype="multipart/form-data">
                     <label for="name">name</label>
@@ -56,9 +56,6 @@
             </section>
             <section class="messages">
                 <?php
-                    if (!isset($page) || $page == 1) {
-                        $page = 0;
-                    }
                     include dirname(__DIR__,1).'/includes/_guestbook_show.php';
                 ?>
             </section>

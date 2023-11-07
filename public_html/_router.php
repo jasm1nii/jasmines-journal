@@ -70,7 +70,7 @@
     }
 
     switch (REQUEST) {
-        case str_ends_with(REQUEST, Route::About):
+        case REQUEST == Route::About:
 
             include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
             $nav_html = $nav->saveHTML();
@@ -83,6 +83,35 @@
                 "nav" => $nav_html,
                 "updated" => filemtime(SITE_ROOT.$content)
             ]);
+
+            break;
+
+        case REQUEST == Route::Changelog:
+
+            require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
+
+            break;
+
+        case str_starts_with(REQUEST, Route::Changelog):
+
+            $path = ltrim(REQUEST,'/about');
+            $file = '/'.rtrim($path,'/');
+            $document_source = SITE_ROOT.Template::Content.$file.'.html.twig';
+
+            if (file_exists($document_source)) {
+
+                include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
+                $nav_html = $nav->saveHTML();
+
+                echo $twig->render(Template::Content.$file.'.html.twig',
+                    [
+                        'layout'=>$twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig'),
+                        'nav'=>$nav_html
+                    ]);
+
+            } else {
+                Route::NotFound();
+            }
 
             break;
 
@@ -130,34 +159,7 @@
 
             break;
 
-        case str_ends_with(REQUEST, Route::Changelog):
-
-            require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
-
-            break;
-
-        case str_starts_with(REQUEST, Route::Changelog):
-
-            $path = ltrim(REQUEST,'/about');
-            $file = '/'.rtrim($path,'/');
-            $document_source = SITE_ROOT.Template::Content.$file.'.html.twig';
-
-            if (file_exists($document_source)) {
-
-                include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
-                $nav_html = $nav->saveHTML();
-
-                echo $twig->render(Template::Content.$file.'.html.twig',
-                    [
-                        'layout'=>$twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig'),
-                        'nav'=>$nav_html
-                    ]);
-
-            } else {
-                Route::NotFound();
-            }
-
-            break;
+        
 
         case str_ends_with(REQUEST, Route::Resources):
 
@@ -243,8 +245,8 @@
             View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
             break;
 
-        case str_ends_with(REQUEST, Route::Guestbook):
-        case str_starts_with(REQUEST, Route::Guestbook.'success'):
+        case REQUEST == Route::Guestbook:
+        case REQUEST == Route::Guestbook.'success/':
         case str_starts_with(REQUEST, Route::Guestbook.'error'):
             if (REQUEST == '/guestbook/' || isset($_SERVER['HTTP_REFERER'])) {
                 session_start();
@@ -255,7 +257,7 @@
             require SITE_ROOT.Layout::Guestbook;
             break;
 
-        case str_ends_with(REQUEST, "/guestbook/post/"):
+        case REQUEST == "/guestbook/post/":
 
             require SITE_ROOT.'/resources/includes/_guestbook_submit.php';
             break;

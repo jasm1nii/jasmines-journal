@@ -1,7 +1,7 @@
 @use 'assets/font_besley';
 @use 'assets/font_instrument-sans';
 
-@use 'animations/fade-in';
+@use 'animations/fade-in' as *;
 
 @import url("cactus-chat.css");
 
@@ -33,6 +33,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 5vw;
+    @include fadeIn();
 }
 
 .form {
@@ -41,6 +42,7 @@ main {
     align-self: self-start;
     margin-left: auto;
     margin-right: auto;
+    width: 80%;
     & .dialog {
         border: 1px solid;
         width: fit-content;
@@ -55,7 +57,6 @@ main {
 form {
     display: grid;
     row-gap: .5em;
-    max-width: 550px;
     & input, textarea {
         padding: .5em;
         margin-bottom: 1em;
@@ -74,7 +75,7 @@ form {
         }
     }
     & label[for="message"] {
-        $grid: span 3;
+        $grid: span 5;
         grid-column: $grid;
         &::after {
             content: "*";
@@ -86,9 +87,8 @@ form {
         }
     }
     & input {
-        grid-column: 2 / 4;
+        grid-column: 2 / 6;
         &[type="submit"] {
-            grid-column: 3;
             grid-row: 7;
             width: fit-content;
             height: fit-content;

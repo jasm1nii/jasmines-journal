@@ -17,12 +17,6 @@
     opacity: 1;
   }
 }
-header, main, footer {
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-}
-
 body {
   font-family: "Instrument Sans", sans-serif;
   display: grid;
@@ -54,6 +48,9 @@ main {
   grid-template-columns: 1fr 1fr;
   -moz-column-gap: 5vw;
        column-gap: 5vw;
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .form {
@@ -62,6 +59,7 @@ main {
   align-self: self-start;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
 }
 .form .dialog {
   border: 1px solid;
@@ -77,7 +75,6 @@ main {
 form {
   display: grid;
   row-gap: 0.5em;
-  max-width: 550px;
 }
 form input, form textarea {
   padding: 0.5em;
@@ -104,7 +101,7 @@ form label::after {
   margin-left: 0.25em;
 }
 form label[for=message] {
-  grid-column: span 3;
+  grid-column: span 5;
 }
 form label[for=message]::after {
   content: "*";
@@ -112,13 +109,12 @@ form label[for=message]::after {
   font-size: larger;
 }
 form label[for=message] ~ textarea, form label[for=message] ~ span {
-  grid-column: span 3;
+  grid-column: span 5;
 }
 form input {
-  grid-column: 2/4;
+  grid-column: 2/6;
 }
 form input[type=submit] {
-  grid-column: 3;
   grid-row: 7;
   width: -moz-fit-content;
   width: fit-content;

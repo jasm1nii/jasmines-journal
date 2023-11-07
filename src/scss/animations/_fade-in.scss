@@ -7,7 +7,7 @@
     }
 }
 
-header, main, footer {
+@mixin fadeIn {
     opacity: 0;
     animation: fadeIn .5s;
     animation-fill-mode: forwards;

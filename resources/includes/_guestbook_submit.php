@@ -2,7 +2,7 @@
     $servername = "localhost";
     $db = parse_ini_file(dirname(__DIR__,2)."/config/db.ini", true);
     $dbname = $db['guestbook']['name'];
-    $table = 'public_test';
+    $table = $db['guestbook']['table'];
 
     $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
     
