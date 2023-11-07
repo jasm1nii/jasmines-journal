@@ -39,6 +39,17 @@ main {
     position: sticky;
     top: 8vh;
     align-self: self-start;
+    margin-left: auto;
+    margin-right: auto;
+    & .dialog {
+        border: 1px solid;
+        width: fit-content;
+        padding: 1em;
+        margin: 2em auto;
+    }
+    & h2 + p {
+        width: 70%;
+    }
 }
 
 form {
@@ -92,6 +103,20 @@ form {
 
 .messages {
     grid-column: 2;
+    & nav {
+        text-align: center;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        & span {
+            width: fit-content;
+            margin-right: 1em;
+        }
+        & .current a {
+            color: red;
+        }
+    }
 }
 
 .message {
