@@ -1,0 +1,45 @@
+@mixin dark-body {
+    background-color: black;
+    color: white;
+}
+@mixin dark {
+    a {
+      color: rgb(228, 160, 255);
+      &:hover {
+        color: rgb(255, 135, 155);
+      }
+    }
+    form {
+        & input, textarea {
+            background-color: transparent;
+            color: inherit;
+            border-color: rgb(92, 73, 109);
+        }
+    }
+    .messages {
+        & nav {
+            & a {
+                &:hover {
+                    background-color: rgb(223, 155, 223);
+                    color: black;
+                }
+            }
+        }
+        & .current {
+            & a {
+                background-color: rgb(255, 234, 164);
+                color: black;
+                &:hover {
+                    background-color: pink;
+                }
+            }
+        }
+    }
+    .message {
+        border-color: rgb(97, 42, 97);
+        background-color: rgb(24, 22, 22);
+        & a {
+            color: rgb(219, 176, 243);
+        }
+    }
+}
