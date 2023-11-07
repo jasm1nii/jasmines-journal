@@ -2,7 +2,8 @@
 @use 'assets/font_instrument-sans';
 
 @use 'animations/fade-in' as *;
-@use 'screen_queries/guestbook/400' as *;
+@use 'screen_queries/guestbook/1100' as *;
+@use 'screen_queries/guestbook/768' as *;
 
 body {
     font-family: "Instrument Sans", sans-serif;
@@ -45,6 +46,7 @@ header {
             flex-direction: row;
             margin-left: 0;
             padding-left: 0;
+            list-style-position: inside;
         }
         & li {
             margin: auto;
@@ -176,10 +178,12 @@ main + footer {
     margin-bottom: 3em;
     & ul {
         display: flex;
+        list-style-position: inside;
     }
     & li {
         margin-left: auto;
     }
 }
 
-@include screen-400();
+@include screen-1100();
+@include screen-768();

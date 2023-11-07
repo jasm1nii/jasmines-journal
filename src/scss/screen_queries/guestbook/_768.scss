@@ -1,5 +1,5 @@
-@mixin screen-400 {
-    @media all and (max-width: 400px) {
+@mixin screen-768 {
+    @media all and (max-width: 768px) {
         main {
             grid-template-columns: 1fr;
             grid-column: 1;
@@ -21,7 +21,6 @@
                 flex-wrap: wrap;
             }
             & li {
-                margin-left: 10em;
                 padding: .5em;
             }
         }
