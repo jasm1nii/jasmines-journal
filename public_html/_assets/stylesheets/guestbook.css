@@ -60,6 +60,18 @@ main {
   position: sticky;
   top: 8vh;
   align-self: self-start;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form .dialog {
+  border: 1px solid;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
+  margin: 2em auto;
+}
+.form h2 + p {
+  width: 70%;
 }
 
 form {
@@ -121,6 +133,22 @@ form textarea {
 
 .messages {
   grid-column: 2;
+}
+.messages nav {
+  text-align: center;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: row;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.messages nav span {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 1em;
+}
+.messages nav .current a {
+  color: red;
 }
 
 .message {

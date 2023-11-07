@@ -259,6 +259,12 @@
 
             require SITE_ROOT.'/resources/includes/_guestbook_submit.php';
             break;
+
+        case str_starts_with(REQUEST, Route::Guestbook.'page'):
+            $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
+            $page = trim($page_req[1], "/");
+            require SITE_ROOT.Layout::Guestbook;
+            break;
         
         default:
             Route::NotFound();

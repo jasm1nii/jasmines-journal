@@ -24,16 +24,18 @@
                 <?php
                     if (isset($_SERVER['HTTP_REFERER'])) {
                         if ($_SERVER['REQUEST_URI'] == '/guestbook/success/') {
-                            echo "<p class='success'>message sent - pending approval</p>";
+                            echo "<p class='dialog success'>message sent - pending approval</p>";
                         } elseif (str_contains($_SERVER['REQUEST_URI'], "has_html")) {
-                            echo "<p class='error'>the message should not contain any HTML tags!</p>";
+                            echo "<p class='dialog error'>the message should not contain any HTML tags!</p>";
                         } elseif (str_contains($_SERVER['REQUEST_URI'], "time_too_short")) {
-                            echo "<p class='error'>request interval is too short - please wait a bit longer.</p>";
+                            echo "<p class='dialog error'>request interval is too short - please wait a bit longer.</p>";
                         }
                     }
                 ?>
                 <h2>leave a message!</h2>
-                <p>submissions are approved manually - remember to be kind 💕</p>
+                <p>
+                    submissions will be manually reviewed.
+                </p>
                 <form name="post_message" method="post" action="/guestbook/post/" enctype="multipart/form-data">
                     <label for="name">name</label>
                     <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
@@ -54,6 +56,9 @@
             </section>
             <section class="messages">
                 <?php
+                    if (!isset($page) || $page == 1) {
+                        $page = 0;
+                    }
                     include dirname(__DIR__,1).'/includes/_guestbook_show.php';
                 ?>
             </section>
