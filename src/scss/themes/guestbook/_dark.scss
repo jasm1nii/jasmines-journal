@@ -4,10 +4,18 @@
 }
 @mixin dark {
     a {
-      color: rgb(228, 160, 255);
-      &:hover {
-        color: rgb(255, 135, 155);
-      }
+        color: rgb(228, 160, 255);
+        &:hover {
+            color: rgb(255, 135, 155);
+        }
+    }
+    #themeSwitch, input[type="submit"] {
+        &:hover {
+            background-color: rgb(94, 75, 148);
+        }
+    }
+    #themeSwitch {
+        border-color: rgb(84, 46, 95);
     }
     form {
         & input, textarea {
