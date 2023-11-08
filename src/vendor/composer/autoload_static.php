@@ -18,6 +18,7 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         array (
             'Twig\\Extra\\Markdown\\' => 20,
             'Twig\\Extra\\Intl\\' => 16,
+            'Twig\\Extra\\Cache\\' => 17,
             'Twig\\' => 5,
         ),
         'S' => 
@@ -25,11 +26,18 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\Cache\\' => 24,
+            'Symfony\\Component\\VarExporter\\' => 30,
             'Symfony\\Component\\Intl\\' => 23,
+            'Symfony\\Component\\Cache\\' => 24,
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\EventDispatcher\\' => 20,
+            'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'L' => 
@@ -52,6 +60,10 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         array (
             0 => __DIR__ . '/..' . '/twig/intl-extra',
         ),
+        'Twig\\Extra\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/cache-extra',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -68,13 +80,41 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/cache-contracts',
+        ),
+        'Symfony\\Component\\VarExporter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-exporter',
+        ),
         'Symfony\\Component\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/intl',
         ),
+        'Symfony\\Component\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
         'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
@@ -159,6 +199,7 @@ class ComposerStaticInitd66e0a7d59ee299abfc19fa69d8fb355
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+        '©' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
