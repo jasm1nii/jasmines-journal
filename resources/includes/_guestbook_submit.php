@@ -3,19 +3,24 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    $db = parse_ini_file(RenderConfig::Ini, true);
+    $ini = parse_ini_file(RenderConfig::Ini, true);
 
     $servername = "localhost";
-    $dbname = $db['guestbook']['name'];
-    $table = $db['guestbook']['table'];
+    $dbname = $ini['guestbook']['name'];
+    $table = $ini['guestbook']['table'];
 
     $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
     
     if (isset($_POST) && $time_offset > 3) {
         if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
-            $user_post = $db['guestbook']['user'];
-            $pass_post = $db['guestbook']['password'];
-            $guestbook_post = new PDO("mysql:host=$servername;dbname=$dbname", $user_post, $pass_post, [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']);
+            $user_post = $ini['guestbook']['user'];
+            $pass_post = $ini['guestbook']['password'];
+            $guestbook_post = new PDO(
+                "mysql:host=$servername;dbname=$dbname",
+                $user_post,
+                $pass_post,
+                [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
+            );
 
             $sql_incr = $guestbook_post->prepare("ALTER TABLE `$table` AUTO_INCREMENT=0");
             $sql_incr->execute();
@@ -54,16 +59,15 @@
                 $mail->isSMTP();
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->CharSet = "UTF-8";
 
                 $mail->Host = 'mail.jasm1nii.xyz';
                 $mail->Port = 465;
-                $mail->Username = $db['email']['user'];
-                $mail->Password = $db['email']['password'];
+                $mail->Username = $ini['email']['user'];
+                $mail->Password = $ini['email']['password'];
 
-                $mail->CharSet = "UTF-8";
-
-                $mail->setFrom('system@jasm1nii.xyz', "jasmine's journal [system mailer]");
-                $mail->addAddress('contact@jasm1nii.xyz', 'Jasmine');
+                $mail->setFrom($ini['email']['user'], "jasmine's journal [system mailer]");
+                $mail->addAddress($ini['email']['to'], 'Jasmine');
                 $mail->isHTML(true);
                 $mail->Subject = "guestbook message received!";
                 $mail->Body =
