@@ -10,7 +10,7 @@
         if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
             $user_post = $db['guestbook']['user'];
             $pass_post = $db['guestbook']['password'];
-            $guestbook_post = new PDO("mysql:host=$servername;dbname=$dbname", $user_post, $pass_post);
+            $guestbook_post = new PDO("mysql:host=$servername;dbname=$dbname", $user_post, $pass_post, [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']);
 
             $sql_incr = $guestbook_post->prepare("ALTER TABLE `$table` AUTO_INCREMENT=0");
             $sql_incr->execute();
@@ -29,12 +29,12 @@
             if ($_POST['name'] == null) {
                 $sender_name = 'Anonymous';
             } else {
-                $sender_name = htmlspecialchars($_POST['name'], ENT_SUBSTITUTE, "UTF-8", true);
+                $sender_name = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
             }
             
             $sender_email = $_POST['email'];
             $sender_url = $_POST['website'];
-            $sender_message = htmlspecialchars($_POST['message'], ENT_SUBSTITUTE, "UTF-8", true);
+            $sender_message = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
             $sender_ip = $_SERVER['REMOTE_ADDR'];
 
             $sql_post->execute();
@@ -42,15 +42,15 @@
             unset($user_post, $pass_post);
             $guestbook_post = null;
 
+            /*
             if ($db['env']['prod'] == true) {
                 $to = 'contact@jasm1nii.xyz';
                 $subject = 'new guestbook message!';
                 $message = "{$sender_name} - {$sender_email} - {$sender_url} - {$sender_message}";
                 $headers = 'From: system@jasm1nii.xyz';
                 mail($to, $subject, $message, $headers);
-            }
+            }*/
 
-            unset($_POST);
             header('Location: /guestbook/success');
 
         } else {
