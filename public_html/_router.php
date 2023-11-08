@@ -3,6 +3,11 @@
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname(__DIR__,1));
 
+    if (ENV_SRC == "dev") {
+        // echo $_SERVER['DOCUMENT_ROOT'];
+        // echo $_SERVER['PATH_TRANSLATED'];
+    }
+
     class Route {
         const About = "/about/";
         const Blog = "/blog/";
@@ -93,7 +98,6 @@
         case Route::Changelog:
 
             require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
-
             break;
 
         case str_starts_with(REQUEST, Route::Changelog):
@@ -192,8 +196,10 @@
                 }
 
                 $url = preg_split('/\//',REQUEST);
+
                 if (!empty($url[3])) {
                     $parent = '/'.$url[1].'/'.$url[2];
+
                 } else {
                     $parent = null;
                 }
@@ -234,44 +240,73 @@
 
         case Route::Accessibility:
 
-            View::renderPage(Layout::Subpage, Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
+            View::renderPage(
+                Layout::Subpage,
+                Template::Content.'/accessibility.html.twig',
+                trim(Route::Accessibility,"/")
+            );
             break;
 
         case Route::Credits:
 
-            View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
+            View::renderPage(
+                Layout::Subpage,
+                Template::Content.'/credits.html.twig',
+                trim(Route::Credits,"/")
+            );
             break;
         
         case Route::SiteMap:
 
-            View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
+            View::renderPage(
+                Layout::SiteMap,
+                Template::Content.'/site-map.html.twig',
+                null
+            );
             break;
 
-        case Route::Guestbook:
-        case Route::Guestbook . 'success/':
-        case str_starts_with(REQUEST, Route::Guestbook.'error'):
-            
-            if (REQUEST == '/guestbook/' || isset($_SERVER['HTTP_REFERER'])) {
-                session_start();
-                $_SESSION['form_start'] = true;
-            } elseif (!isset($_SERVER['HTTP_REFERER'])) {
-                header('Location: /guestbook');
+        case str_starts_with(REQUEST, Route::Guestbook):
+
+            class Guestbook {
+                const Index = Route::Guestbook;
+                const Comment = Route::Guestbook . 'comment';
+                const Page = Route::Guestbook . 'page';
+                const Post = Route::Guestbook . 'post';
+                const PostSuccess = Route::Guestbook . 'success';
+                const PostError = Route::Guestbook .'error';
             }
 
-            require SITE_ROOT.Layout::Guestbook;
-            break;
+            if (REQUEST == Guestbook::Post . "/") {
+                require SITE_ROOT . Template::Includes . '/_guestbook_submit.php';
 
-        case Route::Guestbook . "post/":
+            } else {
+                switch (str_starts_with(REQUEST, Route::Guestbook)) {
+                    case Guestbook::Index:
+                    case str_starts_with(REQUEST, Guestbook::Page):
+                    case str_starts_with(REQUEST, Guestbook::PostSuccess):
+                    case str_starts_with(REQUEST, Guestbook::PostError):
 
-            require SITE_ROOT . '/resources/includes/_guestbook_submit.php';
-            break;
+                        if (str_starts_with(REQUEST, Guestbook::Page)) {
+                            $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
+                            $page = trim($page_req[1], "/");
+                        }
 
-        case str_starts_with(REQUEST, Route::Guestbook.'page'):
+                        if (REQUEST == Guestbook::Index || isset($_SERVER['HTTP_REFERER'])) {
+                            session_start();
+                            $_SESSION['form_start'] = true;
 
-            $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
-            $page = trim($page_req[1], "/");
+                        } elseif (!isset($_SERVER['HTTP_REFERER'])) {
+                            header('Location: /guestbook');
+                        }
 
-            require SITE_ROOT.Layout::Guestbook;
+                        require SITE_ROOT.Layout::Guestbook;
+                        break;
+                    
+                    default:
+                        require SITE_ROOT.Layout::Guestbook;
+                }
+            }
+
             break;
         
         default:
