@@ -1,16 +1,10 @@
 <?php
     require_once dirname(__DIR__,1).'/src/vendor/autoload.php';
-
-    use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-    use Symfony\Component\Cache\Adapter\TagAwareAdapter;
-
-    use Twig\Extra\Cache\CacheRuntime;
-    use Twig\Extra\Markdown\MarkdownExtension;
-    use Twig\Extra\Intl\IntlExtension;
+    
     use Twig\Extra\Markdown\DefaultMarkdown;
+    use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Markdown\MarkdownRuntime;
-    use Twig\Extra\Cache\CacheExtension;
-
+    use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
     $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,1),getcwd());
@@ -19,7 +13,6 @@
         'auto_reload'=>true
     ]);
 
-    $twig->addExtension(new CacheExtension());
     $twig->addExtension(new MarkdownExtension());
     $twig->addExtension(new IntlExtension());
 
@@ -27,9 +20,6 @@
         public function load($class) {
             if (MarkdownRuntime::class === $class) {
                 return new MarkdownRuntime(new DefaultMarkdown());
-            }
-            if (CacheRuntime::class === $class) {
-                return new CacheRuntime(new TagAwareAdapter(new FilesystemAdapter()));
             }
         }
     });

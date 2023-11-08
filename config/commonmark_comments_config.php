@@ -1,5 +1,5 @@
 <?php
-    require_once dirname(__DIR__,1).'/src/vendor/autoload.php';
+    require_once RenderConfig::Composer;
 
     use League\CommonMark\Environment\Environment;
     use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
@@ -7,9 +7,7 @@
     use League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension;
     use League\CommonMark\GithubFlavoredMarkdownConverter;
 
-    // Customize the extension's configuration if needed
     // Default values are shown below - you can omit this configuration if you're happy with those defaults
-    // and don't want to customize them
     $config = [
         'html_input' => 'strip',
         'disallowed_raw_html' => [

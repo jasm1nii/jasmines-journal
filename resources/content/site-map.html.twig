@@ -1,40 +1,38 @@
 {% extends layout %}
 
 {% block content %}
-    {% cache "site-map" ~ updated %}
-        <ul>
-            <li>
-                <a href="/">home</a> ⟶ current status, my other websites, web rings & site listings
-            </li>
-            <li>
-                <a href="/about">about</a> ⟶ the website, the
-                webmaster (<a href="/about#contact">contact info</a>)
+    <ul>
+        <li>
+            <a href="/">home</a> ⟶ current status, my other websites, web rings & site listings
+        </li>
+        <li>
+            <a href="/about">about</a> ⟶ the website, the
+            webmaster (<a href="/about#contact">contact info</a>)
+            <ul>
+            <li><a href="/about/changelog">change log</a></li>
+            </ul>
+        </li>
+        <li><a href="/blog">blog</a>
+            <ul>
+            <li><a href="/blog/notes">notes</a></li>
+            <li><a href="/blog/articles">articles</a></li>
+            </ul>
+        </li>
+        <li><a href="/resources/">resources</a> ⟶ blogging services, wellness, neurodiversity
+            <ul>
+            <li><a href="/resources/art-design">art & design</a></li>
+            <li><a href="/resources/organization-productivity">organization & productivity</a></li>
+            <li><a href="/resources/webdev">web development</a>
                 <ul>
-                <li><a href="/about/changelog">change log</a></li>
+                <li><a href="/resources/webdev/site-hosts">site hosting services</a></li>
                 </ul>
             </li>
-            <li><a href="/blog">blog</a>
-                <ul>
-                <li><a href="/blog/notes">notes</a></li>
-                <li><a href="/blog/articles">articles</a></li>
-                </ul>
-            </li>
-            <li><a href="/resources/">resources</a> ⟶ blogging services, wellness, neurodiversity
-                <ul>
-                <li><a href="/resources/art-design">art & design</a></li>
-                <li><a href="/resources/organization-productivity">organization & productivity</a></li>
-                <li><a href="/resources/webdev">web development</a>
-                    <ul>
-                    <li><a href="/resources/webdev/site-hosts">site hosting services</a></li>
-                    </ul>
-                </li>
-                </ul>
-            </li>
-            <li><a href="/link-gallery">link gallery</a> ⟶ site button, links to related sites</li>
-            <li><a href="/subscribe">subscribe</a></li>
-            <li><a href="/credits">credits</a></li>
-            <li><a href="/accessibility">accessibility</a></li>
-            <li><a href="/guestbook">guestbook</a></li>
-        </ul>
-    {% endcache %}
+            </ul>
+        </li>
+        <li><a href="/link-gallery">link gallery</a> ⟶ site button, links to related sites</li>
+        <li><a href="/subscribe">subscribe</a></li>
+        <li><a href="/credits">credits</a></li>
+        <li><a href="/accessibility">accessibility</a></li>
+        <li><a href="/guestbook">guestbook</a></li>
+    </ul>
 {% endblock %}

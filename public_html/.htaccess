@@ -1,5 +1,6 @@
 Options -MultiViews +Includes -Indexes
 DirectorySlash Off 
+AddDefaultCharset utf-8
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME}\.html -f
@@ -94,7 +95,7 @@ AddHandler server-parsed .html .php
 
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 day"
 
   ExpiresByType audio/3gpp "modification plus 1 year"
   ExpiresByType audio/3gpp2 "modification plus 1 year"

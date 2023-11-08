@@ -1,4 +1,5 @@
 <?php
+    define("ENV_SRC", getenv('ENVIRONMENT'));
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname(__DIR__,1));
 
@@ -9,10 +10,10 @@
         const BlogNotes = "/notes/";
         const Changelog = "/about/changelog/";
         const Resources = "/resources/";
-        const LinkGallery = "/link-gallery";
-        const Accessibility = "/accessibility";
-        const Credits = "/credits";
-        const SiteMap = "/site-map";
+        const LinkGallery = "/link-gallery/";
+        const Accessibility = "/accessibility/";
+        const Credits = "/credits/";
+        const SiteMap = "/site-map/";
         const Guestbook = "/guestbook/";
         public static function NotFound() {
             http_response_code(404);
@@ -50,12 +51,12 @@
     }
 
     class RenderConfig {
-        const Composer = SITE_ROOT.'/src/vendor/autoload.php';
-        const Config = SITE_ROOT."/config";
-        const Ini = self::Config."/db.ini";
-        const Twig = self::Config."/twig_default_config.php";
-        const MarkdownComments = self::Config."/commonmark_comments_config.php";
-        const MarkdownWithTOC = self::Config."/commonmark_toc_config.php";
+        const Composer = SITE_ROOT . '/src/vendor/autoload.php';
+        const Config = SITE_ROOT . "/config";
+        const Ini = self::Config . "/env_" . ENV_SRC . ".ini";
+        const Twig = self::Config . "/twig_default_config.php";
+        const MarkdownComments = self::Config . "/commonmark_comments_config.php";
+        const MarkdownWithTOC = self::Config . "/commonmark_toc_config.php";
     }
 
     require_once RenderConfig::Twig;
@@ -73,7 +74,7 @@
     }
 
     switch (REQUEST) {
-        case REQUEST == Route::About:
+        case Route::About:
 
             include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
             $nav_html = $nav->saveHTML();
@@ -89,7 +90,7 @@
 
             break;
 
-        case REQUEST == Route::Changelog:
+        case Route::Changelog:
 
             require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
 
@@ -162,9 +163,7 @@
 
             break;
 
-        
-
-        case str_ends_with(REQUEST, Route::Resources):
+        case Route::Resources:
 
             echo $twig->render(Template::Layouts.'/resources/resources_index.html.twig',
                 [
@@ -233,23 +232,23 @@
 
             break;
 
-        case str_starts_with(REQUEST, Route::Accessibility):
+        case Route::Accessibility:
 
             View::renderPage(Layout::Subpage, Template::Content.'/accessibility.html.twig', trim(Route::Accessibility,"/"));
             break;
 
-        case str_starts_with(REQUEST, Route::Credits):
+        case Route::Credits:
 
             View::renderPage(Layout::Subpage, Template::Content.'/credits.html.twig', trim(Route::Credits,"/"));
             break;
         
-        case str_starts_with(REQUEST, Route::SiteMap):
+        case Route::SiteMap:
 
             View::renderPage(Layout::SiteMap, Template::Content.'/site-map.html.twig', null);
             break;
 
-        case REQUEST == Route::Guestbook:
-        case REQUEST == Route::Guestbook.'success/':
+        case Route::Guestbook:
+        case Route::Guestbook . 'success/':
         case str_starts_with(REQUEST, Route::Guestbook.'error'):
             
             if (REQUEST == '/guestbook/' || isset($_SERVER['HTTP_REFERER'])) {
@@ -258,18 +257,20 @@
             } elseif (!isset($_SERVER['HTTP_REFERER'])) {
                 header('Location: /guestbook');
             }
+
             require SITE_ROOT.Layout::Guestbook;
             break;
 
-        case REQUEST == "/guestbook/post/":
+        case Route::Guestbook . "post/":
 
-            require SITE_ROOT.'/resources/includes/_guestbook_submit.php';
+            require SITE_ROOT . '/resources/includes/_guestbook_submit.php';
             break;
 
         case str_starts_with(REQUEST, Route::Guestbook.'page'):
 
             $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
             $page = trim($page_req[1], "/");
+
             require SITE_ROOT.Layout::Guestbook;
             break;
         
