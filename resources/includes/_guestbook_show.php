@@ -13,80 +13,116 @@
 
     $guestbook_show = new PDO("mysql:host=$servername;dbname=$dbname", $user_show, $pass_show, [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']);
 
-    $sql_show = $guestbook_show->prepare(
-        "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
-            FROM `$table`
-            WHERE `Moderation Status`='Approved'
-            ORDER BY `ID` DESC
-            LIMIT $rows, 10
-        ");
+    function showMessage($v) {
+        include RenderConfig::MarkdownComments;
 
-    $sql_show->execute();
-    $sql_show->setFetchMode(PDO::FETCH_ASSOC);
-    $msg_arr = $sql_show->fetchAll();
-
-    include RenderConfig::MarkdownComments;
-
-    for ($i=0; $i < count($msg_arr); $i++) {
-        $v = $msg_arr[$i];
-        
-        $msg = "<section class='message'><hgroup><h2 id='{$v['ID']}'>#{$v['ID']} &#x2022; ";
+        $msg = "<section class='message'><hgroup><h2 id='{$v['ID']}'><a href='/guestbook/comment/{$v['ID']}'>#{$v['ID']}</a> &#x2022; ";
         $name = htmlspecialchars($v['Name'], ENT_QUOTES, "UTF-8", false);
 
         if ($v['User Privilege'] == 'Admin') {
             $name .= "&nbsp;👑";
         }
-        
+
         if ($v['Website'] !== null) {
             $msg .= "<a href='{$v['Website']}'>{$name}</a>";
         } else {
             $msg .= $name;
         }
 
-        $msg .= "&nbsp;";
-
+        $msg .= "&nbsp;";       
         if ($v['Parent ID'] !== null) {
             $msg .= "<span class='reply-context'>(in reply to <a href='/guestbook/comment/{$v['Parent ID']}'>#{$v['Parent ID']}</a>)</span>";
         }
 
-        $md_comment = $commonmark->convert($v['Comment']);
-
+        $md_comment = $commonmark->convert($v['Comment']);      
         $msg .= "</h2></hgroup><section class='content'>" . $md_comment . "</section><footer><time>{$v['Date']}</time></footer></section>";
 
         echo $msg;
     }
 
-    $sql_count = $guestbook_show->prepare(
-        "   SELECT COUNT(*) as total
-            FROM `$table`
-            WHERE `Moderation Status`='Approved'
-        ");
-    $sql_count->execute();
-    $sql_count->setFetchMode(PDO::FETCH_ASSOC);
-    $total = $sql_count->fetchAll();
+    switch (REQUEST) {
+        case str_starts_with(REQUEST, Guestbook::Comment):
+            $comment_url = preg_split('/guestbook\/comment/', REQUEST);
+            $comment_id = trim($comment_url[1], "/");
 
-    $max_pages = $total[0]['total'];
+            $sql_comment = $guestbook_show->prepare(
+                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved' AND `ID`=$comment_id
+                ");
+            $sql_comment->execute();
+            $sql_comment->setFetchMode(PDO::FETCH_ASSOC);
+            $comment_arr = $sql_comment->fetchAll();
 
-    $nav_total = intdiv($max_pages, 10);
-    $nav_entries = range(1, $nav_total);
+            $parent = $comment_arr[0];
+            showMessage($parent);
 
-    $nav = "<nav><span>page</span>";
+            $sql_reply = $guestbook_show->prepare(
+                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved' AND `Parent ID`=$comment_id
+                    ORDER BY `ID` ASC
+                ");
+            $sql_reply->execute();
+            $sql_reply->setFetchMode(PDO::FETCH_ASSOC);
+            $reply_arr = $sql_reply->fetchAll();
 
-    for ($i=0; $i < (count($nav_entries)); $i++) {
+            if (count($reply_arr) !== 0) {
+                showMessage($reply_arr[0]);
+            }
 
-        $page_num = $nav_entries[$i];
+            break;
 
-        if ($page_num == $page || (($page + 1) == 1 && 1 == $page_num)) {
-            $nav .= "<span class='current'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
-            continue;
-        }
+        default:
+            $sql_show = $guestbook_show->prepare(
+                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved'
+                    ORDER BY `ID` DESC
+                    LIMIT $rows, 10
+                ");
 
-        $nav .= "<span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
+            $sql_show->execute();
+            $sql_show->setFetchMode(PDO::FETCH_ASSOC);
+            $msg_arr = $sql_show->fetchAll();
+
+            for ($i=0; $i < count($msg_arr); $i++) {
+                $comment = $msg_arr[$i];
+                showMessage($comment);
+            }
+
+            $sql_count = $guestbook_show->prepare(
+                "   SELECT COUNT(*) as total
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved'
+                ");
+            $sql_count->execute();
+            $sql_count->setFetchMode(PDO::FETCH_ASSOC);
+            $total = $sql_count->fetchAll();
+
+            $max_pages = $total[0]['total'];
+
+            $nav_total = intdiv($max_pages, 10);
+            $nav_entries = range(1, $nav_total);
+
+            $nav = "<nav><span>page</span>";
+
+            for ($i=0; $i < (count($nav_entries)); $i++) {
+
+                $page_num = $nav_entries[$i];
+
+                if ($page_num == $page || (($page + 1) == 1 && 1 == $page_num)) {
+                    $nav .= "<span class='current'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
+                    continue;
+                }
+
+                $nav .= "<span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span>";
+            }
+
+            $nav .= "</nav>";
+
+            echo $nav;
     }
-
-    $nav .= "</nav>";
-
-    echo $nav;
 
     unset($user_show, $pass_show);
     $guestbook_show = null;
