@@ -60,6 +60,8 @@
                 $mail->Username = $db['email']['user'];
                 $mail->Password = $db['email']['password'];
 
+                $mail->CharSet = "UTF-8";
+
                 $mail->setFrom('system@jasm1nii.xyz', "jasmine's journal [system mailer]");
                 $mail->addAddress('contact@jasm1nii.xyz', 'Jasmine');
                 $mail->isHTML(true);
