@@ -50,6 +50,7 @@
     }
 
     class RenderConfig {
+        const Composer = SITE_ROOT.'/src/vendor/autoload.php';
         const Config = SITE_ROOT."/config";
         const Ini = self::Config."/db.ini";
         const Twig = self::Config."/twig_default_config.php";
@@ -250,6 +251,7 @@
         case REQUEST == Route::Guestbook:
         case REQUEST == Route::Guestbook.'success/':
         case str_starts_with(REQUEST, Route::Guestbook.'error'):
+            
             if (REQUEST == '/guestbook/' || isset($_SERVER['HTTP_REFERER'])) {
                 session_start();
                 $_SESSION['form_start'] = true;
@@ -265,6 +267,7 @@
             break;
 
         case str_starts_with(REQUEST, Route::Guestbook.'page'):
+
             $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
             $page = trim($page_req[1], "/");
             require SITE_ROOT.Layout::Guestbook;

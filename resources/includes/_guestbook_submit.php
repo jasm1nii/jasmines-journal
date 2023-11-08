@@ -1,6 +1,11 @@
 <?php
-    $servername = "localhost";
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
     $db = parse_ini_file(RenderConfig::Ini, true);
+
+    $servername = "localhost";
     $dbname = $db['guestbook']['name'];
     $table = $db['guestbook']['table'];
 
@@ -42,27 +47,49 @@
             unset($user_post, $pass_post);
             $guestbook_post = null;
 
-            /*
-            if ($db['env']['prod'] == true) {
-                $to = 'contact@jasm1nii.xyz';
-                $subject = 'new guestbook message!';
-                $message = "{$sender_name} - {$sender_email} - {$sender_url} - {$sender_message}";
-                $headers = 'From: system@jasm1nii.xyz';
-                mail($to, $subject, $message, $headers);
-            }*/
+            require_once RenderConfig::Composer;
+            $mail = new PHPMailer(true);
+
+            try {
+                $mail->isSMTP();
+                $mail->SMTPAuth = true;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+
+                $mail->Host = 'mail.jasm1nii.xyz';
+                $mail->Port = 465;
+                $mail->Username = $db['email']['user'];
+                $mail->Password = $db['email']['password'];
+
+                $mail->setFrom('system@jasm1nii.xyz', "jasmine's journal [system mailer]");
+                $mail->addAddress('contact@jasm1nii.xyz', 'Jasmine');
+                $mail->isHTML(true);
+                $mail->Subject = "guestbook message received!";
+                $mail->Body =
+                    "<ul>
+                        <li>Name: {$sender_name}</li>
+                        <li>Email: {$sender_email}</li>
+                        <li>URL: {$sender_url}</li>
+                        <li>Message: {$sender_message}</li>
+                    </ul>";
+                $mail->AltBody = "Name:{$sender_name} - Email: {$sender_email} - URL: {$sender_url} - Message: {$sender_message}";
+                $mail->send();
+                
+            } catch (Exception $e) {
+                header('Location: /guestbook/success/exception');
+            }
 
             header('Location: /guestbook/success');
 
         } else {
             unset($user_post, $pass_post);
             $guestbook_post = null;
-            header('Location: /guestbook/error?=has_html');
+            header('Location: /guestbook/error/has_html');
 
         }
     } else {
         unset($user_post, $pass_post);
         $guestbook_post = null;
-        header('Location: /guestbook/error?=time_too_short');
+        header('Location: /guestbook/error/time_too_short');
 
     }
 ?>

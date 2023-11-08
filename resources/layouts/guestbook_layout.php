@@ -23,12 +23,28 @@
             <section class="form">
                 <?php
                     if (isset($_SERVER['HTTP_REFERER'])) {
-                        if ($_SERVER['REQUEST_URI'] == '/guestbook/success/') {
-                            echo "<p class='dialog success'>message sent - pending approval</p>";
-                        } elseif (str_contains($_SERVER['REQUEST_URI'], "has_html")) {
-                            echo "<p class='dialog error'>the message should not contain any HTML tags!</p>";
-                        } elseif (str_contains($_SERVER['REQUEST_URI'], "time_too_short")) {
-                            echo "<p class='dialog error'>request interval is too short - please wait a bit longer.</p>";
+                        if (REQUEST == '/guestbook/success/') {
+                            echo 
+                                "<p class='dialog success'>
+                                    message sent - pending approval
+                                </p>";
+                        } elseif (REQUEST == '/guestbook/success/exception/') {
+                            echo
+                                "<p class='dialog success exception'>
+                                    your message has been recorded, but the system was unable to send an email.
+                                    <br/>
+                                    (mailer error: {$mail->ErrorInfo})
+                                </p>";
+                        } elseif (REQUEST == "/guestbook/error/has_html/") {
+                            echo
+                                "<p class='dialog error'>
+                                    the message should not contain any HTML tags!
+                                </p>";
+                        } elseif (REQUEST == "/guestbook/error/time_too_short/") {
+                            echo
+                                "<p class='dialog error'>
+                                    request interval is too short - please wait a bit longer.
+                                </p>";
                         }
                     }
                 ?>
