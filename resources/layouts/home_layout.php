@@ -23,7 +23,7 @@
       include self::Src . "status.php";
     }
     public static function SiteUpdates() {
-      include self::Src . "site-updates.php";
+      View::renderPage(null, Template::Content . "/home/_card_site-updates.html.twig", null);
     }
     public static function TipJar() {
       include self::Src . "tip-jar.php";
