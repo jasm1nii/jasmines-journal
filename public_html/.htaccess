@@ -37,31 +37,23 @@ AddHandler server-parsed .html .php
   DirectoryIndex index.php index.html
 </IfModule>
 
+# ref: https://bytepursuits.com/apache-enabling-brotli-compression-with-gzip-deflate-fallback
+
 <IfModule mod_brotli.c>
-  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml font/ttf text/plain text/html text/css text/javascript text/xml
-
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml text/plain text/html text/css text/javascript text/xml
   <IfModule mod_headers.c>
-    # Serve brotli compressed CSS files if they exist and the client accepts brotli.
-    RewriteCond "%{HTTP:Accept-encoding}" "br"
-    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
-    RewriteRule "^(.*)\.css"              "$1\.css\.br" [QSA]
+    # Static Brotli:
+    # Browser accepts brotli, and matching pre-compressed file exists => rewrite to .br file
+    RewriteCond %{HTTP:Accept-encoding} br
+    RewriteCond %{REQUEST_URI} .*\.(css|html|js|svg)
+    RewriteCond %{REQUEST_FILENAME}.br -s
+    RewriteRule ^(.+) $1.br
+    RewriteRule "\.css\.br$" "-" [T=text/css,E=no-brotli,E=no-gzip]
+    RewriteRule "\.html\.br$" "-" [T=text/html,E=no-brotli,E=no-gzip]
+    RewriteRule "\.js\.br$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
+    RewriteRule "\.svg\.br$" "-" [T=image/svg+xml,E=no-brotli,E=no-gzip]
 
-    # Serve brotli compressed JS files if they exist and the client accepts brotli.
-    RewriteCond "%{HTTP:Accept-encoding}" "br"
-    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
-    RewriteRule "^(.*)\.js"               "$1\.js\.br" [QSA]
-
-    # Serve brotli compressed .ttf files if they exist and the client accepts brotli.
-    RewriteCond "%{HTTP:Accept-encoding}" "br"
-    RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
-    RewriteRule "^(.*)\.ttf"               "$1\.ttf\.br" [QSA]
-
-    # Serve correct content types, and prevent double compression.
-    RewriteRule "\.css\.br$" "-" [T=text/css,E=no-brotli:1]
-    RewriteRule "\.js\.br$"  "-" [T=text/javascript,E=no-brotli:1]
-    RewriteRule "\.ttf\.br$"  "-" [T=font/ttf,E=no-brotli:1]
-
-    <FilesMatch "(\.js\.br|\.css\.br|\.ttf\.br)$">
+    <FilesMatch "(\.js\.br|\.css\.br|\.html\.br|\.svg\.br)$">
       # Serve correct encoding type.
       Header append Content-Encoding br
       # Force proxies to cache brotli & non-brotli files separately.
@@ -69,6 +61,36 @@ AddHandler server-parsed .html .php
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/json application/xml text/plain text/html text/css text/javascript text/xml
+  <IfModule mod_headers.c>
+    # Static Gzip:
+    # Browser accepts gzip, and matching pre-compressed file exists => rewrite to .gz file
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_URI} .*\.(css|html|js|svg|)
+    RewriteCond %{REQUEST_FILENAME}.gz -s
+    RewriteRule ^(.+) $1.gz
+    RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-brotli,E=no-gzip]
+    RewriteRule "\.html\.gz$" "-" [T=text/html,E=no-brotli,E=no-gzip]
+    RewriteRule "\.js\.gz$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
+    RewriteRule "\.svg\.br$" "-" [T=image/svg+xml,E=no-brotli,E=no-gzip]
+
+    <FilesMatch "\.(css|html|js|svg)\.gz$">
+      # Serve correct encoding type
+      # Let proxies cache gzip & non-gzip files separately
+      Header set Content-Encoding gzip
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
+#Now some content won't benefit from brotli, like already pre-compressed content,
+#So let us not bother with it
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-brotli no-gzip dont-vary
+ 
+# Make sure proxies don't deliver the wrong content
+Header append Vary Accept-Encoding env=!dont-vary
 
 <IfModule mod_headers.c>
   Header always set Cache-Control "public, no-cache, stale-if-error=86400"
