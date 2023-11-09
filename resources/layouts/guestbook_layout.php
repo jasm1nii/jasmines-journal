@@ -30,7 +30,7 @@
         <main>
             <section class="form">
                 <?php
-                    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == Guestbook::Post . "/") {
+                    if (isset($_SERVER['HTTP_REFERER'])) {
                         if (REQUEST == '/guestbook/success/') {
                             echo 
                                 "<p class='dialog success'>
