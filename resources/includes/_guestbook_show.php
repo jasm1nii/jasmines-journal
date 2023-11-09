@@ -2,6 +2,17 @@
     if (!isset($page) || $page == 1) {
         $page = 0;
     }
+
+    if (REQUEST == Guestbook::Index ?? Guestbook::Page . "/1/") {
+        $_SESSION['gb_page'] = 1;
+    } elseif (REQUEST == Guestbook::Page . "/" . $page . "/") {
+        if ($page !== 0) {
+            $_SESSION['gb_page'] = $page;
+        } else {
+            $_SESSION['gb_page'] = 1;
+        }
+    }
+
     $rows = $page * 10;
     
     $db = parse_ini_file(RenderConfig::Ini, true);
@@ -13,11 +24,17 @@
 
     $guestbook_show = new PDO("mysql:host=$servername;dbname=$dbname", $user_show, $pass_show, [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']);
 
-    function showMessage($v) {
+    function showMessage($v, $is_threaded) {
         include RenderConfig::MarkdownComments;
 
-        $msg = "<section class='message'><hgroup><h2 id='{$v['ID']}'><a href='/guestbook/comment/{$v['ID']}'>#{$v['ID']}</a> &#x2022; ";
         $name = htmlspecialchars($v['Name'], ENT_QUOTES, "UTF-8", false);
+
+        $msg = "<section class='message";
+        if ($is_threaded == true) {
+            $msg .= " is-threaded";
+        }
+
+        $msg .= "'><hgroup><h2 id='{$v['ID']}'><a href='/guestbook/comment/{$v['ID']}'>#{$v['ID']}</a> &#x2022; ";
 
         if ($v['User Privilege'] == 'Admin') {
             $name .= "&nbsp;👑";
@@ -55,7 +72,7 @@
             $comment_arr = $sql_comment->fetchAll();
 
             $parent = $comment_arr[0];
-            showMessage($parent);
+            showMessage($parent, false);
 
             $sql_reply = $guestbook_show->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
@@ -68,8 +85,10 @@
             $reply_arr = $sql_reply->fetchAll();
 
             if (count($reply_arr) !== 0) {
-                showMessage($reply_arr[0]);
+                showMessage($reply_arr[0], true);
             }
+
+            echo "<nav><a href='" . Guestbook::Page . "/" . $_SESSION['gb_page'] ."#{$comment_id}'>← return to previous page</a></nav>";
 
             break;
 
@@ -88,7 +107,7 @@
 
             for ($i=0; $i < count($msg_arr); $i++) {
                 $comment = $msg_arr[$i];
-                showMessage($comment);
+                showMessage($comment, false);
             }
 
             $sql_count = $guestbook_show->prepare(

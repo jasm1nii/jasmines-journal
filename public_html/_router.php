@@ -295,7 +295,7 @@
                             session_start();
                             $_SESSION['form_start'] = true;
 
-                        } elseif (!isset($_SERVER['HTTP_REFERER'])) {
+                        } elseif (!isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== Guestbook::Post . "/") {
                             header('Location: /guestbook');
                         }
 

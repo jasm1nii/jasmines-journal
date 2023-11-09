@@ -215,6 +215,12 @@ form {
     }
 }
 
+.is-threaded {
+    width: 85%;
+    margin-left: auto;
+    border-left: 5px solid;
+}
+
 main + footer {
     grid-row: 3;
     grid-column: 2;
