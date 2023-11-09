@@ -7,3 +7,4 @@ _notes
 resources/cache
 *.ini
 tmp/twig/*
+!.gitattributes
