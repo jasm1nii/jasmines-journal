@@ -8,7 +8,10 @@
 @use 'components/card_clock' as *;
 @use 'components/card_last-played' as *;
 @use 'components/card_status-cafe' as *;
+@use 'components/card_site-updates' as *;
+@use 'components/card_tip-jar' as *;
 @use 'components/card_webrings' as *;
+@use 'components/card_guestbook' as *;
 
 @use 'screen_queries/home_1100' as *;
 @use 'screen_queries/home_900' as *;
@@ -229,7 +232,7 @@ a {
   text-decoration-thickness: 1px;
   &:hover {
     text-decoration: none;
-    color: white !important;
+    color: white;
   }
 }
 .button-style {
@@ -306,31 +309,20 @@ button:active, .button-style:active {
 
 @include h-card();
 
-[aria-labelledby="note-to-visitors"] p {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-@include clock();
-
-@include last-played();
-
-@include status-cafe();
-
-#tip-jar + ul {
-  list-style: none;
-  text-align: center;
-  padding-left: 0;
-  & .button-style {
-    border-radius: 10px;
-    font-size: 1.25em;
-    width: 80%;
-    margin: auto;
-    margin-top: .5em;
+.note {
+  & p {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
+@include clock();
+@include last-played();
+@include status-cafe();
+@include site-updates();
+@include tip-jar();
 @include web-rings();
+@include guestbook();
 
 footer {
   margin-top: 3em;
@@ -373,24 +365,6 @@ hr {
   margin: auto;
   border: 1px dashed plum;
 }
-dd {
-  margin-top: .5em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  & [aria-hidden="true"] {
-    user-select: none;
-  }
-}
-.links {
-  & dt::before {
-    content: '🔗';
-    margin-right: .5em;
-  }
-  & dd {
-    margin-left: 2em;
-    margin-bottom: 1em;
-  }
-}
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -417,6 +391,7 @@ dd {
     color: var(--link-color-light);
     &:hover {
       background-color: var(--link-hover-bg-light);
+      color: white;
     }
   }
   button, .button-style {
@@ -424,6 +399,9 @@ dd {
     color: rgb(51, 44, 44);
     &:hover {
       background-color: lightgoldenrodyellow;
+    }
+    & a:hover {
+      color: rgb(51, 44, 44);
     }
   }
   .board {
@@ -466,6 +444,9 @@ dd {
     background-color: var(--last-played-bg);
     border-bottom: var(--last-played-border-bottom);
     border-right: var(--last-played-border-right);
+    & h2 {
+      color:#5a4f8b;
+    }
   }
   #track {
     background-color: linen;
@@ -480,14 +461,30 @@ dd {
     background-color: rgb(243, 242, 247);
     color: rgb(24, 14, 39);
   }
+  .site-updates {
+    background-color: #e0e9dc;
+    color: rgb(4, 32, 4);
+    & h2, h3 {
+      color: rgb(4, 32, 4);
+    }
+    & .overflow {
+      background-color: rgb(241, 241, 241);
+    }
+  }
   .overflow {
     background-color: var(--overflow-bg-light);
   }
-  .webrings {
+  .web-rings {
     background-color: var(--web-rings-card);
     color: var(--web-rings-font);
+    & h2 {
+      color: var(--web-rings-font);
+    }
     & a {
       color: var(--web-rings-links);
+      &:hover {
+        color: white;
+      }
     }
     & details p {
       background-color: white;
@@ -499,6 +496,12 @@ dd {
     color: var(--web-rings-font);
     & a {
       color: var(--web-rings-links);
+    }
+  }
+  .guestbook {
+    background-color: #ffe1f5;
+    & h2, h3 {
+      color: rgb(153, 32, 127);
     }
   }
   footer {
@@ -534,12 +537,11 @@ dd {
   --section-card-dark: hsl(255, 5%, 16%);
   --dark-mode-links:  rgb(255, 192, 216);
   --link-hover-bg-dark: rgba(216, 112, 147, .5);
-  --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
 }
 
 @mixin dark-mode {
-  h1, header nav, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
+  h1, header nav, header p, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
     color: white;
   }
   header {
@@ -551,13 +553,14 @@ dd {
     }
   }
   h2, h3 {
-    color: var(--dark-mode-h);
+    color: rgb(223, 154, 236);
   }
   a, .web-rings a {
     color: var(--dark-mode-links);
   }
   a:hover {
     background-color: var(--link-hover-bg-dark);
+    color: white;
   }
   button, .button-style {
     background-color: var(--dark-button-bg);
@@ -603,9 +606,33 @@ dd {
     background-color: var(--last-played-dark-bg);
     border-bottom: var(--last-played-dark-b-border);
     border-right: var(--last-played-dark-r-border);
+    & h2 {
+      color: rgb(170, 195, 212);
+    }
   }
   #track {
     background-color: #232629;
+  }
+  .site-updates {
+    & h2, h3 {
+      color: rgb(179, 216, 179);
+    }
+  }
+  .web-rings {
+    & h2 {
+      color:#aa8cdb;
+    }
+  }
+  .guestbook {
+    & h2 {
+      color: rgb(253, 188, 255);
+    }
+    & h3 {
+      color:#f2c7ff;
+    }
+  }
+  .overflow {
+    background-color: transparent;
   }
 }
 @mixin dark-mode-body {

@@ -29,6 +29,11 @@
             margin-top: 5%;
             margin-right: 5%;
         }
+        .page-columns {
+            & > section {
+                padding-bottom: 10vh;
+            }
+        }
         .latest-status {
             min-width: 55%;
         }

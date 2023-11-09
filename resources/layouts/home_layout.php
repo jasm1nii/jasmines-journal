@@ -33,10 +33,16 @@
       <header>
         <div class="top">
           <hgroup>
-            <h1>jasmine's journal <img class="ascii-img" src="<?=$img_root?>/index-h1-after.svg" width="300" height="50" alt=""/></h1>
-            <p><img class="ascii-img" src="<?=$img_root?>/index-subtitle-before.svg" width="40" height="30" alt=""/> a space for my digital miscellany</p>
+            <h1>
+              jasmine's journal <img class="ascii-img" src="<?=$img_root?>/index-h1-after.svg" width="300" height="50" alt=""/>
+            </h1>
+            <p>
+              <img class="ascii-img" src="<?=$img_root?>/index-subtitle-before.svg" width="40" height="30" alt=""/> a space for my digital miscellany
+            </p>
             <noscript>
-              <p>(javascript is disabled - some site elements may be non-interactive, missing and/or out of date)</p>
+              <p>
+                (javascript is disabled - some site elements may be non-interactive, missing and/or out of date)
+              </p>
             </noscript>
           </hgroup>
         </div>
@@ -95,13 +101,10 @@
             </section>
 
             <section aria-labelledby="note-to-visitors">
-              <div class="card">
+              <div class="card note">
                 <h2 id="note-to-visitors"><span aria-hidden="true">📝</span> note to visitors</h2>
                 <p>
-                  this is <strong>not</strong> intended to be a professional site.
-                </p>
-                <p>
-                  if you're interested in viewing something more refined, you can take a look at my <a href="https://jasmineamalia.com/" rel="external me">portfolio page</a> - but it's still a work in progress.
+                  this site is mostly <strong>personal.</strong> for professional work only, you can head over to my <a href="https://jasmineamalia.com/" rel="external me">portfolio page</a> (still in progress).
                 </p>
               </div>
             </section>
@@ -149,7 +152,7 @@
             </section>
 
             <section aria-labelledby="site-updates">
-              <div class="card">
+              <div class="card site-updates">
                 <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
                 <div class="overflow">
                   <h3><time datetime="2023-11-09">9 november 2023</time></h3>
@@ -178,7 +181,7 @@
             </section>
 
             <section aria-labelledby="tip-jar">
-              <div class="card">
+              <div class="card tip-jar">
                 <h2 id="tip-jar"><span aria-hidden="true">💕</span> tip jar</h2>
                 <ul>
                   <li>
@@ -273,7 +276,7 @@
             </section>
 
             <section aria-labelledby="newest-guestbook-entry">
-              <div class="card">
+              <div class="card guestbook">
                 <h2 id="newest-guestbook-entry"><span aria-hidden="true">💬</span> latest visitor message</h2>
                 <?php include Includes::IncludesRoot . '/_home_newest-message.php' ?>
                 <a href="/guestbook" class="button-style"><span aria-hidden="true">✍</span> post to guestbook</a>

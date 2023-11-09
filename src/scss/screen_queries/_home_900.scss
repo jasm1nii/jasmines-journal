@@ -1,7 +1,7 @@
 @mixin screen-900 {
     @media all and (max-width:900px) {
         .board {
-            max-width: 700px;
+            max-width: none;
             border-top: none;
         }
         h1 {

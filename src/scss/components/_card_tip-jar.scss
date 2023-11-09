@@ -1,0 +1,14 @@
+@mixin tip-jar {
+    #tip-jar + ul {
+        list-style: none;
+        text-align: center;
+        padding-left: 0;
+        & .button-style {
+            border-radius: 10px;
+            font-size: 1.25em;
+            width: 80%;
+            margin: auto;
+            margin-top: .5em;
+        }
+    }
+}
