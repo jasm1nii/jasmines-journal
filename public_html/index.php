@@ -1,5 +1,5 @@
 <?php
-    putenv("ENV=prod");
+    putenv("ENV=dev");
     define("ENV_SRC", getenv('ENV'));
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname(__DIR__,1));
