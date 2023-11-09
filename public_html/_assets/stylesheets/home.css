@@ -281,7 +281,6 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: white;
 }
 
 .button-style {
@@ -462,6 +461,7 @@ button:active, .button-style:active {
 .note p {
   padding-left: 1em;
   padding-right: 1em;
+  font-size: 1.05em;
 }
 
 :root {
@@ -554,7 +554,6 @@ button:active, .button-style:active {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-family: var(--font-3);
-  text-transform: lowercase;
   overflow-x: hidden;
 }
 
@@ -563,6 +562,7 @@ button:active, .button-style:active {
   transform: translateX(0);
   animation: scroll 15s linear infinite;
   font-weight: 500;
+  font-size: larger;
 }
 
 @keyframes scroll {
@@ -633,7 +633,8 @@ button:active, .button-style:active {
 #statuscafe-content {
   padding: 0.5em;
   font-family: var(--font-3);
-  min-height: 50px;
+  font-size: 1.1em;
+  min-height: 75px;
   word-wrap: break-word;
 }
 
@@ -1077,6 +1078,7 @@ hr {
   }
   button:hover, .button-style:hover {
     background-color: lightgoldenrodyellow;
+    color: rgb(51, 44, 44);
   }
   button a:hover, .button-style a:hover {
     color: rgb(51, 44, 44);
@@ -1206,6 +1208,7 @@ hr {
 }
 .light-mode button:hover, .light-mode .button-style:hover {
   background-color: lightgoldenrodyellow;
+  color: rgb(51, 44, 44);
 }
 .light-mode button a:hover, .light-mode .button-style a:hover {
   color: rgb(51, 44, 44);

@@ -26,7 +26,8 @@
     #statuscafe-content {
         padding: .5em;
         font-family: var(--font-3);
-        min-height: 50px;
+        font-size: 1.1em;
+        min-height: 75px;
         word-wrap: break-word;
     }
     #statuscafe-content::before, #statuscafe-content::after {

@@ -39,7 +39,6 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         font-family: var(--font-3);
-        text-transform: lowercase;
         overflow-x: hidden;
     }
     #song {
@@ -47,6 +46,7 @@
         transform: translateX(0);
         animation: scroll 15s linear infinite;
         font-weight: 500;
+        font-size: larger;
     }
     @keyframes scroll {
         0% { 

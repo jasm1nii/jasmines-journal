@@ -232,7 +232,6 @@ a {
   text-decoration-thickness: 1px;
   &:hover {
     text-decoration: none;
-    color: white;
   }
 }
 .button-style {
@@ -313,6 +312,7 @@ button:active, .button-style:active {
   & p {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.05em;
   }
 }
 
@@ -399,6 +399,7 @@ hr {
     color: rgb(51, 44, 44);
     &:hover {
       background-color: lightgoldenrodyellow;
+      color: rgb(51, 44, 44);
     }
     & a:hover {
       color: rgb(51, 44, 44);

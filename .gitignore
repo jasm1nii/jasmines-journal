@@ -6,3 +6,4 @@ _archive
 _notes
 resources/cache
 *.ini
+tmp/twig/*

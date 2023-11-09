@@ -9,7 +9,7 @@
 
     $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__,1),getcwd());
     $twig = new \Twig\Environment($loader,[
-        'cache'=>dirname(__DIR__,1).'/resources/cache',
+        'cache'=>dirname(__DIR__,1).'/tmp/twig',
         'auto_reload'=>true
     ]);
 
