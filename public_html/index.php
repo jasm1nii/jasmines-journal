@@ -1,5 +1,5 @@
 <?php
-    putenv("ENV=prod");
+    putenv("ENV=dev");
     define("ENV_SRC", getenv('ENV'));
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname(__DIR__,1));
@@ -56,11 +56,11 @@
 
     class RenderConfig {
         const Composer = SITE_ROOT . '/src/vendor/autoload.php';
-        const Config = SITE_ROOT . "/config";
-        const Ini = self::Config . "/env_" . ENV_SRC . ".ini";
-        const Twig = self::Config . "/twig_default_config.php";
-        const MarkdownComments = self::Config . "/commonmark_comments_config.php";
-        const MarkdownWithTOC = self::Config . "/commonmark_toc_config.php";
+        const ConfigDir = SITE_ROOT . "/config";
+        const Ini = self::ConfigDir . "/env_" . ENV_SRC . ".ini";
+        const Twig = self::ConfigDir . "/twig_default_config.php";
+        const MarkdownComments = self::ConfigDir . "/commonmark_comments_config.php";
+        const MarkdownWithTOC = self::ConfigDir . "/commonmark_toc_config.php";
     }
 
     class View {

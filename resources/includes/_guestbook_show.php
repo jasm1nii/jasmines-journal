@@ -82,6 +82,10 @@
                 showMessage($reply_arr[0], true);
             }
 
+            if (!isset($_SESSION['gb_page'])) {
+                $_SESSION['gb_page'] = 1;
+            }
+
             echo "<nav><a href='" . Guestbook::Page . "/" . $_SESSION['gb_page'] ."#{$comment_id}'>← return to previous page</a></nav>";
 
             break;

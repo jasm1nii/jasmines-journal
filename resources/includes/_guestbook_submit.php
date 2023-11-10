@@ -39,7 +39,7 @@
             if ($_POST['name'] == null) {
                 $sender_name = 'Anonymous';
             } else {
-                $sender_name = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+                $sender_name = htmlspecialchars($_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
             }
             
             $sender_email = $_POST['email'];

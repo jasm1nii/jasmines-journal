@@ -1,11 +1,3 @@
-<?php
-    /*
-    if (!empty($_SERVER['HTTP_REFERER'])) {
-        if ($_SERVER['HTTP_REFERER'] !== Guestbook::Post . "/") {
-            header('Referer:'.REQUEST);
-        }
-    }*/
-?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
