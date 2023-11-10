@@ -13,8 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php Includes::Head(); ?>
         <title>guestbook | jasmine's journal</title>
-        <meta name="description" content="a list of cool websites on the indie web"/>
-        <link rel="canonical" href="https://jasm1nii.xyz/link-gallery"/>
+        <meta name="description" content="leave a message if you're stopping by!"/>
+        <link rel="canonical" href="https://jasm1nii.xyz/guestbook"/>
         <link href="/_assets/stylesheets/guestbook.css" rel="stylesheet" type="text/css" media="all"/>
     </head>
     <body>
