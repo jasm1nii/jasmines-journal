@@ -5,7 +5,7 @@
         <li id="blog"><a href="/blog">blog</a></li>
         <li id="resources"><a href="/resources">resources</a></li>
         <li id="linkGallery"><a href="/link-gallery">link gallery</a></li>
-        <li id="subscribe"><a href="/subscribe">subscribe</a></li>
+        <li id="feeds"><a href="/feeds">feeds</a></li>
         <li id="guestbook"><a href="/guestbook">guestbook</a></li>
     </ul>
 </div>

@@ -15,7 +15,7 @@
         const Accessibility = "/accessibility/";
         const Credits = "/credits/";
         const SiteMap = "/site-map/";
-        const Feeds = "/subscribe/";
+        const Feeds = "/feeds/";
         const Guestbook = "/guestbook/";
         public static function NotFound() {
             http_response_code(404);
@@ -37,7 +37,7 @@
         const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
         const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
         const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
-        const Feeds = Template::Layouts . '/feeds_layout.php';
+        const Feeds = Template::Layouts . '/feeds/feeds_index.php';
         const Guestbook = Template::Layouts.'/guestbook_layout.php';
     }
 
@@ -141,7 +141,6 @@
         case str_starts_with(REQUEST, Route::Blog):
 
             function renderBlogLayout($type) {
-
                 require_once RenderConfig::Twig;
 
                 $slug = rtrim(REQUEST,'/');
@@ -192,7 +191,6 @@
             $category = SITE_ROOT.Template::Content.'/resources/categories/';
 
             function renderResourcesPage($markdown_file, $twig_file) {
-
                 require_once RenderConfig::Twig;
 
                 if (file_exists($markdown_file)) {
@@ -299,7 +297,7 @@
                 const Index = Route::Feeds;
                 const Success = Route::Feeds . "success/";
                 const Error = Route::Feeds . "error/";
-                const PostLayout = '/resources/layouts/subscribe_post_layout.html.twig';
+                const PostLayout = Template::Layouts . '/feeds/feeds_post.html.twig';
                 public static function LoadDefault() {
                     require SITE_ROOT . Layout::Feeds;
                 }

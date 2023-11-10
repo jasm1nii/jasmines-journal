@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <?php include dirname(__DIR__,2).'/resources/includes/head.shtml'?>
-        <title>subscribe | jasmine's journal</title>
+        <?=Includes::Head()?>
+        <title>feeds | jasmine's journal</title>
         <meta name="description" content="subscription feeds for my little webbed site"/>
         <link rel="canonical" href="https://jasm1nii.xyz/subscribe"/>
         <link rel="stylesheet" href="/_assets/stylesheets/subscribe.css" type="text/css" media="all"/>
@@ -14,11 +14,11 @@
             <header>
                 <div id="header-controls">
                     <hgroup>
-                        <h1>subscription feeds</h1>
+                        <h1>feeds</h1>
                     </hgroup>
                 </div>
                 <nav aria-label="primary">
-                    <?php include dirname(__DIR__,2).'/resources/includes/headernav.shtml'?>
+                    <?=Includes::HeaderNav()?>
                 </nav>
             </header>
             <main>
@@ -34,7 +34,7 @@
                         </ul>
                     </section>
                     <section aria-labelledby="rss">
-                        <h2 id="rss">syndication feeds</h2>
+                        <h2 id="rss">syndication</h2>
                         <p>
                             add to your RSS reader of choice!
                         </p>
@@ -69,7 +69,7 @@
                 </article>
             </main>
             <footer>
-                <?php include dirname(__DIR__,2).'/resources/includes/footer.shtml'?>
+                <?=Includes::Footer()?>
             </footer>
         </div>
         <script src="/_assets/scripts/theme-switcher-v2.js"></script>
