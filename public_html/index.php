@@ -15,6 +15,7 @@
         const Accessibility = "/accessibility/";
         const Credits = "/credits/";
         const SiteMap = "/site-map/";
+        const Feeds = "/subscribe/";
         const Guestbook = "/guestbook/";
         public static function NotFound() {
             http_response_code(404);
@@ -36,6 +37,7 @@
         const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
         const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
         const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
+        const Feeds = Template::Layouts . '/feeds_layout.php';
         const Guestbook = Template::Layouts.'/guestbook_layout.php';
     }
 
@@ -289,6 +291,48 @@
             ];
 
             View::RenderTwig($page, $vars);
+            break;
+        
+        case str_starts_with(REQUEST, Route::Feeds):
+
+            class Feeds {
+                const Index = Route::Feeds;
+                const Success = Route::Feeds . "success/";
+                const Error = Route::Feeds . "error/";
+                const PostLayout = '/resources/layouts/subscribe_post_layout.html.twig';
+                public static function LoadDefault() {
+                    require SITE_ROOT . Layout::Feeds;
+                }
+            }
+
+            if (REQUEST == Feeds::Index) {
+                Feeds::LoadDefault();
+
+            } else {
+                switch (str_starts_with(REQUEST, Route::Feeds)) {
+                    case Feeds::Success:
+                        $vars = [
+                            'h2' => 'yippe!!',
+                            'message' => 'thanks for subscribing!'
+                        ];
+
+                        View::RenderTwig(Feeds::PostLayout, $vars);
+                        break;
+
+                    case Feeds::Error:
+                        $vars = [
+                            'h2' => 'aw shucks',
+                            'message' => 'there was an error with your submission ☹'
+                        ];
+
+                        View::RenderTwig(Feeds::PostLayout, $vars);
+                        break;
+
+                    default:
+                        Feeds::LoadDefault();
+                }
+            }
+
             break;
 
         case str_starts_with(REQUEST, Route::Guestbook):
