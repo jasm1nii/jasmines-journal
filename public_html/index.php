@@ -61,17 +61,13 @@
         const MarkdownWithTOC = self::Config . "/commonmark_toc_config.php";
     }
 
-    require_once RenderConfig::Twig;
-
     class View {
-        public static function renderPage($layout, $page, $slug) {
-            global $twig;
-            echo $twig->render($page,
-                [
-                    "layout" => $layout,
-                    "slug" => $slug,
-                    "updated" => filemtime(SITE_ROOT.$page)
-                ]);
+        public static function RenderTwig($page, $vars) {
+            require_once RenderConfig::Twig;
+            if ($vars == null) {
+                $vars = [];
+            }
+            echo $twig->render($page, $vars);
         }
     }
 
@@ -87,14 +83,14 @@
             include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
             $nav_html = $nav->saveHTML();
 
-            $content = Template::Content."/about.html.twig";
-
-            echo $twig->render($content,
-            [
+            $page = Template::Content."/about.html.twig";
+            $vars = [
                 "layout" => Layout::About,
                 "nav" => $nav_html,
-                "updated" => filemtime(SITE_ROOT.$content)
-            ]);
+                "updated" => filemtime(SITE_ROOT.$page)
+            ];
+
+            View::RenderTwig($page, $vars);
 
             break;
 
@@ -113,32 +109,38 @@
 
                 include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
                 $nav_html = $nav->saveHTML();
+                
+                $layout = $twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig');
 
-                echo $twig->render(Template::Content.$file.'.html.twig',
-                    [
-                        'layout'=>$twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig'),
-                        'nav'=>$nav_html
-                    ]);
+                $page = Template::Content . $file . '.html.twig';
+                $vars = [
+                    'layout' => $layout,
+                    'nav' => $nav_html
+                ];
+
+                View::RenderTwig($page, $vars);
 
             } else {
                 Route::NotFound();
             }
-
             break;
 
         case str_starts_with(REQUEST, Route::LinkGallery):
 
-            echo $twig->render(Layout::LinkGallery,
-                [
-                    'updated' => stat(SITE_ROOT.Template::Content.'/link-gallery')['mtime']
-                ]);
-                
+            $page = Layout::LinkGallery;
+            $updated = stat(SITE_ROOT.Template::Content.'/link-gallery')['mtime'];
+            $vars = [
+                'updated' => $updated
+            ];
+
+            View::RenderTwig($page, $vars);
             break;
 
         case str_starts_with(REQUEST, Route::Blog):
 
             function renderBlogLayout($type) {
-                global $twig;
+
+                require_once RenderConfig::Twig;
 
                 $slug = rtrim(REQUEST,'/');
                 $blog_content = Template::Content.$slug.'.html.twig';
@@ -172,11 +174,13 @@
 
         case Route::Resources:
 
-            echo $twig->render(Template::Layouts.'/resources/resources_index.html.twig',
-                [
-                    'updated' => filemtime(SITE_ROOT.Template::Content.'/resources/resources_index.md')
-                ]);
+            $page = Template::Layouts.'/resources/resources_index.html.twig';
+            $updated = filemtime(SITE_ROOT.Template::Content.'/resources/resources_index.md');
+            $vars = [
+                'updated' => $updated
+            ];
 
+            View::RenderTwig($page, $vars);
             break;
 
         case str_starts_with(REQUEST, Route::Resources):
@@ -186,7 +190,8 @@
             $category = SITE_ROOT.Template::Content.'/resources/categories/';
 
             function renderResourcesPage($markdown_file, $twig_file) {
-                global $twig;
+
+                require_once RenderConfig::Twig;
 
                 if (file_exists($markdown_file)) {
                     require_once RenderConfig::MarkdownWithTOC;
@@ -220,6 +225,7 @@
             $page = $category.$file_base.'.html.twig';
             
             if (file_exists($page)) {
+
                 renderResourcesPage($category.$file_base.'.md',$page);
 
             } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
@@ -243,29 +249,46 @@
 
         case Route::Accessibility:
 
-            View::renderPage(
-                Layout::Subpage,
-                Template::Content.'/accessibility.html.twig',
-                trim(Route::Accessibility,"/")
-            );
+            $page = Template::Content.'/accessibility.html.twig';
+            $layout = Layout::Subpage;
+            $slug = trim(Route::Accessibility,"/");
+            $updated = filemtime(SITE_ROOT . $page);
+
+            $vars = [
+                'layout' => $layout,
+                'slug' => $slug,
+                'updated' => $updated
+            ];
+
+            View::RenderTwig($page, $vars);
             break;
 
         case Route::Credits:
 
-            View::renderPage(
-                Layout::Subpage,
-                Template::Content.'/credits.html.twig',
-                trim(Route::Credits,"/")
-            );
+            $page = Template::Content.'/credits.html.twig';
+            $layout = Layout::Subpage;
+            $slug = trim(Route::Credits,"/");
+            $updated = filemtime(SITE_ROOT . $page);
+
+            $vars = [
+                'layout' => $layout,
+                'slug' => $slug,
+                'updated' => $updated
+            ];
+
+            View::RenderTwig($page, $vars);
             break;
         
         case Route::SiteMap:
 
-            View::renderPage(
-                Layout::SiteMap,
-                Template::Content.'/site-map.html.twig',
-                null
-            );
+            $page = Template::Content.'/site-map.html.twig';
+            $layout = Layout::SiteMap;
+
+            $vars = [
+                'layout' => $layout
+            ];
+
+            View::RenderTwig($page, $vars);
             break;
 
         case str_starts_with(REQUEST, Route::Guestbook):

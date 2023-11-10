@@ -1,6 +1,4 @@
 <?php
-  $img_root = '/_assets/media/main';
-
   class Media {
     const Img = '/_assets/media/main';
   }
@@ -23,7 +21,8 @@
       include self::Src . "status.php";
     }
     public static function SiteUpdates() {
-      View::renderPage(null, Template::Content . "/home/_card_site-updates.html.twig", null);
+      $page = Template::Content . "/home/_card_site-updates.html.twig";
+      View::RenderTwig($page, null);
     }
     public static function TipJar() {
       include self::Src . "tip-jar.php";
