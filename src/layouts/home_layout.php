@@ -111,7 +111,7 @@
       <?=Includes::Footer()?>
     </footer>
 
-    <script defer src="index.js"></script>
+    <script defer src="/_assets/scripts/home/index.js"></script>
     <script defer src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
   
