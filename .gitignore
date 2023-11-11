@@ -1,11 +1,6 @@
 *.code-workspace
 .vscode
 .php_tmp
-desktop.ini
-_archive
-_notes
-resources/cache
 *.ini
 tmp/twig/*
 vendor/*
-!.gitattributes
