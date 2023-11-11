@@ -155,9 +155,17 @@
 
         case str_starts_with(REQUEST, Route::Blog):
 
-            class BlogLayout {
-                const Article = Template::Layouts . "blog_article_layout.html.twig";
-                const Note = Template::Layouts . "blog_note_layout.html.twig";
+            class Blog {
+                const LayoutsDir = Template::Layouts . "blog/";
+                const MainIndex = SITE_ROOT . self::LayoutsDir . "blog_index.php";
+                const ArticlesIndex = SITE_ROOT . self::LayoutsDir . "articles_index.php";
+                const ArticleEntry = self::LayoutsDir . "article_entry.html.twig";
+                const NotesIndex = SITE_ROOT . self::LayoutsDir . "notes_index.php";
+                const NoteEntry = self::LayoutsDir . "note_entry.html.twig";
+
+                public static function nav() {
+                    include SITE_ROOT . Template::Includes . "_blog_nav.php";
+                }
 
                 public static function render($type) {
                     require_once RenderConfig::Twig;
@@ -181,14 +189,51 @@
                 }
             }
 
-            if (str_contains(REQUEST, Route::BlogArticles)) {
-                BlogLayout::render(BlogLayout::Article);
+            switch (REQUEST) {
 
-            } elseif (str_contains(REQUEST, Route::BlogNotes)) {
-                BlogLayout::render(BlogLayout::Note);
+                case Route::Blog:
+                case Route::Blog . "/index":
+                    require Blog::MainIndex;
+                    break;
 
-            } else {
-                Route::NotFound();
+                case (str_contains(REQUEST, Route::BlogArticles)):
+
+                    switch (REQUEST) {
+
+                        case (str_ends_with(REQUEST, ".xml")):
+                            require $_SERVER['DOCUMENT_ROOT'] . "/articles.xml";
+                            break;
+                        
+                        case REQUEST == "/blog/articles/":
+                            require Blog::ArticlesIndex;
+                            break;
+
+                        default:
+                            Blog::render(Blog::ArticleEntry);
+                    }
+
+                    break;
+
+                case (str_contains(REQUEST, Route::BlogNotes)):
+
+                    switch (REQUEST) {
+
+                        case (str_ends_with(REQUEST, ".xml")):
+                            require $_SERVER['DOCUMENT_ROOT'] . "/notes.xml";
+                            break;
+
+                        case REQUEST == "/blog/notes/":
+                            require Blog::NotesIndex;
+                            break;
+
+                        default:
+                            Blog::render(Blog::NoteEntry);
+                    }
+
+                    break;
+
+                default:
+                    Route::NotFound();
             }
 
             break;
