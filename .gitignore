@@ -3,4 +3,5 @@
 .php_tmp
 *.ini
 tmp/twig/*
+!*.gitattributes
 vendor/*
