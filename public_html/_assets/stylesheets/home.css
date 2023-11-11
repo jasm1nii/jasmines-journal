@@ -119,6 +119,9 @@ body ::-webkit-scrollbar-thumb:hover {
   background-color: transparent !important;
   transform: translatey(-5px);
 }
+.notice-group ::-webkit-scrollbar-thumb {
+  background-color: rgb(202, 172, 97);
+}
 
 #notice {
   transition: transform 0.3s;
@@ -658,6 +661,9 @@ button:active, .button-style:active {
 .site-updates .overflow {
   border-color: green;
   scrollbar-color: rgb(110, 141, 114) rgba(134, 201, 154, 0.116);
+}
+.site-updates ::-webkit-scrollbar-thumb {
+  background-color: rgb(118, 170, 138);
 }
 
 #tip-jar + ul {

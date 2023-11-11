@@ -1,0 +1,38 @@
+@mixin sticky-note {
+    .notice-group {
+        position: absolute;
+        top: 28vh;
+        right: 5vw;
+        z-index: 1;
+        font-family: var(--font-3);
+        animation: fadeInSlide 0.75s forwards;
+        & button {
+            background-color: transparent !important;
+            color: inherit;
+            border: none;
+            font-size: 2em;
+            z-index: 2;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: transform 0.3s;
+            &:hover {
+                background-color: transparent !important;
+                transform: translatey(-5px);
+            }
+        }
+        & ::-webkit-scrollbar-thumb {
+            background-color: rgb(202, 172, 97);
+        }
+    }
+    #notice {
+        transition: transform 0.3s;
+        & p:first-child {
+            font-size: x-large;
+        }
+        &:hover {
+            transform: translatey(-5px);
+        }
+        
+    }
+}

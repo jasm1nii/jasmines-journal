@@ -1,0 +1,70 @@
+:root {
+    --light-bg-1: rgb(228, 207, 228);
+    --light-bg-2: whitesmoke;
+    --light-border-1: purple;
+    --light-font-1: #221f22;
+    --light-font-2: rgb(56, 36, 56);
+    --light-h1: #4a3b61;
+    --light-h2: #5a5463;
+    --light-h3: rgb(107, 72, 128);
+    --light-h3-bg: rgb(227, 219, 230);
+    --light-h4: rgb(119, 95, 35);
+    --light-h4-bg: antiquewhite;
+    --light-nav-a: purple;
+    --light-nav-ul: rgb(76, 15, 95);
+    --light-nav-border: border-color: rgb(207, 145, 207);
+    --light-li-border: rgb(223, 212, 212);
+    --light-a: darkmagenta;
+}
+
+@mixin light-mode-body {
+    background-color: var(--light-bg-1);
+    color: var(--light-font-1);
+}
+
+@mixin light-mode {
+    header {
+        & p {
+            color: var(--light-font-2);
+        }
+    }
+    main {
+        background-color: var(--light-bg-2);
+        border-color: var(--light-border-1);
+    }
+
+    h1 {
+        color: var(--light-h1);
+    }
+    h2 {
+        color: var(--light-h2);
+    }
+    h3 {
+        background-color: var(--light-h3-bg);
+        color: var(--light-h3);
+    }
+    h4 {
+        background-color: var(--light-h4-bg);
+        color: var(--light-h4);
+    }
+
+    nav {
+        & a {
+            color: var(--light-a);
+        }
+        & ul {
+            color: var(--light-nav-ul);
+            border-color: var(--light-nav-border);
+        }
+    }
+
+    article {
+        & ul ul, li:not(li:last-of-type) {
+            border-color: rgb(192, 159, 192);
+        }
+      }
+
+    a {
+        color: var(--light-a);
+    }
+}

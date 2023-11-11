@@ -1,6 +1,4 @@
 <?php
-    require_once RenderConfig::Composer;
-
     use League\CommonMark\Environment\Environment;
     use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
     use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;

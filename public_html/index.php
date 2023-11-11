@@ -1,8 +1,14 @@
 <?php
     putenv("ENV=dev");
-    define("ENV_SRC", getenv('ENV'));
+
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname(__DIR__,1));
+
+    define("CONFIG_DIR", SITE_ROOT . "/config/");
+    define("ENV_CONF", CONFIG_DIR . "env_" . getenv('ENV') . ".ini");
+    define("COMPOSER", SITE_ROOT . "/src/vendor/autoload.php");
+
+    require_once COMPOSER;
 
     class Route {
         const About = "/about/";
@@ -55,12 +61,9 @@
     }
 
     class RenderConfig {
-        const Composer = SITE_ROOT . '/src/vendor/autoload.php';
-        const ConfigDir = SITE_ROOT . "/config";
-        const Ini = self::ConfigDir . "/env_" . ENV_SRC . ".ini";
-        const Twig = self::ConfigDir . "/twig_default_config.php";
-        const MarkdownComments = self::ConfigDir . "/commonmark_comments_config.php";
-        const MarkdownWithTOC = self::ConfigDir . "/commonmark_toc_config.php";
+        const Twig = CONFIG_DIR . "twig_default_config.php";
+        const MarkdownComments = CONFIG_DIR . "commonmark_comments_config.php";
+        const MarkdownWithTOC = CONFIG_DIR . "commonmark_toc_config.php";
     }
 
     class View {

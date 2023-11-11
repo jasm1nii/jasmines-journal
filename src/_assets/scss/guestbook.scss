@@ -1,0 +1,282 @@
+@use 'assets/font_besley';
+@use 'assets/font_instrument-sans';
+
+@use 'animations/fade-in' as *;
+@use 'screen_queries/guestbook/1400' as *;
+@use 'screen_queries/guestbook/768' as *;
+
+@use 'themes/guestbook/dark' as *;
+@use 'themes/guestbook/light' as *;
+
+body {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    width: 90vw;
+    max-width: 1200px;
+}
+
+@mixin heading-font {
+    font-family: "Besley", serif;
+}
+
+a, #themeSwitch, input[type="submit"] {
+    transition: all .25s;
+}
+
+a {
+    &:hover {
+        letter-spacing: .1em;
+    }
+}
+#themeSwitch {
+    width: fit-content;
+    height: fit-content;
+    padding: .5em;
+    margin: auto 0;
+    background: transparent;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+header {
+    grid-row: 1;
+    margin-top: 3vh;
+    display: grid;
+    @include heading-font();
+    & hgroup {
+        grid-column: 2 / 10;
+        & h1 {
+            margin-bottom: 0;
+        }
+        & p {
+            margin-top: 0;
+            font-size: larger;
+            font-weight: 500;
+        }
+    }
+    & nav {
+        grid-column: 1 / 10;
+        & ul {
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-left: 0;
+            padding-left: 0;
+            list-style-position: inside;
+        }
+        & li {
+            margin-right: 1em;
+            width: max-content;
+            &::marker {
+                content: "✦ ";
+            }
+        }
+    }
+}
+
+main {
+    grid-row: 2;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5vw;
+    @include fadeIn();
+}
+
+.form {
+    position: sticky;
+    bottom: 15vh;
+    align-self: self-end;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-weight: 500;
+    & .dialog {
+        border: 1px solid;
+        width: fit-content;
+        padding: 1em;
+        margin: 2em auto;
+    }
+    & h2 {
+        text-decoration: 1.5px underline wavy;
+    }
+}
+
+form {
+    display: grid;
+    row-gap: .5em;
+    margin-top: 2em;
+    & input, textarea {
+        padding: .5em;
+        margin-bottom: 1em;
+        border: 1px solid;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    @for $i from 1 through 4 {
+        & label:nth-of-type(#{$i}), input:nth-of-type(#{$i}) {
+            grid-row: $i;
+        }
+    }
+    & label {
+        font-size: larger;
+        font-weight: 600;
+        grid-column: 1;
+        &::after {
+            margin-left: .25em;
+        }
+    }
+    & label[for="message"] {
+        $grid: span 5;
+        grid-column: $grid;
+        &::after {
+            content: "*";
+            color: red;
+            font-size: larger;
+        }
+        & ~ textarea, ~ span {
+            grid-column: $grid;
+        }
+    }
+    & input {
+        grid-column: 2 / 6;
+        &[type="submit"] {
+            grid-row: 7;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+            margin-right: 0;
+            cursor: pointer;
+        }
+    }
+    & textarea {
+        height: 15vh;
+        font-size: larger;
+        margin-top: 1em;
+    }
+}
+
+.messages {
+    position: relative;
+    margin-top: min(10vh, -150px);
+    & a {
+        text-decoration: 1.5px underline dashed;
+    }
+    & nav {
+        text-align: center;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        align-items: center;
+        letter-spacing: .1em;
+        & li {
+            display: inline-block;
+        }
+        & .current, .page {
+            width: fit-content;
+            margin-right: 1em;
+            & a {
+                display: inline-block;
+                padding: 1em;
+                font-weight: 600;
+                text-decoration: 1.5px underline solid;
+            }
+        }
+    }
+}
+
+#issues {
+    border-bottom: 1px solid;
+    margin-bottom: 3em;
+    padding: 1em;
+}
+
+.message {
+    border: 1px solid;
+    padding: .25em 1em 1em 1em;
+    margin-bottom: 3em;
+    & h2 {
+        font-size: 1.25em;
+        @include heading-font();
+    }
+    & .reply-context {
+        font-size: smaller;  
+    }
+    & .content {
+        margin-left: 1em;
+        font-weight: 450;
+        font-stretch: 95%;
+        letter-spacing: .025em;
+        & + footer {
+            text-align: right;
+        }
+    }
+}
+
+.is-threaded {
+    width: 85%;
+    margin-left: auto;
+    border-left: 5px solid;
+}
+
+main + footer {
+    grid-row: 3;
+    grid-column: 2;
+    text-align: right;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    margin-left: auto;
+    width: 80%;
+    font-size: .9em;
+    & #footer {
+        display: grid;
+        & div {
+            width: fit-content;
+            margin-left: auto;
+        }
+    }
+    & ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+        list-style-position: inside;
+        margin-right: -1em;
+    }
+    & li {
+        margin-bottom: 1em;
+        margin-right: 1em;
+        margin-left: auto;
+        width: fit-content;
+    }
+}
+
+@include screen-1400();
+@include screen-768();
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-body();
+    }
+    @include dark();
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-body();
+        @include light();
+    }
+}
+
+.dark-mode {
+    @include dark-body();
+    @include dark();
+}
+
+.light-mode {
+    @include light-body();
+    @include light();
+}
