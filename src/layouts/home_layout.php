@@ -1,10 +1,10 @@
 <?php
   class Media {
-    const Img = '/_assets/media/main';
+    const Img = "/_assets/media/main";
   }
 
   class Card {
-    const Src = SITE_ROOT . Template::Content . "/home/_card_";
+    const Src = SITE_ROOT . Template::Content . "home/_card_";
     public static function About() {
       include self::Src . "about.php";
     }
@@ -21,7 +21,7 @@
       include self::Src . "status.php";
     }
     public static function SiteUpdates() {
-      $page = Template::Content . "/home/_card_site-updates.html.twig";
+      $page = Template::Content . "home/_card_site-updates.html.twig";
       View::RenderTwig($page, null);
     }
     public static function TipJar() {

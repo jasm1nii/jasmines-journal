@@ -1,5 +1,5 @@
 <?php
-    require_once dirname(__DIR__,1).'/src/vendor/autoload.php';
+    require_once dirname(__DIR__,1) . "/vendor/autoload.php";
     
     use Twig\Extra\Markdown\DefaultMarkdown;
     use Twig\Extra\Markdown\MarkdownExtension;
@@ -27,7 +27,7 @@
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
     $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 
-    $twig->addGlobal("head",file_get_contents(dirname(__DIR__,1).'/resources/includes/head.shtml'));
-    $twig->addGlobal("headernav", file_get_contents(dirname(__DIR__,1).'/resources/includes/headernav.shtml'));
-    $twig->addGlobal("footer", file_get_contents(dirname(__DIR__,1).'/resources/includes/footer.shtml'));
+    $twig->addGlobal("head",file_get_contents(dirname(__DIR__,1).'/src/includes/head.shtml'));
+    $twig->addGlobal("headernav", file_get_contents(dirname(__DIR__,1).'/src/includes/headernav.shtml'));
+    $twig->addGlobal("footer", file_get_contents(dirname(__DIR__,1).'/src/includes/footer.shtml'));
 ?>

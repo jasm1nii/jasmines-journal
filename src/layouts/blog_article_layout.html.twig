@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ include('/resources/includes/head.shtml') }}
+    {{ head|raw }}
 
     <title>{% if title is defined %}{{ title }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
 
@@ -32,7 +32,7 @@
           <h1>b(rain)log entry</h1>
         </hgroup>
         <nav aria-label="primary">
-          {{ include('/resources/includes/headernav.shtml') }}
+          {{ headernav|raw }}
         </nav>
       </header>
 
@@ -68,7 +68,7 @@
         <section id="webmentions">
           <h3>webmentions</h3>
           {% if enable_webmentions == true %}
-            {{ include('/resources/includes/webmentions-module.shtml') }}
+            <s-e-i-a></s-e-i-a>
           {% else %}
             <p>the displaying of webmentions is disabled.</p>
           {% endif %}
@@ -86,14 +86,14 @@
     </div>
 
     <footer>
-      {{ include('/resources/includes/footer.shtml') }}
+      {{ footer|raw }}
     </footer>
 
     {% if enable_webmentions == true %}
-      {{ include('/resources/includes/webmentions-script.shtml') }}
+      <script type="module" src="/_assets/scripts/seia.js" async></script>
     {% endif %}
     {% if enable_comments == true %}
-      {{ include('/resources/includes/comments-script.shtml') }}
+      <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
       <script src="/_assets/scripts/comment-section.js"></script>
     {% endif %}
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>

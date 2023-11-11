@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ include('/resources/includes/head.shtml') }}
+    {{ head|raw }}
     <title>{{ published }} | jasmine's notes</title>
     <link rel="stylesheet" href="/_assets/stylesheets/blog_index.css" type="text/css" media="all"/>
     {% if custom_style == true %}
@@ -24,33 +24,35 @@
           <h1>jasmine&apos;s notes</h1>
         </hgroup>
         <nav aria-label="primary">
-          {{ include('/resources/includes/headernav.shtml') }}
+          {{ headernav|raw }}
         </nav>
       </header>
 
       <main class="notes-entry">
         <article>
           <h2><time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time></h2>
-
           <div class="h-entry">
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
             {% endif %}
             <p class="e-content">{% block content %}{% endblock %}</p>
           </div>
-
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
         </article>
 
         <section id="webmentions">
           <h3>webmentions</h3>
           {% if webmentions_301 == true %}
-            <p>this post has moved to a new URL - webmentions from the previous one could not be carried over.</p>
+            <p>
+              this post has moved to a new URL - webmentions from the previous one could not be carried over.
+            </p>
           {% endif %}
           {% if enable_webmentions == true %}
-            {{ include('/resources/includes/webmentions-module.shtml') }}
+            <s-e-i-a></s-e-i-a>
           {% else %}
-            <p>the displaying of webmentions is disabled.</p>
+            <p>
+              the displaying of webmentions is disabled.
+            </p>
           {% endif %}
         </section>
 
@@ -59,23 +61,26 @@
           {% if enable_comments == true %}
             <div id="comment-section" data-comments-id="notes-{{ published|date("Ymd") }}"></div>
           {% else %}
-            <p>comments are disabled.</p>
+            <p>
+              comments are disabled.
+            </p>
           {% endif %}
         </section>
       </main>
     </div>
 
     <footer>
-      {{ include('/resources/includes/footer.shtml') }}
+      {{ footer|raw }}
     </footer>
 
     {% if enable_webmentions == true %}
-      {{ include('/resources/includes/webmentions-script.shtml') }}
+      <script type="module" src="/_assets/scripts/seia.js" async></script>
     {% endif %}
     {% if enable_comments == true %}
-      {{ include('/resources/includes/comments-script.shtml') }}
+      <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
       <script src="/_assets/scripts/comment-section.js"></script>
     {% endif %}
+
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>

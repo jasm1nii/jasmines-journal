@@ -1,9 +1,14 @@
+<?php
+    define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
+    define("INCLUDES", SITE_ROOT . "/src/includes/");
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php include dirname(__DIR__,2).'/resources/includes/head.shtml'?>
+    <?php include INCLUDES . 'head.shtml' ?>
     <title>jasmine's b(rain)log</title>
     <meta name="description" content="my web of thoughts" />
     <meta name="author" content="jasm1nii" />
@@ -20,7 +25,7 @@
                 <nav>
                     <?php
                         $nav = new DOMDocument;
-                        $nav->loadHTMLFile(dirname(__DIR__,2).'/resources/includes/headernav.shtml');
+                        $nav->loadHTMLFile(INCLUDES . 'headernav.shtml');
                         $blog_index = $nav->getElementById('blog');
                         $blog_subindex = $nav->createElement('ul');
                         $blog_index->appendChild($blog_subindex);
@@ -103,11 +108,11 @@
                     </hgroup>
                     <div id="articlesArchive">
                         <?php
-                            require_once dirname(__DIR__,2).'/config/twig_default_config.php';
+                            require_once SITE_ROOT . '/config/twig_default_config.php';
 
-                            $source = dirname(__DIR__,2).'/resources/content/blog/articles';
+                            $source = dirname(__DIR__,2).'/src/content/blog/articles';
 
-                            $layout = "/resources/includes/_blog_index_2.html.twig";
+                            $layout = "/src/includes/_blog_index_2.html.twig";
 
                             $files = glob($source."/*/*/*/entry.html.twig");
                             asort($files, SORT_NATURAL);
@@ -117,7 +122,7 @@
                                 $content_path = ltrim($article,dirname(__DIR__,2));
 
                                 $slug_1 = rtrim($content_path,'.html.twig');
-                                $slug_2 = ltrim($slug_1,'/resources/content/blog/articles');
+                                $slug_2 = ltrim($slug_1,'/src/content/blog/articles');
 
                                 echo $twig->render($content_path, ['layout'=>$layout,'slug'=>$slug_2]);
                                 if(++$i > 4) break;
@@ -134,7 +139,7 @@
         </main>
     </div>
     <footer>
-        <?php include dirname(__DIR__,2).'/resources/includes/footer.shtml'?>
+        <?php include INCLUDES . 'footer.shtml'?>
     </footer>
     <style>
         #headernav #blog > a {

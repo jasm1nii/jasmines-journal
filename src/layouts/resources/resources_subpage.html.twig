@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {{ include('/resources/includes/head.shtml') }}
+        {{ head|raw  }}
         <title>{{ title }} | jasmine's resources</title>
         <link rel="canonical" href="https://jasm1nii.xyz/resources"/>
         <link href="/_assets/stylesheets/content_A2.css" rel="stylesheet"   type="text/css" media="all"/>
@@ -27,7 +27,7 @@
                     </p>
                 </hgroup>
                 <nav>
-                    {{ include('/resources/includes/headernav.shtml') }}
+                    {{ headernav|raw }}
                 </nav>
             </header>
             <main>
@@ -57,7 +57,7 @@
             </main>
         </div>
         <footer>
-            {{ include('/resources/includes/footer.shtml') }}
+            {{ footer|raw }}
         </footer>
         <script src="/_assets/scripts/theme-switcher-v2.js"></script>
     </body>

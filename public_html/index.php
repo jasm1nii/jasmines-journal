@@ -2,11 +2,11 @@
     putenv("ENV=dev");
 
     define("REQUEST", $_SERVER['REQUEST_URI']);
-    define("SITE_ROOT", dirname(__DIR__,1));
+    define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
 
     define("CONFIG_DIR", SITE_ROOT . "/config/");
     define("ENV_CONF", CONFIG_DIR . "env_" . getenv('ENV') . ".ini");
-    define("COMPOSER", SITE_ROOT . "/src/vendor/autoload.php");
+    define("COMPOSER", SITE_ROOT . "/vendor/autoload.php");
 
     require_once COMPOSER;
 
@@ -23,6 +23,7 @@
         const SiteMap = "/site-map/";
         const Feeds = "/feeds/";
         const Guestbook = "/guestbook/";
+
         public static function NotFound() {
             http_response_code(404);
             require_once __DIR__.'/404.shtml';
@@ -30,33 +31,21 @@
     }
 
     class Template {
-        const Layouts = "/resources/layouts";
-        const Includes = "/resources/includes";
-        const Content = "/resources/content";
-    }
-
-    class Layout {
-        const Home = Template::Layouts."/home_layout.php";
-        const About = Template::Layouts."/about_layout.html.twig";
-        const Subpage = Template::Layouts."/subpage_layout.html.twig";
-        const BlogArticle =  Template::Layouts.'/blog_article_layout.html.twig';
-        const BlogNote = Template::Layouts.'/blog_note_layout.html.twig';
-        const LinkGallery = Template::Layouts.'/link-gallery_layout.html.twig';
-        const SiteMap = Template::Layouts.'/site-map_layout.html.twig';
-        const Feeds = Template::Layouts . '/feeds/feeds_index.php';
-        const Guestbook = Template::Layouts.'/guestbook_layout.php';
+        const Layouts = "/src/layouts/";
+        const Includes = "/src/includes/";
+        const Content = "/src/content/";
     }
 
     class Includes {
         const IncludesRoot = SITE_ROOT.Template::Includes;
         public static function Head() {
-            include self::IncludesRoot.'/head.shtml';
+            include self::IncludesRoot . "head.shtml";
         }
         public static function HeaderNav() {
-            include self::IncludesRoot.'/headernav.shtml';
+            include self::IncludesRoot . "headernav.shtml";
         }
         public static function Footer() {
-            include self::IncludesRoot.'/footer.shtml';
+            include self::IncludesRoot . "footer.shtml";
         }
     }
 
@@ -67,6 +56,7 @@
     }
 
     class View {
+        const Subpage = Template::Layouts . "subpage_layout.html.twig";
         public static function RenderTwig($page, $vars) {
             require_once RenderConfig::Twig;
             if ($vars == null) {
@@ -80,47 +70,51 @@
         case "":
         case "/":
         case "/index":
-            require SITE_ROOT . Layout::Home;
+
+            $layout = SITE_ROOT . Template::Layouts . "home_layout.php";
+            require $layout;
             break;
 
         case Route::About:
 
-            include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
+            $partial = SITE_ROOT . Template::Includes . "_changelog_nav.php";
+            include $partial;
             $nav_html = $nav->saveHTML();
 
-            $page = Template::Content."/about.html.twig";
+            $page = Template::Content . "about.html.twig";
             $vars = [
-                "layout" => Layout::About,
+                "layout" => Template::Layouts . "about_layout.html.twig",
                 "nav" => $nav_html,
-                "updated" => filemtime(SITE_ROOT.$page)
+                "updated" => filemtime(SITE_ROOT . $page)
             ];
 
             View::RenderTwig($page, $vars);
-
             break;
 
         case Route::Changelog:
 
-            require SITE_ROOT.Template::Layouts.'/changelog/changelog_index.php';
+            $layout = SITE_ROOT . Template::Layouts . "changelog/changelog_index.php";
+
+            require $layout;
             break;
 
         case str_starts_with(REQUEST, Route::Changelog):
 
-            $path = ltrim(REQUEST,'/about');
-            $file = '/'.rtrim($path,'/');
-            $document_source = SITE_ROOT.Template::Content.$file.'.html.twig';
+            $path = ltrim(REQUEST, "/about");
+            $file = "/" . rtrim($path, "/");
+            $document_source = SITE_ROOT . Template::Content . $file . ".html.twig";
 
             if (file_exists($document_source)) {
 
-                include SITE_ROOT.Template::Includes.'/_changelog_nav.php';
+                include SITE_ROOT.Template::Includes . "_changelog_nav.php";
                 $nav_html = $nav->saveHTML();
                 
-                $layout = $twig->load(Template::Layouts.'/changelog/changelog_subpage.html.twig');
+                $layout = $twig->load(Template::Layouts . "changelog/changelog_subpage.html.twig");
 
-                $page = Template::Content . $file . '.html.twig';
+                $page = Template::Content . $file . ".html.twig";
                 $vars = [
-                    'layout' => $layout,
-                    'nav' => $nav_html
+                    "layout" => $layout,
+                    "nav" => $nav_html
                 ];
 
                 View::RenderTwig($page, $vars);
@@ -128,47 +122,70 @@
             } else {
                 Route::NotFound();
             }
+
             break;
 
-        case str_starts_with(REQUEST, Route::LinkGallery):
+        case Route::LinkGallery:
 
-            $page = Layout::LinkGallery;
-            $updated = stat(SITE_ROOT.Template::Content.'/link-gallery')['mtime'];
-            $vars = [
-                'updated' => $updated
-            ];
+            class LinkGallery {
 
-            View::RenderTwig($page, $vars);
+                const PartialsDir = Template::Content . "link-gallery";
+
+                const Mutuals = self::PartialsDir . "/link-gallery_mutuals.html.twig";
+                const _32bit = self::PartialsDir . "/link-gallery_32bitcafe.html.twig";
+                const Etc = self::PartialsDir . "/link-gallery_other-sites.html.twig";
+
+                public static function render() {
+                    $layout = Template::Layouts . "link-gallery_layout.html.twig";
+                    $updated = stat(SITE_ROOT . self::PartialsDir)['mtime'];
+                    $vars = [
+                        'updated' => $updated,
+                        'mutuals' => self::Mutuals,
+                        '_32bit' => self::_32bit,
+                        'etc' => self::Etc
+                    ];
+
+                    View::RenderTwig($layout, $vars);
+                }
+            }
+
+            LinkGallery::render();
+
             break;
 
         case str_starts_with(REQUEST, Route::Blog):
 
-            function renderBlogLayout($type) {
-                require_once RenderConfig::Twig;
+            class BlogLayout {
+                const Article = Template::Layouts . "blog_article_layout.html.twig";
+                const Note = Template::Layouts . "blog_note_layout.html.twig";
 
-                $slug = rtrim(REQUEST,'/');
-                $blog_content = Template::Content.$slug.'.html.twig';
-                $document_source = SITE_ROOT.$blog_content;
+                public static function render($type) {
+                    require_once RenderConfig::Twig;
 
-                if (file_exists($document_source)) {
+                    $layout = $twig->load($type);
+                    $slug = rtrim(REQUEST,'/');
+                    $img_dir = '/_assets/media' . rtrim($slug,'/entry') . '/'; 
+                    $content = Template::Content . $slug . ".html.twig";
 
-                    echo $twig->render($blog_content,
-                        [
-                            'layout'=>$twig->load($type),
-                            'slug'=>$slug,
-                            'src'=>'/_assets/media'.rtrim($slug,'/entry').'/'
-                        ]);
+                    if (file_exists(SITE_ROOT . $content)) {
+                        echo $twig->render($content,
+                            [
+                                'layout' => $layout,
+                                'slug' => $slug,
+                                'src' => $img_dir,
+                            ]);
 
-                } else {
-                    Route::NotFound();
+                    } else {
+                        Route::NotFound();
+                    }
                 }
             }
 
             if (str_contains(REQUEST, Route::BlogArticles)) {
-                renderBlogLayout(Layout::BlogArticle);
+                BlogLayout::render(BlogLayout::Article);
 
             } elseif (str_contains(REQUEST, Route::BlogNotes)) {
-                renderBlogLayout(Layout::BlogNote);
+                BlogLayout::render(BlogLayout::Note);
 
             } else {
                 Route::NotFound();
@@ -178,22 +195,23 @@
 
         case Route::Resources:
 
-            $page = Template::Layouts.'/resources/resources_index.html.twig';
-            $updated = filemtime(SITE_ROOT.Template::Content.'/resources/resources_index.md');
+            $layout = Template::Layouts . "resources/resources_index.html.twig";
+            $updated = filemtime(SITE_ROOT . Template::Content . "resources/resources_index.md");
             $vars = [
                 'updated' => $updated
             ];
 
-            View::RenderTwig($page, $vars);
+            View::RenderTwig($layout, $vars);
             break;
 
         case str_starts_with(REQUEST, Route::Resources):
 
             $path = preg_split(('/\/(resources)\//'),REQUEST);
             $file_base = rtrim($path[1],"/");
-            $category = SITE_ROOT.Template::Content.'/resources/categories/';
+            $category = SITE_ROOT . Template::Content . "resources/categories";
 
             function renderResourcesPage($markdown_file, $twig_file) {
+
                 require_once RenderConfig::Twig;
 
                 if (file_exists($markdown_file)) {
@@ -217,28 +235,28 @@
 
                 echo $twig->render(ltrim($twig_file, SITE_ROOT),
                     [
-                        'layout'=>$twig->load(Template::Layouts.'/resources/resources_subpage.html.twig'),
-                        'updated'=>$updated,
-                        'legend'=>file_get_contents(SITE_ROOT.Template::Content.'/resources/_legend.md'),
-                        'content'=>$content,
-                        'parent'=>$parent
+                        'layout' => $twig->load(Template::Layouts . "resources/resources_subpage.html.twig"),
+                        'updated' => $updated,
+                        'legend' => file_get_contents(SITE_ROOT.Template::Content . "resources/_legend.md"),
+                        'content'=> $content,
+                        'parent' => $parent
                     ]);
             }
 
-            $page = $category.$file_base.'.html.twig';
+            $page = $category . $file_base . ".html.twig";
             
             if (file_exists($page)) {
 
-                renderResourcesPage($category.$file_base.'.md',$page);
+                renderResourcesPage($category . $file_base . ".md", $page);
 
             } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
 
                 $path = preg_split('/\/(resources)\//',$matches[0]);
                 $file_base = $category.$path[1];
-                $page = $file_base.'index.html.twig';
+                $page = $file_base . "index.html.twig";
 
                 if (file_exists($page)) {
-                    renderResourcesPage($file_base.'index.md',$page);
+                    renderResourcesPage($file_base . "index.md", $page);
 
                 } else {
                     Route::NotFound();
@@ -252,10 +270,10 @@
 
         case Route::Accessibility:
 
-            $page = Template::Content.'/accessibility.html.twig';
-            $layout = Layout::Subpage;
+            $content = Template::Content . "accessibility.html.twig";
+            $layout = View::Subpage;
             $slug = trim(Route::Accessibility,"/");
-            $updated = filemtime(SITE_ROOT . $page);
+            $updated = filemtime(SITE_ROOT . $content);
 
             $vars = [
                 'layout' => $layout,
@@ -263,15 +281,15 @@
                 'updated' => $updated
             ];
 
-            View::RenderTwig($page, $vars);
+            View::RenderTwig($content, $vars);
             break;
 
         case Route::Credits:
 
-            $page = Template::Content.'/credits.html.twig';
-            $layout = Layout::Subpage;
+            $content = Template::Content . "credits.html.twig";
+            $layout = View::Subpage;
             $slug = trim(Route::Credits,"/");
-            $updated = filemtime(SITE_ROOT . $page);
+            $updated = filemtime(SITE_ROOT . $content);
 
             $vars = [
                 'layout' => $layout,
@@ -279,19 +297,19 @@
                 'updated' => $updated
             ];
 
-            View::RenderTwig($page, $vars);
+            View::RenderTwig($content, $vars);
             break;
         
         case Route::SiteMap:
 
-            $page = Template::Content.'/site-map.html.twig';
-            $layout = Layout::SiteMap;
+            $content = Template::Content . "site-map.html.twig";
+            $layout = Template::Layouts . "site-map_layout.html.twig";
 
             $vars = [
                 'layout' => $layout
             ];
 
-            View::RenderTwig($page, $vars);
+            View::RenderTwig($content, $vars);
             break;
         
         case str_starts_with(REQUEST, Route::Feeds):
@@ -300,38 +318,43 @@
                 const Index = Route::Feeds;
                 const Success = Route::Feeds . "success/";
                 const Error = Route::Feeds . "error/";
-                const PostLayout = Template::Layouts . '/feeds/feeds_post.html.twig';
-                public static function LoadDefault() {
-                    require SITE_ROOT . Layout::Feeds;
+
+                const IndexLayout = Template::Layouts . "feeds/feeds_index.php";
+                const POSTLayout = Template::Layouts . "feeds/feeds_post.html.twig";
+
+                public static function loadSubpage($title, $message) {
+                    $vars = [
+                        "h2" => $title,
+                        "message" => $message
+                    ];
+
+                    View::RenderTwig(self::POSTLayout, $vars);
+                }
+
+                public static function loadDefault() {
+                    require SITE_ROOT . self::IndexLayout;
                 }
             }
 
             if (REQUEST == Feeds::Index) {
-                Feeds::LoadDefault();
+
+                Feeds::loadDefault();
 
             } else {
-                switch (str_starts_with(REQUEST, Route::Feeds)) {
-                    case Feeds::Success:
-                        $vars = [
-                            'h2' => 'yippe!!',
-                            'message' => 'thanks for subscribing!'
-                        ];
 
-                        View::RenderTwig(Feeds::PostLayout, $vars);
+                switch (REQUEST) {
+                    case Feeds::Success:
+                        Feeds::loadSubpage("yippee!!", "thanks for subscribing!");
                         break;
 
                     case Feeds::Error:
-                        $vars = [
-                            'h2' => 'aw shucks',
-                            'message' => 'there was an error with your submission ☹'
-                        ];
-
-                        View::RenderTwig(Feeds::PostLayout, $vars);
+                        Feeds::loadSubpage("aw shucks", "there was an error with your submission ☹");
                         break;
 
                     default:
-                        Feeds::LoadDefault();
+                        Feeds::loadDefault();
                 }
+
             }
 
             break;
@@ -342,39 +365,52 @@
                 const Index = Route::Guestbook;
                 const Comment = Route::Guestbook . 'comment';
                 const Page = Route::Guestbook . 'page';
-                const Post = Route::Guestbook . 'post';
                 const PostSuccess = Route::Guestbook . 'success';
                 const PostError = Route::Guestbook .'error';
+
+                public static function sendPOST() {
+                    require SITE_ROOT . Template::Includes . "_guestbook_submit.php";
+                }
+
+                public static function render() {
+                    require SITE_ROOT . Template::Layouts . "guestbook_layout.php";
+                }
             }
 
-            if (REQUEST == Guestbook::Post . "/") {
-                require SITE_ROOT . Template::Includes . '/_guestbook_submit.php';
+            if (REQUEST == "/guestbook/post/") {
+
+                Guestbook::sendPOST();
 
             } else {
-                switch (str_starts_with(REQUEST, Route::Guestbook)) {
+                switch (REQUEST) {
                     case Guestbook::Index:
                     case str_starts_with(REQUEST, Guestbook::Page):
                     case str_starts_with(REQUEST, Guestbook::PostSuccess):
                     case str_starts_with(REQUEST, Guestbook::PostError):
 
                         if (str_starts_with(REQUEST, Guestbook::Page)) {
+
                             $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
                             $page = trim($page_req[1], "/");
+
                         }
 
                         if (REQUEST == Guestbook::Index || isset($_SERVER['HTTP_REFERER'])) {
+
                             session_start();
                             $_SESSION['form_start'] = true;
 
                         } elseif (!isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== Guestbook::Post . "/") {
+
                             header('Location: /guestbook');
+
                         }
 
-                        require SITE_ROOT.Layout::Guestbook;
+                        Guestbook::render();
                         break;
                     
                     default:
-                        require SITE_ROOT.Layout::Guestbook;
+                        Guestbook::render();
                 }
             }
 

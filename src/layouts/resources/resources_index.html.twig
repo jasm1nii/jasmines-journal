@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {{ include('/resources/includes/head.shtml') }}
+        {{ head|raw }}
         <title>jasmine's resources</title>
         <link rel="canonical" href="https://jasm1nii.xyz/resources"/>
         <link href="/_assets/stylesheets/content_A1.css" rel="stylesheet"   type="text/css" media="all"/>
@@ -25,14 +25,14 @@
                     </p>
                 </hgroup>
                 <nav>
-                    {{ include('/resources/includes/headernav.shtml') }}
+                    {{ headernav|raw }}
                 </nav>
             </header>
             <div id="left-col-group">
                 <section id="guide">
                     <nav>
                         {% apply markdown_to_html %}
-                            {{ include('/resources/content/resources/_toc.md') }}
+                            {{ include('/src/content/resources/_toc.md') }}
                         {% endapply %}
                     </nav>
                 </section>
@@ -40,17 +40,17 @@
                     <main>
                         <section id="legend">
                             {% apply markdown_to_html %}
-                                {{ include('/resources/content/resources/_legend.md') }}
+                                {{ include('/src/content/resources/_legend.md') }}
                             {% endapply %}
                         </section>
                         <article>
                             {% apply markdown_to_html %}
-                                {{ include('/resources/content/resources/resources_index.md') }}
+                                {{ include('/src/content/resources/resources_index.md') }}
                             {% endapply %}
                         </article>
                     </main>
                     <footer>
-                        {{ include('/resources/includes/footer.shtml') }}
+                        {{ footer|raw }}
                     </footer>
                 </div>
             </div>
