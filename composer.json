@@ -1,14 +1,27 @@
 {
+    "description": "my personal webbed site",
+    "homepage": "https://jasm1nii.xyz/",
+    "authors": [
+        {
+            "name": "Jasmine Amalia",
+            "email": "contact@jasm1nii.xyz",
+            "homepage": "https://jasm1nii.xyz",
+            "role": "Developer, Webmaster"
+        }
+    ],
+    "funding": [
+        {
+            "type": "ko-fi",
+            "url": "https://ko-fi.com/jasmineamalia"
+        }
+    ],
+    "type": "library",
+    "prefer-stable": true,
     "require": {
         "twig/twig": "^3.0",
         "twig/markdown-extra": "^3.7",
         "league/commonmark": "^2.4",
         "twig/intl-extra": "^3.7",
         "phpmailer/phpmailer": "^6.8"
-    },
-    "config": {
-        "allow-plugins": {
-            "nodejs-php-fallback/nodejs-php-fallback": true
-        }
     }
 }
