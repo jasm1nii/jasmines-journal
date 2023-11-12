@@ -1,8 +1,8 @@
 <?php
-    $source = dirname(__DIR__,2).'/resources/content/changelog';
+    $source = SITE_ROOT . Template::Content . 'changelog';
 
-    require_once dirname(__DIR__,2).'/config/twig_default_config.php';
-    $layout = '/resources/includes/_changelog_archive.html.twig';
+    require_once RenderConfig::Twig;
+    $layout = Template::Includes . '_changelog_archive.html.twig';
 
     $years = glob($source."/2*");
     asort($years, SORT_NATURAL);

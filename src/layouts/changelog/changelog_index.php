@@ -1,11 +1,7 @@
 <?php
-    define("ROOT", dirname(__DIR__,2));
-
-    require dirname(__DIR__,3) . '/src/vendor/autoload.php';
     use League\CommonMark\CommonMarkConverter;
     $converter = new CommonMarkConverter();
-
-    define("MARKDOWN_SOURCE", ROOT.'/content/changelog/index.md');
+    define("MARKDOWN_SOURCE", SITE_ROOT . Template::Content . 'changelog/index.md');
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +9,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <?php include_once ROOT.'/includes/head.shtml'; ?>
+    <?=Includes::Head()?>
     <title>change log | jasmine's journal</title>
     <meta name="description" content="updates to the website"/>
     <link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
@@ -31,7 +27,7 @@
                 </hgroup>
                 <nav>
                     <?php
-                        include ROOT.'/includes/_changelog_nav.php';
+                        include Includes::IncludesRoot . '_changelog_nav.php';
                         echo $nav->saveHTML();
                     ?>
                 </nav>
@@ -45,7 +41,7 @@
                         <nav id="archiveNav">
                             <ul>
                                 <?php
-                                    include ROOT.'/includes/_changelog_archive.php';
+                                    include Includes::IncludesRoot . '_changelog_archive.php';
                                 ?>
                             </ul>
                         </nav>
@@ -54,7 +50,7 @@
                 </article>
             </main>
             <footer>
-                <?php include ROOT.'/includes/footer.shtml';?>
+                <?=Includes::Footer()?>
             </footer>
         </div>
     </div>

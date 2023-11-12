@@ -3,12 +3,9 @@
 
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
+    define("ENV_CONF",  SITE_ROOT . "/config/env_" . getenv('ENV') . ".ini");
 
-    define("CONFIG_DIR", SITE_ROOT . "/config/");
-    define("ENV_CONF", CONFIG_DIR . "env_" . getenv('ENV') . ".ini");
-    define("COMPOSER", SITE_ROOT . "/vendor/autoload.php");
-
-    require_once COMPOSER;
+    require_once SITE_ROOT . "/vendor/autoload.php";
 
     class Route {
         const About = "/about/";
@@ -107,10 +104,10 @@
 
             if (file_exists($document_source)) {
 
-                include SITE_ROOT.Template::Includes . "_changelog_nav.php";
+                include SITE_ROOT . Template::Includes . "_changelog_nav.php";
                 $nav_html = $nav->saveHTML();
                 
-                $layout = $twig->load(Template::Layouts . "changelog/changelog_subpage.html.twig");
+                $layout = Template::Layouts . "changelog/changelog_subpage.html.twig";
 
                 $page = Template::Content . $file . ".html.twig";
                 $vars = [
