@@ -15,7 +15,7 @@
 
     $rows = $page * 10;
     
-    include SITE_ROOT . Template::Includes . "/_guestbook_conn.php";
+    include SITE_ROOT . DIR['includes'] . "/_guestbook_conn.php";
 
     function showMessage($v, $is_threaded) {
         

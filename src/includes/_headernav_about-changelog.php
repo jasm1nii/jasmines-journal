@@ -14,4 +14,6 @@
     $changelog_a_href->value = '/about/changelog';
     $changelog_a->appendChild($changelog_a_href);
     $changelog_index->appendChild($changelog_a);
+
+    $nav_html = $nav->saveHTML();
 ?>

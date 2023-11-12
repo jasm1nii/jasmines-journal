@@ -32,18 +32,18 @@
                         <?php
                             require RenderConfig::Twig;
 
-                            $source = SITE_ROOT . Template::Content . 'blog/articles';
+                            $source = SITE_ROOT . DIR['content'] . 'blog/articles';
 
-                            $layout = Template::Includes . "_articles_index.html.twig";
+                            $layout = DIR['includes'] . "_articles_index.html.twig";
 
                             $files = glob($source."/*/*/*/entry.html.twig");
                             asort($files, SORT_NATURAL);
 
                             foreach (array_reverse($files) as $article) {
-                                $content_path = Template::Content . ltrim($article, SITE_ROOT);
+                                $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
 
                                 $slug_1 = rtrim($content_path, '.html.twig');
-                                $slug_2 = ltrim($slug_1, Template::Content . 'blog/articles');
+                                $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
 
                                 echo $twig->render($content_path, ['layout'=>$layout,'slug'=>$slug_2]);
                             }
