@@ -47,10 +47,10 @@
     }
 
     class RenderConfig {
-        const UtilsDir = SITE_ROOT . "/src/utils/";
-        const Twig = self::UtilsDir . "twig_default_config.php";
-        const MarkdownComments = self::UtilsDir  . "commonmark_comments_config.php";
-        const MarkdownWithTOC = self::UtilsDir  . "commonmark_toc_config.php";
+        const Dir = SITE_ROOT . "/src/_helpers/";
+        const Twig = self::Dir . "twig_default_config.php";
+        const MarkdownComments = self::Dir  . "commonmark_comments_config.php";
+        const MarkdownWithTOC = self::Dir  . "commonmark_toc_config.php";
     }
 
     class View {
