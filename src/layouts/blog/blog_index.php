@@ -83,7 +83,7 @@
 
                             $source = SITE_ROOT . DIR['content'] . 'blog/articles';
 
-                            $layout = DIR['includes'] . "_blog_articles_preview.html.twig";
+                            $layout = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
 
                             $files = glob($source."/*/*/*/entry.html.twig");
                             asort($files, SORT_NATURAL);

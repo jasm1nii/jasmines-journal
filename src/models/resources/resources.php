@@ -11,6 +11,7 @@
             ];
 
             View::Twig($layout, $vars, null);
+
             break;
 
         case str_starts_with(REQUEST, "/resources/"):
@@ -24,21 +25,27 @@
                 require_once RenderConfig::Twig;
 
                 if (file_exists($markdown_file)) {
+
                     require_once RenderConfig::MarkdownWithTOC;
+
                     $content = $commonmark->convert(file_get_contents($markdown_file));
                     $updated = filemtime($markdown_file);
 
                 } else {
+
                     $content = null;
                     $updated = filemtime($twig_file);
+                    
                 }
 
                 $url = preg_split('/\//',REQUEST);
 
                 if (!empty($url[3])) {
+
                     $parent = '/'.$url[1].'/'.$url[2];
 
                 } else {
+                    
                     $parent = null;
                 }
 
@@ -64,18 +71,23 @@
                 
                 $path = preg_split('/\/(resources)/', $matches[0]);
                 $file_base = $category . $path[1];
-                
+
                 $page = $file_base . "index.html.twig";
 
                 if (file_exists($page)) {
+
                     renderResourcesPage($file_base . "index.md", $page);
 
                 } else {
+
                     Route::NotFound();
+
                 }
                 
             } else {
+
                 Route::NotFound();
+
             }
 
             break;

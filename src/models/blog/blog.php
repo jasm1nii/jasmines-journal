@@ -4,18 +4,20 @@
         const LayoutsDir = DIR['layouts'] . "blog/";
 
         const MainIndex = SITE_ROOT . self::LayoutsDir . "blog_index.php";
-
         const ArticlesIndex = SITE_ROOT . self::LayoutsDir . "articles_index.php";
         const ArticleEntry = self::LayoutsDir . "article_entry.html.twig";
-        
         const NotesIndex = SITE_ROOT . self::LayoutsDir . "notes_index.php";
         const NoteEntry = self::LayoutsDir . "note_entry.html.twig";
 
         public static function nav() {
-            include SITE_ROOT . DIR['includes'] . "_blog_nav.php";
+
+            include __DIR__ . "/blog_nav.php";
+            return $nav_html;
+
         }
 
         public static function render($type) {
+
             require_once RenderConfig::Twig;
 
             $layout = $twig->load($type);
@@ -24,6 +26,7 @@
             $content = DIR['content'] . $slug . ".html.twig";
 
             if (file_exists(SITE_ROOT . $content)) {
+                
                 echo $twig->render($content,
                     [
                         'layout' => $layout,
@@ -32,7 +35,9 @@
                     ]);
 
             } else {
+
                 Route::NotFound();
+
             }
         }
     }
@@ -40,7 +45,7 @@
     switch (REQUEST) {
 
         case "/blog/":
-        case "/blog/" . "/index":
+        case "/blog/index/":
             require Blog::MainIndex;
             break;
 
@@ -52,7 +57,8 @@
                     require $_SERVER['DOCUMENT_ROOT'] . "/articles.xml";
                     break;
                 
-                case REQUEST == "/blog/articles/":
+                case "/blog/articles/":
+                case "/blog/articles/index/":
                     require Blog::ArticlesIndex;
                     break;
 
@@ -67,14 +73,18 @@
             switch (REQUEST) {
 
                 case (str_ends_with(REQUEST, ".xml")):
+
                     require $_SERVER['DOCUMENT_ROOT'] . "/notes.xml";
                     break;
 
-                case REQUEST == "/blog/notes/":
+                case "/blog/notes/":
+                case "/blog/notes/index/":
+
                     require Blog::NotesIndex;
                     break;
 
                 default:
+                
                     Blog::render(Blog::NoteEntry);
             }
 

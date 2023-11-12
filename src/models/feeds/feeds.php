@@ -9,6 +9,7 @@
         const POSTLayout = DIR['layouts'] . "feeds/feeds_post.html.twig";
 
         public static function loadSubpage($title, $message) {
+            
             $vars = [
                 "h2" => $title,
                 "message" => $message
