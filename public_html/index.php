@@ -249,8 +249,8 @@
 
         case str_starts_with(REQUEST, Route::Resources):
 
-            $path = preg_split(('/\/(resources)\//'),REQUEST);
-            $file_base = rtrim($path[1],"/");
+            $path = preg_split(('/\/(resources)/'), REQUEST);
+            $file_base = rtrim($path[1], "/");
             $category = SITE_ROOT . Template::Content . "resources/categories";
 
             function renderResourcesPage($markdown_file, $twig_file) {
@@ -276,9 +276,11 @@
                     $parent = null;
                 }
 
-                echo $twig->render(ltrim($twig_file, SITE_ROOT),
+                $twig_path = preg_split('/resources/', $twig_file);
+
+                echo $twig->render(Template::Content . "resources" . $twig_path[1],
                     [
-                        'layout' => $twig->load(Template::Layouts . "resources/resources_subpage.html.twig"),
+                        'layout' => Template::Layouts . "resources/resources_subpage.html.twig",
                         'updated' => $updated,
                         'legend' => file_get_contents(SITE_ROOT.Template::Content . "resources/_legend.md"),
                         'content'=> $content,
@@ -293,9 +295,10 @@
                 renderResourcesPage($category . $file_base . ".md", $page);
 
             } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
-
-                $path = preg_split('/\/(resources)\//',$matches[0]);
-                $file_base = $category.$path[1];
+                
+                $path = preg_split('/\/(resources)/', $matches[0]);
+                $file_base = $category . $path[1];
+                
                 $page = $file_base . "index.html.twig";
 
                 if (file_exists($page)) {
