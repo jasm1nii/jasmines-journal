@@ -1,5 +1,9 @@
 <?php
+
+    // also needs to be updated
+    
     $server_root = dirname(__DIR__,3);
+
     require_once $server_root . '/vendor/autoload.php';
     require_once $server_root.'/src/utils/twig_default_config.php';
 

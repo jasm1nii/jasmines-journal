@@ -1,5 +1,7 @@
 <?php
+
     libxml_use_internal_errors(true);
+
     $nav = new DOMDocument;
     $nav->loadHTMLFile(__DIR__.'/headernav.shtml');
 
@@ -16,4 +18,5 @@
     $changelog_index->appendChild($changelog_a);
 
     $nav_html = $nav->saveHTML();
+    
 ?>

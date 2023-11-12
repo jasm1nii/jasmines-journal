@@ -1,4 +1,5 @@
 <?php
+
     include SITE_ROOT . "/src/models/guestbook/guestbook_conn.php";
 
     $sql_comment = $guestbook_show->prepare(
@@ -9,16 +10,12 @@
                         LIMIT 1
                     "
     );
+
     $sql_comment->execute();
     $sql_comment->setFetchMode(PDO::FETCH_ASSOC);
+
     $comment_arr = $sql_comment->fetchAll();
-
     $msg = $comment_arr[0];
-
-    include RenderConfig::MarkdownComments;
-
-    $name = htmlspecialchars($msg['Name'], ENT_QUOTES, "UTF-8", false);
-    $comment = $commonmark->convert($msg['Comment']);
 
     // source: https://www.w3schools.in/php/examples/time-ago-function
 
@@ -51,6 +48,4 @@
 
     $date = getTimeDiff(strtotime($msg['Date']));
 
-    $msg_html = "<h3><a href='/guestbook/comment/{$msg['ID']}'>#{$msg['ID']}</a> &bull; {$name} ({$date})</h3>";
-    $msg_html .= "<div class='overflow'>{$comment}</div>";
 ?>

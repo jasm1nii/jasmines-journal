@@ -1,5 +1,6 @@
 <?php
     class Guestbook {
+
         const Index = "/guestbook/";
         const Comment = self::Index . 'comment';
         const Page = self::Index . 'page';
@@ -13,6 +14,7 @@
         public static function render() {
             require SITE_ROOT . DIR['layouts'] . "guestbook_layout.php";
         }
+        
     }
 
     if (REQUEST == "/guestbook/post/") {

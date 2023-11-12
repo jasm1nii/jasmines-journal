@@ -12,7 +12,9 @@
     $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
     
     if (isset($_POST) && $time_offset > 3) {
+
         if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
+
             $user_post = $ini['guestbook']['user'];
             $pass_post = $ini['guestbook']['password'];
             $guestbook_post = new PDO(
@@ -37,9 +39,13 @@
             $sql_post->bindParam(':ip', $sender_ip);
 
             if ($_POST['name'] == null) {
+                
                 $sender_name = 'Anonymous';
+
             } else {
+
                 $sender_name = htmlspecialchars($_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+
             }
             
             $sender_email = $_POST['email'];
@@ -55,6 +61,7 @@
             $mail = new PHPMailer(true);
 
             try {
+
                 $mail->isSMTP();
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
@@ -68,6 +75,7 @@
                 $mail->setFrom($ini['email']['user'], "jasmine's journal [system mailer]");
                 $mail->addAddress($ini['email']['to'], 'Jasmine');
                 $mail->isHTML(true);
+
                 $mail->Subject = "guestbook message received!";
                 $mail->Body =
                     "<ul>
@@ -77,21 +85,27 @@
                         <li>Message: {$sender_message}</li>
                     </ul>";
                 $mail->AltBody = "Name:{$sender_name} - Email: {$sender_email} - URL: {$sender_url} - Message: {$sender_message}";
+                
                 $mail->send();
                 
             } catch (Exception $e) {
+
                 header('Location: /guestbook/success/exception');
+
             }
 
             header('Location: /guestbook/success');
 
         } else {
+
             unset($user_post, $pass_post);
             $guestbook_post = null;
             header('Location: /guestbook/error/has_html');
 
         }
+        
     } else {
+
         unset($user_post, $pass_post);
         $guestbook_post = null;
         header('Location: /guestbook/error/time_too_short');

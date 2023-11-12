@@ -1,4 +1,5 @@
 <?php
+
     $nav = new DOMDocument();
     $nav->loadHTMLFile(SITE_ROOT . DIR['includes'] . '/headernav.shtml');
 
@@ -27,4 +28,5 @@
     $notes_index->appendChild($notes_a);
 
     $nav_html = $nav->saveHTML();
+    
 ?>
