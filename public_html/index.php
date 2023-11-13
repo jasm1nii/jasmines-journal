@@ -1,87 +1,8 @@
 <?php
-    putenv("ENV=dev");
-
-    define("REQUEST", $_SERVER['REQUEST_URI']);
-    define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
-    define("ENV_CONF",  SITE_ROOT . "/config/env_" . getenv('ENV') . ".ini");
-
-    define(
-        "DIR",
-        [
-            'models'    => "/src/models/",
-            'layouts'   => "/src/layouts/",
-            'includes'  => "/src/includes/",
-            'content'   => "/src/content/"
-        ]
-    );
+    
+    require dirname($_SERVER['DOCUMENT_ROOT'], 1) . "/config/constants.php";
 
     require_once SITE_ROOT . "/vendor/autoload.php";
-
-    class Route {
-
-        public static function execute($route_file) {
-            require SITE_ROOT . DIR['models'] . $route_file;
-        }
-
-        public static function NotFound() {
-            http_response_code(404);
-            require_once __DIR__.'/404.shtml';
-        }
-
-    }
-
-    class Includes {
-        const IncludesRoot = SITE_ROOT . DIR['includes'];
-
-        public static function Head() {
-            include self::IncludesRoot . "head.shtml";
-        }
-
-        public static function HeaderNav() {
-            include self::IncludesRoot . "headernav.shtml";
-        }
-
-        public static function Footer() {
-            include self::IncludesRoot . "footer.shtml";
-        }
-    }
-
-    class RenderConfig {
-        const Dir = SITE_ROOT . "/src/utils/";
-        const Twig = self::Dir . "twig_global.php";
-        const MarkdownComments = self::Dir  . "commonmark_comments.php";
-        const MarkdownWithTOC = self::Dir  . "commonmark_toc.php";
-    }
-
-    class View {
-
-        const Utils = SITE_ROOT . "/src/utils/";
-        const Subpage = DIR['layouts'] . "subpage_layout.html.twig";
-
-        public static function Markdown($md_file) {
-
-            include self::Utils . "/commonmark.php";
-            $output = $converter->convert($md_file);
-            return $output;
-
-        }
-
-        public static function Twig($page, $vars, $path) {
-
-            require self::Utils . "twig_global.php";
-
-            if ($vars == null) {
-                $vars = [];
-            }
-
-            if ($path !== null) {
-                $loader->addPath($path);
-            }
-
-            echo $twig->render($page, $vars);
-
-        }
-    }
 
     switch (REQUEST) {
         case "":

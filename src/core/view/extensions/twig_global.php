@@ -1,4 +1,5 @@
 <?php
+
     use Twig\Extra\Markdown\DefaultMarkdown;
     use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Markdown\MarkdownRuntime;
@@ -6,7 +7,8 @@
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
     $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
-    $loader->addPath(SITE_ROOT . '/src/includes/', 'includes');
+    
+    $loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
 
     $twig = new \Twig\Environment($loader,[
         'cache' => SITE_ROOT . '/tmp/twig',
@@ -14,6 +16,7 @@
     ]);
 
     $twig->addExtension(new MarkdownExtension());
+
     $twig->addExtension(new IntlExtension());
 
     $twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
@@ -30,9 +33,14 @@
 
     //
 
+    /* will eventually be removed */
+
+    /*
     $twig->addGlobal("head", file_get_contents(SITE_ROOT . '/src/includes/head.shtml'));
 
     $twig->addGlobal("headernav", file_get_contents(SITE_ROOT . '/src/includes/headernav.shtml'));
 
     $twig->addGlobal("footer", file_get_contents(SITE_ROOT . '/src/includes/footer.shtml'));
+    */
+
 ?>
