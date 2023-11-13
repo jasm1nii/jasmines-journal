@@ -56,6 +56,35 @@
     $map->addPath("blog", "/another/test2.php");
     //$map->saveMap();
 
-    echo "<pre>" . print_r($map, true) . "</pre>";
+    //echo "<pre>" . print_r($map, true) . "</pre>";
 
+    //
+
+    class Poo {
+
+        public static function PEE($PISS) {
+
+            echo "<pre>" . print_r($PISS, true) . "</pre>";
+        }
+    }
+
+    $routes[] =
+        [
+            'name' => 'home',
+            'url_exact' =>
+                [
+                    '/index',
+                    '/home',
+                ],
+            'url_pattern' =>
+                [
+                    '/{year}/{month}'
+                ],
+            'render_path' => '/model.php'
+        ];
+
+    $routes[] = ['name' => 'blog'];
+
+
+    Poo::PEE($routes);
 ?>
