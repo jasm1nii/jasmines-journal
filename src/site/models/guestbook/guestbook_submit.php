@@ -1,4 +1,5 @@
 <?php
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -17,6 +18,7 @@
 
             $user_post = $ini['guestbook']['user'];
             $pass_post = $ini['guestbook']['password'];
+            
             $guestbook_post = new PDO(
                 "mysql:host=$servername;dbname=$dbname",
                 $user_post,
@@ -111,4 +113,5 @@
         header('Location: /guestbook/error/time_too_short');
 
     }
+
 ?>

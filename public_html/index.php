@@ -19,14 +19,25 @@
 
             break;
 
-        case str_starts_with(REQUEST, "/about/"):
+        case "/about/":
+        case "/about/index/":
 
-            Route::execute('about/about.php');
+            Route::execute('about.php');
 
             new AboutIndex();
 
             break;
-            /*
+           
+
+        case "/about/changelog/":
+
+            Route::execute('about.php');
+
+            new ChangelogIndex();
+
+            break;
+        
+        /*
 
         case "/link-gallery/":
         case "/link-gallery/index/":

@@ -14,7 +14,7 @@
 
     }
 
-    class AboutIndex {
+    class AboutIndex extends View {
 
         use About;
 
@@ -30,15 +30,35 @@
                 "updated" => filemtime(SITE_ROOT . $content)
             ];
 
-            View::Twig($content, $vars, null);
+            parent::Twig($content, $vars, null);
 
         }
 
     }
 
-    class ChangelogIndex {
+    class ChangelogIndex extends View {
 
         use About;
+
+        private static function getArchiveNav() {
+
+            require parent::TWIG;
+
+            include SITE_ROOT . DIR['models'] . "changelog/changelog_archive.php";
+
+            $archive_nav = DIR['layouts'] . 'changelog/_index_subnav.html.twig';
+
+            $archive_nav_html =
+                $twig->render(
+                    $archive_nav,
+                    [
+                        "years" => $year_label,
+                        "months" => $month_label
+                    ]);
+
+            return $archive_nav_html;
+
+        }
 
         function __construct() {
 
@@ -48,39 +68,19 @@
 
             $content = file_get_contents($content_path);
 
-            function getArchiveNav() {
-
-                require RenderConfig::Twig;
-
-                include SITE_ROOT . DIR['models'] . "changelog/changelog_archive.php";
-
-                $archive_nav = '/src/layouts/changelog/includes/_changelog_archive.html.twig';
-
-                $archive_nav_html =
-                    $twig->render(
-                        $archive_nav,
-                        [
-                            "years" => $year_label,
-                            "months" => $month_label
-                        ]);
-
-                return $archive_nav_html;
-
-            }
-
             $vars = [
                 "nav" => About::Nav(),
-                'archivenav' => getArchiveNav(),
+                'archivenav' => self::getArchiveNav(),
                 'content' => $content
             ];
             
-            View::Twig($layout, $vars, null);
+            parent::Twig($layout, $vars, null);
 
         }
 
     }
 
-    class ChangelogSubpage {
+    class ChangelogSubpage extends View {
 
         use About;
 
@@ -99,7 +99,7 @@
                 "nav" => About::Nav()
             ];
 
-            View::Twig($page, $vars, null);
+            parent::Twig($page, $vars, null);
 
         }
 
