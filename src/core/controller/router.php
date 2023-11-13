@@ -4,15 +4,15 @@
 
         public static function execute($path, $use_model = null) {
 
-        if ($use_model == true) {
+            if ($use_model == true) {
 
-            require SITE_ROOT . DIR['models'] . $path;
+                require SITE_ROOT . DIR['models'] . $path;
 
-        } elseif ($use_model == false || $use_model == null) {
+            } elseif ($use_model == false || $use_model == null) {
 
-            require SITE_ROOT . DIR['view_env'] . $path;
+                require SITE_ROOT . DIR['view_env'] . $path;
 
-        }
+            }
 
         }
 

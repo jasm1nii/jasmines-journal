@@ -1,5 +1,9 @@
 <?php
 
+    namespace Site\Views\Layouts;
+
+    use Site\Views\Render\View as View;
+
     class Home extends View {
 
         function __construct() {

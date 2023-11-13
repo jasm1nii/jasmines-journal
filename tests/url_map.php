@@ -9,16 +9,7 @@
                     'name' => $name,
                     'urls' => $url_pattern,
                     'render_path' => $path
-                ];/*, 
-                    [
-                        'url' => $url_pattern,
-                        'render_path' => $path
-                    ]
-                    );*/
-
-                    //$this->map[]['name'] = [$url_pattern];
-
-            
+                ];
 
         }
 
@@ -44,10 +35,7 @@
 
         public static function execute() {
 
-            
-
         }
-
 
     }
 
@@ -60,11 +48,11 @@
 
     //
 
-    class Poo {
+    class Test {
 
-        public static function PEE($PISS) {
+        public static function viewArray($array) {
 
-            echo "<pre>" . print_r($PISS, true) . "</pre>";
+            echo "<pre>" . print_r($array, true) . "</pre>";
         }
     }
 
@@ -86,5 +74,5 @@
     $routes[] = ['name' => 'blog'];
 
 
-    Poo::PEE($routes);
+    Test::viewArray($array);
 ?>

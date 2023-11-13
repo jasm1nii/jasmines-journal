@@ -1,5 +1,7 @@
 <?php
 
+    namespace Site\Views\Render;
+
     class View {
 
         const DIR = __DIR__ . '/extensions/';

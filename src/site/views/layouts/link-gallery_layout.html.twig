@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {{ head|raw }}
+        {{ include('@includes/head.shtml') }}
         <title>link gallery | jasmine's journal</title>
         <meta name="description" content="a list of cool websites on the indie web"/>
         <link rel="canonical" href="https://jasm1nii.xyz/link-gallery"/>
@@ -22,7 +22,7 @@
           </hgroup>
         </div>
         <nav>
-            {{ headernav|raw }}
+            {{ include('@includes/headernav.shtml') }}
         </nav>
       </header>
       <main>
@@ -117,7 +117,7 @@
       </main>
     </div>
     <footer>
-        {{ footer|raw }}
+        {{ include('@includes/footer.shtml') }}
     </footer>
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
     <script src="/_assets/scripts/freezeframe.js"></script>

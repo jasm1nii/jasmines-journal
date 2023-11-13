@@ -1,49 +1,52 @@
 <?php
     
-    require dirname($_SERVER['DOCUMENT_ROOT'], 1) . "/config/constants.php";
+    define("REQUEST", $_SERVER['REQUEST_URI']);
+    define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
+    
+    require SITE_ROOT . "/config/src_paths.php";
 
-    require_once SITE_ROOT . "/vendor/autoload.php";
+    // composer
+    require SITE_ROOT . "/vendor/autoload.php";
 
+    // core functions
     require SITE_ROOT . "/src/core/controller/router.php";
-
     require SITE_ROOT . '/src/core/view/view.php';
 
     switch (REQUEST) {
+
         case "":
         case "/":
         case "/index":
 
             Route::execute('home.php');
-
-            new Home();
-
+            new Site\Views\Layouts\Home();
             break;
 
         case "/about/":
         case "/about/index/":
 
             Route::execute('about.php');
-
-            new AboutIndex();
-
+            new Site\Views\Layouts\AboutIndex();
             break;
            
 
         case "/about/changelog/":
+        case "/about/changelog/index/":
 
             Route::execute('about.php');
-
-            new ChangelogIndex();
-
+            new Site\Views\Layouts\ChangelogIndex();
             break;
         
-        /*
+        
 
         case "/link-gallery/":
         case "/link-gallery/index/":
 
-            Route::execute('link-gallery/link-gallery.php');
+            Route::execute('link-gallery.php');
+            new Site\Views\Layouts\LinkGallery();
             break;
+
+        /*
 
         case str_starts_with(REQUEST, "/blog/"):
 
@@ -113,6 +116,8 @@
             break;*/
         
         default:
+
             Route::NotFound();
+
    }
 ?>

@@ -1,27 +1,35 @@
 <?php
-    class LinkGallery {
 
-        const Dir = DIR['content'] . "link-gallery";
+    namespace Site\Views\Layouts;
 
-        const Mutuals = self::Dir . "/link-gallery_mutuals.html.twig";
-        const _32bit = self::Dir . "/link-gallery_32bitcafe.html.twig";
-        const Etc = self::Dir . "/link-gallery_other-sites.html.twig";
+    use Site\Views\Render\View as View;
 
-        public static function render() {
+    class LinkGallery extends View {
 
-            $layout = DIR['layouts'] . "link-gallery_layout.html.twig";
-            $updated = stat(SITE_ROOT . self::Dir)['mtime'];
+        const DIR = DIR['content'] . "link-gallery";
+
+        private static $mutuals = self::DIR . "/link-gallery_mutuals.html.twig";
+
+        private static $_32bit = self::DIR . "/link-gallery_32bitcafe.html.twig";
+
+        private static $etc = self::DIR . "/link-gallery_other-sites.html.twig";
+
+        function __construct() {
+
+            $page = DIR['layouts'] . "link-gallery_layout.html.twig";
+
+            $updated = stat(SITE_ROOT . self::DIR)['mtime'];
+
             $vars = [
                 'updated' => $updated,
-                'mutuals' => self::Mutuals,
-                '_32bit' => self::_32bit,
-                'etc' => self::Etc
+                'mutuals' => self::$mutuals,
+                '_32bit' => self::$_32bit,
+                'etc' => self::$etc
             ];
 
-            View::Twig($layout, $vars, null);
-            
-        }
-    }
+            parent::Twig($page, $vars, null);
 
-    LinkGallery::render();
+        }
+
+    }
 ?>
