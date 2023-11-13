@@ -1,4 +1,5 @@
 <?php
+
     class Guestbook {
 
         const Index = "/guestbook/";
@@ -8,11 +9,15 @@
         const PostError = self::Index .'error';
 
         public static function sendPOST() {
+
             require SITE_ROOT . DIR['includes'] . "_guestbook_submit.php";
+
         }
 
         public static function render() {
+
             require SITE_ROOT . DIR['layouts'] . "guestbook_layout.php";
+            
         }
         
     }
@@ -49,10 +54,15 @@
                 }
 
                 Guestbook::render();
+
                 break;
             
             default:
+
                 Guestbook::render();
+
         }
+
     }
+
 ?>

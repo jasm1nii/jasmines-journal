@@ -37,7 +37,7 @@
 /* animations */
 body {
   opacity: 0;
-  animation: fadeInPage 0.5s;
+  animation: fadeInSlide 1s;
   animation-fill-mode: forwards;
 }
 

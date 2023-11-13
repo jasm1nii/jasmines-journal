@@ -1,6 +1,6 @@
 <?php
 
-    include SITE_ROOT . "/src/models/guestbook/guestbook_conn.php";
+    include __DIR__ . "/guestbook_conn.php";
 
     $sql_comment = $guestbook_show->prepare(
         "   SELECT `ID`, `Date`, `Name`, `Comment`

@@ -41,7 +41,7 @@
 /* animations */
 body {
   opacity: 0;
-  animation: fadeInPage .5s;
+  animation: fadeInSlide 1s;
   animation-fill-mode: forwards;
 }
 .page-columns > section {

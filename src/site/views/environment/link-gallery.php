@@ -8,6 +8,7 @@
         const Etc = self::Dir . "/link-gallery_other-sites.html.twig";
 
         public static function render() {
+
             $layout = DIR['layouts'] . "link-gallery_layout.html.twig";
             $updated = stat(SITE_ROOT . self::Dir)['mtime'];
             $vars = [
@@ -18,6 +19,7 @@
             ];
 
             View::Twig($layout, $vars, null);
+            
         }
     }
 

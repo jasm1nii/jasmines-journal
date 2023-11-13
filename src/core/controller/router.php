@@ -2,9 +2,17 @@
 
     class Route {
 
-        public static function execute($route_file) {
+        public static function execute($path, $use_model = null) {
 
-            require SITE_ROOT . DIR['models'] . $route_file;
+        if ($use_model == true) {
+
+            require SITE_ROOT . DIR['models'] . $path;
+
+        } elseif ($use_model == false || $use_model == null) {
+
+            require SITE_ROOT . DIR['view_env'] . $path;
+
+        }
 
         }
 
@@ -12,7 +20,7 @@
 
             http_response_code(404);
             
-            require_once __DIR__.'/404.shtml';
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/404.shtml';
 
         }
 

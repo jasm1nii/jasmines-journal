@@ -1,6 +1,5 @@
 <?php
-    /* this needs to be edited later */
-    
+
     putenv("ENV=dev");
 
     define("REQUEST", $_SERVER['REQUEST_URI']);
@@ -10,10 +9,12 @@
     define(
         "DIR",
         [
-            'models'    => "/src/models/",
-            'layouts'   => "/src/layouts/",
-            'includes'  => "/src/includes/",
-            'content'   => "/src/content/"
+            'models'    => "/src/site/models/",
+            'view_env'  => "/src/site/views/environment/",
+            'layouts'   => "/src/site/views/layouts/",
+            'includes'  => "/src/site/views/includes/",
+            'content'   => "/src/site/content/"
         ]
     );
+    
 ?>

@@ -4,18 +4,29 @@
 
     require_once SITE_ROOT . "/vendor/autoload.php";
 
+    require SITE_ROOT . "/src/core/controller/router.php";
+
+    require SITE_ROOT . '/src/core/view/view.php';
+
     switch (REQUEST) {
         case "":
         case "/":
         case "/index":
 
-            Route::execute('home/home.php');
+            Route::execute('home.php');
+
+            new Home();
+
             break;
 
         case str_starts_with(REQUEST, "/about/"):
 
             Route::execute('about/about.php');
+
+            new AboutIndex();
+
             break;
+            /*
 
         case "/link-gallery/":
         case "/link-gallery/index/":
@@ -88,7 +99,7 @@
         case str_starts_with(REQUEST, "/guestbook/"):
 
             Route::execute('guestbook/guestbook.php');
-            break;
+            break;*/
         
         default:
             Route::NotFound();
