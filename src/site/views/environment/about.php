@@ -18,7 +18,7 @@
 
     }
 
-    class AboutIndex extends View {
+    final class AboutIndex extends View {
 
         use About;
 
@@ -40,7 +40,7 @@
 
     }
 
-    class ChangelogIndex extends View {
+    final class ChangelogIndex extends View {
 
         use About;
 
@@ -84,7 +84,7 @@
 
     }
 
-    class ChangelogSubpage extends View {
+    final class ChangelogSubpage extends View {
 
         use About;
 

@@ -46,13 +46,14 @@
             new Site\Views\Layouts\LinkGallery();
             break;
 
-        /*
+        
 
         case str_starts_with(REQUEST, "/blog/"):
 
-            Route::execute('blog/blog.php');
+            Route::execute('blog/blog_main.php');
+            new Site\Views\Layouts\BlogIndex();
             break;
-
+/*
         case str_starts_with(REQUEST, "/resources/"):
 
             Route::execute('resources/resources.php');

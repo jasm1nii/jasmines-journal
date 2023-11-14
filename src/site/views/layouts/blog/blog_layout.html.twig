@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ include('@includes/head.shtml') }}
+    <title>jasmine's b(rain)log</title>
+    <meta name="description" content="my web of thoughts" />
+    <meta name="author" content="jasm1nii" />
+    <meta name="keywords" content="blog" />
+    <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <div id="layout">
+        <div class="sidebar">
+            <header>
+                <hgroup>
+                    <h1>jasmine's b(rain)log</h1>
+                </hgroup>
+                <nav>
+                    {{ nav|raw }}
+                </nav>
+            </header>
+        </div>
+        <main>
+            <article class="microblog">
+                <section>
+                    <hgroup>
+                        <h2>notes</h2>
+                    </hgroup>
+                    <div id="notes">
+                        {{ notes_preview|raw }}
+                    </div>
+                </section>
+                <section class="subscribe">
+                    <p>
+                        <a href="/blog/notes">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
+                    </p>
+                </section>
+            </article>
+            <article>
+                <section>
+                    <hgroup>
+                        <h2>articles</h2>
+                    </hgroup>
+                    <div id="articlesArchive">
+                        {{ articles_preview|raw }}
+                    </div>
+                </section>
+                <section class="subscribe">
+                    <p>
+                        <a href="/blog/articles">view archive</a> / subscribe via <a href="/blog/articles/articles.xml">atom</a>
+                    </p>
+                </section>
+            </article>
+        </main>
+    </div>
+    <footer>
+        {{ include('@includes/footer.shtml') }}
+    </footer>
+    <style>
+        #headernav #blog > a {
+            text-decoration: wavy underline;
+            text-underline-offset: .25em;
+        }
+    </style>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
+</body>
+</html>

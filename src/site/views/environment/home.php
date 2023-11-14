@@ -4,7 +4,7 @@
 
     use Site\Views\Render\View as View;
 
-    class Home extends View {
+    final class Home extends View {
 
         function __construct() {
 

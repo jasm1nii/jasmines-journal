@@ -4,7 +4,7 @@
 
     use Site\Views\Render\View as View;
 
-    class LinkGallery extends View {
+    final class LinkGallery extends View {
 
         const DIR = DIR['content'] . "link-gallery";
 
