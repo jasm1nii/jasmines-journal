@@ -27,13 +27,14 @@
         }
 
     }
+    
+    Route::execute('blog/blog.php');
 
     switch (REQUEST) {
 
         case "/blog/":
         case "/blog/index/":
-
-            Route::execute('blog/blog.php');
+            
             new Site\Views\Layouts\BlogIndex();
             break;
 
@@ -44,13 +45,11 @@
                 case "/blog/articles/":
                 case "/blog/articles/index/":
 
-                    Route::execute('blog/blog.php');
                     new Site\Views\Layouts\ArticlesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchURL()) && file_exists(BlogEntry::file()):
 
-                    Route::execute('blog/blog.php');
                     new Site\Views\Layouts\BlogEntry('article');
                     break;
 
@@ -74,13 +73,11 @@
                 case "/blog/notes/":
                 case "/blog/notes/index/":
 
-                    Route::execute('blog/blog.php');
                     new Site\Views\Layouts\NotesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchURL()) && file_exists(BlogEntry::file()):
 
-                    Route::execute('blog/blog.php');
                     new Site\Views\Layouts\BlogEntry('note');
                     break;
 

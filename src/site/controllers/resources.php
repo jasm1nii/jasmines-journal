@@ -1,95 +1,62 @@
 <?php
-    switch(REQUEST) {
-        
-        case "/resources/":
-        case "/resources/index/":
 
-            $layout = DIR['layouts'] . "resources/resources_index.html.twig";
-            $updated = filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md");
-            $vars = [
-                'updated' => $updated
-            ];
+    class Resources extends Route {
 
-            View::Twig($layout, $vars, null);
-
-            break;
-
-        case str_starts_with(REQUEST, "/resources/"):
+        private static function getCategory() {
 
             $path = preg_split(('/\/(resources)/'), REQUEST);
-            $file_base = rtrim($path[1], "/");
-            $category = SITE_ROOT . DIR['content'] . "resources/categories";
+            $category = rtrim($path[1], "/");
 
-            function renderResourcesPage($markdown_file, $twig_file) {
+            return $category;
 
-                require_once RenderConfig::Twig;
+        }
 
-                if (file_exists($markdown_file)) {
+        public static function file_pattern_1() {
 
-                    require_once RenderConfig::MarkdownWithTOC;
+            $file_rel = self::getCategory() . ".html.twig";
 
-                    $content = $commonmark->convert(file_get_contents($markdown_file));
-                    $updated = filemtime($markdown_file);
+            $file_abs = SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
 
-                } else {
+            return $file_abs;
 
-                    $content = null;
-                    $updated = filemtime($twig_file);
-                    
-                }
+        }
 
-                $url = preg_split('/\//',REQUEST);
+        public static function file_pattern_2() {
 
-                if (!empty($url[3])) {
+            $file_rel = self::getCategory() . "/index.html.twig";
 
-                    $parent = '/'.$url[1].'/'.$url[2];
+            $file_abs = SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
 
-                } else {
-                    
-                    $parent = null;
-                }
+            return $file_abs;
 
-                $twig_path = preg_split('/resources/', $twig_file);
+        }
 
-                echo $twig->render(DIR['content'] . "resources" . $twig_path[1],
-                    [
-                        'layout' => DIR['layouts'] . "resources/resources_subpage.html.twig",
-                        'updated' => $updated,
-                        'legend' => file_get_contents(SITE_ROOT.DIR['content'] . "resources/_legend.md"),
-                        'content'=> $content,
-                        'parent' => $parent
-                    ]);
-            }
-
-            $page = $category . $file_base . ".html.twig";
-            
-            if (file_exists($page)) {
-
-                renderResourcesPage($category . $file_base . ".md", $page);
-
-            } elseif (preg_match('/\/(resources)\/.+/', REQUEST, $matches)) {
-                
-                $path = preg_split('/\/(resources)/', $matches[0]);
-                $file_base = $category . $path[1];
-
-                $page = $file_base . "index.html.twig";
-
-                if (file_exists($page)) {
-
-                    renderResourcesPage($file_base . "index.md", $page);
-
-                } else {
-
-                    Route::NotFound();
-
-                }
-                
-            } else {
-
-                Route::NotFound();
-
-            }
-
-            break;
     }
+
+    Route::execute('resources.php');
+
+    switch (REQUEST) {
+
+        case "/resources/":
+        case "/resources/index/":
+            
+            new Site\Views\Layouts\ResourcesIndex();
+            break;
+
+        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::file_pattern_1()):
+
+            new Site\Views\Layouts\ResourcesSubpage();
+            break;
+
+        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::file_pattern_2()):
+
+            new Site\Views\Layouts\ResourcesSubpage();
+            break;
+
+        default:
+
+            Route::NotFound();
+
+    }
+
 ?>

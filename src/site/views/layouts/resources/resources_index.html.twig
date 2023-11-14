@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {{ head|raw }}
+        {{ include('@includes/head.shtml') }}
         <title>jasmine's resources</title>
         <link rel="canonical" href="https://jasm1nii.xyz/resources"/>
         <link href="/_assets/stylesheets/content_A1.css" rel="stylesheet"   type="text/css" media="all"/>
@@ -25,14 +25,14 @@
                     </p>
                 </hgroup>
                 <nav>
-                    {{ headernav|raw }}
+                    {{ include('@includes/headernav.shtml') }}
                 </nav>
             </header>
             <div id="left-col-group">
                 <section id="guide">
                     <nav>
                         {% apply markdown_to_html %}
-                            {{ include('/src/content/resources/_toc.md') }}
+                            {{ include('_toc.md') }}
                         {% endapply %}
                     </nav>
                 </section>
@@ -40,17 +40,17 @@
                     <main>
                         <section id="legend">
                             {% apply markdown_to_html %}
-                                {{ include('/src/content/resources/_legend.md') }}
+                                {{ include('_legend.md') }}
                             {% endapply %}
                         </section>
                         <article>
                             {% apply markdown_to_html %}
-                                {{ include('/src/content/resources/resources_index.md') }}
+                                {{ include('resources_index.md') }}
                             {% endapply %}
                         </article>
                     </main>
                     <footer>
-                        {{ footer|raw }}
+                        {{ include('@includes/footer.shtml') }}
                     </footer>
                 </div>
             </div>

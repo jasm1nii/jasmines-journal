@@ -38,11 +38,13 @@
 
             Route::execute('blog.php', 'use_controller');
             break;
-/*
+
         case str_starts_with(REQUEST, "/resources/"):
 
-            Route::execute('resources/resources.php');
+            Route::execute('resources.php', 'use_controller');
             break;
+            
+        /*
 
         case "/accessibility/":
         case "/accessibility/index/":

@@ -17,7 +17,15 @@
 
                 public static function matchURL() {
 
-                    preg_match('/(changelog)\/(\d\d\d\d)\/(\d+)/', REQUEST, $matches);
+                    $query = '/(changelog)\/(\d\d\d\d)\/(\d+)/';
+
+                    preg_match($query, REQUEST, $matches);
+
+                    if (!isset($matches[0])) {
+
+                        $matches[0] = 0;
+        
+                    }
 
                     return $matches[0];
 

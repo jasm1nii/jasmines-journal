@@ -4,6 +4,8 @@
 
     use Site\Views\Render\View as View;
 
+    //
+
     trait About {
 
         public static function Nav() {
