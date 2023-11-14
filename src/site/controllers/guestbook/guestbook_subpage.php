@@ -1,4 +1,5 @@
 <?php
+
     if (!isset($page) || $page == 1) {
 
         $page = 0;
@@ -183,4 +184,5 @@
 
     unset($user_show, $pass_show);
     $guestbook_show = null;
+    
 ?> 

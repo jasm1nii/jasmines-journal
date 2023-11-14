@@ -22,18 +22,9 @@
             new Site\Views\Layouts\Home();
             break;
 
-        case "/about/":
-        case "/about/index/":
+        case str_starts_with(REQUEST, "/about/"):
 
-            Route::execute('about.php');
-            new Site\Views\Layouts\AboutIndex();
-            break;
-
-        case "/about/changelog/":
-        case "/about/changelog/index/":
-
-            Route::execute('about.php');
-            new Site\Views\Layouts\ChangelogIndex();
+            Route::execute('about.php', 'use_controller');
             break;
 
         case "/link-gallery/":
@@ -43,49 +34,9 @@
             new Site\Views\Layouts\LinkGallery();
             break;
 
-        //
+        case str_starts_with(REQUEST, "/blog/"):
 
-        case "/blog/":
-        case "/blog/index/":
-
-            Route::execute('blog/blog.php');
-            new Site\Views\Layouts\BlogIndex();
-            break;
-
-        case "/blog/notes/":
-        case "/blog/notes/index/":
-
-            Route::execute('blog/blog.php');
-            new Site\Views\Layouts\NotesIndex();
-            break;
-
-        case "/blog/articles/":
-        case "/blog/articles/index/":
-
-            Route::execute('blog/blog.php');
-            new Site\Views\Layouts\ArticlesIndex();
-            break;
-
-        case (str_starts_with(REQUEST, "/blog/articles/") && str_ends_with(REQUEST, "/entry/")):
-
-            Route::execute('blog/blog.php');
-            new Site\Views\Layouts\BlogEntry('article');
-            break;
-
-        case "/blog/articles/articles.xml":
-
-            require $_SERVER['DOCUMENT_ROOT'] . "/articles.xml";
-            break;
-
-        case (str_starts_with(REQUEST, "/blog/notes/") && str_ends_with(REQUEST, "/entry/")):
-
-            Route::execute('blog/blog.php');
-            new Site\Views\Layouts\BlogEntry('note');
-            break;
-        
-        case "/blog/notes/notes.xml":
-
-            require $_SERVER['DOCUMENT_ROOT'] . "/notes.xml";
+            Route::execute('blog.php', 'use_controller');
             break;
 /*
         case str_starts_with(REQUEST, "/resources/"):

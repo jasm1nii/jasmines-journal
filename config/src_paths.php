@@ -6,11 +6,12 @@
     define(
         "DIR",
         [
-            'models'    => "/src/site/models/",
-            'precomp'  => "/src/site/views/precomp/",
-            'layouts'   => "/src/site/views/layouts/",
-            'includes'  => "/src/site/views/includes/",
-            'content'   => "/src/site/content/"
+            'controllers'   => "/src/site/controllers/",
+            'models'        => "/src/site/models/",
+            'precomp'       => "/src/site/views/precomp/",
+            'layouts'       => "/src/site/views/layouts/",
+            'includes'      => "/src/site/views/includes/",
+            'content'       => "/src/site/content/"
         ]
     );
     

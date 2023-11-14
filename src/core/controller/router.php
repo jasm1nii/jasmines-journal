@@ -2,13 +2,17 @@
 
     class Route {
 
-        public static function execute($path, $use_model = null) {
+        public static function execute($path, $prereq = null) {
 
-            if ($use_model == true) {
+            if ($prereq == 'use_model') {
 
                 require SITE_ROOT . DIR['models'] . $path;
 
-            } elseif ($use_model == false || $use_model == null) {
+            } elseif ($prereq == 'use_controller') {
+
+                require SITE_ROOT . DIR['controllers'] . $path;
+
+            } else {
 
                 require SITE_ROOT . DIR['precomp'] . $path;
 
