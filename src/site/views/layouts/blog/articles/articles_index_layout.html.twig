@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <?=Includes::Head();?>
+    {{ include('@includes/head.shtml') }}
     <title>jasmine's b(rain)log</title>
     <meta name="description" content="my online diary"/>
     <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all"/>
@@ -18,7 +18,7 @@
                     </h1>
                 </hgroup>
                 <nav aria-label="primary">
-                    <?=Blog::nav()?>
+                    {{ nav|raw }}
                 </nav>
             </header>
         </div>
@@ -29,32 +29,14 @@
                         <h2>articles</h2>
                     </hgroup>
                     <ol reversed class="articles-list">
-                        <?php
-                            require RenderConfig::Twig;
-
-                            $source = SITE_ROOT . DIR['content'] . 'blog/articles';
-
-                            $layout = DIR['includes'] . "_articles_index.html.twig";
-
-                            $files = glob($source."/*/*/*/entry.html.twig");
-                            asort($files, SORT_NATURAL);
-
-                            foreach (array_reverse($files) as $article) {
-                                $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
-
-                                $slug_1 = rtrim($content_path, '.html.twig');
-                                $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
-
-                                echo $twig->render($content_path, ['layout'=>$layout,'slug'=>$slug_2]);
-                            }
-                        ?>
+                        {{ entries|raw }}
                     </ol>
                 </section>
             </article>
         </main>
     </div>
     <footer>
-        <?=Includes::Footer()?>
+        {{ include('@includes/footer.shtml') }}
     </footer>
     <style>
         #headernav #blog li:first-child > a {

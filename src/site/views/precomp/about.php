@@ -18,6 +18,8 @@
 
     }
 
+    //
+
     final class AboutIndex extends View {
 
         use About;
@@ -40,6 +42,8 @@
 
     }
 
+    //
+
     final class ChangelogIndex extends View {
 
         use About;
@@ -48,7 +52,7 @@
 
             require parent::TWIG;
 
-            include SITE_ROOT . DIR['models'] . "changelog/changelog_archive.php";
+            include SITE_ROOT . DIR['models'] . "changelog_archive.php";
 
             $archive_nav = DIR['layouts'] . 'changelog/_index_subnav.html.twig';
 
@@ -83,6 +87,8 @@
         }
 
     }
+
+    //
 
     final class ChangelogSubpage extends View {
 

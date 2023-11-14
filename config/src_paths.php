@@ -7,7 +7,7 @@
         "DIR",
         [
             'models'    => "/src/site/models/",
-            'view_env'  => "/src/site/views/environment/",
+            'precomp'  => "/src/site/views/precomp/",
             'layouts'   => "/src/site/views/layouts/",
             'includes'  => "/src/site/views/includes/",
             'content'   => "/src/site/content/"

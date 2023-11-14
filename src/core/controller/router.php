@@ -10,7 +10,7 @@
 
             } elseif ($use_model == false || $use_model == null) {
 
-                require SITE_ROOT . DIR['view_env'] . $path;
+                require SITE_ROOT . DIR['precomp'] . $path;
 
             }
 

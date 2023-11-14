@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{ include('@includes/head.shtml') }}
+    <title>jasmine's notes</title>
+    <meta name="description" content="microblog entries"/>
+    <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div id="layout">
+        <div class="sidebar">
+            <header>
+                <hgroup>
+                    <h1>jasmine's notes</h1>
+                </hgroup>
+                <nav>
+                    {{ nav|raw }}
+                </nav>
+            </header>
+        </div>
+        <main>
+            <div>
+                {{ entries|raw }}
+                <p>
+                    subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+                </p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        {{ include('@includes/footer.shtml') }}
+    </footer>
+    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
+  </body>
+</html>

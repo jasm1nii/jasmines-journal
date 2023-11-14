@@ -1,4 +1,5 @@
 <?php
+
     $source = SITE_ROOT . DIR['content'] . 'changelog';
 
     $years = glob($source."/2*");
@@ -33,4 +34,5 @@
         $archive[$y] = [$year_label[$y] => $month_label];
         +$y;
     }
+    
 ?>
