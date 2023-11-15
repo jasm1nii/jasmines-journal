@@ -11,19 +11,17 @@
 
         }
 
-        public static function file_pattern_1() {
+        public static function matchIndexPattern($use_index = false) {
 
-            $file_rel = self::getCategory() . ".html.twig";
+            if ($use_index == true) {
 
-            $file_abs = SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
+                $file_rel = self::getCategory() . "/index.html.twig";
 
-            return $file_abs;
+            } else {
 
-        }
+                $file_rel = self::getCategory() . ".html.twig";
 
-        public static function file_pattern_2() {
-
-            $file_rel = self::getCategory() . "/index.html.twig";
+            }
 
             $file_abs = SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
 
@@ -33,7 +31,7 @@
 
     }
 
-    Route::execute('resources.php');
+    Route::loadLayoutClasses('resources.php');
 
     switch (REQUEST) {
 
@@ -43,12 +41,12 @@
             new Site\Views\Layouts\ResourcesIndex();
             break;
 
-        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::file_pattern_1()):
+        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::matchIndexPattern(false)):
 
             new Site\Views\Layouts\ResourcesSubpage();
             break;
 
-        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::file_pattern_2()):
+        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::matchIndexPattern(true)):
 
             new Site\Views\Layouts\ResourcesSubpage();
             break;

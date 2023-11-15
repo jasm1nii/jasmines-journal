@@ -1,11 +1,11 @@
 <?php
 
+    Route::loadLayoutClasses('about.php');
+
     switch (REQUEST) {
 
         case "/about/":
         case "/about/index/":
-
-            Route::execute('about.php');
 
             new Site\Views\Layouts\AboutIndex();
 
@@ -46,15 +46,11 @@
                 case "/about/changelog/":
                 case "/about/changelog/index/":
 
-                    Route::execute('about.php');
-
                     new Site\Views\Layouts\ChangelogIndex();
 
                     break;
 
                 case str_contains(REQUEST, ChangelogSubpage::matchURL()) && file_exists(ChangelogSubpage::file()):
-
-                    Route::execute('about.php');
 
                     new Site\Views\Layouts\ChangelogSubpage();
 

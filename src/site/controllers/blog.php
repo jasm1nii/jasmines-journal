@@ -28,7 +28,7 @@
 
     }
     
-    Route::execute('blog/blog.php');
+    Route::loadLayoutClasses('blog/blog.php');
 
     switch (REQUEST) {
 

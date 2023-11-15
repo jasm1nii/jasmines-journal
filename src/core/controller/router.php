@@ -2,21 +2,21 @@
 
     class Route {
 
-        public static function execute($path, $prereq = null) {
+        public static function loadLayoutClasses($path) {
 
-            if ($prereq == 'use_model') {
+            require SITE_ROOT . DIR['precomp'] . $path;
 
-                require SITE_ROOT . DIR['models'] . $path;
+        }
 
-            } elseif ($prereq == 'use_controller') {
+        public static function forwardToController($path) {
 
-                require SITE_ROOT . DIR['controllers'] . $path;
+            require SITE_ROOT . DIR['controllers'] . $path;
 
-            } else {
+        }
 
-                require SITE_ROOT . DIR['precomp'] . $path;
+        public static function forwardToModel($path) {
 
-            }
+            require SITE_ROOT. DIR['models'] . $path;
 
         }
 

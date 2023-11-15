@@ -44,11 +44,10 @@
 
     class Layout extends View {
 
-        public $subpage;
-
         public static function useDefault() {
 
             $subpage = DIR['layouts'] . "subpage_layout.html.twig";
+            
             return $subpage;
 
         }

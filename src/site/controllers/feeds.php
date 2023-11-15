@@ -1,53 +1,35 @@
 <?php
-    class Feeds {
 
-        const Index = "/feeds/";
-        const Success = self::Index . "success/";
-        const Error = self::Index . "error/";
+    Route::loadLayoutClasses('feeds.php');
 
-        const IndexLayout = DIR['layouts'] . "feeds/feeds_index.php";
-        const POSTLayout = DIR['layouts'] . "feeds/feeds_post.html.twig";
+    switch (REQUEST) {
 
-        public static function loadSubpage($title, $message) {
+        case "/feeds/":
+        case "/feeds/index/":
+
+            new Site\Views\Layouts\FeedsIndex();
+
+            break;
+
+
+        case str_contains(REQUEST, "success"):
+
+            new Site\Views\Layouts\FeedsPOST('success');
+
+            break;
+
+
+        case str_contains(REQUEST, "error"):
+
+            new Site\Views\Layouts\FeedsPOST('error');
+
+            break;
             
-            $vars = [
-                "h2" => $title,
-                "message" => $message
-            ];
 
-            View::Twig(self::POSTLayout, $vars);
-        }
+        default:
 
-        public static function loadDefault() {
+            Route::NotFound();
 
-            require SITE_ROOT . self::IndexLayout;
-            
-        }
     }
 
-    if (REQUEST == Feeds::Index) {
-
-        Feeds::loadDefault();
-
-    } else {
-
-        switch (REQUEST) {
-
-            case Feeds::Success:
-
-                Feeds::loadSubpage("yippee!!", "thanks for subscribing!");
-                break;
-
-            case Feeds::Error:
-
-                Feeds::loadSubpage("aw shucks", "there was an error with your submission ☹");
-                break;
-
-            default:
-
-                Feeds::loadDefault();
-                
-        }
-
-    }
 ?>

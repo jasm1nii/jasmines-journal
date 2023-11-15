@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {{ head|raw }}
+        {{ include('@includes/head.shtml') }}
         <title>{{ title }} | jasmine's journal</title>
         <link rel="canonical" href="https://jasm1nii.xyz/{{ slug }}"/>
         <meta name="description" content="{{ description }}"/>
@@ -17,7 +17,7 @@
                 <p>updated<br/><time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time></p>
             </hgroup>
             <nav>
-                {{ headernav|raw }}
+                {{ include('@includes/headernav.shtml') }}
             </nav>
         </header>
         <main>
@@ -34,7 +34,7 @@
             </article>
         </main>
         <footer>
-            {{ footer|raw }}
+            {{ include('@includes/footer.shtml') }}
         </footer>
         <script src="/_assets/scripts/theme-switcher-v2.js"></script>
     </body>
