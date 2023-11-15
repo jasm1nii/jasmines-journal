@@ -2,7 +2,8 @@
 
     namespace Site\Views\Layouts;
 
-    use Site\Views\Render\View as View;
+    use Core\Views\Render\View as View;
+    use Core\Views\Render\Extension\MarkdownWithTOC as MarkdownWithTOC;
 
     //
 
@@ -45,9 +46,7 @@
         private static function matchCategory() {
 
             $category_query = '/\w*.*[^\/]/';
-
             preg_match($category_query, REQUEST, $matches, null, 11);
-
             $partial_path = self::$category_dir . "/{$matches[0]}";
 
             return $partial_path;
@@ -76,7 +75,6 @@
             $legend = file_get_contents(SITE_ROOT.DIR['content'] . "resources/_legend.md");
 
             $template = self::matchCategory() . ".html.twig";
-
             $twig_as_main = SITE_ROOT . $template;
 
             // the following needs to be passed through League/Commonmark first to generate a table of contents:
@@ -86,7 +84,6 @@
             if (!file_exists($twig_as_main)) {
 
                 $template = self::matchCategory() . "/index.html.twig";
-
                 $markdown_as_main = SITE_ROOT . self::matchCategory() . "/index.md";
                 
             }
@@ -95,14 +92,12 @@
 
                 require parent::MARKDOWN_WITH_TOC;
 
-                $content = $commonmark->convert(file_get_contents($markdown_as_main));
-
+                $content = MarkdownWithTOC::convert($markdown_as_main);
                 $updated = filemtime($markdown_as_main);
 
             } else {
 
                 $content = null;
-
                 $updated = filemtime($twig_as_main);
 
             }

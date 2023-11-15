@@ -6,7 +6,7 @@
 
     $content = [];
 
-    require Site\Views\Render\View::TWIG;
+    require Core\Views\Render\View::TWIG;
 
     foreach (array_reverse($files) as $article) {
 

@@ -4,14 +4,16 @@
 
     include SITE_ROOT . "/src/site/models/guestbook/guestbook_preview.php";
 
-    use Site\Views\Render\View as View;
+    use Core\Views\Render\View as View;
     use Site\Models\Guestbook\NewestMessage as NewestMessage;
+
+    //
 
     final class Home extends View {
 
         private static $layout = DIR['layouts'] . "home/home_layout.html.twig";
 
-        private static $includes_path = SITE_ROOT . DIR['layouts'] . "home/includes/";
+        private static $includes_path = DIR['layouts'] . "home/includes/";
 
         public function __construct() {
 

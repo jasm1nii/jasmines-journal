@@ -1,6 +1,8 @@
 <?php
 
-    namespace Site\Views\Render;
+    namespace Core\Views\Render;
+
+    use Core\Views\Render\Extension\Twig as Twig;
 
     class View {
 
@@ -10,33 +12,19 @@
         const MARKDOWN_COMMENTS = self::DIR  . "commonmark_comments.php";
         const MARKDOWN_WITH_TOC = self::DIR  . "commonmark_toc.php";
 
-        public static function Markdown($md_file) {
-
-            require self::DIR . "/commonmark.php";
-
-            $output = $converter->convert($md_file);
-
-            return $output;
-
-        }
-
-        public static function Twig($page, $vars, $path) {
+        public static function Twig($page, $vars, $path = null) {
 
             require self::TWIG;
 
+            $twig = new Twig();
+
             if ($vars == null) {
-
                 $vars = [];
-
             }
 
-            if ($path !== null) {
+            $loader = $twig->loadBaseLoader($path);
 
-                $loader->addPath($path);
-                
-            }
-
-            echo $twig->render($page, $vars);
+            $twig->createEnvAndMake($loader, $page, $vars);
 
         }
 

@@ -1,46 +1,64 @@
 <?php
 
+    namespace Core\Views\Render\Extension;
+
     use Twig\Extra\Markdown\DefaultMarkdown;
     use Twig\Extra\Markdown\MarkdownExtension;
     use Twig\Extra\Markdown\MarkdownRuntime;
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
-    $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
-    
-    $loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
+    class Twig {
 
-    $twig = new \Twig\Environment($loader,[
-        'cache' => SITE_ROOT . '/tmp/twig',
-        'auto_reload' => true
-    ]);
+        public function loadBaseLoader($add_path = null) {
 
-    $twig->addExtension(new MarkdownExtension());
+            $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
 
-    $twig->addExtension(new IntlExtension());
+            $loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
 
-    $twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
-        public function load($class) {
-            if (MarkdownRuntime::class === $class) {
-                return new MarkdownRuntime(new DefaultMarkdown());
+            if ($add_path !== null) {
+
+                $loader->addPath(SITE_ROOT . $add_path);
+
             }
+
+            return $loader;
+
         }
-    });
 
-    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
+        public function createEnvAndMake($loader, $template, $args) {
 
-    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+            $twig = new \Twig\Environment(
+                $loader,
+                [
+                    'cache' => SITE_ROOT . '/tmp/twig',
+                    'auto_reload' => true
+                ]
+            );
 
-    //
+            $twig->addExtension(new MarkdownExtension());
 
-    /* will eventually be removed */
+            $twig->addRuntimeLoader(
+                new class () implements RuntimeLoaderInterface {
+                    public function load($class)
+                    {
+                        if (MarkdownRuntime::class === $class) {
+                            return new MarkdownRuntime(new DefaultMarkdown());
+                        }
+                    }
+                }
+            );
 
-    /*
-    $twig->addGlobal("head", file_get_contents(SITE_ROOT . '/src/includes/head.shtml'));
+            $twig->addExtension(new IntlExtension());
 
-    $twig->addGlobal("headernav", file_get_contents(SITE_ROOT . '/src/includes/headernav.shtml'));
+            $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
 
-    $twig->addGlobal("footer", file_get_contents(SITE_ROOT . '/src/includes/footer.shtml'));
-    */
+            $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+
+            echo $twig->render($template, $args);
+
+        }
+
+    }
 
 ?>

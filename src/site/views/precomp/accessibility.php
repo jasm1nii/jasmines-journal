@@ -2,8 +2,8 @@
 
     namespace Site\Views\Layouts;
 
-    use Site\Views\Render\View as View;
-    use Site\Views\Render\Layout as Layout;
+    use Core\Views\Render\View as View;
+    use Core\Views\Render\Layout as Layout;
 
     final class Accessibility extends View {
 

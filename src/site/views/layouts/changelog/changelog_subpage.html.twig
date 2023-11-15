@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        {{ head|raw }}
+        {{ include('@includes/head.shtml') }}
         <title>{{ date }} change log | jasmine's journal</title>
         <meta name="description" content="updates to the website"/>
         <meta name="robots" content="noindex"/>
@@ -35,7 +35,7 @@
                 <nav>
                     <a href="/about/changelog">⟵ return to change log index</a>
                 </nav>
-                {{ footer|raw }}
+                {{ include('@includes/footer.shtml') }}
             </footer>
         </div>
     </div>
