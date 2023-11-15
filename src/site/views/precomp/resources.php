@@ -18,9 +18,9 @@
 
         use Resources;
 
-        public function __construct() {
+        private static $layout = DIR['layouts'] . "resources/resources_index.html.twig";
 
-            $layout = DIR['layouts'] . "resources/resources_index.html.twig";
+        public function __construct() {
 
             $updated = filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md");
 
@@ -28,7 +28,7 @@
                 'updated' => $updated
             ];
 
-            parent::Twig($layout, $vars, Resources::$includes_path);
+            parent::Twig(self::$layout, $vars, Resources::$includes_path);
 
         }
 
@@ -41,6 +41,18 @@
         private static $category_dir = DIR['content'] . "resources/categories";
 
         private static $layout = DIR['layouts'] . "resources/resources_subpage.html.twig";
+
+        private static function matchCategory() {
+
+            $category_query = '/\w*.*[^\/]/';
+
+            preg_match($category_query, REQUEST, $matches, null, 11);
+
+            $partial_path = self::$category_dir . "/{$matches[0]}";
+
+            return $partial_path;
+
+        }
 
         private static function getParentURL() {
 
@@ -63,26 +75,20 @@
             
             $legend = file_get_contents(SITE_ROOT.DIR['content'] . "resources/_legend.md");
 
-            $category_query = '/\w*.*[^\/]/';
+            $template = self::matchCategory() . ".html.twig";
 
-            preg_match($category_query, REQUEST, $matches, null, 11);
+            $twig_as_main = SITE_ROOT . $template;
 
             // the following needs to be passed through League/Commonmark first to generate a table of contents:
 
-            $markdown_as_main = SITE_ROOT . self::$category_dir . "/{$matches[0]}.md";
-
-            $twig_as_main = SITE_ROOT . self::$category_dir . "/{$matches[0]}.html.twig";
-
-            $template = self::$category_dir . "/{$matches[0]}.html.twig";
+            $markdown_as_main = SITE_ROOT . self::matchCategory() . ".md";
 
             if (!file_exists($twig_as_main)) {
 
-                $twig_as_main = SITE_ROOT . self::$category_dir . "/{$matches[0]}/index.html.twig";
+                $template = self::matchCategory() . "/index.html.twig";
 
-                $markdown_as_main = SITE_ROOT . self::$category_dir . "/{$matches[0]}/index.md";
-
-                $template = self::$category_dir . "/{$matches[0]}/index.html.twig";
-
+                $markdown_as_main = SITE_ROOT . self::matchCategory() . "/index.md";
+                
             }
 
             if (file_exists($markdown_as_main)) {

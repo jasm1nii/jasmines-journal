@@ -8,10 +8,10 @@
     $i = 0;
 
     require Site\Views\Render\View::TWIG;
+    $layout = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
 
     foreach (array_reverse($files) as $article) {
-
-        $layout = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+        
         $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
 
         $slug_1 = rtrim($content_path, '.html.twig');

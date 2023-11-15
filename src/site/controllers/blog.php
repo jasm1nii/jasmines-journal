@@ -1,5 +1,7 @@
 <?php
 
+    Route::loadLayoutClasses('blog/blog.php');
+
     class BlogEntry extends Route {
 
         public static function matchURL() {
@@ -28,8 +30,6 @@
 
     }
     
-    Route::loadLayoutClasses('blog/blog.php');
-
     switch (REQUEST) {
 
         case "/blog/":

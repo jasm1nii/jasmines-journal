@@ -6,6 +6,8 @@
 
     final class LinkGallery extends View {
 
+        const LAYOUT = DIR['layouts'] . "link-gallery_layout.html.twig";
+
         const DIR = DIR['content'] . "link-gallery";
 
         private static $mutuals = self::DIR . "/link-gallery_mutuals.html.twig";
@@ -16,8 +18,6 @@
 
         function __construct() {
 
-            $page = DIR['layouts'] . "link-gallery_layout.html.twig";
-
             $updated = stat(SITE_ROOT . self::DIR)['mtime'];
 
             $vars = [
@@ -27,7 +27,7 @@
                 'etc' => self::$etc
             ];
 
-            parent::Twig($page, $vars, null);
+            parent::Twig(self::LAYOUT, $vars, null);
 
         }
 

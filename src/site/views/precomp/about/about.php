@@ -10,9 +10,7 @@
 
         public static function Nav() {
 
-            $headernav = SITE_ROOT . DIR['includes'] . "_about_nav.php";
-
-            include $headernav;
+            include SITE_ROOT . DIR['includes'] . "_about_nav.php";
             
             return $nav_html;
 
@@ -26,19 +24,19 @@
 
         use About;
 
+        private static $layout = DIR['layouts'] . "about_layout.html.twig";
+
+        private static $content = DIR['content'] . "about.html.twig";
+
         function __construct() {
 
-            $layout = DIR['layouts'] . "about_layout.html.twig";
-
-            $content = DIR['content'] . "about.html.twig";
-
             $vars = [
-                "layout" => $layout,
+                "layout" => self::$layout,
                 "nav" => About::Nav(),
                 "updated" => filemtime(SITE_ROOT . $content)
             ];
 
-            parent::Twig($content, $vars, null);
+            parent::Twig(self::$content, $vars, null);
 
         }
 
@@ -50,17 +48,21 @@
 
         use About;
 
+        private static $main_layout = DIR['layouts'] . "changelog/changelog_index.html.twig";
+
+        private static $main_content_abs = SITE_ROOT . DIR['content'] . 'changelog/index.md';
+
+        private static $archive_nav_layout = DIR['layouts'] . 'changelog/_index_subnav.html.twig';
+
         private static function getArchiveNav() {
 
             require parent::TWIG;
 
-            include SITE_ROOT . DIR['models'] . "changelog_archive.php";
-
-            $archive_nav = DIR['layouts'] . 'changelog/_index_subnav.html.twig';
+            include __DIR__ . "changelog_archive.php";
 
             $archive_nav_html =
                 $twig->render(
-                    $archive_nav,
+                    self::$archive_nav_layout,
                     [
                         "years" => $year_label,
                         "months" => $month_label
@@ -72,11 +74,7 @@
 
         function __construct() {
 
-            $layout = DIR['layouts'] . "changelog/changelog_index.html.twig";
-
-            $content_path =  SITE_ROOT . DIR['content'] . 'changelog/index.md';
-
-            $content = file_get_contents($content_path);
+            $content = file_get_contents($main_content_abs);
 
             $vars = [
                 "nav" => About::Nav(),
@@ -84,7 +82,7 @@
                 'content' => $content
             ];
             
-            parent::Twig($layout, $vars, null);
+            parent::Twig(self::$main_layout, $vars, null);
 
         }
 
@@ -96,22 +94,22 @@
 
         use About;
 
+        private static $layout =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+
         function __construct() {
 
             $path = ltrim(REQUEST, "/about");
             
             $file = "/" . rtrim($path, "/");
 
-            $page = DIR['content'] . $file . ".html.twig";
-
-            $layout = DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+            $content = DIR['content'] . $file . ".html.twig";
             
             $vars = [
-                "layout" => $layout,
+                "layout" => self::$layout,
                 "nav" => About::Nav()
             ];
 
-            parent::Twig($page, $vars, null);
+            parent::Twig($content, $vars, null);
 
         }
 
