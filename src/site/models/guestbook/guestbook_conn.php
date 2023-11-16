@@ -1,18 +1,43 @@
 <?php
 
-    $db = parse_ini_file(ENV_CONF, true);
+    namespace Site\Models;
 
-    $servername = "localhost";
-    $dbname = $db['guestbook']['name'];
-    $table = $db['guestbook']['table'];
-    $user_show = $db['guestbook']['user'];
-    $pass_show = $db['guestbook']['password'];
+    class GuestbookConn {
 
-    $guestbook_show = new PDO(
-        "mysql:host=$servername;dbname=$dbname",
-        $user_show,
-        $pass_show,
-        [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
-    );
+        private static function parseConfig() {
+
+            $db = parse_ini_file(ENV_CONF, true);
+            return $db;
+
+        }
+
+        protected static function getTable() {
+
+            $table = self::parseConfig()['guestbook']['table'];
+            return $table;
+
+        }
+
+        protected static function connect() {
+
+            $db = self::parseConfig();
+
+            $servername = "localhost";
+            $dbname = $db['guestbook']['name'];
+            $user_show = $db['guestbook']['user'];
+            $pass_show = $db['guestbook']['password'];
+
+            $guestbook_show = new \PDO(
+                "mysql:host=$servername;dbname=$dbname",
+                $user_show,
+                $pass_show,
+                [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
+            );
+
+            return $guestbook_show;
+        
+        }
+        
+    }
     
 ?>

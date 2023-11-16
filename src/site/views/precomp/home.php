@@ -2,9 +2,9 @@
 
     namespace Site\Views\Layouts;
 
-    include SITE_ROOT . "/src/site/models/guestbook/guestbook_preview.php";
+    include SITE_ROOT . DIR['models'] . "guestbook/guestbook_preview.php";
     use Core\Views\Render\View as View;
-    use Site\Models\Guestbook\NewestMessage as NewestMessage;
+    use Site\Models\NewestMessage as NewestMessage;
 
     include View::MARKDOWN_COMMENTS;
     use Core\Views\Render\Extension\MarkdownComments as MarkdownComments;

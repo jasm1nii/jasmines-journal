@@ -1,12 +1,16 @@
 <?php
 
-    namespace Site\Models\Guestbook;
+    namespace Site\Models;
+    
+    require_once __DIR__ . "/guestbook_conn.php";
 
-    class NewestMessage {
+    class NewestMessage extends GuestbookConn {
 
         public static function get() {
 
-            include __DIR__ . "/guestbook_conn.php";
+            $guestbook_show = parent::connect();
+
+            $table = parent::getTable();
 
             $sql_comment = $guestbook_show->prepare(
                 "SELECT `ID`, `Date`, `Name`, `Comment`

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <?php Includes::Head(); ?>
+        {{ include('@includes/head.shtml') }}
         <title>guestbook | jasmine's journal</title>
         <meta name="description" content="leave a message if you're stopping by!"/>
         <link rel="canonical" href="https://jasm1nii.xyz/guestbook"/>
@@ -16,40 +16,35 @@
                 <p>jasmine's journal</p>
             </hgroup>
             <nav>
-                <?php Includes::HeaderNav(); ?>
+                {{ include('@includes/headernav.shtml') }}
             </nav>
         </header>
+
         <main>
             <section class="form">
-                <?php
-                    if (isset($_SERVER['HTTP_REFERER'])) {
-                        if (REQUEST == '/guestbook/success/') {
-                            echo 
-                                "<p class='dialog success'>
-                                    message sent - pending approval
-                                </p>";
-                        } elseif (REQUEST == '/guestbook/success/exception/') {
-                            echo
-                                "<p class='dialog success exception'>
-                                    your message has been recorded, but the system was unable to send an email.
-                                    <br/>
-                                    (mailer error: {$mail->ErrorInfo})
-                                </p>";
-                        } elseif (REQUEST == "/guestbook/error/has_html/") {
-                            echo
-                                "<p class='dialog error'>
-                                    the message should not contain any HTML tags!
-                                </p>";
-                        } elseif (REQUEST == "/guestbook/error/time_too_short/") {
-                            echo
-                                "<p class='dialog error'>
-                                    request interval is too short - please wait a bit longer.
-                                </p>";
-                        }
-                    }
-                ?>
+                {% if dialog == "success" %}
+                    <p class='dialog success'>
+                        message sent - pending approval!
+                    </p>
+                {% elseif dialog == "exception" %}
+                    <p class='dialog success exception'>
+                        your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual.
+                    </p>
+                {% elseif dialog == "html_error" %}
+                    <p class='dialog error'>
+                        the message should not contain any HTML tags!
+                    </p>
+                {% elseif dialog == "spam_error" %}
+                    <p class='dialog error'>
+                        request interval is too short - please wait a bit longer.
+                    </p>
+                {% else %}
+                    {% set dialog = null %}
+                {% endif %}
+
                 <h2>leave a trace!</h2>
                 <span>submissions will be reviewed manually.</span>
+
                 <form name="post_message" method="post" action="/guestbook/post/" enctype="multipart/form-data">
                     <label for="name">name</label>
                     <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
@@ -64,20 +59,30 @@
                     <span>supports text formatting with <a href="https://www.markdownguide.org/cheat-sheet/" rel="external">markdown!</a></span>
                     <textarea id="message" name="message" maxlength="3000" required></textarea>
 
-                    <input type="hidden" name="timestamp" value="<?= $_SERVER['REQUEST_TIME'] ?>"/>
+                    <input type="hidden" name="timestamp" value="{{ request_time }}"/>
                     <input type="submit" value="submit"/>
                 </form>
             </section>
+
             <section class="messages">
                 <article>
-                    <?php
-                        include dirname(__DIR__,1).'/includes/_guestbook_show.php';
-                    ?>
+                    {% if comments != null and thread == null %}
+                        {{ comments|raw }}
+                        {{ comments_nav|raw }}
+                    {% elseif thread != null %}
+                        {{ thread|raw }}
+                        {{ thread_replies|raw }}
+                        <nav>
+                            <a href="/guestbook/page/{{ previous_page }}">← return to previous page</a>
+                        </nav>
+                    {% else %}
+                        <p>nothing here...</p>
+                    {% endif %}
                 </article>
             </section>
         </main>
         <footer>
-            <?php Includes::Footer(); ?>
+            {{ include('@includes/footer.shtml') }}
         </footer>
         <script src="/_assets/scripts/theme-switcher-v2.js"></script>
     </body>
