@@ -9,7 +9,7 @@
 
     trait Resources {
 
-        public static $includes_path = SITE_ROOT . DIR['content'] . "resources";
+        public static $includes_path = DIR['content'] . "resources";
 
     }
 

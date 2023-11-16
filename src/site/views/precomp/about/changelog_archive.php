@@ -33,6 +33,7 @@
 
         $archive[$y] = [$year_label[$y] => $month_label];
         +$y;
+        
     }
     
 ?>

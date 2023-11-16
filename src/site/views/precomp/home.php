@@ -3,9 +3,11 @@
     namespace Site\Views\Layouts;
 
     include SITE_ROOT . "/src/site/models/guestbook/guestbook_preview.php";
-
     use Core\Views\Render\View as View;
     use Site\Models\Guestbook\NewestMessage as NewestMessage;
+
+    include View::MARKDOWN_COMMENTS;
+    use Core\Views\Render\Extension\MarkdownComments as MarkdownComments;
 
     //
 
@@ -21,11 +23,9 @@
 
                 $msg = NewestMessage::get();
 
-                include View::MARKDOWN_COMMENTS;
-
                 $name = htmlspecialchars($msg['Name'], ENT_QUOTES, "UTF-8", false);
 
-                $comment = $commonmark->convert($msg['Comment']);
+                $comment = MarkdownComments::convert($msg['Comment']);
 
                 // source: https://www.w3schools.in/php/examples/time-ago-function
 

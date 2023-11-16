@@ -1,6 +1,6 @@
 <?php
 
-    Route::loadLayoutClasses('about.php');
+    Route::loadLayoutClasses('about/about.php');
 
     switch (REQUEST) {
 

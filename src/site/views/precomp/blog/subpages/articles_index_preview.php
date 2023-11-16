@@ -1,16 +1,33 @@
 <?php
 
+    use Twig\Extra\Intl\IntlExtension;
+    use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
+    $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
+
+    $twig = new \Twig\Environment(
+        $loader,
+        [
+            'cache' => SITE_ROOT . '/tmp/twig',
+            'auto_reload' => true
+        ]
+    );
+
+    $twig->addExtension(new IntlExtension());
+    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
+    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+
+    //
+
     $source = SITE_ROOT . DIR['content'] . 'blog/articles';
-    $files = glob($source."/*/*/*/entry.html.twig");
+    $files = glob($source . "/*/*/*/entry.html.twig");
     asort($files, SORT_NATURAL);
 
     $content = [];
-
-    require Core\Views\Render\View::TWIG;
+    $layout = DIR['layouts'] . "blog/articles/_articles_index.html.twig";
 
     foreach (array_reverse($files) as $article) {
-
-        $layout = DIR['layouts'] . "blog/articles/_articles_index.html.twig";
+        
         $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
 
         $slug_1 = rtrim($content_path, '.html.twig');

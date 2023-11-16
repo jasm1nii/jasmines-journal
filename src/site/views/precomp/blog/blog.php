@@ -4,6 +4,8 @@
 
     use Core\Views\Render\View as View;
 
+    //
+
     trait Blog {
 
         public static function nav() {
@@ -15,21 +17,49 @@
 
     }
 
+    //
+
     final class BlogIndex extends View {
 
         use Blog;
 
-        private static function notesPreview() {
+        private static function makeArticlesPreview() {
 
-            include __DIR__ . "/main_notes_preview.php";
-            return $notes_preview;
+            include __DIR__ . "/blog_index_articles.php";
+            return implode("", \Site\Views\Partials\BlogIndex_Articles::make());
 
         }
 
-        private static function articlesPreview() {
+        private static function makeNotesPreview() {
 
-            include __DIR__ . "/main_articles_preview.php";
-            return implode("", $content);
+            $notes_xml = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/notes.xml');
+            $notes_doc = new \DOMDocument();
+            $notes_doc->loadXML($notes_xml);
+
+            $notes_pub =
+                $notes_doc->getElementsByTagName('published')->item(0)->textContent;
+
+            $notes_link =
+                $notes_doc->getElementsByTagName('id')->item(1)->textContent;
+
+            $notes_title =
+                $notes_doc->getElementsByTagName('title')->item(1)->textContent;
+
+            $notes_title_html =
+                str_replace(" | jasmine's notes", "", $notes_title);
+
+            $notes_content =
+                $notes_doc->getElementsByTagName('content')->item(0)->textContent;
+            
+            //
+
+            $notes_preview =
+                "<h3 class='p-name'><time datetime='{$notes_pub}'><a href='{$notes_link}'>{$notes_title_html}</a></time></h3>";
+
+            $notes_preview .=
+                "<p id='latest-note-content' class='e-content'>{$notes_content}</p>";
+
+            return $notes_preview;
 
         }
 
@@ -39,12 +69,12 @@
 
             $vars = [
                 'nav' => Blog::nav(),
-                'notes_preview' => self::notesPreview(),
-                'articles_preview' => self::articlesPreview()
+                'notes_preview' => self::makeNotesPreview(),
+                'articles_archive' => self::makeArticlesPreview()
             ];
 
-            parent::Twig($page, $vars, null);
-
+            parent::Twig($page, $vars, null, true);
+            
         }
 
     }
@@ -118,9 +148,7 @@
             }
 
             $slug = rtrim(REQUEST,'/');
-
             $img_dir = '/_assets/media' . rtrim($slug,'/entry') . '/';
-
             $content = DIR['content'] . $slug . ".html.twig";
 
             $vars = [

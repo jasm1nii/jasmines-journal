@@ -1,54 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    {{ include('@includes/head.shtml') }}
-    <title>change log | jasmine's journal</title>
-    <meta name="description" content="updates to the website"/>
-    <link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
-</head>
-<body>
-    <div class="layout">
-        <div>
-            <header>
-                <hgroup>
-                    <h1>change log</h1>
-                    <p class="subtitle">jasmine's journal</p>
-                    <p class="site-update">
-                        last updated
-                        <time datetime="{{ updated|date() }}">
-                            {{ updated|format_date(pattern="d MMMM Y")|lower }}
-                        </time>
-                    </p>
-                </hgroup>
-                <nav>
-                    {{ nav|raw }}
-                </nav>
-            </header>
-        </div>
-        <div>
-            <main>
-                <article>
-                    <section>
-                        <h2 id="changelog">archive</h2>
-                        <nav id="archiveNav">
-                            <ul>
-                                {{ archivenav|raw }}
-                            </ul>
-                        </nav>
-                    </section>
-                    {% apply markdown_to_html %}
-                        {{ content|raw }}
-                    {% endapply %}
-                </article>
-            </main>
-            <footer>
-                {{ include('@includes/footer.shtml') }}
-            </footer>
-        </div>
-    </div>
-    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		{{ include('@includes/head.shtml') }}
+		<title>change log | jasmine's journal</title>
+		<meta name="description" content="updates to the website"/>
+		<link href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
+	</head>
+	<body>
+		<div class="layout">
+			<div>
+				<header>
+					<hgroup>
+						<h1>change log</h1>
+						<p class="subtitle">jasmine's journal</p>
+						<p class="site-update">
+							last updated
+							<time datetime="{{ updated|date() }}">
+								{{ updated|format_date(pattern="d MMMM Y")|lower }}
+							</time>
+						</p>
+					</hgroup>
+					<nav>
+						{{ nav|raw }}
+					</nav>
+				</header>
+			</div>
+			<div>
+				<main>
+					<article>
+						<section>
+							<h2 id="changelog">archive</h2>
+							<nav id="archiveNav">
+								<ul>
+									{% for year in years %}
+										<li>
+											{{ year }}
+											<ul>
+												{% for month in months %}
+													<li>
+														<a href="/about/changelog/{{ year }}/{{ month|date("n") }}">{{ month }}</a>
+													</li>
+												{% endfor %}
+											</ul>
+										</li>
+									{% endfor %}
+								</ul>
+							</nav>
+						</section>
+						{% apply markdown_to_html %}
+						{{ content|raw }}
+						{% endapply %}
+					</article>
+				</main>
+				<footer>
+					{{ include('@includes/footer.shtml') }}
+				</footer>
+			</div>
+		</div>
+		<script src="/_assets/scripts/theme-switcher-v2.js"></script>
+	</body>
 </html>

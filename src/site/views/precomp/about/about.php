@@ -1,7 +1,6 @@
 <?php
 
     namespace Site\Views\Layouts;
-
     use Core\Views\Render\View as View;
 
     //
@@ -11,7 +10,6 @@
         public static function Nav() {
 
             include SITE_ROOT . DIR['includes'] . "_about_nav.php";
-            
             return $nav_html;
 
         }
@@ -25,7 +23,6 @@
         use About;
 
         private static $layout = DIR['layouts'] . "about_layout.html.twig";
-
         private static $content = DIR['content'] . "about.html.twig";
 
         function __construct() {
@@ -33,7 +30,7 @@
             $vars = [
                 "layout" => self::$layout,
                 "nav" => About::Nav(),
-                "updated" => filemtime(SITE_ROOT . $content)
+                "updated" => filemtime(SITE_ROOT . self::$content)
             ];
 
             parent::Twig(self::$content, $vars, null);
@@ -52,34 +49,17 @@
 
         private static $main_content_abs = SITE_ROOT . DIR['content'] . 'changelog/index.md';
 
-        private static $archive_nav_layout = DIR['layouts'] . 'changelog/_index_subnav.html.twig';
-
-        private static function getArchiveNav() {
-
-            require parent::TWIG;
-
-            include __DIR__ . "changelog_archive.php";
-
-            $archive_nav_html =
-                $twig->render(
-                    self::$archive_nav_layout,
-                    [
-                        "years" => $year_label,
-                        "months" => $month_label
-                    ]);
-
-            return $archive_nav_html;
-
-        }
-
         function __construct() {
 
-            $content = file_get_contents($main_content_abs);
+            $content = file_get_contents(self::$main_content_abs);
+
+            include __DIR__ . "/changelog_archive.php";
 
             $vars = [
-                "nav" => About::Nav(),
-                'archivenav' => self::getArchiveNav(),
-                'content' => $content
+                "nav" =>        About::Nav(),
+                'content' =>    $content,
+                'years' =>      $year_label,
+                'months' =>     $month_label
             ];
             
             parent::Twig(self::$main_layout, $vars, null);
@@ -99,9 +79,7 @@
         function __construct() {
 
             $path = ltrim(REQUEST, "/about");
-            
             $file = "/" . rtrim($path, "/");
-
             $content = DIR['content'] . $file . ".html.twig";
             
             $vars = [
