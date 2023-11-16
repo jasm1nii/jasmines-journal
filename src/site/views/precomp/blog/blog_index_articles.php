@@ -5,6 +5,8 @@
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
+    include \Core\Views\Render\View::TWIG_PARTIAL;
+
     class BlogIndex_Articles {
 
         const SOURCE_DIR = SITE_ROOT . DIR['content'] . 'blog/articles';
@@ -12,23 +14,7 @@
 
         public static function make() {
 
-            $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
-
-            $twig = new \Twig\Environment(
-                $loader,
-                [
-                    'cache' => SITE_ROOT . '/tmp/twig',
-                    'auto_reload' => true
-                ]
-            );
-
-            $twig->addExtension(new IntlExtension());
-
-            $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
-
-            $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
-
-            //
+            $twig = \Core\Views\Render\Extension\PartialTwig::buildTwigEnv();
 
             $files = glob(self::SOURCE_DIR . "/*/*/*/entry.html.twig");
             asort($files, SORT_NATURAL);

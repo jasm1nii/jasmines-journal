@@ -1,43 +1,45 @@
 <?php
 
+    namespace Site\Views\Partials;
+
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
-    $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
+    include \Core\Views\Render\View::TWIG_PARTIAL;
 
-    $twig = new \Twig\Environment(
-        $loader,
-        [
-            'cache' => SITE_ROOT . '/tmp/twig',
-            'auto_reload' => true
-        ]
-    );
+    class ArticlesIndex_List {
 
-    $twig->addExtension(new IntlExtension());
-    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
-    $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
+        const SOURCE_DIR = SITE_ROOT . DIR['content'] . 'blog/articles';
+        const TEMPLATE = DIR['layouts'] . "blog/articles/_articles_index.html.twig";
 
-    //
+        public static function make() {
 
-    $source = SITE_ROOT . DIR['content'] . 'blog/articles';
-    $files = glob($source . "/*/*/*/entry.html.twig");
-    asort($files, SORT_NATURAL);
+            $twig = \Core\Views\Render\Extension\PartialTwig::buildTwigEnv();
 
-    $content = [];
-    $layout = DIR['layouts'] . "blog/articles/_articles_index.html.twig";
+            $files = glob(self::SOURCE_DIR . "/*/*/*/entry.html.twig");
+            asort($files, SORT_NATURAL);
 
-    foreach (array_reverse($files) as $article) {
+            $content = [];
+
+            foreach (array_reverse($files) as $article) {
         
-        $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
+                $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
 
-        $slug_1 = rtrim($content_path, '.html.twig');
-        $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
+                $slug_1 = rtrim($content_path, '.html.twig');
+                $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
 
-        $content[] = $twig->render($content_path,
-            [
-                'layout' => $layout,
-                'slug'=> $slug_2
-            ]);
+                $content[] = $twig->render($content_path,
+                    [
+                        'layout' => self::TEMPLATE,
+                        'slug'=> $slug_2
+                    ]);
+
+            }
+
+            return $content;
+
+        }
+
     }
 
 ?>

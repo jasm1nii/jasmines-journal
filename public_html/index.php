@@ -90,12 +90,15 @@
             new Site\Views\Layouts\Accessibility();
 
             break;
+
+        // guestbook isn't ready yet
         
-/*
+        /*
         case str_starts_with(REQUEST, "/guestbook/"):
 
-            Route::execute('guestbook/guestbook.php');
-            break;*/
+            Route::forwardToController('guestbook/guestbook.php');
+            break;
+        */
         
         default:
 
