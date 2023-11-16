@@ -53,7 +53,6 @@
             // $twig->addExtension(new \Twig\Extension\DebugExtension());
             // $twig->addExtension(new StringLoaderExtension());
             $twig->addExtension(new IntlExtension());
-
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 

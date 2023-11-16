@@ -1,7 +1,7 @@
 <?php
 
     namespace Site\Views\Layouts;
-
+    
     use Core\Views\Render\View as View;
 
     final class FeedsIndex extends View {
@@ -25,13 +25,11 @@
             if ($POST_redirect == 'success' || $POST_redirect == null) {
 
                 $title = "yippee!!";
-
                 $message = "thanks for subscribing!";
 
             } elseif ($POST_redirect == 'error') {
 
                 $title = "aw shucks";
-
                 $message = "there was an error with your submission ☹";
 
             }
@@ -44,7 +42,6 @@
             parent::Twig(self::$layout, $vars, null);
 
         }
-
 
     }
 

@@ -10,7 +10,6 @@
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
                 $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
-
                 $page = trim($page_req[1], "/");
 
                 if (!isset($page) || $page == 1) {

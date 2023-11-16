@@ -95,7 +95,7 @@
         case str_starts_with(REQUEST, "/guestbook/"):
 
             Route::forwardToController('guestbook.php');
-            
+
             break;
         
         
@@ -104,4 +104,5 @@
             Route::NotFound();
 
    }
+   
 ?>
