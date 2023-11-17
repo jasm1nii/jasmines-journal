@@ -3,7 +3,7 @@
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/jasm1nii/jasmines-journal/latest/main)](https://github.com/jasm1nii/jasmines-journal/commits/main) ![GitHub repo size](https://img.shields.io/github/repo-size/jasm1nii/jasmines-journal)
  [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/jasm1nii/jasmines-journal)
  
- [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fjasm1nii.xyz%2F&labelColor=purple&color=ghostwhite)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
 
 
 welcome to my hand-crafted personal website and coding sandbox 🛠
