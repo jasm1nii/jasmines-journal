@@ -3,11 +3,11 @@
         <h2 id="newest-guestbook-entry"><span aria-hidden="true">💬</span> latest visitor message</h2>
         <h3>
             <a href="/guestbook/comment/{{ message.ID }}">#{{ message.ID }}</a>
-            &bull; {{ message.Name|e }} ({{ date }})
+            &bull; {{ message.Name|striptags|raw }} ({{ date }})
         </h3>
         <div class="overflow">
             {% apply markdown_to_html %}
-                {{ message.Comment|e }}
+                {{ message.Comment|striptags|raw }}
             {% endapply %}
         </div>
         <a href="/guestbook" class="button-style"><span aria-hidden="true">✍</span> post to guestbook</a>

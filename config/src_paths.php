@@ -1,6 +1,6 @@
 <?php
 
-    putenv("ENV=dev");
+    putenv("ENV=prod");
     define("ENV_CONF",  SITE_ROOT . "/config/env_" . getenv('ENV') . ".ini");
     
     define(

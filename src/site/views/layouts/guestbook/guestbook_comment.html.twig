@@ -4,7 +4,7 @@
 			<a href='/guestbook/comment/{{ comment.ID }}'>#{{ comment.ID }}</a>
 			&#x2022;
 			{% if comment.Website != null %}
-				<a href="{{ comment.Website }}">{{ comment.Name|e }}</a>
+				<a href="{{ comment.Website }}">{{ comment.Name|striptags|raw }}</a>
 			{% else %}
 				{{ comment.Name|e }}
 			{% endif %}
@@ -20,7 +20,7 @@
 	</hgroup>
 	<section class='content'>
 		{% apply markdown_to_html %}
-		    {{ comment.Comment|e }}
+		    {{ comment.Comment|striptags|raw }}
 		{% endapply %}
 	</section>
 	<footer>
