@@ -66,34 +66,50 @@
 
             <section class="messages">
                 <article>
+                
                     {% if comments != null and thread_parent == null %}
+
                         {% for comment in comments %}
                             {{ include('guestbook_comment.html.twig') }}
                         {% endfor %}
+                        
                         <nav>
                             <span>page</span>
                             <ul>
-                                {{ comments_nav|raw }}
+                                {% for page in comment_pages %}
+                                    {% if page == current_page %}
+                                        <li><span class="current"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span></li>
+                                    {% else %}
+                                        <li><span class="page"><a href="/guestbook/page/{{ page|abs }}">{{ page }}</a></span></li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </nav>
+
                     {% elseif thread_parent != null %}
+
                         {% set comment = thread_parent %}
                         {{ include('guestbook_comment.html.twig') }}
+
                         {% if thread_replies != null %}
                             {% set comment_style = 'is-threaded' %}
                             {% for comment in thread_replies %}
                                 {{ include('guestbook_comment.html.twig') }}
                             {% endfor %}
                         {% endif %}
+
                         <nav>
-                            <a href="/guestbook/page/{{ previous_page }}">← return to previous page</a>
+                            <a href="/guestbook/page/{{ current_page }}">← return to previous page</a>
                         </nav>
+
                     {% endif %}
+
                     {% if comments == null and thread_parent == null %}
                         <p>
                             nothing to see here... go back to the <a href="/guestbook">guestbook index?</a>
                         </p>
                     {% endif %}
+
                 </article>
             </section>
         </main>

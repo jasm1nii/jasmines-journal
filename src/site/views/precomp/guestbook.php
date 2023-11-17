@@ -80,13 +80,11 @@
 
                     $result = $reply;
 
-                } else {
-
-                    $result = null;
-
                 }
 
-            } else {
+            }
+            
+            if (!isset($result)) {
 
                 $result = null;
             }
@@ -102,42 +100,26 @@
             $nav_total = intdiv($max_pages, 10);
             $nav_entries = range(1, $nav_total);
 
-            $nav = "";
-
-            for ($i=0; $i < (count($nav_entries)); $i++) {
-
-                $page_num = $nav_entries[$i];
-
-                if ($page_num == $pages || (($pages + 1) == 1 && 1 == $page_num)) {
-
-                    $nav .= "<li><span class='current'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span></li>";
-
-                    continue;
-
-                }
-
-                $nav .= "<li><span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span></li>";
-            }
-
-            return $nav;
+            return $nav_entries;
 
         }
 
         public function __construct($page_num) {
 
             $vars = [
-                'dialog'            => self::setDialog(),
-                'thread_parent'     => self::getThreadParent(),
-                'thread_replies'    => self::getThreadReplies(),
-                'previous_page'     => $_SESSION['gb_page'],
-                'request_time'      => $_SERVER['REQUEST_TIME'],
-                'comments_nav'      => self::getPageNumbers($page_num),
-                'comments'          => self::getCommentKeys($page_num)
+                'dialog'         => self::setDialog(),
+                'thread_parent'  => self::getThreadParent(),
+                'thread_replies' => self::getThreadReplies(),
+                'current_page'   => $_SESSION['gb_page'],
+                'request_time'   => $_SERVER['REQUEST_TIME'],
+                'comment_pages'  => self::getPageNumbers($page_num),
+                'comments'       => self::getCommentKeys($page_num)
             ];
 
             $include_path = DIR['layouts'] . "guestbook";
 
             parent::Twig(self::LAYOUT, $vars, $include_path);
+
         }
 
     }

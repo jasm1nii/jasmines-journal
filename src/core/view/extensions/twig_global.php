@@ -33,7 +33,7 @@
                 [
                     'cache' => SITE_ROOT . '/tmp/twig',
                     'auto_reload' => true,
-                    // 'debug' => false
+                    'debug' => false
                 ]
             );
 
@@ -50,7 +50,7 @@
                 }
             );
 
-            // $twig->addExtension(new \Twig\Extension\DebugExtension());
+            $twig->addExtension(new \Twig\Extension\DebugExtension());
             // $twig->addExtension(new StringLoaderExtension());
             $twig->addExtension(new IntlExtension());
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);

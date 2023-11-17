@@ -33,7 +33,7 @@
 
             $page = self::setPageNumber();
 
-            if (REQUEST == "/guestbook/" ?? "/guestbook/page/1/") {
+            if (REQUEST == "/guestbook/" || REQUEST == "/guestbook/page/1/") {
 
                 $_SESSION['gb_page'] = 1;
         
