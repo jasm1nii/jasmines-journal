@@ -15,25 +15,17 @@
 
             class ChangelogSubpage extends Route {
 
-                public static function matchURL() {
+                public static function matchQuery() {
 
                     $query = '/(changelog)\/(\d\d\d\d)\/(\d+)/';
 
-                    preg_match($query, REQUEST, $matches);
-
-                    if (!isset($matches[0])) {
-
-                        $matches[0] = 0;
-        
-                    }
-
-                    return $matches[0];
+                    return parent::matchURL($query);
 
                 }
 
                 public static function file() {
 
-                    $file = SITE_ROOT . DIR['content'] . self::matchURL() . ".html.twig";
+                    $file = SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
 
                     return $file;
 
@@ -47,14 +39,14 @@
                 case "/about/changelog/index/":
 
                     new Site\Views\Layouts\ChangelogIndex();
-
                     break;
 
-                case str_contains(REQUEST, ChangelogSubpage::matchURL()) && file_exists(ChangelogSubpage::file()):
+
+                case str_contains(REQUEST, ChangelogSubpage::matchQuery()) && file_exists(ChangelogSubpage::file()):
 
                     new Site\Views\Layouts\ChangelogSubpage();
-
                     break;
+                    
                     
                 default:
 

@@ -1,7 +1,12 @@
 <?php
 
     namespace Site\Router;
+
+    \Route::loadLayoutClasses('guestbook.php');
+
     require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
+
+    //
 
     class Guestbook extends \Route {
 
@@ -76,8 +81,6 @@
 
         
         default:
-
-            \Route::loadLayoutClasses('guestbook.php');
             
             \Site\Router\Guestbook::setFormSession();
             \Site\Router\Guestbook::setPageSession();

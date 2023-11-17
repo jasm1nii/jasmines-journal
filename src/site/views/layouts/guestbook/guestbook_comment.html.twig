@@ -1,0 +1,29 @@
+<section class='message {% if comment_style is defined %}{{ comment_style }}{% endif %}'>
+	<hgroup>
+		<h2 id="{{ comment.ID }}">
+			<a href='/guestbook/comment/{{ comment.ID }}'>#{{ comment.ID }}</a>
+			&#x2022;
+			{% if comment.Website != null %}
+				<a href="{{ comment.Website }}">{{ comment.Name|e }}</a>
+			{% else %}
+				{{ comment.Name|e }}
+			{% endif %}
+			{% if attribute(comment, 'User Privilege') == 'Admin' %}
+				👑
+			{% endif %}
+			{% if attribute(comment, 'Parent ID') != null %}
+				<span class='reply-context'>
+					(in reply to <a href='/guestbook/comment/{{ attribute(comment, 'Parent ID') }}'>#{{ attribute(comment, 'Parent ID') }}</a>)
+				</span>
+			{% endif %}
+		</h2>
+	</hgroup>
+	<section class='content'>
+		{% apply markdown_to_html %}
+		    {{ comment.Comment|e }}
+		{% endapply %}
+	</section>
+	<footer>
+		<time>{{ comment.Date }}</time>
+	</footer>
+</section>

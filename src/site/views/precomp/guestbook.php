@@ -12,37 +12,26 @@
     use \Site\Models\GuestbookThreadReply as GuestbookThreadReply;
     use \Site\Models\GuestbookPageNav as GuestbookPageNav;
 
+    //
+
     class Guestbook extends View {
 
-        const LAYOUT = DIR['layouts'] . "guestbook_layout.html.twig";
+        const LAYOUT = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
 
         private static function setDialog() {
 
             if (isset($_SERVER['HTTP_REFERER'])) {
 
-                if (REQUEST == '/guestbook/success/') {
-
-                    $dialog = "success";
-
-                } elseif (REQUEST == '/guestbook/success/exception/') {
-
-                    $dialog = "exception";
-
-                } elseif (REQUEST == "/guestbook/error/has_html/") {
-
-                    $dialog = "html_error";
-
-                } elseif (REQUEST == "/guestbook/error/time_too_short/") {
-
-                    $dialog = "spam_error";
-
-                } else {
-
-                    $dialog = null;
-                }
+                $dialog = match (REQUEST) {
+                    '/guestbook/success/'               => 'success',
+                    '/guestbook/success/exception/'     => 'exception',
+                    '/guestbook/error/has_html/'        => 'html_error',
+                    '/guestbook/error/time_too_short/'  => 'spam_error',
+                    default                             => null
+                };
                 
             } else {
-
+                
                 $dialog = null;
 
             }
@@ -51,87 +40,37 @@
 
         }
 
-        private static function showMessage($v, $is_threaded) {
-
-            $name = htmlspecialchars($v['Name'], ENT_QUOTES, "UTF-8", false);
-            $msg = "<section class='message";
-
-            if ($is_threaded == true) {
-
-                $msg .= " is-threaded";
-
-            }
-
-            $msg .= "'><hgroup><h2 id='{$v['ID']}'><a href='/guestbook/comment/{$v['ID']}'>#{$v['ID']}</a> &#x2022; ";
-
-            if ($v['User Privilege'] == 'Admin') {
-
-                $name .= "&nbsp;👑";
-
-            }
-
-            if ($v['Website'] !== null) {
-
-                $msg .= "<a href='{$v['Website']}'>{$name}</a>";
-
-            } else {
-
-                $msg .= $name;
-
-            }
-
-            $msg .= "&nbsp;";
-
-            if ($v['Parent ID'] !== null) {
-
-                $msg .= "<span class='reply-context'>(in reply to <a href='/guestbook/comment/{$v['Parent ID']}'>#{$v['Parent ID']}</a>)</span>";
-
-            }
-
-            $md_comment = MarkdownComments::convert($v['Comment']);
-
-            $msg .= "</h2></hgroup><section class='content'>" . $md_comment . "</section><footer><time>{$v['Date']}</time></footer></section>";
-
-            return $msg;
-
-        }
-
-        private static function setRows($page_num) {
+        private static function getCommentKeys($page_num) {
 
             $msg_arr = GuestbookComments::getRows($page_num);
 
-            $results = [];
-
             for ($i=0; $i < count($msg_arr); $i++) {
 
-                $comment = $msg_arr[$i];
-
-                $results[] = self::showMessage($comment, false);
+                $comment[] = $msg_arr[$i];
 
             }
 
-            return implode("",$results);
+            return $comment;
 
         }
 
-        private static function showThreadParent() {
+        private static function getThreadParent() {
 
             if (str_contains(REQUEST, "comment")) {
 
                 $parent = GuestbookThread::getThread()[0];
-                $result = self::showMessage($parent, false);
 
             } else {
 
-                $result = null;
+                $parent = null;
 
             }
 
-            return $result;
+            return $parent;
 
         }
 
-        private static function showThreadReplies() {
+        private static function getThreadReplies() {
 
             if (str_contains(REQUEST, "comment")) {
 
@@ -139,14 +78,17 @@
 
                 if (count($reply) !== 0) {
 
-                    $result = self::showMessage($reply[0], true);
+                    $result = $reply;
+
+                } else {
+
+                    $result = null;
 
                 }
 
             } else {
 
                 $result = null;
-
             }
 
             return $result;
@@ -160,7 +102,7 @@
             $nav_total = intdiv($max_pages, 10);
             $nav_entries = range(1, $nav_total);
 
-            $nav = "<nav><span>page</span><ul>";
+            $nav = "";
 
             for ($i=0; $i < (count($nav_entries)); $i++) {
 
@@ -177,8 +119,6 @@
                 $nav .= "<li><span class='page'><a href='/guestbook/page/{$page_num}'>{$page_num}</a></span></li>";
             }
 
-            $nav .= "</ul></nav>";
-
             return $nav;
 
         }
@@ -187,15 +127,17 @@
 
             $vars = [
                 'dialog'            => self::setDialog(),
-                'comments'          => self::setRows($page_num),
-                'thread'            => self::showThreadParent(),
-                'thread_replies'    => self::showThreadReplies(),
+                'thread_parent'     => self::getThreadParent(),
+                'thread_replies'    => self::getThreadReplies(),
                 'previous_page'     => $_SESSION['gb_page'],
                 'request_time'      => $_SERVER['REQUEST_TIME'],
-                'comments_nav'      => self::getPageNumbers($page_num)
+                'comments_nav'      => self::getPageNumbers($page_num),
+                'comments'          => self::getCommentKeys($page_num)
             ];
 
-            parent::Twig(self::LAYOUT, $vars, null);
+            $include_path = DIR['layouts'] . "guestbook";
+
+            parent::Twig(self::LAYOUT, $vars, $include_path);
         }
 
     }

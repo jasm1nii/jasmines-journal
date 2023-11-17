@@ -28,6 +28,20 @@
 
         }
 
+        protected static function matchURL($query) {
+
+            preg_match($query, REQUEST, $matches);
+
+            if (!isset($matches[0])) {
+
+                $matches[0] = 0;
+        
+            }
+
+            return $matches[0];
+
+        }
+
     }
     
 ?>

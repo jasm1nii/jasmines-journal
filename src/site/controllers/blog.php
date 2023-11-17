@@ -4,25 +4,17 @@
 
     class BlogEntry extends Route {
 
-        public static function matchURL() {
+        public static function matchQuery() {
 
             $query = '/(blog)\/((articles)|(notes))\/(\d){4}\/(\d+)\/(\d){2}\/(entry)/';
             
-            preg_match($query, REQUEST, $matches);
-
-            if (!isset($matches[0])) {
-
-                $matches[0] = 0;
-
-            }
-
-            return $matches[0];
+            return parent::matchURL($query);
 
         }
 
         public static function file() {
 
-            $file = SITE_ROOT . DIR['content'] . self::matchURL() . ".html.twig";
+            $file = SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
 
             return $file;
 
@@ -48,7 +40,7 @@
                     new Site\Views\Layouts\ArticlesIndex();
                     break;
 
-                case str_contains(REQUEST, BlogEntry::matchURL()) && file_exists(BlogEntry::file()):
+                case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Site\Views\Layouts\BlogEntry('article');
                     break;
@@ -76,7 +68,7 @@
                     new Site\Views\Layouts\NotesIndex();
                     break;
 
-                case str_contains(REQUEST, BlogEntry::matchURL()) && file_exists(BlogEntry::file()):
+                case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Site\Views\Layouts\BlogEntry('note');
                     break;

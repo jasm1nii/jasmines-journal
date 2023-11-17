@@ -1,4 +1,5 @@
 <?php
+
     namespace Core\Views\Render\Extension;
 
     use Twig\Extra\Intl\IntlExtension;
@@ -19,9 +20,7 @@
             );
 
             $twig->addExtension(new IntlExtension());
-
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
-
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 
             return $twig;

@@ -4,31 +4,42 @@
 
     switch (REQUEST) {
 
-        case "/feeds/":
-        case "/feeds/index/":
+        case isset($_SERVER['HTTP_REFERER']):
 
-            new Site\Views\Layouts\FeedsIndex();
+            switch (REQUEST) {
 
-            break;
+                case str_contains(REQUEST, "success"):
 
-
-        case str_contains(REQUEST, "success"):
-
-            new Site\Views\Layouts\FeedsPOST('success');
-
-            break;
+                    new Site\Views\Layouts\FeedsPOST('success');
+                    break;
 
 
-        case str_contains(REQUEST, "error"):
+                case str_contains(REQUEST, "error"):
 
-            new Site\Views\Layouts\FeedsPOST('error');
+                    new Site\Views\Layouts\FeedsPOST('error');
+                    break;
+                    
+            }
 
             break;
-            
+
+        case !isset($_SERVER['HTTP_REFERER']):
+
+            switch (REQUEST) {
+
+                case REQUEST !== "/feeds/":
+
+                    header('Location: /feeds');
+                    new Site\Views\Layouts\FeedsIndex();
+                    break;
+
+            }
+
 
         default:
 
-            Route::NotFound();
+            new Site\Views\Layouts\FeedsIndex();
+            
 
     }
 

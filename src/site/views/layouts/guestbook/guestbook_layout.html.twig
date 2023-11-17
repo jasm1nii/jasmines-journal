@@ -66,17 +66,33 @@
 
             <section class="messages">
                 <article>
-                    {% if comments != null and thread == null %}
-                        {{ comments|raw }}
-                        {{ comments_nav|raw }}
-                    {% elseif thread != null %}
-                        {{ thread|raw }}
-                        {{ thread_replies|raw }}
+                    {% if comments != null and thread_parent == null %}
+                        {% for comment in comments %}
+                            {{ include('guestbook_comment.html.twig') }}
+                        {% endfor %}
+                        <nav>
+                            <span>page</span>
+                            <ul>
+                                {{ comments_nav|raw }}
+                            </ul>
+                        </nav>
+                    {% elseif thread_parent != null %}
+                        {% set comment = thread_parent %}
+                        {{ include('guestbook_comment.html.twig') }}
+                        {% if thread_replies != null %}
+                            {% set comment_style = 'is-threaded' %}
+                            {% for comment in thread_replies %}
+                                {{ include('guestbook_comment.html.twig') }}
+                            {% endfor %}
+                        {% endif %}
                         <nav>
                             <a href="/guestbook/page/{{ previous_page }}">← return to previous page</a>
                         </nav>
-                    {% else %}
-                        <p>nothing here...</p>
+                    {% endif %}
+                    {% if comments == null and thread_parent == null %}
+                        <p>
+                            nothing to see here... go back to the <a href="/guestbook">guestbook index?</a>
+                        </p>
                     {% endif %}
                 </article>
             </section>

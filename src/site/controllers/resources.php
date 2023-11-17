@@ -1,5 +1,7 @@
 <?php
 
+    Route::loadLayoutClasses('resources.php');
+
     class Resources extends Route {
 
         private static function getCategory() {
@@ -31,8 +33,6 @@
 
     }
 
-    Route::loadLayoutClasses('resources.php');
-
     switch (REQUEST) {
 
         case "/resources/":
@@ -41,14 +41,22 @@
             new Site\Views\Layouts\ResourcesIndex();
             break;
 
-        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::matchIndexPattern(false)):
+        case str_starts_with(REQUEST, "/resources/"):
+            
+            switch (REQUEST) {
+                
+                case file_exists(Resources::matchIndexPattern(false)):
+                case file_exists(Resources::matchIndexPattern(true)):
 
-            new Site\Views\Layouts\ResourcesSubpage();
-            break;
+                    new Site\Views\Layouts\ResourcesSubpage();
+                    break;
 
-        case str_starts_with(REQUEST, "/resources/") && file_exists(Resources::matchIndexPattern(true)):
+                default: 
 
-            new Site\Views\Layouts\ResourcesSubpage();
+                    Route::NotFound();
+
+            }
+
             break;
 
         default:
