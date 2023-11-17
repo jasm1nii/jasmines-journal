@@ -3,9 +3,6 @@
     namespace Site\Views\Layouts;
     use Core\Views\Render\View as View;
 
-    require_once View::MARKDOWN_COMMENTS;
-    use Core\Views\Render\Extension\MarkdownComments as MarkdownComments;
-
     require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
     use \Site\Models\GuestbookComments as GuestbookComments;
     use \Site\Models\GuestbookThread as GuestbookThread;
