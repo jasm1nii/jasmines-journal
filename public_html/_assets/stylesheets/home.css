@@ -1141,6 +1141,7 @@ hr {
   }
   #statuscafe {
     background-color: snow;
+    color: black;
   }
   #statuscafe-content {
     background-color: rgb(243, 242, 247);
@@ -1271,6 +1272,7 @@ hr {
 }
 .light-mode #statuscafe {
   background-color: snow;
+  color: black;
 }
 .light-mode #statuscafe-content {
   background-color: rgb(243, 242, 247);

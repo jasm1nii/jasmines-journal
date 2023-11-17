@@ -15,6 +15,8 @@
 
         const LAYOUT = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
 
+        const INCLUDES = DIR['layouts'] . "guestbook";
+
         private static function setDialog() {
 
             if (isset($_SERVER['HTTP_REFERER'])) {
@@ -113,9 +115,7 @@
                 'comments'       => self::getCommentKeys($page_num)
             ];
 
-            $include_path = DIR['layouts'] . "guestbook";
-
-            parent::Twig(self::LAYOUT, $vars, $include_path);
+            parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
 
         }
 
