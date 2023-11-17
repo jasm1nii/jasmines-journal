@@ -4,7 +4,7 @@
 
 welcome to my hand-crafted personal website and coding sandbox 🛠
 
-## deploying locally
+## local deployment guide
 
 ### important note
 
@@ -14,7 +14,7 @@ as of now, graceful error handling does not exist for missing database credentia
 
 - [**PHP 8**](https://www.php.net/) or newer.
 
-- [**composer**](https://getcomposer.org/) for installing this project's dependencies.
+- [**composer**](https://getcomposer.org/) for installing PHP dependencies.
     
     if you'd prefer not to install composer globally, the executable `composer.phar` file (located in the `bin` directory) can be used instead - more on that in the instructions.
 
@@ -22,23 +22,25 @@ as of now, graceful error handling does not exist for missing database credentia
 
 ### general instructions
 
-- in this project's root directory, **install the required libraries** via command line:
+1. **clone this repository** to your file system - [compressed archives](https://github.com/jasm1nii/jasmines-journal/releases) are also available to download and extract.
+
+2. in this project's root directory, **install the required libraries** via command line:
 
     - via composer:
 
-    ```bash
-    composer install
-    ```
+        ```bash
+        composer install
+        ```
 
     - via `composer.phar`:
 
-    ```bash
-    php bin/composer.phar install
-    ```
+        ```bash
+        php bin/composer.phar install
+        ```
 
-- **configure your web server** to use `public_html` as the document root, as well as to redirect requests for nonexistent files to `index.php`.
+3. **configure your web server** to use `public_html` as the document root, as well as to redirect requests for nonexistent files to `index.php`.
 
     - **for apache**, an `.htaccess` file is already included to handle the latter, but ensure to set the former in your `httpd.conf` file.
 
 
-- that's it! you can now view this site at whatever localhost address you've set 👾
+4. **that's it!** you can now view this site at whatever localhost address you've set 👾
