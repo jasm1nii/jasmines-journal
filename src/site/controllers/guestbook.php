@@ -65,6 +65,10 @@
                 session_start();
                 $_SESSION['form_start'] = true;
 
+            } elseif (!isset($_SERVER['HTTP_REFERER'])) {
+
+                header('Location: /guestbook/');
+
             }
 
         }

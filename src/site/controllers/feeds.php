@@ -19,21 +19,20 @@
                     new Site\Views\Layouts\FeedsPOST('error');
                     break;
                     
+
+                default:
+
+                    new Site\Views\Layouts\FeedsIndex();
+                    
             }
 
             break;
 
-        case !isset($_SERVER['HTTP_REFERER']):
+        case !isset($_SERVER['HTTP_REFERER']) && REQUEST !== "/feeds/":
 
-            switch (REQUEST) {
-
-                case REQUEST !== "/feeds/":
-
-                    header('Location: /feeds');
-                    new Site\Views\Layouts\FeedsIndex();
-                    break;
-
-            }
+            header('Location: /feeds');
+            new Site\Views\Layouts\FeedsIndex();
+            break;
 
 
         default:
