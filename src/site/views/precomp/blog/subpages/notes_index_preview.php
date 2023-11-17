@@ -23,7 +23,8 @@
 
             foreach (array_reverse($files) as $article) {
                 
-                $content_path = DIR['content'] . ltrim($article, SITE_ROOT);
+                $dir = preg_split('/\/(src)/', $article);
+                $content_path = "/src/{$dir[1]}";
 
                 $slug_1 = rtrim($content_path, '.html.twig');
                 $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/notes');
