@@ -1,12 +1,14 @@
 # LICENSE
 
-## For "Jasmine's Journal"
+## "Jasmine's Journal"
 
 Copyright (c) 2023 Jasmine Amalia
 
-Images and prose authored by myself **may not** be redistributed or reproduced outside of a local development environment without express permission, or unless otherwise specified. But do whatever you want with the code!
+Images and prose authored by myself **may not** be redistributed or reproduced outside of a local development environment without express permission, or unless otherwise specified.
 
-## For third-party libraries
+Other than that, do whatever you want with the code itself!
+
+## Third-party Libraries
 
 ### [freezeframe.js](https://github.com/ctrl-freaks/freezeframe.js)
 

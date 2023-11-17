@@ -42,7 +42,3 @@ as of now, graceful error handling does not exist for missing database credentia
 
 
 - that's it! you can now view this site at whatever localhost address you've set 👾
-
-### usage terms
-
-images and prose authored by myself **may not** be redistributed or reproduced outside of a local development environment without express permission, or unless otherwise specified. but do whatever you want with the code!
