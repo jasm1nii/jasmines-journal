@@ -84,4 +84,4 @@ welcome to my hand-crafted personal website and coding sandbox 🛠
 
 ### additional configuration
 
-per version 2.3, a `guestbook_sample.sql` file is provided in the `/resources` directory. to use it, you'll need to import the file manually to your server database. after that, tweak any parameters as needed in `/config/env_sample.ini` and `/config/src_paths.php`.
+per version 2.3, a `guestbook_sample.sql` file is provided in the `/resources/databases` directory. to use it, you'll need to import the file manually to your server database. after that, tweak any parameters as needed in `/config/env_sample.ini` and `/config/src_paths.php`.
