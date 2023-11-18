@@ -1,6 +1,8 @@
 <?php
 
-    putenv("ENV=prod");
+    putenv("ENV=dev");
+
+    // the second argument for "ENV_CONF" should match the absolute path to the configuration file.
 
     define("ENV_CONF", SITE_ROOT . "/config/env_" . getenv('ENV') . ".ini");
     

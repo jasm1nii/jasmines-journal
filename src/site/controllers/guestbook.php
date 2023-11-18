@@ -9,6 +9,8 @@
 
     require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
 
+    use \JasminesJournal\Site\Models\GuestbookPageNav as GuestbookPageNav;
+
     //
 
     class Guestbook extends Route {

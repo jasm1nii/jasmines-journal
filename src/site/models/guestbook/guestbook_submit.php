@@ -93,6 +93,7 @@
             } catch (Exception $e) {
 
                 header('Location: /guestbook/success/exception');
+                return;
 
             }
 

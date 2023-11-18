@@ -2,6 +2,7 @@
 .vscode
 .php_tmp
 *.ini
+!env_sample.ini
 tmp/twig/*
 !*.gitattributes
 vendor/*

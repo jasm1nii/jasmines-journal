@@ -50,7 +50,9 @@
 
                 }
 
-            } else {
+            }
+
+            if (!isset($comment)) {
 
                 $comment = null;
 
@@ -108,6 +110,13 @@
                 $max_pages = $total[0]['total'];
                 $nav_total = intdiv($max_pages, 10);
                 $nav_entries = range(1, $nav_total);
+
+                if ($nav_entries[1] == 0) {
+
+                    array_shift($nav_entries);
+                    $nav_entries[0] = 1;
+                    
+                }
 
             } else {
 
