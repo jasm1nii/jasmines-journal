@@ -17,7 +17,7 @@ welcome to my hand-crafted personal website and coding sandbox 🛠
 
 - [**composer**](https://getcomposer.org/) for updating PHP dependencies.
     
-    if you'd prefer not to install composer globally, the executable `composer.phar` file (located in the `bin` directory) can be used instead - more on that in the instructions.
+    if you'd prefer not to install composer globally, the executable `composer.phar` file (located in the `/bin` directory) can be used instead - more on that in the instructions.
 
 - **MariaDB** or **MySQL** for the database.
 
@@ -25,29 +25,63 @@ welcome to my hand-crafted personal website and coding sandbox 🛠
 
 1. **clone this repository** to your machine:
 
-    ```bash
-    git clone https://github.com/jasm1nii/jasmines-journal
-    ```
+    1.  via `composer` (global installation) - this will automatically  install the required dependencies:
 
-    [compressed archives](https://github.com/jasm1nii/jasmines-journal/releases) are also available for direct download.
+        - latest:
 
-2. **install the required dependencies** - running these commands in the project's root directory should download them to a new folder named `vendor`:
+            ```bash
+            composer create-project jasm1nii/jasmines-journal:dev-main
+            ```
 
-    - option #1 - via `composer` (global installation):
+        - stable:
+
+            ```bash
+            composer create-project jasm1nii/jasmines-journal
+            ```
+
+    2. via `git` CLI:
+
+        - latest:
+
+            ```bash
+            git clone https://github.com/jasm1nii/jasmines-journal
+            ```
+
+        - stable:
+
+            ```bash
+            git clone https://github.com/jasm1nii/jasmines-journal --branch (version tag)
+            ```
+
+    3. via direct download as a `.zip` archive:
+    
+        - [latest](https://github.com/jasm1nii/jasmines-journal/archive/refs/heads/main.zip)
+
+        - [stable](https://github.com/jasm1nii/jasmines-journal/releases)
+
+
+2. if you haven't already, **install the required dependencies**:
+
+    1. via `composer` (global installation):
 
         ```bash
         composer install
         ```
 
-    - option #2 - via `composer.phar`:
+    2. via `composer.phar`:
 
         ```bash
         php bin/composer.phar install
         ```
 
-2. **configure your web server** to use `public_html` as the document root, as well as to redirect requests for nonexistent files to `index.php`.
+
+3. **configure your web server** to use `/public_html` as the document root, as well as to redirect requests for nonexistent files to `/public_html/index.php`.
 
     - **for apache**, an `.htaccess` file is already included to handle the latter, but ensure to set the former in your `httpd.conf` file.
 
 
-3. **that's it!** you can now view this site at whatever localhost address you've set 👾
+4. **that's it!** you can now view this site at whatever localhost address you've set 👾
+
+### additional configuration
+
+per version 2.3, a `guestbook_sample.sql` file is provided in the `/resources` directory. to use it, you'll need to import the file manually to your server database. after that, tweak any parameters as needed in `/config/env_sample.ini` and `/config/src_paths.php`.
