@@ -1,6 +1,6 @@
 <?php
 
-    namespace Core\Views\Render\Extension;
+    namespace JasminesJournal\Core\Views\Render\Extension;
 
     use League\CommonMark\Environment\Environment;
     use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;

@@ -1,6 +1,6 @@
 <?php
 
-    namespace Site\Views\Partials;
+    namespace JasminesJournal\Site\Views\Partials;
 
     class BlogIndex_Notes {
 

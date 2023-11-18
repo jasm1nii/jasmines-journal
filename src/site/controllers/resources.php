@@ -38,7 +38,7 @@
         case "/resources/":
         case "/resources/index/":
             
-            new Site\Views\Layouts\ResourcesIndex();
+            new JasminesJournal\Site\Views\Layouts\ResourcesIndex();
             break;
 
         case str_starts_with(REQUEST, "/resources/"):
@@ -48,7 +48,7 @@
                 case file_exists(Resources::matchIndexPattern(false)):
                 case file_exists(Resources::matchIndexPattern(true)):
 
-                    new Site\Views\Layouts\ResourcesSubpage();
+                    new JasminesJournal\Site\Views\Layouts\ResourcesSubpage();
                     break;
 
                 default: 

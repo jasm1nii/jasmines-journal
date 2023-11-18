@@ -27,7 +27,7 @@
         case "/blog/":
         case "/blog/index/":
             
-            new Site\Views\Layouts\BlogIndex();
+            new JasminesJournal\Site\Views\Layouts\BlogIndex();
             break;
 
         case str_contains(REQUEST, "/articles/"):
@@ -37,12 +37,12 @@
                 case "/blog/articles/":
                 case "/blog/articles/index/":
 
-                    new Site\Views\Layouts\ArticlesIndex();
+                    new JasminesJournal\Site\Views\Layouts\ArticlesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
-                    new Site\Views\Layouts\BlogEntry('article');
+                    new JasminesJournal\Site\Views\Layouts\BlogEntry('article');
                     break;
 
                 case str_ends_with(REQUEST, ".xml"):
@@ -65,12 +65,12 @@
                 case "/blog/notes/":
                 case "/blog/notes/index/":
 
-                    new Site\Views\Layouts\NotesIndex();
+                    new JasminesJournal\Site\Views\Layouts\NotesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
-                    new Site\Views\Layouts\BlogEntry('note');
+                    new JasminesJournal\Site\Views\Layouts\BlogEntry('note');
                     break;
 
                 case str_ends_with(REQUEST, ".xml"):

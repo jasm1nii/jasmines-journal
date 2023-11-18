@@ -1,6 +1,6 @@
 <?php
 
-    namespace Site\Router;
+    namespace JasminesJournal\Site\Router;
 
     \Route::loadLayoutClasses('guestbook.php');
 
@@ -86,10 +86,10 @@
         
         default:
             
-            \Site\Router\Guestbook::setFormSession();
-            \Site\Router\Guestbook::setPageSession();
+            Guestbook::setFormSession();
+            Guestbook::setPageSession();
 
-            new \Site\Views\Layouts\Guestbook(\Site\Router\Guestbook::setPageNumber());
+            new \JasminesJournal\Site\Views\Layouts\Guestbook(Guestbook::setPageNumber());
 
     }
 

@@ -1,20 +1,19 @@
 <?php
 
-    namespace Site\Views\Layouts;
-    use Core\Views\Render\View as View;
+    namespace JasminesJournal\Site\Views\Layouts;
+    use JasminesJournal\Core\Views\Render\View as View;
 
     require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
-    use \Site\Models\GuestbookComments as GuestbookComments;
-    use \Site\Models\GuestbookThread as GuestbookThread;
-    use \Site\Models\GuestbookThreadReply as GuestbookThreadReply;
-    use \Site\Models\GuestbookPageNav as GuestbookPageNav;
+    use JasminesJournal\Site\Models\GuestbookComments as GuestbookComments;
+    use JasminesJournal\Site\Models\GuestbookThread as GuestbookThread;
+    use JasminesJournal\Site\Models\GuestbookThreadReply as GuestbookThreadReply;
+    use JasminesJournal\Site\Models\GuestbookPageNav as GuestbookPageNav;
 
     //
 
     class Guestbook extends View {
 
         const LAYOUT = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
-
         const INCLUDES = DIR['layouts'] . "guestbook";
 
         private static function setDialog() {

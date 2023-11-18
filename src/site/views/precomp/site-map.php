@@ -1,9 +1,9 @@
 <?php
 
-    namespace Site\Views\Layouts;
+    namespace JasminesJournal\Site\Views\Layouts;
 
-    use Core\Views\Render\View as View;
-    use Core\Views\Render\Layout as Layout;
+    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Core\Views\Render\Layout as Layout;
 
     final class SiteMap extends View {
 

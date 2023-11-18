@@ -1,15 +1,21 @@
 <section aria-labelledby="newest-guestbook-entry">
     <div class="card guestbook">
         <h2 id="newest-guestbook-entry"><span aria-hidden="true">💬</span> latest visitor message</h2>
-        <h3>
-            <a href="/guestbook/comment/{{ message.ID }}">#{{ message.ID }}</a>
-            &bull; {{ message.Name|striptags|raw }} ({{ date }})
-        </h3>
-        <div class="overflow">
-            {% apply markdown_to_html %}
-                {{ message.Comment|striptags|raw }}
-            {% endapply %}
-        </div>
+        {% if message != null and date != null %}
+            <h3>
+                <a href="/guestbook/comment/{{ message.ID }}">#{{ message.ID }}</a>
+                &bull; {{ message.Name|striptags|raw }} ({{ date }})
+            </h3>
+            <div class="overflow">
+                {% apply markdown_to_html %}
+                    {{ message.Comment|striptags|raw }}
+                {% endapply %}
+            </div>
+        {% else %}
+            <p>
+                oh no! an error occured!
+            </p>
+        {% endif %}
         <a href="/guestbook" class="button-style"><span aria-hidden="true">✍</span> post to guestbook</a>
     </div>
 </section>

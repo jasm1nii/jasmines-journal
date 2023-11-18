@@ -1,6 +1,6 @@
 <?php
 
-    namespace Core\Views\Render;
+    namespace JasminesJournal\Core\Views\Render;
 
     class View {
 

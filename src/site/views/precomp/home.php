@@ -1,13 +1,13 @@
 <?php
 
-    namespace Site\Views\Layouts;
+    namespace JasminesJournal\Site\Views\Layouts;
 
     include SITE_ROOT . DIR['models'] . "guestbook/guestbook_preview.php";
-    use Core\Views\Render\View as View;
-    use Site\Models\NewestMessage as NewestMessage;
+    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Site\Models\GuestbookLatest as GuestbookLatest;
 
     include View::UTILS;
-    use Core\Views\Render\Extension\Utils as Utils;
+    use JasminesJournal\Core\Views\Render\Extension\Utils as Utils;
 
     //
 
@@ -18,15 +18,34 @@
 
         private static function getNewestGuestbookMessage() {
 
-            return NewestMessage::get();
+            try {
+
+                return GuestbookLatest::get();
+
+            } catch (\PDOException $e) {
+
+                return ['Date' => 0];
+
+            }
 
         }
 
         private static function formatGuestbookDate() {
+            
 
             $date = self::getNewestGuestbookMessage()['Date'];
 
-            return Utils::formatTimeDifference(strtotime($date));
+            if ($date == 0) {
+
+                $formatted = null;
+
+            } else {
+
+                $formatted =  Utils::formatTimeDifference(strtotime($date));
+
+            }
+
+            return $formatted;
 
         }
 

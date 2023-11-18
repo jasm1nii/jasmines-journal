@@ -1,13 +1,13 @@
 <?php
 
-    namespace Core\Views\Render\Extension;
+    namespace JasminesJournal\Core\Views\Render\Extension;
 
     class Utils {
 
         public static function formatTimeDifference($time) {
 
             // source: https://www.w3schools.in/php/examples/time-ago-function
-
+            
             $time_diff = time() - $time;
 
             if ($time_diff < 1) {

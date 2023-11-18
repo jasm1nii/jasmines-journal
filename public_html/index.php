@@ -20,7 +20,7 @@
 
             Route::loadLayoutClasses('home.php');
 
-            new Site\Views\Layouts\Home();
+            new JasminesJournal\Site\Views\Layouts\Home();
 
             break;
 
@@ -57,7 +57,7 @@
 
             Route::loadLayoutClasses('link-gallery.php');
 
-            new Site\Views\Layouts\LinkGallery();
+            new JasminesJournal\Site\Views\Layouts\LinkGallery();
 
             break;
 
@@ -67,7 +67,7 @@
 
             Route::loadLayoutClasses('site-map.php');
 
-            new Site\Views\Layouts\SiteMap();
+            new JasminesJournal\Site\Views\Layouts\SiteMap();
 
             break;
 
@@ -77,7 +77,7 @@
 
             Route::loadLayoutClasses('credits.php');
 
-            new Site\Views\Layouts\Credits();
+            new JasminesJournal\Site\Views\Layouts\Credits();
 
             break;
 
@@ -87,7 +87,7 @@
 
             Route::loadLayoutClasses('accessibility.php');
 
-            new Site\Views\Layouts\Accessibility();
+            new JasminesJournal\Site\Views\Layouts\Accessibility();
 
             break;
         

@@ -1,10 +1,10 @@
 <?php
 
-    namespace Site\Views\Layouts;
+    namespace JasminesJournal\Site\Views\Layouts;
     include __DIR__ . "/default.php";
 
-    use Site\Views\Layouts\_Default as _Default;
-    use Core\Views\Render\View as View;
+    use JasminesJournal\Site\Views\Layouts\_Default as _Default;
+    use JasminesJournal\Core\Views\Render\View as View;
 
     final class Credits extends View {
 

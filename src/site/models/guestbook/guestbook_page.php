@@ -1,9 +1,9 @@
 <?php
 
-    namespace Site\Models;
+    namespace JasminesJournal\Site\Models;
 
     require_once __DIR__ . "/guestbook_conn.php";
-    use Site\Models\GuestbookConn as GuestbookConn;
+    use JasminesJournal\Site\Models\GuestbookConn as GuestbookConn;
 
     class GuestbookComments extends GuestbookConn {
 

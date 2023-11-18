@@ -1,6 +1,6 @@
 <?php
 
-    namespace Site\Models;
+    namespace JasminesJournal\Site\Models;
 
     class GuestbookConn {
 

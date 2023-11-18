@@ -1,7 +1,7 @@
 <?php
 
-    namespace Site\Views\Layouts;
-    use Core\Views\Render\View as View;
+    namespace JasminesJournal\Site\Views\Layouts;
+    use JasminesJournal\Core\Views\Render\View as View;
 
     trait _Default {
 

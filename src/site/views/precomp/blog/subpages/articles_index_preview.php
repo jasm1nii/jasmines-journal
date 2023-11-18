@@ -1,6 +1,6 @@
 <?php
 
-    namespace Site\Views\Partials;
+    namespace JasminesJournal\Site\Views\Partials;
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;

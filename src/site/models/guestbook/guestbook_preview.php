@@ -1,10 +1,10 @@
 <?php
 
-    namespace Site\Models;
+    namespace JasminesJournal\Site\Models;
     
     require_once __DIR__ . "/guestbook_conn.php";
 
-    class NewestMessage extends GuestbookConn {
+    class GuestbookLatest extends GuestbookConn {
 
         public static function get() {
 
