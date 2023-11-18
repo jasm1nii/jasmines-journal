@@ -1,5 +1,8 @@
 <?php
 
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
+
     Route::loadLayoutClasses('resources.php');
 
     class Resources extends Route {
@@ -38,7 +41,7 @@
         case "/resources/":
         case "/resources/index/":
             
-            new JasminesJournal\Site\Views\Layouts\ResourcesIndex();
+            new Layouts\ResourcesIndex();
             break;
 
         case str_starts_with(REQUEST, "/resources/"):
@@ -48,7 +51,7 @@
                 case file_exists(Resources::matchIndexPattern(false)):
                 case file_exists(Resources::matchIndexPattern(true)):
 
-                    new JasminesJournal\Site\Views\Layouts\ResourcesSubpage();
+                    new Layouts\ResourcesSubpage();
                     break;
 
                 default: 

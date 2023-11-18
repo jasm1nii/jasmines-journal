@@ -1,5 +1,7 @@
 <?php
 
+    namespace JasminesJournal\Core;
+
     class Route {
 
         public static function loadLayoutClasses($path) {

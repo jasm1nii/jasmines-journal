@@ -1,5 +1,8 @@
 <?php
 
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
+
     Route::loadLayoutClasses('about/about.php');
 
     switch (REQUEST) {
@@ -7,7 +10,7 @@
         case "/about/":
         case "/about/index/":
 
-            new JasminesJournal\Site\Views\Layouts\AboutIndex();
+            new Layouts\AboutIndex();
 
             break;
 
@@ -38,13 +41,13 @@
                 case "/about/changelog/":
                 case "/about/changelog/index/":
 
-                    new JasminesJournal\Site\Views\Layouts\ChangelogIndex();
+                    new Layouts\ChangelogIndex();
                     break;
 
 
                 case str_contains(REQUEST, ChangelogSubpage::matchQuery()) && file_exists(ChangelogSubpage::file()):
 
-                    new JasminesJournal\Site\Views\Layouts\ChangelogSubpage();
+                    new Layouts\ChangelogSubpage();
                     break;
                     
                     

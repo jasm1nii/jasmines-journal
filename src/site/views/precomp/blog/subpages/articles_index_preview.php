@@ -5,7 +5,8 @@
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
-    include \Core\Views\Render\View::TWIG_PARTIAL;
+    include \JasminesJournal\Core\Views\Render\View::TWIG_PARTIAL;
+    use \JasminesJournal\Core\Views\Render\Extension as Extension;
 
     class ArticlesIndex_List {
 
@@ -14,7 +15,7 @@
 
         public static function make() {
 
-            $twig = \Core\Views\Render\Extension\PartialTwig::buildTwigEnv();
+            $twig = Extension\PartialTwig::buildTwigEnv();
 
             $files = glob(self::SOURCE_DIR . "/*/*/*/entry.html.twig");
             asort($files, SORT_NATURAL);

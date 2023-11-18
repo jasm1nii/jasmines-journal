@@ -1,5 +1,8 @@
 <?php
 
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
+
     Route::loadLayoutClasses('feeds.php');
 
     switch (REQUEST) {
@@ -10,19 +13,19 @@
 
                 case str_contains(REQUEST, "success"):
 
-                    new JasminesJournal\Site\Views\Layouts\FeedsPOST('success');
+                    new Layouts\FeedsPOST('success');
                     break;
 
 
                 case str_contains(REQUEST, "error"):
 
-                    new JasminesJournal\Site\Views\Layouts\FeedsPOST('error');
+                    new Layouts\FeedsPOST('error');
                     break;
                     
 
                 default:
 
-                    new JasminesJournal\Site\Views\Layouts\FeedsIndex();
+                    new Layouts\FeedsIndex();
                     
             }
 
@@ -31,13 +34,13 @@
         case !isset($_SERVER['HTTP_REFERER']) && REQUEST !== "/feeds/":
 
             header('Location: /feeds');
-            new JasminesJournal\Site\Views\Layouts\FeedsIndex();
+            new Layouts\FeedsIndex();
             break;
 
 
         default:
 
-            new JasminesJournal\Site\Views\Layouts\FeedsIndex();
+            new Layouts\FeedsIndex();
             
 
     }

@@ -3,6 +3,7 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Site\Views\Partials as Partials;
 
     //
 
@@ -26,14 +27,14 @@
         private static function makeArticlesList() {
 
             include __DIR__ . "/blog_index_articles.php";
-            return implode("", \Site\Views\Partials\BlogIndex_Articles::make());
+            return implode("", Partials\BlogIndex_Articles::make());
 
         }
 
         private static function makeLatestNote() {
 
             include __DIR__ . "/blog_index_notes.php";
-            return \Site\Views\Partials\BlogIndex_Notes::make();
+            return Partials\BlogIndex_Notes::make();
 
         }
 
@@ -60,7 +61,7 @@
         private static function showEntries() {
 
             include __DIR__ . "/subpages/articles_index_preview.php";
-            return implode("", \Site\Views\Partials\ArticlesIndex_List::make());
+            return implode("", Partials\ArticlesIndex_List::make());
 
         }
 
@@ -86,7 +87,7 @@
         private static function showEntries() {
 
             include __DIR__ . "/subpages/notes_index_preview.php";
-            return implode("", \Site\Views\Partials\NotesIndex_List::make());
+            return implode("", Partials\NotesIndex_List::make());
 
         }
 

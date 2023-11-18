@@ -2,13 +2,16 @@
 
     namespace JasminesJournal\Site\Router;
 
-    \Route::loadLayoutClasses('guestbook.php');
+    use \JasminesJournal\Core\Route as Route;
+    use \JasminesJournal\Site\Views\Layouts as Layouts;
+
+    Route::loadLayoutClasses('guestbook.php');
 
     require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
 
     //
 
-    class Guestbook extends \Route {
+    class Guestbook extends Route {
 
         public static function setPageNumber() {
 
@@ -91,7 +94,7 @@
 
         case "/guestbook/post/":
 
-            \Route::forwardToModel('guestbook/guestbook_submit.php');
+            Route::forwardToModel('guestbook/guestbook_submit.php');
 
             break;
 
@@ -101,7 +104,7 @@
             Guestbook::setFormSession();
             Guestbook::setPageSession();
 
-            new \JasminesJournal\Site\Views\Layouts\Guestbook(Guestbook::setPageNumber());
+            new Layouts\Guestbook(Guestbook::setPageNumber());
 
     }
 

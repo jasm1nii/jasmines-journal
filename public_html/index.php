@@ -12,6 +12,9 @@
     require SITE_ROOT . "/src/core/controller/router.php";
     require SITE_ROOT . '/src/core/view/view.php';
 
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
+
     switch (REQUEST) {
 
         case "":
@@ -20,7 +23,7 @@
 
             Route::loadLayoutClasses('home.php');
 
-            new JasminesJournal\Site\Views\Layouts\Home();
+            new Layouts\Home();
 
             break;
 
@@ -45,6 +48,7 @@
 
             break;
 
+
         case str_starts_with(REQUEST, "/feeds/"):
 
             Route::forwardToController('feeds.php');
@@ -57,7 +61,7 @@
 
             Route::loadLayoutClasses('link-gallery.php');
 
-            new JasminesJournal\Site\Views\Layouts\LinkGallery();
+            new Layouts\LinkGallery();
 
             break;
 
@@ -67,7 +71,7 @@
 
             Route::loadLayoutClasses('site-map.php');
 
-            new JasminesJournal\Site\Views\Layouts\SiteMap();
+            new Layouts\SiteMap();
 
             break;
 
@@ -77,7 +81,7 @@
 
             Route::loadLayoutClasses('credits.php');
 
-            new JasminesJournal\Site\Views\Layouts\Credits();
+            new Layouts\Credits();
 
             break;
 
@@ -87,7 +91,7 @@
 
             Route::loadLayoutClasses('accessibility.php');
 
-            new JasminesJournal\Site\Views\Layouts\Accessibility();
+            new Layouts\Accessibility();
 
             break;
         

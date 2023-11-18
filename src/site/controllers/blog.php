@@ -1,5 +1,8 @@
 <?php
 
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
+
     Route::loadLayoutClasses('blog/blog.php');
 
     class BlogEntry extends Route {
@@ -27,7 +30,7 @@
         case "/blog/":
         case "/blog/index/":
             
-            new JasminesJournal\Site\Views\Layouts\BlogIndex();
+            new Layouts\BlogIndex();
             break;
 
         case str_contains(REQUEST, "/articles/"):
@@ -37,12 +40,12 @@
                 case "/blog/articles/":
                 case "/blog/articles/index/":
 
-                    new JasminesJournal\Site\Views\Layouts\ArticlesIndex();
+                    new Layouts\ArticlesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
-                    new JasminesJournal\Site\Views\Layouts\BlogEntry('article');
+                    new Layouts\BlogEntry('article');
                     break;
 
                 case str_ends_with(REQUEST, ".xml"):
@@ -65,12 +68,12 @@
                 case "/blog/notes/":
                 case "/blog/notes/index/":
 
-                    new JasminesJournal\Site\Views\Layouts\NotesIndex();
+                    new Layouts\NotesIndex();
                     break;
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
-                    new JasminesJournal\Site\Views\Layouts\BlogEntry('note');
+                    new Layouts\BlogEntry('note');
                     break;
 
                 case str_ends_with(REQUEST, ".xml"):
