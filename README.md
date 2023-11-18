@@ -1,9 +1,9 @@
 # jasmine's journal
 
-[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/jasm1nii/jasmines-journal/latest/main)](https://github.com/jasm1nii/jasmines-journal/commits/main) ![GitHub repo size](https://img.shields.io/github/repo-size/jasm1nii/jasmines-journal)
- [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/jasm1nii/jasmines-journal)
+[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/jasm1nii/jasmines-journal/latest/main?logo=github&labelColor=rebeccapurple&color=mediumpurple)](https://github.com/jasm1nii/jasmines-journal/commits/main) ![GitHub repo size](https://img.shields.io/github/repo-size/jasm1nii/jasmines-journal?logo=git&labelColor=rebeccapurple&color=mediumpurple)
+ [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat&labelColor=rebeccapurple&color=mediumpurple&logo=stackshare)](https://stackshare.io/jasm1nii/jasmines-journal)
  
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fjasm1nii.xyz%2F&labelColor=purple&color=ghostwhite)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fjasm1nii.xyz%2F&labelColor=rebeccapurple&color=seagreen)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz?logo=googlechrome&labelColor=rebeccapurple&color=seagreen)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz?logo=mozilla&labelColor=rebeccapurple&color=seagreen)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
 
 
 welcome to my hand-crafted personal website and coding sandbox 🛠
@@ -18,7 +18,7 @@ as of now, graceful error handling does not exist for missing database credentia
 
 - [**PHP 8**](https://www.php.net/) or newer.
 
-- [**composer**](https://getcomposer.org/) for installing PHP dependencies.
+- [**composer**](https://getcomposer.org/) for updating PHP dependencies.
     
     if you'd prefer not to install composer globally, the executable `composer.phar` file (located in the `bin` directory) can be used instead - more on that in the instructions.
 
@@ -26,25 +26,31 @@ as of now, graceful error handling does not exist for missing database credentia
 
 ### general instructions
 
-1. **clone this repository** to your file system - [compressed archives](https://github.com/jasm1nii/jasmines-journal/releases) are also available to download and extract.
+1. **clone this repository** to your machine:
 
-2. in this project's root directory, **install the required libraries** via command line:
+    ```bash
+    git clone https://github.com/jasm1nii/jasmines-journal
+    ```
 
-    - via composer:
+    [compressed archives](https://github.com/jasm1nii/jasmines-journal/releases) are also available for direct download.
+
+2. **install the require dependencies** - running these commands in the project's root directory should download them to a new folder named `vendor`:
+
+    - option #1 - via `composer` (global installation):
 
         ```bash
         composer install
         ```
 
-    - via `composer.phar`:
+    - option #2 - via `composer.phar`:
 
         ```bash
         php bin/composer.phar install
         ```
 
-3. **configure your web server** to use `public_html` as the document root, as well as to redirect requests for nonexistent files to `index.php`.
+2. **configure your web server** to use `public_html` as the document root, as well as to redirect requests for nonexistent files to `index.php`.
 
     - **for apache**, an `.htaccess` file is already included to handle the latter, but ensure to set the former in your `httpd.conf` file.
 
 
-4. **that's it!** you can now view this site at whatever localhost address you've set 👾
+3. **that's it!** you can now view this site at whatever localhost address you've set 👾

@@ -1,6 +1,9 @@
 {
     "name": "jasm1nii/jasmines-journal",
     "description": "my personal webbed site",
+    "type": "project",
+    "keywords": ["personal", "indieweb", "blog", "twig"],
+    "version": "2.2.1.1",
     "homepage": "https://jasm1nii.xyz/",
     "authors": [
         {
@@ -16,9 +19,22 @@
             "url": "https://ko-fi.com/jasmineamalia"
         }
     ],
-    "type": "project",
+    "support":
+        {
+            "email": "contact@jasm1nii.xyz",
+            "issues": "https://github.com/jasm1nii/jasmines-journal/issues",
+            "source": "https://github.com/jasm1nii/jasmines-journal"
+        }
+    ,
     "prefer-stable": true,
     "require": {
+        "php": ">=8.0",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-fileinfo": "*",
+        "ext-date": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
         "twig/twig": "^3.0",
         "twig/markdown-extra": "^3.7",
         "league/commonmark": "^2.4",
