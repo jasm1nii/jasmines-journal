@@ -5,8 +5,9 @@
  
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fjasm1nii.xyz%2F&labelColor=rebeccapurple&color=seagreen)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz?logo=googlechrome&labelColor=rebeccapurple&color=seagreen)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz?logo=mozilla&labelColor=rebeccapurple&color=seagreen)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
 
-
 welcome to my hand-crafted personal website and coding sandbox 🛠
+
+![Screenshot 2023-11-18 at 10-11-30 jasmine's journal](https://github.com/jasm1nii/jasmines-journal/assets/67263692/f8b1c36a-b865-43de-b3d2-6eac233c9f89)
 
 ## local deployment guide
 
@@ -34,7 +35,7 @@ as of now, graceful error handling does not exist for missing database credentia
 
     [compressed archives](https://github.com/jasm1nii/jasmines-journal/releases) are also available for direct download.
 
-2. **install the require dependencies** - running these commands in the project's root directory should download them to a new folder named `vendor`:
+2. **install the required dependencies** - running these commands in the project's root directory should download them to a new folder named `vendor`:
 
     - option #1 - via `composer` (global installation):
 
