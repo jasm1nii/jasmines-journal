@@ -11,10 +11,6 @@ welcome to my hand-crafted personal website and coding sandbox 🛠
 
 ## local deployment guide
 
-### important note
-
-as of now, graceful error handling does not exist for missing database credentials. if this repository is deployed as is, PHP will throw a fatal error when viewing certain pages that require them (namely the homepage and the guestbook).
-
 ### base requirements
 
 - [**PHP 8**](https://www.php.net/) or newer.

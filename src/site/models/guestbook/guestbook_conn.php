@@ -27,12 +27,20 @@
             $user_show = $db['guestbook']['user'];
             $pass_show = $db['guestbook']['password'];
 
-            $guestbook_show = new \PDO(
-                "mysql:host=$servername;dbname=$dbname",
-                $user_show,
-                $pass_show,
-                [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
-            );
+            try {
+
+                $guestbook_show = new \PDO(
+                    "mysql:host=$servername;dbname=$dbname",
+                    $user_show,
+                    $pass_show,
+                    [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
+                );
+
+            } catch (\PDOException $e) {
+
+                $guestbook_show = null;
+                
+            }
 
             return $guestbook_show;
         

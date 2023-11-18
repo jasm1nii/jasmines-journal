@@ -42,9 +42,17 @@
 
             $msg_arr = GuestbookComments::getRows($page_num);
 
-            for ($i=0; $i < count($msg_arr); $i++) {
+            if ($msg_arr !== null) {
 
-                $comment[] = $msg_arr[$i];
+                for ($i=0; $i < count($msg_arr); $i++) {
+
+                    $comment[] = $msg_arr[$i];
+
+                }
+
+            } else {
+
+                $comment = null;
 
             }
 
@@ -94,9 +102,18 @@
         private static function getPageNumbers($pages) {
 
             $total = GuestbookPageNav::getTotal();
-            $max_pages = $total[0]['total'];
-            $nav_total = intdiv($max_pages, 10);
-            $nav_entries = range(1, $nav_total);
+
+            if ($total !== null) {
+
+                $max_pages = $total[0]['total'];
+                $nav_total = intdiv($max_pages, 10);
+                $nav_entries = range(1, $nav_total);
+
+            } else {
+
+                $nav_entries = null;
+                
+            }
 
             return $nav_entries;
 

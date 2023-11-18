@@ -67,7 +67,19 @@
 
             } elseif (!isset($_SERVER['HTTP_REFERER'])) {
 
-                header('Location: /guestbook/');
+                switch (REQUEST) {
+
+                    case str_contains(REQUEST, "success"):
+                    case str_contains(REQUEST, "error"):
+                        
+                        header('Location: /guestbook/');
+                        break;
+
+                    default:
+                    
+                        REQUEST;
+
+                }
 
             }
 

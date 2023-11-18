@@ -10,22 +10,28 @@
         public static function getRows($row_limit) {
 
             $guestbook_show = parent::connect();
-
             $table = parent::getTable();
-
             $rows = $row_limit * 10;
 
-            $sql_show = $guestbook_show->prepare(
-                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
-                    FROM `$table`
-                    WHERE `Moderation Status`='Approved'
-                    ORDER BY `ID` DESC
-                    LIMIT $rows, 10
-                ");
+            if ($guestbook_show !== null) {
 
-            $sql_show->execute();
-            $sql_show->setFetchMode(\PDO::FETCH_ASSOC);
-            $msg_arr = $sql_show->fetchAll();
+                $sql_show = $guestbook_show->prepare(
+                    "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
+                        FROM `$table`
+                        WHERE `Moderation Status`='Approved'
+                        ORDER BY `ID` DESC
+                        LIMIT $rows, 10
+                    ");
+
+                $sql_show->execute();
+                $sql_show->setFetchMode(\PDO::FETCH_ASSOC);
+                $msg_arr = $sql_show->fetchAll();
+
+            } else {
+                
+                $msg_arr = null;
+                
+            }
 
             return $msg_arr;
 
@@ -91,18 +97,25 @@
         public static function getTotal() {
 
             $guestbook_show = parent::connect();
-
             $table = parent::getTable();
 
-            $sql_count = $guestbook_show->prepare(
-                "   SELECT COUNT(*) as total
-                    FROM `$table`
-                    WHERE `Moderation Status`='Approved'
-                ");
+            if ($guestbook_show !== null) {
 
-            $sql_count->execute();
-            $sql_count->setFetchMode(\PDO::FETCH_ASSOC);
-            $total = $sql_count->fetchAll();
+                $sql_count = $guestbook_show->prepare(
+                    "   SELECT COUNT(*) as total
+                        FROM `$table`
+                        WHERE `Moderation Status`='Approved'
+                    ");
+
+                $sql_count->execute();
+                $sql_count->setFetchMode(\PDO::FETCH_ASSOC);
+                $total = $sql_count->fetchAll();
+
+            } else {
+
+                $total = null;
+
+            }
 
             return $total;
 
