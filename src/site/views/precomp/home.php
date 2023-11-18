@@ -31,17 +31,17 @@
         }
 
         private static function formatGuestbookDate() {
+
+            $array = self::getNewestGuestbookMessage();
+
+            if ($array !== null) {
             
-
-            $date = self::getNewestGuestbookMessage()['Date'];
-
-            if ($date == 0) {
-
-                $formatted = null;
+                $date = $array['Date'];
+                $formatted =  Utils::formatTimeDifference(strtotime($date));
 
             } else {
 
-                $formatted =  Utils::formatTimeDifference(strtotime($date));
+                $formatted = null;
 
             }
 
