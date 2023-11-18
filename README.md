@@ -3,7 +3,7 @@
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/jasm1nii/jasmines-journal/latest/main?logo=github&labelColor=rebeccapurple&color=mediumpurple)](https://github.com/jasm1nii/jasmines-journal/commits/main) ![GitHub repo size](https://img.shields.io/github/repo-size/jasm1nii/jasmines-journal?logo=git&labelColor=rebeccapurple&color=mediumpurple)
  [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat&labelColor=rebeccapurple&color=mediumpurple&logo=stackshare)](https://stackshare.io/jasm1nii/jasmines-journal)
  
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fjasm1nii.xyz%2F&labelColor=rebeccapurple&color=seagreen)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz?logo=googlechrome&labelColor=rebeccapurple&color=seagreen)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz?logo=mozilla&labelColor=rebeccapurple&color=seagreen)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
+[![Website](https://img.shields.io/website?up_color=seagreen&down_color=palevioletred&url=https://jasm1nii.xyz/&labelColor=rebeccapurple)](https://jasm1nii.xyz/) [![Chromium HSTS preload](https://img.shields.io/hsts/preload/jasm1nii.xyz?logo=googlechrome&labelColor=rebeccapurple&color=seagreen)](https://hstspreload.org/?domain=jasm1nii.xyz) [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/jasm1nii.xyz?logo=mozilla&labelColor=rebeccapurple&color=seagreen)](https://observatory.mozilla.org/analyze/jasm1nii.xyz)
 
 welcome to my hand-crafted personal website and coding sandbox 🛠
 
