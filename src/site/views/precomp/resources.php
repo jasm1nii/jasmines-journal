@@ -40,7 +40,6 @@
         use Resources;
 
         private static $category_dir = DIR['content'] . "resources/categories";
-
         private static $layout = DIR['layouts'] . "resources/resources_subpage.html.twig";
 
         private static function matchCategory() {
@@ -89,8 +88,6 @@
             }
 
             if (file_exists($markdown_as_main)) {
-
-                require parent::MARKDOWN_WITH_TOC;
 
                 $content = MarkdownWithTOC::convert($markdown_as_main);
                 $updated = filemtime($markdown_as_main);
