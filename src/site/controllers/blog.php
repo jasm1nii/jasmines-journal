@@ -2,8 +2,7 @@
 
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;
-
-    Route::loadLayoutClasses('blog/blog.php');
+    
 
     class BlogEntry extends Route {
 

@@ -4,11 +4,6 @@
 
     use \JasminesJournal\Core\Route as Route;
     use \JasminesJournal\Site\Views\Layouts as Layouts;
-
-    Route::loadLayoutClasses('guestbook.php');
-
-    require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
-
     use \JasminesJournal\Site\Models\GuestbookPageNav as GuestbookPageNav;
 
     //

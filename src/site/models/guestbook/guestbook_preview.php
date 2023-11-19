@@ -2,7 +2,6 @@
 
     namespace JasminesJournal\Site\Models;
     
-    require_once __DIR__ . "/guestbook_conn.php";
 
     class GuestbookLatest extends GuestbookConn {
 

@@ -3,7 +3,6 @@
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;
 
-    Route::loadLayoutClasses('feeds.php');
 
     switch (REQUEST) {
 

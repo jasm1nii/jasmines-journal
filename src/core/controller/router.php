@@ -4,12 +4,6 @@
 
     class Route {
 
-        public static function loadLayoutClasses($path) {
-
-            require SITE_ROOT . DIR['precomp'] . $path;
-
-        }
-
         public static function forwardToController($path) {
 
             require SITE_ROOT . DIR['controllers'] . $path;
