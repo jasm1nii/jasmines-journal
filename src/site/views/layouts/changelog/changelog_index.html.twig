@@ -34,14 +34,15 @@
 							<h2 id="changelog">archive</h2>
 							<nav id="archiveNav">
 								<ul>
-									{% for year in years %}
+									{% for key, subarray in array %}
 										<li>
-											{{ year }}
+											{{ key }}
 											<ul>
-												{% for month in months %}
-													<li>
-														<a href="/about/changelog/{{ year }}/{{ month|date("n") }}">{{ month }}</a>
-													</li>
+												{% for value in subarray|reverse %}
+													{% set path_to_month = value|trim(key,'left') %}
+													{% set month_int = path_to_month|trim("/") %}
+													{% set month = "#{key}-#{month_int}" %}
+													<li><a href="/about/changelog/{{ value }}">{{ month|format_date(pattern="MMMM")|lower }}</a></li>
 												{% endfor %}
 											</ul>
 										</li>

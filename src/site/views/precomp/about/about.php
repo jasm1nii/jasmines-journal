@@ -36,13 +36,10 @@
 
             $content = file_get_contents(self::$main_content_abs);
 
-            include __DIR__ . "/changelog_archive.php";
-
             $vars = [
-                "nav" =>        Partials\AboutNav::make(),
-                'content' =>    $content,
-                'years' =>      $year_label,
-                'months' =>     $month_label
+                "nav" => Partials\AboutNav::make(),
+                'content' => $content,
+                'array' => Partials\ChangelogArchive::createChangelogArray()
             ];
             
             parent::Twig(self::$main_layout, $vars, null);

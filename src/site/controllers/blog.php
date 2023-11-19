@@ -44,16 +44,19 @@
                     new Layouts\ArticlesIndex();
                     break;
 
+
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Layouts\BlogEntry('article');
                     break;
+
 
                 case "/blog/articles/articles.xml":
 
                     http_response_code(301);
                     header('Location: /articles.xml');
                     break;
+
 
                 default:
 
@@ -73,16 +76,19 @@
                     new Layouts\NotesIndex();
                     break;
 
+
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Layouts\BlogEntry('note');
                     break;
+
 
                 case "/blog/notes/notes.xml":
 
                     http_response_code(301);
                     header('Location: /notes.xml');
                     break;
+                    
 
                 default:
 
