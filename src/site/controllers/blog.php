@@ -33,6 +33,8 @@
             new Layouts\BlogIndex();
             break;
 
+        
+
         case str_contains(REQUEST, "/articles/"):
 
             switch (REQUEST) {
@@ -48,9 +50,10 @@
                     new Layouts\BlogEntry('article');
                     break;
 
-                case str_ends_with(REQUEST, ".xml"):
+                case "/blog/articles/articles.xml":
 
-                    require $_SERVER['DOCUMENT_ROOT'] . "/articles.xml";
+                    http_response_code(301);
+                    header('Location: /articles.xml');
                     break;
 
                 default:
@@ -76,9 +79,10 @@
                     new Layouts\BlogEntry('note');
                     break;
 
-                case str_ends_with(REQUEST, ".xml"):
+                case "/blog/notes/notes.xml":
 
-                    require $_SERVER['DOCUMENT_ROOT'] . "/notes.xml";
+                    http_response_code(301);
+                    header('Location: /notes.xml');
                     break;
 
                 default:
