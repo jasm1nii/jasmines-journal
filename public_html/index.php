@@ -2,15 +2,9 @@
     
     define("REQUEST", $_SERVER['REQUEST_URI']);
     define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
-    
-    require SITE_ROOT . "/config/src_paths.php";
 
     // composer
     require SITE_ROOT . "/vendor/autoload.php";
-
-    // core functions
-    require SITE_ROOT . "/src/core/controller/router.php";
-    require SITE_ROOT . '/src/core/view/view.php';
 
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;

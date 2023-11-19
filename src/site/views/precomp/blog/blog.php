@@ -11,8 +11,7 @@
 
         public static function nav() {
 
-            include SITE_ROOT . DIR['includes'] . "_blog_nav.php";
-            return $nav_html;
+            return Partials\BlogNav::make();
 
         }
 
@@ -26,14 +25,12 @@
 
         private static function makeArticlesList() {
 
-            include __DIR__ . "/blog_index_articles.php";
             return implode("", Partials\BlogIndex_Articles::make());
 
         }
 
         private static function makeLatestNote() {
 
-            include __DIR__ . "/blog_index_notes.php";
             return Partials\BlogIndex_Notes::make();
 
         }
@@ -60,7 +57,6 @@
 
         private static function showEntries() {
 
-            include __DIR__ . "/subpages/articles_index_preview.php";
             return implode("", Partials\ArticlesIndex_List::make());
 
         }
@@ -86,7 +82,6 @@
 
         private static function showEntries() {
 
-            include __DIR__ . "/subpages/notes_index_preview.php";
             return implode("", Partials\NotesIndex_List::make());
 
         }

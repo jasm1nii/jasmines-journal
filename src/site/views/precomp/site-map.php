@@ -8,7 +8,6 @@
     final class SiteMap extends View {
 
         private static $content = DIR['content'] . "site-map.html.twig";
-
         private static $layout = DIR['layouts'] . "site-map_layout.html.twig";
 
         public function __construct() {

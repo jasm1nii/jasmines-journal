@@ -2,8 +2,6 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    include __DIR__ . "/default.php";
-
     use JasminesJournal\Site\Views\Layouts\_Default as _Default;
     use JasminesJournal\Core\Views\Render\View as View;
 

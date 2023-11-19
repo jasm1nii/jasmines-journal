@@ -1,5 +1,7 @@
 <?php
 
+    // this is not a great way to do this tbh, will rethink later
+
     $source = SITE_ROOT . DIR['content'] . 'changelog';
 
     $years = glob($source."/2*");

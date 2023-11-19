@@ -1,9 +1,9 @@
 <?php
 
     namespace JasminesJournal\Site\Views\Layouts;
+    
     use JasminesJournal\Core\Views\Render\View as View;
 
-    require_once SITE_ROOT . DIR['models'] . "guestbook/guestbook_page.php";
     use JasminesJournal\Site\Models\GuestbookComments as GuestbookComments;
     use JasminesJournal\Site\Models\GuestbookThread as GuestbookThread;
     use JasminesJournal\Site\Models\GuestbookThreadReply as GuestbookThreadReply;

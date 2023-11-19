@@ -1,32 +1,42 @@
 <?php
 
-    $nav = new DOMDocument();
-    $nav->loadHTMLFile(SITE_ROOT . DIR['includes'] . '/headernav.shtml');
+    namespace JasminesJournal\Site\Views\Partials;
 
-    $blog_index = $nav->getElementById('blog');
-    $blog_subindex = $nav->createElement('ul');
-    $blog_index->appendChild($blog_subindex);
+    class BlogNav {
 
-    $articles_index = $nav->createElement('li');
-    $blog_subindex->appendChild($articles_index);
+        public static function make() {
 
-    $articles_a = $nav->createElement('a', 'articles');
-    $articles_a_href = $nav->createAttribute('href');
-    $articles_a_href->value = '/blog/articles';
-    $articles_a->appendChild($articles_a_href);
+            $nav = new \DOMDocument();
+            $nav->loadHTMLFile(__DIR__ . '/headernav.shtml');
 
-    $articles_index->appendChild($articles_a);
+            $blog_index = $nav->getElementById('blog');
+            $blog_subindex = $nav->createElement('ul');
+            $blog_index->appendChild($blog_subindex);
 
-    $notes_index = $nav->createElement('li');
-    $blog_subindex->appendChild($notes_index);
+            $articles_index = $nav->createElement('li');
+            $blog_subindex->appendChild($articles_index);
 
-    $notes_a = $nav->createElement('a', 'notes');
-    $notes_a_href = $nav->createAttribute('href');
-    $notes_a_href->value = '/blog/notes';
-    $notes_a->appendChild($notes_a_href);
+            $articles_a = $nav->createElement('a', 'articles');
+            $articles_a_href = $nav->createAttribute('href');
+            $articles_a_href->value = '/blog/articles';
+            $articles_a->appendChild($articles_a_href);
 
-    $notes_index->appendChild($notes_a);
+            $articles_index->appendChild($articles_a);
 
-    $nav_html = $nav->saveHTML();
+            $notes_index = $nav->createElement('li');
+            $blog_subindex->appendChild($notes_index);
+
+            $notes_a = $nav->createElement('a', 'notes');
+            $notes_a_href = $nav->createAttribute('href');
+            $notes_a_href->value = '/blog/notes';
+            $notes_a->appendChild($notes_a_href);
+
+            $notes_index->appendChild($notes_a);
+
+            return $nav->saveHTML();
+
+        }
+
+    }
     
 ?>

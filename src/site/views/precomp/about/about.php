@@ -1,7 +1,9 @@
 <?php
 
     namespace JasminesJournal\Site\Views\Layouts;
+
     use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Site\Views\Partials as Partials;
 
     //
 
@@ -9,8 +11,7 @@
 
         public static function Nav() {
 
-            include SITE_ROOT . DIR['includes'] . "_about_nav.php";
-            return $nav_html;
+            return Partials\AboutNav::make();
 
         }
 

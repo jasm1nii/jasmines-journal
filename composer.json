@@ -45,5 +45,15 @@
             "type": "vcs",
             "url": "https://github.com/jasm1nii/jasmines-journal"
         }
-    ]
+    ],
+    "autoload": {
+        "files": [
+            "config/src_paths.php"
+        ],
+        "classmap": [
+            "src"
+        ]
+    }
+    
+    
 }

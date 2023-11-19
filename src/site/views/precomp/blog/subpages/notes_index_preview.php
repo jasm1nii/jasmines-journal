@@ -4,8 +4,6 @@
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
-
-    include \JasminesJournal\Core\Views\Render\View::TWIG_PARTIAL;
     use \JasminesJournal\Core\Views\Render\Extension as Extension;
 
     class NotesIndex_List {

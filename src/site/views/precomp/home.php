@@ -2,11 +2,8 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    include SITE_ROOT . DIR['models'] . "guestbook/guestbook_preview.php";
     use JasminesJournal\Core\Views\Render\View as View;
     use JasminesJournal\Site\Models\GuestbookLatest as GuestbookLatest;
-
-    include View::UTILS;
     use JasminesJournal\Core\Views\Render\Extension\Utils as Utils;
 
     //
