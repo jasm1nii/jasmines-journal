@@ -3,6 +3,9 @@
 @use 'assets/font_inconsolata';
 @use 'assets/font_instrument-sans';
 
+@use 'components/nav_1' as *;
+@use 'components/footer_1' as *;
+
 @use 'components/sticky-note' as *;
 @use 'components/card_hcard' as *;
 @use 'components/card_clock' as *;
@@ -151,56 +154,14 @@ h1 {
   letter-spacing: .05em;
   margin-bottom: 0;
 }
+
+@include nav-style-1();
 nav {
-  margin: auto;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
-  font-size: 1.15em;
-  letter-spacing: 1px;
-  & ul {
-    margin: 0;
-    padding: 0;
-    padding-top: .5em;
-    padding-bottom: 1em;
-  }
-  & li {
-    display: inline-block;
-    margin-right: .5em;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    white-space: nowrap;
-  }
-  & li:last-child::after {
-    content: "✧";
-    font-size: 1.3em;
-    margin-left: .5em;
-    color: pink;
-    font-weight: normal;
-  }
-  & li::before {
-    content: "✧";
-    font-size: 1.3em;
-    margin-right: .5em;
-    color: pink;
-    font-weight: normal;
-  }
-  & ul li:first-child {
-    font-weight: 600;
-  }
-  & a {
-    text-decoration: none;
-    color: purple;
-    padding: 0px 5px 3px 5px;
-  }
   & #home a {
     text-decoration: wavy underline 1px;
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: #a175c573;
-  }
 }
+
 .page-columns {
   columns: 3;
   column-gap: 0;
@@ -209,6 +170,13 @@ nav {
   padding-bottom: 5%;
   padding-left: 1%;
   padding-right: 1%;
+  & > section {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 10vh;
+    break-inside: avoid;
+  }
 }
 h2 {
   margin: 0;
@@ -258,13 +226,6 @@ button:active, .button-style:active {
   border: 1px solid #8e629b;
 }
 
-.page-columns > section {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5px;
-  padding-bottom: 10vh;
-  break-inside: avoid;
-}
 .card {
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
@@ -324,51 +285,22 @@ button:active, .button-style:active {
 @include web-rings();
 @include guestbook();
 
-footer {
-  margin-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 2em;
-  text-align: center;
-  font-size: 1em;
-  width: 50%;
-  height: fit-content;
-  max-width: 500px;
-  & time {
-    display: inline;
-  }
-  & ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  & li {
-    display: inline-block;
-    margin-right: 15px;
-    &::before {
-      content: "⬩";
-      font-size: 1.25em;
-      margin-right: 15px;
-    }
-    &:nth-child(1)::before {
-      content: none;
-    }
-  }
-  & a img {
-    text-decoration: none;
-  }
-}
+@include footer-style-1();
 
 time {
   font-weight: 600;
 }
+
 hr {
   margin: auto;
   border: 1px dashed plum;
 }
+
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
 }
+
 ::-webkit-scrollbar {
   width: .5em;
   height: .5em;

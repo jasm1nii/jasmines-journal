@@ -1,0 +1,46 @@
+@mixin screen-768 {
+    @media all and (max-width:768px) {
+        header {
+            position: relative;
+        }
+        .header-top {
+            padding-left: 7vw;
+            padding-right: 7vw;
+        }
+        #themeSwitch {
+            margin-top: 2vh;
+            margin-bottom: auto;
+        }
+        h1 {
+            margin-right: auto;
+        }
+        nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-left: 5%;
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 192, 203, 0.445);
+            }
+        }
+        
+        footer {
+            width: 90%;
+        }
+    }
+
+    @media all and (max-width:700px) {
+        .board {
+            margin-top: 0;
+            max-width: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+
+    @media all and (max-width:600px) {
+        .page-columns {
+            columns: 1;
+        }
+    }
+}

@@ -31,27 +31,28 @@
 				<main>
 					<article>
 						<section>
-							<h2 id="changelog">archive</h2>
-							<nav id="archiveNav">
+							<h2 id="archive"><span aria-hidden="true">🔨</span> archive</h2>
+							<nav class="archive-nav">
 								<ul>
-									{% for key, subarray in array %}
-										<li>
-											{{ key }}
-											<ul>
-												{% for value in subarray|reverse %}
-													{% set path_to_month = value|trim(key,'left') %}
-													{% set month_int = path_to_month|trim("/") %}
-													{% set month = "#{key}-#{month_int}" %}
-													<li><a href="/about/changelog/{{ value }}">{{ month|format_date(pattern="MMMM")|lower }}</a></li>
-												{% endfor %}
-											</ul>
-										</li>
-									{% endfor %}
+								{% for key, subarray in array %}
+									<li>{{ key }}
+										<ul>
+											{% for value in subarray %}
+												{% set path_to_month = value|trim(key,'left') %}
+												{% set month_int = path_to_month|trim("/") %}
+												{% set month = "#{key}-#{month_int}" %}
+												<li>
+													<a href="/about/changelog/{{ value }}">{{ month|format_date(pattern="MMMM")|lower }}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</li>
+								{% endfor %}
 								</ul>
 							</nav>
 						</section>
 						{% apply markdown_to_html %}
-						{{ content|raw }}
+							{{ content|raw }}
 						{% endapply %}
 					</article>
 				</main>

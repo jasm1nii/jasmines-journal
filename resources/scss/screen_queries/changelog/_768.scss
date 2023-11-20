@@ -1,0 +1,79 @@
+@mixin screen-768 {
+    @media all and (max-width: 768px) {
+        body {
+            font-size: 1.1em;
+        }
+        .layout {
+            flex-direction: column;
+            max-width: 100vw;
+        }
+        header {
+            margin: 5% auto 25px auto;
+            padding-left: 5%;
+            padding-right: 5%;
+            width: 85%;
+            position: static;
+            & nav {
+                & ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    border: none;
+                    padding: 0;
+                    & li {
+                        margin-right: 1em;
+                        display: inline;
+                        flex-direction: row;
+                        margin-bottom: 0;
+                    }
+                    &:nth-child(2) {
+                        & li {
+                            margin-right: 0;
+                            padding-right: 0;
+                            &::before {
+                                content: none;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        margin-left: 0;
+                        padding-left: 0;
+                    }
+                }
+                & li {
+                    padding-bottom: 0;
+                    & ul {
+                        display: inline;
+                        &::before {
+                            content: '⟶';
+                            margin-right: 1em;
+                            margin-left: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            width: 95vw;
+        }
+        .archive-nav {
+            ul {
+                display: block;
+            }
+            ul > li {
+                display: flex;
+                li {
+                    &::before {
+                        content: '•';
+                    }
+                }
+                &::after {
+                    content: none;
+                }
+            }
+        }
+        article > h2 {
+            text-align: center;
+            margin-top: 1em;
+        }
+    }
+}

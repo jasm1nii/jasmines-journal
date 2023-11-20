@@ -237,12 +237,13 @@ nav a {
   color: purple;
   padding: 0px 5px 3px 5px;
 }
+nav::-webkit-scrollbar-thumb {
+  background-color: rgba(161, 117, 197, 0.4509803922);
+}
+
 nav #home a {
   -webkit-text-decoration: wavy underline 1px;
           text-decoration: wavy underline 1px;
-}
-nav::-webkit-scrollbar-thumb {
-  background-color: rgba(161, 117, 197, 0.4509803922);
 }
 
 .page-columns {
@@ -255,6 +256,14 @@ nav::-webkit-scrollbar-thumb {
   padding-bottom: 5%;
   padding-left: 1%;
   padding-right: 1%;
+}
+.page-columns > section {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+  padding-bottom: 10vh;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
 
 h2 {
@@ -313,15 +322,6 @@ button:active, .button-style:active {
   width: fit-content;
   padding: 0.5em;
   border: 1px solid #8e629b;
-}
-
-.page-columns > section {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5px;
-  padding-bottom: 10vh;
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
 }
 
 .card {

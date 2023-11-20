@@ -1,19 +1,19 @@
 <section>
 
-<h2 id="todo">to-do list</h2>
+<h2 id="to-do-list"><span aria-hidden="true">📝</span> to-do list</h2>
 
-nowadays, i prefer to manage the complete list on my private github repository - therefore, this page isn't the most up-to-date, but here are some planned additions that are of moderate to high priority.
-
-- add illustrations to the "about" page
-- launch art page
-- add some shrines
+- add illustrations to the "about" page.
+- launch the art page.
+- add shrine pages:
+    - for perfume (the girl group)!
+    - for "sonic the hedgehog" (video game series)... <small>or maybe just blaze the cat...</small>
 
 </section>
 
 <section>
 
-<h2 id="knownIssues">known issues</h2>
+<h2 id="issues"><span aria-hidden="true">💫</span> issues</h2>
 
-nothing too disruptive at the moment!
+you can report anything you find via [email](/about#contact), or open an issue over at [github.](https://github.com/jasm1nii/jasmines-journal)
 
 </section>

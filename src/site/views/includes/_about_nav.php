@@ -14,8 +14,13 @@
             $about_index = $nav->getElementById('about');
             $about_subindex = $nav->createElement('ul');
             $about_index->appendChild($about_subindex);
+
             $changelog_index = $nav->createElement('li');
             $about_subindex->appendChild($changelog_index);
+
+            $changelog_id = $nav->createAttribute('class');
+            $changelog_id->value = 'changelog';
+            $changelog_index->appendChild($changelog_id);
 
             $changelog_a = $nav->createElement('a','changelog');
             $changelog_a_href = $nav->createAttribute('href');

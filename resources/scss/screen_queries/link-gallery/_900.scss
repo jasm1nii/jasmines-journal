@@ -1,0 +1,27 @@
+@mixin screen-900 {
+    @media all and (max-width:900px) {
+        header {
+            hgroup {
+                flex-direction: column;
+                p {
+                    align-self: flex-start;
+                }
+            }
+        }
+        .header-top {
+            margin-bottom: 1em;
+        }
+        h1 {
+            font-size: 2em;
+            &:before {
+                display: none;
+            }
+        }
+        .board {
+            max-width: 700px;
+        }
+        .page-columns {
+            columns: 2;
+        }
+    }
+}
