@@ -16,22 +16,39 @@
         protected $temp_file;
         protected $output_file;
 
+        protected function globCount() {
+
+            $glob = glob($this->src_dir . "/2???/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+
+            return $glob;
+
+        }
+
         protected function getEntryFiles() {
+
+            $glob = $this->globCount();
+
+            if ($this->max_entries == 'total_entries') {
+
+                $count = count($glob);
+
+            } else {
+
+                $count = $this->max_entries;
+
+            }
 
             $i = 0;
 
-            while ($i < $this->max_entries) {
+            while ($i < $count) {
                 
-                $files[] = glob($this->src_dir . "/2???/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE)[$i];
+                $files[] = $glob[$i];
                 $i++;
 
             }
 
             rsort($files, SORT_NATURAL);
-
             return $files;
-
-            // adjust $this->max_entries to prevent undefined array values, if the total number of entries is fewer than the max specified.
 
         }
 
@@ -117,10 +134,10 @@
     
     class NotesXML extends XMLFeeds {
 
-        public function __construct() {
+        public function __construct($max_entries) {
 
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/notes";
-            $this->max_entries = 3;
+            $this->max_entries = $max_entries;
 
             $this->entry_layout = DIR['layouts'] . "blog/notes/xml/notes_entry.xml.twig";
             $this->feed_layout = DIR['layouts'] . "blog/notes/xml/notes.xml.twig";
@@ -134,10 +151,10 @@
 
     class ArticlesXML extends XMLFeeds {
 
-        public function __construct() {
+        public function __construct($max_entries) {
 
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/articles";
-            $this->max_entries = 3;
+            $this->max_entries = $max_entries;
 
             $this->entry_layout = DIR['layouts'] . "blog/articles/xml/articles_entry.xml.twig";
             $this->feed_layout = DIR['layouts'] . "blog/articles/xml/articles.xml.twig";

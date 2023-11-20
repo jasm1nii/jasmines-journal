@@ -45,13 +45,13 @@
 
         case "/articles.xml":
 
-            new Generator\ArticlesXML();
+            new Generator\ArticlesXML($max_entries = 'total_entries');
             break;
 
 
         case "/notes.xml":
 
-            new Generator\NotesXML();
+            new Generator\NotesXML($max_entries = 'total_entries');
             break;
 
 
