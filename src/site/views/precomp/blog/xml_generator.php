@@ -4,8 +4,6 @@
 
     use JasminesJournal\Core\Views\Render\Extension as Extension;
 
-    // man.... just use a database already
-
     class XMLFeeds {
 
         protected $src_dir;
@@ -24,7 +22,7 @@
 
             while ($i < $this->max_entries) {
                 
-                $files[] = glob($this->src_dir . "/2*/[0-9]*/[0-9][0-9]/entry.html.twig")[$i];
+                $files[] = glob($this->src_dir . "/2???/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE)[$i];
                 $i++;
 
             }
@@ -32,6 +30,8 @@
             rsort($files, SORT_NATURAL);
 
             return $files;
+
+            // adjust $this->max_entries to prevent undefined array values, if the total number of entries is fewer than the max specified.
 
         }
 
@@ -137,7 +137,7 @@
         public function __construct() {
 
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/articles";
-            $this->max_entries = 4;
+            $this->max_entries = 3;
 
             $this->entry_layout = DIR['layouts'] . "blog/articles/xml/articles_entry.xml.twig";
             $this->feed_layout = DIR['layouts'] . "blog/articles/xml/articles.xml.twig";
