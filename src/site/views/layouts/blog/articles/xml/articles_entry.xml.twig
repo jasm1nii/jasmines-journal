@@ -7,6 +7,6 @@
         <published>{{ published|date() }}</published>
         <summary>{{ summary }}</summary>
         <content type="html">
-            {{ block('content')|e|spaceless }}
+            {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' })|spaceless }}
         </content>
     </entry>

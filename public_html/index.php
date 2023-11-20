@@ -8,6 +8,7 @@
 
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Site\Views\Generator as Generator;
 
     switch (REQUEST) {
 
@@ -40,6 +41,17 @@
         case str_starts_with(REQUEST, "/feeds/"):
 
             Route::forwardToController('feeds.php');
+            break;
+
+        case "/articles.xml":
+
+            new Generator\ArticlesXML();
+            break;
+
+
+        case "/notes.xml":
+
+            new Generator\NotesXML();
             break;
 
 

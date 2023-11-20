@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ include('@includes/head.shtml') }}
+
     <title>{{ published }} | jasmine's notes</title>
     <link rel="stylesheet" href="/_assets/stylesheets/blog_index.css" type="text/css" media="all"/>
+
     {% if custom_style == true %}
       <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
     {% endif %}
+
     <link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
+
     {% if publish_to_bridgy == true %}
       <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
     {% endif %}
+
     <meta name="author" content="jasmine"/>
-    <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}microblog{% endif %}"/>
+
+    <meta name="keywords" content="{% if keywords is defined %}{% for keyword in keywords %}{{ keyword }}, {% endfor %}microblog{% else %}microblog{% endif %}"/>
+
     <meta name="description" content="note from {{ published }}"/>
   </head>
   <body>

@@ -3,7 +3,7 @@
     <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
     <title>jasmine&apos;s notes | jasm1nii.xyz</title>
     <subtitle>notes by jasmine</subtitle>
-    <updated>2023-11-01T14:02:04+07:00</updated>
+    <updated>2023-11-20T19:16:03+07:00</updated>
     <id>https://jasm1nii.xyz/blog/articles</id>
     <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/blog/articles/articles.xml"/>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
@@ -14,41 +14,39 @@
     </author>
     <rights>© 2023 - jasmine amalia</rights>
     <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
-    <logo>https://jasm1nii.xyz/assets/media/main/07042023-me_compressed.webp</logo>    
+    <logo>https://jasm1nii.xyz/assets/media/main/07042023-me_compressed.webp</logo>
+        
     <entry>
         <title>20 october 2023</title>
         <id>https://jasm1nii.xyz/blog/notes/2023/10/20/entry</id>
-        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/notes/2023/10/20/entry"/>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/10/20/entry"/>
         <updated>2023-10-20T00:00:00+07:00</updated>
         <published>2023-10-20T00:00:00+07:00</published>
         <summary>a note from 20 october 2023</summary>
-        <content>
-                was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... &lt;a href=&quot;https://github.com/jasm1nii/xml-feed-generator&quot; rel=&quot;external me&quot;&gt;check it out!&lt;/a&gt;
-
+        <content type="html">
+            was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... &lt;a href="https://github.com/jasm1nii/xml-feed-generator" rel="external me"&gt;check it out!&lt;/a&gt;
         </content>
     </entry>    
     <entry>
         <title>3 september 2023</title>
         <id>https://jasm1nii.xyz/blog/notes/2023/9/03/entry</id>
-        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/notes/2023/9/03/entry"/>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/9/03/entry"/>
         <updated>2023-09-03T00:00:00+07:00</updated>
         <published>2023-09-03T00:00:00+07:00</published>
         <summary>a note from 3 september 2023</summary>
-        <content>
-                check out these cool web pages made by the 32-bit cafe community for our &lt;a href=&quot;https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html&quot;&gt;august code jam 💻&lt;/a&gt; &lt;a href=&quot;https://stream.indieweb.org/&quot; rel=&quot;external&quot; class=&quot;p-category&quot;&gt;#indieweb&lt;/a&gt;
-
+        <content type="html">
+            check out these cool web pages made by the 32-bit cafe community for our &lt;a href="https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html"&gt;august code jam 💻&lt;/a&gt; &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
         </content>
     </entry>    
     <entry>
         <title>23 august 2023</title>
         <id>https://jasm1nii.xyz/blog/notes/2023/8/23/entry</id>
-        <link rel="alternate" type="text/html" href=">https://jasm1nii.xyz/blog/notes/2023/8/23/entry"/>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/8/23/entry"/>
         <updated>2023-08-23T00:00:00+07:00</updated>
         <published>2023-08-23T00:00:00+07:00</published>
         <summary>a note from 23 august 2023</summary>
-        <content>
-                hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &lt;a href=&quot;https://stream.indieweb.org/&quot; rel=&quot;external&quot; class=&quot;p-category&quot;&gt;#indieweb&lt;/a&gt;
-
+        <content type="html">
+            hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
         </content>
     </entry>
 </feed>

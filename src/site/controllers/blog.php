@@ -2,7 +2,6 @@
 
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;
-    
 
     class BlogEntry extends Route {
 
@@ -42,12 +41,14 @@
                 case "/blog/articles/index/":
 
                     new Layouts\ArticlesIndex();
+
                     break;
 
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Layouts\BlogEntry('article');
+
                     break;
 
 
@@ -55,6 +56,7 @@
 
                     http_response_code(301);
                     header('Location: /articles.xml');
+
                     break;
 
 
@@ -74,12 +76,14 @@
                 case "/blog/notes/index/":
 
                     new Layouts\NotesIndex();
+
                     break;
 
 
                 case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
 
                     new Layouts\BlogEntry('note');
+
                     break;
 
 
@@ -87,6 +91,7 @@
 
                     http_response_code(301);
                     header('Location: /notes.xml');
+
                     break;
                     
 
