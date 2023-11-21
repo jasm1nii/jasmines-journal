@@ -1,15 +1,10 @@
 <?php
 
-    // draft
-
     namespace JasminesJournal\Site\Views\Partials;
 
     class ChangelogArchive {
 
         const SRC_DIR = SITE_ROOT . DIR['content'] . 'changelog';
-        public $year;
-        public $month;
-        public $changelog_array;
 
         private static function getYearsFromDirectory() {
 

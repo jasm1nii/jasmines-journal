@@ -6,25 +6,26 @@
 
     class XMLFeeds {
 
+        private const ENTRY_LAYOUT = DIR['layouts'] . "blog/xml/feed_entry.xml.twig";
+        private const FEED_LAYOUT = DIR['layouts'] . "blog/xml/feed.xml.twig";
+        protected const TEMP_DIR = "/tmp/feed_generator";
+
+        protected $type;
         protected $src_dir;
         protected $max_entries;
-
-        protected $entry_layout;
-        protected $feed_layout;
-
-        protected const TEMP_DIR = "/tmp/feed_generator";
+        
         protected $temp_file;
         protected $output_file;
 
-        protected function globCount() {
+        private function globCount() {
 
-            $glob = glob($this->src_dir . "/2???/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+            $glob = glob($this->src_dir . "/202{4,3}/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
 
             return $glob;
 
         }
 
-        protected function getEntryFiles() {
+        private function getEntryFiles() {
 
             $glob = $this->globCount();
 
@@ -52,7 +53,7 @@
 
         }
 
-        protected function parseEntries() {
+        private function parseEntries() {
 
             $files = $this->getEntryFiles();
 
@@ -63,13 +64,16 @@
 
             foreach ($files as $article) {
                 
-                $split_path = preg_split('/(src)/', $article);
-                $path = '/src/'. $split_path[1];
-                $slug = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
+                $split_path     = preg_split('/(src)/', $article);
+                $path           = '/src/'. $split_path[1];
+                $slug           = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
+                $img_dir        = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
 
                 $vars = [
-                    'layout'    => $this->entry_layout,
-                    'slug'      => $slug
+                    'type'      => $this->type,
+                    'layout'    => self::ENTRY_LAYOUT,
+                    'slug'      => $slug,
+                    'src'       => $img_dir
                 ];
 
                 $twig->createEnvAndMake($loader, $path, $vars);
@@ -83,7 +87,7 @@
 
         }
 
-        protected function createFeed() {
+        private function createFeed() {
 
             $this->parseEntries();
 
@@ -91,12 +95,13 @@
             $loader = $twig->loadBaseLoader();
 
             $vars = [
+                'type'      => $this->type,
                 'temp_file' => $this->temp_file
             ];
 
             ob_start();
 
-            $twig->createEnvAndMake($loader, $this->feed_layout, $vars);
+            $twig->createEnvAndMake($loader, self::FEED_LAYOUT, $vars);
             $xml_final = ob_get_contents();
             file_put_contents($this->output_file, $xml_final);
 
@@ -136,11 +141,10 @@
 
         public function __construct($max_entries) {
 
+            $this->type = 'notes';
+
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/notes";
             $this->max_entries = $max_entries;
-
-            $this->entry_layout = DIR['layouts'] . "blog/notes/xml/notes_entry.xml.twig";
-            $this->feed_layout = DIR['layouts'] . "blog/notes/xml/notes.xml.twig";
 
             $this->temp_file = parent::TEMP_DIR . "/notes.tmp.xml";
             $this->output_file = SITE_ROOT . "/tests/notes.xml";
@@ -153,11 +157,10 @@
 
         public function __construct($max_entries) {
 
+            $this->type = 'articles';
+
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/articles";
             $this->max_entries = $max_entries;
-
-            $this->entry_layout = DIR['layouts'] . "blog/articles/xml/articles_entry.xml.twig";
-            $this->feed_layout = DIR['layouts'] . "blog/articles/xml/articles.xml.twig";
 
             $this->temp_file = parent::TEMP_DIR . "/articles.tmp.xml";
             $this->output_file = SITE_ROOT . "/tests/articles.xml";

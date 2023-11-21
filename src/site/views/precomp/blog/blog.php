@@ -5,23 +5,8 @@
     use JasminesJournal\Core\Views\Render\View as View;
     use JasminesJournal\Site\Views\Partials as Partials;
 
-    //
-
-    trait Blog {
-
-        public static function nav() {
-
-            return Partials\BlogNav::make();
-
-        }
-
-    }
-
-    //
 
     final class BlogIndex extends View {
-
-        use Blog;
 
         private static function makeArticlesList() {
 
@@ -40,9 +25,9 @@
             $page = DIR['layouts'] . "blog/blog_layout.html.twig";
 
             $vars = [
-                'nav' => Blog::nav(),
-                'notes_preview' => self::makeLatestNote(),
-                'articles_archive' => self::makeArticlesList()
+                'nav'               => Partials\BlogNav::make(),
+                'notes_preview'     => self::makeLatestNote(),
+                'articles_archive'  => self::makeArticlesList()
             ];
 
             parent::Twig($page, $vars, null, true);
@@ -52,8 +37,6 @@
     }
 
     final class ArticlesIndex extends View {
-
-        use Blog;
 
         private static function showEntries() {
 
@@ -66,8 +49,8 @@
             $page = DIR['layouts'] . "blog/articles/articles_index_layout.html.twig";
 
             $vars = [
-                'nav' => Blog::nav(),
-                'entries' => self::showEntries()
+                'nav'       => Partials\BlogNav::make(),
+                'entries'   => self::showEntries()
             ];
 
             parent::Twig($page, $vars, null);
@@ -77,8 +60,6 @@
     }
 
     final class NotesIndex extends View {
-
-        use Blog;
 
         private static function showEntries() {
 
@@ -91,8 +72,8 @@
             $page = DIR['layouts'] . "blog/notes/notes_index_layout.html.twig";
 
             $vars = [
-                'nav' => Blog::nav(),
-                'entries' => self::showEntries()
+                'nav'       => Partials\BlogNav::make(),
+                'entries'   => self::showEntries()
             ];
 
             parent::Twig($page, $vars, null);
@@ -102,8 +83,6 @@
     }
 
     final class BlogEntry extends View {
-
-        use Blog;
 
         public function __construct($blog_type) {
 
@@ -122,10 +101,10 @@
             $content = DIR['content'] . $slug . ".html.twig";
 
             $vars = [
-                'layout' => $layout,
-                'slug' => $slug,
-                'src' => $img_dir,
-                'nav' => Blog::nav()
+                'layout'    => $layout,
+                'slug'      => $slug,
+                'src'       => $img_dir,
+                'nav'       => Partials\BlogNav::make()
             ]; 
 
             if (file_exists(SITE_ROOT . $content)) {

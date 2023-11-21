@@ -3,9 +3,9 @@
     <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
     <title>jasmine&apos;s b(rain)log | jasm1nii.xyz</title>
     <subtitle>blog articles by jasmine</subtitle>
-    <updated>2023-11-20T21:33:59+07:00</updated>
+    <updated>2023-11-21T10:12:31+07:00</updated>
     <id>https://jasm1nii.xyz/blog/articles</id>
-    <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/blog/articles/articles.xml"/>
+    <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/articles.xml"/>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
     <author>
         <name>jasmine</name>
@@ -38,7 +38,7 @@
       in short, i wanted the "tone" of my published writing to match that of my drafts.
         &lt;/p&gt;
         &lt;p&gt;
-      i started experimenting with monospace type for writing in notion and obsidian some time ago, and the difference was night and day. perhaps this is due to the more "polished" appearance of sans serif type&shy;faces, but allowing my personal thoughts to flow onto the page felt... &lt;em&gt;much&lt;/em&gt; harder, for some reason. and while i quite like instrument sans - which is the typeface that i used before (and still use for the rest of my website) - my thinking just didn't read back as naturally to me.
+      i started experimenting with monospace type for writing in notion and obsidian some time ago, and the difference was night and day. perhaps this is due to the more "polished" appearance of sans serif type-faces, but allowing my personal thoughts to flow onto the page felt... &lt;em&gt;much&lt;/em&gt; harder, for some reason. and while i quite like instrument sans - which is the typeface that i used before (and still use for the rest of my website) - my thinking just didn't read back as naturally to me.
         &lt;/p&gt;
       &lt;/details&gt;
     &lt;/p&gt;
@@ -55,7 +55,7 @@
                 &lt;h4&gt;chicken fried rice 🌶&lt;/h4&gt;
                 &lt;p&gt;current the most frequently ordered item 👑&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -65,13 +65,13 @@
                 &lt;ul&gt;
                     &lt;li&gt;shredded chicken&lt;/li&gt;
                     &lt;li&gt;hard-boiled egg&lt;/li&gt;
-                    &lt;li&gt;chopped scallion (fresh & fried)&lt;/li&gt;
+                    &lt;li&gt;chopped scallion (fresh &amp; fried)&lt;/li&gt;
                     &lt;li&gt;fried peanuts&lt;/li&gt;
                     &lt;li&gt;sweet soy sauce&lt;/li&gt;
                     &lt;li&gt;chili sauce&lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/section&gt;
-            &lt;img src="IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -85,14 +85,14 @@
                 &lt;/ul&gt;
             &lt;/section&gt;
             &lt;div&gt;
-                &lt;img src="IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
-                &lt;img src="IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
             &lt;/div&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
                 &lt;h3&gt;5 september&lt;/h3&gt;
-                &lt;h4&gt;A&W&lt;/h4&gt;
+                &lt;h4&gt;A&amp;W&lt;/h4&gt;
                 &lt;h5&gt;order menu&lt;/h5&gt;
                 &lt;ul&gt;
                     &lt;li&gt;mango veggie pocket*&lt;/li&gt;
@@ -101,7 +101,7 @@
                 &lt;/ul&gt;
                 &lt;p&gt;&lt;small&gt;* not pictured, because i was super hungry.&lt;/small&gt;&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="IMG_20230905_164554_compressed.webp" alt="A&W curly fries"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -109,7 +109,7 @@
                 &lt;h4&gt;mixue kiwi smoothie sundae 👍&lt;/h4&gt;
                 &lt;p&gt;so citrusy and fresh 😋&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
         &lt;/section&gt;
         &lt;/section&gt;
     &lt;/section&gt;
@@ -126,7 +126,7 @@
             &lt;p&gt;
         update - a very funny thing happened last night &lt;em&gt;right after&lt;/em&gt; i posted my blog yesterday:
         &lt;br/&gt;
-        &lt;img src="email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &#34;page not found&#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
+        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/17/email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
     &lt;/p&gt;
     &lt;p&gt;
         now, being on &lt;em&gt;three different web hosts&lt;/em&gt; just feels excessive, so the new plan is to set up a splash page with a redirect on ichi and neocities! will get around to that in the near future.
@@ -215,7 +215,7 @@
           &lt;/summary&gt;
           &lt;p&gt;
               the staple of every USian classroom, only good for cruddy papier-mâché, and nothing more:
-              &lt;img src="elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
+              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/09/elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
           &lt;/p&gt;
           &lt;hr&gt;
       &lt;/details&gt;
