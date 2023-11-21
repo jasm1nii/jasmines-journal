@@ -33,18 +33,16 @@
 
       <main>
         <article>
+          <img src="/_assets/media/main/oingo-boingo.png" alt="" class="u-photo" width="80" height="80"/>
           <h2><time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time></h2>
-          <div class="post-grid">
-            <img src="/_assets/media/main/oingo-boingo.png" alt="" class="u-photo"/>
-            <section class="h-entry">
-              {% if updated is defined %}
-                <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
-              {% endif %}
-              <p class="e-content">
-                {{ block('content') }}
-              </p>
+          <section class="h-entry">
+            {% if updated is defined %}
+              <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
+            {% endif %}
+            <section class="e-content">
+              {{ block('content') }}
             </section>
-          </div>
+          </section>
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
         </article>
 

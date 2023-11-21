@@ -164,9 +164,6 @@ article > section h2 {
   display: flex;
   flex-direction: column;
 }
-.microblog .newest-note .p-name {
-  margin-bottom: 0;
-}
 .microblog .newest-note p {
   margin-top: 0;
 }
@@ -198,6 +195,11 @@ article > section h2 {
   padding-top: 1em;
   border-top: 1px dashed;
   text-align: right;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 
 footer {

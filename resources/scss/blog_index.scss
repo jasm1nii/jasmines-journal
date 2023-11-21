@@ -109,9 +109,6 @@ article > section {
             display: flex;
             flex-direction: column;
         }
-        .p-name {
-            margin-bottom: 0;
-        }
         p {
             margin-top: 0;
         }
@@ -148,23 +145,23 @@ article > section {
     border-top: 1px dashed;
     text-align: right;
 }
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
 
 @include footer-style-2();
-
 @include link-style-1();
 @include button-style-1();
-
 hr {
     border: 1px dashed pink;
     margin-top: 2em;
     margin-bottom: 2em;
 }
-
 ::selection {
     background-color: rgb(248, 208, 170);
     color: black;
 }
-
 @include webkit-scrollbar-style-1();
 
 @include screen-768();

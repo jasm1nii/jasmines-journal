@@ -27,7 +27,7 @@ body {
   font-family: var(--font-2);
   font-size: 1.1em;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
@@ -146,11 +146,10 @@ article h2 {
 }
 
 .notes-format {
-  border: 1px solid;
   display: flex;
   flex-direction: row;
-  padding: 1.5em 2em 2em;
   font-size: large;
+  width: 100%;
 }
 .notes-format .u-photo {
   border-radius: 50%;
@@ -160,7 +159,9 @@ article h2 {
 }
 .notes-format .h-entry {
   flex-direction: column;
-  width: 100%;
+  padding: 1.5em 2em 2em;
+  border: 1px solid;
+  max-width: 95vw;
 }
 .notes-format .h-entry .e-content {
   padding-bottom: 1em;
@@ -168,7 +169,7 @@ article h2 {
   font-size: larger;
   line-height: 1.2em;
 }
-.notes-format span {
+.notes-format .h-entry .e-content + span {
   border-top: 1px dashed;
   margin-left: 0;
   padding-left: 0;
@@ -177,6 +178,11 @@ article h2 {
 }
 .notes-format + p {
   margin: auto;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 
 footer {
@@ -267,20 +273,16 @@ hr {
   .layout {
     flex-direction: column;
   }
-  header nav ul {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
   header nav ul ul {
-    display: inline;
     padding-right: 0;
+    display: inline;
     padding-left: 0;
   }
   header nav li {
     margin-right: 0.5em;
+    display: inline-block;
     height: -moz-fit-content;
     height: fit-content;
-    display: inline;
   }
   header nav li:last-child::after {
     content: "✧";
@@ -300,21 +302,18 @@ hr {
     margin-top: 5%;
     width: 100%;
   }
-  article > section {
-    padding: 1em 0;
+  main .h-entry, main section {
+    border-left: none;
+    border-right: none;
   }
-  article > section h2, article > section h3, article > section p {
-    padding: 0 1em;
-  }
-  .microblog .newest-note {
+  article {
     flex-direction: column;
   }
-  .microblog .newest-note .u-photo {
-    margin-left: 0;
-    margin-top: 1em;
+  .notes-format {
+    flex-direction: column;
   }
-  .blog .h-entry .p-name, .blog .h-entry time {
-    padding-left: 1.5em;
+  h2, .u-photo {
+    margin-left: 1em;
   }
   footer {
     width: 80%;
@@ -323,7 +322,7 @@ hr {
     border: none;
   }
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 400px) {
   main {
     width: -moz-fit-content;
     width: fit-content;
@@ -349,7 +348,7 @@ hr {
     background-color: var(--dark-bg);
     color: var(--dark-font);
   }
-  .notes-format {
+  .h-entry {
     background-color: var(--dark-bg-article);
   }
   a {
@@ -363,7 +362,7 @@ hr {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
-.dark-mode .notes-format {
+.dark-mode .h-entry {
   background-color: var(--dark-bg-article);
 }
 .dark-mode a {
@@ -378,7 +377,7 @@ hr {
     background-color: var(--light-bg);
     color: var(--light-font);
   }
-  .notes-format {
+  .h-entry {
     background-color: var(--light-bg-article);
   }
   a {
@@ -392,7 +391,7 @@ hr {
   background-color: var(--light-bg);
   color: var(--light-font);
 }
-.light-mode .notes-format {
+.light-mode .h-entry {
   background-color: var(--light-bg-article);
 }
 .light-mode a {

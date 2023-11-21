@@ -58,24 +58,11 @@ body {
 @include header-style-2();
 
 main {
-    width: 40vw;
-    margin: auto;
-    &::before {
-        content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
-        display: block;
-        text-align: center;
-        margin-bottom: 1.5em;
-        letter-spacing: .4em;
-        font-size: x-large;
-    }
-    &::after {
-        content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
-        display: block;
-        text-align: center;
-        margin-top: 1.5em;
-        font-size: x-large;
-    }
-    & > article, > section {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+    & .h-entry, > section {
         border: 1px solid;
     }
 }
@@ -83,16 +70,9 @@ main {
 article {
     font-size: larger;
     font-weight: 500;
-    padding-left: 2em;
-    padding-right: 2em;
     padding-bottom: 1em;
     margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2em;
-    h2 {
-        letter-spacing: .05em;
-        margin-bottom: 0;
-    }
+    margin-right: 0;
     a {
         &:hover {
             letter-spacing: .05em;
@@ -100,28 +80,28 @@ article {
     }
 }
 
-.post-grid {
-    display: flex;
-    column-gap: 1em;
-    .u-photo {
-        aspect-ratio: 1;
-        width: 20%;
-        height: 20%;
-        border-radius: 100px;
-        border: 1px solid;
-        margin-top: 1em;
-        margin-bottom: auto;
-    }
-    .h-entry {
-        width: 75%;
-    }
+h2 {
+    letter-spacing: .05em;
+}
+.u-photo {
+    aspect-ratio: 1;
+    border: 1px solid;
+    margin-bottom: auto;
+    margin-right: 1em;
+}
+.h-entry {
+    padding: 1em;
+}
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+.emoji {
+    display: inline-block;
 }
 
 #webmentions, #comments {
     padding: 1.5em;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
     h3 {
         margin-top: 0;
         padding-bottom: .5em;
@@ -193,7 +173,7 @@ hr {
     .dark-mode a:hover {
         color: black
     }
-    .dark-mode article, .dark-mode header details p, .dark-mode #comments, .dark-mode #webmentions {
+    .dark-mode .h-entry, .dark-mode #comments, .dark-mode #webmentions {
         background-color: var(--dark-bg-article);
     }
     .dark-mode #comments button {
@@ -215,7 +195,7 @@ hr {
     a {
         color: var(--light-links);
     }
-    article, header details p, #webmentions, #comments {
+    .h-entry, #webmentions, #comments {
         background-color: var(--light-bg-article);
     }
     :root, :host {
@@ -232,7 +212,7 @@ hr {
     .light-mode a:hover {
         color: black;
     }
-    .light-mode article, .light-mode header details p, .light-mode #comments, .light-mode #webmentions {
+    .light-mode .h-entry, .light-mode #comments, .light-mode #webmentions {
         background-color: var(--light-bg-article);
     }
     .light-mode #webmentions, .light-mode #comments {

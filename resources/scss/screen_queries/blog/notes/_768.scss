@@ -39,17 +39,28 @@
             content: '/';
         }
 
+        .sidebar {
+            position: static;
+            max-width: none;
+        }
+
         main {
             margin-top: 5%;
             width: 100%;
-            & > article, section {
+            & .h-entry, section {
                 border-left: none;
                 border-right: none;
             }
         }
 
+        article {
+            flex-direction: column;
+        }
         .notes-format {
             flex-direction: column;
+        }
+        h2, .u-photo {
+            margin-left: 1em;
         }
         
         footer {            
