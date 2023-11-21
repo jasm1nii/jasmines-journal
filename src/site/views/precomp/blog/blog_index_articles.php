@@ -15,14 +15,15 @@
 
             $twig = Extension\PartialTwig::buildTwigEnv();
 
-            $files = glob(self::SOURCE_DIR . "/*/*/*/entry.html.twig");
-            asort($files, SORT_NATURAL);
+            $files = glob(self::SOURCE_DIR . "/202{4,3}/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+
+            rsort($files, SORT_NATURAL);
 
             $content = [];
 
             $i = 0;
 
-            foreach (array_reverse($files) as $article) {
+            foreach ($files as $article) {
 
                 $dir = preg_split('/\/(src)/', $article);
                 $content_path = "/src/{$dir[1]}";

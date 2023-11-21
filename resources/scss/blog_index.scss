@@ -1,4 +1,4 @@
-/* blog index, notes */
+/* blog index, articles archive */
 @use 'assets/font_inconsolata';
 
 :root {
@@ -189,25 +189,6 @@ header nav {
             }
         }
 
-footer .subpage-nav {
-    justify-content: space-between;
-    display: flex;
-}
-    @media all and (max-width:500px) {
-        footer .subpage-nav {
-            display: inline;
-            }
-        footer .subpage-nav a {
-            margin-right: 2em;
-            margin-left: 2em;
-            line-height: 2.5em;
-        }
-    }
-footer .subpage-nav a:first-child:before {
-    content: '⟵';
-    margin-right: .5em;
-}
-
 main {
     margin-right: auto;
     width: 70%;
@@ -227,6 +208,7 @@ main {
             width: fit-content;
         }
     }
+
 article {
     border: 1px solid;
     padding-left: 2em;

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* blog index, notes */
+/* blog index, articles archive */
 @font-face {
   font-family: "Inconsolata";
   font-display: swap;
@@ -220,26 +220,6 @@ header nav ul ul li::before {
     content: "/";
   }
 }
-footer .subpage-nav {
-  justify-content: space-between;
-  display: flex;
-}
-
-@media all and (max-width: 500px) {
-  footer .subpage-nav {
-    display: inline;
-  }
-  footer .subpage-nav a {
-    margin-right: 2em;
-    margin-left: 2em;
-    line-height: 2.5em;
-  }
-}
-footer .subpage-nav a:first-child:before {
-  content: "⟵";
-  margin-right: 0.5em;
-}
-
 main {
   margin-right: auto;
   width: 70%;

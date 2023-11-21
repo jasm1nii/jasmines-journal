@@ -2,39 +2,37 @@
 
     namespace JasminesJournal\Site\Views\Partials;
 
+    use Twig\Extra\Intl\IntlExtension;
+    use Twig\RuntimeLoader\RuntimeLoaderInterface;
+    use \JasminesJournal\Core\Views\Render\Extension as Extension;
+
     class BlogIndex_Notes {
+
+        const SOURCE_DIR = SITE_ROOT . DIR['content'] . 'blog/notes';
+        const TEMPLATE = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
 
         public static function make() {
 
-            $notes_xml = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/notes.xml');
-            $notes_doc = new \DOMDocument();
-            $notes_doc->loadXML($notes_xml);
-
-            $notes_pub =
-                $notes_doc->getElementsByTagName('published')->item(0)->textContent;
-
-            $notes_link =
-                $notes_doc->getElementsByTagName('id')->item(1)->textContent;
-
-            $notes_title =
-                $notes_doc->getElementsByTagName('title')->item(1)->textContent;
-
-            $notes_title_html =
-                str_replace(" | jasmine's notes", "", $notes_title);
-
-            $notes_content =
-                $notes_doc->getElementsByTagName('content')->item(0)->textContent;
+            $twig = Extension\PartialTwig::buildTwigEnv();
             
-            //
+            $file = glob(self::SOURCE_DIR . "/202{4,3}/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE)[0];
 
-            $notes_preview =
-                "<h3 class='p-name'><time datetime='{$notes_pub}'><a href='{$notes_link}'>{$notes_title_html}</a></time></h3>";
+            $dir = preg_split('/\/(src)/', $file);
+            $content_path = "/src/{$dir[1]}";
 
-            $notes_preview .=
-                "<p id='latest-note-content' class='e-content'>{$notes_content}</p>";
+            $slug_1 = rtrim($content_path, '.html.twig');
+            $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
 
-            return $notes_preview;
-            
+            $content = $twig->render(
+                $content_path,
+                    [
+                        'layout' => self::TEMPLATE,
+                        'slug' => $slug_2
+                    ]
+                );
+
+            return $content;
+
         }
 
     }
