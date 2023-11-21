@@ -271,6 +271,7 @@ hr {
     width: fit-content;
   }
   .layout {
+    margin: auto auto;
     flex-direction: column;
   }
   header nav ul ul {
