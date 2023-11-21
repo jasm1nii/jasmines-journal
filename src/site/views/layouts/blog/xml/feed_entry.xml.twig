@@ -1,11 +1,11 @@
     
     <entry>
-        <title>{{ title }}</title>
+        <title>{% if title is defined %}{{ title }}{% else %}{{ published }}{% endif %}</title>
         <id>https://jasm1nii.xyz/blog/{{ type }}/{{ slug }}</id>
         <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/{{ type }}/{{ slug }}"/>
         <updated>{% if updated is defined %}{{ updated|date() }}{% else %}{{ published|date() }}{% endif %}</updated>
         <published>{{ published|date() }}</published>
-        <summary>{{ summary }}</summary>
+        <summary>{% if summary is defined %}{{ summary }}{% else %}{{ block('content')[:250]|striptags }} ...{% endif %}</summary>
         <content type="html">
             {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;'})|spaceless }}
         </content>

@@ -138,7 +138,11 @@
 
             }
 
-            require $this->output_file;
+            $output = new \DOMDocument();
+            $output->load($this->output_file);
+            echo $output->saveXML();
+
+            //require $this->output_file;
 
         }
 
