@@ -1,0 +1,359 @@
+@use 'assets/font_inconsolata';
+@use 'screen_queries/blog/notes/768' as *;
+@use 'screen_queries/blog/notes/500' as *;
+
+@import url('cactus-chat.css');
+
+:root {
+    --font-2: 'Inconsolata', monospace;
+    --links-hover-bg: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+a {
+    background-color: transparent;
+    transition: all 0.2s ease-out;
+    font-weight: 600;
+    &:hover {
+        background-color: var(--links-hover-bg);
+        color: black;
+    }
+}
+
+button {
+    font: inherit;
+    background-color: inherit;
+    color: inherit;
+    border: 1px solid;
+    cursor: pointer;
+    &:hover {
+        background-color: thistle;
+        color: black;
+    }
+}
+
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-width: thin;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-2);
+    font-size: 1.1em;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    opacity: 0;
+    animation: fadeIn .5s;
+    animation-fill-mode: forwards;
+    transition: all 0.25s ease-out;
+}
+
+.layout {
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 3em;
+}
+
+header {
+    letter-spacing: .05em;
+    border-bottom: 1px solid;
+    height: fit-content;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    hgroup {
+        display: flex;
+        flex-direction: column;
+    }
+    time {
+        font-weight: 600;
+        display: block;
+    }
+    nav {
+        margin: auto;
+        border-top: 1px solid;
+        letter-spacing: .1em;
+        padding: .25em;
+        ul {
+            margin-top: .25em;
+            margin-bottom: .25em;
+            padding: .7em;
+            ul {
+                padding-top: 0;
+                padding-bottom: .25em;
+                li {
+                    &::before {
+                        content: '⟶';
+                    }
+                }
+            }
+        }
+        li {
+            display: flex;
+            margin-bottom: .25em;
+            &::before {
+                content: "✧";
+                margin-right: .5em;
+            }
+        }
+        a {
+            text-decoration: none;
+            padding: 0px 5px 3px 5px;
+            height: fit-content;
+        }
+    }
+}
+
+#themeSwitch {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding: .5em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+footer .subpage-nav {
+    justify-content: space-between;
+    display: flex;
+}
+footer .subpage-nav a:first-child:before {
+    content: '⟵';
+    margin-right: .5em;
+}
+
+main {
+    width: 50vw;
+    margin: auto;
+    &::before {
+        content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5em;
+        letter-spacing: .4em;
+        font-size: x-large;
+    }
+    &::after {
+        content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
+        display: block;
+        text-align: center;
+        margin-top: 1.5em;
+        font-size: x-large;
+    }
+    & > article, > section {
+        border: 1px solid;
+    }
+}
+
+article {
+    font-size: larger;
+    font-weight: 500;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    h2 {
+        letter-spacing: .05em;
+        margin-bottom: 0;
+    }
+    a {
+        &:hover {
+            letter-spacing: .05em;
+        }
+    }
+}
+
+.post-grid {
+    display: flex;
+    column-gap: 1em;
+    .u-photo {
+        aspect-ratio: 1;
+        width: 25%;
+        height: 25%;
+        border-radius: 100px;
+        border: 1px solid;
+        margin: auto;
+    }
+    .h-entry {
+        width: 75%;
+    }
+}
+
+#webmentions, #comments {
+    padding: 1.5em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    h3 {
+        margin-top: 0;
+        padding-bottom: .5em;
+        border-bottom: 1px dashed;
+    }
+}
+
+:root, :host {
+    --seia-color-bg: transparent !important;
+}
+
+.cactus-editor-textarea::placeholder, .cactus-editor-name > span > input::placeholder, .cactus-container button {
+    text-transform: lowercase;
+}
+
+footer {
+    font-size: smaller;
+    margin-top: 3em;
+    margin-bottom: 5em;
+    width: 70%;
+    letter-spacing: .05em;text-align: center;
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        display: inline-block;
+        margin-right: 1em;
+        &::before {
+            content: "⬩";
+            font-size: 1.25em;
+            margin-right: 1em;
+        }
+        &:first-child {
+            &::before {
+                content: none;
+            }
+        }
+    }
+    time {
+        font-weight: 600;
+    }
+}
+
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: plum;
+}
+
+
+@include screen-768();
+@include screen-500();
+
+:root {
+    --dark-font: white;
+    --light-font: rgb(63, 48, 48);
+    --dark-bg: black;
+    --light-bg: rgb(232, 221, 235);
+    --light-bg-article: ghostwhite;
+    --dark-links: rgb(255, 166, 181);
+    --dark-links-hover: rgb(255, 234, 176);
+    --light-links: rgb(88, 24, 56);
+    --light-links-hover: rgb(140, 42, 221);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg);
+        color: var(--dark-font);
+        }
+    a {
+        color: var(--dark-links);
+    }
+    #comments button {
+        color: black;
+        background-color: thistle;
+    }
+    #comments button:hover {
+        background-color: lightpink;
+    }
+}
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+}
+    .dark-mode a {
+        color: var(--dark-links);
+    }
+    .dark-mode a:hover {
+        color: black
+    }
+    .dark-mode article, .dark-mode header details p, .dark-mode #comments, .dark-mode #webmentions {
+        background-color: var(--dark-bg-article);
+    }
+    .dark-mode #comments button {
+        color: black;
+        background-color: thistle;
+    }
+    .dark-mode #comments button:hover {
+        background-color: lightpink;
+    }
+    :root .dark-mode, :host .dark-mode {
+        --seia-color-text: white;
+    }
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color:  var(--light-bg);
+        color: var(--light-font);
+    } 
+    a {
+        color: var(--light-links);
+    }
+    article, header details p, #webmentions, #comments {
+        background-color: var(--light-bg-article);
+    }
+    :root, :host {
+        --seia-color-text: var(--light-font);
+    }
+}
+.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-font);
+}
+    .light-mode a {
+        color: var(--light-links);
+    }
+    .light-mode a:hover {
+        color: black;
+    }
+    .light-mode article, .light-mode header details p, .light-mode #comments, .light-mode #webmentions {
+        background-color: var(--light-bg-article);
+    }
+    .light-mode #webmentions, .light-mode #comments {
+        color: var(--light-font);
+    }
+    :root .light-mode, :host .light-mode {
+        --seia-color-text: var(--light-font);
+    }

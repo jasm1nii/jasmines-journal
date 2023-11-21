@@ -1,0 +1,62 @@
+@mixin screen-768 {
+    @media all and (max-width:768px) {
+        body {
+            width: fit-content;
+        }
+        .layout {
+            flex-direction: column;
+        }
+        header {
+            nav {
+                ul {
+                    ul {
+                        padding-right: 0;
+                        display: inline;
+                        padding-left: 0;
+                    }
+                }
+                li {
+                    margin-right: .5em;
+                    display: inline-block;
+                    height: fit-content;
+                    &:last-child {
+                        &::after {
+                            content: "✧";
+                            margin-left: .5em;
+                        }
+                    }
+                    li {
+                        &:last-child {
+                            &::after {
+                                content: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #headernav ul ul li:not(:first-child)::before {
+            content: '/';
+        }
+
+        main {
+            margin-top: 5%;
+            width: 100%;
+            & > article, section {
+                border-left: none;
+                border-right: none;
+            }
+        }
+
+        .notes-format {
+            flex-direction: column;
+        }
+        
+        footer {            
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+        }
+    }
+}

@@ -60,6 +60,12 @@
             $twig = new Extension\Twig();
             $loader = $twig->loadBaseLoader();
 
+            if (!is_dir(SITE_ROOT . self::TEMP_DIR)) {
+
+                mkdir(SITE_ROOT . self::TEMP_DIR, 0775, true);
+
+            }
+
             ob_start();
 
             foreach ($files as $article) {
@@ -81,6 +87,7 @@
             }
 
             $xml_entries = ob_get_contents();
+
             file_put_contents(SITE_ROOT . $this->temp_file, $xml_entries);
 
             ob_end_clean();
@@ -139,15 +146,23 @@
     
     class NotesXML extends XMLFeeds {
 
-        public function __construct($max_entries) {
+        public function __construct($max_entries, $debug = true) {
 
             $this->type = 'notes';
-
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/notes";
             $this->max_entries = $max_entries;
 
             $this->temp_file = parent::TEMP_DIR . "/notes.tmp.xml";
-            $this->output_file = SITE_ROOT . "/tests/notes.xml";
+
+            if ($debug == true) {
+
+                $this->output_file = SITE_ROOT . "/tests/notes.xml";
+
+            } else {
+
+                $this->output_file = SITE_ROOT . DIR['content']. "/blog/notes/notes.xml";
+
+            }
             
         }
 
@@ -155,15 +170,23 @@
 
     class ArticlesXML extends XMLFeeds {
 
-        public function __construct($max_entries) {
+        public function __construct($max_entries, $debug = true) {
 
             $this->type = 'articles';
-
             $this->src_dir = SITE_ROOT. DIR['content'] . "blog/articles";
             $this->max_entries = $max_entries;
 
             $this->temp_file = parent::TEMP_DIR . "/articles.tmp.xml";
-            $this->output_file = SITE_ROOT . "/tests/articles.xml";
+
+            if ($debug == true) {
+
+                $this->output_file = SITE_ROOT . "/tests/articles.xml";
+
+            } else {
+
+                $this->output_file = SITE_ROOT . DIR['content']. "/blog/articles/articles.xml";
+
+            }
             
         }
 

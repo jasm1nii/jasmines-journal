@@ -1,0 +1,20 @@
+@mixin screen-500 {
+    @media all and (max-width:500px) {
+        footer .subpage-nav {
+            display: inline;
+            }
+        footer .subpage-nav a {
+            margin-right: 2em;
+            margin-left: 2em;
+            line-height: 2.5em;
+        }
+    }
+    @media all and (max-width:400px) {
+        main {
+            width: fit-content;
+        }
+        article {
+            padding-top: 1em;
+        }
+    }
+}

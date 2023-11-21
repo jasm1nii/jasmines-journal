@@ -1,6 +1,6 @@
 /* blog index, notes */
 @use 'assets/font_inconsolata';
-@import url('cactus-chat.css');
+
 :root {
     --font-2: 'Inconsolata', monospace;
     --links-hover-bg: white;
@@ -116,10 +116,6 @@ header {
 header hgroup {
     display: flex;
     flex-direction: column;
-}
-#themeToggle {
-    height: fit-content;
-    width: fit-content;
 }
 #themeSwitch {
     display: block;
@@ -273,33 +269,6 @@ section:has(#notesArchive) {
     font-style: italic;
 }
 
-#webmentions h3, #comments h3 {
-    margin-top: 0;
-    padding-bottom: .5em;
-    border-bottom: 1px dashed;
-}
-
-#webmentions, #comments {
-    border: 1px solid;
-    padding: 1.5em;
-    margin-bottom: 2em;
-}
-:root, :host {
-    --seia-color-bg: transparent !important;
-}
-
-.cactus-editor-textarea::placeholder,.cactus-editor-name > span > input::placeholder, .cactus-container button {
-    text-transform: lowercase;
-}
-
-.warning {
-    border: 1px solid rgba(146, 93, 24, 0.25);
-    padding: .75em;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(230, 187, 132, 0.25);
-}
 .follow {
     width: 80%;
     margin-left: auto;
@@ -318,26 +287,6 @@ main > article {
     max-width: calc(70% + 1vw);
     margin-left: auto;
     margin-right: auto;
-}
-.tags {
-    margin-left: 0;
-    padding-left: 0;
-    margin-top: 1.5em;
-}
-.tags li {
-    list-style: none;
-    display: inline-flex;
-    border: 1px solid;
-    padding: .5em;
-    padding-right: 1em;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    border-radius: 2em;
-}
-.tags li::before {
-    content: '#';
-    margin-right: .25em;
-    margin-left: .25em;
 }
 
 #notes article {
@@ -434,12 +383,6 @@ article ol li time {
     margin-top: .5em;
 }
 
-#webmentions, #comments {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 footer {
     font-size: smaller;
     margin-top: 3em;
@@ -495,13 +438,6 @@ footer {
     a {
         color: var(--dark-links);
     }
-    #comments button {
-        color: black;
-        background-color: thistle;
-    }
-    #comments button:hover {
-        background-color: lightpink;
-    }
 }
 .dark-mode {
     background-color: var(--dark-bg);
@@ -513,15 +449,8 @@ footer {
     .dark-mode a:hover {
         color: black
     }
-    .dark-mode article, .dark-mode header details p, .dark-mode #comments, .dark-mode #webmentions {
+    .dark-mode article {
         background-color: var(--dark-bg-article);
-    }
-    .dark-mode #comments button {
-        color: black;
-        background-color: thistle;
-    }
-    .dark-mode #comments button:hover {
-        background-color: lightpink;
     }
     :root .dark-mode, :host .dark-mode {
         --seia-color-text: white;
@@ -535,7 +464,7 @@ footer {
     a {
         color: var(--light-links);
     }
-    article, header details p, #webmentions, #comments {
+    article {
         background-color: var(--light-bg-article);
     }
     :root, :host {
@@ -552,11 +481,8 @@ footer {
     .light-mode a:hover {
         color: black;
     }
-    .light-mode article, .light-mode header details p, .light-mode #comments, .light-mode #webmentions {
+    .light-mode article {
         background-color: var(--light-bg-article);
-    }
-    .light-mode #webmentions, .light-mode #comments {
-        color: var(--light-font);
     }
     :root .light-mode, :host .light-mode {
         --seia-color-text: var(--light-font);
