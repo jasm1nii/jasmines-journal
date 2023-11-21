@@ -1,0 +1,13 @@
+@mixin button-style-1 {
+    button {
+        font: inherit;
+        background-color: inherit;
+        color: inherit;
+        border: 1px solid;
+        cursor: pointer;
+        &:hover {
+            background-color: thistle;
+            color: black;
+        }
+    }
+}

@@ -34,7 +34,9 @@
 									<img src='/_assets/media/main/oingo-boingo.png' alt='profile picture' class='u-photo'/>
 								</div>
 								<div>
+								{% apply markdown_to_html %}
 									{{ notes_preview|raw }}
+								{% endapply %}
 								</div>
 							</article>
 						</div>

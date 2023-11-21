@@ -1,6 +1,10 @@
 /* blog index, articles archive */
 @use 'assets/font_inconsolata';
 
+@use 'components/links_1' as *;
+@use 'components/buttons_1' as *;
+@use 'components/webkit_scrollbar_1' as *;
+
 :root {
     --font-2: 'Inconsolata', monospace;
     --links-hover-bg: white;
@@ -14,48 +18,6 @@
         opacity: 1;
     }
 }
-
-a {
-    background-color: transparent;
-    transition: all 0.2s ease-out;
-    text-decoration: none;
-    font-weight: 600;
-}
-a:hover {
-    background-color: var(--links-hover-bg);
-    color: black;
-}
-button {
-    font: inherit;
-    background-color: inherit;
-    color: inherit;
-    border: 1px solid;
-    cursor: pointer;
-}
-button:hover {
-    background-color: thistle;
-    color: black;
-}
-hr {
-    border: 1px dashed pink;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: pink;
-    border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-    background-color: plum;
-    }
 
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
@@ -92,6 +54,19 @@ body {
                 flex-direction: column;
             }
         }
+
+@include link-style-1();
+@include button-style-1();
+
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
 
 .sidebar {
     max-width: 12em;
@@ -400,6 +375,8 @@ footer {
             margin-right: 1em;
         }
 
+@include webkit-scrollbar-style-1();
+
 :root {
     --dark-font: white;
     --light-font: rgb(63, 48, 48);
@@ -434,9 +411,6 @@ footer {
     .dark-mode article {
         background-color: var(--dark-bg-article);
     }
-    :root .dark-mode, :host .dark-mode {
-        --seia-color-text: white;
-    }
 
 @media (prefers-color-scheme: light) {
     body {
@@ -449,9 +423,7 @@ footer {
     article {
         background-color: var(--light-bg-article);
     }
-    :root, :host {
-        --seia-color-text: var(--light-font);
-    }
+
 }
 .light-mode {
     background-color: var(--light-bg);
@@ -465,7 +437,4 @@ footer {
     }
     .light-mode article {
         background-color: var(--light-bg-article);
-    }
-    :root .light-mode, :host .light-mode {
-        --seia-color-text: var(--light-font);
     }

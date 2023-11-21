@@ -1,0 +1,13 @@
+@mixin webkit-scrollbar-style-1 {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: pink;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: plum;
+    }
+}

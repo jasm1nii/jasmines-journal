@@ -1,0 +1,213 @@
+@use 'assets/font_inconsolata';
+
+@use 'components/links_1' as *;
+@use 'components/buttons_1' as *;
+@use 'components/webkit_scrollbar_1' as *;
+@use 'components/header_2' as *;
+@use 'components/footer_2' as *;
+
+@use 'screen_queries/blog/articles/index_768' as *;
+@use 'screen_queries/blog/articles/index_500' as *;
+
+:root {
+    --font-2: 'Inconsolata', monospace;
+    --links-hover-bg: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    scrollbar-width: thin;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-2);
+    font-size: 1.1em;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+    opacity: 0;
+    animation: fadeIn .5s;
+    animation-fill-mode: forwards;
+    transition: all 0.25s ease-out;
+}
+
+.layout {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@include header-style-2();
+
+.sidebar {
+    max-width: 12em;
+    margin-left: 1em;
+    position: sticky;
+    top: 5%;
+    align-self: flex-start;
+}
+
+main {
+    margin-right: auto;
+    width: 70%;
+    &::before {
+        content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5em;
+        letter-spacing: .4em;
+        font-size: x-large;
+    }
+    &::after {
+        content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
+        display: block;
+        text-align: center;
+        margin-top: 1.5em;
+        font-size: x-large;
+    }
+}
+
+article {
+    border: 1px solid;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    max-width: calc(70% + 1vw);
+    margin-left: auto;
+    margin-right: auto;
+    h2 {
+        letter-spacing: .05em;
+    }
+}
+
+.articles-list {
+    margin-bottom: 2em;
+}
+
+article {
+    ol {
+        margin-left: .5em;
+    }
+    li {
+        list-style-type: decimal-leading-zero;
+        &::marker {
+            font-size: xx-large;
+            font-style: italic;
+        }
+        span {
+            border-bottom: 1px solid;
+            font-size: large;
+            &::before {
+                content: '❝';
+                margin-right: .25em;
+            }
+            &::after {
+                content: '❞';
+                margin-left: .25em;
+            }
+            a {
+                color: inherit;
+            }
+        }
+        time {
+            display: block;
+            font-size: smaller;
+            margin-top: .5em;
+        }
+    }
+}
+
+
+@include footer-style-2();
+@include link-style-1();
+@include button-style-1();
+
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+
+@include webkit-scrollbar-style-1();
+
+@include screen-768();
+@include screen-500();
+
+:root {
+    --dark-font: white;
+    --light-font: rgb(63, 48, 48);
+    --dark-bg: black;
+    --light-bg: rgb(232, 221, 235);
+    --light-bg-article: ghostwhite;
+    --dark-links: rgb(255, 166, 181);
+    --dark-links-hover: rgb(255, 234, 176);
+    --light-links: rgb(88, 24, 56);
+    --light-links-hover: rgb(140, 42, 221);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg);
+        color: var(--dark-font);
+        }
+    a {
+        color: var(--dark-links);
+    }
+}
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+}
+    .dark-mode a {
+        color: var(--dark-links);
+    }
+    .dark-mode a:hover {
+        color: black
+    }
+    .dark-mode article {
+        background-color: var(--dark-bg-article);
+    }
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color:  var(--light-bg);
+        color: var(--light-font);
+    } 
+    a {
+        color: var(--light-links);
+    }
+    article {
+        background-color: var(--light-bg-article);
+    }
+}
+.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-font);
+}
+    .light-mode a {
+        color: var(--light-links);
+    }
+    .light-mode a:hover {
+        color: black;
+    }
+    .light-mode article {
+        background-color: var(--light-bg-article);
+    }

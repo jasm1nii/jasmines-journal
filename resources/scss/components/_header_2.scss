@@ -1,0 +1,61 @@
+@mixin header-style-2 {
+    header {
+        letter-spacing: .05em;
+        border-bottom: 1px solid;
+        height: fit-content;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        hgroup {
+            display: flex;
+            flex-direction: column;
+        }
+        time {
+            font-weight: 600;
+            display: block;
+        }
+        nav {
+            margin: auto;
+            border-top: 1px solid;
+            letter-spacing: .1em;
+            padding: .25em;
+            ul {
+                margin-top: .25em;
+                margin-bottom: .25em;
+                padding: .7em;
+                ul {
+                    padding-top: 0;
+                    padding-bottom: .25em;
+                    li {
+                        &::before {
+                            content: '⟶';
+                        }
+                    }
+                }
+            }
+            li {
+                display: flex;
+                margin-bottom: .25em;
+                &::before {
+                    content: "✧";
+                    margin-right: .5em;
+                }
+            }
+            a {
+                text-decoration: none;
+                padding: 0px 5px 3px 5px;
+                height: fit-content;
+            }
+        }
+    }
+    #themeSwitch {
+        display: block;
+        margin-right: auto;
+        margin-bottom: 1em;
+        padding: .5em;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}

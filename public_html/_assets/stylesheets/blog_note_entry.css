@@ -18,6 +18,26 @@
     opacity: 1;
   }
 }
+html {
+  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+  scrollbar-width: thin;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-2);
+  font-size: 1.1em;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  scrollbar-color: pink transparent;
+  scrollbar-width: thin;
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+  transition: all 0.25s ease-out;
+}
+
 a {
   background-color: transparent;
   transition: all 0.2s ease-out;
@@ -38,26 +58,6 @@ button {
 button:hover {
   background-color: thistle;
   color: black;
-}
-
-html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-  scrollbar-width: thin;
-  text-rendering: optimizeLegibility;
-}
-
-body {
-  font-family: var(--font-2);
-  font-size: 1.1em;
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
-  scrollbar-color: pink transparent;
-  scrollbar-width: thin;
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-  transition: all 0.25s ease-out;
 }
 
 .layout {
@@ -128,16 +128,6 @@ header nav a {
 
 h1 {
   font-size: 2em;
-}
-
-footer .subpage-nav {
-  justify-content: space-between;
-  display: flex;
-}
-
-footer .subpage-nav a:first-child:before {
-  content: "⟵";
-  margin-right: 0.5em;
 }
 
 main {
@@ -442,4 +432,4 @@ hr {
 
 :root .light-mode, :host .light-mode {
   --seia-color-text: var(--light-font);
-}/*# sourceMappingURL=note_entry.css.map */
+}/*# sourceMappingURL=blog_note_entry.css.map */

@@ -1,0 +1,30 @@
+@mixin footer-style-2 {
+    footer {
+        font-size: smaller;
+        margin-top: 3em;
+        margin-bottom: 5em;
+        width: 70%;
+        letter-spacing: .05em;text-align: center;
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        li {
+            display: inline-block;
+            margin-right: 1em;
+            &::before {
+                content: "⬩";
+                font-size: 1.25em;
+                margin-right: 1em;
+            }
+            &:first-child {
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        time {
+            font-weight: 600;
+        }
+    }
+}
