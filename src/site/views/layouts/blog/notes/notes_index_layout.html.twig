@@ -6,10 +6,10 @@
     {{ include('@includes/head.shtml') }}
     <title>jasmine's notes</title>
     <meta name="description" content="microblog entries"/>
-    <link href="/_assets/stylesheets/blog_index.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/_assets/stylesheets/blog_notes_index.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
-    <div id="layout">
+    <div class="layout">
         <div class="sidebar">
             <header>
                 <hgroup>
@@ -21,12 +21,14 @@
             </header>
         </div>
         <main>
-            <div>
-                {{ entries|raw }}
+            <article>
+                {% apply markdown_to_html %}
+                    {{ entries|raw }}
+                {% endapply %}
                 <p>
                     subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
                 </p>
-            </div>
+            </article>
         </main>
     </div>
     <footer>

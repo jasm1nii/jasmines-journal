@@ -1,4 +1,3 @@
-/* blog index, articles archive */
 @use 'assets/font_inconsolata';
 
 @use 'components/links_1' as *;
@@ -62,7 +61,7 @@ body {
 @include header-style-2();
 
 main {
-    width: 70%;
+    margin: 0 auto;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
         display: block;
@@ -80,69 +79,49 @@ main {
     }
 }
 
-article > section {
-    border: 1px solid;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 1em;
+article {
     margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
     h2 {
         letter-spacing: .05em;
     }
 }
 
-.microblog {
-    .newest-note {
-        border: none;
-        padding: 0 1em 1em 1em;
-        display: flex;
-        flex-direction: row;
-        column-gap: 1em;
-        background-color: rgba(211, 196, 226, 0.24);
-        .u-photo {
-            border-radius: 50%;
-            margin: auto;
-            border: 1px solid;
-        }
-        .h-entry {
-            display: flex;
-            flex-direction: column;
-        }
-        .p-name {
-            margin-bottom: 0;
-        }
-        time {
-            border-bottom: 1px dashed;
-            padding-bottom: .25em;
-            margin-left: 0;
-        }
-    }
-}
-
-.blog {
-    .h-entry {
+.notes-format {
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
+    padding: 1.5em 2em 2em;
+    font-size: large;
+    & .u-photo {
+        border-radius: 50%;
+        margin-right: 1em;
         margin-bottom: 1em;
-        padding: 0;
-        border: none;
-        h3 {
-            padding: .5em;
-            background-color: rgba(214, 191, 216, 0.295);
-            letter-spacing: .015em;
-            font-weight: 600;
-        }
-        .p-summary {
-            font-style: italic;
-        }
-        .p-summary, time {
-            margin-left: 1em;
+        border: 1px solid;
+    }
+    & .h-entry {
+        flex-direction: column;
+        width: 100%;
+        & .e-content {
+            border-bottom: 1px dashed;
+            padding-bottom: 1em;
+            margin-top: 0;
+            font-size: larger;
+            line-height: 1.2em;
         }
     }
-}
-
-.subscribe {
-    padding-top: 1em;
-    border-top: 1px dashed;
-    text-align: right;
+    & time {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    + p {
+        margin: auto;
+        margin-top: 2em;
+    }
 }
 
 @include footer-style-2();
@@ -155,7 +134,6 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-
 ::selection {
     background-color: rgb(248, 208, 170);
     color: black;
@@ -183,7 +161,7 @@ hr {
     color: var(--light-font);
 }
 @mixin light-mode {
-    article > section {
+    .notes-format {
         background-color: var(--light-bg-article);
     }
     a {
@@ -199,7 +177,7 @@ hr {
     color: var(--dark-font);
 }
 @mixin dark-mode {
-    article > section {
+    .notes-format {
         background-color: var(--dark-bg-article);
     }
     a {
