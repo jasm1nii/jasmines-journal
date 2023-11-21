@@ -28,9 +28,7 @@
 						<h2>notes</h2>
 						<section class="newest-note">
 							<img src='/_assets/media/main/oingo-boingo.png' alt='profile picture' class='u-photo' width='100' height='100'/>
-							{% apply markdown_to_html %}
-								{{ notes_preview|raw }}
-							{% endapply %}
+							{{ notes_preview|raw }}
 						</section>
 						<p class="subscribe">
 							<a href="/blog/notes">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>

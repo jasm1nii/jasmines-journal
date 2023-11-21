@@ -34,8 +34,7 @@ html {
 body {
     font-family: var(--font-2);
     font-size: 1.1em;
-    width: 90%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
@@ -53,13 +52,13 @@ body {
     margin-top: 5%;
     display: flex;
     flex-direction: row-reverse;
-    column-gap: 3em;
+    column-gap: 2em;
 }
 
 @include header-style-2();
 
 main {
-    width: 50vw;
+    width: 40vw;
     margin: auto;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
@@ -106,11 +105,12 @@ article {
     column-gap: 1em;
     .u-photo {
         aspect-ratio: 1;
-        width: 25%;
-        height: 25%;
+        width: 20%;
+        height: 20%;
         border-radius: 100px;
         border: 1px solid;
-        margin: auto;
+        margin-top: 1em;
+        margin-bottom: auto;
     }
     .h-entry {
         width: 75%;

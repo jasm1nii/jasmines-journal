@@ -1,9 +1,9 @@
 <section class="notes-format">
-    <div>
-        <img class="u-photo" alt="" src="/_assets/media/main/oingo-boingo.png" width="100" height="100"/>
-    </div>
-    <div class="h-entry">
-        <p class="e-content">{{ block('content') }}</p>
-        <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="/blog/notes/{{ slug }}">view post with comments</a>
-    </div>
+    <img class="u-photo" alt="" src="/_assets/media/main/oingo-boingo.png" width="100" height="100"/>
+    <section class="h-entry">
+        <section class="e-content">{{ block('content') }}</section>
+        <span>
+            <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="/blog/notes/{{ slug }}">view post with comments</a>
+        </span>
+    </section>
 </section>

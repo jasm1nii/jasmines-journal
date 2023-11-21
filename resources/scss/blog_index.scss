@@ -101,7 +101,8 @@ article > section {
         background-color: rgba(211, 196, 226, 0.24);
         .u-photo {
             border-radius: 50%;
-            margin: auto;
+            margin-top: 1em;
+            margin-bottom: auto;
             border: 1px solid;
         }
         .h-entry {
@@ -110,6 +111,9 @@ article > section {
         }
         .p-name {
             margin-bottom: 0;
+        }
+        p {
+            margin-top: 0;
         }
         time {
             border-bottom: 1px dashed;

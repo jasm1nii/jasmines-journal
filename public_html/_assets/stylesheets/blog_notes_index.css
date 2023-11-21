@@ -163,19 +163,20 @@ article h2 {
   width: 100%;
 }
 .notes-format .h-entry .e-content {
-  border-bottom: 1px dashed;
   padding-bottom: 1em;
   margin-top: 0;
   font-size: larger;
   line-height: 1.2em;
 }
-.notes-format time {
+.notes-format span {
+  border-top: 1px dashed;
   margin-left: 0;
   padding-left: 0;
+  padding-top: 1em;
+  display: block;
 }
 .notes-format + p {
   margin: auto;
-  margin-top: 2em;
 }
 
 footer {

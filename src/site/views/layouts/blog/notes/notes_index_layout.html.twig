@@ -22,9 +22,7 @@
         </div>
         <main>
             <article>
-                {% apply markdown_to_html %}
-                    {{ entries|raw }}
-                {% endapply %}
+                {{ entries|raw }}
                 <p>
                     subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
                 </p>

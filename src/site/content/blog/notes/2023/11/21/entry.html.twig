@@ -1,0 +1,23 @@
+{% extends layout %}
+
+{% set keywords = ['accountability', 'personal', 'productivity'] %}
+
+{% set published = '21 november 2023' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        **18:03**
+
+        i wanna try using this space for accountability posting... updates to come from my stream of conciousness...
+            
+        been struggling to eat today, so i'll try to have a big dinner first!
+    {% endapply %}
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}
