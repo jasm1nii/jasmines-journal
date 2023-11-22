@@ -23,31 +23,33 @@
 					</nav>
 				</header>
 			</div>
-			<main>
-				<article>
-					<section class="microblog">
-						<h2>notes</h2>
-						<section class="newest-note">
-							<img src='/_assets/media/main/oingo-boingo.png' alt='profile picture' class='u-photo' width='80' height='80'/>
-							{{ notes_preview|raw }}
+			<div class="main-column">
+				<main>
+					<article>
+						<section class="microblog">
+							<h2>notes</h2>
+							<section class="newest-note">
+								<img src='/_assets/media/main/oingo-boingo.png' alt='profile picture' class='u-photo' width='80' height='80'/>
+								{{ notes_preview|raw }}
+							</section>
+							<p class="subscribe">
+								<a href="/blog/notes">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
+							</p>
 						</section>
-						<p class="subscribe">
-							<a href="/blog/notes">view archive</a> / subscribe via <a href="/blog/notes/notes.xml">atom</a>
-						</p>
-					</section>
-					<section class="blog">
-						<h2>articles</h2>
-						{{ articles_archive|raw }}
-						<p class="subscribe">
-							<a href="/blog/articles">view archive</a> / subscribe via <a href="/blog/articles/articles.xml">atom</a>
-						</p>
-					</section>
-				</article>
-			</main>
+						<section class="blog">
+							<h2>articles</h2>
+							{{ articles_archive|raw }}
+							<p class="subscribe">
+								<a href="/blog/articles">view archive</a> / subscribe via <a href="/blog/articles/articles.xml">atom</a>
+							</p>
+						</section>
+					</article>
+				</main>
+				<footer>
+					{{ include('@includes/footer.shtml') }}
+				</footer>
+			</div>
 		</div>
-		<footer>
-			{{ include('@includes/footer.shtml') }}
-		</footer>
 		<style>
 			#headernav #blog > a {
 				text-decoration: wavy underline;

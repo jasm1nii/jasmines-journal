@@ -30,6 +30,7 @@ body {
   width: 90%;
   max-width: 800px;
   margin: auto;
+  padding-bottom: 3vh;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
   opacity: 0;
@@ -116,7 +117,7 @@ h1 {
 }
 
 main {
-  width: 70%;
+  margin-bottom: 2em;
 }
 main::before {
   content: "⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆";
@@ -206,9 +207,8 @@ iframe {
 
 footer {
   font-size: smaller;
-  margin-top: 3em;
-  margin-bottom: 5em;
-  width: 70%;
+  margin-top: 3em auto 5em;
+  width: 100%;
   letter-spacing: 0.05em;
   text-align: center;
 }
@@ -325,13 +325,18 @@ hr {
     margin-top: 5%;
     width: 100%;
   }
-  article > section {
+  .microblog, .blog {
     padding: 1em 0;
     border-left: none;
     border-right: none;
   }
-  article > section h2, article > section h3, article > section p {
-    padding: 0 1em;
+  h2 {
+    text-align: right;
+    margin-right: 1em;
+    margin-top: 0.5em;
+  }
+  .subscribe {
+    padding-right: 1em;
   }
   .microblog .newest-note {
     flex-direction: column;

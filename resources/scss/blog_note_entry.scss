@@ -36,6 +36,7 @@ body {
     font-size: 1.1em;
     max-width: 1000px;
     margin: auto;
+    padding-bottom: 10vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
     opacity: 0;
@@ -63,6 +64,7 @@ main {
     flex-direction: column;
     row-gap: 2em;
     margin: auto;
+    margin-bottom: 15vh;
     & .h-entry, > section {
         border: 1px solid;
     }
@@ -71,7 +73,6 @@ main {
 article {
     font-size: larger;
     font-weight: 500;
-    padding-bottom: 1em;
     margin-left: auto;
     margin-right: 0;
     a {
@@ -99,6 +100,10 @@ iframe {
 }
 .emoji {
     display: inline-block;
+}
+
+.feed-links {
+    text-align: center;
 }
 
 #webmentions, #comments {

@@ -36,6 +36,7 @@ body {
     width: 90%;
     max-width: 800px;
     margin: auto;
+    padding-bottom: 3vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
     opacity: 0;
@@ -62,7 +63,7 @@ body {
 @include header-style-2();
 
 main {
-    width: 70%;
+    margin-bottom: 2em;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
         display: block;

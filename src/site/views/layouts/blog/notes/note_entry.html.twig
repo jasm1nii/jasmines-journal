@@ -1,93 +1,109 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ include('@includes/head.shtml') }}
-    <title>{{ published }} | jasmine's notes</title>
-    <link rel="stylesheet" href="/_assets/stylesheets/blog_note_entry.css" type="text/css" media="all"/>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		{{ include('@includes/head.shtml') }}
+		<title>{{ published }}
+			| jasmine's notes</title>
+		<link rel="stylesheet" href="/_assets/stylesheets/blog_note_entry.css" type="text/css" media="all"/>
 
-    {% if custom_style == true %}
-      <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
-    {% endif %}
+		{% if custom_style == true %}
+			<link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+		{% endif %}
 
-    <link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
-    {% if publish_to_bridgy == true %}
-      <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
-    {% endif %}
+		<link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
+		{% if publish_to_bridgy == true %}
+			<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
+		{% endif %}
 
-    <meta name="author" content="jasmine"/>
-    <meta name="keywords" content="{% if keywords is defined %}{% for keyword in keywords %}{{ keyword }}, {% endfor %}microblog{% else %}microblog{% endif %}"/>
-    <meta name="description" content="note from {{ published }}"/>
-  </head>
-  <body>
-    <div class="layout">
-      <header>
-        <hgroup>
-          <h1>jasmine&apos;s notes</h1>
-        </hgroup>
-        <nav aria-label="primary">
-          {{ nav|raw }}
-        </nav>
-      </header>
+		<meta name="author" content="jasmine"/>
+		<meta name="keywords" content="{% if keywords is defined %}{% for keyword in keywords %}{{ keyword }}, {% endfor %}microblog{% else %}microblog{% endif %}"/>
+		<meta name="description" content="note from {{ published }}"/>
+	</head>
+	<body>
+		<div class="layout">
+			<header>
+				<hgroup>
+					<h1>jasmine&apos;s notes</h1>
+				</hgroup>
+				<nav aria-label="primary">
+					{{ nav|raw }}
+				</nav>
+			</header>
 
-      <main>
-        <article>
-          <img src="/_assets/media/main/oingo-boingo.png" alt="" class="u-photo" width="80" height="80"/>
-          <h2><time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time></h2>
-          <section class="h-entry">
-            {% if updated is defined %}
-              <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
-            {% endif %}
-            <section class="e-content">
-              {{ block('content') }}
-            </section>
-          </section>
-          <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
-        </article>
+			<main>
+				<article>
+					<img src="/_assets/media/main/oingo-boingo.png" alt="" class="u-photo" width="80" height="80"/>
+					<h2>
+						<time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time>
+					</h2>
+					<section class="h-entry">
+						{% if updated is defined %}
+							<time class="dt-updated" datetime="{{ updated|date() }}">updated
+								{{ updated }}</time>
+						{% endif %}
+						<section class="e-content">
+							{{ block('content') }}
+						</section>
+					</section>
+					<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
+				</article>
 
-        <section id="webmentions">
-          <h3>webmentions</h3>
-          {% if webmentions_301 == true %}
-            <p>
-              this post has moved to a new URL - webmentions from the previous one could not be carried over.
-            </p>
-          {% endif %}
-          {% if enable_webmentions == true %}
-            <s-e-i-a></s-e-i-a>
-          {% else %}
-            <p>
-              the displaying of webmentions is disabled.
-            </p>
-          {% endif %}
-        </section>
+				<aside class="feed-links">
+					<p>
+						<span aria-hidden="true">📰</span>
+						subscribe via
+						<a href="/notes.xml">atom</a>
+						/
+						<span aria-hidden="true">🐘</span>
+						follow via
+						<a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+					</p>
+				</aside>
 
-        <section id="comments">
-          <h3>comments</h3>
-          {% if enable_comments == true %}
-            <div id="comment-section" data-comments-id="notes-{{ published|date("Ymd") }}"></div>
-          {% else %}
-            <p>
-              comments are disabled.
-            </p>
-          {% endif %}
-        </section>
-      </main>
-    </div>
+				<section id="webmentions">
+					<h3>webmentions</h3>
+					{% if webmentions_301 == true %}
+						<p>
+							this post has moved to a new URL - webmentions from the previous one could not be carried over.
+						</p>
+					{% endif %}
+					{% if enable_webmentions == true %}
+						<s-e-i-a></s-e-i-a>
+					{% else %}
+						<p>
+							the displaying of webmentions is disabled.
+						</p>
+					{% endif %}
+				</section>
 
-    <footer>
-      {{ include('@includes/footer.shtml') }}
-    </footer>
+				<section id="comments">
+					<h3>comments</h3>
+					{% if enable_comments == true %}
+						<div id="comment-section" data-comments-id="notes-{{ published|date("ymd") }}"></div>
+					{% else %}
+						<p>
+							comments are disabled.
+						</p>
+					{% endif %}
+				</section>
+			</main>
+		</div>
 
-    {% if enable_webmentions == true %}
-      <script type="module" src="/_assets/scripts/seia.js" async></script>
-    {% endif %}
-    
-    {% if enable_comments == true %}
-      <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-      <script src="/_assets/scripts/comment-section.js"></script>
-    {% endif %}
+		<footer>
+			{{ include('@includes/footer.shtml') }}
+		</footer>
 
-    <script src="/_assets/scripts/theme-switcher-v2.js"></script>
-  </body>
+		{% if enable_webmentions == true %}
+			<script type="module" src="/_assets/scripts/seia.js" async></script>
+		{% endif %}
+
+		{% if enable_comments == true %}
+			<script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+			<script src="/_assets/scripts/comment-section.js"></script>
+		{% endif %}
+
+		<script src="/_assets/scripts/theme-switcher-v2.js"></script>
+	</body>
 </html>

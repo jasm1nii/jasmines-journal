@@ -60,13 +60,22 @@
         }
         .notes-format {
             flex-direction: column;
+            .h-entry {
+                border-left: none;
+                border-right: none;
+            }
+            + p {
+                width: fit-content;
+            }
         }
+        
         h2, .u-photo {
             margin-left: 1em;
         }
         
         footer {            
             width: 80%;
+            max-width: 100vw;
             margin-left: auto;
             margin-right: auto;
             border: none;

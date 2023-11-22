@@ -53,13 +53,20 @@
             width: 100%;
         }
 
-        article > section {
+        .microblog, .blog {
             padding: 1em 0;
             border-left: none;
             border-right: none;
-            h2, h3, p {
-                padding: 0 1em;
-            }
+        }
+
+        h2 {
+            text-align: right;
+            margin-right: 1em;
+            margin-top: .5em;
+        }
+
+        .subscribe {
+            padding-right: 1em;
         }
 
         .microblog {

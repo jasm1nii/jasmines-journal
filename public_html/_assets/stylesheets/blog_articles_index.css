@@ -183,9 +183,8 @@ article li time {
 
 footer {
   font-size: smaller;
-  margin-top: 3em;
-  margin-bottom: 5em;
-  width: 70%;
+  margin-top: 3em auto 5em;
+  width: 100%;
   letter-spacing: 0.05em;
   text-align: center;
 }

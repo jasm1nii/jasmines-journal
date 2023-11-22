@@ -21,18 +21,22 @@
                 </nav>
             </header>
         </div>
-        <main>
-            <article>
-                {{ entries|raw }}
-                <p>
-                    subscribe via <a href="/blog/notes/notes.xml">atom</a> / follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
-                </p>
-            </article>
-        </main>
+        <div class="main-column">
+            <main>
+                <article>
+                    {{ entries|raw }}
+                </article>
+                <aside class="feed-links">
+                    <p>
+                        <span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+                    </p>
+                </aside>
+            </main>
+            <footer>
+                {{ include('@includes/footer.shtml') }}
+            </footer>
+        </div>
     </div>
-    <footer>
-        {{ include('@includes/footer.shtml') }}
-    </footer>
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
 </html>

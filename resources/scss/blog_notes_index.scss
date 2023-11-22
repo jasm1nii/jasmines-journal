@@ -35,6 +35,7 @@ body {
     width: 90%;
     max-width: 900px;
     margin: auto;
+    padding-bottom: 3vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
     opacity: 0;
@@ -60,8 +61,16 @@ body {
 
 @include header-style-2();
 
+.feed-links {
+    margin: auto;
+    margin-bottom: 2em;
+    padding: .5em;
+    width: 95%;
+    text-align: center;
+}
+
 main {
-    margin: 0 auto;
+    margin: 0 auto 3em;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
         display: block;
@@ -96,6 +105,7 @@ article {
     flex-direction: row;
     font-size: large;
     width: 100%;
+    margin-bottom: 3em;
     & .u-photo {
         border-radius: 50%;
         margin-right: 1em;
@@ -120,9 +130,6 @@ article {
                 display: block;
             }
         }
-    }
-    + p {
-        margin: auto;
     }
 }
 
@@ -163,13 +170,27 @@ hr {
     --light-links-hover: rgb(140, 42, 221);
 }
 
+$shadow-style-1: 5px 5px 15px;
+$shadow-style-2: -5px -5px 15px;
+
 @mixin light-mode-body {
     background-color:  var(--light-bg);
     color: var(--light-font);
 }
 @mixin light-mode {
+    $shadow-color: rgba(199, 137, 235, 0.08);
+    .feed-links {
+        background-color: rgb(246, 240, 248);
+    }
+    .u-photo {
+        filter: drop-shadow($shadow-style-1 $shadow-color)
+                drop-shadow($shadow-style-2 $shadow-color);
+    }
     .h-entry {
         background-color: var(--light-bg-article);
+        box-shadow:
+            $shadow-style-1 $shadow-color,
+            $shadow-style-2 $shadow-color;
     }
     a {
         color: var(--light-links);
@@ -184,8 +205,19 @@ hr {
     color: var(--dark-font);
 }
 @mixin dark-mode {
+    $shadow-color: rgba(128, 0, 107, 0.4);
+    .feed-links {
+        background-color: rgb(52, 47, 54);
+    }
+    .u-photo {
+        filter: drop-shadow($shadow-style-1 $shadow-color)
+                drop-shadow($shadow-style-2 $shadow-color);
+    }
     .h-entry {
         background-color: var(--dark-bg-article);
+        border-color: gray;
+        box-shadow: $shadow-style-1 $shadow-color,
+                    $shadow-style-2 $shadow-color;
     }
     a {
         color: var(--dark-links);
