@@ -20,25 +20,25 @@
             break;
 
 
-        case str_starts_with(REQUEST, "/about/"):
+        case str_starts_with(REQUEST, "/about"):
 
             Route::forwardToController('about.php');
             break;
 
 
-        case str_starts_with(REQUEST, "/blog/"):
+        case str_starts_with(REQUEST, "/blog"):
 
             Route::forwardToController('blog.php');
             break;
 
 
-        case str_starts_with(REQUEST, "/resources/"):
+        case str_starts_with(REQUEST, "/resources"):
 
             Route::forwardToController('resources.php');
             break;
 
 
-        case str_starts_with(REQUEST, "/feeds/"):
+        case str_starts_with(REQUEST, "/feeds"):
 
             Route::forwardToController('feeds.php');
             break;
@@ -55,35 +55,39 @@
             break;
 
 
+        case "/link-gallery":
         case "/link-gallery/":
-        case "/link-gallery/index/":
+        case "/link-gallery/index":
 
             new Layouts\LinkGallery();
             break;
 
         
+        case "/site-map":
         case "/site-map/":
-        case "/site-map/index/":
+        case "/site-map/index":
 
             new Layouts\SiteMap();
             break;
 
 
+        case "/credits":
         case "/credits/":
-        case "/credits/index/":
+        case "/credits/index":
 
             new Layouts\Credits();
             break;
 
 
+        case "/accessibility":
         case "/accessibility/":
-        case "/accessibility/index/":
+        case "/accessibility/index":
 
             new Layouts\Accessibility();
             break;
         
         
-        case str_starts_with(REQUEST, "/guestbook/"):
+        case str_starts_with(REQUEST, "/guestbook"):
 
             Route::forwardToController('guestbook.php');
             break;

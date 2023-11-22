@@ -37,13 +37,13 @@
 
     switch (REQUEST) {
 
-        case "/resources/":
-        case "/resources/index/":
+        case "/resources":
+        case "/resources/index":
             
             new Layouts\ResourcesIndex();
             break;
 
-        case str_starts_with(REQUEST, "/resources/"):
+        case str_starts_with(REQUEST, "/resources"):
             
             switch (REQUEST) {
                 

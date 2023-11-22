@@ -25,6 +25,7 @@
     
     switch (REQUEST) {
 
+        case "/blog":
         case "/blog/":
         case "/blog/index/":
             
@@ -33,12 +34,13 @@
 
         
 
-        case str_contains(REQUEST, "/articles/"):
+        case str_contains(REQUEST, "articles"):
 
             switch (REQUEST) {
 
+                case "/blog/articles":
                 case "/blog/articles/":
-                case "/blog/articles/index/":
+                case "/blog/articles/index":
 
                     new Layouts\ArticlesIndex();
 
@@ -68,12 +70,13 @@
 
             break;
 
-        case str_contains(REQUEST, "/notes/"):
+        case str_contains(REQUEST, "notes"):
 
             switch (REQUEST) {
 
+                case "/blog/notes":
                 case "/blog/notes/":
-                case "/blog/notes/index/":
+                case "/blog/notes/index":
 
                     new Layouts\NotesIndex();
 

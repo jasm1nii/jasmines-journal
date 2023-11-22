@@ -21,10 +21,10 @@
             if (isset($_SERVER['HTTP_REFERER'])) {
 
                 $dialog = match (REQUEST) {
-                    '/guestbook/success/'               => 'success',
-                    '/guestbook/success/exception/'     => 'exception',
-                    '/guestbook/error/has_html/'        => 'html_error',
-                    '/guestbook/error/time_too_short/'  => 'spam_error',
+                    '/guestbook/success'               => 'success',
+                    '/guestbook/success/exception'     => 'exception',
+                    '/guestbook/error/has_html'        => 'html_error',
+                    '/guestbook/error/time_too_short'  => 'spam_error',
                     default                             => null
                 };
                 

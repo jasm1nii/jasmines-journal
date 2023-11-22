@@ -33,11 +33,11 @@
 
             $page = self::setPageNumber();
 
-            if (REQUEST == "/guestbook/" || REQUEST == "/guestbook/page/1/") {
+            if (REQUEST == "/guestbook" || REQUEST == "/guestbook/page/1") {
 
                 $_SESSION['gb_page'] = 1;
         
-            } elseif (REQUEST == "/guestbook/page/" . $page . "/") {
+            } elseif (REQUEST == "/guestbook/page/" . $page) {
         
                 if ($page !== 0) {
         
@@ -60,7 +60,7 @@
 
         public static function setFormSession() {
 
-            if (REQUEST == "/guestbook/" || isset($_SERVER['HTTP_REFERER'])) {
+            if (REQUEST == "/guestbook" || isset($_SERVER['HTTP_REFERER'])) {
 
                 session_start();
                 $_SESSION['form_start'] = true;
@@ -72,7 +72,7 @@
                     case str_contains(REQUEST, "success"):
                     case str_contains(REQUEST, "error"):
                         
-                        header('Location: /guestbook/');
+                        header('Location: /guestbook');
                         break;
 
                     default:
@@ -89,6 +89,7 @@
 
     switch (REQUEST) {
 
+        case "/guestbook/post":
         case "/guestbook/post/":
 
             Route::forwardToModel('guestbook/guestbook_submit.php');

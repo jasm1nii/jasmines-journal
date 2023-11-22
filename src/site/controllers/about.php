@@ -6,13 +6,14 @@
 
     switch (REQUEST) {
 
+        case "/about":
         case "/about/":
-        case "/about/index/":
+        case "/about/index":
 
             new Layouts\AboutIndex();
             break;
 
-        case str_contains(REQUEST, "/changelog/"):
+        case str_contains(REQUEST, "/changelog"):
 
             class ChangelogSubpage extends Route {
 
@@ -34,8 +35,9 @@
 
             switch (REQUEST) {
 
+                case "/about/changelog":
                 case "/about/changelog/":
-                case "/about/changelog/index/":
+                case "/about/changelog/index":
 
                     new Layouts\ChangelogIndex();
                     break;
