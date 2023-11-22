@@ -57,10 +57,7 @@ body {
 }
 
 /* animations */
-.board,
-header,
-main,
-footer {
+.board, header, main, footer {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
@@ -90,7 +87,6 @@ footer {
 
 section {
   transition: transform 0.3s;
-
   &:hover {
     transform: translatey(-5px);
   }

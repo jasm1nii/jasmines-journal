@@ -63,10 +63,7 @@ body {
 }
 
 /* animations */
-.board,
-header,
-main,
-footer {
+.board, header, main, footer {
   opacity: 0;
   animation: fadeInPage 0.5s;
   animation-fill-mode: forwards;
@@ -475,6 +472,16 @@ footer a img {
   }
   nav::-webkit-scrollbar-thumb {
     background-color: rgba(255, 192, 203, 0.445);
+  }
+  .page-columns {
+    display: flex;
+    flex-direction: column;
+    -moz-columns: 1;
+         columns: 1;
+    padding-bottom: 2vh;
+  }
+  .card {
+    width: 100%;
   }
   footer {
     width: 90%;
