@@ -140,9 +140,8 @@
 
             $output = new \DOMDocument();
             $output->load($this->output_file);
+            header('Content-Type: text/xml; charset=utf-8');
             echo $output->saveXML();
-
-            //require $this->output_file;
 
         }
 

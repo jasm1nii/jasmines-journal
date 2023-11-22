@@ -43,12 +43,13 @@
             Route::forwardToController('feeds.php');
             break;
 
+        case "/articles":
         case "/articles.xml":
 
             new Generator\ArticlesXML($max_entries = 'total_entries', $debug = false);
             break;
 
-
+        case "/notes":
         case "/notes.xml":
 
             new Generator\NotesXML($max_entries = 'total_entries', $debug = false);

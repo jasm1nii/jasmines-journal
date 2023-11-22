@@ -1,4 +1,4 @@
 <section class="h-entry">
     <h3 class='p-name'><time datetime='{{ published|date() }}'><a href='/blog/notes/{{ slug }}'>{{ published }}</a></time></h3>
-    <section class='e-content'>{{ block('content')[:250]|striptags }} &hellip;</section>
+    <section class='e-content'>{{ block('content')[:250]|striptags('<br><p><b><i><u><strong><em>')|raw }} &hellip;</section>
 </section>

@@ -134,14 +134,14 @@ main::after {
   font-size: x-large;
 }
 
-article > section {
+.microblog, .blog {
   border: 1px solid;
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 1em;
   margin-bottom: 2em;
 }
-article > section h2 {
+.microblog h2, .blog h2 {
   letter-spacing: 0.05em;
 }
 
@@ -381,7 +381,7 @@ hr {
     -webkit-text-decoration: dashed underline;
             text-decoration: dashed underline;
   }
-  article > section {
+  .microblog, .blog {
     background-color: var(--dark-bg-article);
     border-color: gray;
   }
@@ -407,7 +407,7 @@ hr {
   -webkit-text-decoration: dashed underline;
           text-decoration: dashed underline;
 }
-.dark-mode article > section {
+.dark-mode .microblog, .dark-mode .blog {
   background-color: var(--dark-bg-article);
   border-color: gray;
 }
@@ -429,7 +429,7 @@ hr {
     background-color: var(--light-bg);
     color: var(--light-font);
   }
-  article > section {
+  .microblog, .blog {
     background-color: var(--light-bg-article);
   }
   a {
@@ -449,7 +449,7 @@ hr {
   background-color: var(--light-bg);
   color: var(--light-font);
 }
-.light-mode article > section {
+.light-mode .microblog, .light-mode .blog {
   background-color: var(--light-bg-article);
 }
 .light-mode a {

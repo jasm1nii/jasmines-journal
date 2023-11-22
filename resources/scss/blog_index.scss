@@ -80,7 +80,7 @@ main {
     }
 }
 
-article > section {
+.microblog, .blog {
     border: 1px solid;
     padding-left: 2em;
     padding-right: 2em;
@@ -186,7 +186,7 @@ hr {
     color: var(--light-font);
 }
 @mixin light-mode {
-    article > section {
+    .microblog, .blog {
         background-color: var(--light-bg-article);
     }
     a {
@@ -216,7 +216,7 @@ hr {
             text-decoration: dashed underline;
         }
     }
-    article > section {
+    .microblog, .blog {
         background-color: var(--dark-bg-article);
         border-color: gray;
     }
