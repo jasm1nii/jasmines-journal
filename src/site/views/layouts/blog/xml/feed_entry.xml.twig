@@ -7,6 +7,6 @@
         <published>{{ published|date() }}</published>
         <summary>{% if summary is defined %}{{ summary }}{% else %}{{ block('content')[:250]|striptags }} ...{% endif %}</summary>
         <content type="html">
-            {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;'})|spaceless }}
+            {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;', '&hellip;' : '...' })|spaceless }}
         </content>
     </entry>

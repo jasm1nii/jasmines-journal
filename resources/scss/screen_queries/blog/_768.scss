@@ -55,6 +55,8 @@
 
         article > section {
             padding: 1em 0;
+            border-left: none;
+            border-right: none;
             h2, h3, p {
                 padding: 0 1em;
             }

@@ -152,7 +152,6 @@ article > section h2 {
   flex-direction: row;
   -moz-column-gap: 1em;
        column-gap: 1em;
-  background-color: rgba(211, 196, 226, 0.24);
 }
 .microblog .newest-note .u-photo {
   border-radius: 50%;
@@ -164,23 +163,25 @@ article > section h2 {
   display: flex;
   flex-direction: column;
 }
+.microblog .newest-note .e-content {
+  line-height: 1.5em;
+}
 .microblog .newest-note p {
   margin-top: 0;
 }
 .microblog .newest-note time {
-  border-bottom: 1px dashed;
   padding-bottom: 0.25em;
   margin-left: 0;
 }
 
 .blog .h-entry {
-  margin-bottom: 1em;
   padding: 0;
+  padding-bottom: 2em;
   border: none;
 }
 .blog .h-entry h3 {
+  margin-top: 0;
   padding: 0.5em;
-  background-color: rgba(214, 191, 216, 0.295);
   letter-spacing: 0.015em;
   font-weight: 600;
 }
@@ -192,6 +193,7 @@ article > section h2 {
 }
 
 .subscribe {
+  margin-top: 0;
   padding-top: 1em;
   border-top: 1px dashed;
   text-align: right;
@@ -325,6 +327,8 @@ hr {
   }
   article > section {
     padding: 1em 0;
+    border-left: none;
+    border-right: none;
   }
   article > section h2, article > section h3, article > section p {
     padding: 0 1em;
@@ -372,8 +376,14 @@ hr {
     background-color: var(--dark-bg);
     color: var(--dark-font);
   }
+  main a {
+    color: rgb(255, 192, 208);
+    -webkit-text-decoration: dashed underline;
+            text-decoration: dashed underline;
+  }
   article > section {
     background-color: var(--dark-bg-article);
+    border-color: gray;
   }
   a {
     color: var(--dark-links);
@@ -381,19 +391,37 @@ hr {
   a:hover {
     color: black;
   }
+  .newest-note {
+    background-color: rgb(39, 28, 39);
+  }
+  .blog .h-entry h3 {
+    background-color: rgb(39, 28, 39);
+  }
 }
 .dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
+.dark-mode main a {
+  color: rgb(255, 192, 208);
+  -webkit-text-decoration: dashed underline;
+          text-decoration: dashed underline;
+}
 .dark-mode article > section {
   background-color: var(--dark-bg-article);
+  border-color: gray;
 }
 .dark-mode a {
   color: var(--dark-links);
 }
 .dark-mode a:hover {
   color: black;
+}
+.dark-mode .newest-note {
+  background-color: rgb(39, 28, 39);
+}
+.dark-mode .blog .h-entry h3 {
+  background-color: rgb(39, 28, 39);
 }
 
 @media (prefers-color-scheme: light) {
@@ -410,6 +438,12 @@ hr {
   a:hover {
     color: black;
   }
+  .newest-note {
+    background-color: rgba(211, 196, 226, 0.24);
+  }
+  .blog h3 {
+    background-color: rgba(214, 191, 216, 0.295);
+  }
 }
 .light-mode {
   background-color: var(--light-bg);
@@ -423,4 +457,10 @@ hr {
 }
 .light-mode a:hover {
   color: black;
+}
+.light-mode .newest-note {
+  background-color: rgba(211, 196, 226, 0.24);
+}
+.light-mode .blog h3 {
+  background-color: rgba(214, 191, 216, 0.295);
 }/*# sourceMappingURL=blog_index.css.map */
