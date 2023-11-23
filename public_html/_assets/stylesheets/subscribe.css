@@ -235,9 +235,6 @@ nav li::before {
   color: pink;
   font-weight: normal;
 }
-nav ul li:first-child {
-  font-weight: 600;
-}
 nav a {
   text-decoration: none;
   color: purple;
@@ -397,6 +394,9 @@ form footer {
   .layout {
     margin-top: 0;
     width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
   }
   article {
     display: flex;
@@ -426,6 +426,7 @@ form footer {
     padding-left: 5%;
     overflow-x: auto;
     white-space: nowrap;
+    font-size: smaller;
   }
   nav::-webkit-scrollbar-thumb {
     background-color: rgba(255, 192, 203, 0.445);

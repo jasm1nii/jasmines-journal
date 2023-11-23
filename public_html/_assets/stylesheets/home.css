@@ -229,9 +229,6 @@ nav li::before {
   color: pink;
   font-weight: normal;
 }
-nav ul li:first-child {
-  font-weight: 600;
-}
 nav a {
   text-decoration: none;
   color: purple;
@@ -972,7 +969,7 @@ hr {
     margin-right: 5%;
   }
   .page-columns > section {
-    padding-bottom: 10vh;
+    padding-bottom: 15vh;
   }
   .latest-status {
     min-width: 55%;

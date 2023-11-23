@@ -211,9 +211,6 @@ nav li::before {
   color: pink;
   font-weight: normal;
 }
-nav ul li:first-child {
-  font-weight: 600;
-}
 nav a {
   text-decoration: none;
   color: purple;
