@@ -292,20 +292,16 @@ hr {
   .layout {
     flex-direction: column;
   }
-  header nav ul {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
   header nav ul ul {
-    display: inline;
     padding-right: 0;
+    display: inline;
     padding-left: 0;
   }
   header nav li {
     margin-right: 0.5em;
+    display: inline-block;
     height: -moz-fit-content;
     height: fit-content;
-    display: inline;
   }
   header nav li:last-child::after {
     content: "✧";
@@ -387,8 +383,8 @@ hr {
             text-decoration: dashed underline;
   }
   .microblog, .blog {
-    background-color: var(--dark-bg-article);
-    border-color: gray;
+    background-color: rgb(20, 20, 20);
+    border-color: rgb(46, 42, 42);
   }
   a {
     color: var(--dark-links);
@@ -413,8 +409,8 @@ hr {
           text-decoration: dashed underline;
 }
 .dark-mode .microblog, .dark-mode .blog {
-  background-color: var(--dark-bg-article);
-  border-color: gray;
+  background-color: rgb(20, 20, 20);
+  border-color: rgb(46, 42, 42);
 }
 .dark-mode a {
   color: var(--dark-links);

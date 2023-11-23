@@ -6,8 +6,8 @@
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
-@use 'screen_queries/blog/notes/768' as *;
-@use 'screen_queries/blog/notes/500' as *;
+@use 'screen_queries/blog/notes/entry_768' as *;
+@use 'screen_queries/blog/notes/entry_500' as *;
 
 @import url('cactus-chat.css');
 
@@ -65,9 +65,6 @@ main {
     row-gap: 2em;
     margin: auto;
     margin-bottom: 15vh;
-    & .h-entry, > section {
-        border: 1px solid;
-    }
 }
 
 article {
@@ -80,6 +77,10 @@ article {
             letter-spacing: .05em;
         }
     }
+}
+
+.h-entry, #webmentions, #comments {
+    border: 1px solid;
 }
 
 h2 {
@@ -153,77 +154,81 @@ hr {
     --light-links-hover: rgb(140, 42, 221);
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--dark-bg);
-        color: var(--dark-font);
-        }
-    a {
-        color: var(--dark-links);
-    }
-    #comments button {
-        color: black;
-        background-color: thistle;
-    }
-    #comments button:hover {
-        background-color: lightpink;
-    }
-}
-.dark-mode {
+@mixin dark-mode-body {
     background-color: var(--dark-bg);
     color: var(--dark-font);
 }
-    .dark-mode a {
+
+@mixin dark-mode {
+    a {
         color: var(--dark-links);
+        &:hover {
+            color: black;
+        }
     }
-    .dark-mode a:hover {
-        color: black
+    .h-entry, #comments, #webmentions {
+        background-color: rgb(22, 21, 21);
+        border-color: rgb(68, 60, 60);
     }
-    .dark-mode .h-entry, .dark-mode #comments, .dark-mode #webmentions {
-        background-color: var(--dark-bg-article);
+    #comments {
+        button {
+            color: black;
+            background-color: thistle;
+            &:hover {
+                background-color: lightpink;
+            }
+        }
     }
-    .dark-mode #comments button {
-        color: black;
-        background-color: thistle;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
     }
-    .dark-mode #comments button:hover {
-        background-color: lightpink;
+    @include dark-mode();
+}
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+
+:root .dark-mode, :host .dark-mode {
+    --seia-color-text: white;
+}
+
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
+    color: var(--light-font);
+}
+
+@mixin light-mode {
+    .h-entry, #webmentions, #comments {
+        color: var(--light-font);
+        background-color: var(--light-bg-article);
     }
-    :root .dark-mode, :host .dark-mode {
-        --seia-color-text: white;
+    a {
+        color: var(--light-links);
+        &:hover {
+            color: black;
+        }
     }
+}
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color:  var(--light-bg);
-        color: var(--light-font);
+        @include light-mode-body();
     } 
-    a {
-        color: var(--light-links);
-    }
-    .h-entry, #webmentions, #comments {
-        background-color: var(--light-bg-article);
-    }
+    @include light-mode();
     :root, :host {
         --seia-color-text: var(--light-font);
     }
 }
+
 .light-mode {
-    background-color: var(--light-bg);
-    color: var(--light-font);
+    @include light-mode-body();
+    @include light-mode();
 }
-    .light-mode a {
-        color: var(--light-links);
-    }
-    .light-mode a:hover {
-        color: black;
-    }
-    .light-mode .h-entry, .light-mode #comments, .light-mode #webmentions {
-        background-color: var(--light-bg-article);
-    }
-    .light-mode #webmentions, .light-mode #comments {
-        color: var(--light-font);
-    }
-    :root .light-mode, :host .light-mode {
-        --seia-color-text: var(--light-font);
-    }
+:root .light-mode, :host .light-mode {
+    --seia-color-text: var(--light-font);
+}

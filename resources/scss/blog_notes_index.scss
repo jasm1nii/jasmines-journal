@@ -6,8 +6,8 @@
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
-@use 'screen_queries/blog/notes/768' as *;
-@use 'screen_queries/blog/notes/500' as *;
+@use 'screen_queries/blog/notes/index_768' as *;
+@use 'screen_queries/blog/notes/index_500' as *;
 
 :root {
     --font-2: 'Inconsolata', monospace;

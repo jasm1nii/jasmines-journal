@@ -138,9 +138,6 @@ main {
   margin: auto;
   margin-bottom: 15vh;
 }
-main .h-entry, main > section {
-  border: 1px solid;
-}
 
 article {
   font-size: larger;
@@ -150,6 +147,10 @@ article {
 }
 article a:hover {
   letter-spacing: 0.05em;
+}
+
+.h-entry, #webmentions, #comments {
+  border: 1px solid;
 }
 
 h2 {
@@ -262,6 +263,7 @@ hr {
   body {
     width: -moz-fit-content;
     width: fit-content;
+    padding-bottom: 5vh;
   }
   .layout {
     margin: auto auto;
@@ -296,27 +298,30 @@ hr {
   main {
     margin-top: 5%;
     width: 100%;
-  }
-  main .h-entry, main section {
-    border-left: none;
-    border-right: none;
+    row-gap: 0;
   }
   article {
     flex-direction: column;
-  }
-  .notes-format {
-    flex-direction: column;
-  }
-  .notes-format .h-entry {
-    border-left: none;
-    border-right: none;
-  }
-  .notes-format + p {
-    width: -moz-fit-content;
-    width: fit-content;
+    margin: 1em auto;
   }
   h2, .u-photo {
     margin-left: 1em;
+  }
+  .h-entry {
+    padding: 2em 1em;
+  }
+  .feed-links {
+    margin-bottom: 2em;
+  }
+  #webmentions {
+    border-bottom: none;
+  }
+  #comments {
+    border-top: none;
+  }
+  .h-entry, #webmentions, #comments {
+    border-left: none;
+    border-right: none;
   }
   footer {
     width: 80%;
@@ -355,6 +360,13 @@ hr {
   a {
     color: var(--dark-links);
   }
+  a:hover {
+    color: black;
+  }
+  .h-entry, #comments, #webmentions {
+    background-color: rgb(22, 21, 21);
+    border-color: rgb(68, 60, 60);
+  }
   #comments button {
     color: black;
     background-color: thistle;
@@ -367,24 +379,20 @@ hr {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
-
 .dark-mode a {
   color: var(--dark-links);
 }
-
 .dark-mode a:hover {
   color: black;
 }
-
 .dark-mode .h-entry, .dark-mode #comments, .dark-mode #webmentions {
-  background-color: var(--dark-bg-article);
+  background-color: rgb(22, 21, 21);
+  border-color: rgb(68, 60, 60);
 }
-
 .dark-mode #comments button {
   color: black;
   background-color: thistle;
 }
-
 .dark-mode #comments button:hover {
   background-color: lightpink;
 }
@@ -398,11 +406,15 @@ hr {
     background-color: var(--light-bg);
     color: var(--light-font);
   }
+  .h-entry, #webmentions, #comments {
+    color: var(--light-font);
+    background-color: var(--light-bg-article);
+  }
   a {
     color: var(--light-links);
   }
-  .h-entry, #webmentions, #comments {
-    background-color: var(--light-bg-article);
+  a:hover {
+    color: black;
   }
   :root, :host {
     --seia-color-text: var(--light-font);
@@ -412,21 +424,15 @@ hr {
   background-color: var(--light-bg);
   color: var(--light-font);
 }
-
+.light-mode .h-entry, .light-mode #webmentions, .light-mode #comments {
+  color: var(--light-font);
+  background-color: var(--light-bg-article);
+}
 .light-mode a {
   color: var(--light-links);
 }
-
 .light-mode a:hover {
   color: black;
-}
-
-.light-mode .h-entry, .light-mode #comments, .light-mode #webmentions {
-  background-color: var(--light-bg-article);
-}
-
-.light-mode #webmentions, .light-mode #comments {
-  color: var(--light-font);
 }
 
 :root .light-mode, :host .light-mode {

@@ -114,6 +114,7 @@ h1 {
 
 main {
   margin-right: auto;
+  margin-bottom: 3em;
   width: 70%;
 }
 main::before {
@@ -268,20 +269,16 @@ hr {
   .layout {
     flex-direction: column;
   }
-  header nav ul {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
   header nav ul ul {
-    display: inline;
     padding-right: 0;
+    display: inline;
     padding-left: 0;
   }
   header nav li {
     margin-right: 0.5em;
+    display: inline-block;
     height: -moz-fit-content;
     height: fit-content;
-    display: inline;
   }
   header nav li:last-child::after {
     content: "✧";
@@ -352,7 +349,8 @@ hr {
 }
 
 .dark-mode article {
-  background-color: var(--dark-bg-article);
+  background-color: rgb(26, 24, 24);
+  border-color: rgb(59, 55, 55);
 }
 
 @media (prefers-color-scheme: light) {

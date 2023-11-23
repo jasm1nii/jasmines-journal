@@ -61,6 +61,7 @@ body {
 
 main {
     margin-right: auto;
+    margin-bottom: 3em;
     width: 70%;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
@@ -183,7 +184,8 @@ hr {
         color: black
     }
     .dark-mode article {
-        background-color: var(--dark-bg-article);
+        background-color: rgb(26, 24, 24);
+        border-color: rgb(59, 55, 55);
     }
 
 @media (prefers-color-scheme: light) {

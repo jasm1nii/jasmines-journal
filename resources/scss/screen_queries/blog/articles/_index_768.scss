@@ -1,3 +1,5 @@
+@use '../../../components/header_2' as *;
+
 @mixin screen-768 {
     @media all and (max-width:768px) {
         body {
@@ -6,41 +8,7 @@
         .layout {
             flex-direction: column;
         }
-        header {
-            nav {
-                ul {
-                    display: inline-flex;
-                    flex-wrap: wrap;
-                    ul {
-                        display: inline;
-                        padding-right: 0;
-                        padding-left: 0;
-                    }
-                }
-                li {
-                    margin-right: .5em;
-                    height: fit-content;
-                    display: inline;
-                    &:last-child {
-                        &::after {
-                            content: "✧";
-                            margin-left: .5em;
-                        }
-                    }
-                    li {
-                        &:last-child {
-                            &::after {
-                                content: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #headernav ul ul li:not(:first-child)::before {
-            content: '/';
-        }
-
+        @include header-style-2-768();
         .sidebar {
             position: static;
             max-width: none;
