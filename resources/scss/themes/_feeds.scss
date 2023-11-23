@@ -2,6 +2,8 @@
 @use '../assets/font_inconsolata';
 @use '../assets/font_instrument-sans';
 
+@use '../components/scrollbar' as *;
+
 :root {
     --font-1: 'Instrument Sans', sans-serif;
     --font-2: 'Besley', serif;
@@ -30,12 +32,10 @@
 }
 
 * {
-    scrollbar-color: pink transparent;
-    scrollbar-width: thin;
+    @include scrollbar-style-1();
 }
 
 html {
-    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
     height: 100%;
 }
 
@@ -55,6 +55,7 @@ body {
 
 nav {
     font-weight: 500;
+    border-color: rgb(105, 87, 105) !important;
 }
 
 hr {
@@ -112,9 +113,17 @@ button {
     border-radius: 10px;
     font-family: var(--font-3);
     font-size: larger;
-  }
+}
 button, button:active, button:hover, button:focus {
     transition: all .5s ease;
+}
+#themeSwitch {
+    padding: .5em;
+    border-radius: 0px;
+    border: 1px solid #8e629b;
+    height: fit-content;
+    font-size: smaller;
+    margin: auto 0;
 }
 
 ::selection {

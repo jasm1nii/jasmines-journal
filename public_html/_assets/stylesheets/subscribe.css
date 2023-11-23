@@ -40,12 +40,11 @@
 }
 
 * {
-  scrollbar-color: pink transparent;
+  scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
 }
 
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   height: 100%;
 }
 
@@ -65,6 +64,7 @@ body {
 
 nav {
   font-weight: 500;
+  border-color: rgb(105, 87, 105) !important;
 }
 
 hr {
@@ -135,6 +135,16 @@ button, button:active, button:hover, button:focus {
   transition: all 0.5s ease;
 }
 
+#themeSwitch {
+  padding: 0.5em;
+  border-radius: 0px;
+  border: 1px solid #8e629b;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: smaller;
+  margin: auto 0;
+}
+
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -193,8 +203,8 @@ nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
   font-size: 1.15em;
   letter-spacing: 1px;
 }
@@ -297,13 +307,6 @@ h1 {
   text-align: right;
 }
 
-#themeSwitch {
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: smaller;
-  margin: auto 0;
-}
-
 #headernav #feeds a {
   -webkit-text-decoration: wavy underline 1px;
           text-decoration: wavy underline 1px;
@@ -390,6 +393,44 @@ form footer {
   width: 100%;
 }
 
+@media all and (max-width: 900px) {
+  .layout {
+    margin-top: 0;
+    width: 100%;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  h2, p {
+    text-align: center;
+  }
+  footer {
+    width: 90%;
+  }
+}
+@media all and (max-width: 768px) {
+  #header-controls {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+  }
+  #themeSwitch {
+    margin: auto;
+  }
+  nav {
+    padding-left: 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 192, 203, 0.445);
+  }
+}
 @media (prefers-color-scheme: light) {
   body {
     color: var(--font-color-light);

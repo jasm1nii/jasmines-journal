@@ -179,8 +179,8 @@ nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
   font-size: 1.15em;
   letter-spacing: 1px;
 }

@@ -68,12 +68,6 @@ h1 {
   text-align: right;
 }
 
-#themeSwitch {
-  height: fit-content;
-  font-size: smaller;
-  margin: auto 0;
-}
-
 #headernav #feeds a {
   text-decoration: wavy underline 1px;
 }
@@ -147,6 +141,8 @@ form footer {
   border-top: 1px dashed;
   width: 100%;
 }
+
+@include screen-900();
 
 @media (prefers-color-scheme: light) {
   body {

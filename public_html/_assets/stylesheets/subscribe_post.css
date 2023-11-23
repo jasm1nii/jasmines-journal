@@ -40,12 +40,11 @@
 }
 
 * {
-  scrollbar-color: pink transparent;
+  scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
 }
 
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
   height: 100%;
 }
 
@@ -65,6 +64,7 @@ body {
 
 nav {
   font-weight: 500;
+  border-color: rgb(105, 87, 105) !important;
 }
 
 hr {
@@ -135,6 +135,16 @@ button, button:active, button:hover, button:focus {
   transition: all 0.5s ease;
 }
 
+#themeSwitch {
+  padding: 0.5em;
+  border-radius: 0px;
+  border: 1px solid #8e629b;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: smaller;
+  margin: auto 0;
+}
+
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -187,13 +197,6 @@ h1 {
   letter-spacing: 0.05em;
   margin-bottom: 0.25em;
   line-height: 1.25em;
-}
-
-#themeSwitch {
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: smaller;
-  margin: auto 0;
 }
 
 main {
