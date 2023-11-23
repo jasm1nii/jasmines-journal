@@ -4,11 +4,6 @@
   font-display: swap;
   src: url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Inconsolata/Inconsolata.woff") format("woff"), url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
 }
-:root {
-  --font-2: "Inconsolata", monospace;
-  --links-hover-bg: white;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -24,7 +19,7 @@ html {
 }
 
 body {
-  font-family: var(--font-2);
+  font-family: "Inconsolata", monospace;
   font-size: 1.1em;
   width: 90%;
   max-width: 900px;
@@ -81,6 +76,7 @@ header nav ul {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.7em;
+  font-size: 1em;
 }
 header nav ul ul {
   padding-top: 0;
@@ -157,7 +153,6 @@ article h2 {
 .notes-format {
   display: flex;
   flex-direction: row;
-  font-size: large;
   width: 100%;
   margin-bottom: 3em;
 }
@@ -324,6 +319,9 @@ hr {
     border-left: none;
     border-right: none;
   }
+  .notes-format .h-entry .e-content {
+    font-size: 1.1em;
+  }
   .notes-format + p {
     width: -moz-fit-content;
     width: fit-content;
@@ -372,8 +370,8 @@ hr {
     filter: drop-shadow(5px 5px 15px rgba(128, 0, 107, 0.4)) drop-shadow(-5px -5px 15px rgba(128, 0, 107, 0.4));
   }
   .h-entry {
-    background-color: var(--dark-bg-article);
-    border-color: gray;
+    background-color: rgb(22, 21, 21);
+    border-color: rgb(68, 60, 60);
     box-shadow: 5px 5px 15px rgba(128, 0, 107, 0.4), -5px -5px 15px rgba(128, 0, 107, 0.4);
   }
   a {
@@ -394,8 +392,8 @@ hr {
   filter: drop-shadow(5px 5px 15px rgba(128, 0, 107, 0.4)) drop-shadow(-5px -5px 15px rgba(128, 0, 107, 0.4));
 }
 .dark-mode .h-entry {
-  background-color: var(--dark-bg-article);
-  border-color: gray;
+  background-color: rgb(22, 21, 21);
+  border-color: rgb(68, 60, 60);
   box-shadow: 5px 5px 15px rgba(128, 0, 107, 0.4), -5px -5px 15px rgba(128, 0, 107, 0.4);
 }
 .dark-mode a {

@@ -1,11 +1,13 @@
 /* blog index, articles archive */
-@use 'assets/font_inconsolata';
+@use 'themes/blog' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
 @use 'components/webkit_scrollbar_1' as *;
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
+
+@use 'animations/fade-in' as *;
 
 @use 'screen_queries/blog/768' as *;
 @use 'screen_queries/blog/500' as *;
@@ -15,15 +17,6 @@
     --links-hover-bg: white;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
     scrollbar-width: thin;
@@ -31,7 +24,7 @@ html {
 }
 
 body {
-    font-family: var(--font-2);
+    font-family: theme.$font;
     font-size: 1.1em;
     width: 90%;
     max-width: 800px;
@@ -39,9 +32,7 @@ body {
     padding-bottom: 3vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
+    @include fadeIn();
     transition: all 0.25s ease-out;
 }
 
@@ -148,23 +139,27 @@ main {
     border-top: 1px dashed;
     text-align: right;
 }
+
 iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
 }
 
-@include footer-style-2();
-@include link-style-1();
-@include button-style-1();
 hr {
     border: 1px dashed pink;
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+@include footer-style-2();
+@include link-style-1();
+@include button-style-1();
+
 ::selection {
     background-color: rgb(248, 208, 170);
     color: black;
 }
+
 @include webkit-scrollbar-style-1();
 
 @include screen-768();
@@ -218,8 +213,8 @@ hr {
         }
     }
     .microblog, .blog {
-        background-color: rgb(20, 20, 20);
-        border-color: rgb(46, 42, 42);
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
     }
     a {
         color: var(--dark-links);

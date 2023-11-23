@@ -26,7 +26,7 @@
     {% endif %}
   </head>
   <body>
-    <div id="layout">
+    <div class="layout">
       <header>
         <hgroup>
           <h1>b(rain)log entry</h1>
@@ -37,21 +37,20 @@
       </header>
 
       <main>
-        <article class="entry h-entry">
+        <article class="h-entry">
           <hgroup>
             <h2 class="p-name">
-              {% if title is defined %}
-                {{ title }}
-              {% else %}
-                untitled
-              {% endif %}
+              {% if title is defined %}{{ title }}{% else %}untitled{% endif %}
             </h2>
+
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
             {% endif %}
+
             {% if published is defined %}
               <time class="dt-published" datetime="{{ published|date() }}">published {{ published }}</time>
             {% endif %}
+
             {% if summary is defined %}
               <p class="p-summary">{{ summary }}</p>
             {% endif %}
@@ -90,16 +89,12 @@
     </footer>
 
     {% if enable_webmentions == true %}
-
       <script type="module" src="/_assets/scripts/seia.js" async></script>
-
     {% endif %}
 
     {% if enable_comments == true %}
-
       <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
       <script src="/_assets/scripts/comment-section.js"></script>
-
     {% endif %}
 
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>

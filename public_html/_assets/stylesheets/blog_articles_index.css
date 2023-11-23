@@ -4,11 +4,6 @@
   font-display: swap;
   src: url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Inconsolata/Inconsolata.woff") format("woff"), url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
 }
-:root {
-  --font-2: "Inconsolata", monospace;
-  --links-hover-bg: white;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -24,7 +19,7 @@ html {
 }
 
 body {
-  font-family: var(--font-2);
+  font-family: "Inconsolata", monospace;
   font-size: 1.1em;
   width: 90%;
   max-width: 800px;
@@ -70,6 +65,7 @@ header nav ul {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.7em;
+  font-size: 1em;
 }
 header nav ul ul {
   padding-top: 0;
@@ -331,26 +327,30 @@ hr {
     background-color: var(--dark-bg);
     color: var(--dark-font);
   }
+  article {
+    background-color: rgb(22, 21, 21);
+    border-color: rgb(68, 60, 60);
+  }
   a {
     color: var(--dark-links);
+  }
+  a:hover {
+    color: black;
   }
 }
 .dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
-
+.dark-mode article {
+  background-color: rgb(22, 21, 21);
+  border-color: rgb(68, 60, 60);
+}
 .dark-mode a {
   color: var(--dark-links);
 }
-
 .dark-mode a:hover {
   color: black;
-}
-
-.dark-mode article {
-  background-color: rgb(26, 24, 24);
-  border-color: rgb(59, 55, 55);
 }
 
 @media (prefers-color-scheme: light) {
@@ -358,26 +358,26 @@ hr {
     background-color: var(--light-bg);
     color: var(--light-font);
   }
+  article {
+    background-color: var(--light-bg-article);
+  }
   a {
     color: var(--light-links);
   }
-  article {
-    background-color: var(--light-bg-article);
+  a:hover {
+    color: black;
   }
 }
 .light-mode {
   background-color: var(--light-bg);
   color: var(--light-font);
 }
-
+.light-mode article {
+  background-color: var(--light-bg-article);
+}
 .light-mode a {
   color: var(--light-links);
 }
-
 .light-mode a:hover {
   color: black;
-}
-
-.light-mode article {
-  background-color: var(--light-bg-article);
 }/*# sourceMappingURL=blog_articles_index.css.map */

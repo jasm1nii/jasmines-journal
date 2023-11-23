@@ -5,11 +5,6 @@
   font-display: swap;
   src: url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Inconsolata/Inconsolata.woff") format("woff"), url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
 }
-:root {
-  --font-2: "Inconsolata", monospace;
-  --links-hover-bg: white;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -25,7 +20,7 @@ html {
 }
 
 body {
-  font-family: var(--font-2);
+  font-family: "Inconsolata", monospace;
   font-size: 1.1em;
   max-width: 1000px;
   margin: auto;
@@ -96,6 +91,7 @@ header nav ul {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.7em;
+  font-size: 1em;
 }
 header nav ul ul {
   padding-top: 0;
@@ -149,12 +145,17 @@ article a:hover {
   letter-spacing: 0.05em;
 }
 
-.h-entry, #webmentions, #comments {
-  border: 1px solid;
-}
-
 h2 {
   letter-spacing: 0.05em;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.h-entry, #webmentions, #comments {
+  border: 1px solid;
 }
 
 .u-photo {
@@ -166,11 +167,6 @@ h2 {
 
 .h-entry {
   padding: 1em;
-}
-
-iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
 }
 
 .emoji {
@@ -198,7 +194,9 @@ iframe {
   text-transform: lowercase;
 }
 
-.cactus-editor-textarea::placeholder, .cactus-editor-name > span > input::placeholder, .cactus-container button {
+.cactus-editor-textarea::placeholder,
+.cactus-editor-name > span > input::placeholder,
+.cactus-container button {
   text-transform: lowercase;
 }
 

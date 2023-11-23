@@ -32,6 +32,9 @@
             .h-entry {
                 border-left: none;
                 border-right: none;
+                .e-content {
+                    font-size: 1.1em;
+                }
             }
             + p {
                 width: fit-content;

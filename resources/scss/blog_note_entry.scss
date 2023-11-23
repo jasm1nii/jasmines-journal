@@ -1,29 +1,18 @@
-@use 'assets/font_inconsolata';
+@use 'themes/blog' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
 @use 'components/webkit_scrollbar_1' as *;
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
+@use 'components/comments-webmentions' as *;
+
+@use 'animations/fade-in' as *;
 
 @use 'screen_queries/blog/notes/entry_768' as *;
 @use 'screen_queries/blog/notes/entry_500' as *;
 
 @import url('cactus-chat.css');
-
-:root {
-    --font-2: 'Inconsolata', monospace;
-    --links-hover-bg: white;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
@@ -32,16 +21,14 @@ html {
 }
 
 body {
-    font-family: var(--font-2);
+    font-family: theme.$font;
     font-size: 1.1em;
     max-width: 1000px;
     margin: auto;
     padding-bottom: 10vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
+    @include fadeIn();
     transition: all 0.25s ease-out;
 }
 
@@ -79,12 +66,16 @@ article {
     }
 }
 
-.h-entry, #webmentions, #comments {
-    border: 1px solid;
-}
-
 h2 {
     letter-spacing: .05em;
+}
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.h-entry, #webmentions, #comments {
+    border: 1px solid;
 }
 .u-photo {
     aspect-ratio: 1;
@@ -94,10 +85,6 @@ h2 {
 }
 .h-entry {
     padding: 1em;
-}
-iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
 }
 .emoji {
     display: inline-block;
@@ -116,14 +103,7 @@ iframe {
     }
 }
 
-:root, :host {
-    --seia-color-bg: transparent !important;
-}
-
-.cactus-editor-textarea::placeholder, .cactus-editor-name > span > input::placeholder, .cactus-container button {
-    text-transform: lowercase;
-}
-
+@include comments-webmentions();
 @include footer-style-2();
 
 hr {
@@ -167,8 +147,8 @@ hr {
         }
     }
     .h-entry, #comments, #webmentions {
-        background-color: rgb(22, 21, 21);
-        border-color: rgb(68, 60, 60);
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
     }
     #comments {
         button {

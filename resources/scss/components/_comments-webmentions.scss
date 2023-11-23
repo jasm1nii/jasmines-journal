@@ -1,0 +1,10 @@
+@mixin comments-webmentions {
+    :root, :host {
+        --seia-color-bg: transparent !important;
+    }
+    .cactus-editor-textarea::placeholder,
+    .cactus-editor-name > span > input::placeholder,
+    .cactus-container button {
+        text-transform: lowercase;
+    }
+}

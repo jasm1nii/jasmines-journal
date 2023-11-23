@@ -1,4 +1,4 @@
-@use 'assets/font_inconsolata';
+@use 'themes/blog' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
@@ -6,22 +6,10 @@
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
+@use 'animations/fade-in' as *;
+
 @use 'screen_queries/blog/notes/index_768' as *;
 @use 'screen_queries/blog/notes/index_500' as *;
-
-:root {
-    --font-2: 'Inconsolata', monospace;
-    --links-hover-bg: white;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
@@ -30,7 +18,7 @@ html {
 }
 
 body {
-    font-family: var(--font-2);
+    font-family: theme.$font;
     font-size: 1.1em;
     width: 90%;
     max-width: 900px;
@@ -38,9 +26,7 @@ body {
     padding-bottom: 3vh;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
+    @include fadeIn();
     transition: all 0.25s ease-out;
 }
 
@@ -103,7 +89,6 @@ article {
 .notes-format {
     display: flex;
     flex-direction: row;
-    font-size: large;
     width: 100%;
     margin-bottom: 3em;
     & .u-photo {
@@ -214,8 +199,8 @@ $shadow-style-2: -5px -5px 15px;
                 drop-shadow($shadow-style-2 $shadow-color);
     }
     .h-entry {
-        background-color: var(--dark-bg-article);
-        border-color: gray;
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
         box-shadow: $shadow-style-1 $shadow-color,
                     $shadow-style-2 $shadow-color;
     }

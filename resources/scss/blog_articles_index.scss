@@ -1,4 +1,4 @@
-@use 'assets/font_inconsolata';
+@use 'themes/blog' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
@@ -6,22 +6,10 @@
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
+@use 'animations/fade-in' as *;
+
 @use 'screen_queries/blog/articles/index_768' as *;
 @use 'screen_queries/blog/articles/index_500' as *;
-
-:root {
-    --font-2: 'Inconsolata', monospace;
-    --links-hover-bg: white;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 html {
     scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
@@ -30,16 +18,14 @@ html {
 }
 
 body {
-    font-family: var(--font-2);
+    font-family: theme.$font;
     font-size: 1.1em;
     width: 90%;
     max-width: 800px;
     margin: auto;
     scrollbar-color: pink transparent;
     scrollbar-width: thin;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
+    @include fadeIn();
     transition: all 0.25s ease-out;
 }
 
@@ -164,52 +150,61 @@ hr {
     --light-links-hover: rgb(140, 42, 221);
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--dark-bg);
-        color: var(--dark-font);
-        }
-    a {
-        color: var(--dark-links);
-    }
-}
-.dark-mode {
+@mixin dark-mode-body() {
     background-color: var(--dark-bg);
     color: var(--dark-font);
 }
-    .dark-mode a {
-        color: var(--dark-links);
-    }
-    .dark-mode a:hover {
-        color: black
-    }
-    .dark-mode article {
-        background-color: rgb(26, 24, 24);
-        border-color: rgb(59, 55, 55);
-    }
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-color:  var(--light-bg);
-        color: var(--light-font);
-    } 
-    a {
-        color: var(--light-links);
+@mixin dark-mode() {
+    article {
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
     }
+    a {
+        color: var(--dark-links);
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
+}
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
+    color: var(--light-font);
+}
+
+@mixin light-mode {
     article {
         background-color: var(--light-bg-article);
     }
-}
-.light-mode {
-    background-color: var(--light-bg);
-    color: var(--light-font);
-}
-    .light-mode a {
+    a {
         color: var(--light-links);
+        &:hover {
+            color: black;
+        }
     }
-    .light-mode a:hover {
-        color: black;
-    }
-    .light-mode article {
-        background-color: var(--light-bg-article);
-    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
+    } 
+    @include light-mode();
+}
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}
