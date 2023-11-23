@@ -1,5 +1,22 @@
 @mixin screen-1100 {
 
+    @media all and (min-width:1400px) {
+        main {
+            li {
+                margin-left: 1em;
+                margin-bottom: 2em;
+                p {
+                    &:not(:first-child) {
+                        margin-left: 2em;
+                    }
+                }
+                details {
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+
     @media all and (min-width:1100px) {
         main {
             max-width: 75vw;
@@ -17,6 +34,24 @@
             margin: auto;
             margin-left: 10vw;
             font-size: larger;
+        }
+    }
+
+    @media all and (min-width: 1000px) {
+        main {
+            ul {
+                margin-top: 2em;
+            }
+            li {
+                p {
+                    &:not(:first-child) {
+                        margin-left: 1em;
+                    }
+                }
+                details {
+                    margin-left: 1em;
+                }
+            }
         }
     }
     

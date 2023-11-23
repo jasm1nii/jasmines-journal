@@ -12,7 +12,7 @@ body {
     font-size: 1.1em;
     margin: auto;
     width: 90%;
-    max-width: 100vw;
+    max-width: 1300px;
     margin-top: 5%;
     display: flex;
     flex-direction: row-reverse;
@@ -111,6 +111,8 @@ header {
 }
 
 main {
+    line-height: 1.6em;
+    letter-spacing: .01em;
     h2 {
         &:not(#legend h2) {
             background-color: rgba(110, 60, 139, 0.233);
@@ -133,7 +135,6 @@ main {
 
 article {
     border: 1px solid rgb(143, 117, 143);
-    line-height: 1.5em;
     padding-bottom: 1em;
     & ul {
         margin-bottom: 2em;

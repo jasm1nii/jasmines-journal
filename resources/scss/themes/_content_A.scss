@@ -4,21 +4,24 @@
 @use '../components/scrollbar' as *;
 @use '../components/webkit_scrollbar' as *;
 
-html {
+* {
+    scrollbar-width: thin;
     @include scrollbar-style-1();
+}
+
+html {
     text-rendering: optimizeLegibility;
 }
 
 @-moz-document url-prefix() {
     body {
-        font-weight: 400 !important;
+        font-weight: 450 !important;
     }
 }
 
 body {
     font-family: 'Instrument Sans', sans-serif;
     font-weight: 500;
-    @include scrollbar-style-2();
     @include fadeIn();
     transition: all 0.25s ease-out;
 }
