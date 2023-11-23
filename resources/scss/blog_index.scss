@@ -1,27 +1,12 @@
-/* blog index, articles archive */
 @use 'themes/blog' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
-@use 'components/webkit_scrollbar_1' as *;
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
-@use 'animations/fade-in' as *;
-
 @use 'screen_queries/blog/768' as *;
 @use 'screen_queries/blog/500' as *;
-
-:root {
-    --font-2: 'Inconsolata', monospace;
-    --links-hover-bg: white;
-}
-
-html {
-    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-    scrollbar-width: thin;
-    text-rendering: optimizeLegibility;
-}
 
 body {
     font-family: theme.$font;
@@ -30,10 +15,6 @@ body {
     max-width: 800px;
     margin: auto;
     padding-bottom: 3vh;
-    scrollbar-color: pink transparent;
-    scrollbar-width: thin;
-    @include fadeIn();
-    transition: all 0.25s ease-out;
 }
 
 .layout {
@@ -154,14 +135,6 @@ hr {
 @include footer-style-2();
 @include link-style-1();
 @include button-style-1();
-
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
-
-@include webkit-scrollbar-style-1();
-
 @include screen-768();
 @include screen-500();
 

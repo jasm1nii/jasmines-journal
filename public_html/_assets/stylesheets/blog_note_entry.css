@@ -14,9 +14,42 @@
   }
 }
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+  scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
   text-rendering: optimizeLegibility;
+}
+
+body {
+  scrollbar-color: pink transparent;
+  scrollbar-width: thin;
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+  transition: all 0.25s ease-out;
+}
+
+::-moz-selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(164, 118, 170);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: plum;
 }
 
 body {
@@ -25,12 +58,6 @@ body {
   max-width: 1000px;
   margin: auto;
   padding-bottom: 10vh;
-  scrollbar-color: pink transparent;
-  scrollbar-width: thin;
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-  transition: all 0.25s ease-out;
 }
 
 a {
@@ -231,30 +258,6 @@ hr {
   border: 1px dashed pink;
   margin-top: 2em;
   margin-bottom: 2em;
-}
-
-::-moz-selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
-}
-
-::selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
 }
 
 @media all and (max-width: 768px) {

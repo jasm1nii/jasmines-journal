@@ -1,10 +1,10 @@
 @mixin webkit-scrollbar-style-1 {
     ::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
+        width: 10px;
+        height: 10px;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: pink;
+        background-color: rgb(164, 118, 170);
         border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {

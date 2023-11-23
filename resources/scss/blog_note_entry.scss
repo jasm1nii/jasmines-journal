@@ -2,23 +2,14 @@
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
-@use 'components/webkit_scrollbar_1' as *;
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 @use 'components/comments-webmentions' as *;
-
-@use 'animations/fade-in' as *;
 
 @use 'screen_queries/blog/notes/entry_768' as *;
 @use 'screen_queries/blog/notes/entry_500' as *;
 
 @import url('cactus-chat.css');
-
-html {
-    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-    scrollbar-width: thin;
-    text-rendering: optimizeLegibility;
-}
 
 body {
     font-family: theme.$font;
@@ -26,10 +17,6 @@ body {
     max-width: 1000px;
     margin: auto;
     padding-bottom: 10vh;
-    scrollbar-color: pink transparent;
-    scrollbar-width: thin;
-    @include fadeIn();
-    transition: all 0.25s ease-out;
 }
 
 @include link-style-1();
@@ -111,13 +98,6 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-
-::selection {
-    background-color: rgb(248, 208, 170);
-    color: black;
-}
-
-@include webkit-scrollbar-style-1();
 
 @include screen-768();
 @include screen-500();

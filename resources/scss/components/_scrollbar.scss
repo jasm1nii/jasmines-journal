@@ -1,0 +1,13 @@
+@mixin scrollbar-width {
+    scrollbar-width: thin;
+}
+
+@mixin scrollbar-style-1 {
+    scrollbar-color: rgb(184, 140, 184) transparent;
+    @include scrollbar-width();
+}
+
+@mixin scrollbar-style-2 {
+    scrollbar-color: pink transparent;
+    @include scrollbar-width();
+}

@@ -1,7 +1,30 @@
 @forward '../assets/font_inconsolata';
 
+@use '../animations/fade-in' as *;
+@use '../components/webkit_scrollbar' as *;
+@use '../components/scrollbar' as *;
+
 $font: 'Inconsolata', monospace;
 $links-hover-bg: white;
 
 $dark-section-bg: rgb(22, 21, 21);
 $dark-section-border: rgb(68, 60, 60);
+
+html {
+    @include scrollbar-style-1();
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    @include scrollbar-style-2();
+    @include fadeIn();
+    transition: all 0.25s ease-out;
+}
+
+::selection {
+    background-color: rgb(248, 208, 170);
+    color: black;
+}
+
+@include webkit-scrollbar-style-1();
+
