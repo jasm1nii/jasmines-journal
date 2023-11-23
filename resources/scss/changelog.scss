@@ -1,21 +1,14 @@
 @use 'assets/font_instrument-sans';
+
+@use 'animations/fade-in' as *;
+@use 'components/scrollbar' as *;
+@use 'components/webkit_scrollbar' as *;
+
 @use 'screen_queries/changelog/768' as *;
 @use 'screen_queries/changelog/1100' as *;
 
-/* animations */
 header, main, footer {
-  opacity: 0;
-  animation: fadeInPage .5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  @include fadeIn();
 }
 
 * {
@@ -23,7 +16,7 @@ header, main, footer {
 }
 
 html {
-  scrollbar-color: rgb(184, 140, 184) transparent;
+  @include scrollbar-style-1();
 }
 
 body {
@@ -280,8 +273,15 @@ footer {
   }
 }
 
-@include screen-768();
+::selection {
+  background-color: rgb(255, 255, 191);
+  color: black;
+}
+
+@include webkit-scrollbar-style-1();
+
 @include screen-1100();
+@include screen-768();
 
 :root {
   --light-body-bg: thistle;
@@ -438,19 +438,4 @@ footer {
   & h3, h4, summary {
     background-color: transparent;
   }
-}
-::selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  &:hover {
-    background-color: plum;
-  }
-}
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
 }

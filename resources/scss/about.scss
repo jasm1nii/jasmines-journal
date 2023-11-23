@@ -1,46 +1,35 @@
-/* about */
 @use 'assets/font_besley';
 @use 'assets/font_instrument-sans';
 
-/* animations */
+@use 'animations/fade-in' as *;
+@use 'components/scrollbar' as *;
+@use 'components/webkit_scrollbar' as *;
+
+@use 'screen_queries/about/768' as *;
+
 header, main, footer {
-  opacity: 0;
-  animation: fadeInPage .5s;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeInPage {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
+  @include fadeIn();
 }
 
 * {
   scrollbar-width: thin;
 }
+
 html {
-  scrollbar-color: rgb(184, 140, 184) transparent;
+  @include scrollbar-style-1();
 }
+
 body {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 1.1em;
   line-height: 1.5em;
   margin: auto;
 }
+
 .layout {
   display: flex;
   max-width: min-content;
   margin: auto;
-}
-@media all and (max-width:768px) {
-  body {
-    font-size: 1.1em;
-  }
-  .layout {
-    flex-direction: column;
-  }
 }
 
 header {
@@ -59,24 +48,34 @@ header {
         border-top: 1px solid rgb(207, 145, 207);
         padding: 1em;
       }
-      & li::before {
-        content:'୨୧';
-        margin-right: .5em;
-      }
-      & li {
+      li {
         display: block;
         padding-bottom: 1em;
-      }
-      & li ul {
-        border: none;
-        padding-bottom: 0;
-        & li {
+        &::before {
+          content:'୨୧';
+          margin-right: .5em;
+        }
+        ul {
+          border: none;
+          padding-bottom: 0;
+        }
+        li {
           padding-bottom: 0;
         }
       }
     }
   }
 }
+
+#themeSwitch {
+  display: block;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
 h1 {
   font-family: Besley, serif;
   text-align: left;
@@ -94,60 +93,9 @@ h1 {
   display: block;
 }
 
-@media all and (max-width:768px) {
-  header {
-    margin: 5% auto 25px auto;
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 85%;
-    position: static;
-    & nav {
-      & ul {
-        display: inline-flex;
-        flex-wrap: wrap;
-        border: none;
-        padding: 0;
-        &:nth-child(2) {
-          & li {
-            margin-right: 0;
-            padding-right: 0;
-            &::before {
-              content: none;
-            }
-          }
-        }
-      }
-      & li {
-        padding-bottom: 0;
-        margin-right: 1em;
-        margin-bottom: 0;
-        display: inline;
-        flex-direction: row;
-        & ul, li {
-          display: inline;
-          &::before {
-            content: '⟶';
-            margin-right: 1em;
-            margin-left: 1em;
-          }
-        }
-      }
-    }
-  }
-}
-
 main {
   width: clamp(600px, 35vw, 700px);
   margin: 0 3em;
-}
-@media all and (max-width:768px) {
-  main {
-    margin: auto;
-    width: 100vw;
-  }
-}
-h1, h2, h3 {
-  font-weight: 500;
 }
 h2 {
   padding-bottom: 10px;
@@ -198,18 +146,6 @@ a {
     color: white !important;
   }
 }
-button {
-  cursor: pointer;
-  background-color: rgba(255, 192, 239, 0.493);
-  border: 1px solid purple;
-  font-size: 1em;
-  padding: .5em;
-  border-radius: 5px;
-}
-#themeSwitch {
-  display: block;
-  margin-bottom: 1em;
-}
 
 .soundcloud {
   & h2 {
@@ -252,13 +188,33 @@ hr {
   border: 1px dashed plum;
 }
 
-article > section {
-  border: 1px solid purple;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 2em;
+article {
+  > section {
+    border: 1px solid purple;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 2em;
+  }
+}
+
+section {
+  > details {
+    summary {
+      padding: .5em;
+      margin-top: 1em;
+    }
+  }
+}
+
+.section-style-2 {
+  details {
+    div {
+      max-height: 30vh;
+      overflow-y: auto;
+    }
+  }
 }
 
 #languages {
@@ -280,46 +236,31 @@ summary {
   font-weight: 600;
   font-size: 1.1em;
 }
-details dt {
-  margin-left: 1em;
-  margin-bottom: 1em;
-  font-weight: 600;
-  font-size: larger;
-}
-details dd {
-  font-weight: normal;
-  margin-left: 2em;
-}
-details dd::before {
-  content: '☆ »';
-  margin-right: .5em;
-}
-section > details summary {
-  padding: .5em;
-  margin-top: 1em;
-}
-.data-columns {
-  columns: 2;
-}
-.data-columns dd {
-  break-inside: avoid;
-}
-@media all and (max-width:768px) {
-  section {
-    border-left: none !important;
-    border-right: none !important;
-  }
-  .data-columns {
-    columns: 1;
+
+details {
+  dt {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-weight: 600;
+    font-size: larger;
   }
   dd {
-    margin-bottom: 1em;
+    font-weight: normal;
+    margin-left: 2em;
+    &::before {
+      content: '☆ »';
+      margin-right: .5em;
+    }
   }
 }
-.section-style-2 details div {
-  max-height: 30vh;
-  overflow-y: auto;
+
+.data-columns {
+  columns: 2;
+  dd {
+    break-inside: avoid;
+  }
 }
+
 #contact dl p {
   margin-left: 1em;
 }
@@ -353,6 +294,24 @@ footer:not(main footer) {
     font-weight: 600;
   }
 }
+
+button {
+  cursor: pointer;
+  background-color: rgba(255, 192, 239, 0.493);
+  border: 1px solid purple;
+  font-size: 1em;
+  padding: .5em;
+  border-radius: 5px;
+}
+
+::selection {
+  background-color: rgb(255, 255, 191);
+  color: black;
+}
+
+@include webkit-scrollbar-style-1();
+
+@include screen-768();
 
 :root {
   --light-font-1: #4e494e;
@@ -422,6 +381,7 @@ footer:not(main footer) {
     }
   }
 }
+
 @mixin light-mode-body {
   color: var(--light-font-1);
   background-color: rgb(228, 205, 228);
@@ -466,6 +426,7 @@ footer:not(main footer) {
     color: var(--dark-a);
   }
 }
+
 @mixin dark-mode-body {
   background-color: black;
   color: white;
@@ -486,14 +447,5 @@ footer:not(main footer) {
   background-color: rgb(255, 255, 191);
   color: black;
 }
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  &:hover {
-    background-color: plum;
-  }
-}
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
+
+@include webkit-scrollbar-style-1();

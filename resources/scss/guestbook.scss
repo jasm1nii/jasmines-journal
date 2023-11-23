@@ -8,6 +8,13 @@
 @use 'themes/guestbook/dark' as *;
 @use 'themes/guestbook/light' as *;
 
+@use 'components/scrollbar' as *;
+@use 'components/webkit_scrollbar' as *;
+
+html {
+    @include scrollbar-style-1();
+}
+
 body {
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.1em;
@@ -254,6 +261,7 @@ main + footer {
     }
 }
 
+@include webkit-scrollbar-style-1();
 @include screen-1400();
 @include screen-768();
 

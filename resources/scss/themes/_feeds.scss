@@ -1,0 +1,48 @@
+@use '../assets/font_besley';
+@use '../assets/font_inconsolata';
+@use '../assets/font_instrument-sans';
+
+:root {
+    --font-1: 'Instrument Sans', sans-serif;
+    --font-2: 'Besley', serif;
+    --font-3: 'Inconsolata', monospace;
+
+    --font-color-light: #4e494e;
+    --h1-light: #5a5463;
+    --h2-light: #794668;
+    --link-color-light: darkmagenta;
+    --link-hover-bg-light: rgb(216, 112, 147);
+    --document-color-light: thistle;
+    --page-color-light: #fff6f6;
+
+    --theme-toggle-bg: #e3d7e9;
+    --theme-toggle-hover-bg: #b084bd;
+    --theme-toggle-active-bg: #8b4f61;
+    --theme-toggle-focus-bg: #a175c5;
+    --footer-font: rgb(97, 58, 97);
+
+    --page-bg-dark: rgb(13, 13, 14);
+    --page-border-dark: #503281;
+    --dark-mode-links:  rgb(255, 192, 216);
+    --link-hover-bg-dark: rgba(216, 112, 147, .5);
+    --dark-mode-h: rgb(223, 154, 236);
+    --dark-button-bg: #463646;
+}
+
+* {
+    scrollbar-color: pink transparent;
+    scrollbar-width: thin;
+}
+html {
+    scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+    height: 100%;
+}
+body {
+    font-family: var(--font-1);
+    font-size: 1.2em;
+    font-stretch: 95%;
+    margin: auto;
+}
+nav {
+    font-weight: 500;
+}

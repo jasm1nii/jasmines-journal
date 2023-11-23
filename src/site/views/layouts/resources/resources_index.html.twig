@@ -12,47 +12,45 @@
         <meta name="keywords" content="design resources, web development"/>
     </head>
     <body>
-        <div id="layout">
-            <header>
-                <hgroup>
-                    <h1>jasmine's resources</h1>
-                    <p>
-                        a list of links that i've personally found helpful and interesting!
-                    </p>
-                    <p>
-                        last updated:
-                        <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
-                    </p>
-                </hgroup>
+        <header>
+            <hgroup>
+                <h1>jasmine's resources</h1>
+                <p>
+                    a list of links that i've personally found helpful and interesting!
+                </p>
+                <p>
+                    last updated:
+                    <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+                </p>
+            </hgroup>
+            <nav>
+                {{ include('@includes/headernav.shtml') }}
+            </nav>
+        </header>
+        <div id="left-col-group">
+            <section id="guide">
                 <nav>
-                    {{ include('@includes/headernav.shtml') }}
+                    {% apply markdown_to_html %}
+                        {{ include('_toc.md') }}
+                    {% endapply %}
                 </nav>
-            </header>
-            <div id="left-col-group">
-                <section id="guide">
-                    <nav>
+            </section>
+            <div id="center-col">
+                <main>
+                    <section id="legend">
                         {% apply markdown_to_html %}
-                            {{ include('_toc.md') }}
+                            {{ include('_legend.md') }}
                         {% endapply %}
-                    </nav>
-                </section>
-                <div id="center-col">
-                    <main>
-                        <section id="legend">
-                            {% apply markdown_to_html %}
-                                {{ include('_legend.md') }}
-                            {% endapply %}
-                        </section>
-                        <article>
-                            {% apply markdown_to_html %}
-                                {{ include('resources_index.md') }}
-                            {% endapply %}
-                        </article>
-                    </main>
-                    <footer>
-                        {{ include('@includes/footer.shtml') }}
-                    </footer>
-                </div>
+                    </section>
+                    <article>
+                        {% apply markdown_to_html %}
+                            {{ include('resources_index.md') }}
+                        {% endapply %}
+                    </article>
+                </main>
+                <footer>
+                    {{ include('@includes/footer.shtml') }}
+                </footer>
             </div>
         </div>
         <style>

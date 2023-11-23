@@ -19,12 +19,17 @@ html {
 }
 
 body {
+  font-weight: 500;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
   opacity: 0;
   animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
   transition: all 0.25s ease-out;
+}
+
+a:hover {
+  background-color: white !important;
 }
 
 ::-moz-selection {

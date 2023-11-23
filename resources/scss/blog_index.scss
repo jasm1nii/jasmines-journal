@@ -51,6 +51,9 @@ main {
         margin-top: 1.5em;
         font-size: x-large;
     }
+    a {
+        text-decoration: dashed underline;
+    }
 }
 
 .microblog, .blog {
@@ -182,7 +185,6 @@ hr {
     main {
        a {
             color: rgb(255, 192, 208);
-            text-decoration: dashed underline;
         }
     }
     .microblog, .blog {

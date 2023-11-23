@@ -5,6 +5,14 @@
   font-display: swap;
   src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 :root {
   --light-bg-1: rgb(228, 207, 228);
   --light-bg-2: whitesmoke;
@@ -29,20 +37,12 @@ header,
 main,
 footer {
   opacity: 0;
-  animation: fadeInPage 0.5s;
+  animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+  scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
 }
 
@@ -210,12 +210,12 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: pink;
+  background-color: rgb(164, 118, 170);
   border-radius: 5px;
 }
 

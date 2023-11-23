@@ -5,12 +5,6 @@
   font-display: swap;
   src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
 }
-:root {
-  --font-1: "Instrument Sans", sans-serif;
-  --bg-color-1: rgb(219, 202, 219);
-  --bg-color-2: ghostwhite;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -19,8 +13,14 @@
     opacity: 1;
   }
 }
+:root {
+  --font-1: "Instrument Sans", sans-serif;
+  --bg-color-1: rgb(219, 202, 219);
+  --bg-color-2: ghostwhite;
+}
+
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
+  scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
 }
 
@@ -33,10 +33,8 @@ body {
   margin: auto;
   margin-top: 5%;
   opacity: 0;
-  animation: fadeIn 1s;
+  animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
-  scrollbar-color: pink transparent;
-  scrollbar-width: thin;
 }
 
 @media all and (max-width: 768px) {
@@ -79,7 +77,9 @@ h3 ~ ul {
   margin-left: 1em;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 600;
 }
 
@@ -236,7 +236,9 @@ footer time {
     background-color: var(--bg-color-2);
     border-color: var(--light-border-color-1);
   }
-  header, h2, h3 {
+  header,
+  h2,
+  h3 {
     color: var(--light-heading);
   }
   a {
@@ -257,7 +259,9 @@ footer time {
   background-color: var(--bg-color-2);
   border-color: var(--light-border-color-1);
 }
-.light-mode header, .light-mode h2, .light-mode h3 {
+.light-mode header,
+.light-mode h2,
+.light-mode h3 {
   color: var(--light-heading);
 }
 .light-mode a {
@@ -331,12 +335,12 @@ footer time {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: pink;
+  background-color: rgb(164, 118, 170);
   border-radius: 5px;
 }
 

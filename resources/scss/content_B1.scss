@@ -1,5 +1,10 @@
 /* generic subpage */
 @use 'assets/font_instrument-sans';
+@use 'components/scrollbar' as *;
+@use 'components/webkit_scrollbar' as *;
+
+@use 'animations/fade-in' as *;
+
 @use 'screen_queries/subpage/768'as *;
 @use 'themes/subpage/light'as *;
 
@@ -7,24 +12,11 @@
 header,
 main,
 footer {
-  opacity: 0;
-  animation: fadeInPage .5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  @include fadeIn();
 }
 
 html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-  scrollbar-width: thin;
+  @include scrollbar-style-1();
 }
 
 body {
@@ -196,20 +188,7 @@ button {
   color: black !important;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: pink;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
-}
-
+@include webkit-scrollbar-style-1();
 @include screen-768();
 
 @media (prefers-color-scheme: light) {

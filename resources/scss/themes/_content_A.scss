@@ -1,30 +1,26 @@
-@forward '../assets/font_inconsolata';
+@use '../assets/font_instrument-sans';
 
 @use '../animations/fade-in' as *;
-@use '../components/webkit_scrollbar' as *;
 @use '../components/scrollbar' as *;
-
-$font: 'Inconsolata', monospace;
-
-$dark-section-bg: rgb(22, 21, 21);
-$dark-section-border: rgb(68, 60, 60);
+@use '../components/webkit_scrollbar' as *;
 
 html {
     @include scrollbar-style-1();
     text-rendering: optimizeLegibility;
 }
 
+@-moz-document url-prefix() {
+    body {
+        font-weight: 400 !important;
+    }
+}
+
 body {
+    font-family: 'Instrument Sans', sans-serif;
     font-weight: 500;
     @include scrollbar-style-2();
     @include fadeIn();
     transition: all 0.25s ease-out;
-}
-
-a {
-    &:hover {
-        background-color: white !important;
-    }
 }
 
 ::selection {
@@ -33,4 +29,3 @@ a {
 }
 
 @include webkit-scrollbar-style-1();
-

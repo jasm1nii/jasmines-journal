@@ -1,0 +1,63 @@
+@mixin screen-768 {
+    @media all and (max-width:768px) {
+        body {
+            font-size: 1.1em;
+        }
+        .layout {
+            flex-direction: column;
+        }
+        header {
+            margin: 5% auto 25px auto;
+            padding-left: 5%;
+            padding-right: 5%;
+            width: 85%;
+            position: static;
+            nav {
+                ul {
+                    display: inline-flex;
+                    flex-wrap: wrap;
+                    border: none;
+                    padding: 0;
+                    &:nth-child(2) {
+                        li {
+                            margin-right: 0;
+                            padding-right: 0;
+                            &::before {
+                                content: none;
+                            }
+                        }
+                    }
+                }
+                li {
+                    padding-bottom: 0;
+                    margin-right: 1em;
+                    margin-bottom: 0;
+                    display: inline;
+                    flex-direction: row;
+                    ul, li {
+                        display: inline;
+                        &::before {
+                            content: '⟶';
+                            margin-right: 1em;
+                            margin-left: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            margin: auto;
+            width: 100vw;
+        }
+        section {
+            border-left: none !important;
+            border-right: none !important;
+        }
+        .data-columns {
+            columns: 1;
+        }
+        dd {
+            margin-bottom: 1em;
+        }
+    }
+}
