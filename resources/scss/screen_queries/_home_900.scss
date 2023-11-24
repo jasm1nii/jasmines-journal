@@ -3,6 +3,7 @@
         .board {
             max-width: none;
             border-top: none;
+            margin-top: 0;
         }
         h1 {
             line-height: 1.5em;
@@ -14,6 +15,12 @@
             & p {
                 margin: 3vh auto;
             }
+        }
+        nav {
+            font-size: 1em;
+        }
+        main {
+            font-size: .9em;
         }
         .card {
             max-width: 275px;

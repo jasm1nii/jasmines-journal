@@ -51,11 +51,11 @@ body {
 @keyframes fadeInSlide {
   0% {
     opacity: 0;
-    transform: translatey(0);
+    transform: translatey(-10px);
   }
   100% {
     opacity: 1;
-    transform: translatey(5px);
+    transform: translatey(0);
   }
 }
 @keyframes fadeInPage {
@@ -873,19 +873,20 @@ hr {
 @media all and (max-width: 1100px) {
   body {
     font-size: 1.2em;
+    padding-top: 0;
   }
   .page-columns {
     -moz-columns: 2;
          columns: 2;
   }
   .page-columns > section {
-    padding-bottom: 5vh;
+    padding-bottom: 8vh;
   }
-  .board {
-    margin-top: 0;
+  nav {
+    font-size: 0.9em;
   }
-  header {
-    position: relative;
+  main {
+    font-size: 0.9em;
   }
   #webmaster-identity {
     font-size: 1.25em;
@@ -896,6 +897,9 @@ hr {
   .u-photo {
     width: 200px;
     height: 200px;
+  }
+  .p-note {
+    font-size: 0.9em;
   }
   .time {
     min-width: 260px;
@@ -920,6 +924,7 @@ hr {
   .board {
     max-width: none;
     border-top: none;
+    margin-top: 0;
   }
   h1 {
     line-height: 1.5em;
@@ -929,6 +934,12 @@ hr {
   }
   header p {
     margin: 3vh auto;
+  }
+  nav {
+    font-size: 1em;
+  }
+  main {
+    font-size: 0.9em;
   }
   .card {
     max-width: 275px;
@@ -946,8 +957,7 @@ hr {
     border-right: none;
   }
   header {
-    position: relative;
-    padding-top: 0;
+    padding-top: 2vh;
   }
   header hgroup {
     margin-right: 20vw;
@@ -957,19 +967,36 @@ hr {
     line-height: 1.5em;
   }
   h1 {
-    line-height: 1.75em;
+    line-height: 1.5em;
   }
   nav {
     padding-left: 5%;
     overflow-x: auto;
     white-space: nowrap;
+    font-size: 0.9em;
+  }
+  main {
+    font-size: 1em;
   }
   .notice-group {
     margin-top: 5%;
     margin-right: 5%;
   }
+  .page-columns {
+    padding-top: 10vh;
+  }
   .page-columns > section {
     padding-bottom: 15vh;
+  }
+  .u-photo {
+    width: 90%;
+    height: 90%;
+  }
+  .flower-fill img {
+    width: 90%;
+  }
+  .p-note {
+    font-size: 0.9em;
   }
   .latest-status {
     min-width: 55%;

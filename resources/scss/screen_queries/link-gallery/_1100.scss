@@ -1,0 +1,25 @@
+@mixin screen-1100 {
+    section {
+        margin-bottom: 7vh;
+    }
+    .page-columns {
+        columns: 2;
+        padding-top: 6vh;
+    }
+    nav {
+        font-size: 1.1em;
+    }
+    main {
+        font-size: 1.1em;
+    }
+    .card {
+        max-width: 300px;
+    }
+    .warning {
+        max-width: 275px;
+    }
+    .buttons {
+        max-width: 350px;
+        padding: 0 0 1em;
+    }
+}

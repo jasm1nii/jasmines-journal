@@ -6,6 +6,7 @@
 @use 'components/nav_1' as *;
 @use 'components/footer_1' as *;
 
+@use 'screen_queries/link-gallery/1100' as *;
 @use 'screen_queries/link-gallery/900'as *;
 @use 'screen_queries/link-gallery/768'as *;
 
@@ -358,8 +359,9 @@ time {
 
 @include footer-style-1();
 
-@include screen-768();
+@include screen-1100();
 @include screen-900();
+@include screen-768();
 
 :root {
   --page-bg-dark: rgb(13, 13, 14);
