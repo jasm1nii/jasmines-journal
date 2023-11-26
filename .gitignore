@@ -6,3 +6,4 @@
 tmp/twig/*
 !*.gitattributes
 vendor/*
+bin/sitemap-generator

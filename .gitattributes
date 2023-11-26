@@ -1,1 +1,2 @@
 **.php linguist-language=PHP
+bin/sitemap-generator linguist-vendored
