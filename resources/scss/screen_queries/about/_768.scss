@@ -2,15 +2,14 @@
     @media all and (max-width:768px) {
         body {
             font-size: 1.1em;
-        }
-        .layout {
             flex-direction: column;
+            padding: 0 0;
         }
         header {
-            margin: 5% auto 25px auto;
+            margin: 5% auto;
             padding-left: 5%;
             padding-right: 5%;
-            width: 85%;
+            max-width: none;
             position: static;
             nav {
                 ul {
@@ -47,17 +46,24 @@
         }
         main {
             margin: auto;
-            width: 100vw;
+            font-size: 1em;
         }
-        section {
-            border-left: none !important;
-            border-right: none !important;
+        article {
+            > section {
+                border-left: none;
+                border-right: none;
+                padding-left: 0;
+                padding-right: 0;
+                p, ul, footer {
+                    padding-right: 2em;
+                }
+            }
         }
-        .data-columns {
-            columns: 1;
+        h2 {
+            padding-right: 5vw;
         }
-        dd {
-            margin-bottom: 1em;
+        img {
+            margin: 1vh auto;
         }
     }
 }

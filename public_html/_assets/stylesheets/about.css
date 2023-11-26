@@ -36,21 +36,20 @@ body {
   font-family: "Instrument Sans", sans-serif;
   font-size: 1.1em;
   line-height: 1.5em;
-  margin: auto;
-}
-
-.layout {
   display: flex;
-  max-width: -moz-min-content;
-  max-width: min-content;
   margin: auto;
+  padding: 0 3vw;
+  max-width: 1000px;
+  -moz-column-gap: 3em;
+       column-gap: 3em;
+  justify-content: space-between;
 }
 
 header {
-  margin: 50px auto auto auto;
-  padding-left: 50px;
   position: sticky;
+  align-self: flex-start;
   top: 5%;
+  max-width: 15vw;
 }
 header nav {
   font-weight: 500;
@@ -86,7 +85,7 @@ header nav ul li li {
   margin-bottom: 1em;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 500;
 }
 
@@ -109,15 +108,11 @@ h1 {
   display: block;
 }
 
-main {
-  width: clamp(600px, 35vw, 700px);
-  margin: 0 3em;
-}
-
 h2 {
-  padding-bottom: 10px;
+  padding: 0.5em 0 1em;
   border-bottom: 1px solid hotpink;
-  font-size: 1.5em;
+  font-size: 1.6em;
+  font-family: Besley, serif;
   text-align: right;
 }
 h2::before {
@@ -134,16 +129,11 @@ h3 {
   letter-spacing: 0.1em;
 }
 
-#owo::before {
-  content: "( ͡o ω ͡o )";
-  margin-right: 0.25em;
-  text-transform: none;
-}
-
 h4 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.5em;
+  margin-left: 1em;
 }
 h4::before {
   content: "☆";
@@ -154,29 +144,13 @@ h4::after {
   margin-left: 0.5em;
 }
 
-a {
-  background-color: transparent;
-  transition: all 0.2s ease-out;
-  text-decoration-style: dashed;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-a:hover {
-  background-color: palevioletred;
-  text-decoration: none;
-  color: white !important;
-}
-
-.soundcloud h2 {
-  padding-top: 0.5em;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 1em;
-  border-bottom: none;
-}
-.soundcloud h2::before {
-  content: none;
+main {
+  max-width: 700px;
+  font-stretch: 97%;
+  letter-spacing: 0.02em;
+  font-size: 1.05em;
+  line-height: 1.6em;
+  margin: auto;
 }
 
 section ul {
@@ -195,6 +169,71 @@ section li li {
   padding-bottom: 0;
 }
 
+article > section {
+  border: 1px solid purple;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0 2em;
+}
+article > section p, article > section dl, article > section footer {
+  padding-left: 2em;
+}
+article > section ul {
+  padding-left: 1em;
+}
+article > section ul li:last-of-type:not(#contact li) {
+  border-bottom: none;
+}
+article > section ul li p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+article > section ul li p ~ footer {
+  padding: 0;
+  text-align: center;
+  font-size: smaller;
+}
+
+#soundcloud {
+  padding: 0 1em 1em 1.5em;
+}
+#soundcloud h2 {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  border-bottom: none;
+}
+#soundcloud h2::before {
+  content: none;
+}
+
+#trivia details div {
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+#contact ul {
+  -moz-columns: 2;
+       columns: 2;
+  margin-left: 1em;
+}
+#contact ul li {
+  padding: 0 0 1em 0;
+  margin-bottom: 1em;
+}
+
+summary {
+  font-weight: 600;
+  font-size: 1.1em;
+  padding-left: 1em;
+}
+summary h3 {
+  display: inline-block;
+  margin: 0;
+}
+
 hr {
   display: block;
   margin-top: 1em;
@@ -204,74 +243,38 @@ hr {
   border: 1px dashed plum;
 }
 
-article > section {
-  border: 1px solid purple;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 2em;
+dt {
+  font-weight: 500;
 }
 
-section > details summary {
-  padding: 0.5em;
-  margin-top: 1em;
+dd {
+  margin-bottom: 1em;
 }
 
-.section-style-2 details div {
-  max-height: 30vh;
-  overflow-y: auto;
+.emoji {
+  text-transform: none;
 }
 
-#languages {
+a {
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  background-color: palevioletred;
+  text-decoration: none;
+  color: white !important;
+}
+
+img {
+  width: 100%;
+  display: block;
   margin: 1.5em auto;
 }
-#languages img {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-#languages figcaption {
-  text-align: center;
-  display: block;
-  margin: auto;
-  margin-top: 1em;
-}
 
-summary {
-  font-weight: 600;
-  font-size: 1.1em;
-}
-
-details dt {
-  margin-left: 1em;
-  margin-bottom: 1em;
-  font-weight: 600;
-  font-size: larger;
-}
-details dd {
-  font-weight: normal;
-  margin-left: 2em;
-}
-details dd::before {
-  content: "☆ »";
-  margin-right: 0.5em;
-}
-
-.data-columns {
-  -moz-columns: 2;
-       columns: 2;
-}
-.data-columns dd {
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
-}
-
-#contact dl p {
-  margin-left: 1em;
-}
-
-footer:not(main footer) {
+main + footer {
   margin-top: 10vh;
   margin-bottom: 5vh;
   margin-left: auto;
@@ -281,23 +284,23 @@ footer:not(main footer) {
   width: 90%;
   opacity: 0.8;
 }
-footer:not(main footer) ul {
+main + footer ul {
   padding: 0;
   list-style-type: none;
 }
-footer:not(main footer) li {
+main + footer li {
   display: inline-block;
   margin-right: 15px;
 }
-footer:not(main footer) li::before {
+main + footer li::before {
   content: "⬩";
   font-size: 20px;
   margin-right: 15px;
 }
-footer:not(main footer) li:first-child::before {
+main + footer li:first-child::before {
   content: none;
 }
-footer:not(main footer) time {
+main + footer time {
   font-weight: 600;
 }
 
@@ -337,15 +340,14 @@ button {
 @media all and (max-width: 768px) {
   body {
     font-size: 1.1em;
-  }
-  .layout {
     flex-direction: column;
+    padding: 0 0;
   }
   header {
-    margin: 5% auto 25px auto;
+    margin: 5% auto;
     padding-left: 5%;
     padding-right: 5%;
-    width: 85%;
+    max-width: none;
     position: static;
   }
   header nav ul {
@@ -378,18 +380,22 @@ button {
   }
   main {
     margin: auto;
-    width: 100vw;
+    font-size: 1em;
   }
-  section {
-    border-left: none !important;
-    border-right: none !important;
+  article > section {
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
   }
-  .data-columns {
-    -moz-columns: 1;
-         columns: 1;
+  article > section p, article > section ul, article > section footer {
+    padding-right: 2em;
   }
-  dd {
-    margin-bottom: 1em;
+  h2 {
+    padding-right: 5vw;
+  }
+  img {
+    margin: 1vh auto;
   }
 }
 :root {
@@ -434,6 +440,8 @@ button {
   }
   h3 {
     color: var(--light-h3);
+  }
+  h3:not(summary h3) {
     background-color: var(--light-h3-bg);
   }
   h3::before {
@@ -483,6 +491,8 @@ button {
 }
 .light-mode h3 {
   color: var(--light-h3);
+}
+.light-mode h3:not(summary h3) {
   background-color: var(--light-h3-bg);
 }
 .light-mode h3::before {
@@ -565,28 +575,4 @@ button {
 }
 .dark-mode a {
   color: var(--dark-a);
-}
-
-::-moz-selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-
-::selection {
-  background-color: rgb(255, 255, 191);
-  color: black;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(164, 118, 170);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
 }/*# sourceMappingURL=about.css.map */

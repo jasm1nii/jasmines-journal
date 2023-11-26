@@ -10,77 +10,28 @@
     <meta name="description" content="about the website (and the webmaster)"/>
 </head>
 <body>
-    <div class="layout">
-        <div>
-            <header>
-                <hgroup>
-                    <h1><span id="h1-main">about jasmine</span>'s journal</h1>
-                    <p class="site-update">
-                        updated <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
-                    </p>
-                </hgroup>
-                <nav aria-label="primary">
-                    {{ nav|raw }}
-                </nav>
-            </header>
-        </div>
-        <div>
-            <main>
-                <article>
-                    <section class="soundcloud">
-                        <h2>some theme music</h2>
-                        {{ block('tunes') }}
-                    </section>
-
-                    <section>
-                        <h2>the website</h2>
-                        <section>
-                            <h3 id="owo">what's this?</h3>
-                            {{ block('website_desc') }}
-                        </section>
-                        <section>
-                            <h3>site updates</h3>
-                            <p>
-                                a detailed list of past edits and planned additions can be viewed on the <strong><a href="/about/changelog">change log page</a></strong>.
-                            </p>
-                        </section>
-                        <section>
-                            <h3>facts for nerds</h3>
-                            {{ block('website_stats') }}
-                        </section>
-                    </section>
-
-                    <section>
-                        <h2>the webmaster</h2>
-                        <section>
-                            <h3>my background</h3>
-                            <section>
-                                {{ block('webmaster_desc') }}
-                            </section>
-                        </section>
-
-                        <section class="section-style-2">
-                            <details open>
-                                <summary>more facts</summary>
-                                <div>
-                                    {{ block('webmaster_facts') }}  
-                                </div>
-                            </details>
-                        </section>
-
-                        <section id="contact">
-                            <details open>
-                                <summary>contact</summary>
-                                {{ block('webmaster_contact') }}
-                            </details>
-                        </section>
-                    </section>
-                </article>
-            </main>
-            <footer>
-                {{ include('@includes/footer.shtml') }}
-            </footer>
-        </div>
+    <header>
+        <hgroup>
+            <h1><span id="h1-main">about jasmine</span>'s journal</h1>
+            <p class="site-update">
+                updated <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+            </p>
+        </hgroup>
+        <nav aria-label="primary">
+            {{ nav|raw }}
+        </nav>
+    </header>
+    <div>
+        <main>
+            <article>
+                {{ block('tunes') }}
+                {{ block('website_info') }}
+                {{ block('webmaster_info')}}
+            </article>
+        </main>
+        <footer>
+            {{ include('@includes/footer.shtml') }}
+        </footer>
     </div>
     <script src="/_assets/scripts/theme-switcher-v2.js"></script>
 </body>
