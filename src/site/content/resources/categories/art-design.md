@@ -10,15 +10,35 @@
 
 ## illustration programs
 
-### painting
+### illustration
 
-- [heavypaint](https://www.heavypaint.com/) 👑
+- [heavypaint 👑](https://www.heavypaint.com/) 
 
     i think the built-in brush textures are really cool!
 
-- [rebelle](https://www.escapemotions.com/products/rebelle/about?/products/rebelle/index.php)
+- [rebelle 💲](https://www.escapemotions.com/products/rebelle/about?/products/rebelle/index.php)
 
     can emulate painting with traditional media **very** well, with color-mixing capabilities that are true to life.
+
+- [krita](https://krita.org/en/)
+
+    also supports creating animations and is available on linux!
+
+- [mediabang paint](https://medibangpaint.com/en/)
+
+    available of iOS, android, windows, and mac.
+
+- [firealpaca](https://firealpaca.com/)
+
+### sketching
+
+- [concepts 👑](https://concepts.app/en/)
+
+    infinite canvas my beloved ❣
+
+- [autodesk sketchbook](https://www.sketchbook.com/)
+
+    originally popular with product designers, it has evolved over the years to be a very capable program for doing more than just sketches, but it's still great for lightweight drawing.
 
 ### pixel art
 
@@ -30,15 +50,37 @@
 
 - [pixilart](https://www.pixilart.com/) - runs in the browser
 
+### graphic design & vector art
+
+- [inkscape](https://inkscape.org/)
+
+- [affinity 💲](https://affinity.serif.com/en-us/)
+
+    the full suite includes affinity designer, photo, and publisher. works on windows, mac, and iPad with a single-purchase license.
+
+- [scibus](https://www.scribus.us/)
+
+    for desktop publishing.
+
+### animation, motion graphics, & VFX
+ 
+- [blender](https://www.blender.org/)
+
+    while blender is mainly known for its 3D capabilities, there's also some support for 2D animation with features like grease pencil.
+
+- [natron](https://natrongithub.github.io/)
+
+    a node-based compositor with python scripting support.
+
 </section>
 
 <section>
     
 ## reference tools
 
-- [coolors](https://coolors.co/) 👑
+- [pureref](https://www.pureref.com/)
 
-    a handy color palette generator - supports checking for color-blindness compatibility!
+    a desktop program for organizing reference images.
 
 - [posemaniacs](https://www.posemaniacs.com/)
 
@@ -46,7 +88,17 @@
 
 - [templatemaker](https://www.templatemaker.nl/en/)
 
-    create nets of 3D objects - ideal for foldable paper crafts and related projects
+    create nets of 3D objects - ideal for foldable paper crafts and related projects.
+
+### color palettes
+
+- [coolors 👑](https://coolors.co/)
+
+    supports checking for color-blindness compatibility!
+
+- [muzli colors](https://colors.muz.li/)
+
+- [paletton](https://paletton.com/)
 
 </section>
 
@@ -86,7 +138,7 @@
 
     open source SVG illustrations - check out their [blog](https://blog.undraw.co/) for even more resources.
 
-- [pixel surplus](https://pixelsurplus.com/) 👑
+- [pixel surplus 👑](https://pixelsurplus.com/)
 
     an assortment of fonts, textures, and more - free and paid, but most fonts require a paid license for embedding in websites.
 
@@ -100,7 +152,7 @@
 
 ## miscellaneous
 
-- [glaze](https://glaze.cs.uchicago.edu/) 👑
+- [glaze 👑](https://glaze.cs.uchicago.edu/)
 
     <details>
     <summary>

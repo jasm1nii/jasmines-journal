@@ -22,18 +22,44 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-@-moz-document url-prefix() {
-  body {
-    font-weight: 450 !important;
-  }
-}
 body {
   font-family: "Instrument Sans", sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   opacity: 0;
   animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
   transition: all 0.25s ease-out;
+}
+
+dl {
+  margin-left: 2em;
+  margin-right: 1em;
+  display: grid;
+  row-gap: 1em;
+}
+
+dt {
+  font-weight: bolder;
+  grid-column: 1;
+}
+
+dd:not(:last-child) {
+  grid-column: 2/5;
+  margin-left: 0;
+  padding-left: 0.5em;
+}
+dd ul {
+  padding-left: 0;
+}
+dd p:first-child {
+  margin-top: 0;
+}
+
+dt:not(:last-child, :last-of-type), dd:not(:last-child, :last-of-type) {
+  border-bottom: 1px solid gray;
+}
+dt:last-child, dd:last-child {
+  grid-column: span 4;
 }
 
 ::-moz-selection {

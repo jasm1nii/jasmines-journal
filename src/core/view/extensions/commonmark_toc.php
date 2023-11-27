@@ -3,10 +3,13 @@
     namespace JasminesJournal\Core\Views\Render\Extension;
 
     use League\CommonMark\Environment\Environment;
+
     use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
     use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
     use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
     use League\CommonMark\Extension\TableOfContents\TableOfContentsExtension;
+    use League\CommonMark\Extension\DescriptionList\DescriptionListExtension;
+
     use League\CommonMark\MarkdownConverter;
 
     class MarkdownWithTOC {
@@ -43,6 +46,7 @@
             $commonmark_env->addExtension(new CommonMarkCoreExtension());
             $commonmark_env->addExtension(new HeadingPermalinkExtension());
             $commonmark_env->addExtension(new TableOfContentsExtension());
+            $commonmark_env->addExtension(new DescriptionListExtension());
 
             $commonmark = new MarkdownConverter($commonmark_env);
 
