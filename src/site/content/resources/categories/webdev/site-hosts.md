@@ -17,10 +17,17 @@
 host location
 :   north america
 
-features
-:   - minimal coding knowledge required
+pricing
+:   free and paid (5-30 USD per month)
 
-    - features a drag-n'-drop site editor!
+storage limit
+:   starts from 5 pages
+
+monthly bandwidth
+:   1000 visitors per month
+
+features
+:   - minimal coding knowledge required, as it features a drag-n'-drop site editor!
 
     - does not support exporting websites as files nor social discovery (yet).
 
@@ -28,6 +35,15 @@ features
 
 host location
 :   netherlands
+
+pricing
+:   100% free
+
+storage limit
+:   no limit defined
+
+monthly bandwidth
+:   no limit defined
 
 features
 :   - another low-code site editor.
@@ -41,42 +57,65 @@ features
 host location
 :   united states
 
-features
-:   - free tier - 1 GB of storage.
+pricing
+:   free, or 5 USD per month
 
-    - paid tier - 50 GB storage, custom domains (purchased separately), no file restrictions.
+storage limit
+:   - free - 1 GB
+    - paid - 50 GB
+
+monthly bandwidth
+:   - free - 200 GB
+    - paid - 3 TB
+
+features
+:   - the paid tier allows for custom domains (purchased separately).
 
     - having a social profile is optional, but sites will always be discoverable via search engines or other means.
 
-    - supports site management via command line and API.
+    - supports site management via direct upload, command line, and API.
 
 ### [ichi](https://ichi.city/)
 
 host location
 :   united kingdom
 
+pricing
+:   100% free
+
+storage limit
+:   10 MB
+
+monthly bandwidth
+:   no limit defined
+
 features
 :   - no email requried for account creation - on the downside, this also means that lost passwords aren't recoverable.
-
-    - no paid tier.
-
-    - 10 MB storage limit.
 
     - all sites are discoverable via global feed.
 
     - no social following features.
 
-    - supports site management via <abbr title="secure file transfer protocol">SFTP</abbr>.
+    - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
 
 ### [github pages](https://pages.github.com/)
 
 host location
 :   united states
 
-features
-:   - host your site files in a public git repository, and update them on each push.
+pricing
+:   100% free for non-enterprise
 
-    - virtually no limits on total storage space.
+storage limit
+:   2 GB per file, with no total size limit
+
+monthly bandwidth
+:   no limit defined
+
+features
+:   - site files are hosted in a public git repository.
+
+    - supports adding custom domains at no extra cost.
 
 
 </section>
@@ -89,6 +128,15 @@ features
 
 host location
 :   united states
+
+pricing
+:   free, or 8 USD per month
+
+storage limit
+:   no limit defined
+
+monthly bandwidth
+:   no limit defined
 
 backend environment
 :   node.js
@@ -107,11 +155,17 @@ features
 host location
 :   united states
 
+pricing
+:   100% free
+
+storage limit
+:   2 GB
+
+monthly bandwidth
+:   150 GB
+
 backend environment
 :   PHP, java
-
-database
-:   ?
 
 web server
 :   apache
@@ -123,6 +177,14 @@ features
 
 host location
 :   united states
+
+storage limit
+:   - free - 500 MB
+    - paid - up to 5 GB
+
+monthly bandwidth
+:   - free - 5 GB
+    - paid - up to 30 GB
 
 backend environment
 :   PHP
@@ -141,6 +203,12 @@ features
 host location
 :   north america
 
+pricing
+:   100% free
+
+storage limit
+:   up to 5 GB
+
 backend environment
 :   PHP
 
@@ -151,12 +219,18 @@ web server
 :   apache
 
 features
-:   completely free hosting with higher storage limits than teacake, but note that available slots tend to vary from time to time.
+:   completely free hosting with offerings similar to those of teacake, but note that available slots tend to be more limited.
 
 ### [nearly free speech 💲](https://www.nearlyfreespeech.net/)
 
 host location
 :   united states
+
+pricing
+:   starts from 0.01 USD per month
+
+storage limit
+: 1 USD/GB per month
 
 backend environment
 :   [25+ languages](https://2023q3.nfshost.com/)
@@ -174,6 +248,12 @@ features
 
 host location
 :   germany
+
+pricing
+:   5-15 EUR per month
+
+storage limit
+:   10-100 GB per month
 
 backend environment
 :   PHP, python, ruby, .NET core, and node.js

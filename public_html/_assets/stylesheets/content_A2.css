@@ -201,8 +201,13 @@ section {
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   grid-column: 2;
+  font-size: 1.1em;
+}
+section p, section ul, section dl {
+  line-height: 1.7em;
 }
 section:first-of-type {
+  font-size: 1em;
   grid-column: 1;
   grid-row: 2;
   height: -moz-fit-content;

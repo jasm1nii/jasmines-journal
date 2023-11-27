@@ -83,7 +83,6 @@ section, #legend, main nav {
 article {
     display: grid;
     grid-template-columns: 1.5fr 3fr;
-    //columns: 2;
     column-gap: 3vw;
     row-gap: 3vh;
     nav {
@@ -113,7 +112,12 @@ article {
 section {
     break-inside: avoid;
     grid-column: 2;
+    font-size: 1.1em;
+    p, ul, dl {
+        line-height: 1.7em;
+    }
     &:first-of-type {
+        font-size: 1em;
         grid-column: 1;
         grid-row: 2;
         height: fit-content;
