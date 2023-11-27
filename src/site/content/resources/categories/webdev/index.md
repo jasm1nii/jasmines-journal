@@ -29,6 +29,8 @@
 
 - [the modern javascript tutorial](https://javascript.info/)
 
+- [PHP tutorial](https://www.phptutorial.net/)
+
 - [PHP manual](https://www.php.net/docs.php)
 
 
