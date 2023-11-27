@@ -12,7 +12,7 @@
 
 *at most*, these sites only support HTML, javascript, and CSS. if you're looking to use PHP, node.js, python, and more, jump to [# static and dynamic sites.](/resources/webdev/site-hosts#static-and-dynamic-sites)
 
-### [mmm.page](https://build.mmm.page/)
+### [mmm.page 👑](https://build.mmm.page/)
 
 host location
 :   north america
@@ -153,7 +153,7 @@ web server
 features
 :   completely free hosting with higher storage limits than teacake, but note that available slots tend to vary from time to time.
 
-### [nearly free speech](https://www.nearlyfreespeech.net/)
+### [nearly free speech 💲](https://www.nearlyfreespeech.net/)
 
 host location
 :   united states
@@ -170,7 +170,7 @@ web server
 features
 :   super cheap, but requires some shell programming knowledge. does not offer webmail hosting.
 
-### [uberspace](https://uberspace.de/en/)
+### [uberspace 💲](https://uberspace.de/en/)
 
 host location
 :   germany

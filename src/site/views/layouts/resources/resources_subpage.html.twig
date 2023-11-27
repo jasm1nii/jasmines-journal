@@ -16,10 +16,10 @@
             <header>
                 <hgroup>
                     <p>jasmine's resources</p>
+                    </p>
                     {% if parent_name is defined %}
                         <p id="parent-category-name">{{ parent_name }}</p>
                     {% endif %}
-                    </p>
                     <h1>{{ title }}</h1>
                     <p>
                         last updated:
@@ -31,27 +31,26 @@
                 </nav>
             </header>
             <main>
-                {% if parent != null %}
-                    <nav>
-                        return to <a href="{{ parent }}">{{ parent }}</a>
-                    </nav>
-                {% endif %}
-                <aside id="legend">
-                    <details>
-                        <summary>
-                            show legend
-                        </summary>
-                        {% apply markdown_to_html %}
-                            {{ legend|raw }}
-                        {% endapply %}
-                    </details>
-                </aside>
                 <article>
+                    <aside id="legend">
+                        <details>
+                            <summary>
+                                show legend
+                            </summary>
+                            {% apply markdown_to_html %}
+                                {{ legend|raw }}
+                            {% endapply %}
+                        </details>
+                    </aside>
+                    {% if parent != null %}
+                        <nav>
+                            return to <a href="{{ parent }}">{{ parent }}</a>
+                        </nav>
+                    {% endif %}
                     {% if content != null %}
                         {{ content|raw }}
                     {% else %}
-                        {% block content %}
-                        {% endblock %}
+                        {{ block('content') }}
                     {% endif %}
                 </article>
             </main>

@@ -57,7 +57,7 @@ dd p:first-child {
 }
 
 dt:not(:last-child, :last-of-type), dd:not(:last-child, :last-of-type) {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.575);
 }
 dt:last-child, dd:last-child {
   grid-column: span 4;
