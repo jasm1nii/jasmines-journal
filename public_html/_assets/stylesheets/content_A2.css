@@ -367,17 +367,16 @@ button:hover {
   margin-bottom: 1em;
 }
 
-@media all and (max-width: 768px) {
-  body {
-    width: -moz-fit-content;
-    width: fit-content;
+@media all and (max-width: 1100px) {
+  #layout {
+    margin-top: 0;
+    flex-direction: column;
   }
   header {
-    max-width: 80%;
+    position: relative;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
-    position: relative;
     text-align: right;
   }
   header nav {
@@ -391,26 +390,8 @@ button:hover {
     content: "✧";
     margin-left: 0.5em;
   }
-  #layout {
-    margin-top: 0;
-    flex-direction: column;
-  }
   main {
-    margin-top: 15%;
-  }
-  article {
-    display: block;
-  }
-  section {
-    border-right: none;
-    border-left: none;
-    margin-bottom: 3vh;
-  }
-  section:first-of-type {
-    position: relative;
-  }
-  #legend, main nav {
-    margin: 5vh 5vw;
+    margin-top: 5vh;
   }
   footer {
     text-align: center;
@@ -421,6 +402,27 @@ button:hover {
   }
   footer p {
     margin-left: -1em;
+  }
+}
+@media all and (max-width: 768px) {
+  body {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  article {
+    display: block;
+  }
+  section {
+    border-right: none;
+    border-left: none;
+    margin-bottom: 3vh;
+    font-size: 1em;
+  }
+  section:first-of-type {
+    position: relative;
+  }
+  #legend, main nav {
+    margin: 5vh 5vw;
   }
 }
 @media all and (max-width: 500px) {
@@ -451,11 +453,14 @@ button:hover {
   }
   section:not(:first-of-type) a {
     color: rgb(242, 223, 255);
-    text-decoration-color: rgb(150, 75, 150);
+    text-decoration-color: rgb(184, 128, 163);
   }
   section:not(:first-of-type) a:hover {
     color: white;
     background-color: rgb(95, 7, 73);
+  }
+  .table-of-contents a {
+    color: rgb(230, 142, 201);
   }
   a {
     color: var(--dark-links);
@@ -473,11 +478,14 @@ button:hover {
 }
 .dark-mode section:not(:first-of-type) a {
   color: rgb(242, 223, 255);
-  text-decoration-color: rgb(150, 75, 150);
+  text-decoration-color: rgb(184, 128, 163);
 }
 .dark-mode section:not(:first-of-type) a:hover {
   color: white;
   background-color: rgb(95, 7, 73);
+}
+.dark-mode .table-of-contents a {
+  color: rgb(230, 142, 201);
 }
 .dark-mode a {
   color: var(--dark-links);

@@ -271,16 +271,16 @@ button {
     margin-bottom: 1em;
 }
 
-@media all and (max-width:768px) {
-    body {
-        width: fit-content;
+@media all and (max-width: 1100px) {
+    #layout {
+        margin-top: 0;
+        flex-direction: column;
     }
     header {
-        max-width: 80%;
+        position: relative;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5%;
-        position: relative;
         text-align: right;
         & nav {
             text-align: left;
@@ -294,26 +294,8 @@ button {
             }
         }
     }
-    #layout {
-        margin-top: 0;
-        flex-direction: column;
-    }
     main {
-        margin-top: 15%;
-    }
-    article {
-        display: block;
-    }
-    section {
-        border-right: none;
-        border-left: none;
-        margin-bottom: 3vh;
-        &:first-of-type {
-            position: relative;
-        }
-    }
-    #legend, main nav {
-        margin: 5vh 5vw;
+        margin-top: 5vh;
     }
     footer {
         text-align: center;
@@ -324,6 +306,27 @@ button {
         p {
             margin-left: -1em;
         }
+    }
+}
+
+@media all and (max-width: 768px) {
+    body {
+        width: fit-content;
+    }
+    article {
+        display: block;
+    }
+    section {
+        border-right: none;
+        border-left: none;
+        margin-bottom: 3vh;
+        font-size: 1em;
+        &:first-of-type {
+            position: relative;
+        }
+    }
+    #legend, main nav {
+        margin: 5vh 5vw;
     }
 }
 
@@ -358,12 +361,17 @@ button {
         &:not(:first-of-type) {
             a {
                 color:rgb(242, 223, 255);
-                text-decoration-color: rgb(150, 75, 150);
+                text-decoration-color: rgb(184, 128, 163);
                 &:hover {
                     color: white;
                     background-color: rgb(95, 7, 73);
                 }
             }
+        }
+    }
+    .table-of-contents {
+        a {
+            color: rgb(230, 142, 201);
         }
     }
     a {

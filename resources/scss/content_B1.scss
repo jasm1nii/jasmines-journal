@@ -6,7 +6,8 @@
 @use 'animations/fade-in' as *;
 
 @use 'screen_queries/subpage/768'as *;
-@use 'themes/subpage/light'as *;
+@use 'themes/subpage/light' as *;
+@use 'themes/subpage/dark' as *;
 
 /* animations */
 header,
@@ -51,32 +52,30 @@ body {
 }
 
 header {
-  & time {
+  time {
     font-weight: 600;
   }
-
-  & nav ul {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: purple;
-    padding: 1em;
-    padding-top: 1.5em;
-  }
-
-  & nav li {
-    display: block;
-    margin-bottom: 1em;
-  }
-
-  & nav li::before {
-    content: '୨୧';
-    margin-right: .5em;
-  }
-
-  & nav a {
-    text-decoration: none;
-    padding: 0px 5px;
-    margin-left: -5px;
+  nav {
+    ul {
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+      border-color: purple;
+      padding: 1em;
+      padding-top: 1.5em;
+    }
+    li {
+      display: block;
+      margin-bottom: 1em;
+      &::before {
+        content: '୨୧';
+        margin-right: .5em;
+      }
+    }
+    a {
+      text-decoration: none;
+      padding: 0px 5px;
+      margin-left: -5px;
+    }
   }
 }
 
@@ -134,29 +133,26 @@ main+footer {
   text-align: center;
   font-size: 1em;
   width: 80%;
-
-  & ul {
+  ul {
     padding: 0;
     list-style-type: none;
   }
-
-  & li {
+  li {
     display: inline-block;
     margin-right: 1em;
-  }
-
-  & li::before {
-    content: "⬩";
-    font-size: 20px;
-    margin-right: 15px;
-  }
-
-  & li:nth-child(1)::before {
-    content: "";
-  }
-
-  & time {
-    font-weight: 600;
+    &::before {
+      content: "⬩";
+      font-size: 20px;
+      margin-right: 15px;
+    }
+    &:first-child {
+      &::before {
+        content: none;
+      }
+    }
+    time {
+      font-weight: 600;
+    }
   }
 }
 
@@ -166,7 +162,6 @@ a {
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-
   &:hover {
     background-color: palevioletred;
     text-decoration: none;
@@ -204,69 +199,14 @@ button {
   @include light-mode();
 }
 
-:root {
-  --dark-main-bg: #19181a;
-  --dark-main-border: rgb(56, 36, 56);
-  --dark-li-border: rgb(80, 53, 80);
-  --dark-a: pink;
-  --dark-h3-bg: #6b266538;
-  --dark-h4-bg: rgba(179, 118, 128, 0.171);
-}
-
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
-    color: white;
+    @include dark-mode-body();
   }
-
-  main {
-    background-color: var(--dark-main-bg);
-    border-color: var(--dark-main-border);
-  }
-
-  section {
-    & li {
-      border-color: var(--dark-li-border);
-    }
-  }
-
-  h3 {
-    background-color: var(--dark-h3-bg);
-  }
-
-  h4 {
-    background-color: var(--dark-h4-bg);
-  }
-
-  a {
-    color: var(--dark-a);
-  }
+  @include dark-mode();
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
-
-  & main {
-    background-color: var(--dark-main-bg);
-    border-color: var(--dark-main-border);
-  }
-
-  & section {
-    & li {
-      border-color: var(--dark-li-border);
-    }
-  }
-
-  & h3 {
-    background-color: var(--dark-h3-bg);
-  }
-
-  & h4 {
-    background-color: var(--dark-h4-bg);
-  }
-
-  & a {
-    color: var(--dark-a);
-  }
+  @include dark-mode-body();
+  @include dark-mode();
 }

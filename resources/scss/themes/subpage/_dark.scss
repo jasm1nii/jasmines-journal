@@ -1,0 +1,37 @@
+:root {
+    --dark-main-bg: #19181a;
+    --dark-main-border: rgb(56, 36, 56);
+    --dark-a: pink;
+    --dark-h3-bg: #6b266538;
+    --dark-h4-bg: rgba(179, 118, 128, 0.171);
+}
+
+@mixin dark-mode-body {
+    background-color: black;
+    color: white;
+}
+
+@mixin dark-mode {
+    main {
+        background-color: var(--dark-main-bg);
+        border-color: var(--dark-main-border);
+    }
+
+    article {
+        & ul ul, li:not(li:last-of-type) {
+            border-color: rgb(90, 71, 90);
+        }
+    }
+
+    h3 {
+        background-color: var(--dark-h3-bg);
+    }
+
+    h4 {
+        background-color: var(--dark-h4-bg);
+    }
+
+    a {
+        color: var(--dark-a);
+    }
+}

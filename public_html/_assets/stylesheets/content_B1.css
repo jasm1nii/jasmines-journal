@@ -27,9 +27,17 @@
   --light-h4-bg: antiquewhite;
   --light-nav-a: purple;
   --light-nav-ul: rgb(76, 15, 95);
-  --light-nav-border: border-color: rgb(207, 145, 207);
+  --light-nav-border: rgb(207, 145, 207);
   --light-li-border: rgb(223, 212, 212);
   --light-a: darkmagenta;
+}
+
+:root {
+  --dark-main-bg: #19181a;
+  --dark-main-border: rgb(56, 36, 56);
+  --dark-a: pink;
+  --dark-h3-bg: #6b266538;
+  --dark-h4-bg: rgba(179, 118, 128, 0.171);
 }
 
 /* animations */
@@ -170,10 +178,10 @@ main + footer li::before {
   font-size: 20px;
   margin-right: 15px;
 }
-main + footer li:nth-child(1)::before {
-  content: "";
+main + footer li:first-child::before {
+  content: none;
 }
-main + footer time {
+main + footer li time {
   font-weight: 600;
 }
 
@@ -337,15 +345,6 @@ button {
   color: var(--light-a);
 }
 
-:root {
-  --dark-main-bg: #19181a;
-  --dark-main-border: rgb(56, 36, 56);
-  --dark-li-border: rgb(80, 53, 80);
-  --dark-a: pink;
-  --dark-h3-bg: #6b266538;
-  --dark-h4-bg: rgba(179, 118, 128, 0.171);
-}
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
@@ -355,8 +354,8 @@ button {
     background-color: var(--dark-main-bg);
     border-color: var(--dark-main-border);
   }
-  section li {
-    border-color: var(--dark-li-border);
+  article ul ul, article li:not(li:last-of-type) {
+    border-color: rgb(90, 71, 90);
   }
   h3 {
     background-color: var(--dark-h3-bg);
@@ -376,8 +375,8 @@ button {
   background-color: var(--dark-main-bg);
   border-color: var(--dark-main-border);
 }
-.dark-mode section li {
-  border-color: var(--dark-li-border);
+.dark-mode article ul ul, .dark-mode article li:not(li:last-of-type) {
+  border-color: rgb(90, 71, 90);
 }
 .dark-mode h3 {
   background-color: var(--dark-h3-bg);
