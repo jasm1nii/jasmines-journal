@@ -8,7 +8,7 @@ body {
     font-size: 1.1em;
     font-stretch: 95%;
     line-height: 1.5em;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
 } 
 #layout {
@@ -67,6 +67,12 @@ main {
     nav {
         padding: 1.5em;
     }
+    p {
+        &:not(li p:first-child) {
+            margin-left: 2em;
+            padding-right: 2em;
+        }
+    }
 }
 
 #parent-category-name {
@@ -113,8 +119,14 @@ section {
     break-inside: avoid;
     grid-column: 2;
     font-size: 1.1em;
+    a {
+        text-decoration: 1.5px wavy underline;
+    }
     p, ul, dl {
         line-height: 1.7em;
+    }
+    p:not(ul p), dl {
+        margin-left: 3em;
     }
     &:first-of-type {
         font-size: 1em;
@@ -133,13 +145,15 @@ section {
     max-height: 50vh;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0;
     li {
         margin-bottom: .5em;
     }
     ul {
         margin-top: .5em;
+    }
+    a {
+        text-decoration: none;
     }
 }
 
@@ -160,24 +174,18 @@ h3 {
     &:not(h2 + h3) {
         margin-top: 2em;
     }
-    & .heading-permalink {
-        margin-right: 1em;
-    }
 }
 
 h4, h5 {
-    margin-left: 1em;
+    margin-left: 1.5em;
     margin-right: 1em;
     padding-bottom: .5em;
     border-bottom: 1px solid;
     font-size: larger;
 }
 
-p {
-    &:not(li p:first-child, header p) {
-        margin-left: 2em;
-        padding-right: 2em;
-    }
+.heading-permalink {
+    margin-right: 1em;
 }
 
 ul  {
@@ -206,19 +214,23 @@ hr {
 
 footer {
     font-size: smaller;
-    margin-top: 3em;
-    margin-bottom: 5em;
-    max-width: 500px;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    padding-left: 1em;
     letter-spacing: .05em;
     border-top: 1px solid;
+    width: fit-content;
     & time {
         font-weight: 600;
     }
-    & ul {
+    p {
+        margin-left: 1em;
+    }
+    ul {
         padding: 0;
         list-style-type: none;
     }
-    & li {
+    li {
         display: inline;
         margin-right: 1em;
         &::before {
@@ -309,6 +321,9 @@ button {
         margin-left: auto;
         margin-right: auto;
         border: none;
+        p {
+            margin-left: -1em;
+        }
     }
 }
 
@@ -339,6 +354,18 @@ button {
     section, main nav {
         background-color: var(--dark-bg);
     }
+    section {
+        &:not(:first-of-type) {
+            a {
+                color:rgb(242, 223, 255);
+                text-decoration-color: rgb(150, 75, 150);
+                &:hover {
+                    color: white;
+                    background-color: rgb(95, 7, 73);
+                }
+            }
+        }
+    }
     a {
         color: var(--dark-links);
         &:hover {
@@ -362,6 +389,18 @@ button {
 @mixin light-mode {
     section, #legend, main nav {
         background-color: var(--light-bg-article);
+    }
+    section {
+        &:not(:first-of-type) {
+            a {
+                color:rgb(104, 64, 131);
+                text-decoration-color: rgb(179, 115, 179);
+                &:hover {
+                    color: white;
+                    background-color: rgb(134, 61, 116);
+                }
+            }
+        }
     }
     a {
         color: var(--light-links);

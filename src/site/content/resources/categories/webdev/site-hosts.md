@@ -12,7 +12,9 @@
 
 *at most*, these sites only support HTML, javascript, and CSS. if you're looking to use PHP, node.js, python, and more, jump to [# static and dynamic sites.](/resources/webdev/site-hosts#static-and-dynamic-sites)
 
-### [mmm.page 👑](https://build.mmm.page/)
+### low code
+
+#### [mmm.page 👑](https://build.mmm.page/)
 
 host location
 :   north america
@@ -24,14 +26,16 @@ storage limit
 :   starts from 5 pages
 
 monthly bandwidth
-:   1000 visitors per month
+:   - free - 1,000 visitors per month
+    - paid - 1,000-100,000 visitors per month
 
-features
-:   - minimal coding knowledge required, as it features a drag-n'-drop site editor!
+notes
+:   - minimal coding knowledge required, as it notes a drag-n'-drop site editor!
 
     - does not support exporting websites as files nor social discovery (yet).
 
-### [hotglue](https://hotglue.me/)
+
+#### [hotglue](https://hotglue.me/)
 
 host location
 :   netherlands
@@ -45,20 +49,82 @@ storage limit
 monthly bandwidth
 :   no limit defined
 
-features
+notes
 :   - another low-code site editor.
 
     - sites are discoverable via feed.
 
     - includes a forum for community discussion and troubleshooting.
 
-### [neocities](https://neocities.org/)
+
+#### [carrd 🎀](https://try.carrd.co/k8hrjrws)
 
 host location
 :   united states
 
 pricing
-:   free, or 5 USD per month
+:   free and paid (9-49 USD per year)
+
+storage limit
+:   - free - 100 elements, with 2 MB for images and 4 MB for videos.
+    - paid - no element limit, with 16 MB for images and 32 MB for videos.
+
+monthly bandwidth
+:   no limit defined
+
+notes
+:   a flexible site builder geared towards single-page sites. mobile-friendly editor!
+
+
+#### [webflow](https://webflow.com/)
+
+host location
+:   united states
+
+pricing
+:   free and paid (14-39 USD per month)
+
+storage limit
+:   - free - 2 pages and 50 content items.
+    - paid - 150 pages and 0-10,000 content items.
+
+monthly bandwidth
+:   - free - 1 GB and 1,000 visitors.
+    - paid - 50-400 GB and 250,000-300,000 visitors.
+
+notes
+:   a super sleek visual site editor for personal and professional pages alike.
+
+
+#### [webstudio 👑](https://webstudio.is/)
+
+host location
+:   north america
+
+pricing
+:   free and paid (20 USD per month)
+
+storage limit
+:   - free - 2 GB
+    - paid - 20 GB
+
+monthly bandwidth
+:   - free - 10,000 page views
+    - paid - 1000,000 page views
+
+notes
+:   the open-source alternative to webflow, with much higher hosting limits!
+
+
+### more code
+
+#### [neocities](https://neocities.org/)
+
+host location
+:   united states
+
+pricing
+:   free and paid (5 USD per month)
 
 storage limit
 :   - free - 1 GB
@@ -68,14 +134,15 @@ monthly bandwidth
 :   - free - 200 GB
     - paid - 3 TB
 
-features
+notes
 :   - the paid tier allows for custom domains (purchased separately).
 
     - having a social profile is optional, but sites will always be discoverable via search engines or other means.
 
     - supports site management via direct upload, command line, and API.
 
-### [ichi](https://ichi.city/)
+
+#### [ichi](https://ichi.city/)
 
 host location
 :   united kingdom
@@ -89,16 +156,16 @@ storage limit
 monthly bandwidth
 :   no limit defined
 
-features
+notes
 :   - no email requried for account creation - on the downside, this also means that lost passwords aren't recoverable.
 
     - all sites are discoverable via global feed.
 
-    - no social following features.
+    - no social following notes.
 
     - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
 
-### [github pages](https://pages.github.com/)
+#### [github pages](https://pages.github.com/)
 
 host location
 :   united states
@@ -112,7 +179,7 @@ storage limit
 monthly bandwidth
 :   no limit defined
 
-features
+notes
 :   - site files are hosted in a public git repository.
 
     - supports adding custom domains at no extra cost.
@@ -124,13 +191,15 @@ features
 
 ## static and dynamic sites
 
-### [glitch](https://glitch.com/)
+### building and hosting
+
+#### [glitch 👑](https://glitch.com/)
 
 host location
 :   united states
 
 pricing
-:   free, or 8 USD per month
+:   free and paid (8 USD per month)
 
 storage limit
 :   no limit defined
@@ -147,10 +216,13 @@ database
 web server
 :   not configurable
 
-features
+notes
 :   beginner-friendly community with lots of remixable templates! site repositories are public by default, but can be made private by upgrading to a paid plan.
 
-### [marigold town](https://marigold.town/)
+
+### hosting only
+
+#### [marigold town](https://marigold.town/)
 
 host location
 :   united states
@@ -170,13 +242,17 @@ backend environment
 web server
 :   apache
 
-features
+notes
 :   sites are themed around a cozy town square! signup is currently limited to a few accounts at a time.
 
-### [teacake](https://teacake.org/)
+
+#### [teacake](https://teacake.org/)
 
 host location
 :   united states
+
+pricing
+:   free and paid (2-3 USD per month)
 
 storage limit
 :   - free - 500 MB
@@ -195,10 +271,11 @@ database
 web server
 :   apache
 
-features
+notes
 :   paid plans come with cPanel and easy script installation via softaculous.
 
-### [leprd](https://leprd.space/)
+
+#### [leprd](https://leprd.space/)
 
 host location
 :   north america
@@ -209,6 +286,9 @@ pricing
 storage limit
 :   up to 5 GB
 
+monthly bandwidth
+:   up to 50 GB
+
 backend environment
 :   PHP
 
@@ -218,10 +298,35 @@ database
 web server
 :   apache
 
-features
+notes
 :   completely free hosting with offerings similar to those of teacake, but note that available slots tend to be more limited.
 
-### [nearly free speech 💲](https://www.nearlyfreespeech.net/)
+
+#### [uberspace 💲](https://uberspace.de/en/)
+
+host location
+:   germany
+
+pricing
+:   5-15 EUR per month
+
+storage limit
+:   10-100 GB
+
+backend environment
+:   PHP, python, ruby, .NET core, and node.js
+
+database
+:   mySQL
+
+web server
+:   apache
+
+notes
+:   includes a free subdomain and runs on renewable energy! requires a willingness to get comfortable with the command line.
+
+
+#### [nearly free speech 💲](https://www.nearlyfreespeech.net/)
 
 host location
 :   united states
@@ -241,30 +346,7 @@ database
 web server
 :   apache
 
-features
-:   super cheap, but requires some shell programming knowledge. does not offer webmail hosting.
-
-### [uberspace 💲](https://uberspace.de/en/)
-
-host location
-:   germany
-
-pricing
-:   5-15 EUR per month
-
-storage limit
-:   10-100 GB per month
-
-backend environment
-:   PHP, python, ruby, .NET core, and node.js
-
-database
-:   mySQL
-
-web server
-:   apache
-
-features
-:   includes a free subdomain and runs on renewable energy! also requires a willingness to learn shell.
+notes
+:   super cheap and also requires some command line know-how. does not offer webmail hosting.
 
 </section>

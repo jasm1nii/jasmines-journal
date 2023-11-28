@@ -94,7 +94,7 @@ body {
   font-size: 1.1em;
   font-stretch: 95%;
   line-height: 1.5em;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
 }
 
@@ -154,6 +154,10 @@ header nav a {
 main nav {
   padding: 1.5em;
 }
+main p:not(li p:first-child) {
+  margin-left: 2em;
+  padding-right: 2em;
+}
 
 #parent-category-name {
   font-size: larger;
@@ -203,8 +207,15 @@ section {
   grid-column: 2;
   font-size: 1.1em;
 }
+section a {
+  -webkit-text-decoration: 1.5px wavy underline;
+          text-decoration: 1.5px wavy underline;
+}
 section p, section ul, section dl {
   line-height: 1.7em;
+}
+section p:not(ul p), section dl {
+  margin-left: 3em;
 }
 section:first-of-type {
   font-size: 1em;
@@ -224,14 +235,16 @@ section:first-of-type {
   max-height: 50vh;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em 0;
 }
 .table-of-contents li {
   margin-bottom: 0.5em;
 }
 .table-of-contents ul {
   margin-top: 0.5em;
+}
+.table-of-contents a {
+  text-decoration: none;
 }
 
 h2 {
@@ -252,21 +265,17 @@ h3 {
 h3:not(h2 + h3) {
   margin-top: 2em;
 }
-h3 .heading-permalink {
-  margin-right: 1em;
-}
 
 h4, h5 {
-  margin-left: 1em;
+  margin-left: 1.5em;
   margin-right: 1em;
   padding-bottom: 0.5em;
   border-bottom: 1px solid;
   font-size: larger;
 }
 
-p:not(li p:first-child, header p) {
-  margin-left: 2em;
-  padding-right: 2em;
+.heading-permalink {
+  margin-right: 1em;
 }
 
 ul:not(header ul) {
@@ -289,14 +298,19 @@ hr {
 
 footer {
   font-size: smaller;
-  margin-top: 3em;
-  margin-bottom: 5em;
-  max-width: 500px;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
+  padding-left: 1em;
   letter-spacing: 0.05em;
   border-top: 1px solid;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 footer time {
   font-weight: 600;
+}
+footer p {
+  margin-left: 1em;
 }
 footer ul {
   padding: 0;
@@ -394,6 +408,9 @@ button:hover {
     margin-right: auto;
     border: none;
   }
+  footer p {
+    margin-left: -1em;
+  }
 }
 @media all and (max-width: 500px) {
   main {
@@ -421,6 +438,14 @@ button:hover {
   section, main nav {
     background-color: var(--dark-bg);
   }
+  section:not(:first-of-type) a {
+    color: rgb(242, 223, 255);
+    text-decoration-color: rgb(150, 75, 150);
+  }
+  section:not(:first-of-type) a:hover {
+    color: white;
+    background-color: rgb(95, 7, 73);
+  }
   a {
     color: var(--dark-links);
   }
@@ -434,6 +459,14 @@ button:hover {
 }
 .dark-mode section, .dark-mode main nav {
   background-color: var(--dark-bg);
+}
+.dark-mode section:not(:first-of-type) a {
+  color: rgb(242, 223, 255);
+  text-decoration-color: rgb(150, 75, 150);
+}
+.dark-mode section:not(:first-of-type) a:hover {
+  color: white;
+  background-color: rgb(95, 7, 73);
 }
 .dark-mode a {
   color: var(--dark-links);
@@ -450,6 +483,14 @@ button:hover {
   section, #legend, main nav {
     background-color: var(--light-bg-article);
   }
+  section:not(:first-of-type) a {
+    color: rgb(104, 64, 131);
+    text-decoration-color: rgb(179, 115, 179);
+  }
+  section:not(:first-of-type) a:hover {
+    color: white;
+    background-color: rgb(134, 61, 116);
+  }
   a {
     color: var(--light-links);
   }
@@ -463,6 +504,14 @@ button:hover {
 }
 .light-mode section, .light-mode #legend, .light-mode main nav {
   background-color: var(--light-bg-article);
+}
+.light-mode section:not(:first-of-type) a {
+  color: rgb(104, 64, 131);
+  text-decoration-color: rgb(179, 115, 179);
+}
+.light-mode section:not(:first-of-type) a:hover {
+  color: white;
+  background-color: rgb(134, 61, 116);
 }
 .light-mode a {
   color: var(--light-links);
