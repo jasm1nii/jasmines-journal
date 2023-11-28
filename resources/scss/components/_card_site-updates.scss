@@ -6,14 +6,22 @@
     .site-updates {
         box-shadow: 10px 10px #3281436b;
         @include border-color();
-        & h2 {
+        h2 {
             @include border-color();
         }
-        & .overflow {
+        p {
+            &:first-of-type {
+                text-align: center;
+                b {
+                    font-size: larger;
+                }
+            }
+        }
+        /*& .overflow {
             @include border-color();
             scrollbar-color: rgb(110, 141, 114) rgba(134, 201, 154, 0.116);
-        }
-        & ::-webkit-scrollbar-thumb {
+        }*/
+        ::-webkit-scrollbar-thumb {
             background-color: rgb(118, 170, 138);
         }
     }

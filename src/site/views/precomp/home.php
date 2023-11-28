@@ -48,10 +48,25 @@
 
         public function __construct() {
 
+        $glob = glob(SITE_ROOT . '{/src/*/*/*/*,/src/*/*/*/*/*,/src/*/*/*/*/*/*,/public_html/*,/public_html/_assets/scripts/*,/public_html/_assets/stylesheets/*}', GLOB_BRACE);
+
+            foreach ($glob as $glob_result) {
+
+                $mtime[] = filemtime($glob_result);
+
+            }
+
+            rsort($mtime);
+            
+            $last_updated = $mtime[0];
+            $diff =  Utils::formatTimeDifference($last_updated);
+
             $vars = [
-                'src'       => "/_assets/media/main",
-                'message'   => self::getNewestGuestbookMessage(),
-                'date'      => self::formatGuestbookDate()
+                'src'               => "/_assets/media/main",
+                'message'           => self::getNewestGuestbookMessage(),
+                'date'              => self::formatGuestbookDate(),
+                'last_updated'      => $last_updated,
+                'last_updated_diff' => $diff
             ];
 
             parent::Twig(self::LAYOUT, $vars, self::INCLUDES);

@@ -651,13 +651,19 @@ button:active, .button-style:active {
 .site-updates {
   box-shadow: 10px 10px rgba(50, 129, 67, 0.4196078431);
   border-color: green;
+  /*& .overflow {
+      @include border-color();
+      scrollbar-color: rgb(110, 141, 114) rgba(134, 201, 154, 0.116);
+  }*/
 }
 .site-updates h2 {
   border-color: green;
 }
-.site-updates .overflow {
-  border-color: green;
-  scrollbar-color: rgb(110, 141, 114) rgba(134, 201, 154, 0.116);
+.site-updates p:first-of-type {
+  text-align: center;
+}
+.site-updates p:first-of-type b {
+  font-size: larger;
 }
 .site-updates ::-webkit-scrollbar-thumb {
   background-color: rgb(118, 170, 138);

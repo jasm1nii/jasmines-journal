@@ -1,24 +1,17 @@
 <section aria-labelledby="site-updates">
     <div class="card site-updates">
         <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
-        <div class="overflow">
-            {% apply markdown_to_html %}
-                ### <time datetime="2023-11-27">27 november 2023</time>
-
-                * more links added to the [resource pages.](/resources)
-
-                ### <time datetime="2023-11-23">23 november 2023</time>
-
-                * smoothed out a few style inconsistencies here and there. moderate CSS facelift for the blog layouts, as well.
-
-                ### <time datetime="2023-11-09">9 november 2023</time>
-
-                * my guestbook is now self-hosted - <a href="/guestbook">check it out!</a>
-
-            {% endapply %}
-            <footer>
-                more details and past changes can be found in the <a href="/about/changelog">change log.</a>
-            </footer>
-        </div>
+        {% if last_updated is defined %}
+            <p>
+                an update was last detected on
+                <br/>
+                <b>{{ last_updated|format_datetime(pattern="d MMMM Y, HH:mm")|lower }} GMT+7</b>
+                <br/>
+                (about {{ last_updated_diff }})
+            </p>
+        {% endif %}
+        {% apply markdown_to_html %}
+            check out the [changelog page](/about/changelog) or the [git commit history](https://github.com/jasm1nii/jasmines-journal/commits/main) for more details.
+        {% endapply %}
     </div>
 </section>
