@@ -654,19 +654,20 @@ button:active, .button-style:active {
   /*& .overflow {
       @include border-color();
       scrollbar-color: rgb(110, 141, 114) rgba(134, 201, 154, 0.116);
-  }*/
+  }
+  ::-webkit-scrollbar-thumb {
+      background-color: rgb(118, 170, 138);
+  }
+  */
 }
 .site-updates h2 {
   border-color: green;
 }
-.site-updates p:first-of-type {
+.site-updates p {
   text-align: center;
 }
 .site-updates p:first-of-type b {
   font-size: larger;
-}
-.site-updates ::-webkit-scrollbar-thumb {
-  background-color: rgb(118, 170, 138);
 }
 
 #tip-jar + ul {

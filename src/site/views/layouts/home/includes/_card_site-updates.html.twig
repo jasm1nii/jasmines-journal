@@ -3,11 +3,9 @@
         <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
         {% if last_updated is defined %}
             <p>
-                an update was last detected on
+                last updated on
                 <br/>
-                <b>{{ last_updated|format_datetime(pattern="d MMMM Y, HH:mm")|lower }} GMT+7</b>
-                <br/>
-                (about {{ last_updated_diff }})
+                <b>{{ last_updated|format_datetime(pattern="d MMMM Y")|lower }}</b>
             </p>
         {% endif %}
         {% apply markdown_to_html %}

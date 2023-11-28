@@ -48,7 +48,7 @@
 
         public function __construct() {
 
-        $glob = glob(SITE_ROOT . '{/src/*/*/*/*,/src/*/*/*/*/*,/src/*/*/*/*/*/*,/public_html/*,/public_html/_assets/scripts/*,/public_html/_assets/stylesheets/*}', GLOB_BRACE);
+        $glob = glob(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}', GLOB_BRACE);
 
             foreach ($glob as $glob_result) {
 
@@ -65,8 +65,7 @@
                 'src'               => "/_assets/media/main",
                 'message'           => self::getNewestGuestbookMessage(),
                 'date'              => self::formatGuestbookDate(),
-                'last_updated'      => $last_updated,
-                'last_updated_diff' => $diff
+                'last_updated'      => $last_updated
             ];
 
             parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
