@@ -1,0 +1,19 @@
+{% extends layout %}
+
+{% set keywords = ['accountability', 'personal'] %}
+
+{% set published = '23 november 2023' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.
+    {% endapply %}
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}
