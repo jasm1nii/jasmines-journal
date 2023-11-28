@@ -125,7 +125,7 @@ section {
     p, ul, dl {
         line-height: 1.7em;
     }
-    p:not(ul p), dl {
+    p:not(ul p), dl:not(ul dl) {
         margin-left: 3em;
     }
     &:first-of-type {

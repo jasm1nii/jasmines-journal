@@ -21,15 +21,17 @@ body {
 }
 
 dl {
-    margin-left: 2em;
     margin-right: 1em;
     display: grid;
     row-gap: 1em;
+    margin-left: 2em;
 }
+
 dt {
     font-weight: bolder;
     grid-column: 1;
 }
+
 dd {
     &:not(:last-child) {
         grid-column: 2 / 5;
@@ -45,12 +47,30 @@ dd {
         }
     }
 }
+
+@mixin list-border {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.575);
+}
+
 dt, dd {
     &:not(:last-child, :last-of-type) {
-        border-bottom: 1px solid rgba(128, 128, 128, 0.575);
+        @include list-border();
     }
     &:last-child {
         grid-column: span 4;
+    }
+}
+
+ul {
+    dl {
+        grid-auto-flow: column;
+        grid-template-columns: 2fr 5fr;
+    }
+    dt, dd {
+        @include list-border();
+    }
+    dd {
+        margin-left: 0;
     }
 }
 

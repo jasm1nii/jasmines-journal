@@ -8,67 +8,148 @@
 
 <section>
 
-## illustration programs
+## programs for creating
 
 ### illustration
 
-- [heavypaint 👑](https://www.heavypaint.com/) 
+- [mediabang paint](https://medibangpaint.com/en/)
 
-    i think the built-in brush textures are really cool!
+    operating systems
+    :   windows, mac, iOS, and android
 
-- [rebelle 💲](https://www.escapemotions.com/products/rebelle/about?/products/rebelle/index.php)
-
-    can emulate painting with traditional media **very** well, with color-mixing capabilities that are true to life.
 
 - [krita](https://krita.org/en/)
 
-    also supports creating animations and is available on linux!
+    operating systems
+    :   windows, mac, and linux
 
-- [mediabang paint](https://medibangpaint.com/en/)
+    also supports creating animations!
 
-    available of iOS, android, windows, and mac.
 
 - [firealpaca](https://firealpaca.com/)
+
+    operating systems
+    :   windows, mac, and linux
+
+
+- [heavypaint 👑](https://www.heavypaint.com/)
+
+    operating systems
+    :   windows, mac, linux, android, and iOS
+
+    i think the built-in brush textures are really cool!
+
+
+- [rebelle 💲](https://www.escapemotions.com/products/rebelle/about?/products/rebelle/index.php)
+
+    operating systems
+    :   windows and mac
+
+    can emulate painting with traditional media *very* well, with color-mixing capabilities that are true to life.
+
+
+
+- [artrage 💲](https://www.artrage.com/)
+
+    operating systems
+    :   windows and mac
+
+
+- [artweaver](https://www.artweaver.de/en)
+
+    operating systems
+    :   windows
+
+    a paid license is required for commercial use.
+
 
 ### sketching
 
 - [concepts 👑](https://concepts.app/en/)
 
+    operating systems
+    :   windows, iOS, and android
+
     infinite canvas my beloved ❣
 
 - [autodesk sketchbook](https://www.sketchbook.com/)
+
+    operating systems
+    :   windows, mac, iOS, and android
 
     originally popular with product designers, it has evolved over the years to be a very capable program for doing more than just sketches, but it's still great for lightweight drawing.
 
 ### pixel art
 
-- [aesprite](https://www.aseprite.org/)
+- [pixilart](https://www.pixilart.com/)
 
-- [graphicsgale](https://graphicsgale.com/us/)
+    operating systems
+    :   OS-agnostic (runs in the browser)
+
+
+- [aesprite 💲](https://www.aseprite.org/)
+
+    operating systems
+    :   windows, mac, and ubuntu
+
 
 - [grafx2](http://grafx2.chez.com/)
 
-- [pixilart](https://www.pixilart.com/) - runs in the browser
+    operating systems
+    :   windows, mac, linux, nintendo switch, and many more
+
+
+- [graphicsgale](https://graphicsgale.com/us/)
+
+    operating systems
+    :   windows
+
 
 ### graphic design & vector art
 
 - [inkscape](https://inkscape.org/)
 
-- [affinity 💲](https://affinity.serif.com/en-us/)
+    operating systems
+    :   windows, mac, and linux
 
-    the full suite includes affinity designer, photo, and publisher. works on windows, mac, and iPad with a single-purchase license.
+    ideal for vector-based work.
+
 
 - [scibus](https://www.scribus.us/)
 
+    operating systems
+    :   windows, mac, linux, and BSD
+
     for desktop publishing.
 
+
+- [affinity 💲](https://affinity.serif.com/en-us/)
+
+    operating systems
+    :   windows, mac, and iPadOS
+
+    the full suite includes three programs for photo editing, vector art, and publishing. each one can be purchased separately.
+
+
 ### animation, motion graphics, & VFX
+
+- [krita](https://krita.org/en/)
+
+    originally mentioned under [# illustration.](/resources/art-design#illustration)
+
  
 - [blender](https://www.blender.org/)
 
+    operating systems
+    :   windows, mac, and linux
+
     while blender is mainly known for its 3D capabilities, there's also some support for 2D animation with features like grease pencil.
 
+
 - [natron](https://natrongithub.github.io/)
+
+    operating systems
+    :   windows, mac, linux, and freeBSD
 
     a node-based compositor with python scripting support.
 
@@ -79,6 +160,9 @@
 ## reference tools
 
 - [pureref](https://www.pureref.com/)
+
+    operating systems
+    :   windows, mac, and linux
 
     a desktop program for organizing reference images.
 
@@ -154,13 +238,9 @@
 
 - [glaze 👑](https://glaze.cs.uchicago.edu/)
 
-    <details>
-    <summary>
     a powerful tool for protecting your art from scraping by "AI".
-    </summary>
     
-    you're gonna need a LOT of bandwidth for this; the initial installer is nearly **3 GB** in size, with 4 GB of additional resources that need to be downloaded on the first launch.
-    </details>
+    for the offline version, you'll need a LOT of bandwidth; the initial installer is nearly **3 GB** in size, with 4 GB of additional resources that need to be downloaded on the first launch.
 
 </section>
 

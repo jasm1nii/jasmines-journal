@@ -32,10 +32,10 @@ body {
 }
 
 dl {
-  margin-left: 2em;
   margin-right: 1em;
   display: grid;
   row-gap: 1em;
+  margin-left: 2em;
 }
 
 dt {
@@ -60,6 +60,17 @@ dt:not(:last-child, :last-of-type), dd:not(:last-child, :last-of-type) {
 }
 dt:last-child, dd:last-child {
   grid-column: span 4;
+}
+
+ul dl {
+  grid-auto-flow: column;
+  grid-template-columns: 2fr 5fr;
+}
+ul dt, ul dd {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.575);
+}
+ul dd {
+  margin-left: 0;
 }
 
 ::-moz-selection {
@@ -214,7 +225,7 @@ section a {
 section p, section ul, section dl {
   line-height: 1.7em;
 }
-section p:not(ul p), section dl {
+section p:not(ul p), section dl:not(ul dl) {
   margin-left: 3em;
 }
 section:first-of-type {
