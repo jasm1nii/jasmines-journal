@@ -18,11 +18,35 @@
 
 ### style
 
-- pre-made layouts
-    - [nonkiru's layouts](https://nonkiru.art/layouts)
-    - [sadgrl's layouts](https://sadgrl.online/webmastery/layouts/)
+#### pre-made layouts
+
+- [nonkiru's layouts](https://nonkiru.art/layouts)
+
+- [sadgrl's layouts](https://sadgrl.online/webmastery/layouts/)
+
+#### layout builders
 
 - [sadgrl's layout builder](https://sadgrl.online/projects/layout-builder/)
+
+#### CSS frameworks
+
+- [bulma](https://bulma.io/) - based on flexbox.
+
+- [pico](https://github.com/picocss/pico)
+
+- [sakura](https://github.com/oxalorg/sakura)
+
+- [water.css](https://github.com/kognise/water.css)
+
+- [NES.css](https://github.com/nostalgic-css/NES.css) - 🎮💖
+
+- inspired by windows:
+
+    - [98.css](https://github.com/jdan/98.css)
+
+    - [XP.css](https://botoxparty.github.io/XP.css/)
+
+    - [7.css](https://khang-nd.github.io/7.css/)
 
 </section>
 

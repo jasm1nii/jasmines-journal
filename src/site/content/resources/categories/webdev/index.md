@@ -19,7 +19,7 @@
 
 - [w3schools](https://www.w3schools.com/)
 
-    learn all the frontend languages (HTML, CSS and javascript) in addition to server-side programming (PHP, SQL, and more).
+    learn all the frontend languages (<abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr> and javascript) in addition to server-side programming (<abbr title="PHP Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, and more).
 
 - [MDN web docs](https://developer.mozilla.org/en-US/docs/Learn)
 
@@ -31,7 +31,7 @@
 
 - [PHP tutorial](https://www.phptutorial.net/)
 
-- [PHP manual](https://www.php.net/docs.php)
+- the official [PHP manual](https://www.php.net/docs.php)
 
 
 ### code editors
@@ -43,7 +43,7 @@
 
 *view the full list: [/resources/webdev/code-templates-tools](/resources/webdev/code-templates-tools).*
 
-these resources can help keep your code more consistent and reduce the redundancy of typing straight HTML for every single page.
+these resources can help keep your code more consistent and reduce the redundancy of typing straight <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Stylesheets">CSS</abbr> for every single page.
 
 
 ### accessibility references
@@ -67,17 +67,39 @@ these resources can help keep your code more consistent and reduce the redundanc
 
 ## code libraries
 
-for a list of things that i've used specifically on this site (including graphics), refer to the ["credits" page](/credits). more UI assets can be found on the ["art & design" resources page](/resources/art-design).
+for a list of things that i've used specifically on this site (including graphics), refer to the ["credits" page.](/credits)
 
 ### <abbr title="Cascading Stylesheets">CSS</abbr>
 
+**see also:** [# templates & templating tools ➡ style](/resources/webdev/code-templates-tools#style) and [# graphic assets.](/resources/art-design#graphic-assets)
+
 - [UI verse](https://uiverse.io/)
 
-    2.7k+ open source CSS elements.
+    2.7k+ open source <abbr title="Cascading Stylesheets">CSS</abbr> elements.
 
 - [animate.css](https://animate.style/)
 
-    a pure CSS library of predefined animations - takes the work out of setting keyframes for simple transitions.
+    a pure <abbr title="Cascading Stylesheets">CSS</abbr> library of predefined animations - takes the work out of setting keyframes for simple transitions.
+
+### javascript
+
+- [p5.js](https://p5js.org/)
+
+    a library geared towards coding beginners and artists.
+
+- [GSAP](https://gsap.com/)
+
+    great for implementing beautiful and reactive web animations!
+
+- [three.js](https://threejs.org/)
+
+    for creating 3D animations.
+
+### <abbr title="PHP Hypertext Preprocessor">PHP</abbr>
+
+- [league/commonmark 👑](https://commonmark.thephpleague.com/)
+
+    a commonmark-compliant markdown-to-<abbr title="HyperText Markup Language">HTML</abbr> converter - i'm using it on this very page for generating the table of contents!
 
 
 </section>
@@ -88,7 +110,7 @@ for a list of things that i've used specifically on this site (including graphic
 
 - [page crypt](https://www.maxlaumeister.com/pagecrypt/) 👑
 
-    password protect your static HTML pages - you should only use this if your host doesn't allow for access configuration on the server side.
+    password protect your static <abbr title="HyperText Markup Language">HTML</abbr> pages - you should only use this if your host doesn't allow for access configuration on the server side.
 
 - [collectibles.js](https://github.com/MaxLaumeister/collectibles.js)
 
@@ -114,6 +136,14 @@ for a list of things that i've used specifically on this site (including graphic
 
     an open source web ring template.
 
+- [HTML validator](https://validator.w3.org/)
+
+- [RSS/atom feed validator](https://validator.w3.org/feed/)
+
+- [IndieWebify.Me](https://indiewebify.me/)
+
+    a guide to getting on the [indie web](https://indieweb.org/) - also features a microformats validator.
+
 
 </section>
 
@@ -134,6 +164,8 @@ for a list of things that i've used specifically on this site (including graphic
 - [32-bit cafe](https://32bit.cafe/) 👑
 
     a community of personal web enthusiasts - they also run a [discord server!](https://32bit.cafe/discord/) **18+ only, <abbr title="safe for work">SFW</abbr>.**
+
+- [DEV community](https://dev.to/)
 
 
 </section>

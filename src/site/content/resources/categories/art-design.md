@@ -12,7 +12,7 @@
 
 ### illustration
 
-- [mediabang paint](https://medibangpaint.com/en/)
+- [medibang paint](https://medibangpaint.com/en/)
 
     operating systems
     :   windows, mac, iOS, and android

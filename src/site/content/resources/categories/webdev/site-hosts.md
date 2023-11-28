@@ -14,6 +14,8 @@
 
 ### low code
 
+many of these feature a visual editor, which means they are relatively easy to use without any prior coding knowledge!
+
 #### [mmm.page 👑](https://build.mmm.page/)
 
 host location
@@ -30,9 +32,7 @@ monthly bandwidth
     - paid - 1,000-100,000 visitors per month
 
 notes
-:   - minimal coding knowledge required, as it notes a drag-n'-drop site editor!
-
-    - does not support exporting websites as files nor social discovery (yet).
+:    does not support exporting websites as files nor social discovery (yet).
 
 
 #### [hotglue](https://hotglue.me/)
@@ -50,9 +50,7 @@ monthly bandwidth
 :   no limit defined
 
 notes
-:   - another low-code site editor.
-
-    - sites are discoverable via feed.
+:   - sites are discoverable via feed.
 
     - includes a forum for community discussion and troubleshooting.
 
@@ -93,7 +91,7 @@ monthly bandwidth
     - paid - 50-400 GB and 250,000-300,000 visitors.
 
 notes
-:   a super sleek visual site editor for personal and professional pages alike.
+:   a super sleek visual site builder and content management system for personal and professional pages alike.
 
 
 #### [webstudio 👑](https://webstudio.is/)
@@ -118,6 +116,8 @@ notes
 
 ### more code
 
+you'll need to brush up on your frontend programming skills and work directly with raw lines of code - check out [# coding-help](/resources/webdev#coding-help) over at [/resources/webdev](/resources/webdev) if you don't know where to start.
+
 #### [neocities](https://neocities.org/)
 
 host location
@@ -137,9 +137,9 @@ monthly bandwidth
 notes
 :   - the paid tier allows for custom domains (purchased separately).
 
-    - having a social profile is optional, but sites will always be discoverable via search engines or other means.
+    - social profiles are optional.
 
-    - supports site management via direct upload, command line, and API.
+    - supports site management via direct upload, command line, and <abbr title="application programming interface">API</abbr>.
 
 
 #### [ichi](https://ichi.city/)
@@ -159,9 +159,7 @@ monthly bandwidth
 notes
 :   - no email requried for account creation - on the downside, this also means that lost passwords aren't recoverable.
 
-    - all sites are discoverable via global feed.
-
-    - no social following notes.
+    - all sites are discoverable via global feed, but there aren't any social interaction features.
 
     - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
 

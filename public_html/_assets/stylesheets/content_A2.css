@@ -246,7 +246,7 @@ section:first-of-type {
   max-height: 50vh;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 1em 0;
+  padding: 1em 0 1em 1em;
 }
 .table-of-contents li {
   margin-bottom: 0.5em;
