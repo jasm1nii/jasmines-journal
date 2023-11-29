@@ -7,3 +7,4 @@ tmp/twig/*
 !*.gitattributes
 vendor/*
 bin/sitemap-generator
+resources/drafts
