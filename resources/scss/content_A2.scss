@@ -354,8 +354,9 @@ button {
 }
 
 @mixin dark-mode {
-    section, main nav {
-        background-color: var(--dark-bg);
+    section, #legend, main nav {
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
     }
     section {
         &:not(:first-of-type) {

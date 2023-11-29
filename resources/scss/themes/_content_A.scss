@@ -4,6 +4,9 @@
 @use '../components/scrollbar' as *;
 @use '../components/webkit_scrollbar' as *;
 
+$dark-section-bg: rgb(27, 26, 26);
+$dark-section-border: rgb(51, 42, 56);
+
 * {
     scrollbar-width: thin;
     @include scrollbar-style-1();

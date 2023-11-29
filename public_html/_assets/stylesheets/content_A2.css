@@ -448,8 +448,9 @@ button:hover {
     background-color: var(--dark-bg);
     color: var(--dark-font);
   }
-  section, main nav {
-    background-color: var(--dark-bg);
+  section, #legend, main nav {
+    background-color: rgb(27, 26, 26);
+    border-color: rgb(51, 42, 56);
   }
   section:not(:first-of-type) a {
     color: rgb(242, 223, 255);
@@ -473,8 +474,9 @@ button:hover {
   background-color: var(--dark-bg);
   color: var(--dark-font);
 }
-.dark-mode section, .dark-mode main nav {
-  background-color: var(--dark-bg);
+.dark-mode section, .dark-mode #legend, .dark-mode main nav {
+  background-color: rgb(27, 26, 26);
+  border-color: rgb(51, 42, 56);
 }
 .dark-mode section:not(:first-of-type) a {
   color: rgb(242, 223, 255);

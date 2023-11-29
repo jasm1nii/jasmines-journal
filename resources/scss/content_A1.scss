@@ -234,7 +234,8 @@ button {
 
 @mixin dark-mode {
     article, #legend {
-        background-color: var(--dark-bg);
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
     }
     a {
         color: var(--dark-links);

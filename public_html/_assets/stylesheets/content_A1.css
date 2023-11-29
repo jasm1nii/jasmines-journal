@@ -435,7 +435,8 @@ button:hover {
     color: var(--dark-font);
   }
   article, #legend {
-    background-color: var(--dark-bg);
+    background-color: rgb(27, 26, 26);
+    border-color: rgb(51, 42, 56);
   }
   a {
     color: var(--dark-links);
@@ -449,7 +450,8 @@ button:hover {
   color: var(--dark-font);
 }
 .dark-mode article, .dark-mode #legend {
-  background-color: var(--dark-bg);
+  background-color: rgb(27, 26, 26);
+  border-color: rgb(51, 42, 56);
 }
 .dark-mode a {
   color: var(--dark-links);
