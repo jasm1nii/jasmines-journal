@@ -17,5 +17,7 @@
             'content'       => "/src/site/content/"
         ]
     );
+
+    define("REQUEST", $_SERVER['REQUEST_URI']);
     
 ?>

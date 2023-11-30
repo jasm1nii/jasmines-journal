@@ -4,12 +4,6 @@
 
     class Route {
 
-        public static function forwardToModel($path) {
-
-            require SITE_ROOT. DIR['models'] . $path;
-
-        }
-
         public static function NotFound() {
 
             http_response_code(404);
