@@ -115,7 +115,7 @@
     ideal for vector-based work.
 
 
-- [scibus](https://www.scribus.us/)
+- [scribus](https://www.scribus.us/)
 
     operating systems
     :   windows, mac, linux, and BSD

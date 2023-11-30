@@ -48,7 +48,7 @@ these resources can help keep your code more consistent and reduce the redundanc
 
 ### accessibility references
 
-**a free internet is an accessible internet,** and an inclusive website should be able to accommodate for various disabilities and devices.
+**a free internet is an accessible internet** - ideally, a website's design should accommodate a wide range of visitors, included disabled people and assistive technology users.
 
 - [the ultimate *** website](https://theultimatemotherfuckingwebsite.com/) 👑
 
@@ -85,15 +85,15 @@ for a list of things that i've used specifically on this site (including graphic
 
 - [p5.js](https://p5js.org/)
 
-    a library for creative coding, geared towards beginner programmers and artists.
+    for creative coding, geared towards beginner programmers and artists.
 
 - [GSAP](https://gsap.com/)
 
-    for implementing beautiful and reactive 2D animations.
+    for 2D animations.
 
 - [three.js](https://threejs.org/)
 
-    for creating interactive interfaces with 3D objects and animations.
+    for 3D animations.
 
 ### <abbr title="PHP Hypertext Preprocessor">PHP</abbr>
 

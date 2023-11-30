@@ -1,0 +1,15 @@
+{% extends layout %}
+
+{% set date = "month yyyy" %}
+
+{% block changelog %}
+    {% apply markdown_to_html %}
+        <section>
+
+        ### <time datetime="yyyy-mm-dd">date</time>
+
+        - this is a filler list
+
+        </section>
+    {% endapply %}
+{% endblock %}
