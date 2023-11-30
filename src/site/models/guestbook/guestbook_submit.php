@@ -1,32 +1,41 @@
 <?php
 
+    namespace JasminesJournal\Site\Models;
+
+    use JasminesJournal\Site\Models\GuestbookConn as GuestbookConn;
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    $ini = parse_ini_file(ENV_CONF, true);
+    class GuestbookPOST extends GuestbookConn {
 
-    $servername = "localhost";
-    $dbname = $ini['guestbook']['name'];
-    $table = $ini['guestbook']['table'];
+        public function __construct() {
 
-    $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
-    
-    if (isset($_POST) && $time_offset > 3) {
+            if ($_POST['name'] == null) {
+                
+                $this->sender_name = 'Anonymous';
 
-        if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
+            } else {
 
-            $user_post = $ini['guestbook']['user'];
-            $pass_post = $ini['guestbook']['password'];
-            
-            $guestbook_post = new PDO(
-                "mysql:host=$servername;dbname=$dbname",
-                $user_post,
-                $pass_post,
-                [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
-            );
+                $this->sender_name = htmlspecialchars($_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
 
-            $sql_incr = $guestbook_post->prepare("ALTER TABLE `$table` AUTO_INCREMENT=0");
+            }
+
+            $this->sender_email     = $_POST['email'];
+            $this->sender_url       = $_POST['website'];
+            $this->sender_message   = htmlspecialchars($_POST['message'], ENT_QUOTES |ENT_HTML401, 'UTF-8', true);
+
+            $this->sendToDB();
+
+        }
+
+        private function sendToDB() {
+
+            $guestbook_post = parent::connect();
+            $table = parent::getTable();
+
+            $sql_incr = $guestbook_post->prepare("ALTER TABLE `$table`AUTO_INCREMENT=0");
             $sql_incr->execute();
 
             $sql_post = $guestbook_post->prepare(
@@ -34,32 +43,21 @@
                 VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
-            $sql_post->bindParam(':name', $sender_name);
-            $sql_post->bindParam(':email', $sender_email);
-            $sql_post->bindParam(':url', $sender_url);
-            $sql_post->bindParam(':message', $sender_message);
-            $sql_post->bindParam(':ip', $sender_ip);
-
-            if ($_POST['name'] == null) {
-                
-                $sender_name = 'Anonymous';
-
-            } else {
-
-                $sender_name = htmlspecialchars($_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
-
-            }
-            
-            $sender_email = $_POST['email'];
-            $sender_url = $_POST['website'];
-            $sender_message = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
-            $sender_ip = $_SERVER['REMOTE_ADDR'];
+            $sql_post->bindParam(':name', $this->sender_name);
+            $sql_post->bindParam(':email', $this->sender_email);
+            $sql_post->bindParam(':url', $this->sender_url);
+            $sql_post->bindParam(':message', $this->sender_message);
+            $sql_post->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
 
             $sql_post->execute();
 
-            unset($user_post, $pass_post);
             $guestbook_post = null;
 
+        }
+
+        public function __destruct() {
+
+            $ini = parse_ini_file(ENV_CONF, true);
             $mail = new PHPMailer(true);
 
             try {
@@ -81,12 +79,12 @@
                 $mail->Subject = "guestbook message received!";
                 $mail->Body =
                     "<ul>
-                        <li>Name: {$sender_name}</li>
-                        <li>Email: {$sender_email}</li>
-                        <li>URL: {$sender_url}</li>
-                        <li>Message: {$sender_message}</li>
+                        <li>Name: {$this->sender_name}</li>
+                        <li>Email: {$this->sender_email}</li>
+                        <li>URL: {$this->sender_url}</li>
+                        <li>Message: {$this->sender_message}</li>
                     </ul>";
-                $mail->AltBody = "Name:{$sender_name} - Email: {$sender_email} - URL: {$sender_url} - Message: {$sender_message}";
+                $mail->AltBody = "Name:{$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
                 
                 $mail->send();
                 
@@ -99,19 +97,7 @@
 
             header('Location: /guestbook/success');
 
-        } else {
-
-            unset($user_post, $pass_post);
-            $guestbook_post = null;
-            header('Location: /guestbook/error/has_html');
-
         }
-        
-    } else {
-
-        unset($user_post, $pass_post);
-        $guestbook_post = null;
-        header('Location: /guestbook/error/time_too_short');
 
     }
 

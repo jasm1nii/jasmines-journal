@@ -4,6 +4,7 @@
 
     use JasminesJournal\Core\Route as Route;
     use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Site\Models\GuestbookPOST as GuestbookPOST;
 
     //
 
@@ -91,7 +92,25 @@
                 case "/guestbook/post":
                 case "/guestbook/post/":
 
-                    Route::forwardToModel('guestbook/guestbook_submit.php');
+                    $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
+
+                    if (isset($_POST) && $time_offset > 3) {
+
+                        if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
+                            
+                            new GuestbookPOST();
+
+                        } else {
+
+                            header('Location: /guestbook/error/has_html');
+                
+                        }
+                    
+                    } else {
+
+                        header('Location: /guestbook/error/time_too_short');
+                
+                    }
 
                     break;
 

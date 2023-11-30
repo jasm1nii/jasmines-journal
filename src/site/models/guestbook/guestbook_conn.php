@@ -24,25 +24,25 @@
 
             $servername = "localhost";
             $dbname = $db['guestbook']['name'];
-            $user_show = $db['guestbook']['user'];
-            $pass_show = $db['guestbook']['password'];
+            $user = $db['guestbook']['user'];
+            $pass = $db['guestbook']['password'];
 
             try {
 
-                $guestbook_show = new \PDO(
+                $guestbook = new \PDO(
                     "mysql:host=$servername;dbname=$dbname",
-                    $user_show,
-                    $pass_show,
+                    $user,
+                    $pass,
                     [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
                 );
 
             } catch (\PDOException $e) {
 
-                $guestbook_show = null;
+                $guestbook = null;
                 
             }
 
-            return $guestbook_show;
+            return $guestbook;
         
         }
         
