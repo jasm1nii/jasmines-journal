@@ -57,7 +57,7 @@
 
         public function __destruct() {
 
-            $ini = parse_ini_file(ENV_CONF, true);
+            $ini = parse_ini_file(ENV_CONF, true)['email'];
             $mail = new PHPMailer(true);
 
             try {
@@ -67,13 +67,13 @@
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mail->CharSet = "UTF-8";
 
-                $mail->Host = 'mail.jasm1nii.xyz';
-                $mail->Port = 465;
-                $mail->Username = $ini['email']['user'];
-                $mail->Password = $ini['email']['password'];
+                $mail->Host = $ini['host'];
+                $mail->Port = $ini['port'];
+                $mail->Username = $ini['user'];
+                $mail->Password = $ini['password'];
 
-                $mail->setFrom($ini['email']['user'], "jasmine's journal [system mailer]");
-                $mail->addAddress($ini['email']['to'], 'Jasmine');
+                $mail->setFrom($ini['user'], $ini['from_name']);
+                $mail->addAddress($ini['to'], $ini['to_name']);
                 $mail->isHTML(true);
 
                 $mail->Subject = "guestbook message received!";
