@@ -1,16 +1,15 @@
 <?php
 
-    namespace JasminesJournal\Site\Router;
+    namespace JasminesJournal\Site\Request;
 
-    use \JasminesJournal\Core\Route as Route;
-    use \JasminesJournal\Site\Views\Layouts as Layouts;
-    use \JasminesJournal\Site\Models\GuestbookPageNav as GuestbookPageNav;
+    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Site\Views\Layouts as Layouts;
 
     //
 
-    class Guestbook extends Route {
+    trait Guestbook {
 
-        public static function setPageNumber() {
+        private static function setPageNumber() {
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
@@ -29,7 +28,7 @@
 
         }
 
-        public static function setPageSession() {
+        private static function setPageSession() {
 
             $page = self::setPageNumber();
 
@@ -58,7 +57,7 @@
 
         }
 
-        public static function setFormSession() {
+        private static function setFormSession() {
 
             if (REQUEST == "/guestbook" || isset($_SERVER['HTTP_REFERER'])) {
 
@@ -85,24 +84,28 @@
 
         }
 
-    }
+        public static function dispatch() {
 
-    switch (REQUEST) {
+            switch (REQUEST) {
 
-        case "/guestbook/post":
-        case "/guestbook/post/":
+                case "/guestbook/post":
+                case "/guestbook/post/":
 
-            Route::forwardToModel('guestbook/guestbook_submit.php');
+                    Route::forwardToModel('guestbook/guestbook_submit.php');
 
-            break;
+                    break;
 
-        
-        default:
-            
-            Guestbook::setFormSession();
-            Guestbook::setPageSession();
+                
+                default:
+                    
+                    self::setFormSession();
+                    self::setPageSession();
 
-            new Layouts\Guestbook(Guestbook::setPageNumber());
+                    new Layouts\Guestbook(self::setPageNumber());
+
+            }
+
+        }
 
     }
 

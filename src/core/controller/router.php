@@ -4,12 +4,6 @@
 
     class Route {
 
-        public static function forwardToController($path) {
-
-            require SITE_ROOT . DIR['controllers'] . $path;
-
-        }
-
         public static function forwardToModel($path) {
 
             require SITE_ROOT. DIR['models'] . $path;
