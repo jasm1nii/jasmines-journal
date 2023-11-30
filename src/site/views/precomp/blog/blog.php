@@ -8,26 +8,14 @@
 
     final class BlogIndex extends View {
 
-        private static function makeArticlesList() {
-
-            return implode("", Partials\BlogIndex_Articles::make());
-
-        }
-
-        private static function makeLatestNote() {
-
-            return Partials\BlogIndex_Notes::make();
-
-        }
-
         public function __construct() {
 
             $page = DIR['layouts'] . "blog/blog_layout.html.twig";
 
             $vars = [
-                'nav'               => Partials\BlogNav::make(),
-                'notes_preview'     => self::makeLatestNote(),
-                'articles_archive'  => self::makeArticlesList()
+                'nav'               => Partials\Blog\Nav::make(),
+                'notes_preview'     => Partials\Blog\Notes::makeList(),
+                'articles_archive'  => implode("", Partials\Blog\Articles::makeList())
             ];
 
             parent::Twig($page, $vars, null, true);
@@ -40,7 +28,9 @@
 
         private static function showEntries() {
 
-            return implode("", Partials\ArticlesIndex_List::make());
+            $entries_array = Partials\Blog\Subpage\Articles::renderIndex();
+
+            return implode("", $entries_array);
 
         }
 
@@ -49,7 +39,7 @@
             $page = DIR['layouts'] . "blog/articles/articles_index_layout.html.twig";
 
             $vars = [
-                'nav'       => Partials\BlogNav::make(),
+                'nav'       => Partials\Blog\Nav::make(),
                 'entries'   => self::showEntries()
             ];
 
@@ -63,7 +53,9 @@
 
         private static function showEntries() {
 
-            return implode("", Partials\NotesIndex_List::make());
+            $entries_array = Partials\Blog\Subpage\Notes::renderIndex();
+
+            return implode("", $entries_array);
 
         }
 
@@ -72,7 +64,7 @@
             $page = DIR['layouts'] . "blog/notes/notes_index_layout.html.twig";
 
             $vars = [
-                'nav'       => Partials\BlogNav::make(),
+                'nav'       => Partials\Blog\Nav::make(),
                 'entries'   => self::showEntries()
             ];
 
@@ -104,7 +96,7 @@
                 'layout'    => $layout,
                 'slug'      => $slug,
                 'src'       => $img_dir,
-                'nav'       => Partials\BlogNav::make()
+                'nav'       => Partials\Blog\Nav::make()
             ]; 
 
             if (file_exists(SITE_ROOT . $content)) {
