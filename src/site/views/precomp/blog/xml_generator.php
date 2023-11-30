@@ -17,9 +17,20 @@
         protected $temp_file;
         protected $output_file;
 
+        private static function setDebug() {
+
+            $ini = parse_ini_file(ENV_CONF, true);
+            $debug_set = $ini['debug']['xml_generator'];
+
+            return $debug_set;
+
+        }
+
         private function globCount() {
 
-            $glob = glob($this->src_dir . "/202{4,3}/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+            $year = date("Y");
+
+            $glob = glob($this->src_dir . "/$year/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
 
             return $glob;
 
@@ -89,7 +100,6 @@
             $xml_entries = ob_get_contents();
 
             file_put_contents(SITE_ROOT . $this->temp_file, $xml_entries);
-
             ob_end_clean();
 
         }
@@ -110,11 +120,31 @@
 
             $twig->createEnvAndMake($loader, self::FEED_LAYOUT, $vars);
             $xml_final = ob_get_contents();
-            file_put_contents($this->output_file, $xml_final);
 
+            file_put_contents($this->output_file, $xml_final);
             ob_end_clean();
 
             unlink(SITE_ROOT . $this->temp_file);
+
+        }
+
+        public function __construct($type, $max_entries) {
+
+            $this->type = $type;
+            $this->max_entries = $max_entries;
+
+            $this->src_dir = SITE_ROOT. DIR['content'] . "blog/{$this->type}";
+            $this->temp_file = self::TEMP_DIR . "/{$this->type}.tmp.xml";
+
+            if (self::setDebug() == true) {
+
+                $this->output_file = SITE_ROOT . "/tests/{$this->type}.xml";
+
+            } else {
+
+                $this->output_file = SITE_ROOT . DIR['content']. "/blog/{$this->type}/{$this->type}.xml";
+
+            }
 
         }
 
@@ -123,16 +153,10 @@
             $entry = $this->getEntryFiles()[0];
             $feed = $this->output_file;
 
-            if (!file_exists($feed)) {
+            $latest_entry_date =  @filemtime($entry);
+            $feed_date = @filectime($feed);
 
-                $this->createFeed();
-
-            }
-
-            $feed_date = filectime($feed);
-            $latest_entry_date =  filemtime($entry);
-
-            if ($latest_entry_date > $feed_date) {
+            if (!file_exists($feed) || $latest_entry_date > $feed_date) {
 
                 $this->createFeed();
 
@@ -140,57 +164,9 @@
 
             $output = new \DOMDocument();
             $output->load($this->output_file);
-            header('Content-Type: text/xml; charset=utf-8');
+
             echo $output->saveXML();
 
-        }
-
-    }
-    
-    class NotesXML extends XMLFeeds {
-
-        public function __construct($max_entries, $debug = true) {
-
-            $this->type = 'notes';
-            $this->src_dir = SITE_ROOT. DIR['content'] . "blog/notes";
-            $this->max_entries = $max_entries;
-
-            $this->temp_file = parent::TEMP_DIR . "/notes.tmp.xml";
-
-            if ($debug == true) {
-
-                $this->output_file = SITE_ROOT . "/tests/notes.xml";
-
-            } else {
-
-                $this->output_file = SITE_ROOT . DIR['content']. "/blog/notes/notes.xml";
-
-            }
-            
-        }
-
-    }
-
-    class ArticlesXML extends XMLFeeds {
-
-        public function __construct($max_entries, $debug = true) {
-
-            $this->type = 'articles';
-            $this->src_dir = SITE_ROOT. DIR['content'] . "blog/articles";
-            $this->max_entries = $max_entries;
-
-            $this->temp_file = parent::TEMP_DIR . "/articles.tmp.xml";
-
-            if ($debug == true) {
-
-                $this->output_file = SITE_ROOT . "/tests/articles.xml";
-
-            } else {
-
-                $this->output_file = SITE_ROOT . DIR['content']. "/blog/articles/articles.xml";
-
-            }
-            
         }
 
     }

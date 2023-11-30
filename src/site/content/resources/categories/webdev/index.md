@@ -21,6 +21,8 @@
 
     learn all the frontend languages (<abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr> and javascript) in addition to server-side programming (<abbr title="PHP Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, and more).
 
+- [w3docs](https://www.w3docs.com/)
+
 - [MDN web docs](https://developer.mozilla.org/en-US/docs/Learn)
 
     a more in-depth reference for frontend development, with additional documentation on web accessibility.

@@ -3,7 +3,7 @@
     <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
     <title>jasmine&apos;s notes | jasm1nii.xyz</title>
     <subtitle>blog notes by jasmine</subtitle>
-    <updated>2023-11-21T23:52:04+07:00</updated>
+    <updated>2023-11-30T13:10:15+07:00</updated>
     <id>https://jasm1nii.xyz/blog/notes</id>
     <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/notes.xml"/>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes"/>
@@ -13,9 +13,53 @@
         <uri>https://jasm1nii.xyz/</uri>
     </author>
     <rights>© 2023 - jasmine amalia</rights>
-    <icon>https://jasm1nii.xyz/assets/media/itchio-textless-white.svg</icon>
-    <logo>https://jasm1nii.xyz/assets/media/main/07042023-me_compressed.webp</logo>
+    <icon>https://jasm1nii.xyz/_assets/media/itchio-textless-white.svg</icon>
+    <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
         
+    <entry>
+        <title>23 november 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes/2023/11/28/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/28/entry"/>
+        <updated>2023-11-23T00:00:00+07:00</updated>
+        <published>2023-11-23T00:00:00+07:00</published>
+        <summary>    check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven&#039;t made much progress with the current after effects scene i&#039;m working  ...</summary>
+        <content type="html">
+            &lt;p&gt;check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.&lt;/p&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>23 november 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes/2023/11/23/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/23/entry"/>
+        <updated>2023-11-23T00:00:00+07:00</updated>
+        <published>2023-11-23T00:00:00+07:00</published>
+        <summary>    
+        i&#039;ve been painfully inconsistent with my yoga practice, but i finally hit the mat again today. i swear i used to be a lot less stiffer than this.
+    
+     ...</summary>
+        <content type="html">
+            &lt;p&gt;
+        i've been painfully inconsistent with my yoga practice, but i finally hit the mat again today. i swear i used to be a lot less stiffer than this.
+    &lt;/p&gt;
+    &lt;iframe src="https://www.youtube-nocookie.com/embed/StLUjMxHZZE?si=c754A_97QweA5tVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>22 november 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes/2023/11/22/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/22/entry"/>
+        <updated>2023-11-22T00:00:00+07:00</updated>
+        <published>2023-11-22T00:00:00+07:00</published>
+        <summary>    
+        felt too wiped out to check off the important tasks from today&#039;s to-do list, but at least i ate some really good cinnamon rolls 🍽
+    
+ ...</summary>
+        <content type="html">
+            &lt;p&gt;
+        felt too wiped out to check off the important tasks from today's to-do list, but at least i ate some really good cinnamon rolls &lt;span aria-hidden="true"&gt;🍽&lt;/span&gt;
+    &lt;/p&gt;
+        </content>
+    </entry>    
     <entry>
         <title>21 november 2023</title>
         <id>https://jasm1nii.xyz/blog/notes/2023/11/21/entry</id>
@@ -47,10 +91,14 @@ been struggling to eat today, so i&#039;ll try to have a big dinner first!
         <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/10/20/entry"/>
         <updated>2023-10-20T00:00:00+07:00</updated>
         <published>2023-10-20T00:00:00+07:00</published>
-        <summary>    was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... check it out!
+        <summary>    
+        was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... check it out!
+    
  ...</summary>
         <content type="html">
-            was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... &lt;a href="https://github.com/jasm1nii/xml-feed-generator" rel="external me"&gt;check it out!&lt;/a&gt;
+            &lt;p&gt;
+        was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... &lt;a href="https://github.com/jasm1nii/xml-feed-generator" rel="external me"&gt;check it out!&lt;/a&gt;
+    &lt;/p&gt;
         </content>
     </entry>    
     <entry>
@@ -59,9 +107,12 @@ been struggling to eat today, so i&#039;ll try to have a big dinner first!
         <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/9/03/entry"/>
         <updated>2023-09-03T00:00:00+07:00</updated>
         <published>2023-09-03T00:00:00+07:00</published>
-        <summary>    check out these cool web pages made by the 32-bit cafe community for our august code jam 💻 #i ...</summary>
+        <summary>    
+        check out these cool web pages made by the 32-bit cafe community for our august code jam 💻  ...</summary>
         <content type="html">
-            check out these cool web pages made by the 32-bit cafe community for our &lt;a href="https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html"&gt;august code jam 💻&lt;/a&gt; &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
+            &lt;p&gt;
+        check out these cool web pages made by the 32-bit cafe community for our &lt;a href="https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html"&gt;august code jam 💻&lt;/a&gt; &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
+    &lt;/p&gt;
         </content>
     </entry>    
     <entry>
@@ -70,10 +121,14 @@ been struggling to eat today, so i&#039;ll try to have a big dinner first!
         <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/8/23/entry"/>
         <updated>2023-08-23T00:00:00+07:00</updated>
         <published>2023-08-23T00:00:00+07:00</published>
-        <summary>    hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) #indieweb
+        <summary>    
+        hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) #indieweb
+    
  ...</summary>
         <content type="html">
-            hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
+            &lt;p&gt;
+        hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
+    &lt;/p&gt;
         </content>
     </entry>
 </feed>
