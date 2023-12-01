@@ -1,8 +1,6 @@
 <?php
-    
-    define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1));
 
-    require SITE_ROOT . "/vendor/autoload.php";
+    require __DIR__ . '/../vendor/autoload.php';
 
     use JasminesJournal\Core\Route;
 
