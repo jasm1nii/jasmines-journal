@@ -30,6 +30,16 @@
 
         }
 
+        public static function getFiles($source) {
+
+            $files = glob($source . "/*/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+
+            rsort($files, SORT_NATURAL);
+
+            return $files;
+
+        }
+
         public static function mapMedia() {
 
             return '/_assets/media' . rtrim(parent::useCleanSlug(), '/entry') . '/';

@@ -25,7 +25,7 @@
                     '/guestbook/success/exception'     => 'exception',
                     '/guestbook/error/has_html'        => 'html_error',
                     '/guestbook/error/time_too_short'  => 'spam_error',
-                    default                             => null
+                    default                            => null
                 };
                 
             } else {

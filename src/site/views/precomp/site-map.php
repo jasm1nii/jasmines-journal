@@ -7,19 +7,17 @@
 
     final class SiteMap extends View {
 
-        private static $content = DIR['content'] . "site-map.html.twig";
-        private static $layout = DIR['layouts'] . "site-map_layout.html.twig";
+        private const CONTENT   = DIR['content'] . "site-map.html.twig";
+        private const LAYOUT    = DIR['layouts'] . "site-map_layout.html.twig";
 
         public function __construct() {
 
-            $updated = filemtime(SITE_ROOT . self::$content);
-
             $vars = [
-                'layout' => self::$layout,
-                'updated' => $updated
+                'layout' => self::LAYOUT,
+                'updated' => filemtime(SITE_ROOT . self::CONTENT)
             ];
 
-            parent::Twig(self::$content, $vars, null);
+            parent::Twig(self::CONTENT, $vars, null);
 
         }
 

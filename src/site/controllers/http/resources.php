@@ -8,39 +8,44 @@
 
     class Resources {
 
+        private static function matchSubpage() {
+
+            match (true) {
+
+                file_exists(FileRouter\Resources::matchIndexPattern(false)),
+                file_exists(FileRouter\Resources::matchIndexPattern(true))
+
+                    => new Layouts\ResourcesSubpage(),
+
+
+                default
+                
+                    => Route::notFound()
+
+            };
+
+        }
+
         public static function dispatch() {
 
-            switch (REQUEST) {
+            match (true) {
 
-                case "/resources":
-                case "/resources/index":
-                    
-                    new Layouts\ResourcesIndex();
-                    break;
-        
-                case str_starts_with(REQUEST, "/resources"):
-                    
-                    switch (true) {
-                        
-                        case file_exists(FileRouter\Resources::matchIndexPattern(false)):
-                        case file_exists(FileRouter\Resources::matchIndexPattern(true)):
-        
-                            new Layouts\ResourcesSubpage();
-                            break;
-        
-                        default: 
-        
-                            Route::notFound();
-        
-                    }
-        
-                    break;
-        
-                default:
-        
-                    Route::notFound();
-        
-            }
+                REQUEST == "/resources",
+                REQUEST == "/resources/index"
+
+                    => new Layouts\ResourcesIndex(),
+
+
+                str_starts_with(REQUEST, "/resources")
+
+                    => self::matchSubpage(),
+
+
+                default
+
+                    => Route::notFound()
+
+            };
 
         }
 

@@ -46,9 +46,9 @@
 
         }
 
-        public function __construct() {
+        private static function getLastUpdated() {
 
-        $glob = glob(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}', GLOB_BRACE);
+            $glob = glob(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}', GLOB_BRACE);
 
             foreach ($glob as $glob_result) {
 
@@ -57,15 +57,18 @@
             }
 
             rsort($mtime);
-            
-            $last_updated = $mtime[0];
-            $diff =  Utils::formatTimeDifference($last_updated);
+
+            return $mtime[0];
+
+        }
+
+        public function __construct() {
 
             $vars = [
                 'src'               => "/_assets/media/main",
                 'message'           => self::getNewestGuestbookMessage(),
                 'date'              => self::formatGuestbookDate(),
-                'last_updated'      => $last_updated
+                'last_updated'      => self::getLastUpdated()
             ];
 
             parent::Twig(self::LAYOUT, $vars, self::INCLUDES);

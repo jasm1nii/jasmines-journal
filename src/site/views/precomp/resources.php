@@ -14,22 +14,15 @@
 
     final class ResourcesIndex extends View implements Resources {
 
-        const   LAYOUT = DIR['layouts'] . "resources/resources_index.html.twig";
-        private $vars;
+        const LAYOUT = DIR['layouts'] . "resources/resources_index.html.twig";
 
         public function __construct() {
 
-            $this->vars = [
+            $vars = [
                 'updated' => filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md")
             ];
 
-            $this->render();
-
-        }
-
-        private function render() {
-
-            parent::Twig(self::LAYOUT, $this->vars, self::INCLUDES);
+            parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
 
         }
 

@@ -10,32 +10,30 @@
 
         public static function dispatch() {
 
-            switch (REQUEST) {
+            match (true) {
 
-                case "/about":
-                case "/about/":
-                case "/about/index":
-        
-                    new Layouts\AboutIndex();
-                    break;
-        
-                case "/about/changelog":
-                case "/about/changelog/":
-                case "/about/changelog/index":
-        
-                    new Layouts\ChangelogIndex();
-                    break;
-        
-                case str_contains(REQUEST, ChangelogSubpage::matchQuery()) && file_exists(ChangelogSubpage::file()):
-        
-                    new Layouts\ChangelogSubpage();
-                    break;
-                        
-                default:
-        
-                    Route::notFound();
-                    
-            }
+                REQUEST == "/about",
+                REQUEST == "/about/index"
+
+                    => new Layouts\AboutIndex(),
+
+
+                str_ends_with(REQUEST, "/changelog"),
+                str_ends_with(REQUESR, "/changelog/index")
+
+                    => new Layouts\ChangelogIndex(),
+
+
+                str_contains(REQUEST, ChangelogSubpage::matchQuery()) && file_exists(ChangelogSubpage::file())
+
+                    => new Layouts\ChangelogSubpage(),
+                
+
+                default
+                
+                    => Route::notFound()
+
+            };
 
         }
 

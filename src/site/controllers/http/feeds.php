@@ -6,40 +6,44 @@
 
     class Feeds {
 
+        private static function redirectPOST() {
+
+            match (true) {
+
+                str_contains(REQUEST, "success")
+                    => new Layouts\FeedsPOST('success'),
+
+                str_contains(REQUEST, "error")
+                    => new Layouts\FeedsPOST('error'),
+
+                default
+                    => new Layouts\FeedsIndex()
+
+            };
+
+        }
+
+        private static function redirectGET() {
+
+            header('Location: /feeds');
+            new Layouts\FeedsIndex();
+
+        }
+
         public static function dispatch() {
 
-            switch (true) {
+            match (true) {
 
-                case isset($_SERVER['HTTP_REFERER']):
+                isset($_SERVER['HTTP_REFERER'])
+                    => self::redirectPOST(),
 
-                    match (true) {
+                !isset($_SERVER['HTTP_REFERER']) && REQUEST !== "/feeds"
+                    => self::redirectGET(),
 
-                        str_contains(REQUEST, "success")
-                            => new Layouts\FeedsPOST('success'),
+                default
+                    => new Layouts\FeedsIndex()
 
-                        str_contains(REQUEST, "error")
-                            => new Layouts\FeedsPOST('error'),
-
-                        default
-                            => new Layouts\FeedsIndex()
-
-                    };
-        
-                    break;
-        
-                case !isset($_SERVER['HTTP_REFERER']) && REQUEST !== "/feeds":
-        
-                    header('Location: /feeds');
-                    new Layouts\FeedsIndex();
-                    
-                    break;
-        
-        
-                default:
-        
-                    new Layouts\FeedsIndex();
-        
-            }
+            };
 
         }
 

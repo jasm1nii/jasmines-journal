@@ -6,11 +6,11 @@
 
     final class FeedsIndex extends View {
 
-        private static $layout = DIR['layouts'] . "feeds/feeds_index.html.twig";
+        private const LAYOUT = DIR['layouts'] . "feeds/feeds_index.html.twig";
 
         public function __construct() {
 
-            parent::Twig(self::$layout, null, null);
+            parent::Twig(self::LAYOUT, null, null);
 
         }
 
@@ -18,7 +18,7 @@
 
     final class FeedsPOST extends View {
 
-        private static $layout = DIR['layouts'] . "feeds/feeds_post.html.twig";
+        private const LAYOUT = DIR['layouts'] . "feeds/feeds_post.html.twig";
 
         public function __construct($POST_redirect) {
             
@@ -39,7 +39,7 @@
                 "message"   => $message
             ];
 
-            parent::Twig(self::$layout, $vars, null);
+            parent::Twig(self::LAYOUT, $vars, null);
 
         }
 

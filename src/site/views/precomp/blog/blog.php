@@ -7,18 +7,11 @@
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Core\Route;
 
-
     final class BlogIndex extends View {
         
         private const LAYOUT = DIR['layouts'] . "blog/blog_layout.html.twig";
 
         public function __construct() {
-
-            $this->render();
-
-        }
-
-        private function render() {
 
             $vars = [
                 'nav'               => Partials\Blog\Nav::make(),
@@ -31,6 +24,7 @@
         }
 
     }
+
 
     final class BlogSubpageIndex extends View {
 
@@ -66,6 +60,7 @@
         }
 
     }
+
 
     final class BlogEntry extends View {
 

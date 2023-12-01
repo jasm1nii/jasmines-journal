@@ -4,24 +4,15 @@
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
-    use JasminesJournal\Core\Views\Render\Extension as Extension;
+    use JasminesJournal\Core\Views\Render\Extension;
+    use JasminesJournal\Site\FileRouter\BlogEntry;
 
     class Index {
-        
-        private static function getFiles($source) {
 
-            $files = glob($source . "/*/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
+        private static function makeList($type, $source, $template) {
 
-            rsort($files, SORT_NATURAL);
-
-            return $files;
-
-        }
-
-        protected static function makeList($type, $source, $template) {
-
-            $twig = Extension\PartialTwig::buildTwigEnv();
-            $files = self::getFiles($source);
+            $twig   = Extension\PartialTwig::buildTwigEnv();
+            $files  = BlogEntry::getFiles($source);
 
             $content = [];
 
@@ -47,8 +38,8 @@
 
         public static function render($type) {
 
-            $source = SITE_ROOT . DIR['content'] . "blog/{$type}";
-            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
+            $source     = SITE_ROOT . DIR['content'] . "blog/{$type}";
+            $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
 
             return self::makeList($type, $source, $template);
 
