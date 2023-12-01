@@ -4,10 +4,10 @@
 
     use JasminesJournal\Core\Route;
     use JasminesJournal\Site\Views\Layouts;
-    use JasminesJournal\Site\Models\GuestbookPOST;
+    use JasminesJournal\Site\Models;
     
 
-    trait Guestbook {
+    class Guestbook {
 
         private static function setPageNumber() {
 
@@ -43,18 +43,6 @@
 
         }
 
-        private static function setFormSession() {
-
-            if (REQUEST == "/guestbook" || isset($_SERVER['HTTP_REFERER'])) {
-
-                session_start();
-
-                $_SESSION['form_start'] = true;
-
-            }
-
-        }
-
         private static function validateResponse() {
 
             $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
@@ -63,7 +51,7 @@
 
                 if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
                     
-                    new GuestbookPOST();
+                    new Models\GuestbookPOST();
 
                 } else {
 
@@ -109,7 +97,6 @@
                         case str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page":
                         case str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment":
 
-                            self::setFormSession();
                             self::setPageSession();
 
                             new Layouts\Guestbook(self::setPageNumber());

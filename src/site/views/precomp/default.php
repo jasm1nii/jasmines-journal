@@ -2,11 +2,11 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Core\Views\Render\View;
 
-    trait _Default {
+    interface DefaultLayout {
 
-        public static $layout = DIR['layouts'] . "subpage_layout.html.twig";
+        const LAYOUT = DIR['layouts'] . "subpage_layout.html.twig";
 
     }
     

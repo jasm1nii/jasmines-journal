@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter\ChangelogSubpage;
     use JasminesJournal\Site\Views\Layouts;
 
-    trait About {
+    class About {
 
         public static function dispatch() {
 

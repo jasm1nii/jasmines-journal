@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Views\Layouts;
 
-    trait Blog {
+    class Blog {
 
         private static function subpage() {
 

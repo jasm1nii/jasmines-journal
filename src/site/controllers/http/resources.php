@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Site\Views\Layouts;
 
-    trait Resources {
+    class Resources {
 
         public static function dispatch() {
 

@@ -10,6 +10,11 @@
 
     class GuestbookPOST extends GuestbookConn {
 
+        private $sender_name;
+        private $sender_email;
+        private $sender_url;
+        private $sender_message;
+
         public function __construct() {
 
             if ($_POST['name'] == null) {
@@ -27,6 +32,7 @@
             $this->sender_message   = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
 
             $this->sendToDB();
+            $this->notifySystem();
 
         }
 
@@ -55,7 +61,7 @@
 
         }
 
-        public function __destruct() {
+        private function notifySystem() {
 
             $ini = parse_ini_file(ENV_CONF, true)['email'];
             $mail = new PHPMailer(true);
