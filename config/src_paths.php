@@ -1,6 +1,10 @@
 <?php
 
-    putenv("ENV=dev");
+    match ($_SERVER['HTTP_HOST']) {
+        'localhost'     => putenv("ENV=dev"),
+        'jasm1nii.xyz'  => putenv("ENV=prod"),
+        default         => putenv("ENV=sample")
+    };
 
     // the second argument for "ENV_CONF" should match the absolute path to the configuration file.
 
