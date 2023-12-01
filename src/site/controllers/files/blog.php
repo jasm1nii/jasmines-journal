@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\FileRouter;
 
-    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Core\Route;
 
     class BlogEntry extends Route {
 
@@ -14,11 +14,25 @@
 
         }
 
-        public static function file() {
+        public static function file($use_root = true) {
 
-            $file = SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
+            $path = DIR['content'] . self::matchQuery() . ".html.twig";
 
-            return $file;
+            if ($use_root == true) {
+
+                return SITE_ROOT . $path;
+
+            } else {
+
+                return $path;
+
+            }
+
+        }
+
+        public static function mapMedia() {
+
+            return '/_assets/media' . rtrim(parent::useCleanSlug(), '/entry') . '/';
 
         }
 

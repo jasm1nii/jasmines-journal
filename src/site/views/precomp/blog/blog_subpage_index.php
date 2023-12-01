@@ -45,31 +45,12 @@
 
         }
 
-    }
+        public static function render($type) {
 
-    class Notes extends Index {
+            $source = SITE_ROOT . DIR['content'] . "blog/{$type}";
+            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
 
-        public static function renderIndex() {
-
-            $type = 'notes';
-            $source = SITE_ROOT . DIR['content'] . 'blog/notes';
-            $template = DIR['layouts'] . "blog/notes/_notes_index.html.twig";
-
-            return parent::makeList($type, $source, $template);
-
-        }
-
-    }
-
-    class Articles extends Index {
-
-        public static function renderIndex() {
-
-            $type = 'articles';
-            $source = SITE_ROOT . DIR['content'] . 'blog/articles';
-            $template = DIR['layouts'] . "blog/articles/_articles_index.html.twig";
-
-            return parent::makeList($type, $source, $template);
+            return self::makeList($type, $source, $template);
 
         }
 

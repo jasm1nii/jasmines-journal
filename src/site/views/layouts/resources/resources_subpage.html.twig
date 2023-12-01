@@ -37,7 +37,7 @@
                                 show legend
                             </summary>
                             {% apply markdown_to_html %}
-                                {{ legend|raw }}
+                                {{ include('_legend.md') }}
                             {% endapply %}
                         </details>
                     </aside>

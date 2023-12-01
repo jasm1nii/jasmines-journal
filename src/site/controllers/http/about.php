@@ -1,10 +1,10 @@
 <?php
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route as Route;
-    use JasminesJournal\Site\FileRouter\ChangelogSubpage as ChangelogSubpage;
-    use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Core\Route;
+    use JasminesJournal\Site\FileRouter\ChangelogSubpage;
+    use JasminesJournal\Site\Views\Layouts;
 
     trait About {
 
@@ -33,7 +33,7 @@
                         
                 default:
         
-                    Route::NotFound();
+                    Route::notFound();
                     
             }
 

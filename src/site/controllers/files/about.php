@@ -16,9 +16,7 @@
 
         public static function file() {
 
-            $file = SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
-            
-            return $file;
+            return SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
 
         }
 

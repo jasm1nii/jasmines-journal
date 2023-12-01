@@ -1,10 +1,10 @@
 <?php
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route as Route;
-    use JasminesJournal\Site\FileRouter as FileRouter;
-    use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Core\Route;
+    use JasminesJournal\Site\FileRouter;
+    use JasminesJournal\Site\Views\Layouts;
 
     trait Resources {
 
@@ -20,7 +20,7 @@
         
                 case str_starts_with(REQUEST, "/resources"):
                     
-                    switch (REQUEST) {
+                    switch (true) {
                         
                         case file_exists(FileRouter\Resources::matchIndexPattern(false)):
                         case file_exists(FileRouter\Resources::matchIndexPattern(true)):
@@ -30,7 +30,7 @@
         
                         default: 
         
-                            Route::NotFound();
+                            Route::notFound();
         
                     }
         
@@ -38,7 +38,7 @@
         
                 default:
         
-                    Route::NotFound();
+                    Route::notFound();
         
             }
 

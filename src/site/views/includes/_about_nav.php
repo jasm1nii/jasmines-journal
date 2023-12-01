@@ -1,8 +1,8 @@
 <?php
 
-    namespace JasminesJournal\Site\Views\Partials;
+    namespace JasminesJournal\Site\Views\Partials\About;
 
-    class AboutNav {
+    class Nav {
 
         public static function make() {
 

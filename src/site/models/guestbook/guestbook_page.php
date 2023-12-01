@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Site\Models\GuestbookConn as GuestbookConn;
+    use JasminesJournal\Site\Models\GuestbookConn;
     
 
     class GuestbookComments extends GuestbookConn {

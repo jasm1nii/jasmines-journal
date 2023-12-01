@@ -5,67 +5,84 @@
     use JasminesJournal\Core\Views\Render\View as View;
     use JasminesJournal\Site\Views\Partials as Partials;
 
+    trait About {
 
-    final class AboutIndex extends View {
+        public static function nav() {
 
-        private static $layout = DIR['layouts'] . "about_layout.html.twig";
-        private static $content = DIR['content'] . "about.html.twig";
-
-        function __construct() {
-
-            $vars = [
-                "layout" => self::$layout,
-                "nav" => Partials\AboutNav::make(),
-                "updated" => filemtime(SITE_ROOT . self::$content)
-            ];
-
-            parent::Twig(self::$content, $vars, null);
+            return Partials\About\Nav::make();
 
         }
 
     }
 
+
+    final class AboutIndex extends View {
+
+        use About;
+
+        const LAYOUT    = DIR['layouts'] . "about_layout.html.twig";
+        const CONTENT   = DIR['content'] . "about.html.twig";
+
+        function __construct() {
+
+            $vars = [
+                "layout"    => self::LAYOUT,
+                "nav"       => About::nav(),
+                "updated"   => filemtime(SITE_ROOT . self::CONTENT)
+            ];
+
+            parent::Twig(self::CONTENT, $vars, null);
+
+        }
+
+    }
 
 
     final class ChangelogIndex extends View {
 
-        private static $main_layout = DIR['layouts'] . "changelog/changelog_index.html.twig";
-        private static $main_content_abs = SITE_ROOT . DIR['content'] . 'changelog/index.md';
+        const LAYOUT    = DIR['layouts'] . "changelog/changelog_index.html.twig";
+        const CONTENT   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
 
         function __construct() {
 
-            $content = file_get_contents(self::$main_content_abs);
-
             $vars = [
-                "nav" => Partials\AboutNav::make(),
-                'content' => $content,
-                'array' => Partials\ChangelogArchive::createChangelogArray()
+                "nav"       => About::nav(),
+                "content"   => file_get_contents(self::CONTENT),
+                "array"     => Partials\ChangelogArchive::createChangelogArray()
             ];
             
-            parent::Twig(self::$main_layout, $vars, null);
+            parent::Twig(self::LAYOUT, $vars, null);
 
         }
 
     }
 
-    //
 
     final class ChangelogSubpage extends View {
 
-        private static $layout =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+        const   LAYOUT    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+        private $content;
 
-        function __construct() {
+        private function matchContent() {
 
             $path = ltrim(REQUEST, "/about");
             $file = "/" . rtrim($path, "/");
             $content = DIR['content'] . $file . ".html.twig";
+
+            return $content;
+
+        }
+
+        function __construct() {
+
+            $this->content = $this->matchContent();
             
             $vars = [
-                "layout" => self::$layout,
-                "nav" => Partials\AboutNav::make()
+                "layout"    => self::LAYOUT,
+                "nav"       => About::nav()
             ];
 
-            parent::Twig($content, $vars, null);
+            parent::Twig($this->content, $vars, null);
 
         }
 

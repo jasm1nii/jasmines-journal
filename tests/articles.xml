@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
+    <title>jasmine&apos;s b(rain)log | jasm1nii.xyz</title>
+    <subtitle>blog articles by jasmine</subtitle>
+    <updated>2023-12-01T13:39:10+07:00</updated>
+    <id>https://jasm1nii.xyz/blog/articles</id>
+    <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/articles.xml"/>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
+    <author>
+        <name>jasmine</name>
+        <email>contact@jasm1nii.xyz</email>
+        <uri>https://jasm1nii.xyz/</uri>
+    </author>
+    <rights>© 2023 - jasmine amalia</rights>
+    <icon>https://jasm1nii.xyz/_assets/media/itchio-textless-white.svg</icon>
+    <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
+        
+    <entry>
+        <title>tummy treats</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/9/26/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/9/26/entry"/>
+        <updated>2023-09-26T00:00:00+07:00</updated>
+        <published>2023-09-26T00:00:00+07:00</published>
+        <summary>a short food post!</summary>
+        <content type="html">
+            &lt;section&gt;
+    &lt;p&gt;
+      what's cookin'? 🍳
+    &lt;/p&gt;
+    &lt;p&gt;
+      a little intermezzo - if you haven't noticed already, i changed the typeface for my blog entries! 
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;details&gt;
+        &lt;summary&gt;why the change?&lt;/summary&gt;
+        &lt;p&gt;
+      in short, i wanted the "tone" of my published writing to match that of my drafts.
+        &lt;/p&gt;
+        &lt;p&gt;
+      i started experimenting with monospace type for writing in notion and obsidian some time ago, and the difference was night and day. perhaps this is due to the more "polished" appearance of sans serif type-faces, but allowing my personal thoughts to flow onto the page felt... &lt;em&gt;much&lt;/em&gt; harder, for some reason. and while i quite like instrument sans - which is the typeface that i used before (and still use for the rest of my website) - my thinking just didn't read back as naturally to me.
+        &lt;/p&gt;
+      &lt;/details&gt;
+    &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;hr&gt;
+    &lt;section&gt;
+        &lt;p&gt;
+            anyways...! i wanted to post something easy this time around and talk about something other than webmastery, so here's a mini food log of my meals from the past few weeks!
+        &lt;/p&gt;
+        &lt;section class="scrapbook"&gt;
+        &lt;section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;5 august&lt;/h3&gt;
+                &lt;h4&gt;chicken fried rice 🌶&lt;/h4&gt;
+                &lt;p&gt;current the most frequently ordered item 👑&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;25 august&lt;/h3&gt;
+                &lt;h4&gt;rice porridge 🌶&lt;/h4&gt;
+                &lt;h5&gt;toppings&lt;/h5&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;shredded chicken&lt;/li&gt;
+                    &lt;li&gt;hard-boiled egg&lt;/li&gt;
+                    &lt;li&gt;chopped scallion (fresh &amp; fried)&lt;/li&gt;
+                    &lt;li&gt;fried peanuts&lt;/li&gt;
+                    &lt;li&gt;sweet soy sauce&lt;/li&gt;
+                    &lt;li&gt;chili sauce&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;30 august&lt;/h3&gt;
+                &lt;h4&gt;mcdonald's&lt;/h4&gt;
+                &lt;h5&gt;order menu&lt;/h5&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;special balado burger 🌶🌶🌶 (it's even more orange in real life) - too spicy, never ordering again!&lt;/li&gt;
+                    &lt;li&gt;medium fries&lt;/li&gt;
+                    &lt;li&gt;tamarind soda 👍&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+            &lt;div&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;5 september&lt;/h3&gt;
+                &lt;h4&gt;A&amp;W&lt;/h4&gt;
+                &lt;h5&gt;order menu&lt;/h5&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;mango veggie pocket*&lt;/li&gt;
+                    &lt;li&gt;curly fries&lt;/li&gt;
+                    &lt;li&gt;soft serve ice cream*&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;&lt;small&gt;* not pictured, because i was super hungry.&lt;/small&gt;&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;15 september&lt;/h3&gt;
+                &lt;h4&gt;mixue kiwi smoothie sundae 👍&lt;/h4&gt;
+                &lt;p&gt;so citrusy and fresh 😋&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
+        &lt;/section&gt;
+        &lt;/section&gt;
+    &lt;/section&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>bye neocities (part 2)</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/17/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/17/entry"/>
+        <updated>2023-08-18T00:00:00+07:00</updated>
+        <published>2023-08-17T00:00:00+07:00</published>
+        <summary>new beginnings</summary>
+        <content type="html">
+            &lt;p&gt;
+        update - a very funny thing happened last night &lt;em&gt;right after&lt;/em&gt; i posted my blog yesterday:
+        &lt;br/&gt;
+        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/17/email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        now, being on &lt;em&gt;three different web hosts&lt;/em&gt; just feels excessive, so the new plan is to set up a splash page with a redirect on ichi and neocities! will get around to that in the near future.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;iframe src="https://open.spotify.com/embed/track/0dkc9RvSdJe0NcdAD2ubHR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+    &lt;br/&gt;
+    &lt;p&gt;
+        i’ve been meaning to talk more about this unwelcome change once i have properly settled into my new web host, so here’s an updated recap of &lt;a href="https://jasm1nii.xyz/blog/2023/august/12/entry"&gt;my recent departure from neocities&lt;/a&gt;. full disclosure - nearly a week has passed since both the website and its associated profile was taken down, and i still don’t know why. i’ve already contacted support, but i’ve yet to receive a response. (oddly enough, i can still receive password reset emails, but none of the links go through.)
+    &lt;/p&gt;
+    &lt;p&gt;
+      all that aside… i’ve since forked out some cash to reupload my
+      website (again) to a more established hosting service under
+      &lt;a href="https://jasm1nii.xyz/"&gt;a new domain&lt;/a&gt;, but i don’t plan
+      on leaving ichi.city behind.
+    &lt;/p&gt;
+    &lt;p&gt;
+      i miss connecting with people via neocities’ discovery feed, and i
+      genuinely enjoyed the social aspect of the service - sometimes, it
+      feels a bit lonely existing within an isolated pocket of my own. i
+      liked being able to share what i’ve made for myself without
+      persistently promoting myself on other social media platforms or
+      “improving my SEO”, and i don’t feel like venturing very far
+      outside of the smaller, cozier communities that already exist
+      within the indie web.
+    &lt;/p&gt;
+    &lt;p&gt;
+      so with that said, i’ll continue mirroring “jasmine’s journal” to &lt;a href="https://jasm1nii.ichi.city/" rel="external"&gt;https://jasm1nii.ichi.city/&lt;/a&gt; for as long as i’m able to, or at least until i hit the upper limit of my allotted storage space (&lt;a href="https://10mbmanifesto.neocities.org/" rel="external"&gt;10 megabytes&lt;/a&gt;, to be exact). for reference, this website takes up a grand total of around 4 MB on my hard drive, but it will likely explode in size once i get my illustration gallery up. while i have more than enough room to accommodate for these planned additions on my paid hosting service, i can’t guarantee that i’ll reupload everything to ichi, but i’ll try to work around the limit by using fallback links or uploading my images to dropbox instead.
+    &lt;/p&gt;
+    &lt;details&gt;
+      &lt;summary&gt;
+        and now a message from our sponsors* ❣
+        &lt;br&gt;&lt;br&gt;
+        &lt;small&gt;
+          *i am sharing this link out of my own free will, and nobody is paying me anything.
+        &lt;/small&gt;
+      &lt;/summary&gt;
+      &lt;p&gt;
+        wanna store your files on a service that isn’t google drive? dropbox’s free tier starts off at 2 GB, but you can get 500 MB extra storage space if you use
+        &lt;a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="external"&gt;my referral link&lt;/a&gt; and download dropbox for desktop.
+      &lt;/p&gt;
+    &lt;/details&gt;
+    &lt;p&gt;
+      p.s. - i've enabled &lt;a href="https://indieweb.org/Webmention" rel="external"&gt;webmentions&lt;/a&gt;, by the way! at the moment, my brain isn't big enough for understanding how to fetch and display them automatically, but that's probably for the best. i'll stick with manually adding reposts to prevent spam. for now, have a comment box -
+      please be kind!
+    &lt;/p&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>bye neocities</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/12/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/12/entry"/>
+        <updated>2023-08-12T00:00:00+07:00</updated>
+        <published>2023-08-12T00:00:00+07:00</published>
+        <summary>an unexpected change</summary>
+        <content type="html">
+            &lt;p&gt;
+    hi, ichi.city!
+  &lt;/p&gt;
+  &lt;p&gt;
+    this website is a carbon copy of what used to be hosted on
+    neocities. my site was taken down without warning, and i can't log
+    into my profile there.
+  &lt;/p&gt;
+  &lt;p&gt;
+    therefore, there's probably a lot of broken links and out-of-context
+    writing that's specific to neocities. i'll fix stuff eventually on
+    my own time.
+  &lt;/p&gt;
+  &lt;p&gt;
+    for now, please abstain from linking to my old URL at &lt;a href="https://jasm1nii.neocities.org/" rel="external me"&gt;https://jasm1nii.neocities.org/&lt;/a&gt; until further notice - you can link to this one, instead.
+  &lt;/p&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>parroting a broken record held together by elmer&#039;s glue</title>
+        <id>https://jasm1nii.xyz/blog/articles/2023/8/09/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/09/entry"/>
+        <updated>2023-08-09T00:00:00+07:00</updated>
+        <published>2023-08-09T00:00:00+07:00</published>
+        <summary>a first post</summary>
+        <content type="html">
+            &lt;p&gt;
+      &lt;details&gt;
+          &lt;summary&gt;(context if you don't know what elmer's glue is)
+          &lt;/summary&gt;
+          &lt;p&gt;
+              the staple of every USian classroom, only good for cruddy papier-mâché, and nothing more:
+              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/09/elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
+          &lt;/p&gt;
+          &lt;hr&gt;
+      &lt;/details&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+      i'm no stranger to writing long posts™ on the internet - and yet, spelling out my thoughts sans parsing via instagram stories and tweets remains a daunting task. i feel ridiculous for not being able to drop my social anxiety in a space supposedly curated &lt;em&gt;for me and me only&lt;/em&gt;, but you know what they say about old habits.
+  &lt;/p&gt;
+  &lt;p&gt;
+      maybe with time, i might see that change.
+  &lt;/p&gt;
+  &lt;p&gt;
+      &lt;details&gt;
+          &lt;summary&gt;why posting my thoughts on private accounts doesn't cut it for me (1 paragraph)&lt;/summary&gt;
+          &lt;p&gt;
+              in short: i don't really know who to include in those circles anymore, and keeping all of this to myself in my actual journal feels... &lt;em&gt;inadequate&lt;/em&gt;. none of the previous channels i've tried were cathartic enough for my autistic social needs - &lt;a href="https://spacehey.com/jasm1nii" rel="external me"&gt;spacehey&lt;/a&gt; is a close contender, though. i'm doing this all on a whim, crossing my fingers that i'll connect with the right people by putting stuff wherever i'm more likely to find them.
+          &lt;/p&gt;
+          -
+      &lt;/details&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+      anyways, i'm not sure what to say in this post that hasn't already been said an uncountable number of times across the indie web (very much past the point of becoming a tired cliche). i just hope that i'll be able to make the most out of what i've already crafted - knowing how much effort i've put forth up until this point, it would be a waste &lt;em&gt;not&lt;/em&gt; to.
+  &lt;/p&gt;
+        </content>
+    </entry>
+</feed>

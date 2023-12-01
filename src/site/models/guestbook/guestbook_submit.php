@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Site\Models\GuestbookConn as GuestbookConn;
+    use JasminesJournal\Site\Models\GuestbookConn;
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -22,9 +22,9 @@
 
             }
 
-            $this->sender_email     = $_POST['email'];
-            $this->sender_url       = $_POST['website'];
-            $this->sender_message   = htmlspecialchars($_POST['message'], ENT_QUOTES |ENT_HTML401, 'UTF-8', true);
+            $this->sender_email     = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $this->sender_url       = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+            $this->sender_message   = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
 
             $this->sendToDB();
 
@@ -84,7 +84,7 @@
                         <li>URL: {$this->sender_url}</li>
                         <li>Message: {$this->sender_message}</li>
                     </ul>";
-                $mail->AltBody = "Name:{$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
+                $mail->AltBody = "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
                 
                 $mail->send();
                 

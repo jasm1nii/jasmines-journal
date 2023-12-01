@@ -1,12 +1,11 @@
 <?php
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route as Route;
-    use JasminesJournal\Site\Views\Layouts as Layouts;
-    use JasminesJournal\Site\Models\GuestbookPOST as GuestbookPOST;
-
-    //
+    use JasminesJournal\Core\Route;
+    use JasminesJournal\Site\Views\Layouts;
+    use JasminesJournal\Site\Models\GuestbookPOST;
+    
 
     trait Guestbook {
 
@@ -14,14 +13,11 @@
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
-                $page_req = preg_split('/guestbook\/page/', $_SERVER['REQUEST_URI']);
+                $page_req = preg_split('/guestbook\/page/', REQUEST);
+
                 $page = trim($page_req[1], "/");
 
-                if (!isset($page) || $page == 1) {
-
-                    $page = 0;
-            
-                }
+                (!isset($page) || $page == 1) ? 0 : $page;
 
                 return $page;
 
@@ -38,23 +34,12 @@
                 $_SESSION['gb_page'] = 1;
         
             } elseif (REQUEST == "/guestbook/page/" . $page) {
-        
-                if ($page !== 0) {
-        
-                    $_SESSION['gb_page'] = $page;
-        
-                } else {
-        
-                    $_SESSION['gb_page'] = 1;
-                }
-        
-            }
 
-            if (!isset($_SESSION['gb_page'])) {
-
-                $_SESSION['gb_page'] = 1;
+                $page !== 0 ? $_SESSION['gb_page'] = $page : $_SESSION['gb_page'] = 1;
 
             }
+
+            $_SESSION['gb_page'] ?? 1;
 
         }
 
@@ -63,64 +48,85 @@
             if (REQUEST == "/guestbook" || isset($_SERVER['HTTP_REFERER'])) {
 
                 session_start();
+
                 $_SESSION['form_start'] = true;
 
-            } elseif (!isset($_SERVER['HTTP_REFERER'])) {
+            }
 
-                switch (REQUEST) {
+        }
 
-                    case str_contains(REQUEST, "success"):
-                    case str_contains(REQUEST, "error"):
-                        
-                        header('Location: /guestbook');
-                        break;
+        private static function validateResponse() {
 
-                    default:
+            $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
+
+            if (isset($_POST) && $time_offset > 3) {
+
+                if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
                     
-                        REQUEST;
+                    new GuestbookPOST();
 
+                } else {
+
+                    header('Location: /guestbook/error/has_html');
+        
                 }
+            
+            } else {
 
+                header('Location: /guestbook/error/time_too_short');
+        
             }
 
         }
 
         public static function dispatch() {
 
-            switch (REQUEST) {
+            switch ($_SERVER["REQUEST_METHOD"]) {
 
-                case "/guestbook/post":
-                case "/guestbook/post/":
+                case "POST":
 
-                    $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
-
-                    if (isset($_POST) && $time_offset > 3) {
-
-                        if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
-                            
-                            new GuestbookPOST();
-
-                        } else {
-
-                            header('Location: /guestbook/error/has_html');
-                
-                        }
-                    
-                    } else {
-
-                        header('Location: /guestbook/error/time_too_short');
-                
-                    }
+                    self::validateResponse();
 
                     break;
 
                 
+                case "GET":
+
+                    switch (REQUEST) {
+
+                        case str_contains(REQUEST, "success") && !isset($_SERVER['HTTP_REFERER']):
+                        case str_contains(REQUEST, "error") && !isset($_SERVER['HTTP_REFERER']):
+                        case "/guestbook/page":
+                        case "/guestbook/comment":
+
+                            header('Location: /guestbook');
+
+                            break;
+
+                        
+                        case "/guestbook":
+                        case "/guestbook/index":
+                        case str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page":
+                        case str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment":
+
+                            self::setFormSession();
+                            self::setPageSession();
+
+                            new Layouts\Guestbook(self::setPageNumber());
+
+                            break;
+
+                        default:
+                    
+                            Route::notFound();
+                    
+                    }
+
+                    break;
+
                 default:
                     
-                    self::setFormSession();
-                    self::setPageSession();
-
-                    new Layouts\Guestbook(self::setPageNumber());
+                    header('Location: /guestbook');
 
             }
 

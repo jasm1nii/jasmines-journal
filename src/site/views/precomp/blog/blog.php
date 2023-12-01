@@ -2,15 +2,23 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
-    use JasminesJournal\Site\Views\Partials as Partials;
+    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Site\Views\Partials;
+    use JasminesJournal\Site\FileRouter;
+    use JasminesJournal\Core\Route;
 
 
     final class BlogIndex extends View {
+        
+        private const LAYOUT = DIR['layouts'] . "blog/blog_layout.html.twig";
 
         public function __construct() {
 
-            $page = DIR['layouts'] . "blog/blog_layout.html.twig";
+            $this->render();
+
+        }
+
+        private function render() {
 
             $vars = [
                 'nav'               => Partials\Blog\Nav::make(),
@@ -18,57 +26,42 @@
                 'articles_archive'  => implode("", Partials\Blog\Articles::makeList())
             ];
 
-            parent::Twig($page, $vars, null, true);
-            
-        }
-
-    }
-
-    final class ArticlesIndex extends View {
-
-        private static function showEntries() {
-
-            $entries_array = Partials\Blog\Subpage\Articles::renderIndex();
-
-            return implode("", $entries_array);
-
-        }
-
-        public function __construct() {
-
-            $page = DIR['layouts'] . "blog/articles/articles_index_layout.html.twig";
-
-            $vars = [
-                'nav'       => Partials\Blog\Nav::make(),
-                'entries'   => self::showEntries()
-            ];
-
-            parent::Twig($page, $vars, null);
+            parent::Twig(self::LAYOUT, $vars, null, true);
 
         }
 
     }
 
-    final class NotesIndex extends View {
+    final class BlogSubpageIndex extends View {
 
-        private static function showEntries() {
+        private $type;
+        private $layout;
 
-            $entries_array = Partials\Blog\Subpage\Notes::renderIndex();
+        public function __construct($type) {
+
+            $this->type = $type;
+            $this->render();
+
+        }
+
+        private function showEntries($type) {
+
+            $entries_array = Partials\Blog\Subpage\Index::render($type);
 
             return implode("", $entries_array);
 
         }
 
-        public function __construct() {
+        private function render() {
 
-            $page = DIR['layouts'] . "blog/notes/notes_index_layout.html.twig";
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
 
             $vars = [
                 'nav'       => Partials\Blog\Nav::make(),
-                'entries'   => self::showEntries()
+                'entries'   => $this->showEntries($this->type)
             ];
 
-            parent::Twig($page, $vars, null);
+            parent::Twig($this->layout, $vars, null);
 
         }
 
@@ -76,38 +69,31 @@
 
     final class BlogEntry extends View {
 
-        public function __construct($blog_type) {
+        private $type;
+        private $layout;
+        private $content;
 
-            if ($blog_type == 'article') {
+        public function __construct($type) {
 
-                $layout = DIR['layouts'] . "blog/articles/article_entry.html.twig";
+            $this->type = $type;
+            $this->render();
 
-            } elseif ($blog_type == 'note') {
+        }
 
-                $layout = DIR['layouts'] . "blog/notes/note_entry.html.twig";
+        private function render() {
 
-            }
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
 
-            $slug = rtrim(REQUEST,'/');
-            $img_dir = '/_assets/media' . rtrim($slug,'/entry') . '/';
-            $content = DIR['content'] . $slug . ".html.twig";
+            $this->content = FileRouter\BlogEntry::file($use_root = false);
 
             $vars = [
-                'layout'    => $layout,
-                'slug'      => $slug,
-                'src'       => $img_dir,
+                'layout'    => $this->layout,
+                'slug'      => Route::useCleanSlug(),
+                'src'       => FileRouter\BlogEntry::mapMedia(),
                 'nav'       => Partials\Blog\Nav::make()
             ]; 
-
-            if (file_exists(SITE_ROOT . $content)) {
                 
-                parent::Twig($content, $vars, null);
-
-            } else {
-
-                Route::NotFound();
-
-            }
+            parent::Twig($this->content, $vars, null);
 
         }
 

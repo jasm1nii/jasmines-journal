@@ -2,16 +2,30 @@
 
     namespace JasminesJournal\Site\FileRouter;
 
-    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Core\Route;
 
     class Resources extends Route {
 
-        private static function getCategory() {
+        public static function getCategory() {
 
             $path = preg_split(('/\/(resources)/'), REQUEST);
-            $category = rtrim($path[1], "/");
+            
+            return rtrim($path[1], "/");
 
-            return $category;
+        }
+
+        public static function getParentURL() {
+
+            $url = preg_split('/\//', REQUEST);
+
+            if (!empty($url[3])) {
+
+                return '/' . $url[1] . '/' . $url[2];
+
+            } else {
+                    
+                return null;
+            }
 
         }
 
@@ -27,9 +41,7 @@
 
             }
 
-            $file_abs = SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
-
-            return $file_abs;
+            return SITE_ROOT . DIR['content'] . "resources/categories" . $file_rel;
 
         }
 

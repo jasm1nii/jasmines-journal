@@ -2,112 +2,108 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
-    use JasminesJournal\Core\Views\Render\Extension\MarkdownWithTOC as MarkdownWithTOC;
+    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Extension\MarkdownWithTOC;
+    use JasminesJournal\Site\FileRouter;
 
-    //
-
-    trait Resources {
-
-        public static $includes_path = DIR['content'] . "resources";
+    interface Resources {
+        
+        const INCLUDES = DIR['content'] . "resources";
 
     }
 
-    //
+    final class ResourcesIndex extends View implements Resources {
 
-    final class ResourcesIndex extends View {
-
-        use Resources;
-
-        private static $layout = DIR['layouts'] . "resources/resources_index.html.twig";
+        const   LAYOUT = DIR['layouts'] . "resources/resources_index.html.twig";
+        private $vars;
 
         public function __construct() {
 
-            $updated = filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md");
-
-            $vars = [
-                'updated' => $updated
+            $this->vars = [
+                'updated' => filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md")
             ];
 
-            parent::Twig(self::$layout, $vars, Resources::$includes_path);
+            $this->render();
+
+        }
+
+        private function render() {
+
+            parent::Twig(self::LAYOUT, $this->vars, self::INCLUDES);
 
         }
 
     }
 
-    final class ResourcesSubpage extends View {
+    final class ResourcesSubpage extends View implements Resources {
 
-        use Resources;
+        const   CATEGORY  = DIR['content'] . "resources/categories";
+        const   LAYOUT    = DIR['layouts'] . "resources/resources_subpage.html.twig";
+        private $template;
 
-        private static $category_dir = DIR['content'] . "resources/categories";
-        private static $layout = DIR['layouts'] . "resources/resources_subpage.html.twig";
+        public function __construct() {
+
+            $this->base_blocks = [
+                'layout'    => self::LAYOUT,
+                'parent'    => FileRouter\Resources::getParentURL()
+            ];
+
+            $this->matchTargetFile();
+            $this->render();
+
+        }
 
         private static function matchCategory() {
 
-            $category_query = '/\w*.*[^\/]/';
-            preg_match($category_query, REQUEST, $matches, null, 11);
-            $partial_path = self::$category_dir . "/{$matches[0]}";
-
-            return $partial_path;
+            return self::CATEGORY . FileRouter\Resources::getCategory();
 
         }
 
-        private static function getParentURL() {
+        private static function useIndex() {
 
-            $url = preg_split('/\//', REQUEST);
-
-            if (!empty($url[3])) {
-
-                $parent = '/' . $url[1] . '/' . $url[2];
-
-            } else {
-                    
-                $parent = null;
-            }
-
-            return $parent;
+            return self::matchCategory() . "/index";
 
         }
 
-        public function __construct() {
-            
-            $legend = file_get_contents(SITE_ROOT.DIR['content'] . "resources/_legend.md");
+        private function matchTargetFile() {
 
-            $template = self::matchCategory() . ".html.twig";
-            $twig_as_main = SITE_ROOT . $template;
+            $twig_file = SITE_ROOT . self::matchCategory() . ".html.twig";
 
-            // the following needs to be passed through League/Commonmark first to generate a table of contents:
+            if (file_exists($twig_file)) {
 
-            $markdown_as_main = SITE_ROOT . self::matchCategory() . ".md";
-
-            if (!file_exists($twig_as_main)) {
-
-                $template = self::matchCategory() . "/index.html.twig";
-                $markdown_as_main = SITE_ROOT . self::matchCategory() . "/index.md";
+                $this->template = self::matchCategory() . ".html.twig";
+                $markdown_file  = SITE_ROOT . self::matchCategory() . ".md";
                 
+            } else {
+                
+                $this->template = self::useIndex() . ".html.twig";
+                $markdown_file  = SITE_ROOT . self::useIndex() . ".md";
+
             }
 
-            if (file_exists($markdown_as_main)) {
+            if (file_exists($markdown_file)) {
 
-                $content = MarkdownWithTOC::convert($markdown_as_main);
-                $updated = filemtime($markdown_as_main);
+                $this->content_blocks = [
+                    'content' => MarkdownWithTOC::convert($markdown_file),
+                    'updated' => filemtime($markdown_file)
+                ];
 
             } else {
 
-                $content = null;
-                $updated = filemtime($twig_as_main);
+                $this->content_blocks = [
+                    'content' => null,
+                    'updated' => filemtime($twig_file)
+                ];
 
             }
 
-            $vars = [
-                'layout'    => self::$layout,
-                'updated'   => $updated,
-                'legend'    => $legend,
-                'content'   => $content,
-                'parent'    => self::getParentURL()
-            ];
+        }
 
-            parent::Twig($template, $vars, null);
+        private function render() {
+
+            $vars = array_merge($this->content_blocks, $this->base_blocks);
+
+            parent::Twig($this->template, $vars, self::INCLUDES);
 
         }
 

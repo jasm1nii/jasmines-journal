@@ -1,10 +1,10 @@
 <?php 
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route as Route;
-    use JasminesJournal\Site\Views\Layouts as Layouts;
-    use JasminesJournal\Site\Views\Generator as Generator;
+    use JasminesJournal\Core\Route;
+    use JasminesJournal\Site\Views\Layouts;
+    use JasminesJournal\Site\Views\Generator;
 
     class Index {
 
@@ -58,7 +58,7 @@
                 str_starts_with(REQUEST, "/guestbook")
                     => Guestbook::dispatch(),
 
-                default => Route::NotFound()
+                default => Route::notFound()
                 
             };
 

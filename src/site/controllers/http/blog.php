@@ -1,101 +1,50 @@
 <?php
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route as Route;
-    use JasminesJournal\Site\FileRouter\BlogEntry as BlogEntry;
-    use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Core\Route;
+    use JasminesJournal\Site\FileRouter\BlogEntry;
+    use JasminesJournal\Site\Views\Layouts;
 
     trait Blog {
 
+        private static function subpage() {
+
+            return Route::matchSubpage(2);
+
+        }
+
         public static function dispatch() {
 
-            switch (REQUEST) {
+            match (true) {
 
-                case "/blog":
-                case "/blog/":
-                case "/blog/index/":
-                    
-                    new Layouts\BlogIndex();
-                    break;
-        
-                case str_contains(REQUEST, "articles"):
-        
-                    switch (REQUEST) {
-        
-                        case "/blog/articles":
-                        case "/blog/articles/":
-                        case "/blog/articles/index":
-        
-                            new Layouts\ArticlesIndex();
-        
-                            break;
-        
-        
-                        case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
-        
-                            new Layouts\BlogEntry('article');
-        
-                            break;
-        
-        
-                        case "/blog/articles/articles.xml":
-        
-                            http_response_code(301);
-                            header('Location: /articles.xml');
-        
-                            break;
-        
-        
-                        default:
-        
-                            Route::NotFound();
-        
-                    }
-        
-                    break;
-        
-                case str_contains(REQUEST, "notes"):
-        
-                    switch (REQUEST) {
-        
-                        case "/blog/notes":
-                        case "/blog/notes/":
-                        case "/blog/notes/index":
-        
-                            new Layouts\NotesIndex();
-        
-                            break;
-        
-        
-                        case str_contains(REQUEST, BlogEntry::matchQuery()) && file_exists(BlogEntry::file()):
-        
-                            new Layouts\BlogEntry('note');
-        
-                            break;
-        
-        
-                        case "/blog/notes/notes.xml":
-        
-                            http_response_code(301);
-                            header('Location: /notes.xml');
-        
-                            break;
-                            
-        
-                        default:
-        
-                            Route::NotFound();
-        
-                    }
-        
-                    break;
-        
-                default:
-        
-                    Route::NotFound();
-        
-            }
+                REQUEST == "/blog",
+                REQUEST == "/blog/index",
+
+                    => new Layouts\BlogIndex(),
+
+
+                str_ends_with(REQUEST, self::subpage()),
+                str_ends_with(REQUEST, self::subpage() . "/index"),
+
+                    => new Layouts\BlogSubpageIndex(self::subpage()),
+
+
+                str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::file())
+
+                    => new Layouts\BlogEntry(self::subpage()),
+
+
+                str_ends_with(REQUEST, ".xml")
+
+                    => Route::redirect("/" . self::subpage() . ".xml"),
+
+
+                default
+                
+                    => Route::notFound()
+
+            };
 
         }
 

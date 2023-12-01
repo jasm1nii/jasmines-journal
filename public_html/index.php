@@ -4,8 +4,8 @@
 
     require SITE_ROOT . "/vendor/autoload.php";
 
-    use JasminesJournal\Site\Request as Request;
+    use JasminesJournal\Site\RequestRouter;
 
-    Request\Index::dispatch();
+    RequestRouter\Index::dispatch();
    
 ?>

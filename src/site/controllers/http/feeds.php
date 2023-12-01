@@ -1,14 +1,14 @@
 <?php
 
-    namespace JasminesJournal\Site\Request;
+    namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Site\Views\Layouts as Layouts;
+    use JasminesJournal\Site\Views\Layouts;
 
     trait Feeds {
 
         public static function dispatch() {
 
-            switch (REQUEST) {
+            switch (true) {
 
                 case isset($_SERVER['HTTP_REFERER']):
         

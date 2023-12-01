@@ -13,8 +13,8 @@
 
     class Guestbook extends View {
 
-        const LAYOUT = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
-        const INCLUDES = DIR['layouts'] . "guestbook";
+        const LAYOUT    = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
+        const INCLUDES  = DIR['layouts'] . "guestbook";
 
         private static function setDialog() {
 
