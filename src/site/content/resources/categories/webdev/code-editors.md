@@ -32,19 +32,24 @@
 
 - [visual studio code web](https://vscode.dev/)
 
-    a fully featured online <abbr title="integrated development environment">IDE</abbr>.
+    the online version of visual studio code.
+
+- [stackblitz](https://stackblitz.com/)
+
+    a feature-packed development environment that supports a variety of javascript frameworks.
+
+- [codepen](https://codepen.io/)
+
+    includes built-in support for [sass](https://sass-lang.com/guide/) and [pug](https://pugjs.org/language/tags.html). note that published code is public by default on the free plan.
+
+- [phoenix](https://phcode.dev/)
+
+- [webmaker](https://webmaker.app/)
 
 - [W3Schools online code editor](https://www.w3schools.com/tryit/)
 
     a simple interface with support for backend languages, such as python, PHP, and java.
 
-- [codepen](https://codepen.io/)
-
-    includes built-in support for sass and pug. note that published code is public by default on the free plan.
-
-- [phoenix](https://phcode.dev/)
-
-- [webmaker](https://webmaker.app/)
 
 </section>
 
