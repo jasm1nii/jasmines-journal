@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Core\Views\Render\View;
 
     final class FeedsIndex extends View {
 
@@ -24,13 +24,13 @@
             
             if ($POST_redirect == 'success' || $POST_redirect == null) {
 
-                $title = "yippee!!";
-                $message = "thanks for subscribing!";
+                $title      = "yippee!!";
+                $message    = "thanks for subscribing!";
 
             } elseif ($POST_redirect == 'error') {
 
-                $title = "aw shucks";
-                $message = "there was an error with your submission ☹";
+                $title      = "aw shucks";
+                $message    = "there was an error with your submission ☹";
 
             }
 

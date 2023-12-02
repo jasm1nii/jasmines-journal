@@ -2,16 +2,15 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
-    use JasminesJournal\Site\Models\GuestbookLatest as GuestbookLatest;
-    use JasminesJournal\Core\Views\Render\Extension\Utils as Utils;
+    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Site\Models\GuestbookLatest;
+    use JasminesJournal\Core\Views\Render\Extension\Utils;
 
-    //
 
     final class Home extends View {
 
-        const LAYOUT = DIR['layouts'] . "home/home_layout.html.twig";
-        const INCLUDES = DIR['layouts'] . "home/includes/";
+        const LAYOUT    = DIR['layouts'] . "home/home_layout.html.twig";
+        const INCLUDES  = DIR['layouts'] . "home/includes/";
 
         private static function getNewestGuestbookMessage() {
 

@@ -2,8 +2,8 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
-    use JasminesJournal\Core\Views\Render\Layout as Layout;
+    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
 
     final class SiteMap extends View {
 
@@ -13,8 +13,8 @@
         public function __construct() {
 
             $vars = [
-                'layout' => self::LAYOUT,
-                'updated' => filemtime(SITE_ROOT . self::CONTENT)
+                'layout'    => self::LAYOUT,
+                'updated'   => filemtime(SITE_ROOT . self::CONTENT)
             ];
 
             parent::Twig(self::CONTENT, $vars, null);

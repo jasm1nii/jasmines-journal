@@ -31,19 +31,53 @@
 
             if (REQUEST == "/guestbook" || REQUEST == "/guestbook/page/1") {
 
-                $_SESSION['gb_page'] = 1;
+                $_SESSION['page'] = 1;
         
             } elseif (REQUEST == "/guestbook/page/" . $page) {
 
-                $page !== 0 ? $_SESSION['gb_page'] = $page : $_SESSION['gb_page'] = 1;
+                $page !== 0 ? $_SESSION['page'] = $page : $_SESSION['page'] = 1;
 
             }
 
-            $_SESSION['gb_page'] ?? 1;
+            $_SESSION['page'] ?? 1;
 
         }
 
-        private static function validateResponse() {
+        private static function buildPage() {
+
+            self::setPageSession();
+            
+            new Layouts\Guestbook(self::setPageNumber());
+
+        }
+
+        private static function routeGET() {
+
+            match (true) {
+
+                str_contains(REQUEST, "success") && !isset($_SERVER['HTTP_REFERER']),
+                str_contains(REQUEST, "error") && !isset($_SERVER['HTTP_REFERER']),
+                REQUEST == "/guestbook/page",
+                REQUEST == "/guestbook/comment"
+
+                    => header('Location: /guestbook'),
+
+                REQUEST == "/guestbook",
+                REQUEST == "/guestbook/index",
+                str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page",
+                str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment"
+
+                    => self::buildPage(),
+
+                default
+
+                    => Route::notFound()
+
+            };
+            
+        }
+
+        private static function routePOST() {
 
             $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
 
@@ -69,53 +103,13 @@
 
         public static function dispatch() {
 
-            switch ($_SERVER["REQUEST_METHOD"]) {
+            match ($_SERVER["REQUEST_METHOD"]) {
 
-                case "POST":
+                "POST"  => self::routePOST(),
+                "GET"   => self::routeGET(),
+                default => header('Location: /guestbook')
 
-                    self::validateResponse();
-
-                    break;
-
-                
-                case "GET":
-
-                    switch (REQUEST) {
-
-                        case str_contains(REQUEST, "success") && !isset($_SERVER['HTTP_REFERER']):
-                        case str_contains(REQUEST, "error") && !isset($_SERVER['HTTP_REFERER']):
-                        case "/guestbook/page":
-                        case "/guestbook/comment":
-
-                            header('Location: /guestbook');
-
-                            break;
-
-                        
-                        case "/guestbook":
-                        case "/guestbook/index":
-                        case str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page":
-                        case str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment":
-
-                            self::setPageSession();
-
-                            new Layouts\Guestbook(self::setPageNumber());
-
-                            break;
-
-                        default:
-                    
-                            Route::notFound();
-                    
-                    }
-
-                    break;
-
-                default:
-                    
-                    header('Location: /guestbook');
-
-            }
+            };
 
         }
 

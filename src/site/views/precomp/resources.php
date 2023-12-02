@@ -32,7 +32,12 @@
 
         const   CATEGORY  = DIR['content'] . "resources/categories";
         const   LAYOUT    = DIR['layouts'] . "resources/resources_subpage.html.twig";
+
         private $template;
+        private $base_blocks;
+        private $content_blocks;
+        private $twig_file;
+        private $markdown_file;
 
         public function __construct() {
 
@@ -41,7 +46,7 @@
                 'parent'    => FileRouter\Resources::getParentURL()
             ];
 
-            $this->matchTargetFile();
+            $this->getContentData();
             $this->render();
 
         }
@@ -60,32 +65,38 @@
 
         private function matchTargetFile() {
 
-            $twig_file = SITE_ROOT . self::matchCategory() . ".html.twig";
+            $this->twig_file = SITE_ROOT . self::matchCategory() . ".html.twig";
 
-            if (file_exists($twig_file)) {
+            if (file_exists($this->twig_file)) {
 
-                $this->template = self::matchCategory() . ".html.twig";
-                $markdown_file  = SITE_ROOT . self::matchCategory() . ".md";
+                $this->template         = self::matchCategory() . ".html.twig";
+                $this->markdown_file    = SITE_ROOT . self::matchCategory() . ".md";
                 
             } else {
                 
-                $this->template = self::useIndex() . ".html.twig";
-                $markdown_file  = SITE_ROOT . self::useIndex() . ".md";
+                $this->template         = self::useIndex() . ".html.twig";
+                $this->markdown_file    = SITE_ROOT . self::useIndex() . ".md";
 
             }
 
-            if (file_exists($markdown_file)) {
+        }
+
+        private function getContentData() {
+
+            $this->matchTargetFile();
+
+            if (file_exists($this->markdown_file)) {
 
                 $this->content_blocks = [
-                    'content' => MarkdownWithTOC::convert($markdown_file),
-                    'updated' => filemtime($markdown_file)
+                    'content' => MarkdownWithTOC::convert($this->markdown_file),
+                    'updated' => filemtime($this->markdown_file)
                 ];
 
             } else {
 
                 $this->content_blocks = [
                     'content' => null,
-                    'updated' => filemtime($twig_file)
+                    'updated' => filemtime($this->twig_file)
                 ];
 
             }

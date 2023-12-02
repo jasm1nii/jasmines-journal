@@ -7,13 +7,14 @@
     use Twig\Extra\Markdown\MarkdownRuntime;
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
-    // use Twig\Extension\StringLoaderExtension;
+    # use Twig\Extension\StringLoaderExtension;
 
     class Twig {
 
         public function loadBaseLoader($add_path = null) {
 
             $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
+            
             $loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
 
             if ($add_path !== null) {
@@ -31,9 +32,9 @@
             $twig = new \Twig\Environment(
                 $loader,
                 [
-                    'cache' => SITE_ROOT . '/tmp/twig',
-                    'auto_reload' => true,
-                    'debug' => false
+                    'cache'         => SITE_ROOT . '/tmp/twig',
+                    'auto_reload'   => true,
+                    'debug'         => false
                 ]
             );
 
@@ -51,8 +52,9 @@
             );
 
             $twig->addExtension(new \Twig\Extension\DebugExtension());
-            // $twig->addExtension(new StringLoaderExtension());
+            # $twig->addExtension(new StringLoaderExtension());
             $twig->addExtension(new IntlExtension());
+
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 

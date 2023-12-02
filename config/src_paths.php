@@ -15,9 +15,9 @@
     define(
         "DIR",
         [
-            'layouts'       => "/src/site/views/layouts/",
-            'includes'      => "/src/site/views/includes/",
-            'content'       => "/src/site/content/"
+            'layouts'   => "/src/site/views/layouts/",
+            'includes'  => "/src/site/views/includes/",
+            'content'   => "/src/site/content/"
         ]
     );
 

@@ -10,7 +10,8 @@
 
     match (true) {
 
-        REQUEST == "/", REQUEST == "/index"
+        REQUEST == "/",
+        REQUEST == "/index"
 
             => new Layouts\Home(),
 

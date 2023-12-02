@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Core\Views\Render\View;
 
     final class LinkGallery extends View {
 

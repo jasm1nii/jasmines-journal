@@ -2,8 +2,8 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View as View;
-    use JasminesJournal\Site\Views\Partials as Partials;
+    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Site\Views\Partials;
 
     trait About {
 

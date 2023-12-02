@@ -2,13 +2,13 @@
 
     namespace JasminesJournal\Site\Views\Generator;
 
-    use JasminesJournal\Core\Views\Render\Extension as Extension;
+    use JasminesJournal\Core\Views\Render\Extension;
 
     class XMLFeeds {
 
-        private const ENTRY_LAYOUT = DIR['layouts'] . "blog/xml/feed_entry.xml.twig";
-        private const FEED_LAYOUT = DIR['layouts'] . "blog/xml/feed.xml.twig";
-        protected const TEMP_DIR = "/tmp/feed_generator";
+        private const ENTRY_LAYOUT  = DIR['layouts'] . "blog/xml/feed_entry.xml.twig";
+        private const FEED_LAYOUT   = DIR['layouts'] . "blog/xml/feed.xml.twig";
+        protected const TEMP_DIR    = "/tmp/feed_generator";
 
         protected $type;
         protected $src_dir;
@@ -20,9 +20,8 @@
         private static function setDebug() {
 
             $ini = parse_ini_file(ENV_CONF, true);
-            $debug_set = $ini['debug']['xml_generator'];
 
-            return $debug_set;
+            return $ini['debug']['xml_generator'];
 
         }
 
@@ -30,9 +29,7 @@
 
             $year = date("Y");
 
-            $glob = glob($this->src_dir . "/$year/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
-
-            return $glob;
+            return glob($this->src_dir . "/$year/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
 
         }
 
@@ -60,6 +57,7 @@
             }
 
             rsort($files, SORT_NATURAL);
+
             return $files;
 
         }
@@ -146,15 +144,17 @@
 
             }
 
+            $this->showXML();
+
         }
 
-        public function __destruct() {
+        private function showXML() {
 
-            $entry = $this->getEntryFiles()[0];
-            $feed = $this->output_file;
+            $entry  = $this->getEntryFiles()[0];
+            $feed   = $this->output_file;
 
-            $latest_entry_date =  @filemtime($entry);
-            $feed_date = @filectime($feed);
+            $latest_entry_date  = @filemtime($entry);
+            $feed_date          = @filectime($feed);
 
             if (!file_exists($feed) || $latest_entry_date > $feed_date) {
 

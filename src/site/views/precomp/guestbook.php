@@ -2,14 +2,13 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\View as View;
+    use JasminesJournal\Core\Views\Render\View;
 
-    use JasminesJournal\Site\Models\GuestbookComments as GuestbookComments;
-    use JasminesJournal\Site\Models\GuestbookThread as GuestbookThread;
-    use JasminesJournal\Site\Models\GuestbookThreadReply as GuestbookThreadReply;
-    use JasminesJournal\Site\Models\GuestbookPageNav as GuestbookPageNav;
+    use JasminesJournal\Site\Models\GuestbookComments;
+    use JasminesJournal\Site\Models\GuestbookThread;
+    use JasminesJournal\Site\Models\GuestbookThreadReply;
+    use JasminesJournal\Site\Models\GuestbookPageNav;
 
-    //
 
     class Guestbook extends View {
 
@@ -21,11 +20,11 @@
             if (isset($_SERVER['HTTP_REFERER'])) {
 
                 $dialog = match (REQUEST) {
-                    '/guestbook/success'               => 'success',
-                    '/guestbook/success/exception'     => 'exception',
-                    '/guestbook/error/has_html'        => 'html_error',
-                    '/guestbook/error/time_too_short'  => 'spam_error',
-                    default                            => null
+                    '/guestbook/success'               =>   'success',
+                    '/guestbook/success/exception'     =>   'exception',
+                    '/guestbook/error/has_html'        =>   'html_error',
+                    '/guestbook/error/time_too_short'  =>   'spam_error',
+                    default                            =>   null
                 };
                 
             } else {
@@ -134,7 +133,7 @@
                 'dialog'         => self::setDialog(),
                 'thread_parent'  => self::getThreadParent(),
                 'thread_replies' => self::getThreadReplies(),
-                'current_page'   => $_SESSION['gb_page'],
+                'current_page'   => $_SESSION['page'],
                 'request_time'   => $_SERVER['REQUEST_TIME'],
                 'comment_pages'  => self::getPageNumbers($page_num),
                 'comments'       => self::getCommentKeys($page_num)

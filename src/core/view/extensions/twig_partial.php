@@ -17,13 +17,14 @@
             $twig = new \Twig\Environment(
                 $loader,
                 [
-                    'cache' => SITE_ROOT . '/tmp/twig',
-                    'auto_reload' => true
+                    'cache'         => SITE_ROOT . '/tmp/twig',
+                    'auto_reload'   => true
                 ]
             );
 
             $twig->addExtension(new IntlExtension());
             $twig->addExtension(new MarkdownExtension());
+
             $twig->addRuntimeLoader(
                 new class () implements RuntimeLoaderInterface {
                     public function load($class)
@@ -34,6 +35,7 @@
                     }
                 }
             );
+
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 

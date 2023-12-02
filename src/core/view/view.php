@@ -8,9 +8,7 @@
 
             $twig = new Extension\Twig();
 
-            if ($vars == null) {
-                $vars = [];
-            }
+            $vars ?? [];
 
             $loader = $twig->loadBaseLoader($path);
             $twig->createEnvAndMake($loader, $page, $vars);
