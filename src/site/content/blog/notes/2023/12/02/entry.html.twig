@@ -1,0 +1,26 @@
+{% extends layout %}
+
+{% set keywords = ['personal'] %}
+
+{% set published = '2 december 2023' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧
+
+        ---
+
+        in a mellow kind of mood tonight 🌃
+    {% endapply %}
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0rbKrBvZUYY9GN9l057BuY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <br/>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4LOLvDtzykDC7y9WehFoOi?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}
