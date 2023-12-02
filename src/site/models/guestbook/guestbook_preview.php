@@ -1,7 +1,6 @@
 <?php
 
     namespace JasminesJournal\Site\Models;
-    
 
     class GuestbookLatest extends GuestbookConn {
 

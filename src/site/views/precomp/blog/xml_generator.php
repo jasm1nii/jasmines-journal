@@ -64,9 +64,9 @@
 
         private function parseEntries() {
 
-            $files = $this->getEntryFiles();
+            $files  = $this->getEntryFiles();
 
-            $twig = new Extension\Twig();
+            $twig   = new Extension\Twig();
             $loader = $twig->loadBaseLoader();
 
             if (!is_dir(SITE_ROOT . self::TEMP_DIR)) {
@@ -79,10 +79,10 @@
 
             foreach ($files as $article) {
                 
-                $split_path     = preg_split('/(src)/', $article);
-                $path           = '/src/'. $split_path[1];
-                $slug           = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
-                $img_dir        = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
+                $split_path = preg_split('/(src)/', $article);
+                $path       = '/src/'. $split_path[1];
+                $slug       = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
+                $img_dir    = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
 
                 $vars = [
                     'type'      => $this->type,
@@ -128,11 +128,11 @@
 
         public function __construct($type, $max_entries) {
 
-            $this->type = $type;
-            $this->max_entries = $max_entries;
+            $this->type         = $type;
+            $this->max_entries  = $max_entries;
 
-            $this->src_dir = SITE_ROOT. DIR['content'] . "blog/{$this->type}";
-            $this->temp_file = self::TEMP_DIR . "/{$this->type}.tmp.xml";
+            $this->src_dir      = SITE_ROOT. DIR['content'] . "blog/{$this->type}";
+            $this->temp_file    = self::TEMP_DIR . "/{$this->type}.tmp.xml";
 
             if (self::setDebug() == true) {
 

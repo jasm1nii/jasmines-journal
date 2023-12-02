@@ -14,7 +14,7 @@
 
     class MarkdownWithTOC {
 
-        public static function convert($abs_file_path) {
+        public static function convert(string $abs_file_path) {
 
             $commonmark_config = [
 

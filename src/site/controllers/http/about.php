@@ -19,7 +19,7 @@
 
 
                 str_ends_with(REQUEST, "/changelog"),
-                str_ends_with(REQUESR, "/changelog/index")
+                str_ends_with(REQUEST, "/changelog/index")
 
                     => new Layouts\ChangelogIndex(),
 

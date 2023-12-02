@@ -17,7 +17,7 @@
 
                 $page = trim($page_req[1], "/");
 
-                (!isset($page) || $page == 1) ? 0 : $page;
+                (!isset($page) || $page == 1) ? $page = 0 : $page;
 
                 return $page;
 
@@ -29,6 +29,8 @@
 
             $page = self::setPageNumber();
 
+            session_start();
+
             if (REQUEST == "/guestbook" || REQUEST == "/guestbook/page/1") {
 
                 $_SESSION['page'] = 1;
@@ -39,7 +41,7 @@
 
             }
 
-            $_SESSION['page'] ?? 1;
+            $_SESSION['page'] ?? $_SESSION['page'] = 1;
 
         }
 
@@ -65,7 +67,8 @@
                 REQUEST == "/guestbook",
                 REQUEST == "/guestbook/index",
                 str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page",
-                str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment"
+                str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment",
+                isset($_SERVER['HTTP_REFERER']) && (str_contains(REQUEST, "success") || str_contains(REQUEST, "error"))
 
                     => self::buildPage(),
 

@@ -37,7 +37,7 @@
 
         }
 
-        private static function getCommentKeys($page_num) {
+        private static function getCommentKeys(int|null $page_num) {
 
             $msg_arr = GuestbookComments::getRows($page_num);
 
@@ -51,11 +51,7 @@
 
             }
 
-            if (!isset($comment)) {
-
-                $comment = null;
-
-            }
+            $comment ?? $comment = null;
 
             return $comment;
 
@@ -100,7 +96,7 @@
             
         }
 
-        private static function getPageNumbers($pages) {
+        private static function getPageNumbers() {
 
             $total = GuestbookPageNav::getTotal();
 
@@ -127,7 +123,7 @@
 
         }
 
-        public function __construct($page_num) {
+        public function __construct(int|null $page_num) {
 
             $vars = [
                 'dialog'         => self::setDialog(),
@@ -135,7 +131,7 @@
                 'thread_replies' => self::getThreadReplies(),
                 'current_page'   => $_SESSION['page'],
                 'request_time'   => $_SERVER['REQUEST_TIME'],
-                'comment_pages'  => self::getPageNumbers($page_num),
+                'comment_pages'  => self::getPageNumbers(),
                 'comments'       => self::getCommentKeys($page_num)
             ];
 

@@ -14,7 +14,7 @@
 
         }
 
-        public static function file($use_root = true) {
+        public static function file(bool $use_root = true) {
 
             $path = DIR['content'] . self::matchQuery() . ".html.twig";
 
@@ -30,7 +30,7 @@
 
         }
 
-        public static function getFiles($source) {
+        public static function getFiles(string $source) {
 
             $files = glob($source . "/*/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
 

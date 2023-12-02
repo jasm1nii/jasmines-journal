@@ -31,14 +31,14 @@
         private $type;
         private $layout;
 
-        public function __construct($type) {
+        public function __construct(string $type) {
 
             $this->type = $type;
             $this->render();
 
         }
 
-        private function showEntries($type) {
+        private function showEntries(string $type) {
 
             $entries_array = Partials\Blog\Subpage\Index::render($type);
 
@@ -68,7 +68,7 @@
         private $layout;
         private $content;
 
-        public function __construct($type) {
+        public function __construct(string $type) {
 
             $this->type = $type;
             $this->render();

@@ -3,15 +3,14 @@
     namespace JasminesJournal\Site\Models;
 
     use JasminesJournal\Site\Models\GuestbookConn;
-    
 
     class GuestbookComments extends GuestbookConn {
 
         public static function getRows($row_limit) {
 
             $guestbook_show = parent::connect();
-            $table = parent::getTable();
-            $rows = $row_limit * 10;
+            $table          = parent::getTable();
+            $rows           = $row_limit * 10;
 
             if ($guestbook_show !== null) {
 
@@ -44,7 +43,7 @@
         public static function getThread() {
 
             $guestbook_show = parent::connect();
-            $table = parent::getTable();
+            $table          = parent::getTable();
 
             $comment_url = preg_split('/guestbook\/comment/', REQUEST);
             $comment_id = trim($comment_url[1], "/");
@@ -70,10 +69,10 @@
         public static function getThreadReplies() {
 
             $guestbook_show = parent::connect();
-            $table = parent::getTable();
+            $table          = parent::getTable();
 
-            $comment_url = preg_split('/guestbook\/comment/', REQUEST);
-            $comment_id = trim($comment_url[1], "/");
+            $comment_url    = preg_split('/guestbook\/comment/', REQUEST);
+            $comment_id     = trim($comment_url[1], "/");
 
             $sql_reply = $guestbook_show->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
@@ -97,7 +96,7 @@
         public static function getTotal() {
 
             $guestbook_show = parent::connect();
-            $table = parent::getTable();
+            $table          = parent::getTable();
 
             if ($guestbook_show !== null) {
 

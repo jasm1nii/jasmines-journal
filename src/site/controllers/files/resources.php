@@ -29,7 +29,7 @@
 
         }
 
-        public static function matchIndexPattern($use_index = false) {
+        public static function matchIndexPattern(bool $use_index = false) {
 
             if ($use_index == true) {
 
