@@ -3,6 +3,9 @@
 @use '../assets/font_instrument-sans';
 
 @use '../components/scrollbar' as *;
+@use '../components/webkit_scrollbar' as *;
+
+@use '../screen_queries/feeds/900' as *;
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;
@@ -21,10 +24,8 @@
     --theme-toggle-hover-bg: #b084bd;
     --theme-toggle-active-bg: #8b4f61;
     --theme-toggle-focus-bg: #a175c5;
-    --footer-font: rgb(97, 58, 97);
 
-    --page-bg-dark: rgb(13, 13, 14);
-    --page-border-dark: #503281;
+    --page-bg-dark: rgb(24, 24, 26);
     --dark-mode-links: rgb(255, 192, 216);
     --link-hover-bg-dark: rgba(216, 112, 147, .5);
     --dark-mode-h: rgb(223, 154, 236);
@@ -50,12 +51,11 @@ body {
     width: 80%;
     max-width: 1000px;
     margin: 1em auto 3em;
-    border: 1px solid rgb(105, 87, 105);
+    border: 1px solid;
 }
 
 nav {
     font-weight: 500;
-    border-color: rgb(105, 87, 105) !important;
 }
 
 hr {
@@ -65,7 +65,7 @@ hr {
 footer {
   margin: auto;
   padding: 1em;
-  border-top: 1px solid rgba(129, 44, 109, 0.432);
+  border-top: 1px solid;
   text-align: center;
   font-size: .9em;
   font-stretch: semi-expanded;
@@ -114,9 +114,11 @@ button {
     font-family: var(--font-3);
     font-size: larger;
 }
+
 button, button:active, button:hover, button:focus {
     transition: all .5s ease;
 }
+
 #themeSwitch {
     padding: .5em;
     border-radius: 0px;
@@ -131,31 +133,129 @@ button, button:active, button:hover, button:focus {
     color: black;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+@include webkit-scrollbar-style-1();
+@include screen-900();
+
+$dark-border-color: #463646;
+
+@mixin dark-mode-body {
+    color: white;
+    background-color: black;
 }
 
-::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+@mixin dark-mode {
+    .layout {
+        background-color: rgb(10, 10, 10);
+        border-color: $dark-border-color;
+    }
+    header {
+        nav {
+            border-color: $dark-border-color;
+        }
+    }
+    article {
+        > section {
+            background-color: rgb(20, 20, 20);
+        }
+    }
+    section {
+        &:hover {
+            h2 {
+                color: rgb(255, 142, 198);
+            }
+        }
+    }
+    footer {
+        border-color: $dark-border-color;
+    }
+    h2, h3 {
+        color: var(--dark-mode-h);
+    }
+    a {
+        color: var(--dark-mode-links);
+        &:hover {
+            color: white;
+            background-color: var(--link-hover-bg-dark);
+        }
+    }
+    button {
+        background-color: var(--dark-button-bg);
+        color: rgb(230, 214, 236);
+        &:hover {
+            background-color: #712357;
+        }
+        &:active {
+            background-color: rgb(207, 102, 102);
+            color: white;
+        }
+        &:focus {
+            background-color: #8b4f61;
+        }
+    }
 }
 
-::-webkit-scrollbar-track-piece {
-    background-color: inherit;
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
 }
 
-html ::-webkit-scrollbar-thumb {
-    background-color: #8f53a1;
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
 }
 
-html ::-webkit-scrollbar-thumb:hover {
-    background-color: #694677;
+@mixin light-mode-body {
+    background-color: var(--document-color-light);
+    color: var(--font-color-light);
 }
 
-body ::-webkit-scrollbar-thumb {
-    background-color: pink;
+@mixin light-mode {
+    .layout {
+        background-color: var(--page-color-light);
+    }
+    article {
+        > section {
+            background-color: var(--page-color-light);
+        }
+    }
+    section {
+        &:hover {
+            h2 {
+                color: rgb(192, 90, 107);
+            }
+        }
+    }
+    h1 {
+        color: var(--h1-light);
+    }
+    h2 {
+        color: var(--h2-light);
+    }
+    a {
+        color: var(--link-color-light);
+        &:hover {
+            background-color: var(--link-hover-bg-light);
+            color: white;
+        }
+    }
+    button {
+        background-color: #f5e9f5;
+        color: rgb(51, 44, 44);
+        &:hover {
+            background-color: lightgoldenrodyellow;
+        }
+    }
 }
 
-body ::-webkit-scrollbar-thumb:hover {
-    background-color: plum;
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
+    }
+}
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
 }

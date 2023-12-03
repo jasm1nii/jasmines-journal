@@ -838,7 +838,7 @@ footer li::before {
   font-size: 1.25em;
   margin-right: 15px;
 }
-footer li:nth-child(1)::before {
+footer li:first-child:before {
   content: none;
 }
 footer a img {

@@ -1,7 +1,6 @@
 /* subscription form */
 @use 'themes/feeds' as theme;
 @use 'components/nav_1' as *;
-@use 'screen_queries/feeds/900' as *;
 @use 'animations/fade-in' as *;
 
 /* animations */
@@ -13,7 +12,7 @@ header, main, footer {
 
 main {
   margin: auto;
-  background: url(/_assets/media/main/ooorganize.svg);
+  background: url("/_assets/media/main/ooorganize.svg");
   background-size: 200px;
 }
 article {
@@ -88,182 +87,60 @@ h2 {
   text-align: center;
   margin-left: 0;
   padding-left: 0;
+  li {
+    margin: 1.5em auto;
+  }
+  a {
+    padding: .5em;
+    border: 1px solid;
+    display: block;
+    margin: auto;
+    color: rgb(60, 25, 77) !important;
+    background-color: #dbc2db;
+    &:hover {
+      background-color: #694677 !important;
+    }
+  }
 }
-.like-buttons li {
-  margin: 1.5em auto;
-}
-.like-buttons a {
-  padding: .5em;
-  border: 1px solid;
-  display: block;
-  margin: auto;
-  color: rgb(60, 25, 77) !important;
-  background-color: #dbc2db;
-}
-.like-buttons a:hover {
-  background-color: #694677 !important;
-}
+
 form {
   display: flex;
   flex-direction: column;
   margin-top: 3em;
+  label {
+    font-stretch: semi-expanded;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border-bottom: 1px solid;
+    width: fit-content;
+    padding-bottom: 1em;
+  }
+  input {
+    font-size: 1em;
+    font-family: var(--font-3);
+    padding: .5em;
+    width: 90%;
+  }
+  span {
+    + input {
+      margin-top: 1em;
+    }
+  }
+  footer {
+    margin: 1em auto 1em -1em;
+    padding-top: 1.5em;
+    padding-bottom: 0;
+    border-top: 1px dashed;
+    width: 100%;
+  }
+  button {
+    margin: 0 auto 1em;
+  }
 }
-form label {
-  font-stretch: semi-expanded;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  border-bottom: 1px solid;
-  width: fit-content;
-  padding-bottom: 1em;
-}
+
 .label-group {
   margin-top: 2em;
   margin-bottom: 3em;
   margin-left: 1em;
-}
-form input {
-  font-size: 1em;
-  font-family: var(--font-3);
-  padding: .5em;
-  width: 90%;
-}
-form span + input {
-  margin-top: 1em;
-}
-form button {
-  margin: 0 auto 1em;
-}
-form footer {
-  margin: 1em auto 1em -1em;
-  padding-top: 1.5em;
-  padding-bottom: 0;
-  border-top: 1px dashed;
-  width: 100%;
-}
-
-@include screen-900();
-
-@media (prefers-color-scheme: light) {
-  body {
-    color: var(--font-color-light);
-    background-color: var(--document-color-light);
-  }
-  .layout, article > section {
-    background-color: var(--page-color-light);
-  }
-  a {
-    color: var(--link-color-light);
-  }
-  a:hover {
-    background-color: var(--link-hover-bg-light);
-  }
-  h1 {
-    color: var(--h1-light);
-  }
-  h2 {
-    color: var(--h2-light);
-  }
-  section:hover h2 {
-    color: rgb(192, 90, 107);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body, footer {
-    color: white;
-  }
-  body, article > section {
-    background-color: black;
-  }
-  h1, header nav {
-    color: white;
-  }
-  h2 {
-    color: var(--dark-mode-h);
-  }
-  section:hover h2 {
-    color: rgb(255, 142, 198);
-  }
-  a, nav a {
-    color: var(--dark-mode-links);
-  }
-  a:hover {
-    color: white;
-    background-color: var(--link-hover-bg-dark);
-  }
-  button {
-    background-color: var(--dark-button-bg);
-    color: rgb(230, 214, 236);
-  }
-  button:hover {
-    background-color: #712357;
-  }
-  button:active {
-    background-color: rgb(207, 102, 102);
-    color: white;
-  }
-  button:focus {
-    background-color: #8b4f61;
-  }
-}
-
-.light-mode {
-  background-color: var(--document-color-light);
-  color: var(--font-color-light);
-}
-.light-mode .layout, .light-mode article > section {
-  background-color: var(--page-color-light);
-}
-.light-mode nav {
-  color: var(--font-color-light);
-}
-.light-mode h1 {
-  color: var(--h1-light);
-}
-.light-mode h2 {
-  color: var(--h2-light);
-}
-.light-mode section:hover h2 {
-  color: rgb(192, 90, 107);
-}
-.light-mode a {
-  color: var(--link-color-light);
-}
-.light-mode a:hover {
-  background-color: var(--link-hover-bg-light);
-  color: white !important;
-}
-.light-mode button {
-  background-color: #f5e9f5 !important;
-  color: rgb(51, 44, 44) !important;
-}
-.light-mode button:hover {
-  background-color: lightgoldenrodyellow !important;
-}
-.light-mode footer {
-  color: var(--footer-font);
-}
-
-.dark-mode, .dark-mode .layout, .dark-mode article > section {
-  background-color: black;
-  color: white;
-}
-.dark-mode a {
-  color: var(--dark-mode-links);
-}
-.dark-mode a:hover {
-  color: white !important;
-}
-.dark-mode h1 {
-  color: white;
-}
-.dark-mode h2, .dark-mode h3 {
-  color: var(--dark-mode-h);
-}
-.dark-mode section:hover h2 {
-  color: rgb(255, 142, 198);
-}
-.dark-mode footer {
-  color: white;
 }
