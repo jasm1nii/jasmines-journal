@@ -46,6 +46,22 @@
 
         }
 
+        public static function getLastUpdated(string $glob_args) {
+
+            $glob = glob($glob_args, GLOB_BRACE);
+
+            foreach ($glob as $glob_result) {
+
+                $mtime[] = filemtime($glob_result);
+
+            }
+
+            rsort($mtime);
+
+            return $mtime[0];
+
+        }
+
     }
     
 ?>

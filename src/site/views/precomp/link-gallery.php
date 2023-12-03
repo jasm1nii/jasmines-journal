@@ -3,6 +3,7 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Route;
 
     final class LinkGallery extends View {
 
@@ -18,7 +19,7 @@
         function __construct() {
 
             $vars = [
-                'updated'   => stat(SITE_ROOT . self::DIR)['mtime'],
+                'updated'   => Route::getLastUpdated(SITE_ROOT . self::DIR . "/*"),
                 'mutuals'   => self::INCLUDES['mutuals'],
                 '_32bit'    => self::INCLUDES['32bit'],
                 'etc'       => self::INCLUDES['etc']

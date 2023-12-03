@@ -195,7 +195,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
 };
 
 { // webrings
-  { /// re:source ring
+  { // re:source ring
     // source: https://pixelsafari.neocities.org/webring/resourcering.js
     var resourceRing_members = [
       'https://pixelsafari.neocities.org/',
@@ -209,7 +209,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       'https://shinyexe.neocities.org/',
       'https://trinityexe.neocities.org/homepage'
     ]
-    var resourceRing_ringurl = "https://pixelsafari.neocities.org/webring/"; // 
+    var resourceRing_ringurl = "https://pixelsafari.neocities.org/webring/";
     var resourceRing_badgeurl = "/_assets/media/main/resourcering.png";
     var resourceRing_prevurl = "/_assets/media/main//resourceringprev.png";
     var resourceRing_nexturl = "/_assets/media/main/resourceringnext.png";
@@ -242,7 +242,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       `<a href='` + resourceRing_members[randomID] + `'><img alt='Random' src='` + resourceRing_randomurl + `' height='31' width='44' loading='lazy'/></a>` +
       `<a href='` + resourceRing_members[afterID] + `'><img alt='Next' src='` + resourceRing_nexturl + `' height='31' width='22' loading='lazy'/></a></span>`;
   };
-  { //// safonts
+  { // safonts
     const g1v5x3 = `https://xandra.cc/safonts/webring.json`;
     const w9g5p9 = document.createElement("template");
     w9g5p9.innerHTML = `<p class="safonts"></p>`;
@@ -308,7 +308,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
     // do not use the name 'webring-css' or you will conflict with other webrings
     window.customElements.define("ring-900", p1v1g6);
   };
-  { //// healing hospital
+  { // healing hospital
     // part 1 source: https://mizuki.world/healinghospital/onionring-variables.js
     var sites = [
       'https://mizuki.world',
@@ -324,7 +324,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       var ringName = 'Healing Hospital Webring';
       var ringID = 'healinghospital';
 
-    //// part 2 source: https://mizuki.world/healinghospital/onionring-widget.js
+    // part 2 source: https://mizuki.world/healinghospital/onionring-widget.js
     var tag = document.getElementById('healinghospital');
     thisSite = window.location.href;
     thisIndex = null;
@@ -342,7 +342,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       <a href="${sites[nextIndex]}" rel="external"><img src="/_assets/media/main/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>
     `);
   };
-  { //// autiring
+  { // autiring
     // part 1 source: https://macaque.moe/autiring/onionring-variables.js
     var sites = [
       'https://macaque.moe/',

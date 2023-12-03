@@ -5,6 +5,7 @@
     use JasminesJournal\Core\Views\Render\View;
     use JasminesJournal\Site\Models\GuestbookLatest;
     use JasminesJournal\Core\Views\Render\Extension\Utils;
+    use JasminesJournal\Core\Route;
 
 
     final class Home extends View {
@@ -45,29 +46,13 @@
 
         }
 
-        private static function getLastUpdated() {
-
-            $glob = glob(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}', GLOB_BRACE);
-
-            foreach ($glob as $glob_result) {
-
-                $mtime[] = filemtime($glob_result);
-
-            }
-
-            rsort($mtime);
-
-            return $mtime[0];
-
-        }
-
         public function __construct() {
 
             $vars = [
                 'src'               => "/_assets/media/main",
                 'message'           => self::getNewestGuestbookMessage(),
                 'date'              => self::formatGuestbookDate(),
-                'last_updated'      => self::getLastUpdated()
+                'last_updated'      => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}')
             ];
 
             parent::Twig(self::LAYOUT, $vars, self::INCLUDES);

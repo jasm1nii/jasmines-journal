@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,7 +9,6 @@
 		<link rel="canonical" href="https://jasm1nii.xyz/link-gallery"/>
 		<link href="/_assets/stylesheets/link-gallery.css" rel="stylesheet" type="text/css" media="all"/>
 	</head>
-
 	<body>
 		<div class="board">
 			<header>
@@ -27,11 +25,9 @@
 					{{ include('@includes/headernav.shtml') }}
 				</nav>
 			</header>
-
 			<main>
 				<article>
 					<div class="page-columns">
-
 						<section>
 							<div class="card warning">
 								<h2 id="warning">photosensitivity warning</h2>
@@ -62,72 +58,68 @@
 								<p>
 									<small>
 										if you haven't been listed yet - don't hesitate to
-										<a href="/about#contact">contact me.<a></small>
-										</p>
-									</div>
+										<a href="/about#contact">contact me.<a>
+									</small>
 								</p>
-							</section>
+							</div>
+						</section>
 
-							<section>
-								<div class="card buttons">
-									<h2 id="cafegoers">32-bit cafegoers</h2>
-									<p>
-										join the community on
-										<a href="https://32bit.cafe/discord/" rel="external">discord</a>! (<b>18+ only</b>, SFW)
-										<br>
-										<a href="https://32bit.cafe/" rel="external"><img src="/_assets/media/link-gallery/32b-win9x.png" alt="32-bit cafe" width="88" height="31"/></a>
-									</p>
-									<hr>
-									<div class="button-gallery">
-										<span class="freezeframe">
-											{{ include(_32bit) }}
-										</span>
-									</div>
+						<section>
+							<div class="card buttons">
+								<h2 id="cafegoers">32-bit cafegoers</h2>
+								<p>
+									join the community on
+									<a href="https://32bit.cafe/discord/" rel="external">discord</a>! (<b>18+ only</b>, SFW)
+									<br>
+									<a href="https://32bit.cafe/" rel="external"><img src="/_assets/media/link-gallery/32b-win9x.png" alt="32-bit cafe" width="88" height="31"/></a>
+								</p>
+								<hr/>
+								<div class="button-gallery">
+									<span class="freezeframe">
+										{{ include(_32bit) }}
+									</span>
 								</div>
-							</section>
+							</div>
+						</section>
 
-							<section>
-								<div class="card buttons">
-									<h2 id="more-cool-sites">more cool sites</h2>
-									<div class="button-gallery">
-										<span class="freezeframe">
-											{{ include(etc) }}
-										</span>
-									</div>
+						<section>
+							<div class="card buttons">
+								<h2 id="more-cool-sites">more cool sites</h2>
+								<div class="button-gallery">
+									<span class="freezeframe">
+										{{ include(etc) }}
+									</span>
 								</div>
-							</section>
+							</div>
+						</section>
 
-							<section>
-								<div class="card my-button">
-									<h2 id="link-me">link to this site</h2>
-									<p>
-										<img src="/_assets/media/main/jasmines-journal-button.png" alt="jasmine's journal" width="88" height="31" loading="lazy"/>
-										<br>
-										copy and paste the following code into your HTML file ↓
-									</p>
-									<div class="code" tabindex="0">
-										<code>
-											&lt;a href="https://jasm1nii.xyz/" rel="external">&lt;img src="https://jasm1nii.xyz/_assets/media/main/jasmines-journal-button.png" alt="jasmine's journal" style="outline: 1px solid gray; image-rendering: pixelated;" width="88" height="31" />&lt;/a>
-										</code>
-									</div>
-									<p>
-										<small>hotlinking is fine, but self-hosting the image is recommended.</small>
-									</p>
+						<section>
+							<div class="card my-button">
+								<h2 id="link-me">link to this site</h2>
+								<p>
+									<img src="/_assets/media/main/jasmines-journal-button.png" alt="jasmine's journal" width="88" height="31" loading="lazy"/>
+									<br>
+									copy and paste the following code into your HTML file ↓
+								</p>
+								<div class="code" tabindex="0">
+									<code>
+										&lt;a href="https://jasm1nii.xyz/" rel="external">&lt;img src="https://jasm1nii.xyz/_assets/media/main/jasmines-journal-button.png" alt="jasmine's journal" style="outline: 1px solid gray; image-rendering: pixelated;" width="88" height="31" />&lt;/a>
+									</code>
 								</div>
-							</section>
+								<p>
+									<small>hotlinking is fine, but self-hosting the image is recommended.</small>
+								</p>
+							</div>
+						</section>
 
-						</div>
-					</article>
-				</main>
-			</div>
-
-			<footer>
-				{{ include('@includes/footer.shtml') }}
-			</footer>
-
-			<script src="/_assets/scripts/theme-switcher-v2.js"></script>
-			<script src="/_assets/scripts/freezeframe.js"></script>
-      
-		</body>
+					</div>
+				</article>
+			</main>
+		</div>
+		<footer>
+			{{ include('@includes/footer.shtml') }}
+		</footer>
+		<script src="/_assets/scripts/theme-switcher-v2.js"></script>
+		<script src="/_assets/scripts/freezeframe.js"></script>
 	</body>
 </html>
