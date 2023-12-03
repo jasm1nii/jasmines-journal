@@ -91,7 +91,7 @@
         }
     }
 
-    class GuestbookPageNav extends GuestbookConn {
+    class GuestbookRowCount extends GuestbookConn {
 
         public static function getTotal() {
 
@@ -116,7 +116,7 @@
 
             }
 
-            return $total;
+            return $total[0]['total'];
 
         }
 

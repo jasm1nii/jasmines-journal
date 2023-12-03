@@ -7,7 +7,7 @@
     use JasminesJournal\Site\Models\GuestbookComments;
     use JasminesJournal\Site\Models\GuestbookThread;
     use JasminesJournal\Site\Models\GuestbookThreadReply;
-    use JasminesJournal\Site\Models\GuestbookPageNav;
+    use JasminesJournal\Site\Models\GuestbookRowCount;
 
 
     class Guestbook extends View {
@@ -98,28 +98,37 @@
 
         private static function getPageNumbers() {
 
-            $total = GuestbookPageNav::getTotal();
+            $total_rows = GuestbookRowCount::getTotal();
 
-            if ($total !== null) {
+            if ($total_rows !== null) {
 
-                $max_pages = $total[0]['total'];
-                $nav_total = intdiv($max_pages, 10);
-                $nav_entries = range(1, $nav_total);
+                $db_pages = intdiv($total_rows, 10);
+                $html_pages = range(1, $db_pages);
 
-                if ($nav_entries[1] == 0) {
+                // to start numbering from 1 instead of 0:
 
-                    array_shift($nav_entries);
-                    $nav_entries[0] = 1;
+                if ($html_pages[1] == 0) {
+
+                    array_shift($html_pages);
+                    $html_pages[0] = 1;
                     
+                }
+
+                // to prevent returning an empty last page, if the result of intdiv() == result of normal float division):
+
+                if (($total_rows / 10) == count($html_pages)) {
+
+                    array_pop($html_pages);
+
                 }
 
             } else {
 
-                $nav_entries = null;
+                $html_pages = null;
                 
             }
 
-            return $nav_entries;
+            return $html_pages;
 
         }
 
