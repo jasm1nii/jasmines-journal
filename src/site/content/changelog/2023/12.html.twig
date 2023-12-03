@@ -1,0 +1,17 @@
+{% extends layout %}
+
+{% set date = "december 2023" %}
+
+{% block changelog %}
+    {% apply markdown_to_html %}
+        <section>
+
+        ### <time datetime="2023-12-03">3 december 2023</time>
+
+        - fixed some quirks in the backend and rewrote the request router functions.
+        - added two new sites to the link gallery.
+        - made microblogging easier on my end by writing a shell script to automatically create new posts from a template, so i'll be posting notes a lot more frequently 😗✌ unless it's super important, new notes won't be mentioned in the changelog, so follow my [atom feed](/notes.xml) to keep up with my mundane thoughts 😉
+
+        </section>
+    {% endapply %}
+{% endblock %}

@@ -48,7 +48,8 @@
             $vars = [
                 "nav"       => About::nav(),
                 "content"   => file_get_contents(self::CONTENT),
-                "array"     => Partials\ChangelogArchive::createChangelogArray()
+                "array"     => Partials\ChangelogArchive::createChangelogArray(),
+                "updated"   => filemtime(self::CONTENT)
             ];
             
             parent::Twig(self::LAYOUT, $vars, null);
@@ -79,7 +80,7 @@
             
             $vars = [
                 "layout"    => self::LAYOUT,
-                "nav"       => About::nav()
+                "nav"       => About::nav(),
             ];
 
             parent::Twig($this->content, $vars, null);
