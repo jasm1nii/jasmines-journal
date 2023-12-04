@@ -107,7 +107,19 @@
 
             if ($total_rows !== null) {
 
-                return intdiv($total_rows, 10);
+                $pages = intdiv($total_rows, 10);
+
+                // if the last page is blank due to perfect division, remove it:
+
+                if ($pages * 10 == $total_rows) {
+
+                    return $pages - 1;
+
+                } else {
+
+                    return $pages;
+
+                }
 
             } else {
 
