@@ -78,10 +78,13 @@
                             <ul>
                                 {% for page in range(1, (comment_pages + 1)) %}
                                     {% if page == current_page %}
-                                        <li><span class="current"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span></li>
+                                        {% set num_style = 'current '%}
                                     {% else %}
-                                        <li><span class="page"><a href="/guestbook/page/{{ page|abs }}">{{ page }}</a></span></li>
+                                        {% set num_style = 'page' %}
                                     {% endif %}
+                                    <li>
+                                        <span class="{{ num_style }}"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </nav>

@@ -59,7 +59,7 @@
 
         }
 
-        private static function getCommentKeys(int|null $page_num) {
+        private static function getCommentKeys(int $page_num) {
 
             $msg_arr = GuestbookComments::getRows($page_num);
 
@@ -109,9 +109,9 @@
 
                 $pages = intdiv($total_rows, 10);
 
-                // if the last page is blank due to perfect division, remove it:
-
                 if ($pages * 10 == $total_rows) {
+
+                    // removes the last page if it's blank due to perfect division:
 
                     return $pages - 1;
 
@@ -129,7 +129,7 @@
             
         }
 
-        public function __construct(int|null $page_num) {
+        public function __construct(int $page_num) {
 
             $vars = [
                 'dialog'         => self::setDialog(),

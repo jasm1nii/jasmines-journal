@@ -4,23 +4,43 @@
 
     use JasminesJournal\Site\Models\GuestbookConn;
 
+    trait Guestbook {
+
+        public static function templateQuery(string $table) {
+
+            return 
+                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved'
+                ";
+
+        }
+
+        public static function commentID() {
+
+            return preg_split('/guestbook\/comment\//', REQUEST)[1];
+
+        }
+
+    }
+
     class GuestbookComments extends GuestbookConn {
 
-        public static function getRows(int|null $row_limit) {
+        use Guestbook;
+
+        public static function getRows(int $row_limit) {
 
             $database = parent::connect();
-            $table    = parent::getTable();
+            $base_query = self::templateQuery(parent::getTable());
             $rows     = ($row_limit - 1) * 10;
 
             if ($database !== null) {
 
                 $sql_show = $database->prepare(
-                    "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
-                        FROM `$table`
-                        WHERE `Moderation Status`='Approved'
-                        ORDER BY `ID` DESC
-                        LIMIT $rows, 10
-                    ");
+                    $base_query
+                    . " ORDER BY `ID`
+                        DESC LIMIT $rows, 10"
+                );
 
                 $sql_show->execute();
                 $sql_show->setFetchMode(\PDO::FETCH_ASSOC);
@@ -39,18 +59,18 @@
 
     class GuestbookThread extends GuestbookConn {
 
+        use Guestbook;
+
         public static function getThread() {
 
-            $database = parent::connect();
-            $table    = parent::getTable();
-
-            $comment_id = preg_split('/guestbook\/comment\//', REQUEST)[1];
+            $database   = parent::connect();
+            $base_query = self::templateQuery(parent::getTable());
+            $comment_id = self::commentID();
 
             $sql_comment = $database->prepare(
-                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
-                    FROM `$table`
-                    WHERE `Moderation Status`='Approved' AND `ID`=$comment_id
-                ");
+                    $base_query . "AND `ID`=$comment_id"
+                );
+
             $sql_comment->execute();
             $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
 
@@ -62,19 +82,17 @@
 
     class GuestbookThreadReply extends GuestbookConn {
 
+        use Guestbook;
+
         public static function getThreadReplies() {
 
             $database = parent::connect();
-            $table    = parent::getTable();
-
-            $comment_id = preg_split('/guestbook\/comment\//', REQUEST)[1];
+            $base_query = self::templateQuery(parent::getTable());
+            $comment_id = self::commentID();
 
             $sql_reply = $database->prepare(
-                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
-                    FROM `$table`
-                    WHERE `Moderation Status`='Approved' AND `Parent ID`=$comment_id
-                    ORDER BY `ID` ASC
-                ");
+                $base_query . "AND `Parent ID`=$comment_id ORDER BY `ID` ASC"
+            );
 
             $sql_reply->execute();
             $sql_reply->setFetchMode(\PDO::FETCH_ASSOC);
