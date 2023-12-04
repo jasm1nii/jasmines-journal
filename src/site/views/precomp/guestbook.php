@@ -15,41 +15,29 @@
         const LAYOUT    = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
         const INCLUDES  = DIR['layouts'] . "guestbook";
 
-        private static function setDialog() {
+        private static function setDialog(bool $show_dialog = null) {
 
-            parse_str(REQUEST, $params);
+            if ($show_dialog == true && isset($_SESSION['guestbook'])) {
 
-            if (isset($params['id'])) {
+                return match (true) {
 
-                if ($params['id'] == $_SERVER['REQUEST_TIME']) {
+                    str_contains(REQUEST, 'has_html')
+                        => 'html_error',
 
-                    return match (true) {
+                    str_contains(REQUEST, 'time_too_short')
+                        => 'spam_error',
 
-                        str_contains(REQUEST, 'has_html')
-                            => 'html_error',
+                    str_contains(REQUEST, 'success')
+                        => 'success',
 
-                        str_contains(REQUEST, 'time_too_short')
-                            => 'spam_error',
-
-                        default => null
-                        
-                    };
+                    str_contains(REQUEST, 'exception')
+                        => 'exception'
                     
-                } else {
-                    
-                    return match (true) {
+                };
+            
+            } else {
 
-                        str_contains(REQUEST, 'success')
-                            => 'success',
-
-                        str_contains(REQUEST, 'exception')
-                            => 'exception',
-
-                        default => null
-                        
-                    };
-
-                }
+                return null;
 
             }
 
@@ -125,19 +113,29 @@
             
         }
 
-        public function __construct(int $page_num) {
+        public function __construct(bool $show_dialog = false, int $page_num) {
 
-            $vars = [
-                'dialog'         => self::setDialog(),
-                'thread_parent'  => self::getThreadParent(),
-                'thread_replies' => self::getThreadReplies(),
-                'current_page'   => $_SESSION['page'],
-                'request_time'   => $_SERVER['REQUEST_TIME'],
-                'comment_pages'  => self::getPageNumbers(),
-                'comments'       => self::getCommentKeys($page_num)
-            ];
+            if ($show_dialog == true && !isset($_SESSION['guestbook'])) {
 
-            parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
+                header("Location: /guestbook");
+
+            } else {
+
+                $vars = [
+                    'dialog'         => self::setDialog($show_dialog),
+                    'thread_parent'  => self::getThreadParent(),
+                    'thread_replies' => self::getThreadReplies(),
+                    'current_page'   => $_SESSION['page'],
+                    'request_time'   => $_SERVER['REQUEST_TIME'],
+                    'comment_pages'  => self::getPageNumbers(),
+                    'comments'       => self::getCommentKeys($page_num)
+                ];
+
+                parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
+
+                session_unset();
+                
+            }
 
         }
 
