@@ -27,8 +27,6 @@
         }
 
         private static function redirectGET() {
-
-            header('Location: /feeds');
             
             new Layouts\FeedsIndex();
 
@@ -38,16 +36,25 @@
 
             match (true) {
 
+                REQUEST == "/feeds"
+
+                    => new Layouts\FeedsIndex(),
+
+
                 isset($_SERVER['HTTP_REFERER'])
 
                     => self::redirectPOST(),
 
+
                 !isset($_SERVER['HTTP_REFERER']) && REQUEST !== "/feeds"
 
-                    => self::redirectGET(),
+                    => header('Location: /feeds'),
+
 
                 default
-                    => new Layouts\FeedsIndex()
+
+                    => header('Location: /feeds')
+
 
             };
 

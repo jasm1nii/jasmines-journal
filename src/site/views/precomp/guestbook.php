@@ -19,21 +19,21 @@
 
             if (isset($_SERVER['HTTP_REFERER'])) {
 
-                $dialog = match (REQUEST) {
+                return match (REQUEST) {
+
                     '/guestbook/success'               =>   'success',
                     '/guestbook/success/exception'     =>   'exception',
                     '/guestbook/error/has_html'        =>   'html_error',
                     '/guestbook/error/time_too_short'  =>   'spam_error',
                     default                            =>   null
+                    
                 };
                 
             } else {
                 
-                $dialog = null;
+                return null;
 
             }
-
-            return $dialog;
 
         }
 
@@ -51,9 +51,7 @@
 
             }
 
-            $comment ?? $comment = null;
-
-            return $comment;
+            return $comment ??= null;
 
         }
 
@@ -61,15 +59,13 @@
 
             if (str_contains(REQUEST, "comment")) {
 
-                $parent = GuestbookThread::getThread()[0];
+                return GuestbookThread::getThread();
 
             } else {
 
-                $parent = null;
+                return null;
 
             }
-
-            return $parent;
 
         }
 
@@ -87,12 +83,7 @@
 
             }
             
-            if (!isset($result)) {
-
-                $result = null;
-            }
-
-            return $result;
+            return $result ??= null;
             
         }
 
@@ -122,14 +113,14 @@
 
                 }
 
+                return $html_pages;
+
             } else {
 
-                $html_pages = null;
+                return null;
                 
             }
-
-            return $html_pages;
-
+            
         }
 
         public function __construct(int|null $page_num) {

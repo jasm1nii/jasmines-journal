@@ -19,13 +19,13 @@
             match (true) {
 
                 REQUEST == "/blog",
-                REQUEST == "/blog/index",
+                REQUEST == "/blog/index"
 
                     => new Layouts\BlogIndex(),
 
 
                 str_ends_with(REQUEST, self::subpage()),
-                str_ends_with(REQUEST, self::subpage() . "/index"),
+                str_ends_with(REQUEST, self::subpage() . "/index")
 
                     => new Layouts\BlogSubpageIndex(self::subpage()),
 

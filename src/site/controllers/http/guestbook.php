@@ -19,7 +19,7 @@
 
                 (!isset($page) || $page == 1) ? $page = 0 : $page;
 
-                return $page;
+                return (int) $page;
 
             }
 
@@ -28,8 +28,6 @@
         private static function setPageSession() {
 
             $page = self::setPageNumber();
-
-            session_start();
 
             if (REQUEST == "/guestbook" || REQUEST == "/guestbook/page/1") {
 
@@ -41,7 +39,7 @@
 
             }
 
-            $_SESSION['page'] ?? $_SESSION['page'] = 1;
+            $_SESSION['page'] ??= 1;
 
         }
 
@@ -54,27 +52,20 @@
         }
 
         private static function routeGET() {
-
+            
             match (true) {
-
-                str_contains(REQUEST, "success") && !isset($_SERVER['HTTP_REFERER']),
-                str_contains(REQUEST, "error") && !isset($_SERVER['HTTP_REFERER']),
-                REQUEST == "/guestbook/page",
-                REQUEST == "/guestbook/comment"
-
-                    => header('Location: /guestbook'),
 
                 REQUEST == "/guestbook",
                 REQUEST == "/guestbook/index",
                 str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page",
                 str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment",
-                isset($_SERVER['HTTP_REFERER']) && (str_contains(REQUEST, "success") || str_contains(REQUEST, "error"))
+                isset($_SERVER['HTTP_REFERER']) && (str_contains(REQUEST, "/error") || str_contains(REQUEST, "/success"))
 
                     => self::buildPage(),
 
                 default
 
-                    => Route::notFound()
+                    => header('Location: /guestbook')
 
             };
             
@@ -92,12 +83,14 @@
 
                 } else {
 
+                    http_response_code(303);
                     header('Location: /guestbook/error/has_html');
         
                 }
             
             } else {
 
+                http_response_code(303);
                 header('Location: /guestbook/error/time_too_short');
         
             }
@@ -105,14 +98,16 @@
         }
 
         public static function dispatch() {
-
+            
             match ($_SERVER["REQUEST_METHOD"]) {
 
                 "POST"  => self::routePOST(),
                 "GET"   => self::routeGET(),
-                default => header('Location: /guestbook')
+                default => Route::notFound()
 
             };
+
+            var_dump($_SESSION);
 
         }
 

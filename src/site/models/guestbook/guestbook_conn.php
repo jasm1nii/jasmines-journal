@@ -6,15 +6,13 @@
 
         private static function parseConfig() {
 
-            $db = parse_ini_file(ENV_CONF, true);
-            return $db;
+            return parse_ini_file(ENV_CONF, true);
 
         }
 
         protected static function getTable() {
 
-            $table = self::parseConfig()['guestbook']['table'];
-            return $table;
+            return self::parseConfig()['guestbook']['table'];
 
         }
 

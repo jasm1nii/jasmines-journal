@@ -22,8 +22,7 @@
                 $sql_comment->execute();
                 $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
 
-                $comment_arr = $sql_comment->fetchAll();
-                return $comment_arr[0];
+                return $sql_comment->fetchAll()[0];
 
             } else {
 

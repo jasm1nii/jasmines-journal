@@ -8,13 +8,13 @@
 
         public static function getRows($row_limit) {
 
-            $guestbook_show = parent::connect();
-            $table          = parent::getTable();
-            $rows           = $row_limit * 10;
+            $database = parent::connect();
+            $table    = parent::getTable();
+            $rows     = $row_limit * 10;
 
-            if ($guestbook_show !== null) {
+            if ($database !== null) {
 
-                $sql_show = $guestbook_show->prepare(
+                $sql_show = $database->prepare(
                     "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
                         FROM `$table`
                         WHERE `Moderation Status`='Approved'
@@ -24,15 +24,14 @@
 
                 $sql_show->execute();
                 $sql_show->setFetchMode(\PDO::FETCH_ASSOC);
-                $msg_arr = $sql_show->fetchAll();
+
+                return $sql_show->fetchAll();
 
             } else {
                 
-                $msg_arr = null;
+                return null;
                 
             }
-
-            return $msg_arr;
 
         }
 
@@ -42,13 +41,13 @@
 
         public static function getThread() {
 
-            $guestbook_show = parent::connect();
-            $table          = parent::getTable();
+            $database = parent::connect();
+            $table    = parent::getTable();
 
             $comment_url = preg_split('/guestbook\/comment/', REQUEST);
             $comment_id = trim($comment_url[1], "/");
 
-            $sql_comment = $guestbook_show->prepare(
+            $sql_comment = $database->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
                     FROM `$table`
                     WHERE `Moderation Status`='Approved' AND `ID`=$comment_id
@@ -56,9 +55,7 @@
             $sql_comment->execute();
             $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
 
-            $comment_arr = $sql_comment->fetchAll();
-
-            return $comment_arr;
+            return $sql_comment->fetchAll()[0];
 
         }
 
@@ -68,13 +65,13 @@
 
         public static function getThreadReplies() {
 
-            $guestbook_show = parent::connect();
-            $table          = parent::getTable();
+            $database = parent::connect();
+            $table    = parent::getTable();
 
             $comment_url    = preg_split('/guestbook\/comment/', REQUEST);
             $comment_id     = trim($comment_url[1], "/");
 
-            $sql_reply = $guestbook_show->prepare(
+            $sql_reply = $database->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
                     FROM `$table`
                     WHERE `Moderation Status`='Approved' AND `Parent ID`=$comment_id
@@ -84,9 +81,7 @@
             $sql_reply->execute();
             $sql_reply->setFetchMode(\PDO::FETCH_ASSOC);
 
-            $reply_arr = $sql_reply->fetchAll();
-
-            return $reply_arr;
+            return $sql_reply->fetchAll();
 
         }
     }
@@ -95,12 +90,12 @@
 
         public static function getTotal() {
 
-            $guestbook_show = parent::connect();
-            $table          = parent::getTable();
+            $database = parent::connect();
+            $table    = parent::getTable();
 
-            if ($guestbook_show !== null) {
+            if ($database !== null) {
 
-                $sql_count = $guestbook_show->prepare(
+                $sql_count = $database->prepare(
                     "   SELECT COUNT(*) as total
                         FROM `$table`
                         WHERE `Moderation Status`='Approved'
@@ -108,15 +103,14 @@
 
                 $sql_count->execute();
                 $sql_count->setFetchMode(\PDO::FETCH_ASSOC);
-                $total = $sql_count->fetchAll();
+
+                return $sql_count->fetchAll()[0]['total'];
 
             } else {
 
-                $total = null;
+                return null;
 
             }
-
-            return $total[0]['total'];
 
         }
 

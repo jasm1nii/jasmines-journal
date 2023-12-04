@@ -34,15 +34,14 @@
             if ($array !== null) {
             
                 $date = $array['Date'];
-                $formatted =  Utils::formatTimeDifference(strtotime($date));
+
+                return Utils::formatTimeDifference(strtotime($date));
 
             } else {
 
-                $formatted = null;
+                return null;
 
             }
-
-            return $formatted;
 
         }
 

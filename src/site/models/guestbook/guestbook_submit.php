@@ -27,9 +27,11 @@
 
             }
 
-            $this->sender_email     = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $this->sender_url       = filter_var($_POST['website'], FILTER_SANITIZE_URL);
-            $this->sender_message   = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+            $this->sender_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+            $this->sender_url = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+            
+            $this->sender_message = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
 
             $this->sendToDB();
             $this->notifySystem();
