@@ -40,8 +40,8 @@
 
     final class ChangelogIndex extends View {
 
-        const LAYOUT    = DIR['layouts'] . "changelog/changelog_index.html.twig";
-        const CONTENT   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
+        private const LAYOUT    = DIR['layouts'] . "changelog/changelog_index.html.twig";
+        private const CONTENT   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
 
         function __construct() {
 
@@ -61,16 +61,15 @@
 
     final class ChangelogSubpage extends View {
 
-        const   LAYOUT    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
-        private $content;
+        private const LAYOUT    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+        private string $content;
 
-        private function matchContent() {
+        private function matchContent(): ?string {
 
             $path = ltrim(REQUEST, "/about");
             $file = "/" . rtrim($path, "/");
-            $content = DIR['content'] . $file . ".html.twig";
 
-            return $content;
+            return DIR['content'] . $file . ".html.twig";
 
         }
 

@@ -33,11 +33,11 @@
         const   CATEGORY  = DIR['content'] . "resources/categories";
         const   LAYOUT    = DIR['layouts'] . "resources/resources_subpage.html.twig";
 
-        private $template;
-        private $base_blocks;
-        private $content_blocks;
-        private $twig_file;
-        private $markdown_file;
+        private string $template;
+        private array $base_blocks;
+        private array $content_blocks;
+        private string $twig_file;
+        private string $markdown_file;
 
         public function __construct() {
 
@@ -103,7 +103,7 @@
 
         }
 
-        private function render() {
+        private function render(): void {
 
             $vars = array_merge($this->content_blocks, $this->base_blocks);
 

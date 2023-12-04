@@ -4,7 +4,7 @@
 
     class Utils {
 
-        public static function formatTimeDifference(int $time) {
+        public static function formatTimeDifference(int $time): string {
 
             // source: https://www.w3schools.in/php/examples/time-ago-function
             

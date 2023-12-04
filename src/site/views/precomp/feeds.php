@@ -19,7 +19,6 @@
     final class FeedsPOST extends View {
 
         private const LAYOUT = DIR['layouts'] . "feeds/feeds_post.html.twig";
-        private $redirect_msg;
 
         public function __construct($POST_redirect) {
             

@@ -11,10 +11,10 @@
 
     class GuestbookPOST extends GuestbookConn {
 
-        private $sender_name;
-        private $sender_email;
-        private $sender_url;
-        private $sender_message;
+        private string $sender_name;
+        private string $sender_email;
+        private string $sender_url;
+        private string $sender_message;
 
         public function __construct() {
 
@@ -30,18 +30,21 @@
 
             }
 
-            $this->sender_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $this->sender_email
+                = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-            $this->sender_url = filter_var($_POST['website'], FILTER_SANITIZE_URL);
-            
-            $this->sender_message = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+            $this->sender_url
+                = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+
+            $this->sender_message
+                = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
 
             $this->sendToDB();
             $this->notifySystem();
 
         }
 
-        private function sendToDB() {
+        private function sendToDB(): void {
 
             $guestbook_post = parent::connect();
             $table = parent::getTable();
@@ -66,7 +69,7 @@
 
         }
 
-        private function notifySystem() {
+        private function notifySystem(): void {
 
             $ini = parse_ini_file(ENV_CONF, true)['email'];
             $mail = new PHPMailer(true);

@@ -7,10 +7,10 @@
 
     final class LinkGallery extends View {
 
-        const LAYOUT    = DIR['layouts'] . "link-gallery_layout.html.twig";
-        const DIR       = DIR['content'] . "link-gallery";
+        private const LAYOUT    = DIR['layouts'] . "link-gallery_layout.html.twig";
+        private const DIR       = DIR['content'] . "link-gallery";
 
-        const INCLUDES  = [
+        private const INCLUDES  = [
             'mutuals'   => self::DIR . "/link-gallery_mutuals.html.twig",
             '32bit'     => self::DIR . "/link-gallery_32bitcafe.html.twig",
             'etc'       => self::DIR . "/link-gallery_other-sites.html.twig"

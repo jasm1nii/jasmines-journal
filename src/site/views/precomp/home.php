@@ -48,10 +48,10 @@
         public function __construct() {
 
             $vars = [
-                'src'               => "/_assets/media/main",
-                'message'           => self::getNewestGuestbookMessage(),
-                'date'              => self::formatGuestbookDate(),
-                'last_updated'      => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}')
+                'src'           => "/_assets/media/main",
+                'message'       => self::getNewestGuestbookMessage(),
+                'date'          => self::formatGuestbookDate(),
+                'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}')
             ];
 
             parent::Twig(self::LAYOUT, $vars, self::INCLUDES);

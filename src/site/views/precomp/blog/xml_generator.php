@@ -10,14 +10,14 @@
         private const FEED_LAYOUT   = DIR['layouts'] . "blog/xml/feed.xml.twig";
         protected const TEMP_DIR    = "/tmp/feed_generator";
 
-        protected $type;
-        protected $src_dir;
-        protected $max_entries;
+        protected string $type;
+        protected string $src_dir;
+        protected int|string $max_entries;
         
-        protected $temp_file;
-        protected $output_file;
+        protected string $temp_file;
+        protected string $output_file;
 
-        private static function setDebug() {
+        private static function setDebug(): bool {
 
             $ini = parse_ini_file(ENV_CONF, true);
 
@@ -25,7 +25,7 @@
 
         }
 
-        private function globCount() {
+        private function globCount(): ?array {
 
             $year = date("Y");
 
@@ -33,7 +33,7 @@
 
         }
 
-        private function getEntryFiles() {
+        private function getEntryFiles(): ?array {
 
             $glob = $this->globCount();
 
@@ -62,7 +62,7 @@
 
         }
 
-        private function parseEntries() {
+        private function parseEntries(): void {
 
             $files  = $this->getEntryFiles();
 
@@ -102,7 +102,7 @@
 
         }
 
-        private function createFeed() {
+        private function createFeed(): void {
 
             $this->parseEntries();
 
@@ -148,7 +148,7 @@
 
         }
 
-        private function showXML() {
+        private function showXML(): void {
 
             $entry  = $this->getEntryFiles()[0];
             $feed   = $this->output_file;

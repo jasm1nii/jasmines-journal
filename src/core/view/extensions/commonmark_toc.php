@@ -53,9 +53,7 @@
 
             $commonmark = new MarkdownConverter($commonmark_env);
 
-            $output = $commonmark->convert(file_get_contents($abs_file_path));
-
-            return $output;
+            return $commonmark->convert(file_get_contents($abs_file_path));
 
         }
 

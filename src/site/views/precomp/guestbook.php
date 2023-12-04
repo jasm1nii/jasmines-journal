@@ -73,13 +73,13 @@
 
         }
 
-        private static function getThreadParent() {
+        private static function getThreadParent(): ?array {
 
             return str_contains(REQUEST, "comment") ? GuestbookThread::getThread() : null;
 
         }
 
-        private static function getThreadReplies() {
+        private static function getThreadReplies(): ?array {
 
             if (str_contains(REQUEST, "comment")) {
 
@@ -97,7 +97,7 @@
             
         }
 
-        private static function getPageNumbers() {
+        private static function getPageNumbers(): ?int {
 
             $total_rows = GuestbookRowCount::getTotal();
 

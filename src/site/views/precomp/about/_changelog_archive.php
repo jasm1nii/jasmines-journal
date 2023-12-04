@@ -6,7 +6,7 @@
 
         const SRC_DIR = SITE_ROOT . DIR['content'] . 'changelog';
 
-        private static function getYearsFromDirectory() {
+        private static function getYearsFromDirectory(): ?array {
 
             $folders_by_year = glob(self::SRC_DIR . "/2*");
             rsort($folders_by_year, SORT_NATURAL);
@@ -15,7 +15,7 @@
 
         }
 
-        private static function getYears() {
+        private static function getYears(): ?array {
 
             $year_folders = self::getYearsFromDirectory();
 
@@ -29,7 +29,7 @@
 
         }
 
-        private static function getGlob() {
+        private static function getGlob(): ?array {
 
             $glob = glob(self::SRC_DIR . "/*/*.html.twig");
             rsort($glob, SORT_NATURAL);
@@ -59,14 +59,12 @@
 
         }
 
-        public static function createChangelogArray() {
+        public static function createChangelogArray(): ?array {
 
             $years = self::getYears();
             $month_files = self::getGlob();
 
-            $changelog_array = array_combine($years, $month_files);
-
-            return $changelog_array;
+            return array_combine($years, $month_files);
 
         }
 

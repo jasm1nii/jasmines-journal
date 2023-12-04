@@ -28,8 +28,8 @@
 
     final class BlogSubpageIndex extends View {
 
-        private $type;
-        private $layout;
+        private string $type;
+        private string $layout;
 
         public function __construct(string $type) {
 
@@ -56,9 +56,9 @@
 
     final class BlogEntry extends View {
 
-        private $type;
-        private $layout;
-        private $content;
+        private string $type;
+        private string $layout;
+        private string $content;
 
         public function __construct(string $type) {
 
