@@ -79,15 +79,7 @@
 
         private static function getThreadParent() {
 
-            if (str_contains(REQUEST, "comment")) {
-
-                return GuestbookThread::getThread();
-
-            } else {
-
-                return null;
-
-            }
+            return str_contains(REQUEST, "comment") ? GuestbookThread::getThread() : null;
 
         }
 
@@ -115,27 +107,7 @@
 
             if ($total_rows !== null) {
 
-                $db_pages = intdiv($total_rows, 10);
-                $html_pages = range(1, $db_pages);
-
-                // to start numbering from 1 instead of 0:
-
-                if ($html_pages[1] == 0) {
-
-                    array_shift($html_pages);
-                    $html_pages[0] = 1;
-                    
-                }
-
-                // to prevent returning an empty last page, if the result of intdiv() == result of normal float division):
-
-                if (($total_rows / 10) == count($html_pages)) {
-
-                    array_pop($html_pages);
-
-                }
-
-                return $html_pages;
+                return intdiv($total_rows, 10);
 
             } else {
 

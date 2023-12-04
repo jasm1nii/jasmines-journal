@@ -15,13 +15,11 @@
 
                 $page = preg_split('/guestbook\/page\//', REQUEST)[1];
 
-                (!isset($page) || $page == 1) ? $page = 0 : $page;
-
                 return (int) $page;
 
             } else {
 
-                return (int) 0;
+                return (int) 1;
 
             }
 
@@ -31,16 +29,8 @@
 
             $page = self::setPageNumber();
 
-            if ($page !== 0) {
-
-                $_SESSION['page'] = $page;
-        
-            } else {
-
-                $_SESSION['page'] = 1;
-
-            }
-
+            $_SESSION['page'] = $page;
+    
         }
 
         private static function buildPage() {

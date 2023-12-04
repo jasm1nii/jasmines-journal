@@ -76,7 +76,7 @@
                         <nav>
                             <span>page</span>
                             <ul>
-                                {% for page in comment_pages %}
+                                {% for page in range(1, (comment_pages + 1)) %}
                                     {% if page == current_page %}
                                         <li><span class="current"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span></li>
                                     {% else %}

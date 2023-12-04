@@ -10,7 +10,7 @@
 
             $database = parent::connect();
             $table    = parent::getTable();
-            $rows     = $row_limit * 10;
+            $rows     = ($row_limit - 1) * 10;
 
             if ($database !== null) {
 
@@ -44,8 +44,7 @@
             $database = parent::connect();
             $table    = parent::getTable();
 
-            $comment_url = preg_split('/guestbook\/comment/', REQUEST);
-            $comment_id = trim($comment_url[1], "/");
+            $comment_id = preg_split('/guestbook\/comment\//', REQUEST)[1];
 
             $sql_comment = $database->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`
@@ -68,8 +67,7 @@
             $database = parent::connect();
             $table    = parent::getTable();
 
-            $comment_url    = preg_split('/guestbook\/comment/', REQUEST);
-            $comment_id     = trim($comment_url[1], "/");
+            $comment_id = preg_split('/guestbook\/comment\//', REQUEST)[1];
 
             $sql_reply = $database->prepare(
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`, `Comment`, `User Privilege`

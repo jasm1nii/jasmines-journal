@@ -27,7 +27,7 @@
 
             try {
 
-                $guestbook = new \PDO(
+                return new \PDO(
                     "mysql:host=$servername;dbname=$dbname",
                     $user,
                     $pass,
@@ -36,11 +36,9 @@
 
             } catch (\PDOException $e) {
 
-                $guestbook = null;
+                return null;
                 
             }
-
-            return $guestbook;
         
         }
         
