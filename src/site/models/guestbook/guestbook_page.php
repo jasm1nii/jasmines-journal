@@ -6,7 +6,7 @@
 
     class GuestbookComments extends GuestbookConn {
 
-        public static function getRows($row_limit) {
+        public static function getRows(int|null $row_limit) {
 
             $database = parent::connect();
             $table    = parent::getTable();
