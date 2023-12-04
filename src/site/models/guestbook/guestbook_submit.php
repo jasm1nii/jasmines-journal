@@ -3,6 +3,7 @@
     namespace JasminesJournal\Site\Models;
 
     use JasminesJournal\Site\Models\GuestbookConn;
+    use JasminesJournal\Site\RequestRouter;
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -16,6 +17,8 @@
         private $sender_message;
 
         public function __construct() {
+
+            session_start();
 
             if ($_POST['name'] == null) {
                 
@@ -95,16 +98,17 @@
                 $mail->AltBody = "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
                 
                 $mail->send();
-                
-            } catch (Exception $e) {
 
-                header('Location: /guestbook/success/exception');
+                RequestRouter\Guestbook::sendHeader('success');
+                
+            } catch (Exception) {
+
+                RequestRouter\Guestbook::sendHeader('exception');
+
                 return;
 
             }
-
-            header('Location: /guestbook/success');
-
+            
         }
 
     }

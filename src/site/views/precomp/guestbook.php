@@ -17,20 +17,42 @@
 
         private static function setDialog() {
 
-            if (isset($_SERVER['HTTP_REFERER'])) {
+            parse_str(REQUEST, $params);
 
-                return match (REQUEST) {
+            if (isset($params['id'])) {
 
-                    '/guestbook/success'               =>   'success',
-                    '/guestbook/success/exception'     =>   'exception',
-                    '/guestbook/error/has_html'        =>   'html_error',
-                    '/guestbook/error/time_too_short'  =>   'spam_error',
-                    default                            =>   null
+                if ($params['id'] == $_SERVER['REQUEST_TIME']) {
+
+                    return match (true) {
+
+                        str_contains(REQUEST, 'has_html')
+                            => 'html_error',
+
+                        str_contains(REQUEST, 'time_too_short')
+                            => 'spam_error',
+
+                        default => null
+                        
+                    };
                     
-                };
-                
+                } elseif (str_contains($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])) {
+                    
+                    return match (true) {
+
+                        str_contains(REQUEST, 'success')
+                            => 'success',
+
+                        str_contains(REQUEST, 'exception')
+                            => 'exception',
+
+                        default => null
+                        
+                    };
+
+                } 
+
             } else {
-                
+
                 return null;
 
             }

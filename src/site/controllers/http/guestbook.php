@@ -13,13 +13,15 @@
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
-                $page_req = preg_split('/guestbook\/page/', REQUEST);
-
-                $page = trim($page_req[1], "/");
+                $page = preg_split('/guestbook\/page\//', REQUEST)[1];
 
                 (!isset($page) || $page == 1) ? $page = 0 : $page;
 
                 return (int) $page;
+
+            } else {
+
+                return (int) 0;
 
             }
 
@@ -29,17 +31,15 @@
 
             $page = self::setPageNumber();
 
-            if (REQUEST == "/guestbook" || REQUEST == "/guestbook/page/1") {
+            if ($page !== 0) {
+
+                $_SESSION['page'] = $page;
+        
+            } else {
 
                 $_SESSION['page'] = 1;
-        
-            } elseif (REQUEST == "/guestbook/page/" . $page) {
-
-                $page !== 0 ? $_SESSION['page'] = $page : $_SESSION['page'] = 1;
 
             }
-
-            $_SESSION['page'] ??= 1;
 
         }
 
@@ -52,16 +52,25 @@
         }
 
         private static function routeGET() {
+
+            parse_str(REQUEST, $params);
             
             match (true) {
 
+                str_ends_with(REQUEST, "/page"),
+                str_ends_with(REQUEST, "/comment")
+
+                    => header('Location: /guestbook'),
+
+
                 REQUEST == "/guestbook",
                 REQUEST == "/guestbook/index",
-                str_contains(REQUEST, "/page") && REQUEST !== "/guestbook/page",
-                str_contains(REQUEST, "/comment") && REQUEST !== "/guestbook/comment",
-                isset($_SERVER['HTTP_REFERER']) && (str_contains(REQUEST, "/error") || str_contains(REQUEST, "/success"))
+                str_contains(REQUEST, "/page"),
+                str_contains(REQUEST, "/comment"),
+                isset($params['id'])
 
                     => self::buildPage(),
+
 
                 default
 
@@ -80,20 +89,31 @@
                 if ($_POST['message'] == strip_tags($_POST['message']) && $_POST['name'] == strip_tags($_POST['name'])) {
                     
                     new Models\GuestbookPOST();
-
+                    
                 } else {
 
-                    http_response_code(303);
-                    header('Location: /guestbook/error/has_html');
+                    self::sendHeader('has_html');
         
                 }
             
             } else {
 
-                http_response_code(303);
-                header('Location: /guestbook/error/time_too_short');
+                self::sendHeader('time_too_short');
         
             }
+
+        }
+
+        public static function sendHeader(string $status) {
+
+            $url = [
+                'status'    => $status,
+                'id'        => $_SERVER['REQUEST_TIME']
+            ];
+
+            $query = http_build_query($url);
+
+            header("Location: /guestbook/{$query}");
 
         }
 
