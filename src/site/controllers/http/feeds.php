@@ -6,7 +6,7 @@
 
     class Feeds {
 
-        private static function redirectPOST() {
+        private static function redirectPOST(): void {
 
             match (true) {
 
@@ -26,13 +26,13 @@
 
         }
 
-        private static function redirectGET() {
+        private static function redirectGET(): void {
             
             new Layouts\FeedsIndex();
 
         }
 
-        public static function dispatch() {
+        public static function dispatch(): void {
 
             match (true) {
 

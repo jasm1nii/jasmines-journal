@@ -9,7 +9,7 @@
 
     class Index {
 
-        private static function makeList(string $type, string $source, string $template) {
+        private static function makeList(string $type, string $source, string $template): ?array {
 
             $twig   = Extension\PartialTwig::buildTwigEnv();
             $files  = BlogEntry::getFiles($source);
@@ -36,12 +36,12 @@
 
         }
 
-        public static function render(string $type) {
+        public static function render(string $type): ?string {
 
             $source     = SITE_ROOT . DIR['content'] . "blog/{$type}";
             $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
 
-            return self::makeList($type, $source, $template);
+            return implode("", self::makeList($type, $source, $template));
 
         }
 

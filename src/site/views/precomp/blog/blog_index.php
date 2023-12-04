@@ -12,7 +12,7 @@
         const SOURCE_DIR    = SITE_ROOT . DIR['content'] . 'blog/notes';
         const TEMPLATE      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
 
-        public static function makeList() {
+        public static function makeList(): ?string {
 
             $twig = Extension\PartialTwig::buildTwigEnv();
             $file = BlogEntry::getFiles(self::SOURCE_DIR)[0];
@@ -23,15 +23,13 @@
             $slug_1 = rtrim($content_path, '.html.twig');
             $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/notes');
 
-            $content = $twig->render(
+            return $twig->render(
                 $content_path,
                     [
                         'layout' => self::TEMPLATE,
                         'slug' => $slug_2
                     ]
                 );
-
-            return $content;
 
         }
 
@@ -42,7 +40,7 @@
         const SOURCE_DIR    = SITE_ROOT . DIR['content'] . 'blog/articles';
         const TEMPLATE      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
 
-        public static function makeList() {
+        public static function makeList(): ?string {
 
             $twig = Extension\PartialTwig::buildTwigEnv();
             $files = BlogEntry::getFiles(self::SOURCE_DIR);
@@ -70,7 +68,7 @@
 
             }
 
-            return $content;
+            return implode("", $content);
 
         }
 

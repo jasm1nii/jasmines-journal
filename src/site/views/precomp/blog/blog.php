@@ -16,7 +16,7 @@
             $vars = [
                 'nav'               => Partials\Blog\Nav::make(),
                 'notes_preview'     => Partials\Blog\Notes::makeList(),
-                'articles_archive'  => implode("", Partials\Blog\Articles::makeList())
+                'articles_archive'  => Partials\Blog\Articles::makeList()
             ];
 
             parent::Twig(self::LAYOUT, $vars, null, true);
@@ -38,21 +38,13 @@
 
         }
 
-        private function showEntries(string $type) {
-
-            $entries_array = Partials\Blog\Subpage\Index::render($type);
-
-            return implode("", $entries_array);
-
-        }
-
         private function render() {
 
             $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
 
             $vars = [
                 'nav'       => Partials\Blog\Nav::make(),
-                'entries'   => $this->showEntries($this->type)
+                'entries'   => Partials\Blog\Subpage\Index::render($this->type)
             ];
 
             parent::Twig($this->layout, $vars, null);

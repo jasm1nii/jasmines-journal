@@ -8,7 +8,7 @@
 
     class Resources {
 
-        private static function matchSubpage() {
+        private static function matchSubpage(): void {
 
             match (true) {
 
@@ -26,7 +26,7 @@
 
         }
 
-        public static function dispatch() {
+        public static function dispatch(): void {
 
             match (true) {
 

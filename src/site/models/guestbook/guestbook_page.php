@@ -6,7 +6,7 @@
 
     trait Guestbook {
 
-        public static function templateQuery(string $table) {
+        public static function templateQuery(string $table): ?string {
 
             return 
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
@@ -16,7 +16,7 @@
 
         }
 
-        public static function commentID() {
+        public static function commentID(): int {
 
             return preg_split('/guestbook\/comment\//', REQUEST)[1];
 
@@ -28,7 +28,7 @@
 
         use Guestbook;
 
-        public static function getRows(int $row_limit) {
+        public static function getRows(int $row_limit): ?array {
 
             $database = parent::connect();
             $base_query = self::templateQuery(parent::getTable());
@@ -61,7 +61,7 @@
 
         use Guestbook;
 
-        public static function getThread() {
+        public static function getThread(): ?array {
 
             $database   = parent::connect();
             $base_query = self::templateQuery(parent::getTable());
@@ -84,7 +84,7 @@
 
         use Guestbook;
 
-        public static function getThreadReplies() {
+        public static function getThreadReplies(): ?array {
 
             $database = parent::connect();
             $base_query = self::templateQuery(parent::getTable());
@@ -104,7 +104,7 @@
 
     class GuestbookRowCount extends GuestbookConn {
 
-        public static function getTotal() {
+        public static function getTotal(): ?int {
 
             $database = parent::connect();
             $table    = parent::getTable();

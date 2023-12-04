@@ -8,13 +8,13 @@
 
     class Blog {
 
-        private static function subpage() {
+        private static function subpage(): ?string {
 
             return Route::matchSubpage(2);
 
         }
 
-        public static function dispatch() {
+        public static function dispatch(): void {
 
             match (true) {
 

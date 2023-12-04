@@ -9,23 +9,23 @@
 
     class Guestbook {
 
-        private static function setPageNumber() {
+        private static function setPageNumber(): int {
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
                 $page = preg_split('/guestbook\/page\//', REQUEST)[1];
 
-                return (int) $page;
+                return $page;
 
             } else {
 
-                return (int) 1;
+                return 1;
 
             }
 
         }
 
-        private static function setPageSession() {
+        private static function setPageSession(): void {
 
             $page = self::setPageNumber();
 
@@ -33,7 +33,7 @@
     
         }
 
-        private static function buildPage() {
+        private static function buildPage(): void {
 
             self::setPageSession();
             
@@ -41,7 +41,7 @@
 
         }
 
-        private static function routeGET() {
+        private static function routeGET(): void {
 
             parse_str(REQUEST, $params);
             
@@ -57,7 +57,7 @@
                 REQUEST == "/guestbook/index",
                 str_contains(REQUEST, "/page"),
                 str_contains(REQUEST, "/comment"),
-                isset($params['id'])
+                isset($params['id']) && str_contains($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])
 
                     => self::buildPage(),
 
@@ -70,7 +70,7 @@
             
         }
 
-        private static function routePOST() {
+        private static function routePOST(): void {
 
             $time_offset = $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
 
@@ -94,7 +94,7 @@
 
         }
 
-        public static function sendHeader(string $status) {
+        public static function sendHeader(string $status): void {
 
             $url = [
                 'status'    => $status,
@@ -107,7 +107,7 @@
 
         }
 
-        public static function dispatch() {
+        public static function dispatch(): void {
             
             match ($_SERVER["REQUEST_METHOD"]) {
 

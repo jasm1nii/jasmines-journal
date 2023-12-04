@@ -35,7 +35,7 @@
                         
                     };
                     
-                } elseif (str_contains($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])) {
+                } else {
                     
                     return match (true) {
 
@@ -49,17 +49,13 @@
                         
                     };
 
-                } 
-
-            } else {
-
-                return null;
+                }
 
             }
 
         }
 
-        private static function getCommentKeys(int $page_num) {
+        private static function getCommentKeys(int $page_num): ?array {
 
             $msg_arr = GuestbookComments::getRows($page_num);
 

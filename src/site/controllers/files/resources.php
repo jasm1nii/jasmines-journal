@@ -6,7 +6,7 @@
 
     class Resources extends Route {
 
-        public static function getCategory() {
+        public static function getCategory(): ?string {
 
             $path = preg_split(('/\/(resources)/'), REQUEST);
             
@@ -14,7 +14,7 @@
 
         }
 
-        public static function getParentURL() {
+        public static function getParentURL(): ?string {
 
             $url = preg_split('/\//', REQUEST);
 
@@ -29,7 +29,7 @@
 
         }
 
-        public static function matchIndexPattern(bool $use_index = false) {
+        public static function matchIndexPattern(bool $use_index = false): ?string {
 
             if ($use_index == true) {
 

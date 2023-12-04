@@ -8,7 +8,7 @@
 
     class About {
 
-        public static function dispatch() {
+        public static function dispatch(): void {
 
             match (true) {
 

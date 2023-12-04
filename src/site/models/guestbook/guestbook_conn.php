@@ -4,19 +4,19 @@
 
     class GuestbookConn {
 
-        private static function parseConfig() {
+        private static function parseConfig(): ?array {
 
             return parse_ini_file(ENV_CONF, true);
 
         }
 
-        protected static function getTable() {
+        protected static function getTable(): ?string {
 
             return self::parseConfig()['guestbook']['table'];
 
         }
 
-        protected static function connect() {
+        protected static function connect(): ?object {
 
             $db = self::parseConfig();
 

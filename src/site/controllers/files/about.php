@@ -6,7 +6,7 @@
 
     class ChangelogSubpage extends Route {
 
-        public static function matchQuery() {
+        public static function matchQuery(): ?string {
 
             $query = '/(changelog)\/(\d\d\d\d)\/(\d+)/';
 
@@ -14,7 +14,7 @@
 
         }
 
-        public static function file() {
+        public static function file(): ?string {
 
             return SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
 

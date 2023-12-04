@@ -4,11 +4,11 @@
 
     class View {
 
-        public static function Twig(string $page, array|null $vars, string $path = null) {
+        public static function Twig(string $page, array|null $vars, string $path = null): void {
 
             $twig = new Extension\Twig();
 
-            $vars ?? $vars = [];
+            $vars ??= [];
 
             $loader = $twig->loadBaseLoader($path);
             $twig->createEnvAndMake($loader, $page, $vars);

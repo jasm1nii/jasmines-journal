@@ -13,7 +13,7 @@
         const LAYOUT    = DIR['layouts'] . "home/home_layout.html.twig";
         const INCLUDES  = DIR['layouts'] . "home/includes/";
 
-        private static function getNewestGuestbookMessage() {
+        private static function getNewestGuestbookMessage(): ?array {
 
             try {
 
@@ -21,13 +21,13 @@
 
             } catch (\PDOException $e) {
 
-                return ['Date' => 0];
+                return null;
 
             }
 
         }
 
-        private static function formatGuestbookDate() {
+        private static function formatGuestbookDate(): ?string {
 
             $array = self::getNewestGuestbookMessage();
 

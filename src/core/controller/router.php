@@ -4,49 +4,41 @@
 
     class Route {
 
-        public static function notFound() {
+        public static function notFound(): void {
 
             http_response_code(404);
             require_once $_SERVER['DOCUMENT_ROOT'] . '/404.shtml';
 
         }
 
-        public static function redirect(string $new_url) {
+        public static function redirect(string $new_url): void {
 
             http_response_code(301);
             header("Location: {$new_url}");
 
         }
 
-        public static function matchURL(string $query) {
+        public static function matchURL(string $query): ?string {
 
             preg_match($query, REQUEST, $matches);
 
-            if (!isset($matches[0])) {
-
-                $matches[0] = 0;
-        
-            }
-
-            return $matches[0];
+            return $matches[0] ??= 0;
 
         }
 
-        public static function matchSubpage(int $level = 0) {
+        public static function matchSubpage(int $level = 0): string {
 
-            $matches = preg_split('/\//', REQUEST);
-
-            return $matches[$level];
+            return preg_split('/\//', REQUEST)[$level];
 
         }
 
-        public static function useCleanSlug() {
+        public static function useCleanSlug(): string {
 
             return rtrim(REQUEST,'/');
 
         }
 
-        public static function getLastUpdated(string $glob_args) {
+        public static function getLastUpdated(string $glob_args): int {
 
             $glob = glob($glob_args, GLOB_BRACE);
 

@@ -51,13 +51,13 @@
 
         }
 
-        private static function matchCategory() {
+        private static function matchCategory(): ?string {
 
             return self::CATEGORY . FileRouter\Resources::getCategory();
 
         }
 
-        private static function useIndex() {
+        private static function useIndex(): ?string {
 
             return self::matchCategory() . "/index";
 
