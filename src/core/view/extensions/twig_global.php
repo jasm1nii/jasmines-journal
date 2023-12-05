@@ -11,7 +11,7 @@
 
     class Twig {
 
-        public function loadBaseLoader(string $add_path = null) {
+        public function loadBaseLoader(string $add_path = null): object {
 
             $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
             
@@ -27,7 +27,7 @@
 
         }
 
-        public function createEnvAndMake(object $loader, string $template, array $args) {
+        public function createEnvAndMake(object $loader, string $template, array $args): void {
 
             $twig = new \Twig\Environment(
                 $loader,

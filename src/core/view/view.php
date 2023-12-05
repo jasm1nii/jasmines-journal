@@ -16,5 +16,21 @@
         }
 
     }
+
+    abstract class Layout extends View {
+
+        protected string $layout;
+        protected string $content;
+        protected static string $includes_path;
+
+        public function __construct() {
+
+            $this->render();
+
+        }
+        
+        abstract protected function render(): void;
+
+    }
     
 ?>

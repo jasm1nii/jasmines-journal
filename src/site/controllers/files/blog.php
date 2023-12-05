@@ -14,19 +14,11 @@
 
         }
 
-        public static function file(bool $use_root = true): ?string {
+        public static function matchURLToFile(bool $use_root = true): ?string {
 
             $path = DIR['content'] . self::matchQuery() . ".html.twig";
 
-            if ($use_root == true) {
-
-                return SITE_ROOT . $path;
-
-            } else {
-
-                return $path;
-
-            }
+            return $use_root ? SITE_ROOT . $path : $path;
 
         }
 

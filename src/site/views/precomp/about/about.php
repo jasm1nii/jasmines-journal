@@ -2,98 +2,58 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Views\Partials;
 
-    trait About {
 
-        public static function nav() {
+    final class AboutIndex extends Layout {
 
-            return Partials\About\Nav::make();
+        protected string $layout    = DIR['layouts'] . "about_layout.html.twig";
 
-        }
+        protected string $content   = DIR['content'] . "about.html.twig";
 
-    }
-
-
-    final class AboutIndex extends View {
-
-        use About;
-
-        private const LAYOUT    = DIR['layouts'] . "about_layout.html.twig";
-        private const CONTENT   = DIR['content'] . "about.html.twig";
-
-        public function __construct() {
-
-            $this->render();
-
-        }
-
-        private function render(): void {
+        final protected function render(): void {
 
             $vars = [
-                "layout"    => self::LAYOUT,
-                "nav"       => About::nav(),
-                "updated"   => filemtime(SITE_ROOT . self::CONTENT)
-            ];
-
-            parent::Twig(self::CONTENT, $vars, null);
-
-        }
-
-    }
-
-
-    final class ChangelogIndex extends View {
-
-        private const LAYOUT    = DIR['layouts'] . "changelog/changelog_index.html.twig";
-        private const CONTENT   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
-
-        public function __construct() {
-
-            $this->render();
-
-        }
-
-        private function render(): void {
-
-            $vars = [
-                "nav"       => About::nav(),
-                "content"   => file_get_contents(self::CONTENT),
-                "array"     => Partials\ChangelogArchive::createChangelogArray(),
-                "updated"   => filemtime(self::CONTENT)
-            ];
-            
-            parent::Twig(self::LAYOUT, $vars, null);
-
-        }
-
-    }
-
-
-    final class ChangelogSubpage extends View {
-
-        private const LAYOUT    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
-        private string $content;
-
-        public function __construct() {
-
-            $this->render();
-
-        }
-
-        private function render(): void {
-
-            $this->content = $this->matchContent();
-            
-            $vars = [
-                "layout"    => self::LAYOUT,
-                "nav"       => About::nav(),
+                "layout"    => $this->layout,
+                "nav"       => Partials\About\Nav::make(),
+                "updated"   => filemtime(SITE_ROOT . $this->content)
             ];
 
             parent::Twig($this->content, $vars, null);
 
         }
+
+    }
+
+
+    final class ChangelogIndex extends Layout {
+
+        protected string $layout    = DIR['layouts'] . "changelog/changelog_index.html.twig";
+
+        protected string $content   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
+
+        final protected function render(): void {
+
+            $vars = [
+                "nav"       => Partials\About\Nav::make(),
+                "content"   => file_get_contents($this->content),
+                "array"     => Partials\ChangelogArchive::createChangelogArray(),
+                "updated"   => filemtime($this->content)
+            ];
+            
+            parent::Twig($this->layout, $vars, null);
+
+        }
+
+    }
+
+
+    final class ChangelogSubpage extends Layout {
+
+        protected string $layout    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
+
+        protected string $content;
 
         private function matchContent(): ?string {
 
@@ -101,6 +61,19 @@
             $file = "/" . rtrim($path, "/");
 
             return DIR['content'] . $file . ".html.twig";
+
+        }
+
+        final protected function render(): void {
+
+            $this->content = $this->matchContent();
+            
+            $vars = [
+                "layout"    => $this->layout,
+                "nav"       => Partials\About\Nav::make(),
+            ];
+
+            parent::Twig($this->content, $vars, null);
 
         }
 

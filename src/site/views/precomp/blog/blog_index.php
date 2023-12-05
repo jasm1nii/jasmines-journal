@@ -12,15 +12,17 @@
         protected static string $source_dir;
         protected static string $template;
 
-        protected static function getFiles(): ?array {
+        final protected static function getFiles(): ?array {
 
             return BlogEntry::getFiles(static::$source_dir);
 
         }
 
+        // BlogEntry::matchURLToFile() isn't used, because matching with the index URL (instead of the entry URL) will return an invalid result.
+
         private static function getContent(string $file): ?string {
 
-            $dir = preg_split('/\/(src)/', $file);
+            $dir = preg_split('/\/(src)\//', $file);
 
             return "/src/{$dir[1]}";
 
@@ -41,7 +43,7 @@
 
         }
 
-        protected static function renderTwig(string $file): ?string {
+        final protected static function renderTwig(string $file): ?string {
 
             return
                 self::buildTwig()->render(
@@ -58,12 +60,13 @@
 
     }
 
-    class Notes extends IndexSection {
+    final class Notes extends IndexSection {
 
-        public static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/notes';
-        public static string $template      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
+        protected static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/notes';
+        
+        protected static string $template      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
 
-        public static function makeList(): ?string {
+        final public static function makeList(): ?string {
 
             $file = parent::getFiles()[0];
 
@@ -75,12 +78,13 @@
 
     }
 
-    class Articles extends IndexSection {
+    final class Articles extends IndexSection {
 
-        public static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/articles';
-        public static string $template      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+        protected static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/articles';
 
-        public static function makeList(): ?string {
+        protected static string $template      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+
+        final public static function makeList(): ?string {
 
             $content = [];
 

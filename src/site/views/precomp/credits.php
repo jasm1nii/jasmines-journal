@@ -2,23 +2,18 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
+    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Views\Layouts\DefaultLayout;
-    use JasminesJournal\Core\Views\Render\View;
-    use JasminesJournal\Core\Route;
 
-    final class Credits extends View implements DefaultLayout {
+    final class Credits extends Layout {
 
-        private const CONTENT = DIR['content'] . "credits.html.twig";
+        use DefaultLayout;
 
-        public function __construct() {
+        protected string $content = DIR['content'] . "credits.html.twig";
 
-            $vars = [
-                'layout'    => self::LAYOUT,
-                'slug'      => Route::useCleanSlug(),
-                'updated'   => filemtime(SITE_ROOT . self::CONTENT)
-            ];
+        final protected function render(): void {
 
-            parent::Twig(self::CONTENT, $vars, null);
+            parent::Twig($this->content, $this->setVars(), null);
 
         }
 

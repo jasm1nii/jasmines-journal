@@ -10,7 +10,7 @@
 
     class PartialTwig {
 
-        public static function buildTwigEnv() {
+        public static function buildTwigEnv(): object {
 
             $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
 

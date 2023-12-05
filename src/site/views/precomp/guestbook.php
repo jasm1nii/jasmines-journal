@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
 
     use JasminesJournal\Site\Models\GuestbookComments;
     use JasminesJournal\Site\Models\GuestbookThread;
@@ -10,14 +10,15 @@
     use JasminesJournal\Site\Models\GuestbookRowCount;
 
 
-    class Guestbook extends View {
+    class Guestbook extends Layout {
 
-        const LAYOUT    = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
-        const INCLUDES  = DIR['layouts'] . "guestbook";
+        protected string $layout = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
 
-        private static function setDialog(bool $show_dialog = null) {
+        protected static string $includes_path = DIR['layouts'] . "guestbook";
 
-            if ($show_dialog == true && isset($_SESSION['guestbook'])) {
+        private function setDialog() {
+
+            if ($this->show_dialog == true && isset($_SESSION['guestbook'])) {
 
                 return match (true) {
 
@@ -43,9 +44,9 @@
 
         }
 
-        private static function getCommentKeys(int $page_num): ?array {
+        private function getCommentKeys(): ?array {
 
-            $msg_arr = GuestbookComments::getRows($page_num);
+            $msg_arr = GuestbookComments::getRows($this->page_num);
 
             if ($msg_arr !== null) {
 
@@ -61,13 +62,13 @@
 
         }
 
-        private static function getThreadParent(): ?array {
+        private function getThreadParent(): ?array {
 
             return str_contains(REQUEST, "comment") ? GuestbookThread::getThread() : null;
 
         }
 
-        private static function getThreadReplies(): ?array {
+        private function getThreadReplies(): ?array {
 
             if (str_contains(REQUEST, "comment")) {
 
@@ -85,7 +86,7 @@
             
         }
 
-        private static function getPageNumbers(): ?int {
+        private function getPageNumbers(): ?int {
 
             $total_rows = GuestbookRowCount::getTotal();
 
@@ -115,27 +116,35 @@
 
         public function __construct(bool $show_dialog = false, int $page_num) {
 
-            if ($show_dialog == true && !isset($_SESSION['guestbook'])) {
+            $this->show_dialog  = $show_dialog;
+            $this->page_num     = $page_num;
+
+            if ($this->show_dialog == true && !isset($_SESSION['guestbook'])) {
 
                 header("Location: /guestbook");
 
             } else {
 
-                $vars = [
-                    'dialog'         => self::setDialog($show_dialog),
-                    'thread_parent'  => self::getThreadParent(),
-                    'thread_replies' => self::getThreadReplies(),
-                    'current_page'   => $_SESSION['page'],
-                    'request_time'   => $_SERVER['REQUEST_TIME'],
-                    'comment_pages'  => self::getPageNumbers(),
-                    'comments'       => self::getCommentKeys($page_num)
-                ];
-
-                parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
-
+                $this->render();
                 session_unset();
                 
             }
+
+        }
+
+        protected function render(): void {
+
+            $vars = [
+                    'dialog'         => $this->setDialog(),
+                    'thread_parent'  => $this->getThreadParent(),
+                    'thread_replies' => $this->getThreadReplies(),
+                    'current_page'   => $_SESSION['page'],
+                    'request_time'   => $_SERVER['REQUEST_TIME'],
+                    'comment_pages'  => $this->getPageNumbers(),
+                    'comments'       => $this->getCommentKeys()
+                ];
+
+            parent::Twig($this->layout, $vars, self::$includes_path);
 
         }
 

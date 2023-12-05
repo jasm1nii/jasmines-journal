@@ -30,7 +30,7 @@
                     => new Layouts\BlogSubpageIndex(self::subpage()),
 
 
-                str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::file())
+                str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::matchURLToFile())
 
                     => new Layouts\BlogEntry(self::subpage()),
 

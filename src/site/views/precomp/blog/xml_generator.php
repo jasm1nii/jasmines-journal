@@ -10,9 +10,10 @@
         private const FEED_LAYOUT   = DIR['layouts'] . "blog/xml/feed.xml.twig";
         protected const TEMP_DIR    = "/tmp/feed_generator";
 
+        protected int|string $max_entries;
+
         protected string $type;
         protected string $src_dir;
-        protected int|string $max_entries;
         
         protected string $temp_file;
         protected string $output_file;

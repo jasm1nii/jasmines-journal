@@ -7,27 +7,44 @@
     use JasminesJournal\Core\Views\Render\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
 
-    class Index {
+    final class Index {
+
+        // BlogEntry::matchURLToFile() isn't used, because matching with the index URL (instead of the entry URL) will return an invalid result.
+
+        private static function getContent(string $file): ?string {
+
+            $dir = preg_split('/\/(src)/', $file);
+
+            return "/src/{$dir[1]}";
+
+        }
+
+        private static function getSlug(string $content_path, string $type): string {
+
+            $base_slug = rtrim($content_path, '.html.twig');
+
+            return ltrim($base_slug, DIR['content'] . "blog/{$type}");
+
+        }
+
+        private static function buildTwig(): object {
+
+            return Extension\PartialTwig::buildTwigEnv();
+
+        }
 
         private static function makeList(string $type, string $source, string $template): ?array {
 
-            $twig   = Extension\PartialTwig::buildTwigEnv();
-            $files  = BlogEntry::getFiles($source);
-
             $content = [];
 
-            foreach ($files as $article) {
+            foreach (BlogEntry::getFiles($source) as $article) {
                 
-                $dir = preg_split('/\/(src)/', $article);
-                $content_path = "/src/{$dir[1]}";
+                $content_path = self::getContent($article);
 
-                $slug_1 = rtrim($content_path, '.html.twig');
-                $slug_2 = ltrim($slug_1, DIR['content'] . "blog/{$type}");
-
-                $content[] = $twig->render($content_path,
+                $content[] = self::buildTwig()->render($content_path,
                     [
-                        'layout' => $template,
-                        'slug' => $slug_2
+                        'layout'    => $template,
+                        'slug'      => self::getSlug($content_path, $type)
                     ]);
 
             }
@@ -36,7 +53,7 @@
 
         }
 
-        public static function render(string $type): ?string {
+        final public static function render(string $type): ?string {
 
             $source     = SITE_ROOT . DIR['content'] . "blog/{$type}";
             $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";

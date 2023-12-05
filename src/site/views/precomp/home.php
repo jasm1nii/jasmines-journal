@@ -2,15 +2,16 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Models\GuestbookLatest;
     use JasminesJournal\Core\Views\Render\Extension\Utils;
     use JasminesJournal\Core\Route;
 
 
-    final class Home extends View {
+    final class Home extends Layout {
 
-        const LAYOUT    = DIR['layouts'] . "home/home_layout.html.twig";
+        protected string $layout    = DIR['layouts'] . "home/home_layout.html.twig";
+
         const INCLUDES  = DIR['layouts'] . "home/includes/";
 
         private static function getNewestGuestbookMessage(): ?array {
@@ -45,7 +46,7 @@
 
         }
 
-        public function __construct() {
+        public function render(): void {
 
             $vars = [
                 'src'           => "/_assets/media/main",
@@ -54,7 +55,7 @@
                 'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}')
             ];
 
-            parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
+            parent::Twig($this->layout, $vars, self::INCLUDES);
 
         }
 

@@ -3,28 +3,17 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Site\Views\Layouts\DefaultLayout;
-    use JasminesJournal\Core\Views\Render\View;
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Views\Render\Layout;
 
-    final class Accessibility extends View implements DefaultLayout {
+    final class Accessibility extends Layout {
 
-        private const CONTENT = DIR['content'] . "accessibility.html.twig";
+        use DefaultLayout;
 
-        public function __construct() {
+        protected string $content = DIR['content'] . "accessibility.html.twig";
 
-            $this->render();
+        final protected function render(): void {
 
-        }
-
-        private function render(): void {
-
-            $vars = [
-                'layout'    => self::LAYOUT,
-                'slug'      => Route::useCleanSlug(),
-                'updated'   => filemtime(SITE_ROOT . self::CONTENT)
-            ];
-
-            parent::Twig(self::CONTENT, $vars, null);
+            parent::Twig($this->content, $this->setVars(), null);
 
         }
 

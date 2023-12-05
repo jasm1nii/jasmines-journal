@@ -2,16 +2,16 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Views\Partials;
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Core\Route;
 
-    final class BlogIndex extends View {
+    final class BlogIndex extends Layout {
         
-        private string $layout = DIR['layouts'] . "blog/blog_layout.html.twig";
+        protected string $layout = DIR['layouts'] . "blog/blog_layout.html.twig";
 
-        public function __construct() {
+        final protected function render(): void {
 
             $vars = [
                 'nav'               => Partials\Blog\Nav::make(),
@@ -26,21 +26,21 @@
     }
 
 
-    final class BlogSubpageIndex extends View {
+    final class BlogSubpageIndex extends Layout {
 
         private string $type;
-        private string $layout;
 
-        public function __construct(string $type) {
+        final public function __construct(string $type) {
 
             $this->type = $type;
+
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
+
             $this->render();
 
         }
 
-        private function render() {
-
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
+        final protected function render(): void {
 
             $vars = [
                 'nav'       => Partials\Blog\Nav::make(),
@@ -54,24 +54,23 @@
     }
 
 
-    final class BlogEntry extends View {
+    final class BlogEntry extends Layout {
 
         private string $type;
-        private string $layout;
-        private string $content;
 
-        public function __construct(string $type) {
+        final public function __construct(string $type) {
 
             $this->type = $type;
+
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
+
+            $this->content = FileRouter\BlogEntry::matchURLToFile($use_root = false);
+
             $this->render();
 
         }
 
-        private function render() {
-
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
-
-            $this->content = FileRouter\BlogEntry::file($use_root = false);
+        final protected function render(): void {
 
             $vars = [
                 'layout'    => $this->layout,

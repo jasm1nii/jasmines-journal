@@ -2,9 +2,9 @@
 
     namespace JasminesJournal\Site\Views\Partials;
 
-    class ChangelogArchive {
+    final class ChangelogArchive {
 
-        const SRC_DIR = SITE_ROOT . DIR['content'] . 'changelog';
+        private const SRC_DIR = SITE_ROOT . DIR['content'] . 'changelog';
 
         private static function getYearsFromDirectory(): ?array {
 
@@ -59,7 +59,7 @@
 
         }
 
-        public static function createChangelogArray(): ?array {
+        final public static function createChangelogArray(): ?array {
 
             $years = self::getYears();
             $month_files = self::getGlob();

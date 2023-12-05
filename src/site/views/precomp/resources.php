@@ -2,49 +2,50 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Core\Views\Render\Extension\MarkdownWithTOC;
     use JasminesJournal\Site\FileRouter;
 
-    interface Resources {
+    trait Resources {
         
-        const INCLUDES = DIR['content'] . "resources";
+        final public const INCLUDES = DIR['content'] . "resources";
 
     }
 
-    final class ResourcesIndex extends View implements Resources {
+    final class ResourcesIndex extends Layout {
 
-        const LAYOUT = DIR['layouts'] . "resources/resources_index.html.twig";
+        use Resources;
 
-        public function __construct() {
+        protected string $layout = DIR['layouts'] . "resources/resources_index.html.twig";
+
+        protected function render(): void {
 
             $vars = [
                 'updated' => filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md")
             ];
 
-            parent::Twig(self::LAYOUT, $vars, self::INCLUDES);
+            parent::Twig($this->layout, $vars, self::INCLUDES);
 
         }
 
     }
 
-    final class ResourcesSubpage extends View implements Resources {
+    final class ResourcesSubpage extends Layout {
 
-        const   CATEGORY  = DIR['content'] . "resources/categories";
-        const   LAYOUT    = DIR['layouts'] . "resources/resources_subpage.html.twig";
+        use Resources;
 
+        private const CATEGORY      = DIR['content'] . "resources/categories";
+
+        protected string $layout    = DIR['layouts'] . "resources/resources_subpage.html.twig";
         private string $template;
+
         private array $base_blocks;
         private array $content_blocks;
+
         private string $twig_file;
         private string $markdown_file;
 
-        public function __construct() {
-
-            $this->base_blocks = [
-                'layout'    => self::LAYOUT,
-                'parent'    => FileRouter\Resources::getParentURL()
-            ];
+        final public function __construct() {
 
             $this->getContentData();
             $this->render();
@@ -63,7 +64,7 @@
 
         }
 
-        private function matchTargetFile() {
+        private function matchTargetFile(): void {
 
             $this->twig_file = SITE_ROOT . self::matchCategory() . ".html.twig";
 
@@ -81,9 +82,14 @@
 
         }
 
-        private function getContentData() {
+        private function getContentData(): void {
 
             $this->matchTargetFile();
+
+            $this->base_blocks = [
+                'layout'    => $this->layout,
+                'parent'    => FileRouter\Resources::getParentURL()
+            ];
 
             if (file_exists($this->markdown_file)) {
 
@@ -103,7 +109,7 @@
 
         }
 
-        private function render(): void {
+        final protected function render(): void {
 
             $vars = array_merge($this->content_blocks, $this->base_blocks);
 

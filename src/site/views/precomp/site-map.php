@@ -2,22 +2,21 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\View;
     use JasminesJournal\Core\Views\Render\Layout;
 
-    final class SiteMap extends View {
+    final class SiteMap extends Layout {
 
-        private const CONTENT   = DIR['content'] . "site-map.html.twig";
-        private const LAYOUT    = DIR['layouts'] . "site-map_layout.html.twig";
+        protected string $content   = DIR['content'] . "site-map.html.twig";
+        protected string $layout    = DIR['layouts'] . "site-map_layout.html.twig";
 
-        public function __construct() {
+        protected function render(): void {
 
             $vars = [
-                'layout'    => self::LAYOUT,
-                'updated'   => filemtime(SITE_ROOT . self::CONTENT)
+                'layout'    => $this->layout,
+                'updated'   => filemtime(SITE_ROOT . $this->content)
             ];
 
-            parent::Twig(self::CONTENT, $vars, null);
+            parent::Twig($this->content, $vars, null);
 
         }
 

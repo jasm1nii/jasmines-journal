@@ -2,44 +2,50 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\View;
+    use JasminesJournal\Core\Views\Render\Layout;
 
-    final class FeedsIndex extends View {
+    final class FeedsIndex extends Layout {
 
-        private const LAYOUT = DIR['layouts'] . "feeds/feeds_index.html.twig";
+        protected string $layout = DIR['layouts'] . "feeds/feeds_index.html.twig";
 
-        public function __construct() {
+        final protected function render(): void {
 
-            parent::Twig(self::LAYOUT, null, null);
+            parent::Twig($this->layout, null, null);
 
         }
 
     }
 
-    final class FeedsPOST extends View {
+    final class FeedsPOST extends Layout {
 
-        private const LAYOUT = DIR['layouts'] . "feeds/feeds_post.html.twig";
+        protected string $layout = DIR['layouts'] . "feeds/feeds_post.html.twig";
 
-        public function __construct($POST_redirect) {
+        final public function __construct(string $POST_redirect = null) {
             
             if ($POST_redirect == 'success' || $POST_redirect == null) {
 
-                $title      = "yippee!!";
-                $message    = "thanks for subscribing!";
+                $this->title    = "yippee!!";
+                $this->message  = "thanks for subscribing!";
 
             } elseif ($POST_redirect == 'error') {
 
-                $title      = "aw shucks";
-                $message    = "there was an error with your submission ☹";
+                $this->title    = "aw shucks";
+                $this->message  = "there was an error with your submission ☹";
 
             }
 
+            $this->render();
+
+        }
+
+        final protected function render(): void {
+
             $vars = [
-                "h2"        => $title,
-                "message"   => $message
+                "h2"        => $this->title,
+                "message"   => $this->message
             ];
 
-            parent::Twig(self::LAYOUT, $vars, null);
+            parent::Twig($this->layout, $vars, null);
 
         }
 
