@@ -10,7 +10,7 @@
     use JasminesJournal\Site\Models\GuestbookRowCount;
 
 
-    class Guestbook extends Layout {
+    final class Guestbook extends Layout {
 
         protected string $layout = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
         
@@ -106,7 +106,7 @@
             
         }
 
-        public function __construct(bool $show_dialog = false, int $page_num) {
+        final public function __construct(bool $show_dialog = false, int $page_num) {
 
             $this->show_dialog  = $show_dialog;
             $this->page_num     = $page_num;
@@ -124,7 +124,7 @@
 
         }
 
-        protected function render(): void {
+        final protected function render(): void {
 
             $vars = [
                     'dialog'         => $this->setDialog(),

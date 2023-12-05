@@ -22,7 +22,7 @@
                 'updated' => filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md")
             ];
 
-            parent::Twig($this->layout, $vars, self::INCLUDES);
+            parent::Twig($this->layout, $vars, parent::INCLUDES);
 
         }
 
@@ -109,7 +109,7 @@
 
             $vars = array_merge($this->content_blocks, $this->base_blocks);
 
-            parent::Twig($this->template, $vars, self::INCLUDES);
+            parent::Twig($this->template, $vars, parent::INCLUDES);
 
         }
 

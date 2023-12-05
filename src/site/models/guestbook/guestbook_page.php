@@ -9,10 +9,9 @@
         protected static function templateQuery(string $table): ?string {
 
             return 
-                "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
-                    FROM `$table`
-                    WHERE `Moderation Status`='Approved'
-                ";
+                "SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
+                FROM `$table`
+                WHERE `Moderation Status`='Approved'";
 
         }
 
@@ -35,9 +34,7 @@
             if ($database !== null) {
 
                 $sql_show = $database->prepare(
-                    $base_query
-                    . " ORDER BY `ID`
-                        DESC LIMIT $rows, 10"
+                    $base_query . "ORDER BY `ID` DESC LIMIT $rows, 10"
                 );
 
                 $sql_show->execute();
@@ -64,8 +61,8 @@
             $comment_id = parent::commentID();
 
             $sql_comment = $database->prepare(
-                    $base_query . "AND `ID`=$comment_id"
-                );
+                $base_query . "AND `ID`=$comment_id"
+            );
 
             $sql_comment->execute();
             $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
@@ -85,7 +82,8 @@
             $comment_id = parent::commentID();
 
             $sql_reply = $database->prepare(
-                $base_query . "AND `Parent ID`=$comment_id ORDER BY `ID` ASC"
+                $base_query
+                . "AND `Parent ID`=$comment_id ORDER BY `ID` ASC"
             );
 
             $sql_reply->execute();
@@ -106,10 +104,10 @@
             if ($database !== null) {
 
                 $sql_count = $database->prepare(
-                    "   SELECT COUNT(*) as total
-                        FROM `$table`
-                        WHERE `Moderation Status`='Approved'
-                    ");
+                    "SELECT COUNT(*) as total
+                    FROM `$table`
+                    WHERE `Moderation Status`='Approved'"
+                );
 
                 $sql_count->execute();
                 $sql_count->setFetchMode(\PDO::FETCH_ASSOC);
