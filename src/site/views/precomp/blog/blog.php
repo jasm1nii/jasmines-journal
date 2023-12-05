@@ -9,7 +9,7 @@
 
     final class BlogIndex extends View {
         
-        private const LAYOUT = DIR['layouts'] . "blog/blog_layout.html.twig";
+        private string $layout = DIR['layouts'] . "blog/blog_layout.html.twig";
 
         public function __construct() {
 
@@ -19,7 +19,7 @@
                 'articles_archive'  => Partials\Blog\Articles::makeList()
             ];
 
-            parent::Twig(self::LAYOUT, $vars, null, true);
+            parent::Twig($this->layout, $vars, null, true);
 
         }
 

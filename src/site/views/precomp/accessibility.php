@@ -12,6 +12,12 @@
 
         public function __construct() {
 
+            $this->render();
+
+        }
+
+        private function render(): void {
+
             $vars = [
                 'layout'    => self::LAYOUT,
                 'slug'      => Route::useCleanSlug(),

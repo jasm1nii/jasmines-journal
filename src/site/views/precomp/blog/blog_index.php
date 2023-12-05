@@ -7,62 +7,88 @@
     use JasminesJournal\Core\Views\Render\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
 
-    class Notes {
+    abstract class IndexSection {
 
-        const SOURCE_DIR    = SITE_ROOT . DIR['content'] . 'blog/notes';
-        const TEMPLATE      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
+        protected static string $source_dir;
+        protected static string $template;
 
-        public static function makeList(): ?string {
+        protected static function getFiles(): ?array {
 
-            $twig = Extension\PartialTwig::buildTwigEnv();
-            $file = BlogEntry::getFiles(self::SOURCE_DIR)[0];
+            return BlogEntry::getFiles(static::$source_dir);
+
+        }
+
+        private static function getContent(string $file): ?string {
 
             $dir = preg_split('/\/(src)/', $file);
-            $content_path = "/src/{$dir[1]}";
 
-            $slug_1 = rtrim($content_path, '.html.twig');
-            $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/notes');
+            return "/src/{$dir[1]}";
 
-            return $twig->render(
-                $content_path,
+        }
+
+        private static function getSlug(string $content_path): ?string {
+
+            $type = get_class();
+            $slug = rtrim($content_path, '.html.twig');
+
+            return ltrim($slug, DIR['content'] . "blog/{$type}");
+
+        }
+
+        private static function buildTwig(): object {
+
+            return Extension\PartialTwig::buildTwigEnv();
+
+        }
+
+        protected static function renderTwig(string $file): ?string {
+
+            return
+                self::buildTwig()->render(
+                    self::getContent($file),
                     [
-                        'layout' => self::TEMPLATE,
-                        'slug' => $slug_2
+                        'layout'    => static::$template,
+                        'slug'      => self::getSlug(self::getContent($file))
                     ]
                 );
 
         }
 
+        abstract protected static function makeList(): ?string;
+
     }
 
-    class Articles {
+    class Notes extends IndexSection {
 
-        const SOURCE_DIR    = SITE_ROOT . DIR['content'] . 'blog/articles';
-        const TEMPLATE      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+        public static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/notes';
+        public static string $template      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
 
         public static function makeList(): ?string {
 
-            $twig = Extension\PartialTwig::buildTwigEnv();
-            $files = BlogEntry::getFiles(self::SOURCE_DIR);
+            $file = parent::getFiles()[0];
+
+            $content = parent::renderTwig($file);
+
+            return $content;
+
+        }
+
+    }
+
+    class Articles extends IndexSection {
+
+        public static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/articles';
+        public static string $template      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+
+        public static function makeList(): ?string {
 
             $content = [];
 
             $i = 0;
 
-            foreach ($files as $article) {
+            foreach (parent::getFiles() as $file) {
 
-                $dir = preg_split('/\/(src)/', $article);
-                $content_path = "/src/{$dir[1]}";
-
-                $slug_1 = rtrim($content_path, '.html.twig');
-                $slug_2 = ltrim($slug_1, DIR['content'] . 'blog/articles');
-
-                $content[] = $twig->render(
-                    $content_path,
-                    [
-                        'layout' => self::TEMPLATE,
-                        'slug' => $slug_2
-                    ]);
+                $content[] = parent::renderTwig($file);
 
                 if (++$i > 4) break;
 

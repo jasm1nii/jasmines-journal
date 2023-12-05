@@ -20,10 +20,16 @@
 
         use About;
 
-        const LAYOUT    = DIR['layouts'] . "about_layout.html.twig";
-        const CONTENT   = DIR['content'] . "about.html.twig";
+        private const LAYOUT    = DIR['layouts'] . "about_layout.html.twig";
+        private const CONTENT   = DIR['content'] . "about.html.twig";
 
-        function __construct() {
+        public function __construct() {
+
+            $this->render();
+
+        }
+
+        private function render(): void {
 
             $vars = [
                 "layout"    => self::LAYOUT,
@@ -43,7 +49,13 @@
         private const LAYOUT    = DIR['layouts'] . "changelog/changelog_index.html.twig";
         private const CONTENT   = SITE_ROOT . DIR['content'] . 'changelog/index.md';
 
-        function __construct() {
+        public function __construct() {
+
+            $this->render();
+
+        }
+
+        private function render(): void {
 
             $vars = [
                 "nav"       => About::nav(),
@@ -64,16 +76,13 @@
         private const LAYOUT    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
         private string $content;
 
-        private function matchContent(): ?string {
+        public function __construct() {
 
-            $path = ltrim(REQUEST, "/about");
-            $file = "/" . rtrim($path, "/");
-
-            return DIR['content'] . $file . ".html.twig";
+            $this->render();
 
         }
 
-        function __construct() {
+        private function render(): void {
 
             $this->content = $this->matchContent();
             
@@ -83,6 +92,15 @@
             ];
 
             parent::Twig($this->content, $vars, null);
+
+        }
+
+        private function matchContent(): ?string {
+
+            $path = ltrim(REQUEST, "/about");
+            $file = "/" . rtrim($path, "/");
+
+            return DIR['content'] . $file . ".html.twig";
 
         }
 

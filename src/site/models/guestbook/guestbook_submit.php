@@ -18,8 +18,6 @@
 
         public function __construct() {
 
-            session_start();
-
             if ($_POST['name'] == null) {
                 
                 $this->sender_name = 'Anonymous';
