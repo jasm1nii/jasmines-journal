@@ -3,11 +3,8 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Site\Views\Layouts\DefaultLayout;
-    use JasminesJournal\Core\Views\Render\Layout;
 
-    final class Accessibility extends Layout {
-
-        use DefaultLayout;
+    final class Accessibility extends DefaultLayout {
 
         protected string $content = DIR['content'] . "accessibility.html.twig";
 

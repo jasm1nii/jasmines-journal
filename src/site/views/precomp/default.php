@@ -3,8 +3,9 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Views\Render\Layout;
 
-    trait DefaultLayout {
+    abstract class DefaultLayout extends Layout {
 
         private const LAYOUT = DIR['layouts'] . "subpage_layout.html.twig";
 

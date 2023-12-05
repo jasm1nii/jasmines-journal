@@ -2,12 +2,9 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Views\Layouts\DefaultLayout;
 
-    final class Credits extends Layout {
-
-        use DefaultLayout;
+    final class Credits extends DefaultLayout {
 
         protected string $content = DIR['content'] . "credits.html.twig";
 
