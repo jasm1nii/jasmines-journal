@@ -46,7 +46,7 @@
 
         }
 
-        public function render(): void {
+        final protected function render(): void {
 
             $vars = [
                 'src'           => "/_assets/media/main",

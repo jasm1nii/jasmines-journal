@@ -42,7 +42,7 @@
 
             preg_match($query, REQUEST, $matches);
 
-            return $matches[0] ??= 0;
+            return $matches[0] ??= null;
 
         }
 

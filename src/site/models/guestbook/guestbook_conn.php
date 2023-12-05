@@ -34,7 +34,7 @@
                     [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
                 );
 
-            } catch (\PDOException $e) {
+            } catch (\PDOException) {
 
                 return null;
                 

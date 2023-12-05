@@ -16,7 +16,7 @@
 
         protected string $layout = DIR['layouts'] . "resources/resources_index.html.twig";
 
-        protected function render(): void {
+        final protected function render(): void {
 
             $vars = [
                 'updated' => filemtime(SITE_ROOT . DIR['content'] . "resources/resources_index.md")
