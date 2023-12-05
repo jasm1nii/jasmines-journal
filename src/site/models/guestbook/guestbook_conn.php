@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Models;
 
-    class GuestbookConn {
+    abstract class GuestbookConn {
 
         private static function parseConfig(): ?array {
 

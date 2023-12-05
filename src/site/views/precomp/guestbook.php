@@ -13,7 +13,7 @@
     class Guestbook extends Layout {
 
         protected string $layout = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
-
+        
         protected static string $includes_path = DIR['layouts'] . "guestbook";
 
         private function setDialog() {
@@ -94,17 +94,9 @@
 
                 $pages = intdiv($total_rows, 10);
 
-                if ($pages * 10 == $total_rows) {
+                // remove the last page if it's blank due to perfect division:
 
-                    // removes the last page if it's blank due to perfect division:
-
-                    return $pages - 1;
-
-                } else {
-
-                    return $pages;
-
-                }
+                return $pages * 10 == $total_rows ? $pages - 1 : $pages;
 
             } else {
 

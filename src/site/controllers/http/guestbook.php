@@ -6,9 +6,9 @@
     use JasminesJournal\Site\Views\Layouts;
     use JasminesJournal\Site\Models;
 
-    trait GuestbookGET {
+    abstract class GuestbookGET extends Route {
 
-        public static function setPageNumber(): int {
+        private static function setPageNumber(): int {
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
@@ -22,7 +22,7 @@
 
         }
 
-        public static function buildPage(bool $show_dialog): void {
+        protected static function buildPage(bool $show_dialog): void {
 
             $_SESSION['page'] = self::setPageNumber();
             
@@ -32,15 +32,15 @@
 
     }
 
-    trait GuestbookPOST {
+    abstract class GuestbookPOST extends GuestbookGET {
 
-        public static function timeOffset(): int {
+        protected static function timeOffset(): int {
 
             return $_SERVER['REQUEST_TIME'] - $_POST['timestamp'];
 
         }
 
-        public static function validateContent(): void {
+        protected static function validateContent(): void {
 
             if (
                 $_POST['message'] == strip_tags($_POST['message'])
@@ -70,11 +70,8 @@
         }
 
     }
-    
 
-    class Guestbook extends Route {
-
-        use GuestbookGET, GuestbookPOST;
+    class Guestbook extends GuestbookPOST {
 
         private static function routeGET(): void {
             
@@ -88,14 +85,14 @@
 
                 str_contains(REQUEST, 'status')
 
-                    => self::buildPage($show_dialog = true),
+                    => parent::buildPage($show_dialog = true),
 
 
                 REQUEST == "/guestbook",
                 str_contains(REQUEST, "/page"),
                 str_contains(REQUEST, "/comment"),
 
-                    => self::buildPage($show_dialog = false),
+                    => parent::buildPage($show_dialog = false),
 
                 default
 
@@ -109,9 +106,9 @@
 
             $_SESSION['guestbook'] = $_SERVER['REQUEST_TIME'];
 
-            self::timeOffset() > 3
-                ? self::validateContent()
-                : self::sendHeader('time_too_short');
+            parent::timeOffset() > 3
+                ? parent::validateContent()
+                : parent::sendHeader('time_too_short');
 
         }
 

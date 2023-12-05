@@ -9,7 +9,6 @@
     final class AboutIndex extends Layout {
 
         protected string $layout    = DIR['layouts'] . "about_layout.html.twig";
-
         protected string $content   = DIR['content'] . "about.html.twig";
 
         final protected function render(): void {

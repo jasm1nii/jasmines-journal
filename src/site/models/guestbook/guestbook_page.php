@@ -4,9 +4,9 @@
 
     use JasminesJournal\Site\Models\GuestbookConn;
 
-    trait Guestbook {
+    abstract class GuestbookView extends GuestbookConn {
 
-        public static function templateQuery(string $table): ?string {
+        protected static function templateQuery(string $table): ?string {
 
             return 
                 "   SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
@@ -16,7 +16,7 @@
 
         }
 
-        public static function commentID(): int {
+        protected static function commentID(): int {
 
             return preg_split('/guestbook\/comment\//', REQUEST)[1];
 
@@ -24,14 +24,12 @@
 
     }
 
-    class GuestbookComments extends GuestbookConn {
-
-        use Guestbook;
+    class GuestbookComments extends GuestbookView {
 
         public static function getRows(int $row_limit): ?array {
 
             $database = parent::connect();
-            $base_query = self::templateQuery(parent::getTable());
+            $base_query = parent::templateQuery(parent::getTable());
             $rows     = ($row_limit - 1) * 10;
 
             if ($database !== null) {
@@ -57,15 +55,13 @@
 
     }
 
-    class GuestbookThread extends GuestbookConn {
-
-        use Guestbook;
+    class GuestbookThread extends GuestbookView {
 
         public static function getThread(): ?array {
 
             $database   = parent::connect();
-            $base_query = self::templateQuery(parent::getTable());
-            $comment_id = self::commentID();
+            $base_query = parent::templateQuery(parent::getTable());
+            $comment_id = parent::commentID();
 
             $sql_comment = $database->prepare(
                     $base_query . "AND `ID`=$comment_id"
@@ -80,15 +76,13 @@
 
     }
 
-    class GuestbookThreadReply extends GuestbookConn {
-
-        use Guestbook;
+    class GuestbookThreadReply extends GuestbookView {
 
         public static function getThreadReplies(): ?array {
 
             $database = parent::connect();
-            $base_query = self::templateQuery(parent::getTable());
-            $comment_id = self::commentID();
+            $base_query = parent::templateQuery(parent::getTable());
+            $comment_id = parent::commentID();
 
             $sql_reply = $database->prepare(
                 $base_query . "AND `Parent ID`=$comment_id ORDER BY `ID` ASC"
@@ -102,7 +96,7 @@
         }
     }
 
-    class GuestbookRowCount extends GuestbookConn {
+    class GuestbookRowCount extends GuestbookView {
 
         public static function getTotal(): ?int {
 

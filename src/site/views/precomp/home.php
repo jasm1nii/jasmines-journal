@@ -10,7 +10,7 @@
 
     final class Home extends Layout {
 
-        protected string $layout    = DIR['layouts'] . "home/home_layout.html.twig";
+        protected string $layout = DIR['layouts'] . "home/home_layout.html.twig";
 
         const INCLUDES  = DIR['layouts'] . "home/includes/";
 
@@ -20,7 +20,7 @@
 
                 return GuestbookLatest::get();
 
-            } catch (\PDOException $e) {
+            } catch (\PDOException) {
 
                 return null;
 

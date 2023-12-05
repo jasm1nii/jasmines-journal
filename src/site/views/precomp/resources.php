@@ -6,15 +6,13 @@
     use JasminesJournal\Core\Views\Render\Extension\MarkdownWithTOC;
     use JasminesJournal\Site\FileRouter;
 
-    trait Resources {
+    abstract class Resources extends Layout {
         
         final public const INCLUDES = DIR['content'] . "resources";
 
     }
 
-    final class ResourcesIndex extends Layout {
-
-        use Resources;
+    final class ResourcesIndex extends Resources {
 
         protected string $layout = DIR['layouts'] . "resources/resources_index.html.twig";
 
@@ -30,9 +28,7 @@
 
     }
 
-    final class ResourcesSubpage extends Layout {
-
-        use Resources;
+    final class ResourcesSubpage extends Resources {
 
         private const CATEGORY      = DIR['content'] . "resources/categories";
 

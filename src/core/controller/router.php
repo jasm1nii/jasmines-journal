@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Core;
 
-    trait FileRouter {
+    abstract class FileRouter {
 
         public static function getLastUpdated(string $glob_args): int {
 
@@ -22,7 +22,7 @@
 
     }
 
-    trait RequestRouter {
+    abstract class RequestRouter extends FileRouter {
 
         public static function notFound(): void {
 
@@ -60,9 +60,7 @@
 
     }
 
-    class Route {
-
-        use FileRouter, RequestRouter;
+    class Route extends RequestRouter {
 
         protected static function dispatch(): void {}
 
