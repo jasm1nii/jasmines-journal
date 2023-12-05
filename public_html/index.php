@@ -13,27 +13,27 @@
         REQUEST == "/",
         REQUEST == "/index"
 
-            => new Layouts\Home(),
+            => new Layouts\Home,
 
 
         REQUEST == "/link-gallery"
 
-            => new Layouts\LinkGallery(),
+            => new Layouts\LinkGallery,
 
 
         REQUEST == "/site-map"
 
-            => new Layouts\SiteMap(),
+            => new Layouts\SiteMap,
 
 
         REQUEST == "/credits"
 
-            => new Layouts\Credits(),
+            => new Layouts\Credits,
 
 
         REQUEST == "/accessibility"
 
-            => new Layouts\Accessibility(),
+            => new Layouts\Accessibility,
 
 
         //

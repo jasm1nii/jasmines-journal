@@ -6,11 +6,11 @@
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Views\Layouts;
 
-    class Blog {
+    class Blog extends Route {
 
         private static function subpage(): ?string {
 
-            return Route::matchSubpage(2);
+            return parent::matchSubpage(2);
 
         }
 
@@ -21,7 +21,7 @@
                 REQUEST == "/blog",
                 REQUEST == "/blog/index"
 
-                    => new Layouts\BlogIndex(),
+                    => new Layouts\BlogIndex,
 
 
                 str_ends_with(REQUEST, self::subpage()),
@@ -37,12 +37,12 @@
 
                 str_ends_with(REQUEST, ".xml")
 
-                    => Route::redirect("/" . self::subpage() . ".xml"),
+                    => parent::redirect("/" . self::subpage() . ".xml"),
 
 
                 default
                 
-                    => Route::notFound()
+                    => parent::notFound()
 
             };
 

@@ -9,7 +9,7 @@
             libxml_use_internal_errors(true);
 
             $nav = new \DOMDocument;
-            $nav->loadHTMLFile(__DIR__.'/headernav.shtml');
+            $nav->loadHTMLFile(__DIR__ . '/headernav.shtml');
 
             $about_index = $nav->getElementById('about');
             $about_subindex = $nav->createElement('ul');

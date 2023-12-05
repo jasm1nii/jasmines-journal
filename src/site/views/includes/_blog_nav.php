@@ -8,7 +8,7 @@
 
             libxml_use_internal_errors(true);
 
-            $nav = new \DOMDocument();
+            $nav = new \DOMDocument;
             $nav->loadHTMLFile(__DIR__ . '/headernav.shtml');
 
             $blog_index = $nav->getElementById('blog');

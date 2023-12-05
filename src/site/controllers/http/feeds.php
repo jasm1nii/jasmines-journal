@@ -16,11 +16,7 @@
 
                 str_contains(REQUEST, "error")
 
-                    => new Layouts\FeedsPOST('error'),
-
-                default
-
-                    => new Layouts\FeedsIndex()
+                    => new Layouts\FeedsPOST('error')
 
             };
 

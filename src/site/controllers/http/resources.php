@@ -6,9 +6,9 @@
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Site\Views\Layouts;
 
-    class Resources {
+    class Resources extends Route {
 
-        private static function matchSubpage(): void {
+        private static function matchCategoryPage(): void {
 
             match (true) {
 
@@ -20,7 +20,7 @@
 
                 default
                 
-                    => Route::notFound()
+                    => parent::notFound()
 
             };
 
@@ -38,12 +38,12 @@
 
                 str_starts_with(REQUEST, "/resources")
 
-                    => self::matchSubpage(),
+                    => self::matchCategoryPage(),
 
 
                 default
 
-                    => Route::notFound()
+                    => parent::notFound()
 
             };
 

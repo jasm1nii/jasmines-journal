@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter\ChangelogSubpage;
     use JasminesJournal\Site\Views\Layouts;
 
-    class About {
+    class About extends Route {
 
         public static function dispatch(): void {
 
@@ -31,7 +31,7 @@
 
                 default
                 
-                    => Route::notFound()
+                    => parent::notFound()
 
             };
 

@@ -2,7 +2,27 @@
 
     namespace JasminesJournal\Core;
 
-    class Route {
+    trait FileRouter {
+
+        public static function getLastUpdated(string $glob_args): int {
+
+            $glob = glob($glob_args, GLOB_BRACE);
+
+            foreach ($glob as $glob_result) {
+
+                $mtime[] = filemtime($glob_result);
+
+            }
+
+            rsort($mtime);
+
+            return $mtime[0];
+
+        }
+
+    }
+
+    trait RequestRouter {
 
         public static function notFound(): void {
 
@@ -38,21 +58,13 @@
 
         }
 
-        public static function getLastUpdated(string $glob_args): int {
+    }
 
-            $glob = glob($glob_args, GLOB_BRACE);
+    class Route {
 
-            foreach ($glob as $glob_result) {
+        use FileRouter, RequestRouter;
 
-                $mtime[] = filemtime($glob_result);
-
-            }
-
-            rsort($mtime);
-
-            return $mtime[0];
-
-        }
+        protected static function dispatch(): void {}
 
     }
     

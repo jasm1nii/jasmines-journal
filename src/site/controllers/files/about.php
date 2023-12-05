@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\FileRouter;
 
-    use JasminesJournal\Core\Route as Route;
+    use JasminesJournal\Core\Route;
 
     class ChangelogSubpage extends Route {
 

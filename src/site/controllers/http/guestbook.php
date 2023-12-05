@@ -22,7 +22,7 @@
 
         }
 
-        public static function buildPage(bool $show_dialog = null): void {
+        public static function buildPage(bool $show_dialog): void {
 
             $_SESSION['page'] = self::setPageNumber();
             
@@ -47,7 +47,7 @@
                 && $_POST['name'] == strip_tags($_POST['name'])
             ) {
                     
-                new Models\GuestbookPOST();
+                new Models\GuestbookPOST;
                 
             } else {
 
@@ -72,7 +72,7 @@
     }
     
 
-    class Guestbook {
+    class Guestbook extends Route {
 
         use GuestbookGET, GuestbookPOST;
 
@@ -123,7 +123,7 @@
 
                 "POST"  => self::routePOST(),
                 "GET"   => self::routeGET(),
-                default => Route::notFound()
+                default => parent::notFound()
 
             };
 
