@@ -2,9 +2,9 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Site\Models\Guestbook;
+    use JasminesJournal\Core\GuestbookConfig;
 
-    final class GuestbookComments extends Guestbook {
+    class GuestbookComments extends GuestbookConfig {
 
         private function templateQuery(): string {
 

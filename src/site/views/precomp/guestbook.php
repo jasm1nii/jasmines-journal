@@ -61,23 +61,7 @@
 
         private function setDialog(): void {
 
-            $this->dialog = match (true) {
-
-                str_contains(REQUEST, 'has_html')
-                    => 'html_error',
-
-                str_contains(REQUEST, 'time_too_short')
-                    => 'spam_error',
-
-                str_contains(REQUEST, 'success')
-                    => 'success',
-
-                str_contains(REQUEST, 'exception')
-                    => 'exception',
-
-                default => null
-                    
-            };
+            $this->dialog = preg_split('/\/(status)=/', REQUEST)[1] ??= null;
 
         }
 

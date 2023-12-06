@@ -22,25 +22,26 @@
 
         <main>
             <section class="form">
-                {% if dialog == "success" %}
-                    <p class='dialog success'>
-                        message sent - pending approval!
-                    </p>
-                {% elseif dialog == "exception" %}
-                    <p class='dialog success exception'>
-                        your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual.
-                    </p>
-                {% elseif dialog == "html_error" %}
-                    <p class='dialog error'>
-                        the message should not contain any HTML tags!
-                    </p>
-                {% elseif dialog == "spam_error" %}
-                    <p class='dialog error'>
-                        request interval is too short - please wait a bit longer.
-                    </p>
-                {% else %}
-                    {% set dialog = null %}
-                {% endif %}
+                {% set dialog_message =
+                    {
+                        success : 'message sent - pending approval!',
+
+                        exception : 'your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual.',
+
+                        has_html : 'the message should not contain any HTML tags!',
+
+                        time_too_short : "request interval is too short - please wait a bit longer.",
+
+                        request_failed : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
+                    }
+                %}
+                {% for key, message in dialog_message %}
+                    {% if dialog is same as key %}
+                        <p class="dialog {{ dialog }}">
+                            {{ message }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
 
                 <h2>leave a trace!</h2>
                 <span>submissions will be reviewed manually.</span>

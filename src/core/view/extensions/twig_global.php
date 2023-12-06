@@ -34,7 +34,7 @@
                 [
                     'cache'         => SITE_ROOT . '/tmp/twig',
                     'auto_reload'   => true,
-                    'debug'         => false
+                    'debug'         => true
                 ]
             );
 

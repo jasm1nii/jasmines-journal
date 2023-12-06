@@ -2,7 +2,9 @@
 
     namespace JasminesJournal\Site\Models;
 
-    final class GuestbookLatest extends Guestbook {
+    use JasminesJournal\Core\GuestbookConfig;
+
+    final class GuestbookLatest extends GuestbookConfig {
 
         public ?array $comment;
 

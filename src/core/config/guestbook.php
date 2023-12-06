@@ -1,17 +1,17 @@
 <?php
 
-    namespace JasminesJournal\Site\Models;
+    namespace JasminesJournal\Core;
 
     use JasminesJournal\Core\Config;
 
-    abstract class Guestbook {
+    abstract class GuestbookConfig extends Config {
 
         protected readonly object $database;
         protected readonly string $table;
 
         final public function __construct() {
 
-            $settings = Config::getSettings('guestbook');
+            $settings = parent::getSettings('guestbook');
 
             try {
 

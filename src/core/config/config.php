@@ -1,18 +1,12 @@
 <?php
 
-    namespace JasminesJournal\Core\Config;
+    namespace JasminesJournal\Core;
 
-    class Config {
+    abstract class Config {
 
-        private static function parseINI(): array {
+        final protected static function getSettings(string $name): array {
 
-            return parse_ini_file(ENV_CONF, true);
-
-        }
-
-        public static function getSettings(string $name): array {
-
-            return self::parseINI()["{$name}"];
+            return parse_ini_file(ENV_CONF, true)["{$name}"];
 
         }
 

@@ -1,13 +1,16 @@
 <?php
 
-    namespace JasminesJournal\Core\Config;
-    use JasminesJournal\Core\Config\Config;
+    namespace JasminesJournal\Core;
+    use JasminesJournal\Core\Config;
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    class Mail extends Config {
+    abstract class MailConfig extends Config {
+
+        protected readonly array $settings;
+        protected object $client;
 
         private readonly string $host;
         private readonly string $port;
@@ -16,23 +19,14 @@
 
         private function parseConfig(): void {
 
-            $ini = parent::getSettings('email');
-
-            $this->host = $ini['host'];
-            $this->port = $ini['port'];
-            $this->user = $ini['user'];
-            $this->pass = $ini['password'];
-
-            $this->sender_addr = $ini['user'];
-            $this->sender_name = $ini['from_name'];
-            $this->recipient_addr = $ini['to'];
-            $this->recipient_name = $ini['to_name'];
+            $this->host = $this->settings['host'];
+            $this->port = $this->settings['port'];
+            $this->user = $this->settings['user'];
+            $this->pass = $this->settings['password'];
 
         }
 
-        final public function setupClient(): object {
-
-            $this->parseConfig();
+        private function setupClient(): void {
 
             $mail = new PHPMailer(true);
             $mail->isSMTP();
@@ -47,7 +41,15 @@
             $mail->Username = $this->user;
             $mail->Password = $this->pass;
 
-            return $mail;
+            $this->client = $mail;
+        }
+
+        final protected function initialize(): void {
+
+            $this->settings = parent::getSettings('email');
+
+            $this->parseConfig();
+            $this->setupClient();
 
         }
 
