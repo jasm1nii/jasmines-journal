@@ -4,7 +4,7 @@
 
     use JasminesJournal\Core\Config;
 
-    abstract class GuestbookConn {
+    abstract class Guestbook {
 
         protected readonly object $database;
         protected readonly string $table;

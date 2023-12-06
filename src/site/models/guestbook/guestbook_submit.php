@@ -3,10 +3,10 @@
     namespace JasminesJournal\Site\Models;
 
     use JasminesJournal\Core\Controller\Mail;
-    use JasminesJournal\Site\Models\GuestbookConn;
+    use JasminesJournal\Site\Models\Guestbook;
     use JasminesJournal\Site\RequestRouter;
 
-    final class GuestbookPOST extends GuestbookConn {
+    final class GuestbookPOST extends Guestbook {
 
         private string $sender_name;
         private string $sender_email;
