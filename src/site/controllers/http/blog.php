@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Views\Layouts;
 
-    class Blog extends Route {
+    final class Blog extends Route {
 
         private static function subpage(): ?string {
 
@@ -14,7 +14,7 @@
 
         }
 
-        public static function dispatch(): void {
+        final public static function dispatch(): void {
 
             match (true) {
 

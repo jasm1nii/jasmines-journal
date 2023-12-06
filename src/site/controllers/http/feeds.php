@@ -4,7 +4,7 @@
 
     use JasminesJournal\Site\Views\Layouts;
 
-    class Feeds {
+    final class Feeds extends Route {
 
         private static function redirectPOST(): void {
 
@@ -28,7 +28,7 @@
 
         }
 
-        public static function dispatch(): void {
+        final public static function dispatch(): void {
 
             match (true) {
 

@@ -4,9 +4,9 @@
 
     use JasminesJournal\Core\Route;
 
-    class Resources extends Route {
+    final class Resources extends Route {
 
-        public static function getCategory(): ?string {
+        final public static function getCategory(): ?string {
 
             $path = preg_split(('/\/(resources)/'), REQUEST);
             
@@ -14,7 +14,7 @@
 
         }
 
-        public static function getParentURL(): ?string {
+        final public static function getParentURL(): ?string {
 
             $url = preg_split('/\//', REQUEST);
 
@@ -29,7 +29,7 @@
 
         }
 
-        public static function matchIndexPattern(bool $use_index = false): ?string {
+        final public static function matchIndexPattern(bool $use_index = false): ?string {
 
             if ($use_index == true) {
 

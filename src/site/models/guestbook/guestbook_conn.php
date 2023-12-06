@@ -16,7 +16,7 @@
 
         }
 
-        protected static function connect(): ?object {
+        final protected static function connect(): ?object {
 
             $db = self::parseConfig();
 

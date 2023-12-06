@@ -4,9 +4,9 @@
 
     use JasminesJournal\Core\Route;
 
-    class ChangelogSubpage extends Route {
+    final class ChangelogSubpage extends Route {
 
-        public static function matchQuery(): ?string {
+        final public static function matchQuery(): ?string {
 
             $query = '/(changelog)\/(\d\d\d\d)\/(\d+)/';
 
@@ -14,7 +14,7 @@
 
         }
 
-        public static function file(): ?string {
+        final public static function file(): ?string {
 
             return SITE_ROOT . DIR['content'] . self::matchQuery() . ".html.twig";
 

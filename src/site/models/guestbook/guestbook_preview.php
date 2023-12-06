@@ -2,9 +2,9 @@
 
     namespace JasminesJournal\Site\Models;
 
-    class GuestbookLatest extends GuestbookConn {
+    final class GuestbookLatest extends GuestbookConn {
 
-        public static function get() {
+        final public static function get() {
 
             $guestbook_show = parent::connect();
 

@@ -6,7 +6,7 @@
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Site\Views\Layouts;
 
-    class Resources extends Route {
+    final class Resources extends Route {
 
         private static function matchCategoryPage(): void {
 
@@ -26,7 +26,7 @@
 
         }
 
-        public static function dispatch(): void {
+        final public static function dispatch(): void {
 
             match (true) {
 

@@ -15,7 +15,7 @@
 
         }
 
-        protected static function commentID(): int {
+        final protected static function commentID(): int {
 
             return preg_split('/guestbook\/comment\//', REQUEST)[1];
 
@@ -23,9 +23,9 @@
 
     }
 
-    class GuestbookComments extends GuestbookView {
+    final class GuestbookComments extends GuestbookView {
 
-        public static function getRows(int $row_limit): ?array {
+        final public static function getRows(int $row_limit): ?array {
 
             $database = parent::connect();
             $base_query = parent::templateQuery(parent::getTable());
@@ -52,9 +52,9 @@
 
     }
 
-    class GuestbookThread extends GuestbookView {
+    final class GuestbookThread extends GuestbookView {
 
-        public static function getThread(): ?array {
+        final public static function getThread(): ?array {
 
             $database   = parent::connect();
             $base_query = parent::templateQuery(parent::getTable());
@@ -73,9 +73,9 @@
 
     }
 
-    class GuestbookThreadReply extends GuestbookView {
+    final class GuestbookThreadReply extends GuestbookView {
 
-        public static function getThreadReplies(): ?array {
+        final public static function getThreadReplies(): ?array {
 
             $database = parent::connect();
             $base_query = parent::templateQuery(parent::getTable());
@@ -94,9 +94,9 @@
         }
     }
 
-    class GuestbookRowCount extends GuestbookView {
+    final class GuestbookRowCount extends GuestbookView {
 
-        public static function getTotal(): ?int {
+        final public static function getTotal(): ?int {
 
             $database = parent::connect();
             $table    = parent::getTable();

@@ -71,7 +71,7 @@
 
     }
 
-    class Guestbook extends GuestbookPOST {
+    final class Guestbook extends GuestbookPOST {
 
         private static function routeGET(): void {
             
@@ -112,7 +112,7 @@
 
         }
 
-        public static function dispatch(): void {
+        final public static function dispatch(): void {
 
             session_start();
             

@@ -6,9 +6,9 @@
     use JasminesJournal\Site\FileRouter\ChangelogSubpage;
     use JasminesJournal\Site\Views\Layouts;
 
-    class About extends Route {
+    final class About extends Route {
 
-        public static function dispatch(): void {
+        final public static function dispatch(): void {
 
             match (true) {
 

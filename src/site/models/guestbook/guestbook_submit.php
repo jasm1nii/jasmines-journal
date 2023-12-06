@@ -9,14 +9,22 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    class GuestbookPOST extends GuestbookConn {
+    final class GuestbookPOST extends GuestbookConn {
 
         private string $sender_name;
         private string $sender_email;
         private string $sender_url;
         private string $sender_message;
 
-        public function __construct() {
+        final public function __construct() {
+
+            $this->sanitizeInput();
+            $this->sendToDB();
+            $this->notifySystem();
+
+        }
+
+        private function sanitizeInput(): void {
 
             if ($_POST['name'] == null) {
                 
@@ -36,9 +44,6 @@
 
             $this->sender_message
                 = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
-
-            $this->sendToDB();
-            $this->notifySystem();
 
         }
 
