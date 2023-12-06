@@ -13,9 +13,7 @@
         private string $sender_url;
         private string $sender_message;
 
-        private readonly string $email_subject;
-        private readonly string $email_html_body;
-        private readonly string $email_plaintext_body;
+        private object $mail;
 
         final public function processInput(): void {
 
@@ -83,9 +81,11 @@
 
         private function composeEmail(): void {
 
-            $this->email_subject = "guestbook message received!";
+            $this->mail = new Mail();
 
-            $this->email_html_body =
+            $this->mail->subject = "guestbook message received!";
+
+            $this->mail->html_body =
                 "<ul>
                     <li>Name: {$this->sender_name}</li>
                     <li>Email: {$this->sender_email}</li>
@@ -93,19 +93,16 @@
                     <li>Message: {$this->sender_message}</li>
                 </ul>";
                     
-            $this->email_plaintext_body = "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
-
+            $this->mail->plaintext_body =
+                "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
+            
         }
 
         private function sendEmail(): void {
 
             try {
 
-                new Mail(
-                    subject: $this->email_subject,
-                    html_body: $this->email_html_body,
-                    plaintext_body: $this->email_plaintext_body
-                );
+                $this->mail->sendMessage();
                 
                 RequestRouter\Guestbook::sendHeader('success');
                 

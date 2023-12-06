@@ -1,37 +1,22 @@
 <?php
 
-    namespace JasminesJournal\Core\Controller;
+    namespace JasminesJournal\Core\Config;
+    use JasminesJournal\Core\Config\Config;
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    use JasminesJournal\Core\Config;
-
-    class Mail {
+    class Mail extends Config {
 
         private readonly string $host;
         private readonly string $port;
         private readonly string $user;
         private readonly string $pass;
 
-        private string $subject;
-        private string $html_body;
-        private string $plaintext_body;
-
-        final public function __construct(string $subject, string $html_body, string $plaintext_body) {
-
-            $this->subject = $subject;
-            $this->html_body = $html_body;
-            $this->plaintext_body = $plaintext_body;
-
-            $this->sendMessage();
-
-        }
-
         private function parseConfig(): void {
 
-            $ini = Config::getSettings('email');
+            $ini = parent::getSettings('email');
 
             $this->host = $ini['host'];
             $this->port = $ini['port'];
@@ -45,7 +30,7 @@
 
         }
 
-        private function setupMailer(): object {
+        final public function setupClient(): object {
 
             $this->parseConfig();
 
@@ -62,22 +47,7 @@
             $mail->Username = $this->user;
             $mail->Password = $this->pass;
 
-            $mail->setFrom($this->sender_addr, $this->sender_name);
-            $mail->addAddress($this->recipient_addr, $this->recipient_name);
-
             return $mail;
-
-        }
-
-        private function sendMessage(): void {
-
-            $mail = $this->setupMailer();
-            
-            $mail->Subject  = $this->subject;
-            $mail->Body     = $this->html_body;
-            $mail->AltBody  = $this->plaintext_body;
-            
-            $mail->send();
 
         }
 
