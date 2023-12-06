@@ -12,13 +12,16 @@
 
         protected string $layout = DIR['layouts'] . "home/home_layout.html.twig";
 
-        const INCLUDES  = DIR['layouts'] . "home/includes/";
+        private const INCLUDES  = DIR['layouts'] . "home/includes/";
 
         private static function getNewestGuestbookMessage(): ?array {
 
             try {
 
-                return GuestbookLatest::get();
+                $msg = new GuestbookLatest();
+                $msg->get();
+
+                return $msg->comment;
 
             } catch (\PDOException) {
 

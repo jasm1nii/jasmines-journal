@@ -4,29 +4,28 @@
 
     final class GuestbookLatest extends GuestbookConn {
 
-        final public static function get() {
+        public ?array $comment;
 
-            $guestbook_show = parent::connect();
+        final public function get(): void {
 
-            if ($guestbook_show !== null) {
+            if ($this->database !== null) {
 
-                $table = parent::getTable();
-                $sql_comment = $guestbook_show->prepare(
+                $sql = $this->database->prepare(
                     "SELECT `ID`, `Date`, `Name`, `Comment`
-                    FROM `$table`
+                    FROM `{$this->table}`
                     WHERE `Moderation Status`='Approved' AND `User Privilege`='Guest'
                     ORDER BY `ID` DESC
                     LIMIT 1"
                 );
 
-                $sql_comment->execute();
-                $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
+                $sql->execute();
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
-                return $sql_comment->fetchAll()[0];
+                $this->comment = $sql->fetchAll()[0];
 
             } else {
 
-                return;
+                $this->comment = null;
 
             }
 

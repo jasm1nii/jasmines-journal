@@ -3,92 +3,120 @@
     namespace JasminesJournal\Site\Views\Layouts;
     
     use JasminesJournal\Core\Views\Render\Layout;
-
     use JasminesJournal\Site\Models\GuestbookComments;
-    use JasminesJournal\Site\Models\GuestbookThread;
-    use JasminesJournal\Site\Models\GuestbookThreadReply;
-    use JasminesJournal\Site\Models\GuestbookRowCount;
-
 
     final class Guestbook extends Layout {
 
         protected string $layout = DIR['layouts'] . "guestbook/guestbook_layout.html.twig";
-        
         protected static string $includes_path = DIR['layouts'] . "guestbook";
 
-        private function setDialog() {
+        private readonly ?object $data;
+        private readonly int $current_page;
 
-            if ($this->show_dialog == true && isset($_SESSION['guestbook'])) {
+        private ?string $dialog;
+        private ?array $comments;
+        private ?array $thread_parent;
+        private ?array $thread_replies;
 
-                return match (true) {
+        final public function __construct(bool $show_dialog = false, int $page_num) {
 
-                    str_contains(REQUEST, 'has_html')
-                        => 'html_error',
+            $this->current_page = $page_num;
 
-                    str_contains(REQUEST, 'time_too_short')
-                        => 'spam_error',
+            if ($show_dialog == true && !isset($_SESSION['guestbook'])) {
 
-                    str_contains(REQUEST, 'success')
-                        => 'success',
+                header("Location: /guestbook");
 
-                    str_contains(REQUEST, 'exception')
-                        => 'exception'
-                    
-                };
-            
             } else {
 
-                return null;
-
+                $this->buildPage();
+                session_unset();
+                
             }
 
         }
 
-        private function getCommentKeys(): ?array {
+        private function buildPage(): void {
 
-            $msg_arr = GuestbookComments::getRows($this->page_num);
+            $this->data = new GuestbookComments();
+
+            if (str_contains(REQUEST, "comment")) {
+
+                $this->getThreadParent();
+                $this->getThreadReplies();
+
+            } else {
+
+                $this->thread_parent = null;
+                $this->thread_replies = null;
+
+            }
+
+            $this->setDialog();
+            $this->getPageNumbers();
+            $this->getComments();
+
+            $this->render();
+
+        }
+
+        private function setDialog(): void {
+
+            $this->dialog = match (true) {
+
+                str_contains(REQUEST, 'has_html')
+                    => 'html_error',
+
+                str_contains(REQUEST, 'time_too_short')
+                    => 'spam_error',
+
+                str_contains(REQUEST, 'success')
+                    => 'success',
+
+                str_contains(REQUEST, 'exception')
+                    => 'exception',
+
+                default => null
+                    
+            };
+
+        }
+
+        private function getComments(): void {
+
+            $msg_data = $this->data;
+            $msg_arr = $msg_data->getMessages($this->current_page);
 
             if ($msg_arr !== null) {
 
                 for ($i=0; $i < count($msg_arr); $i++) {
 
-                    $comment[] = $msg_arr[$i];
+                    $comments[] = $msg_arr[$i];
 
                 }
 
             }
 
-            return $comment ??= null;
+            $this->comments = $comments ??= null;
 
         }
 
-        private function getThreadParent(): ?array {
+        private function getThreadParent(): void {
 
-            return str_contains(REQUEST, "comment") ? GuestbookThread::getThread() : null;
+            $this->thread_parent = $this->data->getThread();
 
         }
 
-        private function getThreadReplies(): ?array {
+        private function getThreadReplies(): void {
 
-            if (str_contains(REQUEST, "comment")) {
+            $replies = $this->data->getThreadReplies();
 
-                $reply = GuestbookThreadReply::getThreadReplies();
-
-                if (count($reply) !== 0) {
-
-                    $result = $reply;
-
-                }
-
-            }
-            
-            return $result ??= null;
+            $this->thread_replies = count($replies) !== 0 ? $replies : null;
             
         }
 
-        private function getPageNumbers(): ?int {
+        private function getPageNumbers(): void {
 
-            $total_rows = GuestbookRowCount::getTotal();
+            $total_rows = $this->data->getTotal();
 
             if ($total_rows !== null) {
 
@@ -96,44 +124,26 @@
 
                 // remove the last page if it's blank due to perfect division:
 
-                return $pages * 10 == $total_rows ? $pages - 1 : $pages;
+                $this->total_pages = $pages * 10 == $total_rows ? $pages - 1 : $pages;
 
             } else {
 
-                return null;
+                $this->total_pages = null;
                 
             }
             
         }
 
-        final public function __construct(bool $show_dialog = false, int $page_num) {
-
-            $this->show_dialog  = $show_dialog;
-            $this->page_num     = $page_num;
-
-            if ($this->show_dialog == true && !isset($_SESSION['guestbook'])) {
-
-                header("Location: /guestbook");
-
-            } else {
-
-                $this->render();
-                session_unset();
-                
-            }
-
-        }
-
         final protected function render(): void {
 
             $vars = [
-                    'dialog'         => $this->setDialog(),
-                    'thread_parent'  => $this->getThreadParent(),
-                    'thread_replies' => $this->getThreadReplies(),
+                    'dialog'         => $this->dialog,
+                    'thread_parent'  => $this->thread_parent,
+                    'thread_replies' => $this->thread_replies,
                     'current_page'   => $_SESSION['page'],
                     'request_time'   => $_SERVER['REQUEST_TIME'],
-                    'comment_pages'  => $this->getPageNumbers(),
-                    'comments'       => $this->getCommentKeys()
+                    'comment_pages'  => $this->total_pages,
+                    'comments'       => $this->comments
                 ];
 
             parent::Twig($this->layout, $vars, self::$includes_path);

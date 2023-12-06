@@ -17,7 +17,6 @@
 
                     => new Layouts\ResourcesSubpage(),
 
-
                 default
                 
                     => parent::notFound()

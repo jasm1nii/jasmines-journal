@@ -2,12 +2,9 @@
 
     namespace JasminesJournal\Site\Models;
 
+    use JasminesJournal\Core\Controller\Mail;
     use JasminesJournal\Site\Models\GuestbookConn;
     use JasminesJournal\Site\RequestRouter;
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
 
     final class GuestbookPOST extends GuestbookConn {
 
@@ -16,11 +13,25 @@
         private string $sender_url;
         private string $sender_message;
 
-        final public function __construct() {
+        private readonly string $email_subject;
+        private readonly string $email_html_body;
+        private readonly string $email_plaintext_body;
 
-            $this->sanitizeInput();
-            $this->sendToDB();
-            $this->notifySystem();
+        final public function processInput(): void {
+
+            try {
+
+                $this->sanitizeInput();
+                $this->sendToDB();
+
+                $this->composeEmail();
+                $this->sendEmail();
+
+            } catch (Exception) {
+
+                RequestRouter\Guestbook::sendHeader('error');
+
+            }
 
         }
 
@@ -49,14 +60,14 @@
 
         private function sendToDB(): void {
 
-            $guestbook_post = parent::connect();
-            $table = parent::getTable();
+            $sql_incr = $this->database->prepare(
+                "ALTER TABLE `{$this->table}` AUTO_INCREMENT=0"
+            );
 
-            $sql_incr = $guestbook_post->prepare("ALTER TABLE `$table`AUTO_INCREMENT=0");
             $sql_incr->execute();
 
-            $sql_post = $guestbook_post->prepare(
-                "INSERT INTO `$table` (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
+            $sql_post = $this->database->prepare(
+                "INSERT INTO `{$this->table}` (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
                 VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
@@ -68,50 +79,39 @@
 
             $sql_post->execute();
 
-            $guestbook_post = null;
+        }
+
+        private function composeEmail(): void {
+
+            $this->email_subject = "guestbook message received!";
+
+            $this->email_html_body =
+                "<ul>
+                    <li>Name: {$this->sender_name}</li>
+                    <li>Email: {$this->sender_email}</li>
+                    <li>URL: {$this->sender_url}</li>
+                    <li>Message: {$this->sender_message}</li>
+                </ul>";
+                    
+            $this->email_plaintext_body = "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
 
         }
 
-        private function notifySystem(): void {
-
-            $ini = parse_ini_file(ENV_CONF, true)['email'];
-            $mail = new PHPMailer(true);
+        private function sendEmail(): void {
 
             try {
 
-                $mail->isSMTP();
-                $mail->SMTPAuth = true;
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                $mail->CharSet = "UTF-8";
-
-                $mail->Host = $ini['host'];
-                $mail->Port = $ini['port'];
-                $mail->Username = $ini['user'];
-                $mail->Password = $ini['password'];
-
-                $mail->setFrom($ini['user'], $ini['from_name']);
-                $mail->addAddress($ini['to'], $ini['to_name']);
-                $mail->isHTML(true);
-
-                $mail->Subject = "guestbook message received!";
-                $mail->Body =
-                    "<ul>
-                        <li>Name: {$this->sender_name}</li>
-                        <li>Email: {$this->sender_email}</li>
-                        <li>URL: {$this->sender_url}</li>
-                        <li>Message: {$this->sender_message}</li>
-                    </ul>";
-                $mail->AltBody = "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
+                new Mail(
+                    subject: $this->email_subject,
+                    html_body: $this->email_html_body,
+                    plaintext_body: $this->email_plaintext_body
+                );
                 
-                $mail->send();
-
                 RequestRouter\Guestbook::sendHeader('success');
                 
             } catch (Exception) {
 
                 RequestRouter\Guestbook::sendHeader('exception');
-
-                return;
 
             }
             

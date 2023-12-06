@@ -4,43 +4,39 @@
 
     use JasminesJournal\Site\Models\GuestbookConn;
 
-    abstract class GuestbookView extends GuestbookConn {
+    final class GuestbookComments extends GuestbookConn {
 
-        protected static function templateQuery(string $table): ?string {
+        private function templateQuery(): string {
 
             return 
                 "SELECT `ID`, `Parent ID`, `Date`, `Name`, `Website`,`Comment`, `User Privilege`
-                FROM `$table`
+                FROM `{$this->table}`
                 WHERE `Moderation Status`='Approved'";
 
         }
 
-        final protected static function commentID(): int {
+        private function commentID(): int {
 
-            return preg_split('/guestbook\/comment\//', REQUEST)[1];
+            preg_match('/\d+/', REQUEST, $matches);
+
+            return $matches[0];
 
         }
 
-    }
+        final public function getMessages(int $row_limit): ?array {
 
-    final class GuestbookComments extends GuestbookView {
+            $rows = ($row_limit - 1) * 10;
 
-        final public static function getRows(int $row_limit): ?array {
+            if ($this->database !== null) {
 
-            $database = parent::connect();
-            $base_query = parent::templateQuery(parent::getTable());
-            $rows     = ($row_limit - 1) * 10;
-
-            if ($database !== null) {
-
-                $sql_show = $database->prepare(
-                    $base_query . "ORDER BY `ID` DESC LIMIT $rows, 10"
+                $sql = $this->database->prepare(
+                    $this->templateQuery() . "ORDER BY `ID` DESC LIMIT $rows, 10"
                 );
 
-                $sql_show->execute();
-                $sql_show->setFetchMode(\PDO::FETCH_ASSOC);
+                $sql->execute();
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
-                return $sql_show->fetchAll();
+                return $sql->fetchAll();
 
             } else {
                 
@@ -50,75 +46,52 @@
 
         }
 
-    }
+        final public function getTotal(): ?int {
 
-    final class GuestbookThread extends GuestbookView {
+            if ($this->database !== null) {
 
-        final public static function getThread(): ?array {
-
-            $database   = parent::connect();
-            $base_query = parent::templateQuery(parent::getTable());
-            $comment_id = parent::commentID();
-
-            $sql_comment = $database->prepare(
-                $base_query . "AND `ID`=$comment_id"
-            );
-
-            $sql_comment->execute();
-            $sql_comment->setFetchMode(\PDO::FETCH_ASSOC);
-
-            return $sql_comment->fetchAll()[0];
-
-        }
-
-    }
-
-    final class GuestbookThreadReply extends GuestbookView {
-
-        final public static function getThreadReplies(): ?array {
-
-            $database = parent::connect();
-            $base_query = parent::templateQuery(parent::getTable());
-            $comment_id = parent::commentID();
-
-            $sql_reply = $database->prepare(
-                $base_query
-                . "AND `Parent ID`=$comment_id ORDER BY `ID` ASC"
-            );
-
-            $sql_reply->execute();
-            $sql_reply->setFetchMode(\PDO::FETCH_ASSOC);
-
-            return $sql_reply->fetchAll();
-
-        }
-    }
-
-    final class GuestbookRowCount extends GuestbookView {
-
-        final public static function getTotal(): ?int {
-
-            $database = parent::connect();
-            $table    = parent::getTable();
-
-            if ($database !== null) {
-
-                $sql_count = $database->prepare(
+                $sql = $this->database->prepare(
                     "SELECT COUNT(*) as total
-                    FROM `$table`
+                    FROM `{$this->table}`
                     WHERE `Moderation Status`='Approved'"
                 );
 
-                $sql_count->execute();
-                $sql_count->setFetchMode(\PDO::FETCH_ASSOC);
+                $sql->execute();
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
-                return $sql_count->fetchAll()[0]['total'];
+                return $sql->fetchAll()[0]['total'];
 
             } else {
 
                 return null;
 
             }
+
+        }
+
+        final public function getThread(): array {
+
+            $sql = $this->database->prepare(
+                $this->templateQuery() . "AND `ID`={$this->commentID()}"
+            );
+
+            $sql->execute();
+            $sql->setFetchMode(\PDO::FETCH_ASSOC);
+
+            return $sql->fetchAll()[0];
+
+        }
+
+        final public function getThreadReplies(): array {
+
+            $sql = $this->database->prepare(
+                $this->templateQuery() . "AND `Parent ID`={$this->commentID()} ORDER BY `ID` ASC"
+            );
+
+            $sql->execute();
+            $sql->setFetchMode(\PDO::FETCH_ASSOC);
+
+            return $sql->fetchAll();
 
         }
 

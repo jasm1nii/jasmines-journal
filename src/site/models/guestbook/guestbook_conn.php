@@ -2,44 +2,35 @@
 
     namespace JasminesJournal\Site\Models;
 
+    use JasminesJournal\Core\Config;
+
     abstract class GuestbookConn {
 
-        private static function parseConfig(): ?array {
+        protected readonly object $database;
+        protected readonly string $table;
 
-            return parse_ini_file(ENV_CONF, true);
+        final public function __construct() {
 
-        }
-
-        protected static function getTable(): ?string {
-
-            return self::parseConfig()['guestbook']['table'];
-
-        }
-
-        final protected static function connect(): ?object {
-
-            $db = self::parseConfig();
-
-            $servername = "localhost";
-            $dbname = $db['guestbook']['name'];
-            $user = $db['guestbook']['user'];
-            $pass = $db['guestbook']['password'];
+            $settings = Config::getSettings('guestbook');
 
             try {
 
-                return new \PDO(
-                    "mysql:host=$servername;dbname=$dbname",
-                    $user,
-                    $pass,
+                $this->database = new \PDO(
+                    "mysql:host=localhost;
+                    dbname={$settings['name']}",
+                    $settings['user'],
+                    $settings['password'],
                     [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
                 );
 
             } catch (\PDOException) {
 
-                return null;
-                
+                $this->database = null;
+
             }
-        
+
+            $this->table = Config::getSettings('guestbook')['table'];
+
         }
         
     }

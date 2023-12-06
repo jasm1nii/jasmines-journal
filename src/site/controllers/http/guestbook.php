@@ -12,7 +12,9 @@
 
             if (str_starts_with(REQUEST, "/guestbook/page")) {
 
-                return preg_split('/guestbook\/page\//', REQUEST)[1];
+                preg_match('/\d+/', REQUEST, $matches);
+
+                return $matches[0];
 
             } else {
 
@@ -47,7 +49,8 @@
                 && $_POST['name'] == strip_tags($_POST['name'])
             ) {
                     
-                new Models\GuestbookPOST;
+                $post = new Models\GuestbookPOST;
+                $post->processInput();
                 
             } else {
 
@@ -60,7 +63,7 @@
         public static function sendHeader(string $status): void {
 
             $url = [
-                'status'    => $status,
+                'status' => $status,
             ];
 
             $query = http_build_query($url);
@@ -85,14 +88,14 @@
 
                 str_contains(REQUEST, 'status')
 
-                    => parent::buildPage($show_dialog = true),
+                    => parent::buildPage(show_dialog: true),
 
 
                 REQUEST == "/guestbook",
                 str_contains(REQUEST, "/page"),
                 str_contains(REQUEST, "/comment"),
 
-                    => parent::buildPage($show_dialog = false),
+                    => parent::buildPage(show_dialog: false),
 
                 default
 

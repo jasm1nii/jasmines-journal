@@ -23,7 +23,6 @@
         private function getIncludes(): void {
 
             $this->includes = [
-
                 'mutuals'
                     => self::$includes_path . "/link-gallery_mutuals.html.twig",
 
@@ -32,7 +31,6 @@
 
                 'etc'
                     => self::$includes_path . "/link-gallery_other-sites.html.twig"
-
             ];
 
         }
@@ -40,7 +38,7 @@
         final protected function render(): void {
 
             $vars = [
-                'updated'   => Route::getLastUpdated(SITE_ROOT . static::$includes_path . "/*"),
+                'updated'   => Route::getLastUpdated(SITE_ROOT . self::$includes_path . "/*"),
                 'mutuals'   => $this->includes['mutuals'],
                 '_32bit'    => $this->includes['32bit'],
                 'etc'       => $this->includes['etc']
