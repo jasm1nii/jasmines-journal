@@ -17,9 +17,7 @@
                 updated <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
             </p>
         </hgroup>
-        <nav aria-label="primary">
-            {{ nav|raw }}
-        </nav>
+        <nav aria-label="primary">{{ nav|raw }}</nav>
     </header>
     <div>
         <main>

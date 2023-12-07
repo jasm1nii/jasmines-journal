@@ -20,7 +20,8 @@
             try {
 
                 $this->sanitizeInput();
-                $this->sendToDB();
+                $this->alterTable();
+                $this->insertIntoTable();
 
                 $this->composeEmail();
                 $this->sendEmail();
@@ -56,26 +57,30 @@
 
         }
 
-        private function sendToDB(): void {
+        private function alterTable(): void {
 
-            $sql_incr = $this->database->prepare(
+            $this->database->prepare(
                 "ALTER TABLE `{$this->table}` AUTO_INCREMENT=0"
             );
 
-            $sql_incr->execute();
+            $this->database->execute();
 
-            $sql_post = $this->database->prepare(
+        }
+
+        private function insertIntoTable(): void {
+
+            $this->database->prepare(
                 "INSERT INTO `{$this->table}` (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
                 VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
-            $sql_post->bindParam(':name', $this->sender_name);
-            $sql_post->bindParam(':email', $this->sender_email);
-            $sql_post->bindParam(':url', $this->sender_url);
-            $sql_post->bindParam(':message', $this->sender_message);
-            $sql_post->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
+            $this->database->bindParam(':name', $this->sender_name);
+            $this->database->bindParam(':email', $this->sender_email);
+            $this->database->bindParam(':url', $this->sender_url);
+            $this->database->bindParam(':message', $this->sender_message);
+            $this->database->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
 
-            $sql_post->execute();
+            $this->database->execute();
 
         }
 

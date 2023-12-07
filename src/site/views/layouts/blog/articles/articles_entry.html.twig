@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ include('@includes/head.shtml') }}
-
-    <title>{% if title is defined %}{{ title }}{% else %}untitled{% endif %} | jasmine's b(rain)log</title>
+    <title>{{ title is defined ? title : "untitled" }} | jasmine's b(rain)log</title>
 
     <link rel="stylesheet" href="/_assets/stylesheets/blog_article_entry.css" type="text/css" media="all"/>
-
     {% if custom_style == true %}
       <link rel="stylesheet" href="/_assets/stylesheets/{{ slug|trim('/entry', 'right') }}/style.css" type="text/css" media="all"/>
     {% endif %}
@@ -19,8 +17,7 @@
     {% endif %}
 
     <meta name="author" content="jasmine"/>
-    <meta name="keywords" content="{% if keywords is defined %}{{ keywords }}{% else %}blog{% endif %}"/>
-
+    <meta name="keywords" content="{{ keywords is defined ? keywords : "blog" }}"/>
     {% if summary is defined %}
       <meta name="description" content="{{ summary }}"/>
     {% endif %}
@@ -31,17 +28,13 @@
         <hgroup>
           <h1>b(rain)log entry</h1>
         </hgroup>
-        <nav aria-label="primary">
-          {{ nav|raw }}
-        </nav>
+        <nav aria-label="primary">{{ nav|raw }}</nav>
       </header>
 
       <main>
         <article class="h-entry">
           <hgroup>
-            <h2 class="p-name">
-              {% if title is defined %}{{ title }}{% else %}untitled{% endif %}
-            </h2>
+            <h2 class="p-name">{{ title is defined ? title : "untitled" }}</h2>
 
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
@@ -56,11 +49,7 @@
             {% endif %}
           </hgroup>
           
-          <section class="e-content">
-            {% block content %}
-            {% endblock %}
-          </section>
-
+          <section class="e-content">{{ block('content') }}</section>
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
         </article>
 

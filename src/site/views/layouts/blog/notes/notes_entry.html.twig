@@ -4,8 +4,7 @@
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		{{ include('@includes/head.shtml') }}
-		<title>{{ published }}
-			| jasmine's notes</title>
+		<title>{{ published }} | jasmine's notes</title>
 		<link rel="stylesheet" href="/_assets/stylesheets/blog_note_entry.css" type="text/css" media="all"/>
 
 		{% if custom_style == true %}
@@ -18,26 +17,19 @@
 		{% endif %}
 
 		<meta name="author" content="jasmine"/>
-		<meta name="keywords" content="{% if keywords is defined %}{% for keyword in keywords %}{{ keyword }}, {% endfor %}microblog{% else %}microblog{% endif %}"/>
+		<meta name="keywords" content="{{ keywords is defined ? keywords|join(', ') ~ ", microblog" : "microblog" }}"/>
 		<meta name="description" content="note from {{ published }}"/>
 	</head>
 	<body>
 		<div class="layout">
 			<header>
-				<hgroup>
-					<h1>jasmine&apos;s notes</h1>
-				</hgroup>
-				<nav aria-label="primary">
-					{{ nav|raw }}
-				</nav>
+				<hgroup><h1>jasmine&apos;s notes</h1></hgroup>
+				<nav aria-label="primary">{{ nav|raw }}</nav>
 			</header>
-
 			<main>
 				<article>
 					<img src="/_assets/media/main/oingo-boingo.png" alt="" class="u-photo" width="80" height="80"/>
-					<h2>
-						<time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time>
-					</h2>
+					<h2><time class="dt-published" datetime="{{ published|date() }}">{{ published }}</time></h2>
 					<section class="h-entry">
 						{% if updated is defined %}
 							<time class="dt-updated" datetime="{{ updated|date() }}">updated
@@ -52,29 +44,19 @@
 
 				<aside class="feed-links">
 					<p>
-						<span aria-hidden="true">📰</span>
-						subscribe via
-						<a href="/notes.xml">atom</a>
-						/
-						<span aria-hidden="true">🐘</span>
-						follow via
-						<a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+						<span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
 					</p>
 				</aside>
 
 				<section id="webmentions">
 					<h3>webmentions</h3>
 					{% if webmentions_301 == true %}
-						<p>
-							this post has moved to a new URL - webmentions from the previous one could not be carried over.
-						</p>
+						<p>this post has moved to a new URL - webmentions from the previous one could not be carried over.</p>
 					{% endif %}
 					{% if enable_webmentions == true %}
 						<s-e-i-a></s-e-i-a>
 					{% else %}
-						<p>
-							the displaying of webmentions is disabled.
-						</p>
+						<p>the displaying of webmentions is disabled.</p>
 					{% endif %}
 				</section>
 
@@ -83,9 +65,7 @@
 					{% if enable_comments == true %}
 						<div id="comment-section" data-comments-id="notes-{{ published|date("ymd") }}"></div>
 					{% else %}
-						<p>
-							comments are disabled.
-						</p>
+						<p>comments are disabled.</p>
 					{% endif %}
 				</section>
 			</main>

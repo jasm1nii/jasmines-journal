@@ -24,12 +24,7 @@
             <article>
                 <section>
                     <h2>{{ title }}</h2>
-                    {% if content != null %}
-                        {{ content }}
-                    {% else %}
-                        {% block content %}
-                        {% endblock %}
-                    {% endif %}
+                    {{ content != null ? content : block('content') }}
                 </section>
             </article>
         </main>

@@ -15,14 +15,12 @@
             <header>
                 <hgroup>
                     <p>jasmine's resources</p>
-                    </p>
                     {% if parent_name is defined %}
                         <p id="parent-category-name">{{ parent_name }}</p>
                     {% endif %}
                     <h1>{{ title }}</h1>
                     <p>
-                        last updated:
-                        <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+                        last updated: <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
                     </p>
                 </hgroup>
                 <nav>
@@ -46,11 +44,7 @@
                             return to <a href="{{ parent }}">{{ parent }}</a>
                         </nav>
                     {% endif %}
-                    {% if content != null %}
-                        {{ content|raw }}
-                    {% else %}
-                        {{ block('content') }}
-                    {% endif %}
+                    {{ content != null ? content|raw : block('content') }}
                 </article>
             </main>
         </div>

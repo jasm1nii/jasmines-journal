@@ -106,7 +106,7 @@
 
         }
 
-        private function setOuputPath(): void {
+        private function setOutputPath(): void {
 
             if (self::setDebug() == true) {
 

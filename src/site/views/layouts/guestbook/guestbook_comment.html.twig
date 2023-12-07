@@ -1,19 +1,18 @@
-<section class='message {% if comment_style is defined %}{{ comment_style }}{% endif %}'>
+{% set id			= comment.ID %}
+{% set parent_id	= attribute(comment, 'Parent ID') %}
+{% set name			= comment.Name|striptags|raw %}
+{% set url			= comment.Website %}
+{% set status		= attribute(comment, 'User Privilege') %}
+
+<section class='message {{ comment_style is defined ? comment_style }}'>
 	<hgroup>
-		<h2 id="{{ comment.ID }}">
-			<a href='/guestbook/comment/{{ comment.ID }}'>#{{ comment.ID }}</a>
-			&#x2022;
-			{% if comment.Website != null %}
-				<a href="{{ comment.Website }}">{{ comment.Name|striptags|raw }}</a>
-			{% else %}
-				{{ comment.Name|e }}
-			{% endif %}
-			{% if attribute(comment, 'User Privilege') == 'Admin' %}
-				👑
-			{% endif %}
-			{% if attribute(comment, 'Parent ID') != null %}
+		<h2 id="{{ id }}">
+			<a href='/guestbook/comment/{{ id }}'>#{{ id }}</a> &#x2022;
+			{{ url != null ? "<a href='#{url}'>#{name}</a>"|raw : name }}
+			{{ status == 'Admin' ? "👑" }}
+			{% if parent_id != null %}
 				<span class='reply-context'>
-					(in reply to <a href='/guestbook/comment/{{ attribute(comment, 'Parent ID') }}'>#{{ attribute(comment, 'Parent ID') }}</a>)
+					(in reply to <a href='/guestbook/comment/{{ parent_id }}'>#{{ parent_id }}</a>)
 				</span>
 			{% endif %}
 		</h2>
