@@ -490,6 +490,7 @@ button:active, .button-style:active {
 }
 
 .p-locality {
+  display: block;
   font-size: 1.3em;
 }
 

@@ -2,6 +2,7 @@
 
     namespace JasminesJournal\Site\RequestRouter;
 
+    use JasminesJournal\Core\Route;
     use JasminesJournal\Site\Views\Layouts;
 
     final class Feeds extends Route {
