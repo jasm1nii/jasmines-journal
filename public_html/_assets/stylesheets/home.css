@@ -15,37 +15,146 @@
   font-display: swap;
   src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
 }
+nav {
+  margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  font-size: 1.15em;
+  letter-spacing: 1px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+nav li {
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  white-space: nowrap;
+}
+nav li:last-child::after {
+  content: "✧";
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  color: pink;
+  font-weight: normal;
+}
+nav li::before {
+  content: "✧";
+  font-size: 1.3em;
+  margin-right: 0.5em;
+  color: pink;
+  font-weight: normal;
+}
+nav a {
+  text-decoration: none;
+  color: purple;
+  padding: 0px 5px 3px 5px;
+}
+nav::-webkit-scrollbar-thumb {
+  background-color: rgba(161, 117, 197, 0.4509803922);
+}
+
+footer {
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2em;
+  text-align: center;
+  font-size: 1em;
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 500px;
+}
+footer time {
+  display: inline;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+footer li {
+  display: inline-block;
+  margin-right: 15px;
+}
+footer li::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin-right: 15px;
+}
+footer li:first-child:before {
+  content: none;
+}
+footer a img {
+  text-decoration: none;
+}
+
 :root {
   --font-1: "Instrument Sans", sans-serif;
   --font-2: "Besley", serif;
   --font-3: "Inconsolata", monospace;
-  --font-color-light: #3b0c3b;
+  --font-color-light: #4e494e;
   --h1-light: #5a5463;
   --h2-light: #712357;
   --h3-light: #631863;
   --link-color-light: darkmagenta;
-  --link-hover-bg-light: rgb(216, 112, 147);
+  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
   --document-color-light: thistle;
   --page-color-light: #fff6f6;
   --section-card-light: rgb(255, 239, 239);
-  --site-updates-bg-light: #fff5f5;
   --footer-font: rgb(97, 58, 97);
-  --overflow-bg-light: rgb(255, 244, 246);
-  --overflow-border: 1px solid rgb(170, 99, 111);
+  --page-bg-dark: rgb(13, 13, 14);
+  --page-border-dark: #503281;
+  --section-card-dark: hsl(255, 5%, 16%);
+  --dark-mode-links: rgb(255, 192, 216);
+  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --dark-mode-h: rgb(223, 154, 236);
+  --dark-button-bg: #463646;
 }
 
-/* animations */
-body {
-  opacity: 0;
-  animation: fadeInSlide 1s;
-  animation-fill-mode: forwards;
+* {
+  scrollbar-color: rgb(184, 140, 184) transparent;
+  scrollbar-width: thin;
 }
 
-.page-columns > section {
-  transition: transform 0.3s;
+button {
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
-.page-columns > section:hover {
-  transform: translatey(-5px);
+
+button:active,
+.button-style:active {
+  transition: all 0.1s ease;
+}
+
+::-moz-selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(164, 118, 170);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: plum;
 }
 
 @keyframes fadeInSlide {
@@ -66,19 +175,24 @@ body {
     opacity: 1;
   }
 }
-* {
-  scrollbar-color: pink rgba(201, 134, 154, 0.116);
-  scrollbar-width: thin;
+:root {
+  --site-updates-bg-light: #fff5f5;
+  --overflow-bg-light: rgb(255, 244, 246);
+  --overflow-border: 1px solid rgb(170, 99, 111);
 }
 
-html {
-  scrollbar-color: rgb(184, 140, 184) transparent;
+/* animations */
+body {
+  opacity: 0;
+  animation: fadeInSlide 1s;
+  animation-fill-mode: forwards;
 }
-html ::-webkit-scrollbar-thumb {
-  background-color: rgb(173, 106, 173);
+
+.page-columns > section {
+  transition: transform 0.3s;
 }
-html ::-webkit-scrollbar-thumb:hover {
-  background-color: #814c91;
+.page-columns > section:hover {
+  transform: translatey(-5px);
 }
 
 body {
@@ -193,51 +307,6 @@ h1 {
   margin-bottom: 0;
 }
 
-nav {
-  margin: auto;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  font-size: 1.15em;
-  letter-spacing: 1px;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-}
-nav li {
-  display: inline-block;
-  margin-right: 0.5em;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  white-space: nowrap;
-}
-nav li:last-child::after {
-  content: "✧";
-  font-size: 1.3em;
-  margin-left: 0.5em;
-  color: pink;
-  font-weight: normal;
-}
-nav li::before {
-  content: "✧";
-  font-size: 1.3em;
-  margin-right: 0.5em;
-  color: pink;
-  font-weight: normal;
-}
-nav a {
-  text-decoration: none;
-  color: purple;
-  padding: 0px 5px 3px 5px;
-}
-nav::-webkit-scrollbar-thumb {
-  background-color: rgba(161, 117, 197, 0.4509803922);
-}
-
 nav #home a {
   -webkit-text-decoration: wavy underline 1px;
           text-decoration: wavy underline 1px;
@@ -297,15 +366,6 @@ a:hover {
   border: 1px solid;
   padding: 0.5em;
   font-family: var(--font-3);
-}
-
-button {
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-button:active, .button-style:active {
-  transition: all 0.1s ease;
 }
 
 #themeSwitch {
@@ -811,41 +871,6 @@ button:active, .button-style:active {
   width: fit-content;
 }
 
-footer {
-  margin-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 2em;
-  text-align: center;
-  font-size: 1em;
-  width: 50%;
-  height: -moz-fit-content;
-  height: fit-content;
-  max-width: 500px;
-}
-footer time {
-  display: inline;
-}
-footer ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-footer li {
-  display: inline-block;
-  margin-right: 15px;
-}
-footer li::before {
-  content: "⬩";
-  font-size: 1.25em;
-  margin-right: 15px;
-}
-footer li:first-child:before {
-  content: none;
-}
-footer a img {
-  text-decoration: none;
-}
-
 time {
   font-weight: 600;
 }
@@ -853,29 +878,6 @@ time {
 hr {
   margin: auto;
   border: 1px dashed plum;
-}
-
-::-moz-selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
-}
-
-::selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
-}
-
-::-webkit-scrollbar {
-  width: 0.5em;
-  height: 0.5em;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: inherit;
 }
 
 @media all and (max-width: 1100px) {
@@ -1355,15 +1357,6 @@ hr {
 }
 .light-mode footer {
   color: var(--footer-font);
-}
-
-:root {
-  --page-bg-dark: rgb(13, 13, 14);
-  --page-border-dark: #503281;
-  --section-card-dark: hsl(255, 5%, 16%);
-  --dark-mode-links: rgb(255, 192, 216);
-  --link-hover-bg-dark: rgba(216, 112, 147, .5);
-  --dark-button-bg: #463646;
 }
 
 @media (prefers-color-scheme: dark) {

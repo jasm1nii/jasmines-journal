@@ -1,32 +1,11 @@
 /* link gallery styles will now go here, separate from the main index page */
-@use 'assets/font_besley';
-@use 'assets/font_inconsolata';
-@use 'assets/font_instrument-sans';
-
-@use 'components/nav_1' as *;
-@use 'components/footer_1' as *;
+@use 'themes/main' as theme;
 
 @use 'screen_queries/link-gallery/1100' as *;
 @use 'screen_queries/link-gallery/900'as *;
 @use 'screen_queries/link-gallery/768'as *;
 
 :root {
-  --font-1: 'Instrument Sans', sans-serif;
-  --font-2: 'Besley', serif;
-  --font-3: 'Inconsolata', monospace;
-  --font-color-light: #4e494e;
-  --h1-light: #5a5463;
-  --h2-light: #712357;
-  --h3-light: #631863;
-  --link-color-light: darkmagenta;
-  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
-  --document-color-light: thistle;
-  --page-color-light: #fff6f6;
-  --section-card-light: rgb(255, 239, 239);
-  --theme-toggle-bg: #e3d7e9;
-  --theme-toggle-hover-bg: #b084bd;
-  --theme-toggle-active-bg: #8b4f61;
-  --theme-toggle-focus-bg: #a175c5;
   --button-code-txt: rgb(255, 244, 244);
   --warning-bg: #e3d7e9;
   --gif-controls-bg: pink;
@@ -35,26 +14,14 @@
   --gif-controls-focus-bg: rgb(248, 220, 248);
   --gif-controls-font: #210a42;
   --gif-controls-border: 1px solid purple;
-  --footer-font: rgb(97, 58, 97);
-}
-
-* {
-  scrollbar-color: pink transparent;
-  scrollbar-width: thin;
-}
-
-html {
-  scrollbar-color: rgb(184, 140, 184) rgb(242, 230, 250);
-  height: 100%;
-  text-rendering: optimizeLegibility;
 }
 
 body {
   color: var(--font-color-light);
   font-family: var(--font-1);
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1.5em;
   margin: auto;
-  min-height: 100%;
 }
 
 /* animations */
@@ -62,28 +29,6 @@ body {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
-}
-
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translatey(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translatey(5px);
-  }
-}
-
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 section {
@@ -104,11 +49,11 @@ main {
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1100px;
+  max-width: 1200px;
   height: fit-content;
 }
 
-.page-columns {
+main {
   columns: 3;
   column-gap: 0;
   background-image: url('/_assets/media/main/ooorganize.svg');
@@ -120,18 +65,21 @@ main {
 }
 
 header {
-  position: sticky;
-  top: 0;
   background-color: inherit;
-  z-index: 1;
-
   hgroup {
     display: flex;
     flex-direction: row;
-
     p {
       letter-spacing: .05em;
       align-self: center;
+    }
+  }
+  nav {
+    #linkGallery {
+      font-weight: 600;
+      a {
+        text-decoration: wavy underline 1px;
+      }
     }
   }
 }
@@ -147,12 +95,12 @@ header {
 
 h1 {
   font-size: 2em;
+  line-height: 1.5em;
   letter-spacing: .05em;
-  transition: color 0.3s ease-out;
   font-family: var(--font-2);
   font-weight: 500;
   margin-right: 2em;
-
+  transition: color 0.3s ease-out;
   &::before {
     content: "\208A  \22B9 ";
     font-weight: 100;
@@ -172,19 +120,9 @@ h1 {
   transition: all .5s;
 }
 
-@include nav-style-1();
-
-header nav ul #linkGallery {
-  font-weight: 600;
-}
-
-header nav #linkGallery a {
-  text-decoration: wavy underline 1px;
-}
-
 h2 {
   margin: 0;
-  border-bottom: 1px solid rgb(233, 166, 205);
+  border-bottom: 1px solid;
   padding-bottom: .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
@@ -195,46 +133,16 @@ h2 {
   }
 }
 
-/* h2 decoration */
-#link-me::before {
-  content: "🏠";
-}
-#more-cool-sites::before {
-  content: "⭐";
-}
-#web-friends::before {
-  content: "💞";
-}
-#warning::before {
-  content: '💫';
-}
-#web-garden::before {
-  content: '🌱';
-}
-#cafegoers::before {
-  content: '☕';
-  margin-right: .5em;
-}
-
 section {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10vh;
   break-inside: avoid;
-}
-
-.card {
-  border: 1px solid rgb(190, 133, 141);
-  border-radius: 15px 15px 15px 15px;
   padding: 1em;
-  margin-left: auto;
-  margin-right: auto;
   height: min-content;
-  background-color: var(--section-card-light);
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5) !important;
-  break-inside: avoid;
-  width: 70%;
-  max-width: 250px;
+  max-width: 270px;
+  border-radius: 15px 15px 15px 15px;
+  border: 1px solid;
 }
 
 .buttons {
@@ -259,6 +167,10 @@ section {
   }
 }
 
+.my-button {
+  max-width: 300px;
+}
+
 .code {
   word-break: break-all;
   border: 1px solid gray;
@@ -267,14 +179,13 @@ section {
   margin: auto;
   overflow-y: scroll;
   padding: .5em;
+  line-height: 1em;
 }
 
 .button-gallery {
   margin-top: .75em;
   margin-bottom: .75em;
   text-align: center;
-  background-color: transparent !important;
-  border-radius: inherit !important;
   padding-top: .25em;
   padding-bottom: .25em;
   margin-left: auto;
@@ -283,16 +194,12 @@ section {
 
 a {
   background-color: transparent;
-  color: darkmagenta;
   transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
-
   &:hover {
-    background-color: var(--link-hover-bg-color-light);
     text-decoration: none;
-    color: white !important;
   }
 }
 
@@ -315,21 +222,11 @@ hr {
   border: 1px dashed plum;
 }
 
-::selection {
-  background-color: rgb(248, 208, 170);
-  color: black;
-}
-
-button {
-  cursor: pointer;
-}
-
-#gifControls {
+#gif-controls {
   text-align: center;
   padding-bottom: 1em;
   background-color: transparent !important;
   container-type: inline-size;
-
   & button {
     font: inherit;
     text-transform: lowercase;
@@ -339,10 +236,6 @@ button {
     letter-spacing: 0.05em;
     border-radius: 5px;
     border: var(--gif-controls-border);
-
-    &:hover {
-      transition: all 0.1s;
-    }
   }
 }
 
@@ -357,270 +250,169 @@ time {
   display: block;
 }
 
-@include footer-style-1();
-
 @include screen-1100();
 @include screen-900();
 @include screen-768();
 
-:root {
-  --page-bg-dark: rgb(13, 13, 14);
-  --page-border-dark: #503281;
-  --section-card-dark: hsl(255, 5%, 16%);
-  --dark-mode-links: rgb(255, 192, 216);
-  --dark-mode-h: rgb(223, 154, 236);
-  --dark-button-bg: #463646;
+@mixin light-mode-body {
+  background-color: var(--document-color-light);
+  color: var(--font-color-light);
+  font-weight: 450;
+}
+
+@mixin light-mode {
+  .board {
+    background-color: var(--page-color-light);
+  }
+  main {
+    background: url('/_assets/media/main/ooorganize.svg');
+  }
+  header {
+    color: var(--h1-light);
+    nav {
+      color: var(--font-color-light);
+    }
+  }
+  section {
+    color: var(--font-color-light);
+    border-color: rgb(190, 133, 141);
+    background-color: var(--section-card-light);
+    box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
+  }
+  .warning {
+    background-color: var(--warning-bg);
+  }
+  .code {
+    background-color: var(--button-code-txt);
+    font-weight: 500;
+  }
+  h2 {
+    color: var(--h2-light);
+    border-color: rgb(233, 166, 205);
+  }
+  h3 {
+    color: var(--h3-light);
+  }
+  a {
+    color: var(--link-color-light);
+    &:hover {
+      color: rgb(255, 255, 255);
+      background-color: rgba(128, 0, 128, 0.637);
+    }
+  }
+  button {
+    background-color: #f5e9f5;
+    color: rgb(51, 44, 44);
+    &:hover {
+      background-color: lightgoldenrodyellow;
+    }
+  }
+  #gif-controls {
+    button {
+      background-color: var(--gif-controls-bg);
+      color: var(--gif-controls-font);
+      border: var(--gif-controls-border);
+      &:hover {
+        background-color: var(--gif-controls-hover-bg);
+      }
+      &:active {
+        background-color: var(--gif-controls-active-bg);
+      }
+      &:focus {
+        background-color: var(--gif-controls-focus-bg);
+      }
+    }
+  }
+  footer {
+    color: var(--footer-font);
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: var(--document-color-light);
+    @include light-mode-body();
   }
-
-  h1 {
-    color: var(--h1-light);
-  }
+  @include light-mode();
 }
 
-@media (prefers-color-scheme: dark) {
+.light-mode {
+  @include light-mode-body();
+  @include light-mode();
+}
 
-  body,
-  footer {
-    color: white;
-  }
+@mixin dark-mode-body {
+  color: white;
+  background-color: black;
+}
 
-  body {
-    background-color: black;
-  }
-
-  header nav {
-    border-color: #503281;
-  }
-
-  h1,
-  header nav {
-    color: white;
-  }
-
-  h2 {
-    color: var(--dark-mode-h);
-  }
-
-  a,
-  nav a {
-    color: var(--dark-mode-links);
-  }
-
-  a:hover {
-    color: white;
-  }
-
-  button {
-    background-color: var(--dark-button-bg);
-    color: rgb(230, 214, 236);
-  }
-
-  button:hover {
-    background-color: #712357;
-  }
-
-  button:active {
-    background-color: rgb(207, 102, 102);
-    color: white;
-  }
-
-  button:focus {
-    background-color: #8b4f61;
-  }
-
+@mixin dark-mode {
   .board {
     background-color: var(--page-bg-dark);
     border-color: var(--page-border-dark);
   }
-
   .page-columns {
     background: url('/_assets/media/main/ooorganize-dark.svg');
   }
-
-  .card,
+  header {
+    color: white;
+    nav {
+      border-color: #503281;
+    }
+  }
+  section,
   .warning {
     background-color: var(--section-card-dark);
+    color: white;
   }
-
+  section {
+    box-shadow: 10px 10px rgba(104, 59, 84, 0.75);
+    border-color: #665085;
+  }
+  .warning {
+    box-shadow: 10px 10px rgba(131, 36, 131, .75);
+  }
   .button-gallery {
     background-color: transparent;
   }
+  h2 {
+    border-color: rgb(110, 62, 90);
+  }
+  h2, h3 {
+    color: var(--dark-mode-h);
+  }
+  a, nav a {
+    color: var(--dark-mode-links);
+  }
+  a {
+    color: var(--dark-mode-links);
+    &:hover {
+      color: white;
+    }
+  }
+  button {
+    background-color: var(--dark-button-bg);
+    color: rgb(230, 214, 236);
+    &:hover {
+      background-color: #712357;
+    }
+    &:active {
+      background-color: rgb(207, 102, 102);
+      color: white;
+    }
+    &:focus {
+      background-color: #8b4f61;
+    }
+  }
 }
 
-.light-mode {
-  background-color: var(--document-color-light);
-  color: var(--font-color-light);
-}
-
-.light-mode nav {
-  color: var(--font-color-light);
-}
-
-.light-mode h1 {
-  color: var(--h1-light);
-}
-
-.light-mode h2 {
-  color: var(--h2-light) !important;
-}
-
-.light-mode h3 {
-  color: var(--h3-light) !important;
-}
-
-.light-mode a {
-  color: var(--link-color-light) !important;
-}
-
-.light-mode a:hover {
-  color: white;
-}
-
-.light-mode .board {
-  background-color: var(--page-color-light) !important;
-}
-
-.light-mode .page-columns {
-  background: url('/_assets/media/main/ooorganize.svg');
-}
-
-.light-mode .card {
-  background-color: var(--section-card-light) !important;
-  color: var(--font-color-light) !important;
-}
-
-.light-mode main button {
-  background-color: #f5e9f5;
-  color: rgb(51, 44, 44);
-}
-
-.light-mode main button:hover {
-  background-color: lightgoldenrodyellow;
-}
-
-.light-mode #gifControls button {
-  background-color: var(--gif-controls-bg);
-  color: var(--gif-controls-font);
-  border: var(--gif-controls-border)
-}
-
-.light-mode #gifControls button:hover {
-  background-color: var(--gif-controls-hover-bg);
-}
-
-.light-mode #gifControls button:active {
-  background-color: var(--gif-controls-active-bg);
-}
-
-.light-mode #gifControls button:focus {
-  background-color: var(--gif-controls-focus-bg);
-}
-
-.light-mode .code {
-  background-color: var(--button-code-txt);
-}
-
-.light-mode .warning {
-  background-color: var(--warning-bg) !important;
-}
-
-.light-mode footer {
-  color: var(--footer-font);
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-mode-body();
+  }
+  @include dark-mode();
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode a {
-  color: var(--dark-mode-links);
-}
-
-.dark-mode h1 {
-  color: white;
-}
-
-.dark-mode h2,
-.dark-mode h3 {
-  color: var(--dark-mode-h) !important;
-}
-
-.dark-mode .board {
-  background-color: var(--page-bg-dark);
-  border-color: var(--page-border-dark);
-}
-
-.dark-mode nav {
-  border-color: #503281;
-}
-
-.dark-mode .page-columns {
-  background: url('/_assets/media/main/ooorganize-dark.svg');
-}
-
-.dark-mode .card,
-.dark-mode .warning {
-  background-color: var(--section-card-dark) !important;
-  color: white !important;
-}
-
-.dark-mode .warning {
-  box-shadow: 10px 10px rgba(131, 36, 131, .75) !important;
-}
-
-.dark-mode button {
-  background-color: var(--dark-button-bg);
-  color: rgb(230, 214, 236);
-}
-
-.dark-mode button:hover {
-  background-color: #712357;
-}
-
-.dark-mode button:active {
-  background-color: rgb(207, 102, 102);
-  color: white;
-}
-
-.dark-mode button:focus {
-  background-color: #8b4f61;
-}
-
-.dark-mode footer {
-  color: white;
-}
-
-::-webkit-scrollbar {
-  width: .5em;
-  height: .5em;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: inherit;
-}
-
-html ::-webkit-scrollbar-thumb {
-  background-color: #8f53a1;
-}
-
-html ::-webkit-scrollbar-thumb:hover {
-  background-color: #694677;
-}
-
-body ::-webkit-scrollbar-thumb {
-  background-color: pink;
-}
-
-body ::-webkit-scrollbar-thumb:hover {
-  background-color: plum;
+  @include dark-mode-body();
+  @include dark-mode();
 }
