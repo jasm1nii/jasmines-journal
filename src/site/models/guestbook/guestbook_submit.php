@@ -59,28 +59,28 @@
 
         private function alterTable(): void {
 
-            $this->database->prepare(
+           $sql = $this->database->prepare(
                 "ALTER TABLE `{$this->table}` AUTO_INCREMENT=0"
             );
 
-            $this->database->execute();
+            $sql->execute();
 
         }
 
         private function insertIntoTable(): void {
 
-            $this->database->prepare(
+            $sql = $this->database->prepare(
                 "INSERT INTO `{$this->table}` (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
                 VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
-            $this->database->bindParam(':name', $this->sender_name);
-            $this->database->bindParam(':email', $this->sender_email);
-            $this->database->bindParam(':url', $this->sender_url);
-            $this->database->bindParam(':message', $this->sender_message);
-            $this->database->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
+            $sql->bindParam(':name', $this->sender_name);
+            $sql->bindParam(':email', $this->sender_email);
+            $sql->bindParam(':url', $this->sender_url);
+            $sql->bindParam(':message', $this->sender_message);
+            $sql->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
 
-            $this->database->execute();
+            $sql->execute();
 
         }
 

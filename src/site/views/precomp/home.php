@@ -23,7 +23,7 @@
 
                 return $msg->comment;
 
-            } catch (\PDOException) {
+            } catch (Exception) {
 
                 return null;
 
