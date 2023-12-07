@@ -1,15 +1,11 @@
-<section aria-labelledby="site-updates">
-    <div class="card site-updates">
-        <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
-        {% if last_updated is defined %}
-            <p>
-                last updated on
-                <br/>
-                <b>{{ last_updated|format_datetime(pattern="d MMMM Y")|lower }}</b>
-            </p>
-        {% endif %}
-        {% apply markdown_to_html %}
-            check out the [changelog page](/about/changelog) or the [git commit history](https://github.com/jasm1nii/jasmines-journal/commits/main) for more details.
-        {% endapply %}
-    </div>
+<section class="card site-updates">
+    <h2 id="site-updates"><span aria-hidden="true">🆕</span> site updates</h2>
+    {% if last_updated is defined %}
+        <p>
+            last updated on<br/><b>{{ last_updated|format_datetime(pattern="d MMMM Y")|lower }}</b>
+        </p>
+    {% endif %}
+    {% apply markdown_to_html %}
+        check out the [changelog page](/about/changelog) or the [git commit history](https://github.com/jasm1nii/jasmines-journal/commits/main) for more details.
+    {% endapply %}
 </section>

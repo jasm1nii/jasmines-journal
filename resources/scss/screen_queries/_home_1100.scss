@@ -6,9 +6,6 @@
         }
         article {
             columns: 2;
-            & > section {
-                padding-bottom: 8vh;
-            }
         }
         nav {
             font-size: .9em;
@@ -16,18 +13,14 @@
         main {
             font-size: .9em;
         }
+        section {
+            max-width: 300px;
+        }
         #webmaster-identity {
             font-size: 1.25em;
         }
         .h-card {
             max-width: 300px;
-        }
-        .u-photo {
-            width: 200px;
-            height: 200px;
-        }
-        .p-note {
-            font-size: .9em;
         }
         .time {
             min-width: 260px;
@@ -40,12 +33,6 @@
         }
         .latest-status {
             max-width: 350px;
-        }
-        [aria-labelledby="note-to-visitors"] {
-            max-width: 450px;
-        }
-        [aria-labelledby="tip-jar"] {
-            max-width: 420px;
         }
     }
 }

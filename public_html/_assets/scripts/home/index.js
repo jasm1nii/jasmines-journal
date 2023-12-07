@@ -6,61 +6,61 @@
     } else {
       x.style.display = "none";
     }
-});
+  });
 
-// sticky note contents
-const notice = document.querySelector("#notice");
-  notice.innerHTML = `
-    <p><b><i>have you seen THEM?!</i></b></p>
-    <figure tabindex="0">
-      <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pluto" alt="my cat pluto"/>
-      <figcaption>
-        pluto (she/her)
-      </figcaption>
-    </figure>
-    <figure tabindex="0">
-      <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pretzel" alt="my cat pretzel"/>
-      <figcaption>
-        pretzel (he/him)
-      </figcaption>
-    </figure>
-    <p><b>now you have!</b></p>
-    <hr>
-    <p><small>click the pushpin to hide this notice.</small></p>
-    `;
-  const x = notice.style
-    x.border = "1px solid goldenrod";
-    x.boxShadow = "5px 5px 5px rgba(128, 128, 128, 0.1)";
-    x.textAlign = "center";
-    x.margin = "10% 15% 0 0";
-    x.maxWidth = "200px";
-    x.maxHeight = "300px";
-    x.overflowY = "auto";
-    x.scrollbarWidth = "thin";
-    x.scrollbarColor = "rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192)";
-    x.color = "var(--sticky-note-font)";
-    x.backgroundColor = "var(--sticky-note-bg)";
-    notice.querySelector('p').style.padding = "0px 1em";
-    const f = notice.querySelectorAll('figure');
-      f.forEach (el => {
-        el.style.margin = "auto";
-      });
-    const fc = notice.querySelectorAll('figcaption');
-      fc.forEach (el => {
-        el.style.margin = "1em";
-      });
-    const cats = notice.querySelectorAll('img');
-      cats.forEach (el => {
-        const pic = el.style
-          pic.border = "3px solid white";
-          pic.outline = "1px solid gray";
-          pic.objectFit = "none";
-          pic.width = "80%";
-          pic.filter = "brightness(120%)";
-      });
-notice.querySelector('#pluto').style.objectPosition = "right";
-notice.querySelector('#pretzel').style.objectPosition = "left";
-notice.querySelector('hr').style.borderColor = "goldenrod";
+  // sticky note contents
+  const notice = document.querySelector("#notice");
+    notice.innerHTML = `
+      <p><b><i>have you seen THEM?!</i></b></p>
+      <figure tabindex="0">
+        <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pluto" alt="my cat pluto"/>
+        <figcaption>
+          pluto (she/her)
+        </figcaption>
+      </figure>
+      <figure tabindex="0">
+        <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pretzel" alt="my cat pretzel"/>
+        <figcaption>
+          pretzel (he/him)
+        </figcaption>
+      </figure>
+      <p><b>now you have!</b></p>
+      <hr/>
+      <p><small>click the pushpin to hide this notice.</small></p>
+      `;
+    const x = notice.style
+      x.border = "1px solid goldenrod";
+      x.boxShadow = "5px 5px 5px rgba(128, 128, 128, 0.1)";
+      x.textAlign = "center";
+      x.margin = "10% 15% 0 0";
+      x.maxWidth = "200px";
+      x.maxHeight = "300px";
+      x.overflowY = "auto";
+      x.scrollbarWidth = "thin";
+      x.scrollbarColor = "rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192)";
+      x.color = "var(--sticky-note-font)";
+      x.backgroundColor = "var(--sticky-note-bg)";
+      notice.querySelector('p').style.padding = "0px 1em";
+      const f = notice.querySelectorAll('figure');
+        f.forEach (el => {
+          el.style.margin = "auto";
+        });
+      const fc = notice.querySelectorAll('figcaption');
+        fc.forEach (el => {
+          el.style.margin = "1em";
+        });
+      const cats = notice.querySelectorAll('img');
+        cats.forEach (el => {
+          const pic = el.style
+            pic.border = "3px solid white";
+            pic.outline = "1px solid gray";
+            pic.objectFit = "none";
+            pic.width = "80%";
+            pic.filter = "brightness(120%)";
+        });
+  notice.querySelector('#pluto').style.objectPosition = "right";
+  notice.querySelector('#pretzel').style.objectPosition = "left";
+  notice.querySelector('hr').style.borderColor = "goldenrod";
 };
 
 { // yipee!!!!
@@ -78,8 +78,8 @@ const surprise = document.getElementById('surprise');
 
   const flwrAttr = {
           src:'/_assets/media/main/flower.svg',
-          width:55,
-          height:55,
+          width:60,
+          height:60,
           alt:'',
         };
   const flower = d.createElement('img');
@@ -134,6 +134,7 @@ const surprise = document.getElementById('surprise');
     if (hours < 10) hours = '0' + hours;
     return innerHTML = hours + `:` + minutes; // + ":" + seconds;
   };
+
   function updateClocks() {
   for (var i = 0; i < window.arrClocks.length; i++) {
     var clock = window.arrClocks[i];
@@ -141,6 +142,7 @@ const surprise = document.getElementById('surprise');
     clock.innerHTML = dateToText(new Date(new Date().getTime()+offset));
     };
   };
+  
   function startClocks() {
     clockElements = document.getElementsByClassName('clock');
     window.arrClocks = []
@@ -265,10 +267,10 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
             if (nextSiteIndex > sites.length - 1) nextSiteIndex = 0;
             const randomSiteIndex = this.getRandomInt(0, sites.length - 1);
 
-            // In this variable, put the HTML that you want your webring "badge"  to   use.
+            // In this variable, put the HTML that you want your webring "badge" to use.
             // keep the link 'href' values the same, but change the text!
             const cp = `
-              <span class="title">i'm a <a href="https://xandra.cc/safonts/"    rel="external"><b>sa</b><i>font</i></a></span>
+              <span class="title">i'm a <a href="https://xandra.cc/safonts/" rel="external"><b>sa</b><i>font</i></a></span>
               <br/>
               <span class="nav">
                 <a href="${sites[prevSiteIndex].url}" rel="external"    aria-label="safonts webring: previous site">&lt;&lt;</a>

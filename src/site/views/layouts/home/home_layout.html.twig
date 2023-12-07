@@ -46,7 +46,7 @@
       <main>
         <aside class="notice-group" aria-label="notice">
           <button id="pin" aria-expanded="true">📌</button>
-          <div id="notice"></div>
+          <section id="notice"></section>
         </aside>
         <article>
           {{ include('_card_about.html.twig') }}
@@ -62,11 +62,8 @@
       </main>
     </div>
 
-    <footer>
-      {{ include('@includes/footer.shtml') }}
-    </footer>
+    <footer>{{ include('@includes/footer.shtml') }}</footer>
     <script defer src="/_assets/scripts/home/index.js"></script>
     <script defer src="/_assets/scripts/theme-switcher-v2.js"></script>
   </body>
-  
 </html>

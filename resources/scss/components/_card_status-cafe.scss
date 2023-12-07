@@ -2,10 +2,14 @@
     .latest-status {
         width: 80%;
         padding: 0;
-        margin: auto;
         border: 1px solid rgb(175, 140, 175);
         border-radius: 0;
         box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
+        footer {
+            margin: 1.5em auto 0;
+            text-align: center;
+            padding-bottom: 0;
+        }
     }
     #latest-status {
         border: none;
@@ -19,9 +23,9 @@
         font-size: 1.1em;
     }
     #statuscafe-username {
+        margin-top: 0;
         margin-bottom: .5em;
         font-weight: 600;
-        min-height: 1em;
     }
     #statuscafe-content {
         padding: .5em;
@@ -32,10 +36,5 @@
     }
     #statuscafe-content::before, #statuscafe-content::after {
         content: '"';
-    }
-    #statuscafe-content + * {
-        margin: auto;
-        margin-top: 1.5em;
-        text-align: center;
     }
 }

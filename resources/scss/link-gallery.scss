@@ -38,10 +38,6 @@ section {
   }
 }
 
-main {
-  margin: auto;
-}
-
 .board {
   border: 1px solid purple;
   background-color: #fff6f6;
@@ -54,6 +50,7 @@ main {
 }
 
 main {
+  margin: auto;
   columns: 3;
   column-gap: 0;
   background-image: url('/_assets/media/main/ooorganize.svg');
@@ -127,7 +124,6 @@ h2 {
   font-size: 1.25em;
   letter-spacing: .05em;
   font-weight: 500;
-
   &::before {
     margin-right: .5em;
   }

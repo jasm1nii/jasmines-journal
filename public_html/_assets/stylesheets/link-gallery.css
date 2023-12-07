@@ -208,10 +208,6 @@ section:hover {
   transform: translatey(-5px);
 }
 
-main {
-  margin: auto;
-}
-
 .board {
   border: 1px solid purple;
   background-color: #fff6f6;
@@ -225,6 +221,7 @@ main {
 }
 
 main {
+  margin: auto;
   -moz-columns: 3;
        columns: 3;
   -moz-column-gap: 0;
@@ -424,11 +421,13 @@ time {
   display: block;
 }
 
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1200px) {
   .board {
     border-left: none;
     border-right: none;
   }
+}
+@media all and (max-width: 1100px) {
   nav {
     font-size: 1.1em;
   }
@@ -465,9 +464,6 @@ time {
   }
   h1:before {
     display: none;
-  }
-  .board {
-    max-width: 700px;
   }
   main {
     -moz-columns: 2;

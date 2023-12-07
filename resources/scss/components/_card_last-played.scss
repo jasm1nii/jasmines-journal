@@ -25,6 +25,19 @@
             padding: .75em 1em;
             border: 1px solid green;
         }
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding: 15px 0px;
+            border: 1px solid rgb(146, 162, 180);
+            border-top: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: inherit;
+        }
     }
     #last-played {
         margin-left: .5em;
@@ -61,18 +74,6 @@
             white-space: normal;
             animation-play-state: paused;
         }
-    }
-    .last-played-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px;
-        padding: 15px 0px;
-        border: 1px solid rgb(146, 162, 180);
-        border-top: none;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background-color: inherit;
     }
     #js-toggle {
         padding: .6em 1em;

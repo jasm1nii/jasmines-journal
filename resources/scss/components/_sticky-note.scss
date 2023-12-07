@@ -6,8 +6,13 @@
         z-index: 1;
         font-family: var(--font-3);
         animation: fadeInSlide 0.75s forwards;
-        & button {
-            background-color: transparent !important;
+        #pin {
+            background-color: transparent;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        button {
             color: inherit;
             border: none;
             font-size: 2em;
@@ -17,7 +22,6 @@
             top: 0;
             transition: transform 0.3s;
             &:hover {
-                background-color: transparent !important;
                 transform: translatey(-5px);
             }
         }

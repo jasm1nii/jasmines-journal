@@ -30,20 +30,16 @@
         }
         .notice-group {
             margin-top: 5%;
-            margin-right: 5%;
+            top: 120vh;
+        }
+        #pin {
+            right: -5vw;
+        }
+        #notice {
+            width: 200px;
         }
         article {
             padding-top: 10vh;
-            & > section {
-                padding-bottom: 15vh;
-            }
-        }
-        .u-photo {
-            width: 90%;
-            height: 90%;
-        }
-        .flower-fill img {
-            width: 90%;
         }
         .p-note {
             font-size: .9em;
