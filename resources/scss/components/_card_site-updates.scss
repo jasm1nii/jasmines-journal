@@ -11,10 +11,11 @@
         }
         p {
             text-align: center;
-            &:first-of-type {
-                b {
-                    font-size: larger;
-                }
+            span {
+                display: block;
+                font-size: x-large;
+                font-weight: 600;
+                font-family: var(--font-3);
             }
         }
     }

@@ -199,6 +199,7 @@ iframe {
 
 .h-entry {
   padding: 1em;
+  line-height: 1.5em;
 }
 
 .emoji {
@@ -372,6 +373,7 @@ hr {
   .h-entry, #comments, #webmentions {
     background-color: rgb(22, 21, 21);
     border-color: rgb(68, 60, 60);
+    font-weight: normal;
   }
   #comments button {
     color: black;
@@ -394,6 +396,7 @@ hr {
 .dark-mode .h-entry, .dark-mode #comments, .dark-mode #webmentions {
   background-color: rgb(22, 21, 21);
   border-color: rgb(68, 60, 60);
+  font-weight: normal;
 }
 .dark-mode #comments button {
   color: black;
@@ -415,6 +418,7 @@ hr {
   .h-entry, #webmentions, #comments {
     color: var(--light-font);
     background-color: var(--light-bg-article);
+    font-weight: 500;
   }
   a {
     color: var(--light-links);
@@ -433,6 +437,7 @@ hr {
 .light-mode .h-entry, .light-mode #webmentions, .light-mode #comments {
   color: var(--light-font);
   background-color: var(--light-bg-article);
+  font-weight: 500;
 }
 .light-mode a {
   color: var(--light-links);

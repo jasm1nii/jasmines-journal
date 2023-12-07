@@ -22,6 +22,7 @@ nav {
   border-bottom: 1px solid;
   border-top: 1px solid;
   font-size: 1.15em;
+  font-weight: normal;
   letter-spacing: 1px;
 }
 nav ul {
@@ -198,7 +199,6 @@ article > section:hover {
 body {
   font-family: var(--font-1);
   font-size: 1em;
-  font-weight: 500;
   line-height: 1.5em;
   letter-spacing: 0.005em;
   margin: auto;
@@ -265,6 +265,9 @@ main a {
   max-width: 1200px;
 }
 
+header {
+  font-weight: normal;
+}
 header .top {
   display: flex;
   flex-direction: row-reverse;
@@ -307,7 +310,7 @@ article {
 
 h2 {
   margin: 0;
-  padding-bottom: 0.5em;
+  padding: 0.25em 0 0.5em;
   font-size: 1.25em;
   letter-spacing: 0.05em;
   border-bottom: 1px solid rgb(233, 166, 205);
@@ -351,7 +354,7 @@ article > section {
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
   padding: 1em;
-  margin: 0 auto 12.5vh;
+  margin: 0 auto 75px;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
@@ -487,6 +490,9 @@ article > section footer {
   border-top: 0;
 }
 
+.note {
+  border-radius: initial;
+}
 .note p {
   padding-left: 1em;
   padding-right: 1em;
@@ -708,8 +714,11 @@ hr {
 .site-updates p {
   text-align: center;
 }
-.site-updates p:first-of-type b {
-  font-size: larger;
+.site-updates p span {
+  display: block;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: var(--font-3);
 }
 
 #tip-jar + ul {
@@ -744,7 +753,7 @@ hr {
   color: black;
   padding: 1em;
   margin-left: 2em;
-  width: 200px;
+  width: clamp(200px, 20vw, 300px);
 }
 .web-rings summary {
   font-weight: 600;
@@ -861,6 +870,9 @@ hr {
   margin: 1.5em auto auto;
   width: -moz-fit-content;
   width: fit-content;
+  font-family: var(--font-3);
+  font-weight: 600;
+  font-size: larger;
 }
 
 @media all and (max-width: 1100px) {
@@ -1056,6 +1068,7 @@ hr {
     --sticky-note-font: rgb(78, 61, 19) !important;
   }
   body {
+    font-weight: 500;
     color: var(--font-color-light);
     background-color: var(--document-color-light);
   }
@@ -1063,7 +1076,7 @@ hr {
     color: var(--link-color-light);
   }
   a:hover {
-    background-color: var(--link-hover-bg-light);
+    background-color: rgba(128, 0, 128, 0.5);
     color: white;
   }
   button, .button-style {
@@ -1082,9 +1095,6 @@ hr {
   }
   h1, header p {
     color: var(--h1-light);
-  }
-  nav {
-    color: var(--font-color-light);
   }
   article {
     background: url("/_assets/media/main/ooorganize.svg");
@@ -1187,6 +1197,7 @@ hr {
 }
 
 .light-mode {
+  font-weight: 500;
   color: var(--font-color-light);
   background-color: var(--document-color-light);
 }
@@ -1194,7 +1205,7 @@ hr {
   color: var(--link-color-light);
 }
 .light-mode a:hover {
-  background-color: var(--link-hover-bg-light);
+  background-color: rgba(128, 0, 128, 0.5);
   color: white;
 }
 .light-mode button, .light-mode .button-style {
@@ -1213,9 +1224,6 @@ hr {
 }
 .light-mode h1, .light-mode header p {
   color: var(--h1-light);
-}
-.light-mode nav {
-  color: var(--font-color-light);
 }
 .light-mode article {
   background: url("/_assets/media/main/ooorganize.svg");
@@ -1320,6 +1328,7 @@ hr {
   body {
     color: white;
     background-color: black;
+    font-weight: normal;
   }
   h1, header nav, header p, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
     color: white;
@@ -1403,6 +1412,9 @@ hr {
   .guestbook h3 {
     color: #f2c7ff;
   }
+  .guestbook blockquote {
+    font-weight: 500;
+  }
   .overflow {
     background-color: transparent;
   }
@@ -1415,6 +1427,7 @@ hr {
 .dark-mode {
   color: white;
   background-color: black;
+  font-weight: normal;
 }
 .dark-mode h1, .dark-mode header nav, .dark-mode header p, .dark-mode #statuscafe-content, .dark-mode .web-rings, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode footer {
   color: white;
@@ -1497,6 +1510,9 @@ hr {
 }
 .dark-mode .guestbook h3 {
   color: #f2c7ff;
+}
+.dark-mode .guestbook blockquote {
+  font-weight: 500;
 }
 .dark-mode .overflow {
   background-color: transparent;

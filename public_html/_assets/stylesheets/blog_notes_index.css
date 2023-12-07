@@ -59,7 +59,6 @@ a:hover {
 body {
   font-family: "Inconsolata", monospace;
   font-size: 1.1em;
-  font-weight: 500;
   width: 90%;
   max-width: 900px;
   margin: auto;
@@ -205,7 +204,7 @@ article h2 {
   padding-bottom: 1em;
   margin-top: 0;
   font-size: larger;
-  line-height: 1.2em;
+  line-height: 1.5em;
 }
 .notes-format .h-entry .e-content + span {
   border-top: 1px dashed;
@@ -371,6 +370,7 @@ hr {
   body {
     background-color: var(--dark-bg);
     color: var(--dark-font);
+    font-weight: normal;
   }
   .feed-links {
     background-color: rgb(52, 47, 54);
@@ -393,6 +393,7 @@ hr {
 .dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-font);
+  font-weight: normal;
 }
 .dark-mode .feed-links {
   background-color: rgb(52, 47, 54);
@@ -416,6 +417,7 @@ hr {
   body {
     background-color: var(--light-bg);
     color: var(--light-font);
+    font-weight: 500;
   }
   .feed-links {
     background-color: rgb(246, 240, 248);
@@ -437,6 +439,7 @@ hr {
 .light-mode {
   background-color: var(--light-bg);
   color: var(--light-font);
+  font-weight: 500;
 }
 .light-mode .feed-links {
   background-color: rgb(246, 240, 248);

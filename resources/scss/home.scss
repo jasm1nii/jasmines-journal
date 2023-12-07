@@ -39,7 +39,6 @@ article > section {
 body {
   font-family: var(--font-1);
   font-size: 1em;
-  font-weight: 500;
   line-height: 1.5em;
   letter-spacing: .005em;
   margin: auto;
@@ -68,6 +67,7 @@ main {
 }
 
 header {
+  font-weight: normal;
   & .top {
     display: flex;
     flex-direction: row-reverse;
@@ -110,7 +110,7 @@ article {
 
 h2 {
   margin: 0;
-  padding-bottom: .5em;
+  padding: .25em 0 .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
   border-bottom: 1px solid rgb(233, 166, 205);
@@ -151,7 +151,7 @@ article > section {
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px 15px 15px 15px;
   padding: 1em;
-  margin: 0 auto 12.5vh;
+  margin: 0 auto 75px;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   break-inside: avoid;
   width: 70%;
@@ -190,6 +190,7 @@ article > section {
 @include h-card();
 
 .note {
+  border-radius: initial;
   & p {
     padding-left: 1em;
     padding-right: 1em;
@@ -224,7 +225,7 @@ hr {
   a {
     color: var(--link-color-light);
     &:hover {
-      background-color: var(--link-hover-bg-light);
+      background-color: rgba(128, 0, 128, 0.5);
       color: white;
     }
   }
@@ -244,9 +245,6 @@ hr {
   }
   h1, header p {
     color: var(--h1-light);
-  }
-  nav {
-    color: var(--font-color-light);
   }
   article {
     background: url('/_assets/media/main/ooorganize.svg');
@@ -346,6 +344,7 @@ hr {
 }
 
 @mixin light-mode-body {
+  font-weight: 500;
   color: var(--font-color-light);
   background-color: var(--document-color-light);
 }
@@ -458,6 +457,9 @@ hr {
     & h3 {
       color:#f2c7ff;
     }
+    blockquote {
+      font-weight: 500;
+    }
   }
   .overflow {
     background-color: transparent;
@@ -466,6 +468,7 @@ hr {
 @mixin dark-mode-body {
   color: white;
   background-color: black;
+  font-weight: normal;
 }
 
 @media (prefers-color-scheme: dark) {

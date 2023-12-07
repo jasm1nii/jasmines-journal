@@ -1,0 +1,22 @@
+{% extends layout %}
+
+{% set keywords = ['personal'] %}
+
+{% set published = '3 december 2023' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        **14:54**
+
+        i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today.
+    {% endapply %}
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7Eit07n6BBsT9v36WpOuWA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}

@@ -1,0 +1,21 @@
+{% extends layout %}
+
+{% set keywords = ['personal'] %}
+
+{% set published = '29 november 2023' %}
+
+{% block content %}
+    {% apply markdown_to_html %}
+        **14:56**
+        
+        i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some [jazz ambience](https://music.youtube.com/watch?v=hTLa16ZwgX0&si=skG1QhQkd1K7gXVM) in the background.
+    {% endapply %}
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}

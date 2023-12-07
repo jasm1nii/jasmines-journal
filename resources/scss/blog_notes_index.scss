@@ -11,7 +11,6 @@
 body {
     font-family: theme.$font;
     font-size: 1.1em;
-    font-weight: 500;
     width: 90%;
     max-width: 900px;
     margin: auto;
@@ -94,7 +93,7 @@ article {
             padding-bottom: 1em;
             margin-top: 0;
             font-size: larger;
-            line-height: 1.2em;
+            line-height: 1.5em;
             + span {
                 border-top: 1px dashed;
                 margin-left: 0;
@@ -142,6 +141,7 @@ $shadow-style-2: -5px -5px 15px;
 @mixin light-mode-body {
     background-color:  var(--light-bg);
     color: var(--light-font);
+    font-weight: 500;
 }
 @mixin light-mode {
     $shadow-color: rgba(199, 137, 235, 0.08);
@@ -169,6 +169,7 @@ $shadow-style-2: -5px -5px 15px;
 @mixin dark-mode-body {
     background-color: var(--dark-bg);
     color: var(--dark-font);
+    font-weight: normal;
 }
 @mixin dark-mode {
     $shadow-color: rgba(128, 0, 107, 0.4);

@@ -72,6 +72,7 @@ iframe {
 }
 .h-entry {
     padding: 1em;
+    line-height: 1.5em;
 }
 .emoji {
     display: inline-block;
@@ -129,6 +130,7 @@ hr {
     .h-entry, #comments, #webmentions {
         background-color: theme.$dark-section-bg;
         border-color: theme.$dark-section-border;
+        font-weight: normal;
     }
     #comments {
         button {
@@ -166,6 +168,7 @@ hr {
     .h-entry, #webmentions, #comments {
         color: var(--light-font);
         background-color: var(--light-bg-article);
+        font-weight: 500;
     }
     a {
         color: var(--light-links);
