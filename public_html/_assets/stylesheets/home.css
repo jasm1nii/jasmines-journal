@@ -188,10 +188,10 @@ body {
   animation-fill-mode: forwards;
 }
 
-.page-columns > section {
+article > section {
   transition: transform 0.3s;
 }
-.page-columns > section:hover {
+article > section:hover {
   transform: translatey(-5px);
 }
 
@@ -312,7 +312,7 @@ nav #home a {
           text-decoration: wavy underline 1px;
 }
 
-.page-columns {
+article {
   -moz-columns: 3;
        columns: 3;
   -moz-column-gap: 0;
@@ -323,7 +323,7 @@ nav #home a {
   padding-left: 1%;
   padding-right: 1%;
 }
-.page-columns > section {
+article > section {
   margin-left: auto;
   margin-right: auto;
   padding-top: 5px;
@@ -885,11 +885,11 @@ hr {
     font-size: 1.2em;
     padding-top: 0;
   }
-  .page-columns {
+  article {
     -moz-columns: 2;
          columns: 2;
   }
-  .page-columns > section {
+  article > section {
     padding-bottom: 8vh;
   }
   nav {
@@ -992,10 +992,10 @@ hr {
     margin-top: 5%;
     margin-right: 5%;
   }
-  .page-columns {
+  article {
     padding-top: 10vh;
   }
-  .page-columns > section {
+  article > section {
     padding-bottom: 15vh;
   }
   .u-photo {
@@ -1016,7 +1016,7 @@ hr {
   }
 }
 @media all and (max-width: 700px) {
-  .page-columns {
+  article {
     -moz-columns: 1;
          columns: 1;
   }
@@ -1132,7 +1132,7 @@ hr {
   nav {
     color: var(--font-color-light);
   }
-  .page-columns {
+  article {
     background: url("/_assets/media/main/ooorganize.svg");
   }
   .card {
@@ -1263,7 +1263,7 @@ hr {
 .light-mode nav {
   color: var(--font-color-light);
 }
-.light-mode .page-columns {
+.light-mode article {
   background: url("/_assets/media/main/ooorganize.svg");
 }
 .light-mode .card {
@@ -1404,7 +1404,7 @@ hr {
     background-color: var(--page-bg-dark);
     border-color: var(--page-border-dark);
   }
-  .page-columns {
+  article {
     background: url("/_assets/media/main/ooorganize-dark.svg");
   }
   .card, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
@@ -1499,7 +1499,7 @@ hr {
   background-color: var(--page-bg-dark);
   border-color: var(--page-border-dark);
 }
-.dark-mode .page-columns {
+.dark-mode article {
   background: url("/_assets/media/main/ooorganize-dark.svg");
 }
 .dark-mode .card, .dark-mode #statuscafe, .dark-mode .time, .dark-mode .web-rings, .dark-mode .web-rings details p, .dark-mode .web-rings-list {

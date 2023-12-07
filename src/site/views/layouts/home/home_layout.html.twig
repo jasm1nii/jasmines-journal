@@ -26,6 +26,7 @@
     <div class="board">
       <header>
         <div class="top">
+          {# theme switcher will load here #}
           <hgroup>
             <h1>
               jasmine's journal <img class="ascii-img" src="{{ src }}/index-h1-after.svg" width="300" height="50" alt=""/>
@@ -43,24 +44,20 @@
         </nav>
       </header>
       <main>
-        <aside>
-          <div class="notice-group" aria-label="notice">
-            <button id="pin" aria-expanded="true">📌</button>
-            <div id="notice"></div>
-          </div>
+        <aside class="notice-group" aria-label="notice">
+          <button id="pin" aria-expanded="true">📌</button>
+          <div id="notice"></div>
         </aside>
         <article>
-          <div class="page-columns">
-            {{ include('_card_about.html.twig') }}
-            {{ include('_card_note.html') }}
-            {{ include('_card_clock.html') }}
-            {{ include('_card_lastfm.html') }}
-            {{ include('_card_status.html.twig') }}
-            {{ include('_card_site-updates.html.twig') }}
-            {{ include('_card_tip-jar.html') }}
-            {{ include('_card_webrings.html.twig') }}
-            {{ include('_card_guestbook.html.twig') }}
-          </div>
+          {{ include('_card_about.html.twig') }}
+          {{ include('_card_note.html') }}
+          {{ include('_card_clock.html') }}
+          {{ include('_card_lastfm.html') }}
+          {{ include('_card_status.html.twig') }}
+          {{ include('_card_site-updates.html.twig') }}
+          {{ include('_card_tip-jar.html') }}
+          {{ include('_card_webrings.html.twig') }}
+          {{ include('_card_guestbook.html.twig') }}
         </article>
       </main>
     </div>

@@ -29,7 +29,7 @@ body {
   animation: fadeInSlide 1s;
   animation-fill-mode: forwards;
 }
-.page-columns > section {
+article > section {
   transition: transform 0.3s;
   &:hover {
     transform: translatey(-5px);
@@ -114,7 +114,7 @@ nav {
   }
 }
 
-.page-columns {
+article {
   columns: 3;
   column-gap: 0;
   background-size: 200px !important;
@@ -278,7 +278,7 @@ hr {
   nav {
     color: var(--font-color-light);
   }
-  .page-columns {
+  article {
     background: url('/_assets/media/main/ooorganize.svg');
   }
   .card {
@@ -438,7 +438,7 @@ hr {
     background-color: var(--page-bg-dark);
     border-color: var(--page-border-dark);
   }
-  .page-columns {
+  article {
     background: url('/_assets/media/main/ooorganize-dark.svg');
   }
   .card, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
