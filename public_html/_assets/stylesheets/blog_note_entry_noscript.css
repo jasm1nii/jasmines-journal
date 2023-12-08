@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Inconsolata";
+  font-display: swap;
+  src: url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Inconsolata/Inconsolata.woff") format("woff"), url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  a {
+    color: rgb(255, 166, 181);
+  }
+  a:hover {
+    color: black;
+  }
+  .h-entry, #comments, #webmentions {
+    background-color: rgb(22, 21, 21);
+    border-color: rgb(68, 60, 60);
+    font-weight: normal;
+  }
+  #comments button {
+    color: black;
+    background-color: thistle;
+  }
+  #comments button:hover {
+    background-color: lightpink;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(232, 221, 235);
+    color: rgb(63, 48, 48);
+  }
+  .h-entry, #webmentions, #comments {
+    color: rgb(63, 48, 48);
+    background-color: ghostwhite;
+    font-weight: 500;
+  }
+  a {
+    color: rgb(88, 24, 56);
+  }
+  a:hover {
+    color: black;
+  }
+  :root, :host {
+    --seia-color-text: $light-font-color;
+  }
+}/*# sourceMappingURL=blog_note_entry_noscript.css.map */

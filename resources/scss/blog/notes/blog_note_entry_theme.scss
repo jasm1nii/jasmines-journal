@@ -1,0 +1,21 @@
+@use '../shared' as *;
+
+@use '_colors/entry_dark' as *;
+@use '_colors/entry_light' as *;
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+
+:root .dark-mode, :host .dark-mode {
+    --seia-color-text: white;
+}
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}
+:root .light-mode, :host .light-mode {
+    --seia-color-text: $light-font-color;
+}

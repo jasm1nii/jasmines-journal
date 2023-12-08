@@ -1,0 +1,29 @@
+@use '../../shared' as *;
+
+@mixin dark-mode-body {
+    background-color: $dark-bg-color;
+    color: $dark-font-color;
+}
+
+@mixin dark-mode {
+    a {
+        color: $dark-link-color;
+        &:hover {
+            color: black;
+        }
+    }
+    .h-entry, #comments, #webmentions {
+        background-color: $dark-section-bg;
+        border-color: $dark-section-border;
+        font-weight: normal;
+    }
+    #comments {
+        button {
+            color: black;
+            background-color: thistle;
+            &:hover {
+                background-color: lightpink;
+            }
+        }
+    }
+}

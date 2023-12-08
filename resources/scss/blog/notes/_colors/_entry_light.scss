@@ -1,0 +1,20 @@
+@use '../../shared' as *;
+
+@mixin light-mode-body {
+    background-color:  $light-bg-color;
+    color: $light-font-color;
+}
+
+@mixin light-mode {
+    .h-entry, #webmentions, #comments {
+        color: $light-font-color;
+        background-color: $light-section-bg;
+        font-weight: 500;
+    }
+    a {
+        color: $light-link-color;
+        &:hover {
+            color: black;
+        }
+    }
+}
