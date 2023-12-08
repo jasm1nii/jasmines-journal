@@ -4,7 +4,7 @@
         var playButton =  document.getElementById("play-gif");
         var pauseButton = document.getElementById("stop-gif");
 
-            playButton.addEventListener("click", function () {e.start() });
+            playButton.addEventListener("click", function () { e.start() });
             pauseButton.addEventListener("click", function () { e.stop() });
 
         var toggleBox = document.querySelector(".warning");
