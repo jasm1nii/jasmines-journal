@@ -12,24 +12,10 @@
     --font-2: 'Besley', serif;
     --font-3: 'Inconsolata', monospace;
 
-    --font-color-light: #4e494e;
-    --h1-light: #5a5463;
-    --h2-light: #794668;
-    --link-color-light: darkmagenta;
-    --link-hover-bg-light: rgb(216, 112, 147);
-    --document-color-light: thistle;
-    --page-color-light: #fff6f6;
-
     --theme-toggle-bg: #e3d7e9;
     --theme-toggle-hover-bg: #b084bd;
     --theme-toggle-active-bg: #8b4f61;
     --theme-toggle-focus-bg: #a175c5;
-
-    --page-bg-dark: rgb(24, 24, 26);
-    --dark-mode-links: rgb(255, 192, 216);
-    --link-hover-bg-dark: rgba(216, 112, 147, .5);
-    --dark-mode-h: rgb(223, 154, 236);
-    --dark-button-bg: #463646;
 }
 
 * {
@@ -45,6 +31,7 @@ body {
     font-size: 1.2em;
     font-stretch: 95%;
     margin: auto;
+    background-color: #433a46;
 }
 
 .layout {
@@ -135,127 +122,3 @@ button, button:active, button:hover, button:focus {
 
 @include webkit-scrollbar-style-1();
 @include screen-900();
-
-$dark-border-color: #463646;
-
-@mixin dark-mode-body {
-    color: white;
-    background-color: black;
-}
-
-@mixin dark-mode {
-    .layout {
-        background-color: rgb(10, 10, 10);
-        border-color: $dark-border-color;
-    }
-    header {
-        nav {
-            border-color: $dark-border-color;
-        }
-    }
-    article {
-        > section {
-            background-color: rgb(20, 20, 20);
-        }
-    }
-    section {
-        &:hover {
-            h2 {
-                color: rgb(255, 142, 198);
-            }
-        }
-    }
-    footer {
-        border-color: $dark-border-color;
-    }
-    h2, h3 {
-        color: var(--dark-mode-h);
-    }
-    a {
-        color: var(--dark-mode-links);
-        &:hover {
-            color: white;
-            background-color: var(--link-hover-bg-dark);
-        }
-    }
-    button {
-        background-color: var(--dark-button-bg);
-        color: rgb(230, 214, 236);
-        &:hover {
-            background-color: #712357;
-        }
-        &:active {
-            background-color: rgb(207, 102, 102);
-            color: white;
-        }
-        &:focus {
-            background-color: #8b4f61;
-        }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        @include dark-mode-body();
-    }
-    @include dark-mode();
-}
-
-.dark-mode {
-    @include dark-mode-body();
-    @include dark-mode();
-}
-
-@mixin light-mode-body {
-    background-color: var(--document-color-light);
-    color: var(--font-color-light);
-}
-
-@mixin light-mode {
-    .layout {
-        background-color: var(--page-color-light);
-    }
-    article {
-        > section {
-            background-color: var(--page-color-light);
-        }
-    }
-    section {
-        &:hover {
-            h2 {
-                color: rgb(192, 90, 107);
-            }
-        }
-    }
-    h1 {
-        color: var(--h1-light);
-    }
-    h2 {
-        color: var(--h2-light);
-    }
-    a {
-        color: var(--link-color-light);
-        &:hover {
-            background-color: var(--link-hover-bg-light);
-            color: white;
-        }
-    }
-    button {
-        background-color: #f5e9f5;
-        color: rgb(51, 44, 44);
-        &:hover {
-            background-color: lightgoldenrodyellow;
-        }
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        @include light-mode-body();
-    }
-}
-
-.light-mode {
-    @include light-mode-body();
-    @include light-mode();
-}

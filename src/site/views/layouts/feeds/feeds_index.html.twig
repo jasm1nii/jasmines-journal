@@ -3,9 +3,12 @@
     <head>
         {{ include('@includes/head.shtml') }}
         <title>feeds | jasmine's journal</title>
-        <meta name="description" content="subscription feeds for my little webbed site"/>
+        <meta name="description" content="activity feeds for my little webbed site"/>
         <link rel="canonical" href="https://jasm1nii.xyz/feeds">
         <link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/feeds.css" type="text/css" media="all"/>
+        <noscript>
+            <link rel="stylesheet" href="/_assets/stylesheets/feeds_noscript.css" type="text/css" media="all"/>
+        </noscript>
     </head>
     <body>
         <div class="layout">

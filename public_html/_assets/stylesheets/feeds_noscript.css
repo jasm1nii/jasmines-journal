@@ -1,0 +1,99 @@
+:root {
+  --page-bg-dark: rgb(24, 24, 26);
+  --dark-mode-links: rgb(255, 192, 216);
+  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --dark-mode-h: rgb(223, 154, 236);
+  --dark-button-bg: #463646;
+}
+
+:root {
+  --font-color-light: #4e494e;
+  --h1-light: #5a5463;
+  --h2-light: #794668;
+  --link-color-light: darkmagenta;
+  --link-hover-bg-light: rgb(216, 112, 147);
+  --document-color-light: thistle;
+  --page-color-light: #fff6f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: black;
+  }
+  .layout {
+    background-color: rgb(10, 10, 10);
+    border-color: #463646;
+  }
+  header nav {
+    border-color: #463646;
+  }
+  article > section {
+    background-color: rgb(20, 20, 20);
+  }
+  section:hover h2 {
+    color: rgb(255, 142, 198);
+  }
+  footer {
+    border-color: #463646;
+  }
+  h2, h3 {
+    color: var(--dark-mode-h);
+  }
+  a {
+    color: var(--dark-mode-links);
+  }
+  a:hover {
+    color: white;
+    background-color: var(--link-hover-bg-dark);
+  }
+  button {
+    background-color: var(--dark-button-bg);
+    color: rgb(230, 214, 236);
+  }
+  button:hover {
+    background-color: #712357;
+  }
+  button:active {
+    background-color: rgb(207, 102, 102);
+    color: white;
+  }
+  button:focus {
+    background-color: #8b4f61;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--document-color-light);
+    color: var(--font-color-light);
+  }
+  .layout {
+    background-color: var(--page-color-light);
+  }
+  article > section {
+    background-color: var(--page-color-light);
+  }
+  section:hover h2 {
+    color: rgb(192, 90, 107);
+  }
+  h1 {
+    color: var(--h1-light);
+  }
+  h2 {
+    color: var(--h2-light);
+  }
+  a {
+    color: var(--link-color-light);
+  }
+  a:hover {
+    background-color: var(--link-hover-bg-light);
+    color: white;
+  }
+  button {
+    background-color: #f5e9f5;
+    color: rgb(51, 44, 44);
+  }
+  button:hover {
+    background-color: lightgoldenrodyellow;
+  }
+}/*# sourceMappingURL=feeds_noscript.css.map */

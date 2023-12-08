@@ -1,0 +1,96 @@
+:root {
+  --page-bg-dark: rgb(24, 24, 26);
+  --dark-mode-links: rgb(255, 192, 216);
+  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --dark-mode-h: rgb(223, 154, 236);
+  --dark-button-bg: #463646;
+}
+
+:root {
+  --font-color-light: #4e494e;
+  --h1-light: #5a5463;
+  --h2-light: #794668;
+  --link-color-light: darkmagenta;
+  --link-hover-bg-light: rgb(216, 112, 147);
+  --document-color-light: thistle;
+  --page-color-light: #fff6f6;
+}
+
+.dark-mode {
+  color: white;
+  background-color: black;
+}
+.dark-mode .layout {
+  background-color: rgb(10, 10, 10);
+  border-color: #463646;
+}
+.dark-mode header nav {
+  border-color: #463646;
+}
+.dark-mode article > section {
+  background-color: rgb(20, 20, 20);
+}
+.dark-mode section:hover h2 {
+  color: rgb(255, 142, 198);
+}
+.dark-mode footer {
+  border-color: #463646;
+}
+.dark-mode h2, .dark-mode h3 {
+  color: var(--dark-mode-h);
+}
+.dark-mode a {
+  color: var(--dark-mode-links);
+}
+.dark-mode a:hover {
+  color: white;
+  background-color: var(--link-hover-bg-dark);
+}
+.dark-mode button {
+  background-color: var(--dark-button-bg);
+  color: rgb(230, 214, 236);
+}
+.dark-mode button:hover {
+  background-color: #712357;
+}
+.dark-mode button:active {
+  background-color: rgb(207, 102, 102);
+  color: white;
+}
+.dark-mode button:focus {
+  background-color: #8b4f61;
+}
+
+.light-mode {
+  background-color: var(--document-color-light);
+  color: var(--font-color-light);
+}
+.light-mode .layout {
+  background-color: var(--page-color-light);
+}
+.light-mode article > section {
+  background-color: var(--page-color-light);
+}
+.light-mode section:hover h2 {
+  color: rgb(192, 90, 107);
+}
+.light-mode h1 {
+  color: var(--h1-light);
+}
+.light-mode h2 {
+  color: var(--h2-light);
+}
+.light-mode a {
+  color: var(--link-color-light);
+}
+.light-mode a:hover {
+  background-color: var(--link-hover-bg-light);
+  color: white;
+}
+.light-mode button {
+  background-color: #f5e9f5;
+  color: rgb(51, 44, 44);
+}
+.light-mode button:hover {
+  background-color: lightgoldenrodyellow;
+}/*# sourceMappingURL=feeds_theme.css.map */

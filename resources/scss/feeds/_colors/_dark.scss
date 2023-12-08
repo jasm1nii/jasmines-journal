@@ -1,0 +1,65 @@
+:root {
+    --page-bg-dark: rgb(24, 24, 26);
+    --dark-mode-links: rgb(255, 192, 216);
+    --link-hover-bg-dark: rgba(216, 112, 147, .5);
+    --dark-mode-h: rgb(223, 154, 236);
+    --dark-button-bg: #463646;
+}
+
+$dark-border-color: #463646;
+
+@mixin dark-mode-body {
+    color: white;
+    background-color: black;
+}
+
+@mixin dark-mode {
+    .layout {
+        background-color: rgb(10, 10, 10);
+        border-color: $dark-border-color;
+    }
+    header {
+        nav {
+            border-color: $dark-border-color;
+        }
+    }
+    article {
+        > section {
+            background-color: rgb(20, 20, 20);
+        }
+    }
+    section {
+        &:hover {
+            h2 {
+                color: rgb(255, 142, 198);
+            }
+        }
+    }
+    footer {
+        border-color: $dark-border-color;
+    }
+    h2, h3 {
+        color: var(--dark-mode-h);
+    }
+    a {
+        color: var(--dark-mode-links);
+        &:hover {
+            color: white;
+            background-color: var(--link-hover-bg-dark);
+        }
+    }
+    button {
+        background-color: var(--dark-button-bg);
+        color: rgb(230, 214, 236);
+        &:hover {
+            background-color: #712357;
+        }
+        &:active {
+            background-color: rgb(207, 102, 102);
+            color: white;
+        }
+        &:focus {
+            background-color: #8b4f61;
+        }
+    }
+}
