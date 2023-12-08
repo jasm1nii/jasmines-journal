@@ -6,6 +6,9 @@
         <meta name="description" content="updates to the website"/>
         <meta name="robots" content="noindex"/>
         <link id="base-theme" href="/_assets/stylesheets/changelog.css" rel="stylesheet" type="text/css" media="all"/>
+        <noscript>
+			<link href="/_assets/stylesheets/changelog_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+		</noscript>
     </head>
 </html>
 <body>
@@ -16,17 +19,14 @@
                   <h1>change log</h1>
                   <p class="subtitle">jasmine's journal</p>
                 </hgroup>
-                <nav>
-                    {{ nav|raw }}
-                </nav>
+                <nav>{{ nav|raw }}</nav>
             </header>
         </div>
         <div>
             <main>
                 <article>
                     <h2>{{ date }}</h2>
-                    {% block changelog %}
-                    {% endblock %}
+                    {{ block('changelog') }}
                 </article>
             </main>
             <footer>
@@ -37,6 +37,5 @@
             </footer>
         </div>
     </div>
-    
     </body>
 </html>

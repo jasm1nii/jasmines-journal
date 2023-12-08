@@ -1,0 +1,99 @@
+:root {
+  --light-body-bg: thistle;
+  --light-font-1: #4e494e;
+  --light-font-2: rgb(56, 36, 56);
+  --light-main-bg: whitesmoke;
+  --light-main-border: purple;
+  --light-h1: #4a3b61;
+  --light-h2: #5a5463;
+  --light-h3: rgb(107, 72, 128);
+  --light-h3-before: rgb(173, 123, 173);
+  --light-h3-bg: rgb(227, 219, 230);
+  --light-h4: color: rgb(119, 95, 35);
+  --light-h4-bg: antiquewhite;
+  --light-a: darkmagenta;
+  --light-decor: rgb(169, 121, 179);
+  --light-section-bg: whitesmoke;
+  --light-summary-bg: rgb(216, 216, 233);
+  --light-li-border: rgb(223, 212, 212);
+  --light-headernav: rgb(76, 15, 95);
+}
+
+:root {
+  --dark-a: pink;
+  --dark-main-bg: rgb(34, 30, 30);
+  --dark-li-border: purple;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--light-font-1);
+    background-color: var(--light-body-bg);
+  }
+  header p {
+    color: var(--light-font-2);
+  }
+  header nav ul:first-child {
+    color: var(--light-headernav);
+  }
+  h1 {
+    color: var(--light-h1);
+  }
+  h2 {
+    color: var(--light-h2);
+  }
+  h3 {
+    color: var(--light-h3);
+    background-color: var(--light-h3-bg);
+  }
+  h3::before {
+    color: var(--light-h3-before);
+  }
+  h4 {
+    color: var(--light-h4);
+    background-color: var(--light-h4-bg);
+  }
+  article > section {
+    background-color: var(--light-main-bg);
+  }
+  article::after {
+    color: var(--light-decor);
+  }
+  section li {
+    border-color: var(--light-li-border);
+  }
+  section > details summary {
+    background-color: var(--light-summary-bg);
+  }
+  a {
+    color: var(--light-a);
+  }
+  a:hover {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  header * {
+    color: white;
+  }
+  article > section {
+    background-color: var(--dark-main-bg);
+    border-color: #4a3b61;
+  }
+  section li {
+    border-color: var(--dark-li-border);
+  }
+  h2, h3, h4, summary {
+    color: white;
+  }
+  h3, h4, summary {
+    background-color: transparent;
+  }
+  a {
+    color: var(--dark-a);
+  }
+}/*# sourceMappingURL=changelog_noscript.css.map */
