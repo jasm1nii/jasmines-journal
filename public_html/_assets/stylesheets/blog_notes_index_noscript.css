@@ -15,40 +15,48 @@
   body {
     background-color: rgb(232, 221, 235);
     color: rgb(63, 48, 48);
-  }
-  .h-entry, #webmentions, #comments {
-    color: rgb(63, 48, 48);
-    background-color: ghostwhite;
     font-weight: 500;
+  }
+  .feed-links {
+    background-color: rgb(246, 240, 248);
+  }
+  .u-photo {
+    filter: drop-shadow(5px 5px 15px rgba(199, 137, 235, 0.08)) drop-shadow(-5px -5px 15px rgba(199, 137, 235, 0.08));
+  }
+  .h-entry {
+    background-color: ghostwhite;
+    box-shadow: 5px 5px 15px rgba(199, 137, 235, 0.08), -5px -5px 15px rgba(199, 137, 235, 0.08);
   }
   a {
     color: rgb(88, 24, 56);
   }
   a:hover {
-    color: black;
+    color: white;
+    background-color: rgb(160, 120, 155);
   }
 }
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
     color: white;
+    font-weight: normal;
+  }
+  .feed-links {
+    background-color: rgb(52, 47, 54);
+  }
+  .u-photo {
+    filter: drop-shadow(5px 5px 15px rgba(128, 0, 107, 0.4)) drop-shadow(-5px -5px 15px rgba(128, 0, 107, 0.4));
+  }
+  .h-entry {
+    background-color: rgb(22, 21, 21);
+    border-color: rgb(68, 60, 60);
+    box-shadow: 5px 5px 15px rgba(128, 0, 107, 0.4), -5px -5px 15px rgba(128, 0, 107, 0.4);
   }
   a {
     color: rgb(255, 166, 181);
   }
   a:hover {
     color: black;
-  }
-  .h-entry, #comments, #webmentions {
-    background-color: rgb(22, 21, 21);
-    border-color: rgb(68, 60, 60);
-    font-weight: normal;
-  }
-  #comments button {
-    color: black;
-    background-color: thistle;
-  }
-  #comments button:hover {
-    background-color: lightpink;
+    background-color: rgb(255, 166, 181);
   }
 }/*# sourceMappingURL=blog_notes_index_noscript.css.map */

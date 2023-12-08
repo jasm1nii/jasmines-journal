@@ -16,8 +16,8 @@
                 drop-shadow($shadow-style-2 $shadow-color);
     }
     .h-entry {
-        background-color: theme.$dark-section-bg;
-        border-color: theme.$dark-section-border;
+        background-color: $dark-section-bg;
+        border-color: $dark-section-border;
         box-shadow: $shadow-style-1 $shadow-color,
                     $shadow-style-2 $shadow-color;
     }
@@ -25,6 +25,7 @@
         color: $dark-link-color;
         &:hover {
             color: black;
+            background-color: $dark-link-color;
         }
     }
 }
