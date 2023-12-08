@@ -1000,9 +1000,3 @@
     },
   ]).default;
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const e = new Freezeframe();
-  document.getElementById("play-gif").addEventListener("click", function () { e.start() });
-  document.getElementById("stop-gif").addEventListener("click", function () { e.stop() });
-});

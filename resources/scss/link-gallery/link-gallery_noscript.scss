@@ -1,11 +1,14 @@
 @use '_colors/dark'as *;
 @use '_colors/light'as *;
 
+.board {
+    opacity: 1;
+}
+
 @media (prefers-color-scheme: light) {
     body {
         @include light-mode-body();
     }
-
     @include light-mode();
 }
 

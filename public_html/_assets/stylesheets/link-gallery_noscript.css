@@ -1,3 +1,7 @@
+.board {
+  opacity: 1;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: var(--document-color-light);

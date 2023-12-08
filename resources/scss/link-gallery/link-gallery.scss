@@ -24,7 +24,7 @@ body {
 }
 
 /* animations */
-body, .board {
+body {
   opacity: 0;
   animation: fadeInPage .5s;
   animation-fill-mode: forwards;
@@ -38,6 +38,7 @@ section {
 }
 
 .board {
+  opacity: 0;
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
@@ -137,6 +138,7 @@ section {
 }
 
 .buttons {
+  display: none;
   width: 80%;
   max-width: 300px;
   padding: 0;
@@ -151,6 +153,7 @@ section {
 }
 
 .warning {
+  display: none;
   background-color: var(--warning-bg);
   box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
   h2 {

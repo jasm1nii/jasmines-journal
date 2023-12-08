@@ -1,12 +1,13 @@
 { // push pin
-  document.getElementById("pin").addEventListener("click", ()=>{
-  var x = document.getElementById("notice");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    } else {
-      x.style.display = "none";
+  document.getElementById("pin").addEventListener("click", () => {
+    var x = document.getElementById("notice");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
-  });
+  );
 
   // sticky note contents
   const notice = document.querySelector("#notice");
@@ -64,8 +65,8 @@
 };
 
 { // yipee!!!!
-const d = document;
-const surprise = document.getElementById('surprise');
+  const d = document;
+  const surprise = document.getElementById('surprise');
 
   const flwrBtn = d.createElement('button');
         flwrBtn.setAttribute('title','open for a surprise!');
@@ -82,12 +83,14 @@ const surprise = document.getElementById('surprise');
           height:60,
           alt:'',
         };
+
   const flower = d.createElement('img');
   for (let attr in flwrAttr) { 
     if (flwrAttr.hasOwnProperty(attr)) { 
       flower.setAttribute(attr, flwrAttr[attr]); 
     } 
   };
+
   flwrBtn.insertAdjacentElement('beforeend', flower);
 
   const creatureAttr = {
@@ -98,30 +101,35 @@ const surprise = document.getElementById('surprise');
     class:'u-featured',
     loading: 'lazy'
   };
+
   const yipee = d.createElement('img');
+
   for (let attr in creatureAttr) { 
     if (creatureAttr.hasOwnProperty(attr)) { 
       yipee.setAttribute(attr, creatureAttr[attr]); 
     }
   };
+
   let ys = yipee.style;
         ys.position = 'absolute';
         ys.marginTop = '20px';
         ys.marginLeft = '-220px';
         ys.display = 'none';
+
   surprise.appendChild(yipee);
+
   flwrBtn.addEventListener('click', ()=>{
     let fs = flower.style;
     if (ys.display === "block") {
       ys.display = "none";
       fs.filter = "none";
       fs.transition = 'filter .25s ease-in-out';
-    }
-    else {
+    } else {
       ys.display = "block";
       fs.filter = 'hue-rotate(45deg) brightness(80%) saturate(300%)';
       }
-    });
+    }
+  );
 };
 
 { // clock
@@ -147,19 +155,25 @@ const surprise = document.getElementById('surprise');
     clockElements = document.getElementsByClassName('clock');
     window.arrClocks = []
     window.arrOffsets = [];
+
     for(var i = 0; i < clockElements.length; i++) {
-    el = clockElements[i];
-    timezone = parseInt(el.getAttribute('timezone'));
-    if (!isNaN(timezone)) {
-      var tzDifference = timezone * 60 + (new Date()).getTimezoneOffset();
-      var offset = tzDifference * 60 * 1000;
-      window.arrClocks.push(el);
-      window.arrOffsets.push(offset);
+      el = clockElements[i];
+      timezone = parseInt(el.getAttribute('timezone'));
+
+      if (!isNaN(timezone)) {
+        var tzDifference = timezone * 60 + (new Date()).getTimezoneOffset();
+        var offset = tzDifference * 60 * 1000;
+
+        window.arrClocks.push(el);
+        window.arrOffsets.push(offset);
       };
+
     };
-  updateClocks();
-  clockID = setInterval(updateClocks, 1000);
+
+    updateClocks();
+    clockID = setInterval(updateClocks, 1000);
   };
+
   setTimeout(startClocks, 100);
 };
 
