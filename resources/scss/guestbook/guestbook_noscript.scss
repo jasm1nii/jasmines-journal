@@ -1,0 +1,16 @@
+@use '_colors/dark' as *;
+@use '_colors/light' as *;
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-body();
+    }
+    @include dark();
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-body();
+        @include light();
+    }
+}

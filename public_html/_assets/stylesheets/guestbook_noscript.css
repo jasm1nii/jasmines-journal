@@ -1,0 +1,81 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  a {
+    color: rgb(228, 160, 255);
+  }
+  a:hover {
+    color: rgb(255, 135, 155);
+  }
+  #themeSwitch:hover, input[type=submit]:hover {
+    background-color: rgb(94, 75, 148);
+  }
+  #themeSwitch {
+    border-color: rgb(84, 46, 95);
+  }
+  form input, form textarea {
+    background-color: transparent;
+    color: inherit;
+    border-color: rgb(92, 73, 109);
+  }
+  .messages nav a:hover {
+    background-color: rgb(223, 155, 223);
+    color: black;
+  }
+  .messages .current a {
+    background-color: rgb(255, 234, 164);
+    color: black;
+  }
+  .messages .current a:hover {
+    background-color: pink;
+  }
+  .message {
+    border-color: rgb(97, 42, 97);
+    background-color: rgb(24, 22, 22);
+  }
+  .message a {
+    color: rgb(219, 176, 243);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(240, 220, 240);
+    color: rgb(48, 5, 48);
+  }
+  body a {
+    color: rgb(105, 38, 72);
+  }
+  body a:hover {
+    color: rgb(179, 48, 113);
+  }
+  body #themeSwitch:hover, body input[type=submit]:hover {
+    background-color: rgb(190, 241, 224);
+  }
+  body #themeSwitch {
+    border-color: purple;
+    background-color: rgb(252, 240, 255);
+  }
+  body input, body textarea {
+    background-color: rgb(253, 249, 255);
+  }
+  body .messages nav a:hover {
+    background-color: rgb(148, 97, 148);
+    color: rgb(255, 255, 255);
+  }
+  body .messages .current a {
+    background-color: rgb(255, 243, 207);
+    color: black;
+  }
+  body .messages .current a:hover {
+    background-color: rgb(199, 114, 128);
+  }
+  body .message {
+    background-color: rgb(255, 240, 250);
+    box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.205);
+  }
+  body .is-threaded {
+    border-left-color: rgb(150, 118, 165);
+  }
+}/*# sourceMappingURL=guestbook_noscript.css.map */

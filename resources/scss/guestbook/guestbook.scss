@@ -9,10 +9,6 @@
 @use '_screen-sizes/1400' as *;
 @use '_screen-sizes/768' as *;
 
-@use '_colors/dark' as *;
-@use '_colors/light' as *;
-
-
 html {
     @include scrollbar-style-1();
 }
@@ -266,27 +262,3 @@ main + footer {
 @include webkit-scrollbar-style-1();
 @include screen-1400();
 @include screen-768();
-
-@media (prefers-color-scheme: dark) {
-    body {
-        @include dark-body();
-    }
-    @include dark();
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        @include light-body();
-        @include light();
-    }
-}
-
-.dark-mode {
-    @include dark-body();
-    @include dark();
-}
-
-.light-mode {
-    @include light-body();
-    @include light();
-}
