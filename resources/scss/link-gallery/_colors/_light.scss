@@ -1,0 +1,90 @@
+@mixin light-mode-body {
+    background-color: var(--document-color-light);
+    color: var(--font-color-light);
+    font-weight: 450;
+}
+
+@mixin light-mode {
+    .board {
+        background-color: var(--page-color-light);
+    }
+
+    main {
+        background: url('/_assets/media/main/ooorganize.svg');
+    }
+
+    header {
+        color: var(--h1-light);
+
+        nav {
+            color: var(--font-color-light);
+        }
+    }
+
+    section {
+        color: var(--font-color-light);
+        border-color: rgb(190, 133, 141);
+        background-color: var(--section-card-light);
+        box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
+    }
+
+    .warning {
+        background-color: var(--warning-bg);
+    }
+
+    .code {
+        background-color: var(--button-code-txt);
+        font-weight: 500;
+    }
+
+    h2 {
+        color: var(--h2-light);
+        border-color: rgb(233, 166, 205);
+    }
+
+    h3 {
+        color: var(--h3-light);
+    }
+
+    a {
+        color: var(--link-color-light);
+
+        &:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(128, 0, 128, 0.637);
+        }
+    }
+
+    button {
+        background-color: #f5e9f5;
+        color: rgb(51, 44, 44);
+
+        &:hover {
+            background-color: lightgoldenrodyellow;
+        }
+    }
+
+    #gif-controls {
+        button {
+            background-color: var(--gif-controls-bg);
+            color: var(--gif-controls-font);
+            border: var(--gif-controls-border);
+
+            &:hover {
+                background-color: var(--gif-controls-hover-bg);
+            }
+
+            &:active {
+                background-color: var(--gif-controls-active-bg);
+            }
+
+            &:focus {
+                background-color: var(--gif-controls-focus-bg);
+            }
+        }
+    }
+
+    footer {
+        color: var(--footer-font);
+    }
+}

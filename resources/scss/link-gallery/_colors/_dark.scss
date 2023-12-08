@@ -1,0 +1,82 @@
+@mixin dark-mode-body {
+    color: white;
+    background-color: black;
+}
+
+@mixin dark-mode {
+    .board {
+        background-color: var(--page-bg-dark);
+        border-color: var(--page-border-dark);
+    }
+
+    .page-columns {
+        background: url('/_assets/media/main/ooorganize-dark.svg');
+    }
+
+    header {
+        color: white;
+
+        nav {
+            border-color: #503281;
+        }
+    }
+
+    section,
+    .warning {
+        background-color: var(--section-card-dark);
+        color: white;
+    }
+
+    section {
+        box-shadow: 10px 10px rgba(104, 59, 84, 0.75);
+        border-color: #665085;
+    }
+
+    .warning {
+        box-shadow: 10px 10px rgba(131, 36, 131, .75);
+    }
+
+    .button-gallery {
+        background-color: transparent;
+    }
+
+    h2 {
+        border-color: rgb(110, 62, 90);
+    }
+
+    h2,
+    h3 {
+        color: var(--dark-mode-h);
+    }
+
+    a,
+    nav a {
+        color: var(--dark-mode-links);
+    }
+
+    a {
+        color: var(--dark-mode-links);
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    button {
+        background-color: var(--dark-button-bg);
+        color: rgb(230, 214, 236);
+
+        &:hover {
+            background-color: #712357;
+        }
+
+        &:active {
+            background-color: rgb(207, 102, 102);
+            color: white;
+        }
+
+        &:focus {
+            background-color: #8b4f61;
+        }
+    }
+}

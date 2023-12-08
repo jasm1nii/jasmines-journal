@@ -6,6 +6,9 @@
 		<meta name="description" content="a list of cool websites on the indie web"/>
 		<link rel="canonical" href="https://jasm1nii.xyz/link-gallery"/>
 		<link id="base-theme" href="/_assets/stylesheets/link-gallery.css" rel="stylesheet" type="text/css" media="all"/>
+		<noscript>
+			<link href="/_assets/stylesheets/link-gallery_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+		</noscript>
 	</head>
 	<body>
 		<div class="board">
@@ -89,7 +92,6 @@
 		<footer>
 			{{ include('@includes/footer.shtml') }}
 		</footer>
-		
-		<script src="/_assets/scripts/freezeframe.js"></script>
+		<script src="/_assets/scripts/freezeframe.js" defer></script>
 	</body>
 </html>
