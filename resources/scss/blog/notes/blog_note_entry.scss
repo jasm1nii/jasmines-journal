@@ -1,13 +1,13 @@
-@use 'themes/blog/shared' as theme;
+@use '../shared' as theme;
 
-@use 'components/links_1' as *;
-@use 'components/buttons_1' as *;
-@use 'components/header_2' as *;
-@use 'components/footer_2' as *;
-@use 'components/comments-webmentions' as *;
+@use '../../_shared/components/links_1' as *;
+@use '../../_shared/components/buttons_1' as *;
+@use '../../_shared/components/header_2' as *;
+@use '../../_shared/components/footer_2' as *;
+@use '../../_shared/components/comments-webmentions' as *;
 
-@use 'screen_queries/blog/notes/entry_768' as *;
-@use 'screen_queries/blog/notes/entry_500' as *;
+@use '_screen-sizes/entry_768' as *;
+@use '_screen-sizes/entry_500' as *;
 
 @import url('cactus-chat.css');
 

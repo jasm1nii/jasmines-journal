@@ -1,10 +1,10 @@
 /* sitemap */
-@use 'assets/font_instrument-sans';
+@use '../_shared/assets/font_instrument-sans';
 
-@use 'components/scrollbar'as *;
-@use 'components/webkit_scrollbar'as *;
+@use '../_shared/components/scrollbar'as *;
+@use '../_shared/components/webkit_scrollbar'as *;
 
-@use 'animations/fade-in'as *;
+@use '../_shared/animations/fade-in'as *;
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;

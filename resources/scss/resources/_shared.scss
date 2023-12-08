@@ -1,8 +1,8 @@
-@use '../assets/font_instrument-sans';
+@use '../_shared/assets/font_instrument-sans';
 
-@use '../animations/fade-in' as *;
-@use '../components/scrollbar' as *;
-@use '../components/webkit_scrollbar' as *;
+@use '../_shared/animations/fade-in' as *;
+@use '../_shared/components/scrollbar' as *;
+@use '../_shared/components/webkit_scrollbar' as *;
 
 $dark-section-bg: rgb(27, 26, 26);
 $dark-section-border: rgb(51, 42, 56);

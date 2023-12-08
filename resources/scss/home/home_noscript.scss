@@ -1,5 +1,5 @@
-@use 'themes/home/dark'as dark-theme;
-@use 'themes/home/light'as light-theme;
+@use '_colors/dark'as *;
+@use '_colors/light'as *;
 
 header hgroup p {
     font-size: .9em;
@@ -36,10 +36,10 @@ header hgroup p {
     }
 
     body {
-        @include light-theme.light-mode-body();
+        @include light-mode-body();
     }
 
-    @include light-theme.light-mode();
+    @include light-mode();
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,8 +48,8 @@ header hgroup p {
     }
 
     body {
-        @include dark-theme.dark-mode-body();
+        @include dark-mode-body();
     }
 
-    @include dark-theme.dark-mode();
+    @include dark-mode();
 }

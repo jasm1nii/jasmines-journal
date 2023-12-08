@@ -1,7 +1,7 @@
-@use 'themes/blog/shared' as *;
+@use '../shared' as *;
 
-@use 'themes/blog/articles/entry_dark' as *;
-@use 'themes/blog/articles/entry_light' as *;
+@use '_colors/entry_dark' as *;
+@use '_colors/entry_light' as *;
 
 .light-mode {
     @include light-mode-body();

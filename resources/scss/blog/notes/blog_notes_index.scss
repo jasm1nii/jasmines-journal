@@ -1,12 +1,12 @@
-@use 'themes/blog/shared' as theme;
+@use '../shared' as theme;
 
-@use 'components/links_1' as *;
-@use 'components/buttons_1' as *;
-@use 'components/header_2' as *;
-@use 'components/footer_2' as *;
+@use '../../_shared/components/links_1' as *;
+@use '../../_shared/components/buttons_1' as *;
+@use '../../_shared/components/header_2' as *;
+@use '../../_shared/components/footer_2' as *;
 
-@use 'screen_queries/blog/notes/index_768' as *;
-@use 'screen_queries/blog/notes/index_500' as *;
+@use '_screen-sizes/index_768' as *;
+@use '_screen-sizes/index_500' as *;
 
 body {
     font-size: 1.1em;

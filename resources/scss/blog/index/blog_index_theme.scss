@@ -1,5 +1,5 @@
-@use 'themes/blog/index/dark' as *;
-@use 'themes/blog/index/light' as *;
+@use '_colors/dark' as *;
+@use '_colors/light' as *;
 
 .light-mode {
     @include light-mode-body();

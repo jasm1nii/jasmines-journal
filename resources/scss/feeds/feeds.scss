@@ -1,7 +1,7 @@
 /* subscription form */
-@use 'themes/feeds' as theme;
-@use 'components/nav_1' as *;
-@use 'animations/fade-in' as *;
+@use 'shared' as theme;
+@use '../_shared/components/nav_1' as *;
+@use '../_shared/animations/fade-in' as *;
 
 /* animations */
 header, main, footer {

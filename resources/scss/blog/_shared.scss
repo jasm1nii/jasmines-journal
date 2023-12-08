@@ -1,8 +1,8 @@
-@use '../../assets/font_inconsolata' as *;
+@use '../_shared/assets/font_inconsolata' as *;
 
-@use '../../animations/fade-in' as *;
-@use '../../components/webkit_scrollbar' as *;
-@use '../../components/scrollbar' as *;
+@use '../_shared/animations/fade-in' as *;
+@use '../_shared/components/webkit_scrollbar' as *;
+@use '../_shared/components/scrollbar' as *;
 
 @mixin base {
 

@@ -1,11 +1,11 @@
-@use '../assets/font_besley';
-@use '../assets/font_inconsolata';
-@use '../assets/font_instrument-sans';
+@use '../_shared/assets/font_besley';
+@use '../_shared/assets/font_inconsolata';
+@use '../_shared/assets/font_instrument-sans';
 
-@use '../components/scrollbar' as *;
-@use '../components/webkit_scrollbar' as *;
+@use '../_shared/components/scrollbar' as *;
+@use '../_shared/components/webkit_scrollbar' as *;
 
-@use '../screen_queries/feeds/900' as *;
+@use '_screen-sizes/900' as *;
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;

@@ -1,8 +1,8 @@
 /* resources index */
-@use 'themes/content_A' as theme;
+@use '../shared' as theme;
 
-@use 'screen_queries/content_A1/768' as *;
-@use 'screen_queries/content_A1/1100' as *;
+@use '_screen-sizes/768' as *;
+@use '_screen-sizes/1100' as *;
 
 :root {
     --links-hover-bg: white;

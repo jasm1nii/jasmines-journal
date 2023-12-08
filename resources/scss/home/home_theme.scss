@@ -1,5 +1,5 @@
-@use 'themes/home/dark'as *;
-@use 'themes/home/light'as *;
+@use '_colors/dark'as *;
+@use '_colors/light'as *;
 
 :root .light-mode {
     --sticky-note-bg: cornsilk !important;

@@ -1,9 +1,9 @@
 /* link gallery styles will now go here, separate from the main index page */
-@use 'themes/main' as theme;
+@use '../_shared/theme_1' as theme;
 
-@use 'screen_queries/link-gallery/1100' as *;
-@use 'screen_queries/link-gallery/900'as *;
-@use 'screen_queries/link-gallery/768'as *;
+@use '_screen-sizes/1100' as *;
+@use '_screen-sizes/900'as *;
+@use '_screen-sizes/768'as *;
 
 :root {
   --button-code-txt: rgb(255, 244, 244);

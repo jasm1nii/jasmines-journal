@@ -1,4 +1,4 @@
-@use '../../../components/header_2' as *;
+@use '../../../_shared/components/header_2' as *;
 
 @mixin screen-800 {
     @media all and (max-width:800px) {
