@@ -6,27 +6,25 @@
     <meta name="description" content="my online diary"/>
     <link rel="canonical" href="https://jasm1nii.xyz/blog/articles"/>
     <link id="base-theme" href="/_assets/stylesheets/blog_articles_index.css" rel="stylesheet" type="text/css" media="all"/>
+    <noscript>
+        <link href="/_assets/stylesheets/blog_articles_index_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+    </noscript>
   </head>
   <body>
     <div class="layout">
         <div class="sidebar">
             <header>
                 <hgroup>
-                    <h1>
-                        jasmine's b(rain)log
-                    </h1>
+                    {# theme switcher placeholder #}
+                    <h1>jasmine's b(rain)log</h1>
                 </hgroup>
-                <nav aria-label="primary">
-                    {{ nav|raw }}
-                </nav>
+                <nav aria-label="primary">{{ nav|raw }}</nav>
             </header>
         </div>
         <main>
             <article>
                 <h2>articles</h2>
-                <ol reversed class="articles-list">
-                    {{ entries|raw }}
-                </ol>
+                <ol reversed class="articles-list">{{ entries|raw }}</ol>
             </article>
         </main>
     </div>
@@ -39,6 +37,5 @@
             text-underline-offset: .25em;
         }
     </style>
-    
   </body>
 </html>

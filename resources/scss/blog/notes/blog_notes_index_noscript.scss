@@ -1,0 +1,18 @@
+@use '../shared' as *;
+
+@use '_colors/entry_dark' as *;
+@use '_colors/entry_light' as *;
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
+    }
+    @include light-mode();
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
+}

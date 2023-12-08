@@ -1,0 +1,30 @@
+@use '../../shared' as *;
+
+@mixin dark-mode-body {
+    background-color: $dark-bg-color;
+    color: $dark-font-color;
+    font-weight: normal;
+}
+
+@mixin dark-mode {
+    $shadow-color: rgba(128, 0, 107, 0.4);
+    .feed-links {
+        background-color: rgb(52, 47, 54);
+    }
+    .u-photo {
+        filter: drop-shadow($shadow-style-1 $shadow-color)
+                drop-shadow($shadow-style-2 $shadow-color);
+    }
+    .h-entry {
+        background-color: theme.$dark-section-bg;
+        border-color: theme.$dark-section-border;
+        box-shadow: $shadow-style-1 $shadow-color,
+                    $shadow-style-2 $shadow-color;
+    }
+    a {
+        color: $dark-link-color;
+        &:hover {
+            color: black;
+        }
+    }
+}

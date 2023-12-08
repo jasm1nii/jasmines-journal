@@ -3,10 +3,11 @@
   <head>
     {{ include('@includes/head.shtml') }}
     <title>{{ title is defined ? title : "untitled" }} | jasmine's b(rain)log</title>
+    <meta name="author" content="jasmine"/>
+    <meta name="keywords" content="{{ keywords is defined ? keywords : "blog" }}"/>
 
-    <link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/blog_article_entry.css" type="text/css" media="all"/>
-    {% if custom_style == true %}
-      <link rel="stylesheet" href="/_assets/stylesheets/{{ slug|trim('/entry', 'right') }}/style.css" type="text/css" media="all"/>
+    {% if summary is defined %}
+      <meta name="description" content="{{ summary }}"/>
     {% endif %}
 
     <link rel="canonical" href="https://jasm1nii.xyz/blog/articles{{ slug }}"/>
@@ -14,16 +15,21 @@
       <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles{{ slug }}"/>
     {% endif %}
 
-    <meta name="author" content="jasmine"/>
-    <meta name="keywords" content="{{ keywords is defined ? keywords : "blog" }}"/>
-    {% if summary is defined %}
-      <meta name="description" content="{{ summary }}"/>
+    <link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/blog_article_entry.css" type="text/css" media="all"/>
+
+    {% if custom_style == true %}
+      <link rel="stylesheet" href="/_assets/stylesheets/{{ slug|trim('/entry', 'right') }}/style.css" type="text/css" media="all"/>
     {% endif %}
+
+    <noscript>
+        <link href="/_assets/stylesheets/blog_article_entry_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+    </noscript>
   </head>
   <body>
     <div class="layout">
       <header>
         <hgroup>
+          {# theme switcher placeholder #}
           <h1>b(rain)log entry</h1>
         </hgroup>
         <nav aria-label="primary">{{ nav|raw }}</nav>
@@ -46,7 +52,6 @@
               <p class="p-summary">{{ summary }}</p>
             {% endif %}
           </hgroup>
-          
           <section class="e-content">{{ block('content') }}</section>
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
         </article>
@@ -83,7 +88,5 @@
       <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
       <script src="/_assets/scripts/comment-section.js"></script>
     {% endif %}
-
-    
   </body>
 </html>

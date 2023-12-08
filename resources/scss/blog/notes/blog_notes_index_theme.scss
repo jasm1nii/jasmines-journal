@@ -1,0 +1,14 @@
+@use '../shared' as *;
+
+@use '_colors/entry_dark' as *;
+@use '_colors/entry_light' as *;
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}

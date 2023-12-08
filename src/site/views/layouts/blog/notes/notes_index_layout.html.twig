@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    {{ include('@includes/head.shtml') }}
-    <title>jasmine's notes</title>
-    <meta name="description" content="microblog entries"/>
-    <link rel="canonical" href="https://jasm1nii.xyz/blog/notes"/>
-    <link id="base-theme" href="/_assets/stylesheets/blog_notes_index.css" rel="stylesheet" type="text/css" media="all"/>
-  </head>
-  <body>
-    <div class="layout">
-        <div class="sidebar">
-            <header>
-                <hgroup><h1>jasmine's notes</h1></hgroup>
-                <nav>{{ nav|raw }}</nav>
-            </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {{ include('@includes/head.shtml') }}
+        <title>jasmine's notes</title>
+        <meta name="description" content="microblog entries"/>
+        <link rel="canonical" href="https://jasm1nii.xyz/blog/notes"/>
+        <link id="base-theme" href="/_assets/stylesheets/blog_notes_index.css" rel="stylesheet" type="text/css" media="all"/>
+        <noscript>
+            <link href="/_assets/stylesheets/blog_notes_index_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+        </noscript>
+    </head>
+    <body>
+        <div class="layout">
+            <div class="sidebar">
+                <header>
+                    <hgroup>
+                        {# theme switch placeholder #}
+                        <h1>jasmine's notes</h1>
+                    </hgroup>
+                    <nav>{{ nav|raw }}</nav>
+                </header>
+            </div>
+            <div class="main-column">
+                <main>
+                    <article>{{ entries|raw }}</article>
+                    <aside class="feed-links">
+                        <p><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></p>
+                    </aside>
+                </main>
+                <footer>
+                    {{ include('@includes/footer.shtml') }}
+                </footer>
+            </div>
         </div>
-        <div class="main-column">
-            <main>
-                <article>{{ entries|raw }}</article>
-                <aside class="feed-links">
-                    <p><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></p>
-                </aside>
-            </main>
-            <footer>
-                {{ include('@includes/footer.shtml') }}
-            </footer>
-        </div>
-    </div>
-    
-  </body>
+    </body>
 </html>
