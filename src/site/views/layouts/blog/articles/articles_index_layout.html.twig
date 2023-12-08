@@ -14,8 +14,8 @@
     <div class="layout">
         <div class="sidebar">
             <header>
+                {# theme switcher here #}
                 <hgroup>
-                    {# theme switcher placeholder #}
                     <h1>jasmine's b(rain)log</h1>
                 </hgroup>
                 <nav aria-label="primary">{{ nav|raw }}</nav>
@@ -31,11 +31,5 @@
     <footer>
         {{ include('@includes/footer.shtml') }}
     </footer>
-    <style>
-        #headernav #blog li:first-child > a {
-            text-decoration: wavy underline;
-            text-underline-offset: .25em;
-        }
-    </style>
   </body>
 </html>

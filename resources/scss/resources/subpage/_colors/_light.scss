@@ -1,0 +1,30 @@
+@use '../../shared' as *;
+
+@mixin light-mode {
+    section, #legend, main nav {
+        background-color: var(--light-bg-article);
+    }
+    section {
+        &:not(:first-of-type) {
+            a {
+                color:rgb(104, 64, 131);
+                text-decoration-color: rgb(179, 115, 179);
+                &:hover {
+                    color: white;
+                    background-color: rgb(134, 61, 116);
+                }
+            }
+        }
+    }
+    a {
+        color: var(--light-links);
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
+    color: var(--light-font);
+}

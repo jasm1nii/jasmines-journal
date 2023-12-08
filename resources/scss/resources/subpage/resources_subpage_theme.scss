@@ -1,0 +1,12 @@
+@use '_colors/dark' as *;
+@use '_colors/light' as *;
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}

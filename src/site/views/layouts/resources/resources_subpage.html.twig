@@ -3,10 +3,13 @@
     <head>
         {{ include('@includes/head.shtml') }}
         <title>{{ title }} | jasmine's resources</title>
-        <link id="base-theme" href="/_assets/stylesheets/resources_subpage.css" rel="stylesheet"   type="text/css" media="all"/>
         <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
         <meta name="author" content="jasm1nii"/>
         <meta name="keywords" content="design resources, web development"/>
+        <link id="base-theme" href="/_assets/stylesheets/resources_subpage.css" rel="stylesheet"   type="text/css" media="all"/>
+        <noscript>
+            <link href="/_assets/stylesheets/resources_subpage_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+        </noscript>
     </head>
     <body>
         <div id="layout">
@@ -49,6 +52,5 @@
         <footer>
             {{ include('@includes/footer.shtml') }}
         </footer>
-        
     </body>
 </html>

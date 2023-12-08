@@ -178,6 +178,12 @@ body {
   margin: auto;
 }
 
+header #blog li:first-child > a {
+  -webkit-text-decoration: wavy underline;
+          text-decoration: wavy underline;
+  text-underline-offset: 0.25em;
+}
+
 .layout {
   margin-top: 5%;
   display: flex;

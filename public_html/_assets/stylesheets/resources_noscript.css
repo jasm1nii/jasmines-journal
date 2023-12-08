@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Instrument Sans";
+  font-display: swap;
+  src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+  }
+  article, #legend {
+    background-color: rgb(27, 26, 26);
+    border-color: rgb(51, 42, 56);
+  }
+  a {
+    color: var(--dark-links);
+  }
+  a:hover {
+    color: black;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-bg);
+    color: var(--light-font);
+  }
+  article, #legend {
+    background-color: var(--light-bg-article);
+  }
+  a {
+    color: var(--light-links);
+  }
+  a:hover {
+    color: black;
+  }
+}/*# sourceMappingURL=resources_noscript.css.map */

@@ -179,6 +179,12 @@ body {
   padding-bottom: 3vh;
 }
 
+header #blog > a {
+  -webkit-text-decoration: wavy underline;
+          text-decoration: wavy underline;
+  text-underline-offset: 0.25em;
+}
+
 .layout {
   margin-top: 5%;
   display: flex;

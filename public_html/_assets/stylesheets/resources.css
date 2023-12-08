@@ -13,6 +13,19 @@
     opacity: 1;
   }
 }
+:root {
+  --links-hover-bg: white;
+  --light-font: rgb(63, 48, 48);
+  --light-bg: rgb(232, 221, 235);
+  --light-bg-article: ghostwhite;
+  --light-links: rgb(88, 24, 56);
+  --light-links-hover: rgb(140, 42, 221);
+  --dark-font: white;
+  --dark-bg: black;
+  --dark-links: rgb(255, 166, 181);
+  --dark-links-hover: rgb(255, 234, 176);
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: rgb(184, 140, 184) transparent;
@@ -98,10 +111,6 @@ ul dd {
   background-color: plum;
 }
 
-:root {
-  --links-hover-bg: white;
-}
-
 body {
   font-size: 1.1em;
   margin: auto;
@@ -152,6 +161,11 @@ header nav li::before {
 header nav a {
   text-decoration: none;
   padding: 0px 5px 3px 5px;
+}
+header #resources a {
+  -webkit-text-decoration: wavy underline 1px;
+          text-decoration: wavy underline 1px;
+  text-underline-offset: 0.25em;
 }
 
 #themeSwitch {
@@ -416,75 +430,4 @@ button:hover {
     margin-right: auto;
     border: none;
   }
-}
-:root {
-  --dark-font: white;
-  --light-font: rgb(63, 48, 48);
-  --dark-bg: black;
-  --light-bg: rgb(232, 221, 235);
-  --light-bg-article: ghostwhite;
-  --dark-links: rgb(255, 166, 181);
-  --dark-links-hover: rgb(255, 234, 176);
-  --light-links: rgb(88, 24, 56);
-  --light-links-hover: rgb(140, 42, 221);
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: var(--dark-font);
-  }
-  article, #legend {
-    background-color: rgb(27, 26, 26);
-    border-color: rgb(51, 42, 56);
-  }
-  a {
-    color: var(--dark-links);
-  }
-  a:hover {
-    color: black;
-  }
-}
-.dark-mode {
-  background-color: var(--dark-bg);
-  color: var(--dark-font);
-}
-.dark-mode article, .dark-mode #legend {
-  background-color: rgb(27, 26, 26);
-  border-color: rgb(51, 42, 56);
-}
-.dark-mode a {
-  color: var(--dark-links);
-}
-.dark-mode a:hover {
-  color: black;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--light-bg);
-    color: var(--light-font);
-  }
-  article, #legend {
-    background-color: var(--light-bg-article);
-  }
-  a {
-    color: var(--light-links);
-  }
-  a:hover {
-    color: black;
-  }
-}
-.light-mode {
-  background-color: var(--light-bg);
-  color: var(--light-font);
-}
-.light-mode article, .light-mode #legend {
-  background-color: var(--light-bg-article);
-}
-.light-mode a {
-  color: var(--light-links);
-}
-.light-mode a:hover {
-  color: black;
 }/*# sourceMappingURL=resources.css.map */

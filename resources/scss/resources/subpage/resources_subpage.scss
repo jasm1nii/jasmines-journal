@@ -1,8 +1,6 @@
 @use '../shared' as theme;
 
-:root {
-    --links-hover-bg: white;
-}
+@include theme.base;
 
 body {
     font-size: 1.1em;
@@ -10,7 +8,8 @@ body {
     line-height: 1.5em;
     max-width: 1250px;
     margin: auto;
-} 
+}
+
 #layout {
     margin-top: 5%;
     display: flex;
@@ -334,103 +333,4 @@ button {
     main {
         width: fit-content;
     }
-}
-
-:root {
-    --dark-font: white;
-    --light-font: rgb(63, 48, 48);
-    --dark-bg: black;
-    --light-bg: rgb(232, 221, 235);
-    --light-bg-article: ghostwhite;
-    --dark-links: rgb(255, 166, 181);
-    --dark-links-hover: rgb(255, 234, 176);
-    --light-links: rgb(88, 24, 56);
-    --light-links-hover: rgb(140, 42, 221);
-}
-
-@mixin dark-mode-body {
-    background-color: var(--dark-bg);
-    color: var(--dark-font);
-}
-
-@mixin dark-mode {
-    section, #legend, main nav {
-        background-color: theme.$dark-section-bg;
-        border-color: theme.$dark-section-border;
-    }
-    section {
-        &:not(:first-of-type) {
-            a {
-                color:rgb(242, 223, 255);
-                text-decoration-color: rgb(184, 128, 163);
-                &:hover {
-                    color: white;
-                    background-color: rgb(95, 7, 73);
-                }
-            }
-        }
-    }
-    .table-of-contents {
-        a {
-            color: rgb(230, 142, 201);
-        }
-    }
-    a {
-        color: var(--dark-links);
-        &:hover {
-            color: black;
-        }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        @include dark-mode-body();
-    }
-    @include dark-mode();
-}
-
-.dark-mode {
-    @include dark-mode-body();
-    @include dark-mode();
-}
-
-@mixin light-mode {
-    section, #legend, main nav {
-        background-color: var(--light-bg-article);
-    }
-    section {
-        &:not(:first-of-type) {
-            a {
-                color:rgb(104, 64, 131);
-                text-decoration-color: rgb(179, 115, 179);
-                &:hover {
-                    color: white;
-                    background-color: rgb(134, 61, 116);
-                }
-            }
-        }
-    }
-    a {
-        color: var(--light-links);
-        &:hover {
-            color: black;
-        }
-    }
-}
-
-@mixin light-mode-body {
-    background-color:  var(--light-bg);
-    color: var(--light-font);
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        @include light-mode-body();
-    }
-    @include light-mode();
-}
-.light-mode {
-    @include light-mode-body();
-    @include light-mode();
 }

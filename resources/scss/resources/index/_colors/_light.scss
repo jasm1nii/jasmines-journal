@@ -1,0 +1,18 @@
+@use '../../shared' as *;
+
+@mixin light-mode-body {
+    background-color:  var(--light-bg);
+    color: var(--light-font);
+}
+
+@mixin light-mode {
+    article, #legend {
+        background-color: var(--light-bg-article);
+    }
+    a {
+        color: var(--light-links);
+        &:hover {
+            color: black;
+        }
+    }
+}

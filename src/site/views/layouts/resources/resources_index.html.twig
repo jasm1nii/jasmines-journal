@@ -4,10 +4,13 @@
         {{ include('@includes/head.shtml') }}
         <title>jasmine's resources</title>
         <link rel="canonical" href="https://jasm1nii.xyz/resources"/>
-        <link id="base-theme" href="/_assets/stylesheets/resources.css" rel="stylesheet"   type="text/css" media="all"/>
         <meta name="description" content="a catalogue of helpful things for web design, art, and more!"/>
         <meta name="author" content="jasm1nii"/>
         <meta name="keywords" content="design resources, web development"/>
+        <link id="base-theme" href="/_assets/stylesheets/resources.css" rel="stylesheet" type="text/css" media="all"/>
+        <noscript>
+            <link href="/_assets/stylesheets/resources_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+        </noscript>
     </head>
     <body>
         <header>
@@ -17,8 +20,7 @@
                     a list of links that i've personally found helpful and interesting!
                 </p>
                 <p>
-                    last updated:
-                    <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+                    last updated: <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
                 </p>
             </hgroup>
             <nav>
@@ -51,12 +53,5 @@
                 </footer>
             </div>
         </div>
-        <style>
-            #headernav #resources a {
-                text-decoration: wavy underline 1px;
-                text-underline-offset: .25em;
-            }
-        </style>
-        
     </body>
 </html>

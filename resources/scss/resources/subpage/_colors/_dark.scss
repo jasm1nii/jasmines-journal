@@ -1,0 +1,36 @@
+@use '../../shared' as *;
+
+@mixin dark-mode-body {
+    background-color: var(--dark-bg);
+    color: var(--dark-font);
+}
+
+@mixin dark-mode {
+    section, #legend, main nav {
+        background-color: $dark-section-bg;
+        border-color: $dark-section-border;
+    }
+    section {
+        &:not(:first-of-type) {
+            a {
+                color:rgb(242, 223, 255);
+                text-decoration-color: rgb(184, 128, 163);
+                &:hover {
+                    color: white;
+                    background-color: rgb(95, 7, 73);
+                }
+            }
+        }
+    }
+    .table-of-contents {
+        a {
+            color: rgb(230, 142, 201);
+        }
+    }
+    a {
+        color: var(--dark-links);
+        &:hover {
+            color: black;
+        }
+    }
+}

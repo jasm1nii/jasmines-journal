@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Instrument Sans";
+  font-display: swap;
+  src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-font);
+}
+.dark-mode section, .dark-mode #legend, .dark-mode main nav {
+  background-color: rgb(27, 26, 26);
+  border-color: rgb(51, 42, 56);
+}
+.dark-mode section:not(:first-of-type) a {
+  color: rgb(242, 223, 255);
+  text-decoration-color: rgb(184, 128, 163);
+}
+.dark-mode section:not(:first-of-type) a:hover {
+  color: white;
+  background-color: rgb(95, 7, 73);
+}
+.dark-mode .table-of-contents a {
+  color: rgb(230, 142, 201);
+}
+.dark-mode a {
+  color: var(--dark-links);
+}
+.dark-mode a:hover {
+  color: black;
+}
+
+.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-font);
+}
+.light-mode section, .light-mode #legend, .light-mode main nav {
+  background-color: var(--light-bg-article);
+}
+.light-mode section:not(:first-of-type) a {
+  color: rgb(104, 64, 131);
+  text-decoration-color: rgb(179, 115, 179);
+}
+.light-mode section:not(:first-of-type) a:hover {
+  color: white;
+  background-color: rgb(134, 61, 116);
+}
+.light-mode a {
+  color: var(--light-links);
+}
+.light-mode a:hover {
+  color: black;
+}/*# sourceMappingURL=resources_subpage_theme.css.map */
