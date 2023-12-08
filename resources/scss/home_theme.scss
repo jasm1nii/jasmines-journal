@@ -1,13 +1,13 @@
-@use 'themes/home/dark'as dark-theme;
-@use 'themes/home/light'as light-theme;
+@use 'themes/home/dark'as *;
+@use 'themes/home/light'as *;
 
 :root .light-mode {
     --sticky-note-bg: cornsilk !important;
 }
 
 .light-mode {
-    @include light-theme.light-mode-body();
-    @include light-theme.light-mode();
+    @include light-mode-body();
+    @include light-mode();
 }
 
 :root .dark-mode {
@@ -16,6 +16,6 @@
 }
 
 .dark-mode {
-    @include dark-theme.dark-mode-body();
-    @include dark-theme.dark-mode();
+    @include dark-mode-body();
+    @include dark-mode();
 }

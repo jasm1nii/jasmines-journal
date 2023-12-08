@@ -1,5 +1,5 @@
 /* home page */
-@use 'themes/main' as base-theme;
+@use 'themes/main' as theme;
 
 @use 'components/sticky-note' as *;
 @use 'components/card_hcard' as *;
@@ -22,8 +22,6 @@ body {
   opacity: 0;
   animation: fadeInSlide 1s;
   animation-fill-mode: forwards;
-  background-color: rgb(65, 48, 65);
-  transition: background-color 0.25s ease-out;
 }
 
 article > section {

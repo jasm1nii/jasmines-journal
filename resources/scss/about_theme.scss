@@ -1,0 +1,12 @@
+@use 'themes/about/light' as *;
+@use 'themes/about/dark' as *;
+
+.light-mode {
+    @include light-mode-body();
+    @include light-mode();
+}
+
+.dark-mode {
+    @include dark-mode-body();
+    @include dark-mode();
+}

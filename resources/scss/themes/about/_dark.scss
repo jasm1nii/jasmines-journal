@@ -1,0 +1,44 @@
+:root {
+    --dark-a: pink;
+    --dark-main-bg: rgb(34, 30, 30);
+    --dark-main-border: purple;
+    --dark-li-border: purple;
+}
+
+@mixin dark-mode {
+    article section {
+        background-color: var(--dark-main-bg);
+        border-color: var(--dark-main-border);
+
+        & li {
+            border-color: var(--dark-li-border);
+        }
+    }
+
+    #h1-main {
+        color: rgb(221, 192, 255);
+    }
+
+    header,
+    h2,
+    h3,
+    h4,
+    summary {
+        color: white;
+    }
+
+    h3,
+    h4,
+    summary {
+        background-color: transparent;
+    }
+
+    a {
+        color: var(--dark-a);
+    }
+}
+
+@mixin dark-mode-body {
+    background-color: black;
+    color: white;
+}

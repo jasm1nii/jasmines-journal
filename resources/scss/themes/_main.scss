@@ -38,6 +38,11 @@
     @include scrollbar-style-1();
 }
 
+body {
+    background-color: rgb(56, 49, 56);
+    transition: background-color 0.25s ease-out;
+}
+
 button {
     cursor: pointer;
     transition: all .5s ease;

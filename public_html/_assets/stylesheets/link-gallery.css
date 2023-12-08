@@ -124,6 +124,11 @@ footer a img {
   scrollbar-width: thin;
 }
 
+body {
+  background-color: rgb(56, 49, 56);
+  transition: background-color 0.25s ease-out;
+}
+
 button {
   cursor: pointer;
   transition: all 0.5s ease;
