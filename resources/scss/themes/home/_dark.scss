@@ -1,0 +1,144 @@
+@mixin dark-mode {
+    header,
+    #statuscafe-content,
+    .web-rings,
+    .time,
+    .web-rings details p,
+    footer {
+        color: white;
+    }
+
+    header {
+        & nav {
+            border-color: #503281;
+
+            & a {
+                color: var(--dark-mode-links);
+            }
+        }
+    }
+
+    h2,
+    h3 {
+        color: rgb(223, 154, 236);
+    }
+
+    a,
+    .web-rings a {
+        color: var(--dark-mode-links);
+    }
+
+    a:hover {
+        background-color: var(--link-hover-bg-dark);
+        color: white;
+    }
+
+    button,
+    .button-style {
+        background-color: var(--dark-button-bg);
+        color: rgb(230, 214, 236);
+
+        &:hover {
+            background-color: #712357;
+        }
+
+        &:active {
+            background-color: rgb(207, 102, 102);
+            color: white;
+        }
+
+        &:focus {
+            background-color: #8b4f61;
+        }
+    }
+
+    .board {
+        background-color: var(--page-bg-dark);
+        border-color: var(--page-border-dark);
+    }
+
+    article {
+        background: url('/_assets/media/main/ooorganize-dark.svg');
+    }
+
+    article>section,
+    #statuscafe,
+    .time,
+    .web-rings,
+    .web-rings details p,
+    .web-rings-list {
+        background-color: var(--section-card-dark);
+        color: white;
+    }
+
+    .h-card {
+        background-image: url('/_assets/media/main/bank-note-dark.svg');
+        text-shadow: 0 0 5px black;
+        background-color: var(--section-card-dark);
+    }
+
+    .time {
+        border-bottom: 5px outset rgb(58, 58, 88);
+        border-right: 5px outset rgb(67, 67, 102);
+    }
+
+    #latest-status {
+        background: url('/_assets/media/main/line-in-motion-dark.svg') rgb(52, 39, 58);
+    }
+
+    #statuscafe-content {
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+    .last-played {
+        background-color: var(--last-played-dark-bg);
+        border-bottom: var(--last-played-dark-b-border);
+        border-right: var(--last-played-dark-r-border);
+
+        & h2 {
+            color: rgb(170, 195, 212);
+        }
+    }
+
+    #track {
+        background-color: #232629;
+    }
+
+    .site-updates {
+
+        & h2,
+        h3 {
+            color: rgb(179, 216, 179);
+        }
+    }
+
+    .web-rings {
+        & h2 {
+            color: #aa8cdb;
+        }
+    }
+
+    .guestbook {
+        & h2 {
+            color: rgb(253, 188, 255);
+        }
+
+        & h3 {
+            color: #f2c7ff;
+        }
+
+        blockquote {
+            font-weight: 500;
+        }
+    }
+
+    .overflow {
+        background-color: transparent;
+    }
+}
+
+@mixin dark-mode-body {
+    color: white;
+    background-color: black;
+    font-weight: normal;
+}

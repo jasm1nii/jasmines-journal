@@ -1,0 +1,21 @@
+@use 'themes/home/dark'as dark-theme;
+@use 'themes/home/light'as light-theme;
+
+:root .light-mode {
+    --sticky-note-bg: cornsilk !important;
+}
+
+.light-mode {
+    @include light-theme.light-mode-body();
+    @include light-theme.light-mode();
+}
+
+:root .dark-mode {
+    --sticky-note-bg: var(--section-card-dark) !important;
+    --sticky-note-font: white !important;
+}
+
+.dark-mode {
+    @include dark-theme.dark-mode-body();
+    @include dark-theme.dark-mode();
+}

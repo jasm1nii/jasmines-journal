@@ -1,0 +1,256 @@
+:root {
+  --site-updates-bg-light: #fff5f5;
+  --overflow-bg-light: rgb(255, 244, 246);
+  --overflow-border: 1px solid rgb(170, 99, 111);
+}
+
+:root .light-mode {
+  --sticky-note-bg: cornsilk !important;
+}
+
+.light-mode {
+  font-weight: 500;
+  color: var(--font-color-light);
+  background-color: var(--document-color-light);
+}
+.light-mode a {
+  color: var(--link-color-light);
+}
+.light-mode a:hover {
+  background-color: rgba(128, 0, 128, 0.5);
+  color: white;
+}
+.light-mode button,
+.light-mode .button-style {
+  background-color: #f5e9f5;
+  color: rgb(51, 44, 44);
+}
+.light-mode button:hover,
+.light-mode .button-style:hover {
+  background-color: lightgoldenrodyellow;
+  color: rgb(51, 44, 44);
+}
+.light-mode button a:hover,
+.light-mode .button-style a:hover {
+  color: rgb(51, 44, 44);
+}
+.light-mode .board {
+  background-color: var(--page-color-light);
+}
+.light-mode h1,
+.light-mode header p {
+  color: var(--h1-light);
+}
+.light-mode article {
+  background: url("/_assets/media/main/ooorganize.svg");
+}
+.light-mode article > section {
+  background-color: var(--section-card-light);
+  color: var(--font-color-light);
+}
+.light-mode .h-card {
+  background: url("/_assets/media/main/bank-note.svg");
+  background-color: snow;
+  text-shadow: 0 0 5px white;
+}
+.light-mode h2 {
+  color: var(--h2-light);
+}
+.light-mode h3 {
+  color: var(--h3-light);
+}
+.light-mode .time {
+  background-color: var(--time-bg);
+  color: var(--time-font-color);
+  border-bottom: var(--time-border-bottom);
+  border-right: var(--time-border-right);
+}
+.light-mode .clock {
+  color: mintcream;
+}
+.light-mode .last-played {
+  background-color: var(--last-played-bg);
+  border-bottom: var(--last-played-border-bottom);
+  border-right: var(--last-played-border-right);
+}
+.light-mode .last-played h2 {
+  color: #5a4f8b;
+}
+.light-mode #track {
+  background-color: linen;
+}
+.light-mode #latest-status {
+  background: url("/_assets/media/main/line-in-motion.svg") rgb(238, 225, 238);
+}
+.light-mode #statuscafe {
+  background-color: snow;
+  color: black;
+}
+.light-mode #statuscafe-content {
+  background-color: rgb(243, 242, 247);
+  color: rgb(24, 14, 39);
+}
+.light-mode .site-updates {
+  background-color: #e0e9dc;
+  color: rgb(4, 32, 4);
+}
+.light-mode .site-updates h2,
+.light-mode .site-updates h3 {
+  color: rgb(4, 32, 4);
+}
+.light-mode .site-updates .overflow {
+  background-color: rgb(241, 241, 241);
+}
+.light-mode .overflow {
+  background-color: var(--overflow-bg-light);
+}
+.light-mode .web-rings {
+  background-color: var(--web-rings-card);
+  color: var(--web-rings-font);
+}
+.light-mode .web-rings h2 {
+  color: var(--web-rings-font);
+}
+.light-mode .web-rings a {
+  color: var(--web-rings-links);
+}
+.light-mode .web-rings a:hover {
+  color: white;
+}
+.light-mode .web-rings details p {
+  background-color: white;
+  color: var(--font-color-light);
+}
+.light-mode .web-rings-list {
+  background-color: var(--web-rings-bg-light);
+  color: var(--web-rings-font);
+}
+.light-mode .web-rings-list a {
+  color: var(--web-rings-links);
+}
+.light-mode .guestbook {
+  background-color: #ffe1f5;
+}
+.light-mode .guestbook h2,
+.light-mode .guestbook h3 {
+  color: rgb(153, 32, 127);
+}
+.light-mode footer {
+  color: var(--footer-font);
+}
+
+:root .dark-mode {
+  --sticky-note-bg: var(--section-card-dark) !important;
+  --sticky-note-font: white !important;
+}
+
+.dark-mode {
+  color: white;
+  background-color: black;
+  font-weight: normal;
+}
+.dark-mode header,
+.dark-mode #statuscafe-content,
+.dark-mode .web-rings,
+.dark-mode .time,
+.dark-mode .web-rings details p,
+.dark-mode footer {
+  color: white;
+}
+.dark-mode header nav {
+  border-color: #503281;
+}
+.dark-mode header nav a {
+  color: var(--dark-mode-links);
+}
+.dark-mode h2,
+.dark-mode h3 {
+  color: rgb(223, 154, 236);
+}
+.dark-mode a,
+.dark-mode .web-rings a {
+  color: var(--dark-mode-links);
+}
+.dark-mode a:hover {
+  background-color: var(--link-hover-bg-dark);
+  color: white;
+}
+.dark-mode button,
+.dark-mode .button-style {
+  background-color: var(--dark-button-bg);
+  color: rgb(230, 214, 236);
+}
+.dark-mode button:hover,
+.dark-mode .button-style:hover {
+  background-color: #712357;
+}
+.dark-mode button:active,
+.dark-mode .button-style:active {
+  background-color: rgb(207, 102, 102);
+  color: white;
+}
+.dark-mode button:focus,
+.dark-mode .button-style:focus {
+  background-color: #8b4f61;
+}
+.dark-mode .board {
+  background-color: var(--page-bg-dark);
+  border-color: var(--page-border-dark);
+}
+.dark-mode article {
+  background: url("/_assets/media/main/ooorganize-dark.svg");
+}
+.dark-mode article > section,
+.dark-mode #statuscafe,
+.dark-mode .time,
+.dark-mode .web-rings,
+.dark-mode .web-rings details p,
+.dark-mode .web-rings-list {
+  background-color: var(--section-card-dark);
+  color: white;
+}
+.dark-mode .h-card {
+  background-image: url("/_assets/media/main/bank-note-dark.svg");
+  text-shadow: 0 0 5px black;
+  background-color: var(--section-card-dark);
+}
+.dark-mode .time {
+  border-bottom: 5px outset rgb(58, 58, 88);
+  border-right: 5px outset rgb(67, 67, 102);
+}
+.dark-mode #latest-status {
+  background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
+}
+.dark-mode #statuscafe-content {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.dark-mode .last-played {
+  background-color: var(--last-played-dark-bg);
+  border-bottom: var(--last-played-dark-b-border);
+  border-right: var(--last-played-dark-r-border);
+}
+.dark-mode .last-played h2 {
+  color: rgb(170, 195, 212);
+}
+.dark-mode #track {
+  background-color: #232629;
+}
+.dark-mode .site-updates h2,
+.dark-mode .site-updates h3 {
+  color: rgb(179, 216, 179);
+}
+.dark-mode .web-rings h2 {
+  color: #aa8cdb;
+}
+.dark-mode .guestbook h2 {
+  color: rgb(253, 188, 255);
+}
+.dark-mode .guestbook h3 {
+  color: #f2c7ff;
+}
+.dark-mode .guestbook blockquote {
+  font-weight: 500;
+}
+.dark-mode .overflow {
+  background-color: transparent;
+}/*# sourceMappingURL=home_theme.css.map */

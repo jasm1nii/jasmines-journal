@@ -1,16 +1,276 @@
+:root {
+  --site-updates-bg-light: #fff5f5;
+  --overflow-bg-light: rgb(255, 244, 246);
+  --overflow-border: 1px solid rgb(170, 99, 111);
+}
+
 header hgroup p {
-    font-size: .9em;
-    margin-left: auto;
-  }
-.flower-fill details::marker{
-    list-style: none;
+  font-size: 0.9em;
+  margin-left: auto;
 }
-.flower-fill summary img:hover {
-    filter: hue-rotate(180deg);
-    transition: filter .25s ease-in-out;
-    cursor: pointer;
+
+#aside details::marker {
+  list-style: none;
 }
+#aside summary img:hover {
+  filter: hue-rotate(180deg);
+  transition: filter 0.25s ease-in-out;
+  cursor: pointer;
+}
+
 .u-featured {
-    position: absolute;
-    margin-left: -250px;
+  position: absolute;
+  margin-left: -250px;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --sticky-note-bg: cornsilk !important;
+    --sticky-note-font: rgb(78, 61, 19) !important;
+  }
+  body {
+    font-weight: 500;
+    color: var(--font-color-light);
+    background-color: var(--document-color-light);
+  }
+  a {
+    color: var(--link-color-light);
+  }
+  a:hover {
+    background-color: rgba(128, 0, 128, 0.5);
+    color: white;
+  }
+  button,
+  .button-style {
+    background-color: #f5e9f5;
+    color: rgb(51, 44, 44);
+  }
+  button:hover,
+  .button-style:hover {
+    background-color: lightgoldenrodyellow;
+    color: rgb(51, 44, 44);
+  }
+  button a:hover,
+  .button-style a:hover {
+    color: rgb(51, 44, 44);
+  }
+  .board {
+    background-color: var(--page-color-light);
+  }
+  h1,
+  header p {
+    color: var(--h1-light);
+  }
+  article {
+    background: url("/_assets/media/main/ooorganize.svg");
+  }
+  article > section {
+    background-color: var(--section-card-light);
+    color: var(--font-color-light);
+  }
+  .h-card {
+    background: url("/_assets/media/main/bank-note.svg");
+    background-color: snow;
+    text-shadow: 0 0 5px white;
+  }
+  h2 {
+    color: var(--h2-light);
+  }
+  h3 {
+    color: var(--h3-light);
+  }
+  .time {
+    background-color: var(--time-bg);
+    color: var(--time-font-color);
+    border-bottom: var(--time-border-bottom);
+    border-right: var(--time-border-right);
+  }
+  .clock {
+    color: mintcream;
+  }
+  .last-played {
+    background-color: var(--last-played-bg);
+    border-bottom: var(--last-played-border-bottom);
+    border-right: var(--last-played-border-right);
+  }
+  .last-played h2 {
+    color: #5a4f8b;
+  }
+  #track {
+    background-color: linen;
+  }
+  #latest-status {
+    background: url("/_assets/media/main/line-in-motion.svg") rgb(238, 225, 238);
+  }
+  #statuscafe {
+    background-color: snow;
+    color: black;
+  }
+  #statuscafe-content {
+    background-color: rgb(243, 242, 247);
+    color: rgb(24, 14, 39);
+  }
+  .site-updates {
+    background-color: #e0e9dc;
+    color: rgb(4, 32, 4);
+  }
+  .site-updates h2,
+  .site-updates h3 {
+    color: rgb(4, 32, 4);
+  }
+  .site-updates .overflow {
+    background-color: rgb(241, 241, 241);
+  }
+  .overflow {
+    background-color: var(--overflow-bg-light);
+  }
+  .web-rings {
+    background-color: var(--web-rings-card);
+    color: var(--web-rings-font);
+  }
+  .web-rings h2 {
+    color: var(--web-rings-font);
+  }
+  .web-rings a {
+    color: var(--web-rings-links);
+  }
+  .web-rings a:hover {
+    color: white;
+  }
+  .web-rings details p {
+    background-color: white;
+    color: var(--font-color-light);
+  }
+  .web-rings-list {
+    background-color: var(--web-rings-bg-light);
+    color: var(--web-rings-font);
+  }
+  .web-rings-list a {
+    color: var(--web-rings-links);
+  }
+  .guestbook {
+    background-color: #ffe1f5;
+  }
+  .guestbook h2,
+  .guestbook h3 {
+    color: rgb(153, 32, 127);
+  }
+  footer {
+    color: var(--footer-font);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sticky-note-bg: var(--section-card-dark);
+  }
+  body {
+    color: white;
+    background-color: black;
+    font-weight: normal;
+  }
+  header,
+  #statuscafe-content,
+  .web-rings,
+  .time,
+  .web-rings details p,
+  footer {
+    color: white;
+  }
+  header nav {
+    border-color: #503281;
+  }
+  header nav a {
+    color: var(--dark-mode-links);
+  }
+  h2,
+  h3 {
+    color: rgb(223, 154, 236);
+  }
+  a,
+  .web-rings a {
+    color: var(--dark-mode-links);
+  }
+  a:hover {
+    background-color: var(--link-hover-bg-dark);
+    color: white;
+  }
+  button,
+  .button-style {
+    background-color: var(--dark-button-bg);
+    color: rgb(230, 214, 236);
+  }
+  button:hover,
+  .button-style:hover {
+    background-color: #712357;
+  }
+  button:active,
+  .button-style:active {
+    background-color: rgb(207, 102, 102);
+    color: white;
+  }
+  button:focus,
+  .button-style:focus {
+    background-color: #8b4f61;
+  }
+  .board {
+    background-color: var(--page-bg-dark);
+    border-color: var(--page-border-dark);
+  }
+  article {
+    background: url("/_assets/media/main/ooorganize-dark.svg");
+  }
+  article > section,
+  #statuscafe,
+  .time,
+  .web-rings,
+  .web-rings details p,
+  .web-rings-list {
+    background-color: var(--section-card-dark);
+    color: white;
+  }
+  .h-card {
+    background-image: url("/_assets/media/main/bank-note-dark.svg");
+    text-shadow: 0 0 5px black;
+    background-color: var(--section-card-dark);
+  }
+  .time {
+    border-bottom: 5px outset rgb(58, 58, 88);
+    border-right: 5px outset rgb(67, 67, 102);
+  }
+  #latest-status {
+    background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
+  }
+  #statuscafe-content {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .last-played {
+    background-color: var(--last-played-dark-bg);
+    border-bottom: var(--last-played-dark-b-border);
+    border-right: var(--last-played-dark-r-border);
+  }
+  .last-played h2 {
+    color: rgb(170, 195, 212);
+  }
+  #track {
+    background-color: #232629;
+  }
+  .site-updates h2,
+  .site-updates h3 {
+    color: rgb(179, 216, 179);
+  }
+  .web-rings h2 {
+    color: #aa8cdb;
+  }
+  .guestbook h2 {
+    color: rgb(253, 188, 255);
+  }
+  .guestbook h3 {
+    color: #f2c7ff;
+  }
+  .guestbook blockquote {
+    font-weight: 500;
+  }
+  .overflow {
+    background-color: transparent;
+  }
+}/*# sourceMappingURL=home_noscript.css.map */

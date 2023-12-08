@@ -176,17 +176,13 @@ button:active,
     opacity: 1;
   }
 }
-:root {
-  --site-updates-bg-light: #fff5f5;
-  --overflow-bg-light: rgb(255, 244, 246);
-  --overflow-border: 1px solid rgb(170, 99, 111);
-}
-
 /* animations */
 body {
   opacity: 0;
   animation: fadeInSlide 1s;
   animation-fill-mode: forwards;
+  background-color: rgb(65, 48, 65);
+  transition: background-color 0.25s ease-out;
 }
 
 article > section {
@@ -251,13 +247,6 @@ body ::-webkit-scrollbar-thumb:hover {
   transform: translatey(-5px);
 }
 
-main {
-  margin: auto;
-}
-main a {
-  font-weight: 600;
-}
-
 .board {
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
@@ -299,6 +288,13 @@ nav #home a {
           text-decoration: wavy underline 1px;
 }
 
+main {
+  margin: auto;
+}
+main a {
+  font-weight: 600;
+}
+
 article {
   -moz-columns: 3;
        columns: 3;
@@ -306,6 +302,47 @@ article {
        column-gap: 0;
   background-size: 200px !important;
   padding: 5vh 1%;
+}
+
+article > section {
+  border: 1px solid rgb(190, 133, 141);
+  border-radius: 15px 15px 15px 15px;
+  padding: 1em;
+  margin: 0 auto 75px;
+  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  width: 70%;
+}
+article > section ul {
+  padding-left: 1em;
+  padding-top: 1em;
+  margin-top: 0;
+}
+article > section li {
+  margin-bottom: 1em;
+}
+article > section button {
+  padding: 1em;
+  border: 1px solid;
+  border-radius: 50px;
+  font-family: var(--font-3);
+}
+article > section footer {
+  width: 100%;
+  text-align: left;
+  margin-top: 2em;
+  padding: 1em 0px 1.5em;
+  border-top: 1px dashed thistle;
+}
+
+.overflow {
+  max-height: 30vh;
+  overflow-y: auto;
+  border: var(--overflow-border);
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-top: 1em;
 }
 
 h2 {
@@ -348,47 +385,6 @@ a:hover {
   width: fit-content;
   padding: 0.5em;
   border: 1px solid #8e629b;
-}
-
-article > section {
-  border: 1px solid rgb(190, 133, 141);
-  border-radius: 15px 15px 15px 15px;
-  padding: 1em;
-  margin: 0 auto 75px;
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
-  width: 70%;
-}
-article > section ul {
-  padding-left: 1em;
-  padding-top: 1em;
-  margin-top: 0;
-}
-article > section li {
-  margin-bottom: 1em;
-}
-article > section button {
-  padding: 1em;
-  border: 1px solid;
-  border-radius: 50px;
-  font-family: var(--font-3);
-}
-article > section footer {
-  width: 100%;
-  text-align: left;
-  margin-top: 2em;
-  padding: 1em 0px 1.5em;
-  border-top: 1px dashed thistle;
-}
-
-.overflow {
-  max-height: 30vh;
-  overflow-y: auto;
-  border: var(--overflow-border);
-  padding-right: 1em;
-  padding-left: 1em;
-  margin-top: 1em;
 }
 
 .h-card {
@@ -1061,459 +1057,4 @@ hr {
   .overflow {
     max-height: 40vh;
   }
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --sticky-note-bg: cornsilk !important;
-    --sticky-note-font: rgb(78, 61, 19) !important;
-  }
-  body {
-    font-weight: 500;
-    color: var(--font-color-light);
-    background-color: var(--document-color-light);
-  }
-  a {
-    color: var(--link-color-light);
-  }
-  a:hover {
-    background-color: rgba(128, 0, 128, 0.5);
-    color: white;
-  }
-  button, .button-style {
-    background-color: #f5e9f5;
-    color: rgb(51, 44, 44);
-  }
-  button:hover, .button-style:hover {
-    background-color: lightgoldenrodyellow;
-    color: rgb(51, 44, 44);
-  }
-  button a:hover, .button-style a:hover {
-    color: rgb(51, 44, 44);
-  }
-  .board {
-    background-color: var(--page-color-light);
-  }
-  h1, header p {
-    color: var(--h1-light);
-  }
-  article {
-    background: url("/_assets/media/main/ooorganize.svg");
-  }
-  article > section {
-    background-color: var(--section-card-light);
-    color: var(--font-color-light);
-  }
-  .h-card {
-    background: url("/_assets/media/main/bank-note.svg");
-    background-color: snow;
-    text-shadow: 0 0 5px white;
-  }
-  h2 {
-    color: var(--h2-light);
-  }
-  h3 {
-    color: var(--h3-light);
-  }
-  .time {
-    background-color: var(--time-bg);
-    color: var(--time-font-color);
-    border-bottom: var(--time-border-bottom);
-    border-right: var(--time-border-right);
-  }
-  .clock {
-    color: mintcream;
-  }
-  .last-played {
-    background-color: var(--last-played-bg);
-    border-bottom: var(--last-played-border-bottom);
-    border-right: var(--last-played-border-right);
-  }
-  .last-played h2 {
-    color: #5a4f8b;
-  }
-  #track {
-    background-color: linen;
-  }
-  #latest-status {
-    background: url("/_assets/media/main/line-in-motion.svg") rgb(238, 225, 238);
-  }
-  #statuscafe {
-    background-color: snow;
-    color: black;
-  }
-  #statuscafe-content {
-    background-color: rgb(243, 242, 247);
-    color: rgb(24, 14, 39);
-  }
-  .site-updates {
-    background-color: #e0e9dc;
-    color: rgb(4, 32, 4);
-  }
-  .site-updates h2, .site-updates h3 {
-    color: rgb(4, 32, 4);
-  }
-  .site-updates .overflow {
-    background-color: rgb(241, 241, 241);
-  }
-  .overflow {
-    background-color: var(--overflow-bg-light);
-  }
-  .web-rings {
-    background-color: var(--web-rings-card);
-    color: var(--web-rings-font);
-  }
-  .web-rings h2 {
-    color: var(--web-rings-font);
-  }
-  .web-rings a {
-    color: var(--web-rings-links);
-  }
-  .web-rings a:hover {
-    color: white;
-  }
-  .web-rings details p {
-    background-color: white;
-    color: var(--font-color-light);
-  }
-  .web-rings-list {
-    background-color: var(--web-rings-bg-light);
-    color: var(--web-rings-font);
-  }
-  .web-rings-list a {
-    color: var(--web-rings-links);
-  }
-  .guestbook {
-    background-color: #ffe1f5;
-  }
-  .guestbook h2, .guestbook h3 {
-    color: rgb(153, 32, 127);
-  }
-  footer {
-    color: var(--footer-font);
-  }
-}
-:root .light-mode {
-  --sticky-note-bg: cornsilk !important;
-}
-
-.light-mode {
-  font-weight: 500;
-  color: var(--font-color-light);
-  background-color: var(--document-color-light);
-}
-.light-mode a {
-  color: var(--link-color-light);
-}
-.light-mode a:hover {
-  background-color: rgba(128, 0, 128, 0.5);
-  color: white;
-}
-.light-mode button, .light-mode .button-style {
-  background-color: #f5e9f5;
-  color: rgb(51, 44, 44);
-}
-.light-mode button:hover, .light-mode .button-style:hover {
-  background-color: lightgoldenrodyellow;
-  color: rgb(51, 44, 44);
-}
-.light-mode button a:hover, .light-mode .button-style a:hover {
-  color: rgb(51, 44, 44);
-}
-.light-mode .board {
-  background-color: var(--page-color-light);
-}
-.light-mode h1, .light-mode header p {
-  color: var(--h1-light);
-}
-.light-mode article {
-  background: url("/_assets/media/main/ooorganize.svg");
-}
-.light-mode article > section {
-  background-color: var(--section-card-light);
-  color: var(--font-color-light);
-}
-.light-mode .h-card {
-  background: url("/_assets/media/main/bank-note.svg");
-  background-color: snow;
-  text-shadow: 0 0 5px white;
-}
-.light-mode h2 {
-  color: var(--h2-light);
-}
-.light-mode h3 {
-  color: var(--h3-light);
-}
-.light-mode .time {
-  background-color: var(--time-bg);
-  color: var(--time-font-color);
-  border-bottom: var(--time-border-bottom);
-  border-right: var(--time-border-right);
-}
-.light-mode .clock {
-  color: mintcream;
-}
-.light-mode .last-played {
-  background-color: var(--last-played-bg);
-  border-bottom: var(--last-played-border-bottom);
-  border-right: var(--last-played-border-right);
-}
-.light-mode .last-played h2 {
-  color: #5a4f8b;
-}
-.light-mode #track {
-  background-color: linen;
-}
-.light-mode #latest-status {
-  background: url("/_assets/media/main/line-in-motion.svg") rgb(238, 225, 238);
-}
-.light-mode #statuscafe {
-  background-color: snow;
-  color: black;
-}
-.light-mode #statuscafe-content {
-  background-color: rgb(243, 242, 247);
-  color: rgb(24, 14, 39);
-}
-.light-mode .site-updates {
-  background-color: #e0e9dc;
-  color: rgb(4, 32, 4);
-}
-.light-mode .site-updates h2, .light-mode .site-updates h3 {
-  color: rgb(4, 32, 4);
-}
-.light-mode .site-updates .overflow {
-  background-color: rgb(241, 241, 241);
-}
-.light-mode .overflow {
-  background-color: var(--overflow-bg-light);
-}
-.light-mode .web-rings {
-  background-color: var(--web-rings-card);
-  color: var(--web-rings-font);
-}
-.light-mode .web-rings h2 {
-  color: var(--web-rings-font);
-}
-.light-mode .web-rings a {
-  color: var(--web-rings-links);
-}
-.light-mode .web-rings a:hover {
-  color: white;
-}
-.light-mode .web-rings details p {
-  background-color: white;
-  color: var(--font-color-light);
-}
-.light-mode .web-rings-list {
-  background-color: var(--web-rings-bg-light);
-  color: var(--web-rings-font);
-}
-.light-mode .web-rings-list a {
-  color: var(--web-rings-links);
-}
-.light-mode .guestbook {
-  background-color: #ffe1f5;
-}
-.light-mode .guestbook h2, .light-mode .guestbook h3 {
-  color: rgb(153, 32, 127);
-}
-.light-mode footer {
-  color: var(--footer-font);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sticky-note-bg: var(--section-card-dark);
-  }
-  body {
-    color: white;
-    background-color: black;
-    font-weight: normal;
-  }
-  h1, header nav, header p, #statuscafe-content, .web-rings, .time, .web-rings details p, footer {
-    color: white;
-  }
-  header nav {
-    border-color: #503281;
-  }
-  header nav a {
-    color: var(--dark-mode-links);
-  }
-  h2, h3 {
-    color: rgb(223, 154, 236);
-  }
-  a, .web-rings a {
-    color: var(--dark-mode-links);
-  }
-  a:hover {
-    background-color: var(--link-hover-bg-dark);
-    color: white;
-  }
-  button, .button-style {
-    background-color: var(--dark-button-bg);
-    color: rgb(230, 214, 236);
-  }
-  button:hover, .button-style:hover {
-    background-color: #712357;
-  }
-  button:active, .button-style:active {
-    background-color: rgb(207, 102, 102);
-    color: white;
-  }
-  button:focus, .button-style:focus {
-    background-color: #8b4f61;
-  }
-  .board {
-    background-color: var(--page-bg-dark);
-    border-color: var(--page-border-dark);
-  }
-  article {
-    background: url("/_assets/media/main/ooorganize-dark.svg");
-  }
-  article > section, #statuscafe, .time, .web-rings, .web-rings details p, .web-rings-list {
-    background-color: var(--section-card-dark);
-    color: white;
-  }
-  .h-card {
-    background-image: url("/_assets/media/main/bank-note-dark.svg");
-    text-shadow: 0 0 5px black;
-    background-color: var(--section-card-dark);
-  }
-  .time {
-    border-bottom: 5px outset rgb(58, 58, 88);
-    border-right: 5px outset rgb(67, 67, 102);
-  }
-  #latest-status {
-    background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
-  }
-  #statuscafe-content {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .last-played {
-    background-color: var(--last-played-dark-bg);
-    border-bottom: var(--last-played-dark-b-border);
-    border-right: var(--last-played-dark-r-border);
-  }
-  .last-played h2 {
-    color: rgb(170, 195, 212);
-  }
-  #track {
-    background-color: #232629;
-  }
-  .site-updates h2, .site-updates h3 {
-    color: rgb(179, 216, 179);
-  }
-  .web-rings h2 {
-    color: #aa8cdb;
-  }
-  .guestbook h2 {
-    color: rgb(253, 188, 255);
-  }
-  .guestbook h3 {
-    color: #f2c7ff;
-  }
-  .guestbook blockquote {
-    font-weight: 500;
-  }
-  .overflow {
-    background-color: transparent;
-  }
-}
-:root .dark-mode {
-  --sticky-note-bg: var(--section-card-dark) !important;
-  --sticky-note-font: white !important;
-}
-
-.dark-mode {
-  color: white;
-  background-color: black;
-  font-weight: normal;
-}
-.dark-mode h1, .dark-mode header nav, .dark-mode header p, .dark-mode #statuscafe-content, .dark-mode .web-rings, .dark-mode .time, .dark-mode .web-rings details p, .dark-mode footer {
-  color: white;
-}
-.dark-mode header nav {
-  border-color: #503281;
-}
-.dark-mode header nav a {
-  color: var(--dark-mode-links);
-}
-.dark-mode h2, .dark-mode h3 {
-  color: rgb(223, 154, 236);
-}
-.dark-mode a, .dark-mode .web-rings a {
-  color: var(--dark-mode-links);
-}
-.dark-mode a:hover {
-  background-color: var(--link-hover-bg-dark);
-  color: white;
-}
-.dark-mode button, .dark-mode .button-style {
-  background-color: var(--dark-button-bg);
-  color: rgb(230, 214, 236);
-}
-.dark-mode button:hover, .dark-mode .button-style:hover {
-  background-color: #712357;
-}
-.dark-mode button:active, .dark-mode .button-style:active {
-  background-color: rgb(207, 102, 102);
-  color: white;
-}
-.dark-mode button:focus, .dark-mode .button-style:focus {
-  background-color: #8b4f61;
-}
-.dark-mode .board {
-  background-color: var(--page-bg-dark);
-  border-color: var(--page-border-dark);
-}
-.dark-mode article {
-  background: url("/_assets/media/main/ooorganize-dark.svg");
-}
-.dark-mode article > section, .dark-mode #statuscafe, .dark-mode .time, .dark-mode .web-rings, .dark-mode .web-rings details p, .dark-mode .web-rings-list {
-  background-color: var(--section-card-dark);
-  color: white;
-}
-.dark-mode .h-card {
-  background-image: url("/_assets/media/main/bank-note-dark.svg");
-  text-shadow: 0 0 5px black;
-  background-color: var(--section-card-dark);
-}
-.dark-mode .time {
-  border-bottom: 5px outset rgb(58, 58, 88);
-  border-right: 5px outset rgb(67, 67, 102);
-}
-.dark-mode #latest-status {
-  background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
-}
-.dark-mode #statuscafe-content {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.dark-mode .last-played {
-  background-color: var(--last-played-dark-bg);
-  border-bottom: var(--last-played-dark-b-border);
-  border-right: var(--last-played-dark-r-border);
-}
-.dark-mode .last-played h2 {
-  color: rgb(170, 195, 212);
-}
-.dark-mode #track {
-  background-color: #232629;
-}
-.dark-mode .site-updates h2, .dark-mode .site-updates h3 {
-  color: rgb(179, 216, 179);
-}
-.dark-mode .web-rings h2 {
-  color: #aa8cdb;
-}
-.dark-mode .guestbook h2 {
-  color: rgb(253, 188, 255);
-}
-.dark-mode .guestbook h3 {
-  color: #f2c7ff;
-}
-.dark-mode .guestbook blockquote {
-  font-weight: 500;
-}
-.dark-mode .overflow {
-  background-color: transparent;
 }/*# sourceMappingURL=home.css.map */
