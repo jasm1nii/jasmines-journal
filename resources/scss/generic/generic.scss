@@ -19,6 +19,8 @@ html {
 }
 
 body {
+  background-color: rgb(46, 41, 48);
+  transition: background-color 0.25s ease-out;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: auto;
