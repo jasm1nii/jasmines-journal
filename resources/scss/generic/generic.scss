@@ -5,9 +5,6 @@
 @use '../_shared/components/webkit_scrollbar' as *;
 @use '../_shared/animations/fade-in' as *;
 
-@use '_colors/light' as *;
-@use '_colors/dark' as *;
-
 @use '_screen-sizes/768'as *;
 
 /* animations */
@@ -186,28 +183,3 @@ button {
 
 @include webkit-scrollbar-style-1();
 @include screen-768();
-
-@media (prefers-color-scheme: light) {
-  body {
-    @include light-mode-body();
-  }
-
-  @include light-mode();
-}
-
-.light-mode {
-  @include light-mode-body();
-  @include light-mode();
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    @include dark-mode-body();
-  }
-  @include dark-mode();
-}
-
-.dark-mode {
-  @include dark-mode-body();
-  @include dark-mode();
-}

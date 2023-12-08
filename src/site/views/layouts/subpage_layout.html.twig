@@ -7,6 +7,9 @@
         <meta name="description" content="{{ description }}"/>
         <meta property="og:description" content="{{ description }}"/>
         <link id="base-theme" href="/_assets/stylesheets/generic.css" rel="stylesheet" type="text/css" media="all"/>
+        <noscript>
+            <link href="/_assets/stylesheets/generic_noscript.css" rel="stylesheet" type="text/css" media="all"/>
+        </noscript>
     </head>
     <body>
         <header>
@@ -29,6 +32,5 @@
         <footer>
             {{ include('@includes/footer.shtml') }}
         </footer>
-        
     </body>
 </html>
