@@ -1,17 +1,9 @@
 @use '../shared' as theme;
 
-@use '../../_shared/components/links_1' as *;
-@use '../../_shared/components/buttons_1' as *;
-@use '../../_shared/components/header_2' as *;
-@use '../../_shared/components/footer_2' as *;
-@use '../../_shared/components/comments-webmentions' as *;
-
 @use '_screen-sizes/entry_800' as *;
 @use '_screen-sizes/entry_500' as *;
 
-@import url('cactus-chat.css');
-
-@include theme.base();
+@include theme.base($override_footer: true, $add_comments: true);
 
 body {
     font-stretch: normal;
@@ -28,8 +20,6 @@ body {
     flex-direction: row-reverse;
     column-gap: 2vw;
 }
-
-@include header-style-2();
 
 main {
     margin: auto;
@@ -126,21 +116,10 @@ section {
     padding: 2em;
     padding-top: 1.5em;
 }
-    
-@include comments-webmentions();
 
 summary {
     margin-left: 1em;
 }
-
-hr {
-    border: 1px dashed pink;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-@include link-style-1();
-@include button-style-1();
 
 footer {
     font-size: 1em;

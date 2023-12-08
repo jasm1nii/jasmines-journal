@@ -1,5 +1,4 @@
-@use '../shared' as *;
-
+@use '../../shared' as *;
 
 @mixin dark-mode-body {
     background-color: $dark-bg-color;

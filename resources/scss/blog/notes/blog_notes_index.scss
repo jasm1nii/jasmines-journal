@@ -1,12 +1,9 @@
 @use '../shared' as theme;
 
-@use '../../_shared/components/links_1' as *;
-@use '../../_shared/components/buttons_1' as *;
-@use '../../_shared/components/header_2' as *;
-@use '../../_shared/components/footer_2' as *;
-
 @use '_screen-sizes/index_768' as *;
 @use '_screen-sizes/index_500' as *;
+
+@include theme.base();
 
 body {
     font-size: 1.1em;
@@ -30,8 +27,6 @@ body {
     top: 5%;
     align-self: flex-start;
 }
-
-@include header-style-2();
 
 .feed-links {
     margin: auto;
@@ -107,16 +102,6 @@ article {
 iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-}
-
-@include footer-style-2();
-@include link-style-1();
-@include button-style-1();
-
-hr {
-    border: 1px dashed pink;
-    margin-top: 2em;
-    margin-bottom: 2em;
 }
 
 @include screen-768();

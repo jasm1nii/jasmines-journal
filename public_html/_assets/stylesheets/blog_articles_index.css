@@ -12,17 +12,22 @@
     opacity: 1;
   }
 }
-body {
-  font-size: 1.1em;
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
+html {
+  scrollbar-color: rgb(184, 140, 184) transparent;
+  scrollbar-width: thin;
+  text-rendering: optimizeLegibility;
 }
 
-.layout {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: row-reverse;
+body {
+  font-weight: 500;
+  font-family: "Inconsolata", monospace;
+  scrollbar-color: pink transparent;
+  scrollbar-width: thin;
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+  background-color: rgb(45, 42, 48);
+  transition: all 0.25s ease-out;
 }
 
 header {
@@ -85,6 +90,98 @@ header nav a {
 
 h1 {
   font-size: 2em;
+}
+
+footer {
+  font-size: smaller;
+  margin-top: 3em auto 5em;
+  width: 100%;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+footer li {
+  display: inline-block;
+  margin-right: 1em;
+}
+footer li::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin-right: 1em;
+}
+footer li:first-child::before {
+  content: none;
+}
+footer time {
+  font-weight: 600;
+}
+
+hr {
+  border: 1px dashed pink;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+a {
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+}
+a:hover {
+  background-color: var(--links-hover-bg);
+  color: black;
+}
+
+button {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid;
+  cursor: pointer;
+}
+button:hover {
+  background-color: thistle;
+  color: black;
+}
+
+::-moz-selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::selection {
+  background-color: rgb(248, 208, 170);
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(164, 118, 170);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: plum;
+}
+
+body {
+  font-size: 1.1em;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.layout {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .sidebar {
@@ -163,61 +260,6 @@ article li time {
   display: block;
   font-size: smaller;
   margin-top: 0.5em;
-}
-
-footer {
-  font-size: smaller;
-  margin-top: 3em auto 5em;
-  width: 100%;
-  letter-spacing: 0.05em;
-  text-align: center;
-}
-footer ul {
-  padding: 0;
-  list-style-type: none;
-}
-footer li {
-  display: inline-block;
-  margin-right: 1em;
-}
-footer li::before {
-  content: "⬩";
-  font-size: 1.25em;
-  margin-right: 1em;
-}
-footer li:first-child::before {
-  content: none;
-}
-footer time {
-  font-weight: 600;
-}
-
-a {
-  background-color: transparent;
-  transition: all 0.2s ease-out;
-  font-weight: 600;
-}
-a:hover {
-  background-color: var(--links-hover-bg);
-  color: black;
-}
-
-button {
-  font: inherit;
-  background-color: inherit;
-  color: inherit;
-  border: 1px solid;
-  cursor: pointer;
-}
-button:hover {
-  background-color: thistle;
-  color: black;
-}
-
-hr {
-  border: 1px dashed pink;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 @media all and (max-width: 768px) {
