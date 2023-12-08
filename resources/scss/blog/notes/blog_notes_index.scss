@@ -1,18 +1,17 @@
-@use 'themes/blog' as theme;
+@use 'themes/blog/shared' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
 @use 'components/header_2' as *;
 @use 'components/footer_2' as *;
 
-@use 'screen_queries/blog/768' as *;
-@use 'screen_queries/blog/500' as *;
+@use 'screen_queries/blog/notes/index_768' as *;
+@use 'screen_queries/blog/notes/index_500' as *;
 
 body {
-    font-family: theme.$font;
     font-size: 1.1em;
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding-bottom: 3vh;
 }
@@ -34,8 +33,16 @@ body {
 
 @include header-style-2();
 
-main {
+.feed-links {
+    margin: auto;
     margin-bottom: 2em;
+    padding: .5em;
+    width: 95%;
+    text-align: center;
+}
+
+main {
+    margin: 0 auto 3em;
     &::before {
         content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
         display: block;
@@ -51,77 +58,50 @@ main {
         margin-top: 1.5em;
         font-size: x-large;
     }
-    a {
-        text-decoration: dashed underline;
-    }
 }
 
-.microblog, .blog {
-    border: 1px solid;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 1em;
+article {
     margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
     h2 {
         letter-spacing: .05em;
     }
 }
 
-.microblog {
-    .newest-note {
-        border: none;
-        padding: 0 1em 1em 1em;
-        display: flex;
-        flex-direction: row;
-        column-gap: 1em;
-        .u-photo {
-            border-radius: 50%;
-            margin-top: 1em;
-            margin-bottom: auto;
-            border: 1px solid;
-        }
-        .h-entry {
-            display: flex;
-            flex-direction: column;
-        }
-        .e-content {
+.notes-format {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 3em;
+    & .u-photo {
+        border-radius: 50%;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        border: 1px solid;
+    }
+    & .h-entry {
+        flex-direction: column;
+        padding: 1.5em 2em 2em;
+        border: 1px solid;
+        max-width: 95vw;
+        & .e-content {
+            padding-bottom: 1em;
+            margin-top: 0;
+            font-size: larger;
             line-height: 1.5em;
-        }
-        p {
-            margin-top: 0;
-        }
-        time {
-            padding-bottom: .25em;
-            margin-left: 0;
-        }
-    }
-}
-
-.blog {
-    .h-entry {
-        padding: 0;
-        padding-bottom: 2em;
-        border: none;
-        h3 {
-            margin-top: 0;
-            padding: .5em;
-            letter-spacing: .015em;
-            font-weight: 600;
-        }
-        .p-summary {
-            font-style: italic;
-        }
-        .p-summary, time {
-            margin-left: 1em;
+            + span {
+                border-top: 1px dashed;
+                margin-left: 0;
+                padding-left: 0;
+                padding-top: 1em;
+                display: block;
+            }
         }
     }
-}
-
-.subscribe {
-    margin-top: 0;
-    padding-top: 1em;
-    border-top: 1px dashed;
-    text-align: right;
 }
 
 iframe {
@@ -129,15 +109,16 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
+@include footer-style-2();
+@include link-style-1();
+@include button-style-1();
+
 hr {
     border: 1px dashed pink;
     margin-top: 2em;
     margin-bottom: 2em;
 }
 
-@include footer-style-2();
-@include link-style-1();
-@include button-style-1();
 @include screen-768();
 @include screen-500();
 
@@ -153,13 +134,28 @@ hr {
     --light-links-hover: rgb(140, 42, 221);
 }
 
+$shadow-style-1: 5px 5px 15px;
+$shadow-style-2: -5px -5px 15px;
+
 @mixin light-mode-body {
     background-color:  var(--light-bg);
     color: var(--light-font);
+    font-weight: 500;
 }
 @mixin light-mode {
-    .microblog, .blog {
+    $shadow-color: rgba(199, 137, 235, 0.08);
+    .feed-links {
+        background-color: rgb(246, 240, 248);
+    }
+    .u-photo {
+        filter: drop-shadow($shadow-style-1 $shadow-color)
+                drop-shadow($shadow-style-2 $shadow-color);
+    }
+    .h-entry {
         background-color: var(--light-bg-article);
+        box-shadow:
+            $shadow-style-1 $shadow-color,
+            $shadow-style-2 $shadow-color;
     }
     a {
         color: var(--light-links);
@@ -167,44 +163,32 @@ hr {
             color: black;
         }
     }
-    .newest-note {
-        background-color: rgba(211, 196, 226, 0.24);;
-    }
-    .blog {
-        h3 {
-            background-color: rgba(214, 191, 216, 0.295);
-        }
-    }
 }
 
 @mixin dark-mode-body {
     background-color: var(--dark-bg);
     color: var(--dark-font);
+    font-weight: normal;
 }
 @mixin dark-mode {
-    main {
-       a {
-            color: rgb(255, 192, 208);
-        }
+    $shadow-color: rgba(128, 0, 107, 0.4);
+    .feed-links {
+        background-color: rgb(52, 47, 54);
     }
-    .microblog, .blog {
+    .u-photo {
+        filter: drop-shadow($shadow-style-1 $shadow-color)
+                drop-shadow($shadow-style-2 $shadow-color);
+    }
+    .h-entry {
         background-color: theme.$dark-section-bg;
         border-color: theme.$dark-section-border;
+        box-shadow: $shadow-style-1 $shadow-color,
+                    $shadow-style-2 $shadow-color;
     }
     a {
         color: var(--dark-links);
         &:hover {
             color: black;
-        }
-    }
-    .newest-note {
-        background-color: rgb(39, 28, 39);;
-    }
-    .blog {
-        .h-entry {
-            h3 {
-                background-color: rgb(39, 28, 39);
-            }
         }
     }
 }

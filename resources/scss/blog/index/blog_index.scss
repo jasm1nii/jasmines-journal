@@ -1,0 +1,143 @@
+@use 'themes/blog/shared' as theme;
+
+@use 'components/links_1' as *;
+@use 'components/buttons_1' as *;
+@use 'components/header_2' as *;
+@use 'components/footer_2' as *;
+
+@use 'screen_queries/blog/768' as *;
+@use 'screen_queries/blog/500' as *;
+
+@include theme.base();
+
+body {
+    font-size: 1.1em;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 3vh;
+}
+
+.layout {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 1em;
+}
+
+.sidebar {
+    max-width: 12em;
+    margin-left: 1em;
+    position: sticky;
+    top: 5%;
+    align-self: flex-start;
+}
+
+@include header-style-2();
+
+main {
+    margin-bottom: 2em;
+    &::before {
+        content:'⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆';
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5em;
+        letter-spacing: .4em;
+        font-size: x-large;
+    }
+    &::after {
+        content: '˗ˏˋ ꒰ ┆┆ ₊˚ʚ ᗢ₊˚✧ ﾟ.┆┆꒱ ˎˊ˗';
+        display: block;
+        text-align: center;
+        margin-top: 1.5em;
+        font-size: x-large;
+    }
+    a {
+        text-decoration: dashed underline;
+    }
+}
+
+.microblog, .blog {
+    border: 1px solid;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    h2 {
+        letter-spacing: .05em;
+    }
+}
+
+.microblog {
+    .newest-note {
+        border: none;
+        padding: 0 1em 1em 1em;
+        display: flex;
+        flex-direction: row;
+        column-gap: 1em;
+        .u-photo {
+            border-radius: 50%;
+            margin-top: 1em;
+            margin-bottom: auto;
+            border: 1px solid;
+        }
+        .h-entry {
+            display: flex;
+            flex-direction: column;
+        }
+        .e-content {
+            line-height: 1.5em;
+        }
+        p {
+            margin-top: 0;
+        }
+        time {
+            padding-bottom: .25em;
+            margin-left: 0;
+        }
+    }
+}
+
+.blog {
+    .h-entry {
+        padding: 0;
+        padding-bottom: 2em;
+        border: none;
+        h3 {
+            margin-top: 0;
+            padding: .5em;
+            letter-spacing: .015em;
+            font-weight: 600;
+        }
+        .p-summary {
+            font-style: italic;
+        }
+        .p-summary, time {
+            margin-left: 1em;
+        }
+    }
+}
+
+.subscribe {
+    margin-top: 0;
+    padding-top: 1em;
+    border-top: 1px dashed;
+    text-align: right;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+hr {
+    border: 1px dashed pink;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+@include footer-style-2();
+@include link-style-1();
+@include button-style-1();
+@include screen-768();
+@include screen-500();

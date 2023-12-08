@@ -1,0 +1,31 @@
+@use '../shared' as *;
+
+
+@mixin dark-mode-body {
+    background-color: $dark-bg-color;
+    color: $dark-font-color;
+}
+
+@mixin dark-mode {
+    .microblog, .blog {
+        background-color: $dark-section-bg;
+        border-color: $dark-section-border;
+    }
+    a {
+        color: $dark-link-color;
+        &:hover {
+            color: black;
+            background-color: $dark-link-hover-bg-color;
+        }
+    }
+    .newest-note {
+        background-color: rgb(39, 28, 39);;
+    }
+    .blog {
+        .h-entry {
+            h3 {
+                background-color: rgb(39, 28, 39);
+            }
+        }
+    }
+}

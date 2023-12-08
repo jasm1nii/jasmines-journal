@@ -1,5 +1,5 @@
-@use 'themes/about/light'as *;
-@use 'themes/about/dark'as *;
+@use '_colors/light'as *;
+@use '_colors/dark'as *;
 
 @media (prefers-color-scheme: light) {
     body {

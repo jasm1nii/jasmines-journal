@@ -1,4 +1,4 @@
-@use 'themes/blog' as theme;
+@use 'themes/blog/shared' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
@@ -9,7 +9,6 @@
 @use 'screen_queries/blog/articles/index_500' as *;
 
 body {
-    font-family: theme.$font;
     font-size: 1.1em;
     width: 90%;
     max-width: 800px;

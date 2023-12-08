@@ -1,21 +1,21 @@
 /* home page */
-@use 'themes/main' as theme;
+@use '../_shared/_theme_1' as theme;
 
-@use 'components/sticky-note' as *;
-@use 'components/card_hcard' as *;
-@use 'components/card_clock' as *;
-@use 'components/card_last-played' as *;
-@use 'components/card_status-cafe' as *;
-@use 'components/card_site-updates' as *;
-@use 'components/card_tip-jar' as *;
-@use 'components/card_webrings' as *;
-@use 'components/card_guestbook' as *;
+@use '_components/sticky-note' as *;
+@use '_components/card_hcard' as *;
+@use '_components/card_clock' as *;
+@use '_components/card_last-played' as *;
+@use '_components/card_status-cafe' as *;
+@use '_components/card_site-updates' as *;
+@use '_components/card_tip-jar' as *;
+@use '_components/card_webrings' as *;
+@use '_components/card_guestbook' as *;
 
-@use 'screen_queries/home_1100' as *;
-@use 'screen_queries/home_900' as *;
-@use 'screen_queries/home_768' as *;
-@use 'screen_queries/home_500' as *;
-@use 'screen_queries/home_400' as *;
+@use '_screen-sizes/home_1100' as *;
+@use '_screen-sizes/home_900' as *;
+@use '_screen-sizes/home_768' as *;
+@use '_screen-sizes/home_500' as *;
+@use '_screen-sizes/home_400' as *;
 
 /* animations */
 body {

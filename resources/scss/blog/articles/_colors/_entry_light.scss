@@ -1,0 +1,29 @@
+@use '../shared' as *;
+
+@mixin light-mode-body {
+    background-color:  $light-bg-color;
+    color: $light-font-color;
+}
+
+@mixin light-mode() {
+    article, #comments, #webmentions {
+        background-color: $light-section-bg;
+    }
+    a {
+        color: $light-link-color;
+        &:hover {
+            color: $light-link-hover-color;
+            background-color: $light-link-hover-bg-color;
+        }
+    }
+    .cactus-container {
+        button {
+            background-color: rgb(204, 198, 207);
+            color: black;
+            &:hover {
+                background-color: pink;
+                color: rgb(70, 35, 41);
+            }
+        }
+    }
+}

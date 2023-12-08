@@ -1,0 +1,47 @@
+@use '../../assets/font_inconsolata' as *;
+
+@use '../../animations/fade-in' as *;
+@use '../../components/webkit_scrollbar' as *;
+@use '../../components/scrollbar' as *;
+
+@mixin base {
+
+    html {
+        @include scrollbar-style-1();
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        font-weight: 500;
+        font-family: 'Inconsolata', monospace;
+        @include scrollbar-style-2();
+        @include fadeIn();
+        background-color: rgb(45, 42, 48);
+        transition: all 0.25s ease-out;
+    }
+
+    ::selection {
+        background-color: rgb(248, 208, 170);
+        color: black;
+    }
+
+    @include webkit-scrollbar-style-1();
+
+}
+
+$dark-font-color: white;
+$dark-link-color: rgb(255, 166, 181);
+$dark-link-hover-bg-color: rgb(255, 234, 176);
+
+$dark-bg-color: black;
+$dark-section-bg: rgb(22, 21, 21);
+$dark-section-border: rgb(68, 60, 60);
+
+$light-font-color: rgb(63, 48, 48);
+$light-link-color: rgb(88, 24, 56);
+$light-link-hover-color: white;
+$light-link-hover-bg-color: rgb(160, 120, 155);
+
+$light-bg-color: rgb(232, 221, 235);
+$light-section-bg: ghostwhite;
+

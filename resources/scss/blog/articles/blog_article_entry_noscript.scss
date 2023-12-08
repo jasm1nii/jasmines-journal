@@ -1,0 +1,22 @@
+@use 'themes/blog/shared' as *;
+
+@use 'themes/blog/articles/entry_dark' as *;
+@use 'themes/blog/articles/entry_light' as *;
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
+    } 
+    @include light-mode();
+    :root, :host {
+        --seia-color-text: $light-font-color;
+    }
+    
+}

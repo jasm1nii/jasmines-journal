@@ -1,11 +1,11 @@
-@use 'assets/font_besley';
-@use 'assets/font_instrument-sans';
+@use '../_shared/assets/font_besley';
+@use '../_shared/assets/font_instrument-sans';
 
-@use 'animations/fade-in' as *;
-@use 'components/scrollbar' as *;
-@use 'components/webkit_scrollbar' as *;
+@use '../_shared/animations/fade-in' as *;
+@use '../_shared/components/scrollbar' as *;
+@use '../_shared/components/webkit_scrollbar' as *;
 
-@use 'screen_queries/about/768' as *;
+@use '_screen-sizes/768' as *;
 
 header, main, footer {
   @include fadeIn();

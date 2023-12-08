@@ -1,0 +1,26 @@
+@use '../shared' as *;
+
+@mixin light-mode-body {
+    background-color:  $light-bg-color;
+    color: $light-font-color;
+}
+
+@mixin light-mode {
+    .microblog, .blog {
+        background-color: $light-section-bg;
+    }
+    a {
+        color: $light-link-color;
+        &:hover {
+            color: black;
+        }
+    }
+    .newest-note {
+        background-color: rgba(211, 196, 226, 0.24);;
+    }
+    .blog {
+        h3 {
+            background-color: rgba(214, 191, 216, 0.295);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use 'themes/blog/index/dark' as *;
+@use 'themes/blog/index/light' as *;
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-mode-body();
+    }
+    @include dark-mode();
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-mode-body();
+    }
+    @include light-mode();
+}

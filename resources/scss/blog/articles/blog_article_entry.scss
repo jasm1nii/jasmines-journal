@@ -1,4 +1,4 @@
-@use 'themes/blog' as theme;
+@use 'themes/blog/shared' as theme;
 
 @use 'components/links_1' as *;
 @use 'components/buttons_1' as *;
@@ -10,8 +10,9 @@
 
 @import url('cactus-chat.css');
 
+@include theme.base();
+
 body {
-    font-family: theme.$font;
     font-stretch: normal;
     font-size: 1em;
     max-width: 900px;
@@ -171,103 +172,3 @@ footer {
 
 @include screen-800();
 @include screen-500();
-
-:root {
-    --dark-font: white;
-    --light-font: rgb(63, 48, 48);
-    --dark-bg: black;
-    --light-bg: rgb(232, 221, 235);
-    --light-bg-article: ghostwhite;
-    --dark-links: rgb(255, 166, 181);
-    --dark-links-hover: rgb(255, 234, 176);
-    --light-links: rgb(88, 24, 56);
-    --light-links-hover: rgb(140, 42, 221);
-}
-
-@mixin dark-mode-body {
-    background-color: var(--dark-bg);
-    color: var(--dark-font);
-}
-
-@mixin dark-mode() {
-    article, #comments, #webmentions {
-        background-color: theme.$dark-section-bg;
-        border-color: theme.$dark-section-border;
-    }
-    #comments {
-        button {
-            color: black;
-            background-color: thistle;
-            &:hover {
-                background-color: lightpink;
-            }
-        }
-    }
-    a {
-        color: var(--dark-links);
-        &:hover {
-            color: black
-        }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        @include dark-mode-body();
-    }
-    @include dark-mode();
-}
-
-.dark-mode {
-    @include dark-mode-body();
-    @include dark-mode();
-}
-:root .dark-mode, :host .dark-mode {
-    --seia-color-text: white;
-}
-
-@mixin light-mode-body {
-    background-color:  var(--light-bg);
-    color: var(--light-font);
-}
-
-@mixin light-mode() {
-    article, #comments, #webmentions {
-        background-color: var(--light-bg-article);
-    }
-    a {
-        color: var(--light-links);
-        &:hover {
-            color: black;
-        }
-    }
-    .cactus-container {
-        button {
-            background-color: rgb(204, 198, 207);
-            color: black;
-            &:hover {
-                background-color: pink;
-                color: rgb(70, 35, 41);
-            }
-        }
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        @include light-mode-body();
-    } 
-    @include light-mode();
-    :root, :host {
-        --seia-color-text: var(--light-font);
-    }
-    
-}
-.light-mode {
-    @include light-mode-body();
-    @include light-mode();
-}
-
-:root .light-mode, :host .light-mode {
-    --seia-color-text: var(--light-font);
-}

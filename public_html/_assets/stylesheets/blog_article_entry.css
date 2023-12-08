@@ -21,16 +21,14 @@ html {
 
 body {
   font-weight: 500;
+  font-family: "Inconsolata", monospace;
   scrollbar-color: pink transparent;
   scrollbar-width: thin;
   opacity: 0;
   animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
+  background-color: rgb(45, 42, 48);
   transition: all 0.25s ease-out;
-}
-
-a:hover {
-  background-color: white !important;
 }
 
 ::-moz-selection {
@@ -58,7 +56,6 @@ a:hover {
 }
 
 body {
-  font-family: "Inconsolata", monospace;
   font-stretch: normal;
   font-size: 1em;
   max-width: 900px;
@@ -365,117 +362,4 @@ footer li:first-child::before {
 main {
   width: -moz-fit-content;
   width: fit-content;
-}
-
-:root {
-  --dark-font: white;
-  --light-font: rgb(63, 48, 48);
-  --dark-bg: black;
-  --light-bg: rgb(232, 221, 235);
-  --light-bg-article: ghostwhite;
-  --dark-links: rgb(255, 166, 181);
-  --dark-links-hover: rgb(255, 234, 176);
-  --light-links: rgb(88, 24, 56);
-  --light-links-hover: rgb(140, 42, 221);
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: var(--dark-font);
-  }
-  article, #comments, #webmentions {
-    background-color: rgb(22, 21, 21);
-    border-color: rgb(68, 60, 60);
-  }
-  #comments button {
-    color: black;
-    background-color: thistle;
-  }
-  #comments button:hover {
-    background-color: lightpink;
-  }
-  a {
-    color: var(--dark-links);
-  }
-  a:hover {
-    color: black;
-  }
-}
-.dark-mode {
-  background-color: var(--dark-bg);
-  color: var(--dark-font);
-}
-.dark-mode article, .dark-mode #comments, .dark-mode #webmentions {
-  background-color: rgb(22, 21, 21);
-  border-color: rgb(68, 60, 60);
-}
-.dark-mode #comments button {
-  color: black;
-  background-color: thistle;
-}
-.dark-mode #comments button:hover {
-  background-color: lightpink;
-}
-.dark-mode a {
-  color: var(--dark-links);
-}
-.dark-mode a:hover {
-  color: black;
-}
-
-:root .dark-mode, :host .dark-mode {
-  --seia-color-text: white;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--light-bg);
-    color: var(--light-font);
-  }
-  article, #comments, #webmentions {
-    background-color: var(--light-bg-article);
-  }
-  a {
-    color: var(--light-links);
-  }
-  a:hover {
-    color: black;
-  }
-  .cactus-container button {
-    background-color: rgb(204, 198, 207);
-    color: black;
-  }
-  .cactus-container button:hover {
-    background-color: pink;
-    color: rgb(70, 35, 41);
-  }
-  :root, :host {
-    --seia-color-text: var(--light-font);
-  }
-}
-.light-mode {
-  background-color: var(--light-bg);
-  color: var(--light-font);
-}
-.light-mode article, .light-mode #comments, .light-mode #webmentions {
-  background-color: var(--light-bg-article);
-}
-.light-mode a {
-  color: var(--light-links);
-}
-.light-mode a:hover {
-  color: black;
-}
-.light-mode .cactus-container button {
-  background-color: rgb(204, 198, 207);
-  color: black;
-}
-.light-mode .cactus-container button:hover {
-  background-color: pink;
-  color: rgb(70, 35, 41);
-}
-
-:root .light-mode, :host .light-mode {
-  --seia-color-text: var(--light-font);
 }/*# sourceMappingURL=blog_article_entry.css.map */
