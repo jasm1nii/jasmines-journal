@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Inconsolata";
+  font-display: swap;
+  src: url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Inconsolata/Inconsolata.woff") format("woff"), url("/_assets/fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.dark-mode article {
+  background-color: rgb(22, 21, 21);
+  border-color: rgb(68, 60, 60);
+}
+.dark-mode a {
+  color: rgb(255, 166, 181);
+}
+.dark-mode a:hover {
+  color: black;
+}/*# sourceMappingURL=blog_article_index_theme.css.map */

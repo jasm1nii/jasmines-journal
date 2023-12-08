@@ -1,0 +1,19 @@
+@use '../../shared' as *;
+
+@mixin light-mode-body {
+    background-color:  $light-bg-color;
+    color: $light-font-color;
+}
+
+@mixin light-mode {
+    article {
+        background-color: $light-section-bg;
+    }
+    a {
+        color: $light-link-color;
+        &:hover {
+            color: $light-link-hover-color;
+            background-color: $light-link-hover-bg-color;
+        }
+    }
+}

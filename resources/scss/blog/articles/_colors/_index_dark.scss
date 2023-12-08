@@ -1,0 +1,19 @@
+@use '../../shared' as *;
+
+@mixin dark-mode-body {
+    background-color: $dark-bg-color;
+    color: $dark-font-color;
+}
+
+@mixin dark-mode() {
+    article {
+        background-color: $dark-section-bg;
+        border-color: $dark-section-border;
+    }
+    a {
+        color: $dark-link-color;
+        &:hover {
+            color: black
+        }
+    }
+}
