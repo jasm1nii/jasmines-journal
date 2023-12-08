@@ -23,6 +23,11 @@ html {
 }
 
 body {
+  background-color: rgb(46, 41, 48);
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+  transition: all 0.25s ease-out;
   font-family: "Instrument Sans", sans-serif;
   font-size: 1.1em;
   display: grid;

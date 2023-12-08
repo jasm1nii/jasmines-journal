@@ -13,7 +13,8 @@
     a {
         color: $dark-link-color;
         &:hover {
-            color: black
+            color: black;
+            background-color: $dark-link-hover-bg-color;
         }
     }
 }

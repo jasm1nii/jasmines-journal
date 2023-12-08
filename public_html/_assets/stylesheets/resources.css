@@ -37,6 +37,7 @@ html {
 }
 
 body {
+  background-color: rgb(46, 41, 48);
   font-family: "Instrument Sans", sans-serif;
   font-weight: 450;
   opacity: 0;
