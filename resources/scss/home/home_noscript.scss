@@ -1,7 +1,7 @@
 @use '_colors/dark'as *;
 @use '_colors/light'as *;
 
-.loader {
+.loader, .notice-group {
     display: none;
 }
 

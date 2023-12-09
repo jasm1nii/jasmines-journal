@@ -4,6 +4,87 @@
   --overflow-border: 1px solid rgb(170, 99, 111);
 }
 
+.notice-group {
+  position: absolute;
+  top: 25vh;
+  right: 2vw;
+  z-index: 2;
+  font-family: var(--font-3);
+  animation: fadeInSlide 0.75s forwards;
+}
+.notice-group #pin {
+  background-color: transparent;
+}
+.notice-group #pin:hover {
+  background-color: transparent;
+}
+.notice-group button {
+  color: inherit;
+  border: none;
+  font-size: 2em;
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s;
+}
+.notice-group button:hover {
+  transform: translatey(-5px);
+}
+.notice-group ::-webkit-scrollbar-thumb {
+  background-color: rgb(202, 172, 97);
+}
+
+#notice {
+  border: 1px solid goldenrod;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
+  margin: 15% 5% 0 0;
+  text-align: center;
+  max-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  color: var(--sticky-note-font);
+  background-color: var(--sticky-note-bg);
+  scrollbar-color: rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192);
+  transition: transform 0.3s;
+}
+#notice img {
+  border: 3px solid white;
+  outline: 1px solid gray;
+  -o-object-fit: none;
+     object-fit: none;
+  width: 80%;
+  filter: brightness(120%);
+}
+#notice figure {
+  margin: auto;
+}
+#notice figcaption {
+  margin: 1em;
+}
+#notice p {
+  padding: 0 1em;
+}
+#notice p:first-child {
+  font-size: x-large;
+}
+#notice:hover {
+  transform: translatey(-5px);
+}
+#notice hr {
+  border-color: goldenrod;
+}
+
+#pluto {
+  -o-object-position: right;
+     object-position: right;
+}
+
+#pretzel {
+  -o-object-position: left;
+     object-position: left;
+}
+
 :root .light-mode {
   --sticky-note-bg: cornsilk !important;
 }

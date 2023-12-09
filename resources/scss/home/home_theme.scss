@@ -1,5 +1,8 @@
 @use '_colors/dark'as *;
 @use '_colors/light'as *;
+@use '_components/sticky-note' as *;
+
+@include sticky-note;
 
 :root .light-mode {
     --sticky-note-bg: cornsilk !important;

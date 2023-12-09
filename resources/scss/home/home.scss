@@ -1,7 +1,6 @@
 /* home page */
 @use '../_shared/_theme_1' as theme;
 
-@use '_components/sticky-note' as *;
 @use '_components/card_hcard' as *;
 @use '_components/card_clock' as *;
 @use '_components/card_last-played' as *;
@@ -40,8 +39,6 @@ body {
     }
   }
 }
-
-@include sticky-note();
 
 .board {
   border: 1px solid purple;

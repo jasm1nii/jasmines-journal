@@ -11,7 +11,6 @@
   );
 
   // sticky note contents
-  
   notice.innerHTML = `
     <p><b><i>have you seen THEM?!</i></b></p>
     <figure tabindex="0">
@@ -29,42 +28,6 @@
     <p><b>now you have!</b></p>
     <hr/>
     <p><small>click the pushpin to hide this notice.</small></p>`;
-
-  const x = notice.style;
-
-        x.border = "1px solid goldenrod";
-        x.boxShadow = "5px 5px 5px rgba(128, 128, 128, 0.1)";
-        x.textAlign = "center";
-        x.margin = "10% 15% 0 0";
-        x.maxWidth = "200px";
-        x.maxHeight = "300px";
-        x.overflowY = "auto";
-        x.scrollbarWidth = "thin";
-        x.scrollbarColor = "rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192)";
-        x.color = "var(--sticky-note-font)";
-        x.backgroundColor = "var(--sticky-note-bg)";
-
-  notice.querySelector('p').style.padding = "0px 1em";
-
-  const f = notice.querySelectorAll('figure');
-        f.forEach (el => { el.style.margin = "auto";});
-
-  const fc = notice.querySelectorAll('figcaption');
-        fc.forEach (el => { el.style.margin = "1em"; });
-
-  const cats = notice.querySelectorAll('img');
-        cats.forEach (el => {
-          const pic = el.style;
-            pic.border = "3px solid white";
-            pic.outline = "1px solid gray";
-            pic.objectFit = "none";
-            pic.width = "80%";
-            pic.filter = "brightness(120%)";
-        });
-
-  notice.querySelector('#pluto').style.objectPosition = "right";
-  notice.querySelector('#pretzel').style.objectPosition = "left";
-  notice.querySelector('hr').style.borderColor = "goldenrod";
 };
 
 { // yipee!!!!
@@ -118,6 +81,7 @@
         ys.marginTop = '20px';
         ys.marginLeft = '-220px';
         ys.display = 'none';
+        ys.zIndex = '4';
 
   surprise.appendChild(yipee);
 

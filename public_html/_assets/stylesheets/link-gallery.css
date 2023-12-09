@@ -129,10 +129,6 @@ body {
   transition: background-color 0.25s ease-out;
 }
 
-.board {
-  opacity: 0;
-}
-
 button {
   cursor: pointer;
   transition: all 0.5s ease;
@@ -231,6 +227,10 @@ section:hover {
   margin: 3vh auto;
   padding: 0.5em;
   border: 1px solid;
+}
+
+.board {
+  opacity: 0;
 }
 
 .board {

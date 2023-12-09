@@ -1,9 +1,9 @@
 @mixin sticky-note {
     .notice-group {
         position: absolute;
-        top: 28vh;
-        right: 5vw;
-        z-index: 1;
+        top: 25vh;
+        right: 2vw;
+        z-index: 2;
         font-family: var(--font-3);
         animation: fadeInSlide 0.75s forwards;
         #pin {
@@ -16,7 +16,7 @@
             color: inherit;
             border: none;
             font-size: 2em;
-            z-index: 2;
+            z-index: 3;
             position: absolute;
             right: 0;
             top: 0;
@@ -30,13 +30,47 @@
         }
     }
     #notice {
+        border: 1px solid goldenrod;
+        box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.1);
+        margin: 15% 5% 0 0;
+        text-align: center;
+        max-width: 200px;
+        max-height: 300px;
+        overflow-y: auto;
+        color: var(--sticky-note-font);
+        background-color: var(--sticky-note-bg);
+        scrollbar-color: rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192);
         transition: transform 0.3s;
-        & p:first-child {
-            font-size: x-large;
+        img {
+            border: 3px solid white;
+            outline: 1px solid gray;
+            object-fit: none;
+            width: 80%;
+            filter: brightness(120%);
+        }
+        figure {
+            margin: auto;
+        }
+        figcaption {
+            margin: 1em;
+        }
+        & p {
+            padding: 0 1em;
+            &:first-child {
+                font-size: x-large;
+            }
         }
         &:hover {
             transform: translatey(-5px);
         }
-        
+        hr {
+            border-color: goldenrod;
+        }
+    }
+    #pluto {
+        object-position: right;
+    }
+    #pretzel {
+        object-position: left;
     }
 }

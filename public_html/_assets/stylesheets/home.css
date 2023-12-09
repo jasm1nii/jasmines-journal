@@ -129,10 +129,6 @@ body {
   transition: background-color 0.25s ease-out;
 }
 
-.board {
-  opacity: 0;
-}
-
 button {
   cursor: pointer;
   transition: all 0.5s ease;
@@ -207,6 +203,10 @@ button:active,
   border: 1px solid;
 }
 
+.board {
+  opacity: 0;
+}
+
 /* animations */
 article > section {
   transition: transform 0.3s;
@@ -227,47 +227,6 @@ body ::-webkit-scrollbar-thumb {
 }
 body ::-webkit-scrollbar-thumb:hover {
   background-color: plum;
-}
-
-.notice-group {
-  position: absolute;
-  top: 28vh;
-  right: 5vw;
-  z-index: 1;
-  font-family: var(--font-3);
-  animation: fadeInSlide 0.75s forwards;
-}
-.notice-group #pin {
-  background-color: transparent;
-}
-.notice-group #pin:hover {
-  background-color: transparent;
-}
-.notice-group button {
-  color: inherit;
-  border: none;
-  font-size: 2em;
-  z-index: 2;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: transform 0.3s;
-}
-.notice-group button:hover {
-  transform: translatey(-5px);
-}
-.notice-group ::-webkit-scrollbar-thumb {
-  background-color: rgb(202, 172, 97);
-}
-
-#notice {
-  transition: transform 0.3s;
-}
-#notice p:first-child {
-  font-size: x-large;
-}
-#notice:hover {
-  transform: translatey(-5px);
 }
 
 .board {
@@ -997,14 +956,14 @@ hr {
     font-size: 1em;
   }
   .notice-group {
-    margin-top: 5%;
-    top: 120vh;
-  }
-  #pin {
-    right: -5vw;
+    margin-top: 100vh;
+    margin-right: 7vw;
   }
   #notice {
     width: 200px;
+  }
+  #pin {
+    right: -5vw;
   }
   article {
     padding-top: 10vh;
