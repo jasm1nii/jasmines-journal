@@ -11,7 +11,6 @@
     final class Home extends Layout {
 
         protected string $layout = DIR['layouts'] . "home/home_layout.html.twig";
-
         private const INCLUDES  = DIR['layouts'] . "home/includes/";
 
         private static function getNewestGuestbookMessage(): ?array {
@@ -27,7 +26,7 @@
 
                 return null;
 
-            }
+            };
 
         }
 
@@ -36,16 +35,15 @@
             $array = self::getNewestGuestbookMessage();
 
             if ($array !== null) {
-            
-                $date = $array['Date'];
 
+                $date = $array['Date'];
                 return Utils::formatTimeDifference(strtotime($date));
 
             } else {
 
                 return null;
 
-            }
+            };
 
         }
 
@@ -55,7 +53,7 @@
                 'src'           => "/_assets/media/main",
                 'message'       => self::getNewestGuestbookMessage(),
                 'date'          => self::formatGuestbookDate(),
-                'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}')
+                'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}'),
             ];
 
             parent::Twig($this->layout, $vars, self::INCLUDES);

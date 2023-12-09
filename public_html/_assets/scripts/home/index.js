@@ -1,64 +1,74 @@
+{
+  window.addEventListener("load", () => {
+    var page = document.querySelector("body");
+        page.style.animation = 'fadeInSlide .5s ease-in forwards';
+  });
+};
+
 { // push pin
+  const notice = document.getElementById("notice");
+
   document.getElementById("pin").addEventListener("click", () => {
-    var x = document.getElementById("notice");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+      if (notice.style.display === "none") {
+        notice.style.display = "block";
       } else {
-        x.style.display = "none";
-      }
+        notice.style.display = "none";
+      };
     }
   );
 
   // sticky note contents
-  const notice = document.querySelector("#notice");
-    notice.innerHTML = `
-      <p><b><i>have you seen THEM?!</i></b></p>
-      <figure tabindex="0">
-        <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pluto" alt="my cat pluto"/>
-        <figcaption>
-          pluto (she/her)
-        </figcaption>
-      </figure>
-      <figure tabindex="0">
-        <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pretzel" alt="my cat pretzel"/>
-        <figcaption>
-          pretzel (he/him)
-        </figcaption>
-      </figure>
-      <p><b>now you have!</b></p>
-      <hr/>
-      <p><small>click the pushpin to hide this notice.</small></p>
-      `;
-    const x = notice.style
-      x.border = "1px solid goldenrod";
-      x.boxShadow = "5px 5px 5px rgba(128, 128, 128, 0.1)";
-      x.textAlign = "center";
-      x.margin = "10% 15% 0 0";
-      x.maxWidth = "200px";
-      x.maxHeight = "300px";
-      x.overflowY = "auto";
-      x.scrollbarWidth = "thin";
-      x.scrollbarColor = "rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192)";
-      x.color = "var(--sticky-note-font)";
-      x.backgroundColor = "var(--sticky-note-bg)";
-      notice.querySelector('p').style.padding = "0px 1em";
-      const f = notice.querySelectorAll('figure');
-        f.forEach (el => {
-          el.style.margin = "auto";
-        });
-      const fc = notice.querySelectorAll('figcaption');
-        fc.forEach (el => {
-          el.style.margin = "1em";
-        });
-      const cats = notice.querySelectorAll('img');
+  
+  notice.innerHTML = `
+    <p><b><i>have you seen THEM?!</i></b></p>
+    <figure tabindex="0">
+      <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pluto" alt="my cat pluto"/>
+      <figcaption>
+        pluto (she/her)
+      </figcaption>
+    </figure>
+    <figure tabindex="0">
+      <img src="/_assets/media/main/pluto-pretzel_compressed.webp" width="122" height="106" id="pretzel" alt="my cat pretzel"/>
+      <figcaption>
+        pretzel (he/him)
+      </figcaption>
+    </figure>
+    <p><b>now you have!</b></p>
+    <hr/>
+    <p><small>click the pushpin to hide this notice.</small></p>`;
+
+  const x = notice.style;
+
+        x.border = "1px solid goldenrod";
+        x.boxShadow = "5px 5px 5px rgba(128, 128, 128, 0.1)";
+        x.textAlign = "center";
+        x.margin = "10% 15% 0 0";
+        x.maxWidth = "200px";
+        x.maxHeight = "300px";
+        x.overflowY = "auto";
+        x.scrollbarWidth = "thin";
+        x.scrollbarColor = "rgba(184, 145, 94, 0.692) rgba(250, 240, 230, 0.192)";
+        x.color = "var(--sticky-note-font)";
+        x.backgroundColor = "var(--sticky-note-bg)";
+
+  notice.querySelector('p').style.padding = "0px 1em";
+
+  const f = notice.querySelectorAll('figure');
+        f.forEach (el => { el.style.margin = "auto";});
+
+  const fc = notice.querySelectorAll('figcaption');
+        fc.forEach (el => { el.style.margin = "1em"; });
+
+  const cats = notice.querySelectorAll('img');
         cats.forEach (el => {
-          const pic = el.style
+          const pic = el.style;
             pic.border = "3px solid white";
             pic.outline = "1px solid gray";
             pic.objectFit = "none";
             pic.width = "80%";
             pic.filter = "brightness(120%)";
         });
+
   notice.querySelector('#pluto').style.objectPosition = "right";
   notice.querySelector('#pretzel').style.objectPosition = "left";
   notice.querySelector('hr').style.borderColor = "goldenrod";
@@ -136,29 +146,29 @@
   function dateToText(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    //var seconds = date.getSeconds();
+    // var seconds = date.getSeconds();
     if (minutes < 10) minutes = '0' + minutes;
-    //if  (seconds < 10) seconds = '0'+seconds;
+    // if  (seconds < 10) seconds = '0'+seconds;
     if (hours < 10) hours = '0' + hours;
     return innerHTML = hours + `:` + minutes; // + ":" + seconds;
   };
 
   function updateClocks() {
-  for (var i = 0; i < window.arrClocks.length; i++) {
-    var clock = window.arrClocks[i];
-    var offset = window.arrOffsets[i];
-    clock.innerHTML = dateToText(new Date(new Date().getTime()+offset));
+    for (var i = 0; i < window.arrClocks.length; i++) {
+      var clock = window.arrClocks[i];
+      var offset = window.arrOffsets[i];
+      clock.innerHTML = dateToText(new Date(new Date().getTime()+offset));
     };
   };
   
   function startClocks() {
-    clockElements = document.getElementsByClassName('clock');
-    window.arrClocks = []
+    var clockElements = document.getElementsByClassName('clock');
+    window.arrClocks = [];
     window.arrOffsets = [];
 
-    for(var i = 0; i < clockElements.length; i++) {
-      el = clockElements[i];
-      timezone = parseInt(el.getAttribute('timezone'));
+    for (var i = 0; i < clockElements.length; i++) {
+      var el = clockElements[i];
+      var timezone = parseInt(el.getAttribute('timezone'));
 
       if (!isNaN(timezone)) {
         var tzDifference = timezone * 60 + (new Date()).getTimezoneOffset();
@@ -167,11 +177,10 @@
         window.arrClocks.push(el);
         window.arrOffsets.push(offset);
       };
-
     };
 
     updateClocks();
-    clockID = setInterval(updateClocks, 1000);
+    setInterval(updateClocks, 1000);
   };
 
   setTimeout(startClocks, 100);
@@ -186,28 +195,32 @@
       }).then(function (json) {
         song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']  ['#text'];
     });
+
   // scrolling animation toggle
   const jstoggle = document.getElementById('js-toggle');
+
   jstoggle.addEventListener('click', () => {
     const animations = document.querySelectorAll('[data-animation]');
     animations.forEach(animation => {
       const running = animation.style.animationPlayState || 'running';
       animation.style.animationPlayState = running === 'running' ? 'paused' :   'running';
-    })
+    });
   });
 };
 
 { // status.cafe
-fetch("https://status.cafe/users/jasm1nii/status.json")
-  .then( r => r.json() )
-  .then( r => {
-    if (!r.content.length) {
-      document.getElementById("statuscafe-content").innerHTML = "No status yet."
-      return
-    }
-    document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/jasm1nii" rel="external me" target="_blank">' + r.author + '</a> ' + r.face + ' ' + r.timeAgo
-    document.getElementById("statuscafe-content").innerHTML = r.content
-  });
+  fetch("https://status.cafe/users/jasm1nii/status.json")
+    .then( r => r.json() )
+    .then( r => {
+      if (!r.content.length) {
+        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
+        return;
+      }
+
+      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/jasm1nii" rel="external me" target="_blank">' + r.author + '</a> ' + r.face + ' ' + r.timeAgo;
+
+      document.getElementById("statuscafe-content").innerHTML = r.content;
+    });
 };
 
 { // webrings
@@ -224,7 +237,7 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       'https://pixelglade.net/',
       'https://shinyexe.neocities.org/',
       'https://trinityexe.neocities.org/homepage'
-    ]
+    ];
     var resourceRing_ringurl = "https://pixelsafari.neocities.org/webring/";
     var resourceRing_badgeurl = "/_assets/media/main/resourcering.png";
     var resourceRing_prevurl = "/_assets/media/main//resourceringprev.png";
@@ -235,22 +248,11 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
     var currentLocation = window.location.href;
     var siteIndex = resourceRing_members.indexOf(currentLocation);
 
-    var beforeID;
-    var afterID;
-    if (siteIndex == 0) {
-      beforeID = resourceRing_members.length - 1;
-    }
-    else {
-      beforeID = siteIndex - 1;
-    }
-    if (siteIndex == resourceRing_members.length - 1) {
-      afterID = 0;
-    }
-    else {
-      afterID = siteIndex + 1;
-    }
-    var randomID;
-    randomID = Math.floor(Math.random() * resourceRing_members.length);
+    var beforeID = (siteIndex == 0) ? (resourceRing_members.length - 1) : (siteIndex - 1);
+
+    var afterID = (siteIndex == resourceRing_members.length - 1) ? 0 : (siteIndex + 1);
+
+    var randomID = Math.floor(Math.random() * resourceRing_members.length);
     
     displayElement.innerHTML =
       `<span><a href='` + resourceRing_ringurl + `'><img alt='Badge: resourceRing webring' src='` + resourceRing_badgeurl + `' width='88' height='31' loading='lazy'/></a></span>` +
@@ -258,10 +260,12 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       `<a href='` + resourceRing_members[randomID] + `'><img alt='Random' src='` + resourceRing_randomurl + `' height='31' width='44' loading='lazy'/></a>` +
       `<a href='` + resourceRing_members[afterID] + `'><img alt='Next' src='` + resourceRing_nexturl + `' height='31' width='22' loading='lazy'/></a></span>`;
   };
+
   { // safonts
     const g1v5x3 = `https://xandra.cc/safonts/webring.json`;
     const w9g5p9 = document.createElement("template");
     w9g5p9.innerHTML = `<p class="safonts"></p>`;
+
     class p1v1g6 extends HTMLElement {
       connectedCallback() {
         this.attachShadow({ mode: "open" });
@@ -275,10 +279,13 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
             const matchedSiteIndex = sites.findIndex(
               (site) => site.url === thisSite
             );
+
             let prevSiteIndex = matchedSiteIndex - 1;
             if (prevSiteIndex === -1) prevSiteIndex = sites.length - 1;
+
             let nextSiteIndex = matchedSiteIndex + 1;
             if (nextSiteIndex > sites.length - 1) nextSiteIndex = 0;
+
             const randomSiteIndex = this.getRandomInt(0, sites.length - 1);
 
             // In this variable, put the HTML that you want your webring "badge" to use.
@@ -310,16 +317,17 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
               .safonts .title a {
                 font-size: larger;
               }
-            `)
+            `);
+
           this.shadowRoot.adoptedStyleSheets.push(sheet);
-      }
+      };
       // this calculates a random number
       getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-    }
+      };
+    };
     // whatever 'customElement' you define MUST be unique
     // do not use the name 'webring-css' or you will conflict with other webrings
     window.customElements.define("ring-900", p1v1g6);
@@ -344,14 +352,17 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
     var tag = document.getElementById('healinghospital');
     thisSite = window.location.href;
     thisIndex = null;
+
     for (i = 0; i < sites.length; i++) {
       if (thisSite.startsWith(sites[i])) {
       thisIndex = i;
       break;
       };
     };
-    previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
-    nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+
+    var previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
+    var nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+
     tag.insertAdjacentHTML('afterbegin', `
       <a href="${sites[previousIndex]}" rel="external"><img src="/_assets/media/main/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>
       <a href="https://mizuki.world/healinghospital" rel="external"><img src="/_assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>
@@ -482,16 +493,19 @@ fetch("https://status.cafe/users/jasm1nii/status.json")
       
     // part 2 source: https://macaque.moe/autiring/onionring-widget.js
     var tag = document.getElementById('autiring');
-    thisSite = window.location.href;
-    thisIndex = null;
+    var thisSite = window.location.href;
+    var thisIndex = null;
+
     for (i = 0; i < sites.length; i++) {
       if (thisSite.startsWith(sites[i])) {
-      thisIndex = i;
-      break;
+        thisIndex = i;
+        break;
       };
     };
-    previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
-    nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+
+    var previousIndex = (thisIndex-1 < 0) ? sites.length-1 : thisIndex-1;
+    var nextIndex = (thisIndex+1 >= sites.length) ? 0 : thisIndex+1;
+
     tag.insertAdjacentHTML('afterbegin', `
       <a href='${sites[previousIndex]}' rel="external"><img src="/_assets/media/main/autiring-left.png" width="32" height="15" alt="autists online webring: previous site" loading="lazy"/></a><a href="https://macaque.moe/autiring/index.html" rel="external"><img src="/_assets/media/main/autiring.png" width="96" height="15" alt="autists online webring: index" loading="lazy"/></a><a href='${sites[nextIndex]}' rel="external" title="next site"><img src="/_assets/media/main/autiring-right.png" width="32" height="15" alt="autists online webring: next site" loading="lazy"/></a>
     `);

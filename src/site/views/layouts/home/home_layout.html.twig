@@ -51,7 +51,7 @@
         <article>
           {{ include('_card_about.html.twig') }}
           {{ include('_card_note.html') }}
-          {{ include('_card_clock.html') }}
+          {{ include('_card_clock.html.twig') }}
           {{ include('_card_lastfm.html') }}
           {{ include('_card_status.html.twig') }}
           {{ include('_card_site-updates.html.twig') }}
@@ -63,6 +63,6 @@
     </div>
 
     <footer>{{ include('@includes/footer.shtml') }}</footer>
-    <script defer src="/_assets/scripts/home/index.js"></script>
+    <script async src="/_assets/scripts/home/index.js"></script>
   </body>
 </html>

@@ -184,8 +184,6 @@ button:active,
 /* animations */
 body {
   opacity: 0;
-  animation: fadeInSlide 1s;
-  animation-fill-mode: forwards;
 }
 
 article > section {
@@ -487,6 +485,13 @@ a:hover {
   margin-top: 0;
   padding: 0;
   border-top: 0;
+}
+
+#surprise button:active, #surprise button :focus, #surprise button :hover {
+  filter: hue-rotate(100deg) contrast(150%) saturate(50%);
+}
+#surprise .flower:hover {
+  filter: hue-rotate(100deg) contrast(150%) saturate(50%);
 }
 
 .note {

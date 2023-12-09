@@ -1,6 +1,10 @@
 @use '_colors/dark'as *;
 @use '_colors/light'as *;
 
+body {
+    opacity: 1;
+}
+
 header hgroup p {
     font-size: .9em;
     margin-left: auto;
@@ -29,27 +33,32 @@ header hgroup p {
     margin-left: -250px;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --sticky-note-bg: cornsilk !important;
-        --sticky-note-font: rgb(78, 61, 19) !important;
+.time {
+    h2 {
+        .js-time {
+            display: none;
+        }
+        noscript {
+            font-size: larger;
+            font-weight: 500;
+        }
     }
+}
 
+#song {
+    display: none;
+}
+
+@media (prefers-color-scheme: light) {
     body {
         @include light-mode-body();
     }
-
     @include light-mode();
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --sticky-note-bg: var(--section-card-dark);
-    }
-
     body {
         @include dark-mode-body();
     }
-
     @include dark-mode();
 }

@@ -20,8 +20,8 @@
 /* animations */
 body {
   opacity: 0;
-  animation: fadeInSlide 1s;
-  animation-fill-mode: forwards;
+  // animation: fadeInSlide 1s;
+  // animation-fill-mode: forwards;
 }
 
 article > section {
@@ -184,6 +184,20 @@ a {
 }
 
 @include h-card();
+
+#surprise {
+  $effect: hue-rotate(100deg) contrast(150%) saturate(50%);
+  button {
+    &:active, :focus, :hover {
+      filter: $effect;
+    }
+  }
+  .flower {
+    &:hover {
+      filter: $effect;
+    }
+  }
+}
 
 .note {
   border-radius: initial;

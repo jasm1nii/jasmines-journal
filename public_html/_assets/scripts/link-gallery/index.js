@@ -17,7 +17,7 @@
     });
 
     window.addEventListener("load", () => {
-        var page = document.querySelector(".board");
+        var page = document.querySelector("body");
             page.style.animation = 'fadeInPage .25s ease-in forwards';
     });
 };
