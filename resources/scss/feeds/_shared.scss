@@ -5,8 +5,6 @@
 @use '../_shared/components/scrollbar' as *;
 @use '../_shared/components/webkit_scrollbar' as *;
 
-@use '_screen-sizes/900' as *;
-
 :root {
     --font-1: 'Instrument Sans', sans-serif;
     --font-2: 'Besley', serif;
@@ -121,4 +119,3 @@ button, button:active, button:hover, button:focus {
 }
 
 @include webkit-scrollbar-style-1();
-@include screen-900();

@@ -155,48 +155,6 @@ button, button:active, button:hover, button:focus {
   background-color: plum;
 }
 
-@media all and (max-width: 900px) {
-  .layout {
-    margin-top: 0;
-    width: 100%;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-  article {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-  h2, p {
-    text-align: center;
-  }
-  footer {
-    width: 90%;
-  }
-}
-@media all and (max-width: 768px) {
-  #header-controls {
-    flex-direction: column;
-  }
-  h1 {
-    text-align: center;
-  }
-  #themeSwitch {
-    margin: auto;
-  }
-  nav {
-    padding-left: 5%;
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: smaller;
-  }
-  nav::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 192, 203, 0.445);
-  }
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -394,4 +352,47 @@ form button {
   margin-top: 2em;
   margin-bottom: 3em;
   margin-left: 1em;
+}
+
+@media all and (max-width: 900px) {
+  .layout {
+    margin-top: 0;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  h2, p {
+    text-align: center;
+  }
+  footer {
+    width: 90%;
+  }
+}
+@media all and (max-width: 768px) {
+  #header-controls {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+  }
+  #themeSwitch {
+    margin: auto;
+  }
+  nav {
+    padding-left: 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: smaller;
+  }
+  nav::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 192, 203, 0.445);
+  }
 }/*# sourceMappingURL=feeds.css.map */

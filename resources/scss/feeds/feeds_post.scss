@@ -1,6 +1,8 @@
 /* subscription form after post */
 @use 'shared' as theme;
 
+@use '_screen-sizes/post_900' as *;
+
 header {
   display: flex;
   justify-content: space-between;
@@ -35,3 +37,5 @@ article {
     padding: 0 2em 1em;
   }
 }
+
+@include screen-900();

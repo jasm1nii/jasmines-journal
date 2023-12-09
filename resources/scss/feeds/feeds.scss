@@ -3,6 +3,8 @@
 @use '../_shared/components/nav_1' as *;
 @use '../_shared/animations/fade-in' as *;
 
+@use '_screen-sizes/900' as *;
+
 /* animations */
 header, main, footer {
   @include fadeIn();
@@ -144,3 +146,5 @@ form {
   margin-bottom: 3em;
   margin-left: 1em;
 }
+
+@include screen-900();
