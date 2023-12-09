@@ -43,26 +43,28 @@ body {
     transition: background-color 0.25s ease-out;
 }
 
-.loader {
-    display: block;
-    position: absolute;
-    width: 100vw;
-    top: 25vh;
-    margin: auto;
-    font-size: x-large;
-    text-align: center;
-    z-index: -1;
-
-    p {
-        filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222)) drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
-    }
-
-    button {
+@mixin add-loader ($z-index: 1) {
+    .loader {
         display: block;
-        font-family: inherit;
-        margin: 3vh auto;
-        padding: .5em;
-        border: 1px solid;
+        position: absolute;
+        width: 100vw;
+        top: 25vh;
+        margin: auto;
+        font-size: x-large;
+        text-align: center;
+        z-index: $z-index;
+
+        p {
+            filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222)) drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
+        }
+
+        button {
+            display: block;
+            font-family: inherit;
+            margin: 3vh auto;
+            padding: .5em;
+            border: 1px solid;
+        }
     }
 }
 

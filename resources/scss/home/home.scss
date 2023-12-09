@@ -17,6 +17,8 @@
 @use '_screen-sizes/home_500' as *;
 @use '_screen-sizes/home_400' as *;
 
+@include theme.add-loader($z-index: 1);
+
 /* animations */
 article > section {
   transition: transform 0.3s;

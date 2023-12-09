@@ -129,27 +129,6 @@ body {
   transition: background-color 0.25s ease-out;
 }
 
-.loader {
-  display: block;
-  position: absolute;
-  width: 100vw;
-  top: 25vh;
-  margin: auto;
-  font-size: x-large;
-  text-align: center;
-  z-index: -1;
-}
-.loader p {
-  filter: drop-shadow(0.1em 0.1em 5px rgb(255, 215, 222)) drop-shadow(-0.1em -0.1em 5px rgb(255, 215, 222));
-}
-.loader button {
-  display: block;
-  font-family: inherit;
-  margin: 3vh auto;
-  padding: 0.5em;
-  border: 1px solid;
-}
-
 .board {
   opacity: 0;
 }
@@ -232,8 +211,28 @@ section:hover {
   transform: translatey(-5px);
 }
 
+.loader {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  top: 25vh;
+  margin: auto;
+  font-size: x-large;
+  text-align: center;
+  z-index: 1;
+}
+.loader p {
+  filter: drop-shadow(0.1em 0.1em 5px rgb(255, 215, 222)) drop-shadow(-0.1em -0.1em 5px rgb(255, 215, 222));
+}
+.loader button {
+  display: block;
+  font-family: inherit;
+  margin: 3vh auto;
+  padding: 0.5em;
+  border: 1px solid;
+}
+
 .board {
-  opacity: 0;
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
