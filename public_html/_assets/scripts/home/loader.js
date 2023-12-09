@@ -13,14 +13,13 @@
         exitButton.addEventListener("click", closeLoader);
     };
 
-    var loaderLoop = setInterval(incrLoader, 500);
+    var loaderLoop = setInterval(incrLoader, 250);
     var loaderText = loader.querySelector("p");
 
     var randArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "🙄", "💭", "🤠", "👀❔", "🦆"];
     var starCount = 0;
 
     function incrLoader() {
-
         var randText = Math.floor(Math.random() * randArr.length);
         var ellips = document.createElement('span');
         var star = document.createTextNode(' ✦');
@@ -45,7 +44,6 @@
             loaderText.replaceWith(fin);
             return;
         };
-        
     };
 
     function closeLoader() {
@@ -55,7 +53,7 @@
     };
 
     window.addEventListener("load", ()=> {
-        setTimeout(closeLoader, 750);
+        setTimeout(closeLoader, 500);
     });
     
 };
