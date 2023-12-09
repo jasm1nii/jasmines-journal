@@ -15,9 +15,4 @@
             section.style.display = 'block';
         };
     });
-
-    window.addEventListener("load", () => {
-        var page = document.querySelector(".board");
-            page.style.animation = 'fadeInPage .25s ease-in forwards';
-    });
 };

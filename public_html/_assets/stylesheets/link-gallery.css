@@ -129,6 +129,31 @@ body {
   transition: background-color 0.25s ease-out;
 }
 
+.loader {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  top: 25vh;
+  margin: auto;
+  font-size: x-large;
+  text-align: center;
+  z-index: -1;
+}
+.loader p {
+  filter: drop-shadow(0.1em 0.1em 5px rgb(255, 215, 222)) drop-shadow(-0.1em -0.1em 5px rgb(255, 215, 222));
+}
+.loader button {
+  display: block;
+  font-family: inherit;
+  margin: 3vh auto;
+  padding: 0.5em;
+  border: 1px solid;
+}
+
+.board {
+  opacity: 0;
+}
+
 button {
   cursor: pointer;
   transition: all 0.5s ease;
@@ -200,12 +225,6 @@ body {
 }
 
 /* animations */
-body {
-  opacity: 0;
-  animation: fadeInPage 0.5s;
-  animation-fill-mode: forwards;
-}
-
 section {
   transition: transform 0.3s;
 }

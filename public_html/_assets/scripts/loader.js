@@ -13,7 +13,7 @@
         exitButton.addEventListener("click", closeLoader);
     };
 
-    var loaderLoop = setInterval(incrLoader, 250);
+    var loaderLoop = setInterval(incrLoader, 200);
     var loaderText = loader.querySelector("p");
 
     var randArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "🙄", "💭", "🤠", "👀❔", "🦆"];

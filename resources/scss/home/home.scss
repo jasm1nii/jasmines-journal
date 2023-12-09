@@ -18,40 +18,10 @@
 @use '_screen-sizes/home_400' as *;
 
 /* animations */
-/*
-body {
-  opacity: 0;
-  animation: fadeInSlide 1s;
-  animation-fill-mode: forwards;
-}
-*/
-
 article > section {
   transition: transform 0.3s;
   &:hover {
     transform: translatey(-5px);
-  }
-}
-
-.loader {
-  display: block;
-  position: absolute;
-  width: 100vw;
-  top: 25vh;
-  margin: auto;
-  font-size: x-large;
-  text-align: center;
-  z-index: -1;
-  p {
-    filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222))
-            drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
-  }
-  button {
-    display: block;
-    font-family: inherit;
-    margin: 3vh auto;
-    padding: .5em;
-    border: 1px solid;
   }
 }
 
@@ -72,7 +42,6 @@ body {
 @include sticky-note();
 
 .board {
-  opacity: 0;
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;

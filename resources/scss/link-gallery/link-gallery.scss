@@ -24,11 +24,6 @@ body {
 }
 
 /* animations */
-body {
-  opacity: 0;
-  animation: fadeInPage .5s;
-  animation-fill-mode: forwards;
-}
 
 section {
   transition: transform 0.3s;
