@@ -1,7 +1,11 @@
 @use '_colors/dark'as *;
 @use '_colors/light'as *;
 
-body {
+.loader {
+    display: none;
+}
+
+.board {
     opacity: 1;
 }
 

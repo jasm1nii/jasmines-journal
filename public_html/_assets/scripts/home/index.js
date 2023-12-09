@@ -1,10 +1,3 @@
-{
-  window.addEventListener("load", () => {
-    var page = document.querySelector("body");
-        page.style.animation = 'fadeInSlide .5s ease-in forwards';
-  });
-};
-
 { // push pin
   const notice = document.getElementById("notice");
 
