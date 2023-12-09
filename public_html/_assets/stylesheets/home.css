@@ -188,7 +188,8 @@ button:active,
 .loader {
   display: block;
   position: absolute;
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
   top: 25vh;
   margin: auto;
   font-size: x-large;
