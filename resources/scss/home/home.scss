@@ -34,19 +34,22 @@ article > section {
 }
 
 .loader {
-  font-size: larger;
   display: block;
   position: absolute;
   width: 100vw;
   top: 25vh;
   margin: auto;
+  font-size: x-large;
   text-align: center;
   z-index: -1;
   p {
-    filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222));
+    filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222))
+            drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
   }
   button {
+    display: block;
     font-family: inherit;
+    margin: 3vh auto;
     padding: .5em;
     border: 1px solid;
   }
