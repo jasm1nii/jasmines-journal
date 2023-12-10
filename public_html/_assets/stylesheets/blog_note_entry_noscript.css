@@ -11,6 +11,14 @@
     opacity: 1;
   }
 }
+.loader {
+  display: none;
+}
+
+.layout {
+  opacity: 1;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;

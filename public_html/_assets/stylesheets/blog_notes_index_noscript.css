@@ -11,6 +11,14 @@
     opacity: 1;
   }
 }
+.loader {
+  display: none;
+}
+
+.layout {
+  opacity: 1;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: rgb(232, 221, 235);

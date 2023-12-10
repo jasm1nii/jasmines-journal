@@ -1,5 +1,9 @@
+@use '../shared' as *;
+
 @use '_colors/index_dark' as *;
 @use '_colors/index_light' as *;
+
+@include noscript;
 
 @media (prefers-color-scheme: dark) {
     body {
