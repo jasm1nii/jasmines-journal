@@ -1,10 +1,5 @@
 { // push pin
   const notice = document.getElementById("notice");
-  let ns = notice.style.display;
-
-  document.getElementById("pin").addEventListener("click", () => {
-    ns === "none" ? ns = "block" : ns = "none";
-  });
 
   // sticky note contents
   let n = `<p><b><i>have you seen THEM?!</i></b></p>`;
@@ -18,77 +13,77 @@
   n += `</figure>`;
   n += `<p><b>now you have!</b></p><hr/><p><small>click the pushpin to hide this notice.</small></p>`;
   notice.innerHTML = n;
+
+  let ns = notice.style.display;
+  document.getElementById("pin").addEventListener("click", () => {
+    ns === "none" ? ns = "block" : ns = "none";
+  });
 };
 
 { // yipee!!!!
   const surprise = document.getElementById('surprise');
 
-  const flwrBtn = document.createElement('button');
-  flwrBtn.setAttribute('title','open for a surprise!');
+  function createButton() {
+     const flower = document.createElement('img');
+     const flwrAttr = {
+      src: '/_assets/media/main/flower.svg',
+      width: 60,
+      height: 60,
+      alt: ''
+    };
+    for (let attr in flwrAttr) { 
+      flower.setAttribute(attr, flwrAttr[attr]);
+    };
 
-  const fs = flwrBtn.style;
-  fs.backgroundColor = 'transparent';
-  fs.border = 'none';
-  fs.padding = 0;
+    const flwrBtn = document.createElement('button');
+    flwrBtn.insertAdjacentElement('beforeend', flower);
+    flwrBtn.setAttribute('title','open for a surprise!');
 
-  surprise.appendChild(flwrBtn);
+    const fs = flwrBtn.style;
+    fs.backgroundColor = 'transparent';
+    fs.border = 'none';
+    fs.padding = 0;
 
-  const flower = document.createElement('img');
-  const flwrAttr = {
-    src: '/_assets/media/main/flower.svg',
-    width: 60,
-    height: 60,
-    alt: ''
+    return flwrBtn;
   };
 
-  for (let attr in flwrAttr) { 
-    if (flwrAttr.hasOwnProperty(attr)) { flower.setAttribute(attr, flwrAttr[attr]); };
+  const button = createButton();
+  surprise.appendChild(button);
+
+  function addCreature() {
+    const creature = document.createElement('img');
+    const creatureAttr = {
+      src: '/_assets/media/main/la-creatura.png',
+      width: '290',
+      height: '341',
+      alt: 'ASCII art of the autism creature',
+      class: 'u-featured',
+      loading: 'lazy'
+    };
+    for (let attr in creatureAttr) {
+      creature.setAttribute(attr, creatureAttr[attr]);
+    };
+    const cs = creature.style;
+    cs.position = 'absolute';
+    cs.marginTop = '20px';
+    cs.display = 'none';
+    cs.marginLeft = '-220px';
+    cs.zIndex = '4';
+    return creature;
   };
 
-  flwrBtn.insertAdjacentElement('beforeend', flower);
-
-  const creatureAttr = {
-    src: '/_assets/media/main/la-creatura.png',
-    width: '290',
-    height: '341',
-    alt: 'ASCII art of the autism creature',
-    class: 'u-featured',
-    loading: 'lazy'
-  };
-
-  const yipee = document.createElement('img');
-
-  for (let attr in creatureAttr) { 
-    if (creatureAttr.hasOwnProperty(attr)) { 
-      yipee.setAttribute(attr, creatureAttr[attr]); 
-    }
-  };
-
-  let ys = yipee.style;
-        ys.position = 'absolute';
-        ys.marginTop = '20px';
-        ys.marginLeft = '-220px';
-        ys.display = 'none';
-        ys.zIndex = '4';
-
+  const yipee = addCreature();
   surprise.appendChild(yipee);
 
-  flwrBtn.addEventListener('click', ()=>{
-    let fs = flower.style;
-    if (ys.display === "block") {
-      ys.display = "none";
-      fs.filter = "none";
-      fs.transition = 'filter .25s ease-in-out';
-    } else {
-      ys.display = "block";
-      fs.filter = 'hue-rotate(45deg) brightness(80%) saturate(300%)';
-    };
-  });
+  function toggleYippee() {
+    const ys = yipee.style.display;
+    yipee.style.display = (ys === 'block') ? 'none' : 'block';
+  };
+
+  button.addEventListener('click', toggleYippee);
 };
 
 { // clock
-
-  
   function dateToText(date) {
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -132,34 +127,41 @@
 { // last.fm
   const user = 'jasm1nii';
   const url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
-  const song = document.querySelector('#song');
-    fetch(url).then(function (response) {
-      return response.json()
-      }).then(function (json) {
-        song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']  ['#text'];
-    });
+  const song = document.getElementById('song');
+
+  try {
+    fetch(url)
+    .then((response) => { return response.json()})
+    .then((json) => { song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']  ['#text']; });
+  } catch {
+    song.innerText = "couldn't fetch track 😥";
+  };
 
   // scrolling animation toggle
   const jstoggle = document.getElementById('js-toggle');
-  const animation = document.querySelector('[data-animation]');
   
-  jstoggle.addEventListener('click', () => {
-      let state = animation.style.animationPlayState || 'running';
-      animation.style.animationPlayState = (state === 'running') ? 'paused' : 'running';
-    });
+  function pauseAnimation() {
+    const animation = document.querySelector('[data-animation]');
+    let state = animation.style.animationPlayState || 'running';
+    animation.style.animationPlayState = (state === 'running') ? 'paused' : 'running';
   };
+  
+  jstoggle.addEventListener('click', pauseAnimation);
+};
 
 { // status.cafe
-  fetch("https://status.cafe/users/jasm1nii/status.json")
-    .then( r => r.json() )
-    .then( r => {
-      if (!r.content.length) {
-        document.getElementById("statuscafe-content").innerHTML = "No status yet.";
-        return;
-      }
-      document.getElementById("statuscafe-username").innerHTML = '<a href="https://status.cafe/users/jasm1nii" rel="external me" target="_blank">' + r.author + '</a> ' + r.face + ' ' + r.timeAgo;
-      document.getElementById("statuscafe-content").innerHTML = r.content;
-    });
+  const statusContent = document.getElementById("statuscafe-content");
+  const statusUser = document.getElementById("statuscafe-username");
+  try {
+    fetch("https://status.cafe/users/jasm1nii/status.json")
+      .then( r => r.json() )
+      .then( r => {
+        statusUser.innerHTML = '<a href="https://status.cafe/users/jasm1nii" rel="external me" target="_blank">' + r.author + '</a> ' + r.face + ' ' + r.timeAgo;
+        statusContent.innerHTML = r.content;
+      });
+  } catch {
+    statusContent.innerHTML = "couldn't fetch status 🤐";
+  };
 };
 
 { // webrings
@@ -215,12 +217,8 @@
             // Finds the current site in the data
             const matchedSiteIndex = sites.findIndex((site) => site.url === thisSite);
 
-            let prevSiteIndex = matchedSiteIndex - 1;
-            if (prevSiteIndex === -1) { prevSiteIndex = sites.length - 1; };
-
-            let nextSiteIndex = matchedSiteIndex + 1;
-            if (nextSiteIndex > sites.length - 1) { nextSiteIndex = 0; };
-
+            let prevSiteIndex = (matchedSiteIndex - 1 == - 1) ? sites.length - 1 : matchedSiteIndex - 1;
+            let nextSiteIndex = (matchedSiteIndex + 1 > sites.length - 1) ? 0 : matchedSiteIndex + 1;
             let randomSiteIndex = this.getRandomInt(0, sites.length - 1);
 
             let cp = `<span class="title">i'm a <a href="https://xandra.cc/safonts/" rel="external"><b>sa</b><i>font</i></a></span>`;
@@ -240,7 +238,7 @@
           sheet.replaceSync(style);
           this.shadowRoot.adoptedStyleSheets.push(sheet);
       };
-      // this calculates a random number
+
       getRandomInt(min, max) {
         this.min = Math.ceil(min);
         this.max = Math.floor(max);
