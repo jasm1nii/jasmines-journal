@@ -32,37 +32,6 @@ body {
   font-size: 1.1em;
 }
 
-.loader {
-  display: block;
-  position: absolute;
-  width: -moz-fit-content;
-  width: fit-content;
-  min-width: none;
-  max-width: 90vw;
-  overflow: hidden;
-  top: 30vh;
-  left: 48%;
-  right: auto;
-  margin: auto;
-  font-size: x-large;
-  text-align: center;
-  z-index: 1;
-}
-.loader p {
-  filter: drop-shadow(0.1em 0.1em 5px rgb(255, 215, 222)) drop-shadow(-0.1em -0.1em 5px rgb(255, 215, 222));
-}
-.loader button {
-  display: block;
-  font-family: inherit;
-  margin: 3vh auto;
-  padding: 0.5em;
-  border: 1px solid;
-}
-
-.layout {
-  opacity: 0;
-}
-
 .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;

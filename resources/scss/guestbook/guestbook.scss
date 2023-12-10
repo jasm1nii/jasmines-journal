@@ -22,7 +22,7 @@ body {
     font-size: 1.1em;
 }
 
-@include add-loader($width: fit-content, $left: 48%);
+// @include add-loader($width: fit-content, $left: 48%);
 
 .layout {
     display: grid;

@@ -2,7 +2,6 @@
 <html lang="en-US">
 	<head>
 		{{ include('@includes/head.shtml') }}
-		<script async src="/_assets/scripts/loader.js"></script>
 		<title>{{ published }} | jasmine's notes</title>
 		<meta name="author" content="jasmine"/>
 		<meta name="keywords" content="{{ keywords is defined ? keywords|join(', ') ~ ", microblog" : "microblog" }}"/>
@@ -14,11 +13,9 @@
 		{% endif %}
 
 		<link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/blog_note_entry.css" type="text/css" media="all"/>
-
 		{% if custom_style == true %}
 			<link rel="stylesheet" href="style.css" type="text/css" media="all"/>
 		{% endif %}
-
 		<noscript>
             <link href="/_assets/stylesheets/blog_note_entry_noscript.css" rel="stylesheet" type="text/css" media="all"/>
         </noscript>

@@ -1,7 +1,7 @@
 {
     const loader = document.querySelector(".loader");
     const page = loader.nextElementSibling;
-
+    
     const loaderLoop = setInterval(incrLoader, 200);
 
     const loaderEl = loader.querySelector("p");
@@ -80,6 +80,7 @@
         loader.remove();
         page.animate(animation.keyframes, animation.timing);
         closeTriggered = true;
+        return;
     };
 
     if (closeTriggered == false) {
@@ -87,5 +88,7 @@
             setTimeout(closeLoader, 500);
         });
     };
+
+    clearTimeout(loadExit);
 
 };

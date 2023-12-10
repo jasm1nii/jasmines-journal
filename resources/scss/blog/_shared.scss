@@ -28,7 +28,7 @@
         transition: all 0.25s ease-out;
     }
 
-    @include add-loader($width: auto, $min-width: 50%, $max-width: 75%, $left: 21%);
+    // @include add-loader($width: auto, $min-width: 50%, $max-width: 75%, $left: 21%);
 
     @if $override_header == false {
         @include header-style-2();

@@ -121,6 +121,7 @@
         final protected function render(): void {
 
             $vars = [
+                    'request'        => REQUEST,
                     'dialog'         => $this->dialog,
                     'thread_parent'  => $this->thread_parent,
                     'thread_replies' => $this->thread_replies,
