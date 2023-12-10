@@ -4,14 +4,13 @@
     
     const loaderLoop = setInterval(incrLoader, 200);
 
-    const loaderEl = loader.querySelector("p");
-    const loadingArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "☕", "💭", "🤠", "👀❔", "🦆"];
-
-    const finArr = ["\\(^o^)/", "ʚ(｡˃ ᵕ ˂ )ɞ", "ฅ^•ﻌ•^ฅ", "˗ˏˋ✩ˎˊ˗", "˖⁺‧₊˚ ♡ ˚₊‧⁺˖"];
-
     let dotCount = 0;
 
     function incrLoader() {
+        
+        const loaderEl = loader.querySelector("p");
+        const loadingArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "☕", "💭", "🤠", "👀❔", "🦆"];
+        const finArr = ["\\(^o^)/", "ʚ(｡˃ ᵕ ˂ )ɞ", "ฅ^•ﻌ•^ฅ", "˗ˏˋ✩ˎˊ˗", "˖⁺‧₊˚ ♡ ˚₊‧⁺˖"];
 
         const dots = document.createElement('span');
         const dot = document.createTextNode(' ✦');
@@ -28,7 +27,6 @@
             } else {
 
                 let loadingMsgKey = Math.floor(Math.random() * loadingArr.length);
-
                 loaderEl.innerHTML = loadingArr[loadingMsgKey];
                 dotCount = 0;
 
@@ -42,7 +40,7 @@
                 fin.ariaHidden = true;
                 fin.appendChild(finMsg);
 
-            loaderEl.replaceWith(fin);
+            if (loaderEl !== null) { loaderEl.replaceWith(fin); };
             return;
 
         };
@@ -76,10 +74,15 @@
     let closeTriggered = false;
 
     function closeLoader() {
+        closeTriggered = true;
         const animation = new FinalAnimation;
+
         loader.remove();
         page.animate(animation.keyframes, animation.timing);
-        closeTriggered = true;
+
+        clearInterval(loaderLoop);
+        clearTimeout(loadExit);
+
         return;
     };
 
@@ -88,7 +91,4 @@
             setTimeout(closeLoader, 500);
         });
     };
-
-    clearTimeout(loadExit);
-
 };
