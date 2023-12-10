@@ -8,7 +8,7 @@
   display: none;
 }
 
-.board {
+.layout {
   opacity: 1;
 }
 
@@ -70,7 +70,7 @@ header hgroup p {
   .button-style a:hover {
     color: rgb(51, 44, 44);
   }
-  .board {
+  .layout {
     background-color: var(--page-color-light);
   }
   h1,
@@ -225,7 +225,7 @@ header hgroup p {
   .button-style:focus {
     background-color: #8b4f61;
   }
-  .board {
+  .layout {
     background-color: var(--page-bg-dark);
     border-color: var(--page-border-dark);
   }

@@ -7,8 +7,7 @@
 @use 'components/webkit_scrollbar'as *;
 @use 'components/scrollbar'as *;
 
-@include nav-style-1();
-@include footer-style-1();
+@forward 'components/loader';
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;
@@ -43,34 +42,8 @@ body {
     transition: background-color 0.25s ease-out;
 }
 
-@mixin add-loader ($z-index: 1) {
-    .loader {
-        display: block;
-        position: absolute;
-        width: 100%;
-        overflow: hidden;
-        top: 25vh;
-        margin: auto;
-        font-size: x-large;
-        text-align: center;
-        z-index: $z-index;
-
-        p {
-            filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222)) drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
-        }
-
-        button {
-            display: block;
-            font-family: inherit;
-            margin: 3vh auto;
-            padding: .5em;
-            border: 1px solid;
-        }
-    }
-    .board {
-        opacity: 0;
-    }
-}
+@include nav-style-1();
+@include footer-style-1();
 
 button {
     cursor: pointer;

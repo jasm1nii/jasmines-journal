@@ -1,57 +1,91 @@
 {
-    var page = document.querySelector(".board");
-    var loader = document.querySelector(".loader");
+    const loader = document.querySelector(".loader");
+    const page = loader.nextElementSibling;
 
-    var exitButton = document.createElement("button");
-    var exitText = document.createTextNode("show me whatever");
-        exitButton.setAttribute('type', 'button');
-        exitButton.appendChild(exitText);
-        exitButton.addEventListener("click", closeLoader);
+    const loaderLoop = setInterval(incrLoader, 200);
 
-    var loadExit = setTimeout(() => { loader.appendChild(exitButton); }, 3000);
+    const loaderEl = loader.querySelector("p");
+    const loadingArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "☕", "💭", "🤠", "👀❔", "🦆"];
 
-    function closeLoader() {
-        loader.style.display = 'none';
-        loader.remove();
-        page.style.animation = 'fadeInSlide .5s ease-in forwards';
-        return;
-    };
+    const finArr = ["\\(^o^)/", "ʚ(｡˃ ᵕ ˂ )ɞ", "ฅ^•ﻌ•^ฅ", "˗ˏˋ✩ˎˊ˗", "˖⁺‧₊˚ ♡ ˚₊‧⁺˖"];
 
-    var loaderLoop = setInterval(incrLoader, 200);
-    var loaderText = loader.querySelector("p");
-
-    var randArr = ["getting there", "any time now", "still brewing", "on the way", "a little longer", "🤔", "🙄", "💭", "🤠", "👀❔", "🦆"];
-    var starCount = 0;
+    let dotCount = 0;
 
     function incrLoader() {
-        var randText = Math.floor(Math.random() * randArr.length);
-        var ellips = document.createElement('span');
-        var star = document.createTextNode(' ✦');
-            ellips.ariaHidden = true;
-            ellips.appendChild(star);
+
+        const dots = document.createElement('span');
+        const dot = document.createTextNode(' ✦');
+        dots.ariaHidden = true;
+        dots.appendChild(dot);
 
         if (document.readyState !== 'complete') {
 
-            if (starCount < 3) {
-                loaderText.appendChild(ellips);
-                starCount++;
+            if (dotCount < 3) {
+
+                loaderEl.appendChild(dots);
+                dotCount++;
+
             } else {
-                loaderText.innerHTML = randArr[randText];
-                starCount = 0;
+
+                let loadingMsgKey = Math.floor(Math.random() * loadingArr.length);
+
+                loaderEl.innerHTML = loadingArr[loadingMsgKey];
+                dotCount = 0;
+
             };
 
         } else {
-            var fin = document.createElement('span');
-            var finMsg = document.createTextNode('\\(^o^)/');
+
+            const fin = document.createElement('span');
+            let finKey = Math.floor(Math.random() * finArr.length);
+            let finMsg = document.createTextNode(finArr[finKey]);
                 fin.ariaHidden = true;
                 fin.appendChild(finMsg);
-            loaderText.replaceWith(fin);
+
+            loaderEl.replaceWith(fin);
             return;
+
+        };
+
+    };
+
+    class ExitButton {
+        constructor() {
+            this.button = document.createElement("button");
+            this.text = document.createTextNode("show me whatever");
+            this.button.setAttribute('type', 'button');
+            this.button.appendChild(this.text);
+            this.button.addEventListener('click', closeLoader);
+            return this.button;
         };
     };
 
-    window.addEventListener("load", ()=> {
-        setTimeout(closeLoader, 500);
-    });
-    
+    class FinalAnimation {
+        constructor() {
+            this.keyframes = [
+                { opacity: 0, transform: "translatey(-10px)" },
+                { opacity: 1, transform: "translatey(0)" },
+            ];
+            this.timing = { duration: 500, iterations: 1, fill: "forwards" };
+        }
+    };
+
+    const loadExit = setTimeout(() => { loader.appendChild(new ExitButton); }, 3000);
+
+    // check this variable to prevent the animation from firing twice:
+    let closeTriggered = false;
+
+    function closeLoader() {
+        const animation = new FinalAnimation;
+        loader.remove();
+        page.animate(animation.keyframes, animation.timing);
+        closeTriggered = true;
+    };
+
+    if (closeTriggered == false) {
+        window.addEventListener("load", ()=> {
+            setTimeout(closeLoader, 500);
+        });
+    };
+
 };

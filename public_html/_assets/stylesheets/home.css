@@ -15,6 +15,39 @@
   font-display: swap;
   src: url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.woff2") format("woff2"), url("/_assets/fonts/Instrument_Sans/InstrumentSans.woff") format("woff"), url("/_assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth-wght.ttf") format("truetype");
 }
+:root {
+  --font-1: "Instrument Sans", sans-serif;
+  --font-2: "Besley", serif;
+  --font-3: "Inconsolata", monospace;
+  --font-color-light: #4e494e;
+  --h1-light: #5a5463;
+  --h2-light: #712357;
+  --h3-light: #631863;
+  --link-color-light: darkmagenta;
+  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
+  --document-color-light: thistle;
+  --page-color-light: #fff6f6;
+  --section-card-light: rgb(255, 239, 239);
+  --footer-font: rgb(97, 58, 97);
+  --page-bg-dark: rgb(13, 13, 14);
+  --page-border-dark: #503281;
+  --section-card-dark: hsl(255, 5%, 16%);
+  --dark-mode-links: rgb(255, 192, 216);
+  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --dark-mode-h: rgb(223, 154, 236);
+  --dark-button-bg: #463646;
+}
+
+* {
+  scrollbar-color: rgb(184, 140, 184) transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  background-color: rgb(56, 49, 56);
+  transition: background-color 0.25s ease-out;
+}
+
 nav {
   margin: auto;
   padding-left: 1em;
@@ -96,39 +129,6 @@ footer a img {
   text-decoration: none;
 }
 
-:root {
-  --font-1: "Instrument Sans", sans-serif;
-  --font-2: "Besley", serif;
-  --font-3: "Inconsolata", monospace;
-  --font-color-light: #4e494e;
-  --h1-light: #5a5463;
-  --h2-light: #712357;
-  --h3-light: #631863;
-  --link-color-light: darkmagenta;
-  --link-hover-bg-color-light: rgba(216, 112, 147, .5);
-  --document-color-light: thistle;
-  --page-color-light: #fff6f6;
-  --section-card-light: rgb(255, 239, 239);
-  --footer-font: rgb(97, 58, 97);
-  --page-bg-dark: rgb(13, 13, 14);
-  --page-border-dark: #503281;
-  --section-card-dark: hsl(255, 5%, 16%);
-  --dark-mode-links: rgb(255, 192, 216);
-  --link-hover-bg-dark: rgba(216, 112, 147, .5);
-  --dark-mode-h: rgb(223, 154, 236);
-  --dark-button-bg: #463646;
-}
-
-* {
-  scrollbar-color: rgb(184, 140, 184) transparent;
-  scrollbar-width: thin;
-}
-
-body {
-  background-color: rgb(56, 49, 56);
-  transition: background-color 0.25s ease-out;
-}
-
 button {
   cursor: pointer;
   transition: all 0.5s ease;
@@ -185,8 +185,12 @@ button:active,
   display: block;
   position: absolute;
   width: 100%;
+  min-width: none;
+  max-width: none;
   overflow: hidden;
-  top: 25vh;
+  top: 30vh;
+  left: auto;
+  right: auto;
   margin: auto;
   font-size: x-large;
   text-align: center;
@@ -203,7 +207,7 @@ button:active,
   border: 1px solid;
 }
 
-.board {
+.layout {
   opacity: 0;
 }
 
@@ -229,7 +233,7 @@ body ::-webkit-scrollbar-thumb:hover {
   background-color: plum;
 }
 
-.board {
+.layout {
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
@@ -898,7 +902,7 @@ hr {
   }
 }
 @media all and (max-width: 900px) {
-  .board {
+  .layout {
     max-width: none;
     border-top: none;
     margin-top: 0;
@@ -927,7 +931,7 @@ hr {
   }
 }
 @media all and (max-width: 768px) {
-  .board {
+  .layout {
     margin-top: 0;
     max-width: none;
     border-left: none;

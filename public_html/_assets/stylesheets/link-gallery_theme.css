@@ -2,7 +2,7 @@
   color: white;
   background-color: black;
 }
-.dark-mode .board {
+.dark-mode .layout {
   background-color: var(--page-bg-dark);
   border-color: var(--page-border-dark);
 }
@@ -67,7 +67,7 @@
   color: var(--font-color-light);
   font-weight: 450;
 }
-.light-mode .board {
+.light-mode .layout {
   background-color: var(--page-color-light);
 }
 .light-mode main {

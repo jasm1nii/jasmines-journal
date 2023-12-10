@@ -1,5 +1,6 @@
 @use '../_shared/assets/font_inconsolata' as *;
 
+@use '../_shared/components/loader' as *;
 @use '../_shared/components/header_2' as *;
 @use '../_shared/components/footer_2' as *;
 @use '../_shared/components/links_1' as *;
@@ -26,6 +27,8 @@
         background-color: rgb(45, 42, 48);
         transition: all 0.25s ease-out;
     }
+
+    @include add-loader($width: auto, $min-width: 50%, $max-width: 75%, $left: 21%);
 
     @if $override_header == false {
         @include header-style-2();

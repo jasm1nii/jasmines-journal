@@ -2,7 +2,7 @@
   display: none;
 }
 
-.board {
+.layout {
   opacity: 1;
 }
 
@@ -12,7 +12,7 @@
     color: var(--font-color-light);
     font-weight: 450;
   }
-  .board {
+  .layout {
     background-color: var(--page-color-light);
   }
   main {
@@ -81,7 +81,7 @@
     color: white;
     background-color: black;
   }
-  .board {
+  .layout {
     background-color: var(--page-bg-dark);
     border-color: var(--page-border-dark);
   }

@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head>
     {{ include('@includes/head.shtml') }}
+    <script async src="/_assets/scripts/loader.js"></script>
     <title>jasmine's b(rain)log</title>
     <meta name="description" content="my online diary"/>
     <link rel="canonical" href="https://jasm1nii.xyz/blog/articles"/>
@@ -11,16 +12,15 @@
     </noscript>
   </head>
   <body>
+    {{ include('@includes/_loader.html') }}
     <div class="layout">
-        <div class="sidebar">
-            <header>
-                {# theme switcher here #}
-                <hgroup>
-                    <h1>jasmine's b(rain)log</h1>
-                </hgroup>
-                <nav aria-label="primary">{{ nav|raw }}</nav>
-            </header>
-        </div>
+        <header>
+            {# theme switcher here #}
+            <hgroup>
+                <h1>jasmine's b(rain)log</h1>
+            </hgroup>
+            <nav aria-label="primary">{{ nav|raw }}</nav>
+        </header>
         <main>
             <article>
                 <h2>articles</h2>

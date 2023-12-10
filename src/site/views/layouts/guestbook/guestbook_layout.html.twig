@@ -2,6 +2,7 @@
 <html lang="en-US">
     <head>
         {{ include('@includes/head.shtml') }}
+        <script async src="/_assets/scripts/loader.js"></script>
         <title>guestbook | jasmine's journal</title>
         <meta name="description" content="leave a message if you're stopping by!"/>
         <link rel="canonical" href="https://jasm1nii.xyz/guestbook"/>
@@ -11,110 +12,112 @@
         </noscript>
     </head>
     <body>
-        <header>
-            <hgroup>
-                <h1>guestbook</h1>
-                <p>jasmine's journal</p>
-            </hgroup>
-            <nav>
-                {{ include('@includes/headernav.shtml') }}
-            </nav>
-        </header>
-        <main>
-            <section class="form">
-            
-                {% set dialog_message = [
-                    {
-                        type : "success",
-                        message : 'message sent - pending approval!'
-                    },
-                    {
-                        type : "exception",
-                        message : "your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual."
-                    },
-                    {
-                        type : "has_html",
-                        message : "the message should not contain any HTML tags!"
-                    },
-                    {
-                        type : "time_too_short",
-                        message : "request interval is too short - please wait a bit longer."
-                    },
-                    {
-                        type : "request_failed",
-                        message : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
-                    }
-                ] %}
+        {{ include('@includes/_loader.html') }}
+        <div class="layout">
+            <header>
+                <hgroup>
+                    <h1>guestbook</h1>
+                    <p>jasmine's journal</p>
+                </hgroup>
+                <nav>
+                    {{ include('@includes/headernav.shtml') }}
+                </nav>
+            </header>
+            <main>
+                <section class="form">
+                
+                    {% set dialog_message = [
+                        {
+                            type : "success",
+                            message : 'message sent - pending approval!'
+                        },
+                        {
+                            type : "exception",
+                            message : "your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual."
+                        },
+                        {
+                            type : "has_html",
+                            message : "the message should not contain any HTML tags!"
+                        },
+                        {
+                            type : "time_too_short",
+                            message : "request interval is too short - please wait a bit longer."
+                        },
+                        {
+                            type : "request_failed",
+                            message : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
+                        }
+                    ] %}
 
-                {% for value in dialog_message %}
-                    {% if value.type == dialog %}
-                        <p class="dialog {{ dialog }}">{{ value.message }}</p>
-                    {% endif %}
-                {% endfor %}
+                    {% for value in dialog_message %}
+                        {% if value.type == dialog %}
+                            <p class="dialog {{ dialog }}">{{ value.message }}</p>
+                        {% endif %}
+                    {% endfor %}
 
-                <h2>leave a trace!</h2>
-                <span>submissions will be reviewed manually.</span>
+                    <h2>leave a trace!</h2>
+                    <span>submissions will be reviewed manually.</span>
 
-                <form name="post_message" method="post" action="/guestbook/post" enctype="multipart/form-data">
-                    <label for="name">name</label>
-                    <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
+                    <form name="post_message" method="post" action="/guestbook/post" enctype="multipart/form-data">
+                        <label for="name">name</label>
+                        <input id="name" type="text" name="name" autocomplete="name" maxlength="300" placeholder="optional"/>
 
-                    <label for="email">email</label>
-                    <input id="email" type="email" name="email" autocomplete="email" maxlength="300" placeholder="optional - will not be displayed"/>
+                        <label for="email">email</label>
+                        <input id="email" type="email" name="email" autocomplete="email" maxlength="300" placeholder="optional - will not be displayed"/>
 
-                    <label for="website">website</label>
-                    <input id="website" type="url" name="website" autocomplete="url" maxlength="300" placeholder="optional"/>
+                        <label for="website">website</label>
+                        <input id="website" type="url" name="website" autocomplete="url" maxlength="300" placeholder="optional"/>
 
-                    <label for="message">message</label>
-                    <span>supports text formatting with <a href="https://www.markdownguide.org/cheat-sheet/" rel="external">markdown!</a></span>
-                    <textarea id="message" name="message" maxlength="3000" required></textarea>
+                        <label for="message">message</label>
+                        <span>supports text formatting with <a href="https://www.markdownguide.org/cheat-sheet/" rel="external">markdown!</a></span>
+                        <textarea id="message" name="message" maxlength="3000" required></textarea>
 
-                    <input type="hidden" name="timestamp" value="{{ request_time }}"/>
-                    <input type="submit" value="submit"/>
-                </form>
-            </section>
+                        <input type="hidden" name="timestamp" value="{{ request_time }}"/>
+                        <input type="submit" value="submit"/>
+                    </form>
+                </section>
 
-            <section class="messages">
-                <article>
-                    {% if comments != null and thread_parent == null %}
-                        {% for comment in comments %}
-                            {{ include('guestbook_comment.html.twig') }}
-                        {% endfor %}
-                        <nav>
-                            <span>page</span>
-                            <ul>
-                                {% for page in range(1, comment_pages + 1) %}
-                                    <li>
-                                        <span class="{{ page == current_page ? 'current' : 'page' }}"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </nav>
-                    {% elseif thread_parent != null %}
-                        {% set comment = thread_parent %}
-                        {{ include('guestbook_comment.html.twig') }}
-
-                        {% if thread_replies != null %}
-                            {% for comment in thread_replies %}
-                                {% set comment_style = 'is-threaded' %}
+                <section class="messages">
+                    <article>
+                        {% if comments != null and thread_parent == null %}
+                            {% for comment in comments %}
                                 {{ include('guestbook_comment.html.twig') }}
                             {% endfor %}
+                            <nav>
+                                <span>page</span>
+                                <ul>
+                                    {% for page in range(1, comment_pages + 1) %}
+                                        <li>
+                                            <span class="{{ page == current_page ? 'current' : 'page' }}"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        {% elseif thread_parent != null %}
+                            {% set comment = thread_parent %}
+                            {{ include('guestbook_comment.html.twig') }}
+
+                            {% if thread_replies != null %}
+                                {% for comment in thread_replies %}
+                                    {% set comment_style = 'is-threaded' %}
+                                    {{ include('guestbook_comment.html.twig') }}
+                                {% endfor %}
+                            {% endif %}
+                            <nav>
+                                <a href="/guestbook/page/{{ current_page }}">← return to previous page</a>
+                            </nav>
                         {% endif %}
-                        <nav>
-                            <a href="/guestbook/page/{{ current_page }}">← return to previous page</a>
-                        </nav>
-                    {% endif %}
-                    {% if comments == null and thread_parent == null %}
-                        <p>
-                            nothing to see here... go back to the <a href="/guestbook">guestbook index?</a>
-                        </p>
-                    {% endif %}
-                </article>
-            </section>
-        </main>
-        <footer>
-            {{ include('@includes/footer.shtml') }}
-        </footer>
-        
+                        {% if comments == null and thread_parent == null %}
+                            <p>
+                                nothing to see here... go back to the <a href="/guestbook">guestbook index?</a>
+                            </p>
+                        {% endif %}
+                    </article>
+                </section>
+            </main>
+            <footer>
+                {{ include('@includes/footer.shtml') }}
+            </footer>
+        </div>
     </body>
 </html>

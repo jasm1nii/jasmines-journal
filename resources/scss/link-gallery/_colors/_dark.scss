@@ -4,7 +4,7 @@
 }
 
 @mixin dark-mode {
-    .board {
+    .layout {
         background-color: var(--page-bg-dark);
         border-color: var(--page-border-dark);
     }

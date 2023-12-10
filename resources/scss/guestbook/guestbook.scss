@@ -1,6 +1,7 @@
 @use '../_shared/assets/font_besley';
 @use '../_shared/assets/font_instrument-sans';
 
+@use '../_shared/components/loader' as *;
 @use '../_shared/components/scrollbar' as *;
 @use '../_shared/components/webkit_scrollbar' as *;
 
@@ -19,6 +20,11 @@ body {
     transition: all 0.25s ease-out;
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.1em;
+}
+
+@include add-loader($width: fit-content, $left: 48%);
+
+.layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         {{ include('@includes/head.shtml') }}
+        <script async src="/_assets/scripts/loader.js"></script>
         <title>jasmine's notes</title>
         <meta name="description" content="microblog entries"/>
         <link rel="canonical" href="https://jasm1nii.xyz/blog/notes"/>
@@ -13,16 +12,15 @@
         </noscript>
     </head>
     <body>
+        {{ include('@includes/_loader.html') }}
         <div class="layout">
-            <div class="sidebar">
-                <header>
-                    {# theme switch placeholder #}
-                    <hgroup>
-                        <h1>jasmine's notes</h1>
-                    </hgroup>
-                    <nav>{{ nav|raw }}</nav>
-                </header>
-            </div>
+            <header>
+                {# theme switch placeholder #}
+                <hgroup>
+                    <h1>jasmine's notes</h1>
+                </hgroup>
+                <nav>{{ nav|raw }}</nav>
+            </header>
             <div class="main-column">
                 <main>
                     <article>{{ entries|raw }}</article>

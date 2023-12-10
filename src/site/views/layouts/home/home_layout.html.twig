@@ -26,8 +26,8 @@
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token"/>
   </head>
   <body>
-    <div class="loader"><p>loading</p></div>
-    <div class="board">
+    {{ include('@includes/_loader.html') }}
+    <div class="layout">
       <header>
         <div class="top">
           {# theme switcher will load here #}

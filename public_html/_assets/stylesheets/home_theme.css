@@ -115,7 +115,7 @@
 .light-mode .button-style a:hover {
   color: rgb(51, 44, 44);
 }
-.light-mode .board {
+.light-mode .layout {
   background-color: var(--page-color-light);
 }
 .light-mode h1,
@@ -274,7 +274,7 @@
 .dark-mode .button-style:focus {
   background-color: #8b4f61;
 }
-.dark-mode .board {
+.dark-mode .layout {
   background-color: var(--page-bg-dark);
   border-color: var(--page-border-dark);
 }

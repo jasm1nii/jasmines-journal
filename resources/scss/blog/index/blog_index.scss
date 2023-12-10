@@ -1,5 +1,4 @@
 @use '../shared' as theme;
-
 @use '_screen-sizes/768' as *;
 @use '_screen-sizes/500' as *;
 
@@ -13,13 +12,6 @@ body {
     padding-bottom: 3vh;
 }
 
-header {
-    #blog > a {
-        text-decoration: wavy underline;
-        text-underline-offset: 0.25em;
-    }
-}
-
 .layout {
     margin-top: 5%;
     display: flex;
@@ -27,12 +19,16 @@ header {
     column-gap: 1em;
 }
 
-.sidebar {
+header {
     max-width: 12em;
     margin-left: 1em;
     position: sticky;
     top: 5%;
     align-self: flex-start;
+    #blog > a {
+        text-decoration: wavy underline;
+        text-underline-offset: 0.25em;
+    }
 }
 
 main {

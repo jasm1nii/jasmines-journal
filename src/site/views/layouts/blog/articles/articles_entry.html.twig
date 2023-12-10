@@ -26,6 +26,7 @@
     </noscript>
   </head>
   <body>
+    {{ include('@includes/_loader.html') }}
     <div class="layout">
       <header>
         <hgroup>
@@ -34,7 +35,6 @@
         </hgroup>
         <nav aria-label="primary">{{ nav|raw }}</nav>
       </header>
-
       <main>
         <article class="h-entry">
           <hgroup>

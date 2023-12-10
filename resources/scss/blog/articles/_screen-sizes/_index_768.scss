@@ -9,7 +9,7 @@
             flex-direction: column;
         }
         @include header-style-2-768();
-        .sidebar {
+        header {
             position: static;
             max-width: none;
         }

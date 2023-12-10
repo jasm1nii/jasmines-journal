@@ -32,9 +32,9 @@ section {
   }
 }
 
-@include theme.add-loader($z-index: 1);
+@include theme.add-loader($max-width: none);
 
-.board {
+.layout {
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;

@@ -1,6 +1,6 @@
 @mixin screen-768 {
     @media all and (max-width:768px) {
-        .board {
+        .layout {
             margin-top: 0;
             max-width: none;
             border-left: none;

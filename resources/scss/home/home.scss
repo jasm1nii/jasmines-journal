@@ -16,7 +16,7 @@
 @use '_screen-sizes/home_500' as *;
 @use '_screen-sizes/home_400' as *;
 
-@include theme.add-loader($z-index: 1);
+@include theme.add-loader($max-width: none);
 
 /* animations */
 article > section {
@@ -40,7 +40,7 @@ body {
   }
 }
 
-.board {
+.layout {
   border: 1px solid purple;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
