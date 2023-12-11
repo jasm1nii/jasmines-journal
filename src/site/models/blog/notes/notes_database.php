@@ -19,13 +19,7 @@
 
                 $sql->execute();
 
-                if (!empty($sql->fetchColumn())) {
-
-                    getenv('ENV') == 'dev'
-                        ? print('YIPPEEEE')
-                        : http_response_code(403);
-
-                } else {
+                if (empty($sql->fetchColumn())) {
 
                     $this->buildTable();
                     $this->validateTable();
@@ -35,7 +29,7 @@
             } catch (\Exception $e) {
 
                 getenv('ENV') == 'dev'
-                    ? print("ruh roh: {$e->getMessage()}")
+                    ? print($e->getMessage())
                     : http_response_code(500);
 
             }
@@ -111,20 +105,38 @@
 
             if (!$sql->fetchColumn()) {
 
-                try {
-
-                    $this->updateTable($file, use_root: false);
-
-                } catch (\Exception $e) {
-
-                    getenv('ENV') == 'dev'
-                        ? print($e->getMessage())
-                        : http_response_code(500);
-
-                }
+                $this->updateTable($file, use_root: false);
 
             }
 
+        }
+
+        public function getEntries(int $row_limit): ?array {
+
+            try {
+
+                $this->validateNewestEntry();
+
+                $rows = ($row_limit - 1) * 10;
+        
+                $sql = $this->database->prepare(
+                    "SELECT `File Path`
+                    FROM `{$this->table}`
+                    ORDER BY `Date` DESC
+                    LIMIT $rows, 10"
+                );
+        
+                $sql->execute();
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
+        
+                return $sql->fetchAll();
+
+            } catch (\Exception) {
+
+                return null;
+
+            }
+    
         }
 
     }
