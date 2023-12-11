@@ -10,8 +10,8 @@
         private readonly array $db_config;
 
         protected static string $db_name;
-        protected readonly object $database;
-        protected readonly string $table;
+        protected readonly ?object $database;
+        protected readonly ?string $table;
 
         final public function __construct() {
 
@@ -28,13 +28,14 @@
                     [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
                 );
 
-            } catch (\PDOException) {
+                $this->table = $this->db_config['table'];
+
+            } catch (Exception) {
 
                 $this->database = null;
+                $this->table = null;
 
             }
-
-            $this->table = $this->db_config['table'];
 
         }
 
