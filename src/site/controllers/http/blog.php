@@ -7,6 +7,7 @@
     use JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Site\Models\Blog\NotesDatabase;
+    use JasminesJournal\Site\Models\Blog\NotesDirectory;
 
     final class Blog extends Route {
 
@@ -18,9 +19,13 @@
 
         private static function DBTest(): void {
 
-            $test = new NotesDatabase;
+            $db = new NotesDatabase;
+            $db_entry = $db->getNewestDBEntry();
 
-            $test->validateTable();
+            $dir = new NotesDirectory;
+            $path = $dir->getNewestFile();
+
+            $db_entry == $path ? print('match!!') : print($path);
 
         }
 

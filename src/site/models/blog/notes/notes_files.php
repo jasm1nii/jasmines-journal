@@ -7,25 +7,36 @@
         public object $date;
         public string $newest_file;
 
-        public function validateNewestFile(): void {
+        final public function getNewestFile(?bool $match_partial = true): string {
 
-            $this->date = new DateTime("now");
+            $this->date = new \DateTime("now");
 
-            file_exists($this->dateToFile($date))
-                ? $this->newest_file = $this->dateToFile($date)
+            file_exists($this->dateToFile($this->date))
+                ? $this->newest_file = $this->dateToFile($this->date)
                 : $this->newest_file = $this->iterateToNewest();
+
+            if ($match_partial == true) {
+
+                $dir = preg_quote(SITE_ROOT, '/');
+                return preg_split('/(' . $dir . ')/', $this->newest_file)[1];
+            
+            } else {
+
+                return $this->newest_file;
+
+            }
 
         }
 
-        public function dateToFile($date): string {
+        private function dateToFile(object $date): string {
 
             $file_date = date_format($date, 'Y/n/d');
 
-            return dirname(__DIR__, 1) . "/src/site/content/blog/notes/{$file_date}/entry.html.twig";
+            return SITE_ROOT . DIR['content'] . "blog/notes/{$file_date}/entry.html.twig";
 
         }
 
-        public function iterateToNewest(): string {
+        private function iterateToNewest(): string {
 
             while (!file_exists($this->dateToFile($this->date))) {
             

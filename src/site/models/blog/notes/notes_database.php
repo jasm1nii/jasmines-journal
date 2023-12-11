@@ -8,7 +8,7 @@
 
         protected static string $db_name = 'blog_notes';
 
-        public function validateTable(): void {
+        final public function validateTable(): void {
 
             try {
 
@@ -41,7 +41,7 @@
 
         }
 
-        public function buildTable(): void {
+        private function buildTable(): void {
 
             $files = glob(SITE_ROOT . DIR['content'] ."blog/notes/*/*/*/entry.html.twig");
 
@@ -65,10 +65,7 @@
 
         }
 
-    }
-
-        /*
-        public function getNewestDBEntry(): void {
+        public function getNewestDBEntry(): string {
 
             $sql = $this->database->prepare(
                 "SELECT `File Path`
@@ -78,11 +75,11 @@
             );
 
             $sql->execute();
-            $sql->bindColumn('File Path', $file_path);
-            $sql->fetch(\PDO::FETCH_BOUND);
 
-            $this->file_path = $file_path;
+            return $sql->fetchColumn();
 
-        }*/
+        }
+
+    }
 
 ?>
