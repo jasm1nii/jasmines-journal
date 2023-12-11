@@ -11,8 +11,8 @@
 
             $this->date = new \DateTime("now");
 
-            file_exists($this->dateToFile($this->date))
-                ? $this->newest_file = $this->dateToFile($this->date)
+            file_exists($this->dateToFile())
+                ? $this->newest_file = $this->dateToFile()
                 : $this->newest_file = $this->iterateToNewest();
 
             if ($match_partial == true) {
@@ -28,9 +28,9 @@
 
         }
 
-        private function dateToFile(object $date): string {
+        private function dateToFile(): string {
 
-            $file_date = date_format($date, 'Y/n/d');
+            $file_date = date_format($this->date, 'Y/n/d');
 
             return SITE_ROOT . DIR['content'] . "blog/notes/{$file_date}/entry.html.twig";
 
@@ -38,13 +38,13 @@
 
         private function iterateToNewest(): string {
 
-            while (!file_exists($this->dateToFile($this->date))) {
+            while (!file_exists($this->dateToFile())) {
             
                 $this->date->modify('-1 day');
         
-                if (file_exists($this->dateToFile($this->date))) {
+                if (file_exists($this->dateToFile())) {
 
-                    return $this->dateToFile($this->date);
+                    return $this->dateToFile();
 
                     break;
 
