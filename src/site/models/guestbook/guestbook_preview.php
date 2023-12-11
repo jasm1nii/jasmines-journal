@@ -2,10 +2,11 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Core\GuestbookConfig;
+    use JasminesJournal\Core\Database;
 
-    final class GuestbookLatest extends GuestbookConfig {
-
+    final class GuestbookLatest extends Database {
+        
+        protected static string $db_name = 'guestbook';
         public ?array $comment;
 
         final public function get(): void {

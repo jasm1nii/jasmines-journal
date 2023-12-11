@@ -2,9 +2,11 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Core\GuestbookConfig;
+    use JasminesJournal\Core\Database;
 
-    class GuestbookComments extends GuestbookConfig {
+    class GuestbookComments extends Database {
+
+        protected static string $db_name = 'guestbook';
 
         private function templateQuery(): string {
 

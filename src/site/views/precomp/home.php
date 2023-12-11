@@ -11,7 +11,7 @@
     final class Home extends Layout {
 
         protected string $layout = DIR['layouts'] . "home/home_layout.html.twig";
-        private const INCLUDES  = DIR['layouts'] . "home/includes/";
+        protected static string $includes_path = DIR['layouts'] . "home/includes/";
 
         private static function getNewestGuestbookMessage(): ?array {
 
@@ -56,7 +56,7 @@
                 'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}'),
             ];
 
-            parent::Twig($this->layout, $vars, self::INCLUDES);
+            parent::Twig($this->layout, $vars, self::$includes_path);
 
         }
 
