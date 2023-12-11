@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Models\Blog;
 
-    class NoteFiles {
+    class NotesDirectory {
 
         public object $date;
         public string $newest_file;

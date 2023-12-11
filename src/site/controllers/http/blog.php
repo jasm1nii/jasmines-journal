@@ -6,6 +6,8 @@
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Views\Layouts;
 
+    use JasminesJournal\Site\Models\Blog\NotesDatabase;
+
     final class Blog extends Route {
 
         private static function subpage(): ?string {
@@ -14,9 +16,21 @@
 
         }
 
+        private static function DBTest(): void {
+
+            $test = new NotesDatabase;
+
+            $test->validateTable();
+
+        }
+
         final public static function dispatch(): void {
 
             match (true) {
+
+                REQUEST == "/blog/notes/db_test" && getenv('ENV') == 'dev'
+
+                    => self::DBTest(),
 
                 REQUEST == "/blog",
                 REQUEST == "/blog/index"
