@@ -20,12 +20,8 @@
         private static function DBTest(): void {
 
             $db = new NotesDatabase;
-            $db_entry = $db->getNewestDBEntry();
 
-            $dir = new NotesDirectory;
-            $path = $dir->getNewestFile();
-
-            $db_entry == $path ? print('match!!') : print($path);
+            var_dump($db->validateNewestEntry());
 
         }
 

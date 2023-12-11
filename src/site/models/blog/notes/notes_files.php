@@ -15,7 +15,7 @@
                 ? $this->newest_file = $this->dateToFile()
                 : $this->newest_file = $this->iterateToNewest();
 
-            if ($match_partial == true) {
+            if ($match_partial) {
 
                 $dir = preg_quote(SITE_ROOT, '/');
                 return preg_split('/(' . $dir . ')/', $this->newest_file)[1];
