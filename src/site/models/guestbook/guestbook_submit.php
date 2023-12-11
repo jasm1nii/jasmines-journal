@@ -37,7 +37,7 @@
         private function sanitizeInput(): void {
 
             if ($_POST['name'] == null) {
-                
+
                 $this->sender_name = 'Anonymous';
 
             } else {
@@ -90,16 +90,19 @@
 
             $this->mail->subject = "guestbook message received!";
 
-            $this->mail->html_body =
-                "<ul>
-                    <li>Name: {$this->sender_name}</li>
-                    <li>Email: {$this->sender_email}</li>
-                    <li>URL: {$this->sender_url}</li>
-                    <li>Message: {$this->sender_message}</li>
-                </ul>";
-                    
-            $this->mail->plaintext_body =
-                "Name: {$this->sender_name} - Email: {$this->sender_email} - URL: {$this->sender_url} - Message: {$this->sender_message}";
+            $name = "Name: {$this->sender_name}";
+            $email = "Email: {$this->sender_email}";
+            $url = "URL: {$this->sender_url}";
+            $message = "Message: {$this->sender_message}";
+
+            $html = "<ul><li>{$message}</li>";
+            $html .= "<li>{$email}</li>";
+            $html .= "<li>{$url}</li>";
+            $html .= "<li>{$message}</li></ul>";
+            $this->mail->html_body = $html;
+
+            $plaintext = "{$name} - {$email} - {$url} - {$message}";
+            $this->mail->plaintext_body = $plaintext;
             
         }
 

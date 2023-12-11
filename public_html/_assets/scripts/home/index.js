@@ -197,12 +197,14 @@
     let beforeID = (siteIndex == 0) ? (resourceRing_members.length - 1) : (siteIndex - 1);
     let afterID = (siteIndex == resourceRing_members.length - 1) ? 0 : (siteIndex + 1);
     let randomID = Math.floor(Math.random() * resourceRing_members.length);
+
+    let html = `<span><a href='` + resourceRing_ringurl + `'><img alt='Badge: resourceRing webring' src='` + resourceRing_badgeurl + `' width='88' height='31' loading='lazy'/></a></span>`;
+    html += `<span><a href='` + resourceRing_members[beforeID] + `'><img alt='Previous' src='` + resourceRing_prevurl + `' height='31' width='22' loading='lazy'/></a>`;
+    html += `<a href='` + resourceRing_members[randomID] + `'><img alt='Random' src='` + resourceRing_randomurl + `' height='31' width='44' loading='lazy'/></a>`;
+    html += `<a href='` + resourceRing_members[afterID] + `'><img alt='Next' src='` + resourceRing_nexturl + `' height='31' width='22' loading='lazy'/></a></span>`;
     
-    displayElement.innerHTML =
-      `<span><a href='` + resourceRing_ringurl + `'><img alt='Badge: resourceRing webring' src='` + resourceRing_badgeurl + `' width='88' height='31' loading='lazy'/></a></span>` +
-      `<span><a href='` + resourceRing_members[beforeID] + `'><img alt='Previous' src='` + resourceRing_prevurl + `' height='31' width='22' loading='lazy'/></a>` +
-      `<a href='` + resourceRing_members[randomID] + `'><img alt='Random' src='` + resourceRing_randomurl + `' height='31' width='44' loading='lazy'/></a>` +
-      `<a href='` + resourceRing_members[afterID] + `'><img alt='Next' src='` + resourceRing_nexturl + `' height='31' width='22' loading='lazy'/></a></span>`;
+    displayElement.innerHTML = html;
+      
   };
 
   { // safonts
