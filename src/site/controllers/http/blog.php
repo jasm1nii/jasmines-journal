@@ -17,21 +17,9 @@
 
         }
 
-        private static function DBTest(): void {
-
-            $db = new NotesDatabase;
-
-            var_dump($db->validateNewestEntry());
-
-        }
-
         final public static function dispatch(): void {
 
             match (true) {
-
-                REQUEST == "/blog/notes/db_test" && getenv('ENV') == 'dev'
-
-                    => self::DBTest(),
 
                 REQUEST == "/blog",
                 REQUEST == "/blog/index"
