@@ -14,10 +14,15 @@
   n += `<p><b>now you have!</b></p><hr/><p><small>click the pushpin to hide this notice.</small></p>`;
   notice.innerHTML = n;
 
-  let ns = notice.style.display;
-  document.getElementById("pin").addEventListener("click", () => {
-    ns === "none" ? ns = "block" : ns = "none";
-  });
+  function showNote() {
+    if (notice.style.display === "none") {
+      notice.style.display = "block";
+    } else {
+      notice.style.display = "none";
+    };
+  };
+
+  document.getElementById("pin").addEventListener("click", showNote);
 };
 
 { // yipee!!!!

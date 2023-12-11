@@ -15,14 +15,12 @@ html {
 }
 
 body {
-    background-color: rgb(46, 41, 48);
+    background-color: rgb(36, 33, 37);
     @include fadeIn();
-    transition: all 0.25s ease-out;
+    transition: background-color 0.25s ease-out;
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.1em;
 }
-
-// @include add-loader($width: fit-content, $left: 48%);
 
 .layout {
     display: grid;
