@@ -1,10 +1,10 @@
 <?php
 
-    namespace JasminesJournal\Site\Models;
+    namespace JasminesJournal\Site\Models\Blog;
 
     use JasminesJournal\Core\Database;
 
-    class BlogNotesIndex extends Database {
+    class NotesDatabase extends Database {
 
         protected static string $db_name = 'blog_notes';
 

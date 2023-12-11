@@ -1,6 +1,8 @@
 <?php
 
-    class BlogNotesFileIndex {
+    namespace JasminesJournal\Site\Models\Blog;
+
+    class NoteFiles {
 
         public object $date;
         public string $newest_file;
