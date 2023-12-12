@@ -24,15 +24,9 @@
                     => new Layouts\BlogIndex,
 
 
-                str_ends_with(REQUEST, "/notes"),
-                str_ends_with(REQUEST, "/notes/index"),
-                str_contains(REQUEST, "/notes/page"),
-
-                    => new Layouts\BlogSubpageIndex(self::subpage(), use_pagination: true),
-
-
                 str_ends_with(REQUEST, self::subpage()),
-                str_ends_with(REQUEST, self::subpage() . "/index")
+                str_ends_with(REQUEST, self::subpage() . "/index"),
+                str_contains(REQUEST, "/notes/page")
 
                     => new Layouts\BlogSubpageIndex(self::subpage()),
 

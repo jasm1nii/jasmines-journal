@@ -2,12 +2,13 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
+    use JasminesJournal\Core\Route;
     use JasminesJournal\Core\Views\Render\Layout;
     use JasminesJournal\Site\Views\Partials;
     use JasminesJournal\Site\FileRouter;
-    use JasminesJournal\Core\Route;
 
-    use JasminesJournal\Site\Models\Blog\NotesDatabase;
+    use JasminesJournal\Site\Models\ArticlesDatabase;
+    use JasminesJournal\Site\Models\NotesDatabase;
 
     final class BlogIndex extends Layout {
         
@@ -27,42 +28,34 @@
 
     }
 
-    
-
-
     final class BlogSubpageIndex extends Layout {
 
         private string $type;
 
-        final public function __construct(string $type, ?bool $use_pagination = false) {
+        final public function __construct(string $type) {
 
             $this->type = $type;
 
             $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
 
-            if ($use_pagination) {
+            preg_match('/[0-9]+/', REQUEST, $page_num);
 
-                preg_match('/[0-9]+/', REQUEST, $page_num);
+            $this->page = $page_num ? $page_num[0] : 1;
 
-                $this->page = $page_num ? $page_num[0] : 1;
-
-                $this->index = Partials\Blog\Subpage\Index::renderRows($this->type, $this->page);
+            $this->index = Partials\Blog\Subpage\Index::renderRows($this->type, $this->page);
                 
-                $this->usePagination();
+            $this->usePagination();
             
-            } else {
-
-                $this->index = Partials\Blog\Subpage\Index::render($this->type);
-
-            }
-
             $this->render();
 
         }
 
         private function usePagination(): void {
 
-            $this->data = new NotesDatabase;
+            $this->data = match ($this->type) {
+                'articles'  => new ArticlesDatabase,
+                'notes'     => new NotesDatabase
+            };
     
             $total_rows = $this->data->getTotal();
     
@@ -124,5 +117,3 @@
         }
 
     }
-
-?>

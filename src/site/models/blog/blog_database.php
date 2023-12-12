@@ -1,14 +1,14 @@
 <?php
 
-    namespace JasminesJournal\Site\Models\Blog;
+    namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Core\Database;
     use JasminesJournal\Core\Setup;
-    use JasminesJournal\Site\Models\Blog\NotesDirectory;
+    use JasminesJournal\Core\Database;
+    use JasminesJournal\Site\Models\BlogDirectory;
 
-    class NotesDatabase extends Database {
+    abstract class BlogDatabase extends Database {
 
-        protected static string $db_name = 'blog_notes';
+        protected string $type;
 
         #[Setup]
         final public function validateTable(): void {
@@ -43,9 +43,9 @@
         }
 
         #[Setup]
-        private function buildTable(): void {
+        final protected function buildTable(): void {
 
-            $files = glob(SITE_ROOT . DIR['content'] ."blog/notes/*/*/*/entry.html.twig");
+            $files = glob(SITE_ROOT . DIR['content'] ."blog/{$this->type}/*/*/*/entry.html.twig");
 
             foreach ($files as $file) {
 
@@ -55,7 +55,7 @@
 
         }
 
-        private function updateTable(string $file, bool $use_root): void {
+        final protected function updateTable(string $file, bool $use_root): void {
 
             if ($use_root) {
 
@@ -82,7 +82,7 @@
 
         }
 
-        public function getNewestEntry(): string {
+        final public function getNewestEntry(): string {
 
             $sql = $this->database->prepare(
                 "SELECT `File Path`
@@ -97,9 +97,9 @@
 
         }
 
-        public function validateNewestEntry(): void {
+        final public function validateNewestEntry(): void {
 
-            $dir = new NotesDirectory;
+            $dir = new BlogDirectory($this->type);
             $file = $dir->getNewestFile();
 
             $sql = $this->database->prepare(
@@ -118,7 +118,7 @@
 
         }
 
-        public function getEntries(?int $row_limit): ?array {
+        final public function getEntries(int $row_limit): ?array {
 
             try {
 
@@ -168,6 +168,30 @@
 
         }
 
+        final public function removeMissing(string $path): void {
+
+            $sql = $this->database->prepare(
+                "DELETE FROM `{$this->table}`
+                WHERE `File Path`='{$path}'"
+            );
+
+            $sql->execute();
+
+        }
+
     }
 
-?>
+    class NotesDatabase extends BlogDatabase {
+
+        protected static string $db_name = 'blog_notes';
+        protected string $type = 'notes';
+        
+
+    }
+
+    class ArticlesDatabase extends BlogDatabase {
+
+        protected static string $db_name = 'blog_articles';
+        protected string $type= 'articles';
+
+    }

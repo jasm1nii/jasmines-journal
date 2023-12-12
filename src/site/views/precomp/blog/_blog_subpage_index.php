@@ -7,18 +7,10 @@
 
     use JasminesJournal\Core\Views\Render\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
-    use JasminesJournal\Site\Models\Blog\NotesDatabase;
+    use JasminesJournal\Site\Models\ArticlesDatabase;
+    use JasminesJournal\Site\Models\NotesDatabase;
 
     final class Index {
-
-        // BlogEntry::matchURLToFile() isn't used, because matching with the index URL (instead of the entry URL) will return an invalid result.
-
-        #[\Depreciated]
-        private static function getContent(string $file): ?string {
-
-            return preg_split('/(' . preg_quote(SITE_ROOT, '/') . ')/', $file)[1];
-
-        }
 
         private static function getSlug(string $content_path, string $type): string {
 
@@ -34,60 +26,37 @@
 
         }
 
-        #[\Depreciated]
-        private static function makeList(string $type, string $source): ?array {
-
-            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
-
-            $content = [];
-
-            foreach (BlogEntry::getFiles($source) as $article) {
-                
-                $content_path = self::getContent($article);
-
-                $content[] = self::buildTwig()->render($content_path,
-                    [
-                        'layout'    => $template,
-                        'slug'      => self::getSlug($content_path, $type)
-                    ]);
-
-            }
-
-            return $content;
-
-        }
-
         private static function makeListFromRows(string $type, ?int $rows): ?array {
 
             $database = match ($type) {
-                'articles' => null,
+                'articles' => new ArticlesDatabase,
                 'notes'    => new NotesDatabase
             };
 
-            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
-
-            $content = [];
+            $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
+            $content    = [];
 
             foreach ($database->getEntries($rows) as $article) {
 
-                $content[] = self::buildTwig()->render($article['File Path'],
-                    [
-                        'layout'    => $template,
-                        'slug'      => self::getSlug($article['File Path'], $type)
-                    ]);
+                $path = $article['File Path'];
+
+                if (file_exists(SITE_ROOT . $path)) {
+
+                    $content[] = self::buildTwig()->render($path,
+                        [
+                            'layout'    => $template,
+                            'slug'      => self::getSlug($path, $type)
+                        ]);
+                    
+                } else {
+
+                    $database->removeMissing($path);
+
+                }
 
             }
 
             return $content;
-
-        }
-
-        #[\Depreciated]
-        final public static function render(string $type): ?string {
-
-            $source = SITE_ROOT . DIR['content'] . "blog/{$type}";
-
-            return implode("", self::makeList($type, $source));
 
         }
 
@@ -98,5 +67,3 @@
         }
 
     }
-
-?>

@@ -1,11 +1,13 @@
 <?php
 
-    namespace JasminesJournal\Site\Models\Blog;
+    namespace JasminesJournal\Site\Models;
 
-    class NotesDirectory {
+    class BlogDirectory {
 
         public object $date;
         public string $newest_file;
+
+        final public function __construct(public string $type) {}
 
         final public function getNewestFile(?bool $match_partial = true): string {
 
@@ -32,7 +34,7 @@
 
             $file_date = date_format($this->date, 'Y/n/d');
 
-            return SITE_ROOT . DIR['content'] . "blog/notes/{$file_date}/entry.html.twig";
+            return SITE_ROOT . DIR['content'] . "blog/{$this->type}/{$file_date}/entry.html.twig";
 
         }
 
@@ -55,5 +57,3 @@
         }
 
     }
-    
-?>
