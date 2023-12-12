@@ -4,9 +4,9 @@
 
     use JasminesJournal\Core\Route;
     use JasminesJournal\Core\Views\Render\Layout;
-    use JasminesJournal\Site\Views\Partials;
+    
     use JasminesJournal\Site\FileRouter;
-
+    use JasminesJournal\Site\Views\Partials;
     use JasminesJournal\Site\Models\ArticlesDatabase;
     use JasminesJournal\Site\Models\NotesDatabase;
 
@@ -30,33 +30,20 @@
 
     final class BlogSubpageIndex extends Layout {
 
-        private string $type;
-
-        final public function __construct(string $type) {
-
-            $this->type = $type;
-
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
-
-            preg_match('/[0-9]+/', REQUEST, $page_num);
-
-            $this->page = $page_num ? $page_num[0] : 1;
-
-            $this->index = Partials\Blog\Subpage\Index::renderRows($this->type, $this->page);
-                
-            $this->usePagination();
-            
-            $this->render();
-
-        }
-
-        private function usePagination(): void {
+        final public function __construct(private string $type, private int $current_page) {
 
             $this->data = match ($this->type) {
                 'articles'  => new ArticlesDatabase,
                 'notes'     => new NotesDatabase
             };
-    
+
+            $this->getTotalPages();
+            $this->render();
+
+        }
+
+        private function getTotalPages(): void {
+
             $total_rows = $this->data->getTotal();
     
             if ($total_rows !== null) {
@@ -67,17 +54,28 @@
     
                 $this->total_pages = ($pages * 10 == $total_rows) ? $pages - 1 : $pages;
                     
+            } else {
+
+                $this->total_pages = null;
+
             }
                 
         }
 
         final protected function render(): void {
 
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
+
+            $this->index = Partials\Blog\Subpage\Index::renderRows(
+                type: $this->type,
+                rows: $this->current_page
+            );
+
             $vars = [
                 'nav'           => Partials\Blog\Nav::make(),
                 'entries'       => $this->index,
-                'total_pages'   => $this->total_pages ??= null,
-                'page'          => $this->page ??= null
+                'total_pages'   => $this->total_pages,
+                'page'          => $this->current_page
             ];
 
             parent::Twig($this->layout, $vars, null);
@@ -89,21 +87,17 @@
 
     final class BlogEntry extends Layout {
 
-        private string $type;
-
-        final public function __construct(string $type) {
-
-            $this->type = $type;
-
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
-
-            $this->content = FileRouter\BlogEntry::matchURLToFile($use_root = false);
+        final public function __construct(private string $type) {
 
             $this->render();
 
         }
 
         final protected function render(): void {
+
+            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
+
+            $this->content = FileRouter\BlogEntry::matchURLToFile($use_root = false);
 
             $vars = [
                 'layout'    => $this->layout,

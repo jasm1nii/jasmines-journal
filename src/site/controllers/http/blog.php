@@ -14,6 +14,13 @@
 
         }
 
+        private static function getCurrentPage(): int {
+
+            preg_match('/[0-9]+/', REQUEST, $page_num);
+            return $page_num ? $page_num[0] : 1;
+
+        }
+
         final public static function dispatch(): void {
 
             match (true) {
@@ -26,9 +33,12 @@
 
                 str_ends_with(REQUEST, self::subpage()),
                 str_ends_with(REQUEST, self::subpage() . "/index"),
-                str_contains(REQUEST, "/notes/page")
+                str_contains(REQUEST, self::subpage() . "/page")
 
-                    => new Layouts\BlogSubpageIndex(self::subpage()),
+                    => new Layouts\BlogSubpageIndex(
+                        type: self::subpage(),
+                        current_page: self::getCurrentPage()
+                    ),
 
 
                 str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::matchURLToFile())

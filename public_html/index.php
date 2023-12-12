@@ -41,15 +41,15 @@
         REQUEST == "/articles.xml"
 
             => new Generator\XMLFeeds(
-                $type = 'articles',
-                $max_entries = 'total_entries'),
+                type: 'articles',
+                max_entries: 'total_entries'),
 
 
         REQUEST == "/notes.xml"
 
             => new Generator\XMLFeeds(
-                $type = 'notes',
-                $max_entries = 'total_entries'),
+                type: 'notes',
+                max_entries: 'total_entries'),
 
 
         //
@@ -79,6 +79,8 @@
             => Guestbook::dispatch(),
             
 
-        default => Route::notFound()
+        default
+        
+            => Route::notFound()
         
     };

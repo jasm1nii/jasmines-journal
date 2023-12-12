@@ -6,11 +6,16 @@
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
     use JasminesJournal\Core\Views\Render\Extension;
-    use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Models\ArticlesDatabase;
     use JasminesJournal\Site\Models\NotesDatabase;
 
     final class Index {
+
+        private static function buildTwig(): object {
+
+            return Extension\PartialTwig::buildTwigEnv();
+
+        }
 
         private static function getSlug(string $content_path, string $type): string {
 
@@ -20,13 +25,7 @@
 
         }
 
-        private static function buildTwig(): object {
-
-            return Extension\PartialTwig::buildTwigEnv();
-
-        }
-
-        private static function makeListFromRows(string $type, ?int $rows): ?array {
+        final public static function renderRows(string $type, ?int $rows): ?string {
 
             $database = match ($type) {
                 'articles' => new ArticlesDatabase,
@@ -56,13 +55,7 @@
 
             }
 
-            return $content;
-
-        }
-
-        final public static function renderRows(string $type, ?int $rows): ?string {
-
-            return implode("", self::makeListFromRows($type, $rows));
+            return implode("", $content);
 
         }
 
