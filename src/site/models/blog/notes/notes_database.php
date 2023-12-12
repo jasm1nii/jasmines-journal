@@ -3,12 +3,14 @@
     namespace JasminesJournal\Site\Models\Blog;
 
     use JasminesJournal\Core\Database;
+    use JasminesJournal\Core\Setup;
     use JasminesJournal\Site\Models\Blog\NotesDirectory;
 
     class NotesDatabase extends Database {
 
         protected static string $db_name = 'blog_notes';
 
+        #[Setup]
         final public function validateTable(): void {
 
             try {
@@ -23,19 +25,24 @@
 
                     $this->buildTable();
                     $this->validateTable();
+
+                    echo "Successfully added new rows.";
                     
+                } else {
+
+                    echo "Existing rows were found - no data was inserted.";
+
                 }
             
             } catch (\Exception $e) {
 
-                getenv('ENV') == 'dev'
-                    ? print($e->getMessage())
-                    : http_response_code(500);
+                echo $e->getMessage();
 
             }
 
         }
 
+        #[Setup]
         private function buildTable(): void {
 
             $files = glob(SITE_ROOT . DIR['content'] ."blog/notes/*/*/*/entry.html.twig");
@@ -111,7 +118,7 @@
 
         }
 
-        public function getEntries(int $row_limit): ?array {
+        public function getEntries(?int $row_limit): ?array {
 
             try {
 
@@ -128,7 +135,7 @@
         
                 $sql->execute();
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
-        
+
                 return $sql->fetchAll();
 
             } catch (\Exception) {
@@ -137,6 +144,28 @@
 
             }
     
+        }
+
+        final public function getTotal(): ?int {
+
+            if ($this->database !== null) {
+
+                $sql = $this->database->prepare(
+                    "SELECT COUNT(*) as total
+                    FROM `{$this->table}`"
+                );
+
+                $sql->execute();
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
+
+                return $sql->fetchAll()[0]['total'];
+
+            } else {
+
+                return null;
+
+            }
+
         }
 
     }

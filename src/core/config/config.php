@@ -12,4 +12,10 @@
 
     }
 
+    #[\Attribute(\Attribute::IS_REPEATABLE)]
+    class Setup {}
+
+    #[\Attribute(\Attribute::IS_REPEATABLE)]
+    class Testing {}
+
 ?>

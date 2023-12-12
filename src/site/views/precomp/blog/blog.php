@@ -7,6 +7,8 @@
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Core\Route;
 
+    use JasminesJournal\Site\Models\Blog\NotesDatabase;
+
     final class BlogIndex extends Layout {
         
         protected string $layout = DIR['layouts'] . "blog/blog_layout.html.twig";
@@ -25,26 +27,64 @@
 
     }
 
+    
+
 
     final class BlogSubpageIndex extends Layout {
 
         private string $type;
 
-        final public function __construct(string $type) {
+        final public function __construct(string $type, ?bool $use_pagination = false) {
 
             $this->type = $type;
 
             $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
 
+            if ($use_pagination) {
+
+                preg_match('/[0-9]+/', REQUEST, $page_num);
+
+                $this->page = $page_num ? $page_num[0] : 1;
+
+                $this->index = Partials\Blog\Subpage\Index::renderRows($this->type, $this->page);
+                
+                $this->usePagination();
+            
+            } else {
+
+                $this->index = Partials\Blog\Subpage\Index::render($this->type);
+
+            }
+
             $this->render();
 
+        }
+
+        private function usePagination(): void {
+
+            $this->data = new NotesDatabase;
+    
+            $total_rows = $this->data->getTotal();
+    
+            if ($total_rows !== null) {
+    
+                $pages = intdiv($total_rows, 10);
+    
+                // remove the last page if it's blank due to perfect division:
+    
+                $this->total_pages = ($pages * 10 == $total_rows) ? $pages - 1 : $pages;
+                    
+            }
+                
         }
 
         final protected function render(): void {
 
             $vars = [
-                'nav'       => Partials\Blog\Nav::make(),
-                'entries'   => Partials\Blog\Subpage\Index::render($this->type)
+                'nav'           => Partials\Blog\Nav::make(),
+                'entries'       => $this->index,
+                'total_pages'   => $this->total_pages ??= null,
+                'page'          => $this->page ??= null
             ];
 
             parent::Twig($this->layout, $vars, null);

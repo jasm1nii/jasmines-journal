@@ -108,7 +108,7 @@
 
                 // remove the last page if it's blank due to perfect division:
 
-                $this->total_pages = $pages * 10 == $total_rows ? $pages - 1 : $pages;
+                $this->total_pages = ($pages * 10 == $total_rows) ? $pages - 1 : $pages;
 
             } else {
 

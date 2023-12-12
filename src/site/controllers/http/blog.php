@@ -6,9 +6,6 @@
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Site\Models\Blog\NotesDatabase;
-    use JasminesJournal\Site\Models\Blog\NotesDirectory;
-
     final class Blog extends Route {
 
         private static function subpage(): ?string {
@@ -25,6 +22,13 @@
                 REQUEST == "/blog/index"
 
                     => new Layouts\BlogIndex,
+
+
+                str_ends_with(REQUEST, "/notes"),
+                str_ends_with(REQUEST, "/notes/index"),
+                str_contains(REQUEST, "/notes/page"),
+
+                    => new Layouts\BlogSubpageIndex(self::subpage(), use_pagination: true),
 
 
                 str_ends_with(REQUEST, self::subpage()),

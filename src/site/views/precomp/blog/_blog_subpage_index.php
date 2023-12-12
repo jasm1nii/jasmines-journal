@@ -4,18 +4,19 @@
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
     use JasminesJournal\Core\Views\Render\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
+    use JasminesJournal\Site\Models\Blog\NotesDatabase;
 
     final class Index {
 
         // BlogEntry::matchURLToFile() isn't used, because matching with the index URL (instead of the entry URL) will return an invalid result.
 
+        #[\Depreciated]
         private static function getContent(string $file): ?string {
 
-            $dir = preg_split('/\/(src)/', $file);
-
-            return "/src/{$dir[1]}";
+            return preg_split('/(' . preg_quote(SITE_ROOT, '/') . ')/', $file)[1];
 
         }
 
@@ -33,7 +34,10 @@
 
         }
 
-        private static function makeList(string $type, string $source, string $template): ?array {
+        #[\Depreciated]
+        private static function makeList(string $type, string $source): ?array {
+
+            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
 
             $content = [];
 
@@ -53,12 +57,43 @@
 
         }
 
+        private static function makeListFromRows(string $type, ?int $rows): ?array {
+
+            $database = match ($type) {
+                'articles' => null,
+                'notes'    => new NotesDatabase
+            };
+
+            $template = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
+
+            $content = [];
+
+            foreach ($database->getEntries($rows) as $article) {
+
+                $content[] = self::buildTwig()->render($article['File Path'],
+                    [
+                        'layout'    => $template,
+                        'slug'      => self::getSlug($article['File Path'], $type)
+                    ]);
+
+            }
+
+            return $content;
+
+        }
+
+        #[\Depreciated]
         final public static function render(string $type): ?string {
 
-            $source     = SITE_ROOT . DIR['content'] . "blog/{$type}";
-            $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
+            $source = SITE_ROOT . DIR['content'] . "blog/{$type}";
 
-            return implode("", self::makeList($type, $source, $template));
+            return implode("", self::makeList($type, $source));
+
+        }
+
+        final public static function renderRows(string $type, ?int $rows): ?string {
+
+            return implode("", self::makeListFromRows($type, $rows));
 
         }
 

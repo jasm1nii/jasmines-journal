@@ -3,6 +3,7 @@
     namespace JasminesJournal\Core;
 
     use JasminesJournal\Core\Config;
+    use JasminesJournal\Core\Setup;
 
     abstract class Database extends Config {
 
@@ -10,8 +11,8 @@
         private readonly array $db_config;
 
         protected static string $db_name;
-        protected readonly ?object $database;
-        protected readonly ?string $table;
+        protected ?object $database;
+        protected ?string $table;
 
         final public function __construct() {
 
@@ -30,7 +31,7 @@
 
                 $this->table = $this->db_config['table'];
 
-            } catch (Exception) {
+            } catch (\Exception) {
 
                 $this->database = null;
                 $this->table = null;
