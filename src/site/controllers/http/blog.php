@@ -3,8 +3,12 @@
     namespace JasminesJournal\Site\RequestRouter;
 
     use JasminesJournal\Core\Route;
-    use JasminesJournal\Site\FileRouter\BlogEntry;
+
     use JasminesJournal\Site\Views\Layouts;
+    use JasminesJournal\Site\FileRouter\BlogEntry;
+
+    use JasminesJournal\Site\Models\ArticlesDatabase;
+    use JasminesJournal\Site\Models\NotesDatabase;
 
     final class Blog extends Route {
 
@@ -21,6 +25,26 @@
 
         }
 
+        private static function routeSubpageIndex(bool $validate_db): void {
+
+            if ($validate_db) {
+
+                $db = match (self::subpage()) {
+                    'articles'  => new ArticlesDatabase,
+                    'notes'     => new NotesDatabase
+                };
+                
+                $db->validateNewestEntry();
+
+            }
+
+            new Layouts\BlogSubpageIndex(
+                type: self::subpage(),
+                current_page: self::getCurrentPage()
+            );
+
+        }
+
         final public static function dispatch(): void {
 
             match (true) {
@@ -32,13 +56,14 @@
 
 
                 str_ends_with(REQUEST, self::subpage()),
-                str_ends_with(REQUEST, self::subpage() . "/index"),
+                str_ends_with(REQUEST, self::subpage() . "/index")
+
+                    => self::routeSubpageIndex(validate_db: true),
+
+
                 str_contains(REQUEST, self::subpage() . "/page")
 
-                    => new Layouts\BlogSubpageIndex(
-                        type: self::subpage(),
-                        current_page: self::getCurrentPage()
-                    ),
+                    => self::routeSubpageIndex(validate_db: false),
 
 
                 str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::matchURLToFile())

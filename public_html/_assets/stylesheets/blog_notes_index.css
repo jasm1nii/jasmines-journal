@@ -276,6 +276,24 @@ iframe {
   aspect-ratio: 16/9;
 }
 
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.page-nav a {
+  display: block;
+}
+.page-nav .previous {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+.page-nav .next {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
 @media all and (max-width: 768px) {
   body {
     width: -moz-fit-content;

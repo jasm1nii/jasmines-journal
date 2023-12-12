@@ -126,8 +126,6 @@
 
             try {
 
-                $this->validateNewestEntry();
-
                 $rows = ($row_limit - 1) * 10;
         
                 $sql = $this->database->prepare(
@@ -195,6 +193,6 @@
     class ArticlesDatabase extends BlogDatabase {
 
         protected static string $db_name = 'blog_articles';
-        protected string $type= 'articles';
+        protected string $type = 'articles';
 
     }

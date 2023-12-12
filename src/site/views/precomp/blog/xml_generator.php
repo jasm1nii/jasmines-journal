@@ -38,15 +38,9 @@
 
             $glob = $this->globCount();
 
-            if ($this->max_entries == 'total_entries') {
-
-                $count = count($glob);
-
-            } else {
-
-                $count = $this->max_entries;
-
-            }
+            $count = ($this->max_entries == 'total_entries')
+                ? count($glob)
+                : $this->max_entries;
 
             for ($i = 0; $i < $count; $i++) {
                 
@@ -105,15 +99,11 @@
 
         private function setOutputPath(): void {
 
-            if (self::setDebug() == true) {
+            $this->output_file = self::setDebug()
 
-                $this->output_file = SITE_ROOT . "/tests/{$this->type}.xml";
-
-            } else {
-
-                $this->output_file = SITE_ROOT . DIR['content']. "/blog/{$this->type}/{$this->type}.xml";
-
-            }
+                ? SITE_ROOT . "/tests/{$this->type}.xml"
+                
+                : SITE_ROOT . DIR['content']. "/blog/{$this->type}/{$this->type}.xml";
 
         }
 

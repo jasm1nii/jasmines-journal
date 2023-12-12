@@ -27,12 +27,12 @@
                         {% else %}
                             <p>that's too far!!!</p>
                         {% endif %}
-                        <nav>
+                        <nav class="page-nav">
                             {% if page != 1 %}
-                                <a href="/blog/notes/page/{{ page - 1 }}">previous page</a>
+                                <a class="previous" href="/blog/notes/page/{{ page - 1 }}">previous page</a>
                             {% endif %}
                             {% if page != total_pages + 1 %}
-                                <a href="/blog/notes/page/{{ page + 1 }}">next page</a>
+                                <a class="next" href="/blog/notes/page/{{ page + 1 }}">next page</a>
                             {% endif %}
                         </nav>
                     </article>

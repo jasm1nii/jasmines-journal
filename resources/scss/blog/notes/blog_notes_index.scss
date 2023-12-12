@@ -108,5 +108,23 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    a {
+        display: block;
+    }
+    .previous {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .next {
+        text-align: right;
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
 @include screen-768();
 @include screen-500();
