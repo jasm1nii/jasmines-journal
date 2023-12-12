@@ -32,5 +32,3 @@
         abstract protected function render(): void;
 
     }
-    
-?>
