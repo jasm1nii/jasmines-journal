@@ -22,9 +22,10 @@
 
         private static function getContent(string $file): ?string {
 
-            $dir = preg_split('/\/(src)\//', $file);
+            $dir = preg_quote(SITE_ROOT, '/');
+            $path = preg_split('/(' . $dir .')/', $file);
 
-            return "/src/{$dir[1]}";
+            return $path[1];
 
         }
 
@@ -45,14 +46,13 @@
 
         final protected static function renderTwig(string $file): ?string {
 
-            return
-                self::buildTwig()->render(
-                    self::getContent($file),
-                    [
-                        'layout'    => static::$template,
-                        'slug'      => self::getSlug(self::getContent($file))
-                    ]
-                );
+            return self::buildTwig()->render(
+                self::getContent($file),
+                [
+                    'layout'    => static::$template,
+                    'slug'      => self::getSlug(self::getContent($file))
+                ]
+            );
 
         }
 

@@ -48,12 +48,9 @@
 
             }
 
-            $i = 0;
-
-            while ($i < $count) {
+            for ($i = 0; $i < $count; $i++) {
                 
                 $files[] = $glob[$i];
-                $i++;
 
             }
 
@@ -80,8 +77,8 @@
 
             foreach ($files as $article) {
                 
-                $split_path = preg_split('/(src)/', $article);
-                $path       = '/src/'. $split_path[1];
+                $dir  = preg_quote(SITE_ROOT, '/');
+                $path = preg_split('/('. $dir . ')/', $article)[1];
 
                 $slug       = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
 

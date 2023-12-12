@@ -53,15 +53,14 @@
             if ($this->database !== null) {
 
                 $sql = $this->database->prepare(
-                    "SELECT COUNT(*) as total
+                    "SELECT COUNT(*)
                     FROM `{$this->table}`
                     WHERE `Moderation Status`='Approved'"
                 );
 
                 $sql->execute();
-                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
-                return $sql->fetchAll()[0]['total'];
+                return $sql->fetchColumn();
 
             } else {
 

@@ -3,7 +3,7 @@
     <section class="h-entry">
         <section class="e-content">{{ block('content') }}</section>
         <span>
-            <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="/blog/notes/{{ slug }}">view post with comments</a>
+            <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="{{ slug }}">view post with comments</a>
         </span>
     </section>
 </section>

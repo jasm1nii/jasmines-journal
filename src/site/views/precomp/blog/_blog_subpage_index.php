@@ -17,14 +17,6 @@
 
         }
 
-        private static function getSlug(string $content_path, string $type): string {
-
-            $base_slug = rtrim($content_path, '.html.twig');
-
-            return ltrim($base_slug, DIR['content'] . "blog/{$type}");
-
-        }
-
         final public static function renderRows(string $type, ?int $rows): ?string {
 
             $database = match ($type) {
@@ -44,7 +36,7 @@
                     $content[] = self::buildTwig()->render($path,
                         [
                             'layout'    => $template,
-                            'slug'      => self::getSlug($path, $type)
+                            'slug'      => $article['Relative URL']
                         ]);
                     
                 } else {

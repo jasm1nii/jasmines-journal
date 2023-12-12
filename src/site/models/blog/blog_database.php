@@ -68,14 +68,18 @@
 
             }
 
+            $base   = preg_split('/(.html.twig)/', $path)[0];
+            $url    = preg_split('/(content)/', $base)[1];
+
             preg_match_all('/[0-9]+/', $path, $date_values);
             $date_obj = date_create("{$date_values[0][0]}-{$date_values[0][1]}-{$date_values[0][2]}");
             // format with leading zeros:
             $date = date_format($date_obj, 'Y-m-d');
 
             $sql = $this->database->prepare(
-                "INSERT INTO `{$this->table}` (`File Path`, `Date`)
-                VALUES ('{$path}', '{$date}')"
+                "INSERT INTO `{$this->table}`
+                (`File Path`, `Relative URL`, `Date`)
+                VALUES ('{$path}', '{$url}', '{$date}')"
             );
 
             $sql->execute();
@@ -127,7 +131,7 @@
                 $rows = ($row_limit - 1) * 10;
         
                 $sql = $this->database->prepare(
-                    "SELECT `File Path`
+                    "SELECT `File Path`, `Relative URL`
                     FROM `{$this->table}`
                     ORDER BY `Date` DESC
                     LIMIT $rows, 10"
@@ -151,14 +155,13 @@
             if ($this->database !== null) {
 
                 $sql = $this->database->prepare(
-                    "SELECT COUNT(*) as total
+                    "SELECT COUNT(*)
                     FROM `{$this->table}`"
                 );
 
                 $sql->execute();
-                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
-                return $sql->fetchAll()[0]['total'];
+                return $sql->fetchColumn();
 
             } else {
 

@@ -22,7 +22,7 @@
                 'articles_archive'  => Partials\Blog\Articles::makeList()
             ];
 
-            parent::Twig($this->layout, $vars, null, true);
+            parent::Twig($this->layout, $vars, null);
 
         }
 
