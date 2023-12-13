@@ -82,20 +82,20 @@
                             {% for comment in comments %}
                                 {{ include('guestbook_comment.html.twig') }}
                             {% endfor %}
-                            <nav>
-                                <span>page</span>
-                                <ul>
-                                    {% for page in range(1, comment_pages + 1) %}
-                                        <li>
-                                            <span class="{{ page == current_page ? 'current' : 'page' }}"><a href="/guestbook/page/{{ page }}">{{ page }}</a></span>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
+                            <nav class="page-nav">
+                                {% if current_page != 1 %}
+                                    <a class="previous" href="/guestbook/page/{{ current_page - 1 }}">previous</a>
+                                {% else %}
+                                    <span class="previous" aria-hidden="true">🌼</span>
+                                {% endif %}
+                                <span class="position">{{ current_page }} of {{ comment_pages + 1 }}</span>
+                                {% if current_page != comment_pages + 1 %}
+                                    <a class="next" href="/guestbook/page/{{ current_page + 1 }}">next</a>
+                                {% endif %}
                             </nav>
                         {% elseif thread_parent != null %}
                             {% set comment = thread_parent %}
                             {{ include('guestbook_comment.html.twig') }}
-
                             {% if thread_replies != null %}
                                 {% for comment in thread_replies %}
                                     {% set comment_style = 'is-threaded' %}
@@ -103,13 +103,11 @@
                                 {% endfor %}
                             {% endif %}
                             <nav>
-                                <a href="/guestbook/page/{{ current_page }}">← return to previous page</a>
+                                <p><a href="/guestbook/page/{{ current_page }}">← return to previous page</a></p>
                             </nav>
                         {% endif %}
                         {% if comments == null and thread_parent == null %}
-                            <p>
-                                nothing to see here... go back to the <a href="/guestbook">guestbook index?</a>
-                            </p>
+                            <p>nothing to see here... go back to the <a href="/guestbook">guestbook index?</a></p>
                         {% endif %}
                     </article>
                 </section>

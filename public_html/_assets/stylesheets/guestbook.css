@@ -202,29 +202,38 @@ form textarea {
           text-decoration: 1.5px underline dashed;
 }
 .messages nav {
-  text-align: center;
   margin: 2em auto;
   display: flex;
-  flex-direction: row;
-  width: -moz-fit-content;
-  width: fit-content;
-  align-items: center;
   letter-spacing: 0.1em;
+  justify-content: space-between;
+  line-height: 2em;
+  font-weight: 500;
 }
-.messages nav li {
-  display: inline-block;
-}
-.messages nav .current, .messages nav .page {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-right: 1em;
-}
-.messages nav .current a, .messages nav .page a {
-  display: inline-block;
-  padding: 1em;
-  font-weight: 600;
+.messages nav a {
+  display: block;
   -webkit-text-decoration: 1.5px underline solid;
           text-decoration: 1.5px underline solid;
+}
+.messages nav span {
+  display: block;
+}
+.messages nav .previous {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+.messages nav .previous:not(a) {
+  font-size: x-large;
+}
+.messages nav .position {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+}
+.messages nav .next {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 #issues {
@@ -270,14 +279,6 @@ main + footer {
   margin-left: auto;
   width: 80%;
   font-size: 0.9em;
-}
-main + footer #footer {
-  display: grid;
-}
-main + footer #footer div {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
 }
 main + footer ul {
   display: inline-flex;

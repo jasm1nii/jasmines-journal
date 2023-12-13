@@ -11,12 +11,12 @@
 @use '_screen-sizes/768' as *;
 
 html {
-    @include scrollbar-style-1();
+    @include scrollbar-style-1;
 }
 
 body {
     background-color: rgb(36, 33, 37);
-    @include fadeIn();
+    @include fadeIn;
     transition: background-color 0.25s ease-out;
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.1em;
@@ -58,7 +58,7 @@ header {
     grid-row: 1;
     margin-top: 3vh;
     display: grid;
-    @include heading-font();
+    @include heading-font;
     & hgroup {
         grid-column: 2 / 10;
         & h1 {
@@ -96,7 +96,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 5vw;
-    @include fadeIn();
+    @include fadeIn;
 }
 
 .form {
@@ -179,25 +179,36 @@ form {
         text-decoration: 1.5px underline dashed;
     }
     & nav {
-        text-align: center;
         margin: 2em auto;
         display: flex;
-        flex-direction: row;
-        width: fit-content;
-        align-items: center;
         letter-spacing: .1em;
-        & li {
-            display: inline-block;
+        justify-content: space-between;
+        line-height: 2em;
+        font-weight: 500;
+        a {
+            display: block;
+            text-decoration: 1.5px underline solid;
         }
-        & .current, .page {
-            width: fit-content;
-            margin-right: 1em;
-            & a {
-                display: inline-block;
-                padding: 1em;
-                font-weight: 600;
-                text-decoration: 1.5px underline solid;
+        span {
+            display: block;
+        }
+        .previous {
+            text-align: left;
+            margin-left: 0;
+            margin-right: auto;
+            &:not(a) {
+                font-size: x-large;
             }
+        }
+        .position {
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+        }
+        .next {
+            text-align: right;
+            margin-left: auto;
+            margin-right: 0;
         }
     }
 }
@@ -214,7 +225,7 @@ form {
     margin-bottom: 3em;
     & h2 {
         font-size: 1.25em;
-        @include heading-font();
+        @include heading-font;
     }
     & .reply-context {
         font-size: smaller;  
@@ -245,13 +256,6 @@ main + footer {
     margin-left: auto;
     width: 80%;
     font-size: .9em;
-    & #footer {
-        display: grid;
-        & div {
-            width: fit-content;
-            margin-left: auto;
-        }
-    }
     & ul {
         display: inline-flex;
         flex-wrap: wrap;
@@ -266,6 +270,6 @@ main + footer {
     }
 }
 
-@include webkit-scrollbar-style-1();
-@include screen-1400();
-@include screen-768();
+@include webkit-scrollbar-style-1;
+@include screen-1400;
+@include screen-768;
