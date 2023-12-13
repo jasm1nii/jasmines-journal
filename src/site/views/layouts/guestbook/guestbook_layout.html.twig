@@ -23,7 +23,6 @@
             </header>
             <main>
                 <section class="form">
-                
                     {% set dialog_message = [
                         {
                             type : "success",
@@ -46,7 +45,6 @@
                             message : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
                         }
                     ] %}
-
                     {% for value in dialog_message %}
                         {% if value.type == dialog %}
                             <p class="dialog {{ dialog }}">{{ value.message }}</p>
@@ -78,31 +76,19 @@
                 <section class="messages">
                     <article>
                         {% if comments != null and thread_parent == null %}
+
                             {% for comment in comments %}
-                                {{ include('guestbook_comment.html.twig') }}
+                                {{ include('_guestbook_comment.html.twig') }}
                             {% endfor %}
-                            <nav class="page-nav">
-                                <ul>
-                                    <li class="previous">
-                                        {% if current_page != 1 %}
-                                            <a href="/guestbook/page/{{ current_page - 1 }}">previous</a>
-                                        {% else %}
-                                            <span aria-hidden="true">🌼</span>
-                                        {% endif %}
-                                    </li>
-                                    <li class="position">
-                                        {{ current_page }} of {{ comment_pages + 1 }}
-                                    </li>
-                                    <li class="next">
-                                        {% if current_page != comment_pages + 1 %}
-                                            <a href="/guestbook/page/{{ current_page + 1 }}">next</a>
-                                        {% else %}
-                                            <span aria-hidden="true">🌻</span>
-                                        {% endif %}
-                                    </li>
-                                </ul>
-                            </nav>
+                            {% set paginator_url = "/guestbook/page" %}
+                            {% set page = current_page %}
+                            {% set total_pages = comment_pages %}
+                            {% set previous_placeholder = "🌼" %}
+                            {% set next_placeholder = "🌻" %}
+                            {{ include('@includes/_paginator.html.twig') }}
+
                         {% elseif thread_parent != null %}
+
                             {% set comment = thread_parent %}
                             {{ include('guestbook_comment.html.twig') }}
                             {% if thread_replies != null %}
@@ -114,7 +100,9 @@
                             <nav>
                                 <p><a href="/guestbook/page/{{ current_page }}">← return to previous page</a></p>
                             </nav>
+
                         {% endif %}
+
                         {% if comments == null and thread_parent == null %}
                             <p>nothing to see here... go back to the <a href="/guestbook">guestbook index?</a></p>
                         {% endif %}

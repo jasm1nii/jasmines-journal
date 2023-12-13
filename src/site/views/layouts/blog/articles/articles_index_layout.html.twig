@@ -28,6 +28,7 @@
                         <p>that's too far!!!</p>
                     {% endif %}
                 </article>
+                {% set paginator_url = "/blog/articles/page" %}
                 {{ include('@includes/_paginator.html.twig') }}
             </main>
         </div>

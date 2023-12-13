@@ -28,6 +28,7 @@
                             <p>that's too far!!!</p>
                         {% endif %}
                     </article>
+                    {% set paginator_url = "/blog/notes/page" %}
                     {{ include('@includes/_paginator.html.twig') }}
                     <aside class="feed-links">
                         <p><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></p>

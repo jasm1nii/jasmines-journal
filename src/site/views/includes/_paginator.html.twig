@@ -2,21 +2,23 @@
 	<ul>
 		<li class="previous">
 			{% if page != 1 %}
-				<a href="/blog/notes/page/{{ page - 1 }}">previous page</a>
+				<a href="{{ paginator_url }}/{{ page - 1 }}">previous page</a>
 			{% else %}
-				<span aria-hidden="true">🌸</span>
+				<span aria-hidden="true">
+					{{ previous_placeholder ? previous_placeholder : '🌸' }}
+				</span>
 			{% endif %}
 		</li>
 		<li>
-			{{ page }}
-			of
-			{{ total_pages + 1 }}
+			{{ page }} of {{ total_pages + 1 }}
 		</li>
 		<li class="next">
 			{% if page != total_pages + 1 %}
-				<a href="/blog/notes/page/{{ page + 1 }}">next page</a>
+				<a href="{{ paginator_url }}/{{ page + 1 }}">next page</a>
 			{% else %}
-				<span aria-hidden="true">💮</span>
+				<span aria-hidden="true">
+					{{ next_placeholder ? next_placeholder : '💮' }}
+				</span>
 			{% endif %}
 		</li>
 	</ul>
