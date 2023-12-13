@@ -1,0 +1,28 @@
+{% set dialog_message = [
+    {
+        type : "success",
+        message : 'message sent - pending approval!'
+    },
+    {
+        type : "exception",
+        message : "your message has been recorded, but the system was unable to notify the webmaster via email - approval may take more time than usual."
+    },
+    {
+        type : "has_html",
+        message : "the message should not contain any HTML tags!"
+    },
+    {
+        type : "time_too_short",
+        message : "request interval is too short - please wait a bit longer."
+    },
+    {
+        type : "request_failed",
+        message : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
+    }
+] %}
+
+{% for value in dialog_message %}
+	{% if value.type == dialog %}
+		<p class="dialog {{ dialog }}">{{ value.message }}</p>
+	{% endif %}
+{% endfor %}
