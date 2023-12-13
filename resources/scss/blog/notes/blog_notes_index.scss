@@ -3,7 +3,7 @@
 @use '_screen-sizes/index_768' as *;
 @use '_screen-sizes/index_500' as *;
 
-@include theme.base();
+@include theme.base;
 
 body {
     font-size: 1.1em;
@@ -60,7 +60,6 @@ main {
 }
 
 article {
-    margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -108,23 +107,7 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
-.page-nav {
-    display: flex;
-    justify-content: space-between;
-    a {
-        display: block;
-    }
-    .previous {
-        text-align: left;
-        margin-left: 0;
-        margin-right: auto;
-    }
-    .next {
-        text-align: right;
-        margin-left: auto;
-        margin-right: 0;
-    }
-}
+@include theme.paginator;
 
-@include screen-768();
-@include screen-500();
+@include screen-768;
+@include screen-500;

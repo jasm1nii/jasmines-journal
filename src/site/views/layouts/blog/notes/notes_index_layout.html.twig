@@ -27,15 +27,15 @@
                         {% else %}
                             <p>that's too far!!!</p>
                         {% endif %}
-                        <nav class="page-nav">
-                            {% if page != 1 %}
-                                <a class="previous" href="/blog/notes/page/{{ page - 1 }}">previous page</a>
-                            {% endif %}
-                            {% if page != total_pages + 1 %}
-                                <a class="next" href="/blog/notes/page/{{ page + 1 }}">next page</a>
-                            {% endif %}
-                        </nav>
                     </article>
+                    <nav class="page-nav">
+                        {% if page != 1 %}
+                            <a class="previous" href="/blog/notes/page/{{ page - 1 }}">previous page</a>
+                        {% endif %}
+                        {% if page != total_pages + 1 %}
+                            <a class="next" href="/blog/notes/page/{{ page + 1 }}">next page</a>
+                        {% endif %}
+                    </nav>
                     <aside class="feed-links">
                         <p><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></p>
                     </aside>

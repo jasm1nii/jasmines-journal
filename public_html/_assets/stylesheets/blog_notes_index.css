@@ -228,7 +228,6 @@ main::after {
 }
 
 article {
-  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -279,6 +278,8 @@ iframe {
 .page-nav {
   display: flex;
   justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 2em;
 }
 .page-nav a {
   display: block;

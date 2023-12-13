@@ -3,7 +3,7 @@
 @use '_screen-sizes/index_768' as *;
 @use '_screen-sizes/index_500' as *;
 
-@include theme.base();
+@include theme.base;
 
 body {
     font-size: 1.1em;
@@ -102,5 +102,7 @@ article {
     }
 }
 
-@include screen-768();
-@include screen-500();
+@include theme.paginator;
+
+@include screen-768;
+@include screen-500;
