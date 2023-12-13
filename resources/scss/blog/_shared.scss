@@ -63,22 +63,35 @@
 
 @mixin paginator {
     .page-nav {
-        display: flex;
-        justify-content: space-between;
         padding: 1em;
         margin-bottom: 2em;
-        a {
+        line-height: 2em;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0;
+        }
+        li {
             display: block;
+            span {
+                font-size: x-large;
+            }
+        }
+        .position {
+            text-align: center;
+            margin: 0 auto;
         }
         .previous {
             text-align: left;
             margin-left: 0;
             margin-right: auto;
+            width: 25%;
         }
         .next {
             text-align: right;
             margin-left: auto;
             margin-right: 0;
+            width: 25%;
         }
     }
 }

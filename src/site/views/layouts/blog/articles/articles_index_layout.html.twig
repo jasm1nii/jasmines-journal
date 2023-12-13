@@ -28,14 +28,7 @@
                         <p>that's too far!!!</p>
                     {% endif %}
                 </article>
-                <nav class="page-nav">
-                    {% if page != 1 %}
-                        <a class="previous" href="/blog/articles/page/{{ page - 1 }}">previous page</a>
-                    {% endif %}
-                    {% if page != total_pages + 1 %}
-                        <a class="next" href="/blog/articles/page/{{ page + 1 }}">next page</a>
-                    {% endif %}
-                </nav>
+                {{ include('@includes/_paginator.html.twig') }}
             </main>
         </div>
         <footer>

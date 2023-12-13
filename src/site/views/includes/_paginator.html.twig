@@ -1,0 +1,23 @@
+<nav class="page-nav">
+	<ul>
+		<li class="previous">
+			{% if page != 1 %}
+				<a href="/blog/notes/page/{{ page - 1 }}">previous page</a>
+			{% else %}
+				<span aria-hidden="true">🌸</span>
+			{% endif %}
+		</li>
+		<li>
+			{{ page }}
+			of
+			{{ total_pages + 1 }}
+		</li>
+		<li class="next">
+			{% if page != total_pages + 1 %}
+				<a href="/blog/notes/page/{{ page + 1 }}">next page</a>
+			{% else %}
+				<span aria-hidden="true">💮</span>
+			{% endif %}
+		</li>
+	</ul>
+</nav>
