@@ -83,15 +83,25 @@
                                 {{ include('guestbook_comment.html.twig') }}
                             {% endfor %}
                             <nav class="page-nav">
-                                {% if current_page != 1 %}
-                                    <a class="previous" href="/guestbook/page/{{ current_page - 1 }}">previous</a>
-                                {% else %}
-                                    <span class="previous" aria-hidden="true">🌼</span>
-                                {% endif %}
-                                <span class="position">{{ current_page }} of {{ comment_pages + 1 }}</span>
-                                {% if current_page != comment_pages + 1 %}
-                                    <a class="next" href="/guestbook/page/{{ current_page + 1 }}">next</a>
-                                {% endif %}
+                                <ul>
+                                    <li class="previous">
+                                        {% if current_page != 1 %}
+                                            <a href="/guestbook/page/{{ current_page - 1 }}">previous</a>
+                                        {% else %}
+                                            <span aria-hidden="true">🌼</span>
+                                        {% endif %}
+                                    </li>
+                                    <li class="position">
+                                        {{ current_page }} of {{ comment_pages + 1 }}
+                                    </li>
+                                    <li class="next">
+                                        {% if current_page != comment_pages + 1 %}
+                                            <a href="/guestbook/page/{{ current_page + 1 }}">next</a>
+                                        {% else %}
+                                            <span aria-hidden="true">🌻</span>
+                                        {% endif %}
+                                    </li>
+                                </ul>
                             </nav>
                         {% elseif thread_parent != null %}
                             {% set comment = thread_parent %}

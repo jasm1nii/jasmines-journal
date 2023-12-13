@@ -180,25 +180,27 @@ form {
     }
     & nav {
         margin: 2em auto;
-        display: flex;
         letter-spacing: .1em;
-        justify-content: space-between;
         line-height: 2em;
         font-weight: 500;
-        a {
-            display: block;
-            text-decoration: 1.5px underline solid;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0;
         }
-        span {
+        li {
             display: block;
+            span {
+                font-size: x-large;
+            }
+        }
+        a {
+            text-decoration: 1.5px underline solid;
         }
         .previous {
             text-align: left;
             margin-left: 0;
             margin-right: auto;
-            &:not(a) {
-                font-size: x-large;
-            }
         }
         .position {
             text-align: center;
