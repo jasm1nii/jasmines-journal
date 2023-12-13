@@ -22,5 +22,3 @@
     );
 
     define("REQUEST", $_SERVER['REQUEST_URI']);
-    
-?>

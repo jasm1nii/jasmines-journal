@@ -17,5 +17,3 @@
 
     #[\Attribute(\Attribute::IS_REPEATABLE)]
     class Testing {}
-
-?>

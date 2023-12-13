@@ -8,7 +8,6 @@
     final class LinkGallery extends Layout {
 
         protected string $layout = DIR['layouts'] . "link-gallery_layout.html.twig";
-
         protected static string $includes_path = DIR['content'] . "link-gallery";
         
         final protected function render(): void {
@@ -22,4 +21,3 @@
         }
 
     }
-?>

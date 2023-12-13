@@ -8,7 +8,6 @@
     final class ChangelogSubpage extends Layout {
 
         protected string $layout    =  DIR['layouts'] . "changelog/changelog_subpage.html.twig";
-
         protected string $content;
 
         private function matchContent(): ?string {
@@ -34,5 +33,3 @@
         }
 
     }
-    
-?>

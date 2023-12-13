@@ -41,7 +41,6 @@
         public static function matchURL(string $query): ?string {
 
             preg_match($query, REQUEST, $matches);
-
             return $matches[0] ??= null;
 
         }
@@ -65,5 +64,3 @@
         protected static function dispatch(): void {}
 
     }
-    
-?>
