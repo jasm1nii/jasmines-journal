@@ -76,10 +76,6 @@ view this section at [/resources/webdev](/resources/webdev)
 
 ## <span id="miscellaneous">miscellaneous</span>
 
-- <a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="sponsored">dropbox</a> ⭐
-
-    if you don't have an account yet, sign up via referral link and download the desktop app to bump up your free storage limit by 500 MB <span aria-hidden="true">૮ ˶ᵔ ᵕ ᵔ˶ ა</span>
-
 - [your world of text](https://www.yourworldoftext.com/)
 
     a site for freeform text posting.

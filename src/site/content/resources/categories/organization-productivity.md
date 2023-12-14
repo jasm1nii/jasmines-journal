@@ -36,15 +36,9 @@
 
     really helpful for visualizing ideas and mapping them out!
 
-- <a href="https://affiliate.notion.so/jasm1nii-neocities" rel="sponsored">notion 👑 🎀</a>
-
-    this is my go-to app for... almost everything. seamlessly integrates with many third-party apps (like google calendar, dropbox, and github). notes can be exported as PDFs, markdown files, or HTML pages.
-
-    <a href="https://affiliate.notion.so/jasm1nii-neocities" rel="external sponsored"><img src="/_assets/media/resources/affiliate-white.svg" alt="notion affiliate badge" width="100"></a>
-
 - <a href="https://coda.grsm.io/wvrobgf6dq36" rel="sponsored">coda 🎀</a>
 
-    i've personally found this better suited to team collaboration - much cheaper to scale, as well - but the mobile app is still a bit barebones at the moment.
+    i've personally found this better suited to team collaboration. it's also much cheaper to scale than notion, but the mobile app is still a bit barebones at the moment.
 
 - [obsidian](https://obsidian.md/)
 
