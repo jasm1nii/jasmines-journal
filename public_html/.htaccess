@@ -4,6 +4,10 @@ DirectorySlash off
 AddDefaultCharset utf-8
 RewriteEngine on
 
+RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) /index.php [L]
+
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)  /$1.html [L] 
 
@@ -14,10 +18,6 @@ RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
 RewriteRule ^(.*)/+$ $1 [R=301,L]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*) /index.php [L]
 
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
@@ -78,14 +78,15 @@ AddHandler server-parsed .html .php
   </IfModule>
 </IfModule>
 
-# Now some content won't benefit from brotli, like already pre-compressed content,
-# So let us not bother with it
-SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-brotli no-gzip dont-vary
- 
-# Make sure proxies don't deliver the wrong content
-Header append Vary Accept-Encoding env=!dont-vary
+<IfModule mod_setenvif.c>
+  # Now some content won't benefit from brotli, like already pre-compressed content,
+  # So let us not bother with it
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-brotli no-gzip dont-vary
+</IfModule>
 
 <IfModule mod_headers.c>
+  # Make sure proxies don't deliver the wrong content
+  Header append Vary Accept-Encoding env=!dont-vary
   Header always set Cache-Control "public, no-cache, stale-if-error=86400"
   Header always set Content-Language "en"
 

@@ -1,6 +1,8 @@
 <?php
 
-    require __DIR__ . '/../vendor/autoload.php';
+    phpinfo();
+
+    /*require __DIR__ . '/../vendor/autoload.php';
 
     use JasminesJournal\Site\Models\NotesDatabase;
     use JasminesJournal\Site\Models\ArticlesDatabase;
@@ -29,4 +31,4 @@
         checkNotesDB();
         checkArticlesDB();
 
-    }
+    }*/
