@@ -4,6 +4,7 @@
 *.ini
 !env_sample.ini
 tmp/twig/*
+tmp/xdebug/*
 !*.gitattributes
 vendor/*
 bin/sitemap-generator

@@ -1,8 +1,11 @@
 <?php
 
-    phpinfo();
+    /* uncomment to check PHP environment */
+    /* phpinfo(); */
 
-    /*require __DIR__ . '/../vendor/autoload.php';
+    /* first-time database setup */
+    /*
+    require __DIR__ . '/../vendor/autoload.php';
 
     use JasminesJournal\Site\Models\NotesDatabase;
     use JasminesJournal\Site\Models\ArticlesDatabase;
@@ -31,4 +34,5 @@
         checkNotesDB();
         checkArticlesDB();
 
-    }*/
+    }
+    */
