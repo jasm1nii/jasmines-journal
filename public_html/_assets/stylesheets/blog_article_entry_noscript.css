@@ -40,6 +40,7 @@
   }
   a:hover {
     color: black;
+    background-color: rgb(255, 234, 176);
   }
 }
 @media (prefers-color-scheme: light) {

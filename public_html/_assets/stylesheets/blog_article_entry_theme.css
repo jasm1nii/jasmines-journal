@@ -58,6 +58,7 @@
 }
 .dark-mode a:hover {
   color: black;
+  background-color: rgb(255, 234, 176);
 }
 
 :root .dark-mode, :host .dark-mode {
