@@ -31,7 +31,7 @@
 
         private static function getSlug(string $content_path): ?string {
 
-            $type = get_class();
+            $type = get_called_class();
             $slug = rtrim($content_path, '.html.twig');
 
             return ltrim($slug, DIR['content'] . "blog/{$type}");

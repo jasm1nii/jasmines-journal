@@ -14,11 +14,12 @@
         private readonly int $current_page;
 
         private ?string $dialog;
+        private ?int $total_pages;
         private ?array $comments;
         private ?array $thread_parent;
         private ?array $thread_replies;
 
-        final public function __construct(bool $show_dialog = false, int $page_num) {
+        final public function __construct(bool $show_dialog, int $page_num) {
 
             $this->current_page = $page_num;
 

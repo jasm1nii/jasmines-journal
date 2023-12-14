@@ -30,6 +30,10 @@
 
     final class BlogSubpageIndex extends Layout {
 
+        private ?object $data;
+        private ?int $total_pages;
+        private ?string $index;
+
         final public function __construct(private string $type, private int $current_page) {
 
             $this->data = match ($this->type) {
