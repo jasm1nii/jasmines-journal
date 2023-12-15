@@ -31,6 +31,12 @@ RewriteRule .* - [F]
 RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
+ModPageSpeed on
+AddOutputFilterByType MOD_PAGESPEED_OUTPUT_FILTER text/html
+ModPagespeedPreserveUrlRelativity on
+ModPagespeedRewriteLevel PassThrough
+ModPagespeedEnableFilters hint_preload_subresources,insert_dns_prefetch,collapse_whitespace,remove_comments,rewrite_javascript,rewrite_css,convert_to_webp_lossless,convert_to_webp_animated
+
 # ref: https://bytepursuits.com/apache-enabling-brotli-compression-with-gzip-deflate-fallback
 
 <IfModule mod_brotli.c>
