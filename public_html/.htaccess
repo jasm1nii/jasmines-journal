@@ -1,23 +1,25 @@
-Options -MultiViews +Includes -Indexes
+AddDefaultCharset utf-8
+
+AddHandler server-parsed .html .php
+AddOutputFilter INCLUDES .shtml
+AddType text/html .shtml
+
 DirectorySlash off
 
-AddDefaultCharset utf-8
+Options +FollowSymLinks -Indexes +Includes -MultiViews
+
 RewriteEngine on
 
-RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*) /index.php [L]
+RewriteRule ^(.*)/+$ $1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)  /$1.html [L] 
 
-RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)  /$1.php [L]
 
-RewriteBase /
-RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
-
-RewriteRule ^(.*)/+$ $1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*) /index.php [L]
 
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
@@ -26,15 +28,17 @@ RewriteCond %{HTTP_REFERER} lolcow.farm [NC,OR]
 RewriteCond %{HTTP_REFERER} pawoo.net [NC]
 RewriteRule .* - [F]
 
-AddType text/html .shtml
-AddOutputFilter INCLUDES .shtml
-AddHandler server-parsed .html .php
+RewriteBase /
+RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
 # ref: https://bytepursuits.com/apache-enabling-brotli-compression-with-gzip-deflate-fallback
 
 <IfModule mod_brotli.c>
+
   AddOutputFilterByType BROTLI_COMPRESS application/json application/xml text/plain text/html text/css text/javascript text/xml
+
   <IfModule mod_headers.c>
+
     # Static Brotli:
     # Browser accepts brotli, and matching pre-compressed file exists => rewrite to .br file
     RewriteCond %{HTTP:Accept-encoding} br
@@ -46,18 +50,25 @@ AddHandler server-parsed .html .php
     RewriteRule "\.js\.br$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
     RewriteRule "\.svg\.br$" "-" [T=image/svg+xml,E=no-brotli,E=no-gzip]
 
-    <FilesMatch "(\.js\.br|\.css\.br|\.html\.br|\.svg\.br)$">
+    <FilesMatch "\.(css|html|js|svg)\.br$">
+
       # Serve correct encoding type.
       Header append Content-Encoding br
       # Force proxies to cache brotli & non-brotli files separately.
       Header append Vary Accept-Encoding
+
     </FilesMatch>
+
   </IfModule>
+
 </IfModule>
 
 <IfModule mod_deflate.c>
+
   AddOutputFilterByType DEFLATE application/json application/xml text/plain text/html text/css text/javascript text/xml
+
   <IfModule mod_headers.c>
+
     # Static Gzip:
     # Browser accepts gzip, and matching pre-compressed file exists => rewrite to .gz file
     RewriteCond %{HTTP:Accept-Encoding} gzip
@@ -67,26 +78,28 @@ AddHandler server-parsed .html .php
     RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-brotli,E=no-gzip]
     RewriteRule "\.html\.gz$" "-" [T=text/html,E=no-brotli,E=no-gzip]
     RewriteRule "\.js\.gz$" "-" [T=application/javascript,E=no-brotli,E=no-gzip]
-    RewriteRule "\.svg\.br$" "-" [T=image/svg+xml,E=no-brotli,E=no-gzip]
+    RewriteRule "\.svg\.gz$" "-" [T=image/svg+xml,E=no-brotli,E=no-gzip]
 
     <FilesMatch "\.(css|html|js|svg)\.gz$">
-      # Serve correct encoding type
-      # Let proxies cache gzip & non-gzip files separately
+
       Header set Content-Encoding gzip
       Header append Vary Accept-Encoding
+
     </FilesMatch>
+
   </IfModule>
+
 </IfModule>
 
 <IfModule mod_setenvif.c>
-  # Now some content won't benefit from brotli, like already pre-compressed content,
-  # So let us not bother with it
   SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-brotli no-gzip dont-vary
 </IfModule>
 
 <IfModule mod_headers.c>
+
   # Make sure proxies don't deliver the wrong content
   Header append Vary Accept-Encoding env=!dont-vary
+
   Header always set Cache-Control "public, no-cache, stale-if-error=86400"
   Header always set Content-Language "en"
 
@@ -107,9 +120,11 @@ AddHandler server-parsed .html .php
   
   Header always set Report-To "{\"group\":\"default\",\"max_age\":31536000,\"endpoints\":[{\"url\":\"https://jasm1niixyz.report-uri.com/a/d/g\"}],\"include_subdomains\":true}"
   Header always set NEL "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
+
 </IfModule>
 
 <IfModule mod_expires.c>
+
   ExpiresActive On
   ExpiresDefault "access plus 1 day"
 
@@ -168,6 +183,7 @@ AddHandler server-parsed .html .php
   ExpiresByType video/mpeg "modification plus 1 year"
   ExpiresByType video/ogg "modification plus 1 year"
   ExpiresByType video/webm "modification plus 1 year"
+
 </IfModule>
 
 # php -- BEGIN cPanel-generated handler, do not edit

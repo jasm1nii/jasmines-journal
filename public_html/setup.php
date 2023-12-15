@@ -1,7 +1,8 @@
 <?php
 
     /* uncomment to check PHP environment */
-    /* phpinfo(); */
+    // xdebug_info();
+    // phpinfo();
 
     /* first-time database setup */
     /*
