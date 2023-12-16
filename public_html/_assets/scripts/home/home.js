@@ -256,22 +256,4 @@
     // do not use the name 'webring-css' or you will conflict with other webrings
     window.customElements.define("ring-900", p1v1g6);
   };
-  { // healing hospital
-    const tag = document.getElementById('healinghospital');
-
-    let c = `<a href="https://strawberry-gashes.neocities.org" rel="external"><img src="/_assets/media/main/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>`;
-    c += `<a href="https://mizuki.world/healinghospital" rel="external"><img src="/_assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>`;
-    c += `<a href="https://tsuinosora.neocities.org/" rel="external"><img src="/_assets/media/main/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>`;
-
-    tag.insertAdjacentHTML('afterbegin', c);
-  };
-  { // autiring
-    const tag = document.getElementById('autiring');
-
-    let c = `<a href='https://zombiigutz.neocities.org/' rel="external"><img src="/_assets/media/main/autiring-left.png" width="32" height="15" alt="autists online webring: previous site" loading="lazy"/></a>`;
-    c += `<a href="https://macaque.moe/autiring/index.html" rel="external"><img src="/_assets/media/main/autiring.png" width="96" height="15" alt="autists online webring: index" loading="lazy"/></a>`;
-    c += `<a href='https://jubiland.neocities.org/' rel="external" title="next site"><img src="/_assets/media/main/autiring-right.png" width="32" height="15" alt="autists online webring: next site" loading="lazy"/></a>`;
-
-    tag.insertAdjacentHTML('afterbegin', c);
-  };
 };
