@@ -20,6 +20,7 @@
 }
 .dark-mode a:hover {
   color: black;
+  background-color: rgb(255, 234, 176);
 }
 .dark-mode .h-entry, .dark-mode #comments, .dark-mode #webmentions {
   background-color: rgb(22, 21, 21);

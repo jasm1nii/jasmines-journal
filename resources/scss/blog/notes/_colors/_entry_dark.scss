@@ -10,6 +10,7 @@
         color: $dark-link-color;
         &:hover {
             color: black;
+            background-color: $dark-link-hover-bg-color;
         }
     }
     .h-entry, #comments, #webmentions {
