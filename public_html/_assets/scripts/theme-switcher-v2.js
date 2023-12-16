@@ -1,16 +1,15 @@
 // based on https://gist.github.com/qaisarferoz/03b133e7fc535dd9f097e31d1f2d1303
-
 {
-    var baseTheme = document.getElementById("base-theme").getAttribute("href");
-    var baseThemeFile = baseTheme.split("/")[3];
-    var baseThemeName = baseThemeFile.replace(".css","");
+    let baseTheme = document.getElementById("base-theme").getAttribute("href");
+    let baseThemeFile = baseTheme.split("/")[3];
+    let baseThemeName = baseThemeFile.replace(".css","");
 
     if(!document.getElementById('js-theme')) {
-        var link = document.createElement('link');
-            link.id = 'js-theme';
-            link.rel = 'stylesheet';
-            link.href = `/_assets/stylesheets/${baseThemeName}_theme.css`;
-            link.type = 'text/css';
+        const link = document.createElement('link');
+        link.id = 'js-theme';
+        link.rel = 'stylesheet';
+        link.href = `/_assets/stylesheets/${baseThemeName}_theme.css`;
+        link.type = 'text/css';
         document.head.appendChild(link);
     }
 
@@ -18,40 +17,30 @@
 
 {
     // retains user-selected theme independent of system color preferences:
-    
     window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', event => {
             event.matches ? "dark" : "light";
     });
 
-    const   page = document.body;
-    const   themeSwitch = document.createElement('button');
+    const page = document.body;
+    const themeSwitch = document.createElement('button');
 
-    // creates theme toggle button:
-
+    // create theme toggle button:
     themeSwitch.setAttribute('type', 'button');
     themeSwitch.setAttribute('id', 'themeSwitch');
-
     document.querySelector('hgroup').insertAdjacentElement('beforebegin',themeSwitch);
 
     // set default theme:
-
-    if(localStorage.theme) {
-        page.classList.add(localStorage.theme);
-    } else {
-        page.classList.add('light-mode');
-    };
+    localStorage.theme
+        ? page.classList.add(localStorage.theme)
+        : page.classList.add('light-mode');
 
     // set theme indicator text:
-
-    if (page.classList.contains('light-mode')) {
-        themeSwitch.innerText = '🌞';
-    } else {
-        themeSwitch.innerText = '🌚';
-    };
+    page.classList.contains('light-mode')
+        ? themeSwitch.innerText = '🌞'
+        : themeSwitch.innerText = '🌚';
 
     // switch theme and store in local storage:
-
     themeSwitch.addEventListener("click", function() {
         if (page.classList.contains('light-mode')){
             page.classList.remove('light-mode');

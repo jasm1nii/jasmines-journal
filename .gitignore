@@ -9,3 +9,4 @@ tmp/xdebug/*
 vendor/*
 bin/sitemap-generator
 resources/drafts
+node_modules

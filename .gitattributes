@@ -1,2 +1,4 @@
 **.php linguist-language=PHP
 bin/sitemap-generator linguist-vendored
+**.min.js linguist-generated
+**.min.js.map linguist-generated
