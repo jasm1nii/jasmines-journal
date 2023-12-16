@@ -17,6 +17,8 @@
 
 ### coding help
 
+#### general
+
 - [w3schools](https://www.w3schools.com/)
 
     learn all the frontend languages (<abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr> and javascript) in addition to server-side programming (<abbr title="PHP Hypertext Preprocessor">PHP</abbr>, <abbr title="Structured Query Language">SQL</abbr>, and more).
@@ -33,7 +35,17 @@
 
     a collection of sites for learning up to 13 different programming languages.
 
+#### javascript
+
 - [the modern javascript tutorial](https://javascript.info/)
+
+- [javascript tutorial](https://www.javascripttutorial.net/)
+
+#### PHP
+
+- [PHP the right way 👑](https://phptherightway.com/)
+
+- [clean code PHP](https://github.com/piotrplenik/clean-code-php)
 
 - [PHP tutorial](https://www.phptutorial.net/)
 
@@ -56,7 +68,7 @@ these resources can help keep your code more consistent and reduce the redundanc
 
 **a free internet is an accessible internet** - ideally, a website's design should accommodate a wide range of visitors, included disabled people and assistive technology users.
 
-- [the ultimate *** website](https://theultimatemotherfuckingwebsite.com/) 👑
+- [the ultimate *** website 👑](https://theultimatemotherfuckingwebsite.com/)
 
     i actually found this site from [frills' accessibility master post!](https://fri11s.neocities.org/blog/accessibility/)
 
@@ -114,7 +126,7 @@ for a list of things that i've used specifically on this site (including graphic
 
 ## site features
 
-- [page crypt](https://www.maxlaumeister.com/pagecrypt/) 👑
+- [page crypt 👑](https://www.maxlaumeister.com/pagecrypt/)
 
     password protect your static <abbr title="HyperText Markup Language">HTML</abbr> pages - you should only use this if your host doesn't allow for access configuration on the server side.
 
@@ -134,7 +146,7 @@ for a list of things that i've used specifically on this site (including graphic
 
 ## miscellaneous
 
-- [a guide for blocking <abbr title="artificial intelligence">AI</abbr>/<abbr title="machine learning">ML</abbr> scraper bots](https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/) 👑
+- [a guide for blocking <abbr title="artificial intelligence">AI</abbr>/<abbr title="machine learning">ML</abbr> scraper bots 👑](https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/)
 
 - [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
 
@@ -167,7 +179,7 @@ for a list of things that i've used specifically on this site (including graphic
 
     tutorials and apps for building web projects that scale with minimal coding knowledge.
 
-- [32-bit cafe](https://32bit.cafe/) 👑
+- [32-bit cafe 👑](https://32bit.cafe/)
 
     a community of personal web enthusiasts - they also run a [discord server!](https://32bit.cafe/discord/) **18+ only, <abbr title="safe for work">SFW</abbr>.**
 

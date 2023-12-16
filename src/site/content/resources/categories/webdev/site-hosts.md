@@ -64,8 +64,8 @@ pricing
 :   free and paid (9-49 USD per year)
 
 storage limit
-:   - free - 100 elements, with 2 MB for images and 4 MB for videos.
-    - paid - no element limit, with 16 MB for images and 32 MB for videos.
+:   - free - 100 elements, with 2 MB per image and 4 MB per video.
+    - paid - no element limit, with 16 MB per image and 32 MB per video.
 
 monthly bandwidth
 :   no limit defined
@@ -108,7 +108,7 @@ storage limit
 
 monthly bandwidth
 :   - free - 10,000 page views
-    - paid - 1000,000 page views
+    - paid - 100,000 page views
 
 notes
 :   the open-source alternative to webflow, with much higher hosting limits!
