@@ -19,27 +19,15 @@
   color: inherit;
   border-color: rgb(92, 73, 109);
 }
-.dark-mode .messages nav a {
-  background-color: rgb(37, 36, 41);
-  border: 1px solid purple;
-}
-.dark-mode .messages nav a:hover {
-  background-color: rgb(223, 155, 223);
-  color: black;
-}
-.dark-mode .messages .current a {
-  background-color: rgb(255, 234, 164);
-  color: black;
-}
-.dark-mode .messages .current a:hover {
-  background-color: pink;
-}
 .dark-mode .message {
   border-color: rgb(97, 42, 97);
   background-color: rgb(24, 22, 22);
 }
 .dark-mode .message a {
   color: rgb(219, 176, 243);
+}
+.dark-mode .previous a:hover, .dark-mode .next a:hover {
+  background-color: antiquewhite;
 }
 
 .light-mode {
@@ -52,6 +40,9 @@
 .light-mode a:hover {
   color: rgb(179, 48, 113);
 }
+.light-mode .previous a:hover, .light-mode .next a:hover {
+  background-color: antiquewhite;
+}
 .light-mode #themeSwitch:hover, .light-mode input[type=submit]:hover {
   background-color: rgb(190, 241, 224);
 }
@@ -61,21 +52,6 @@
 }
 .light-mode input, .light-mode textarea {
   background-color: rgb(253, 249, 255);
-}
-.light-mode .messages nav a {
-  background-color: rgb(231, 173, 209);
-  box-shadow: 2px 2px rgb(151, 103, 111);
-}
-.light-mode .messages nav a:hover {
-  background-color: rgb(148, 97, 148);
-  color: rgb(255, 255, 255);
-}
-.light-mode .messages .current a {
-  background-color: rgb(255, 243, 207);
-  color: black;
-}
-.light-mode .messages .current a:hover {
-  background-color: rgb(199, 114, 128);
 }
 .light-mode .message {
   background-color: rgb(255, 240, 250);

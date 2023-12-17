@@ -9,6 +9,13 @@
             color: rgb(179, 48, 113);
         }
     }
+    .previous, .next {
+        a {
+            &:hover {
+                background-color: antiquewhite;
+            }
+        }
+    }
     #themeSwitch, input[type="submit"] {
         &:hover {
             background-color: rgb(190, 241, 224);
@@ -20,27 +27,6 @@
     }
     input, textarea {
         background-color: rgb(253, 249, 255);
-    }
-    .messages {
-        & nav {
-            & a {
-                background-color: rgb(231, 173, 209);
-                box-shadow: 2px 2px rgb(151, 103, 111);
-                &:hover {
-                    background-color: rgb(148, 97, 148);
-                    color: rgb(255, 255, 255);
-                }
-            }
-        }
-        & .current {
-            & a {
-                background-color: rgb(255, 243, 207);
-                color: black;
-                &:hover {
-                    background-color: rgb(199, 114, 128);
-                }
-            }
-        }
     }
     .message {
         background-color: rgb(255, 240, 250);

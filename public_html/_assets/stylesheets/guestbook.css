@@ -220,9 +220,11 @@ form textarea {
 }
 .messages nav a {
   text-decoration: none;
+}
+.messages nav .previous a, .messages nav .next a {
+  display: inline-block;
   border-radius: 50px;
-  padding: 0.5em;
-  font-size: larger;
+  height: 40px;
 }
 .messages nav .previous {
   text-align: left;
@@ -241,12 +243,6 @@ form textarea {
   margin-right: 0;
   padding-right: 5px;
   width: 25%;
-}
-
-#issues {
-  border-bottom: 1px solid;
-  margin-bottom: 3em;
-  padding: 1em;
 }
 
 .message {

@@ -79,11 +79,9 @@
         }
         .previous, .next {
             a {
-                padding: .5em;
-                text-decoration: none;
-                font-size: larger;
+                display: inline-block;
                 border-radius: 50px;
-                border: 1px solid;
+                height: 40px;
             }
         }
         .position {

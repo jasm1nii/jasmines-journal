@@ -28,27 +28,15 @@
     color: inherit;
     border-color: rgb(92, 73, 109);
   }
-  .messages nav a {
-    background-color: rgb(37, 36, 41);
-    border: 1px solid purple;
-  }
-  .messages nav a:hover {
-    background-color: rgb(223, 155, 223);
-    color: black;
-  }
-  .messages .current a {
-    background-color: rgb(255, 234, 164);
-    color: black;
-  }
-  .messages .current a:hover {
-    background-color: pink;
-  }
   .message {
     border-color: rgb(97, 42, 97);
     background-color: rgb(24, 22, 22);
   }
   .message a {
     color: rgb(219, 176, 243);
+  }
+  .previous a:hover, .next a:hover {
+    background-color: antiquewhite;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -62,6 +50,9 @@
   body a:hover {
     color: rgb(179, 48, 113);
   }
+  body .previous a:hover, body .next a:hover {
+    background-color: antiquewhite;
+  }
   body #themeSwitch:hover, body input[type=submit]:hover {
     background-color: rgb(190, 241, 224);
   }
@@ -71,21 +62,6 @@
   }
   body input, body textarea {
     background-color: rgb(253, 249, 255);
-  }
-  body .messages nav a {
-    background-color: rgb(231, 173, 209);
-    box-shadow: 2px 2px rgb(151, 103, 111);
-  }
-  body .messages nav a:hover {
-    background-color: rgb(148, 97, 148);
-    color: rgb(255, 255, 255);
-  }
-  body .messages .current a {
-    background-color: rgb(255, 243, 207);
-    color: black;
-  }
-  body .messages .current a:hover {
-    background-color: rgb(199, 114, 128);
   }
   body .message {
     background-color: rgb(255, 240, 250);

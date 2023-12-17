@@ -2,7 +2,7 @@
 	<ul>
 		<li class="previous">
 			{% if page != 1 %}
-				<a href="{{ paginator_url }}/{{ page - 1 }}" title="previous page">⮜</a>
+				<a href="{{ paginator_url }}/{{ page - 1 }}" title="previous page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-left.svg" alt="previous page arrow" width="40" height="40"/></a>
 			{% else %}
 				<span aria-hidden="true">
 					{{ previous_placeholder ? previous_placeholder : '🌸' }}
@@ -14,7 +14,7 @@
 		</li>
 		<li class="next">
 			{% if page != total_pages + 1 %}
-				<a href="{{ paginator_url }}/{{ page + 1 }}" title="next page">⮞</a>
+				<a href="{{ paginator_url }}/{{ page + 1 }}" title="next page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-right.svg" alt="next page arrow" width="40" height="40"/></a>
 			{% else %}
 				<span aria-hidden="true">
 					{{ next_placeholder ? next_placeholder : '💮' }}

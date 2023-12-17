@@ -24,32 +24,18 @@
             border-color: rgb(92, 73, 109);
         }
     }
-    .messages {
-        & nav {
-            & a {
-                background-color: rgb(37, 36, 41);
-                border: 1px solid purple;
-                &:hover {
-                    background-color: rgb(223, 155, 223);
-                    color: black;
-                }
-            }
-        }
-        & .current {
-            & a {
-                background-color: rgb(255, 234, 164);
-                color: black;
-                &:hover {
-                    background-color: pink;
-                }
-            }
-        }
-    }
     .message {
         border-color: rgb(97, 42, 97);
         background-color: rgb(24, 22, 22);
         & a {
             color: rgb(219, 176, 243);
+        }
+    }
+    .previous, .next {
+        a {
+            &:hover {
+                background-color: antiquewhite;
+            }
         }
     }
 }
