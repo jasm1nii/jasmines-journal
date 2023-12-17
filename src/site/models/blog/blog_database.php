@@ -76,13 +76,30 @@
             // format with leading zeros:
             $date = date_format($date_obj, 'Y-m-d');
 
-            $sql = $this->database->prepare(
+            /*
+            $tags = get_meta_tags('http://' . $_SERVER['HTTP_HOST'] . $url)['keywords'];
+            $tags_explode = explode(", ", $tags);
+            $tags_implode = "'" . implode("','", $tags_explode) . "'";
+            $tags_nospace = implode(",", $tags_explode);
+
+            $sql_alter = $this->database->prepare(
+                "ALTER TABLE `{$this->table}`
+                MODIFY `Tags`
+                SET({$tags_implode})"
+            );
+
+            $sql_alter->execute();
+            */
+
+            $sql_insert = $this->database->prepare(
                 "INSERT INTO `{$this->table}`
                 (`File Path`, `Relative URL`, `Date`)
                 VALUES ('{$path}', '{$url}', '{$date}')"
             );
 
-            $sql->execute();
+            $sql_insert->execute();
+
+            // var_dump($tags_implode);
 
         }
 
