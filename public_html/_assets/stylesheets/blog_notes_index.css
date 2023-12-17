@@ -291,6 +291,13 @@ iframe {
 .page-nav li span {
   font-size: x-large;
 }
+.page-nav .previous a, .page-nav .next a {
+  padding: 0.5em;
+  text-decoration: none;
+  font-size: larger;
+  border-radius: 50px;
+  border: 1px solid;
+}
 .page-nav .position {
   text-align: center;
   margin: 0 auto;

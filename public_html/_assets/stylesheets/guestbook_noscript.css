@@ -28,6 +28,10 @@
     color: inherit;
     border-color: rgb(92, 73, 109);
   }
+  .messages nav a {
+    background-color: rgb(37, 36, 41);
+    border: 1px solid purple;
+  }
   .messages nav a:hover {
     background-color: rgb(223, 155, 223);
     color: black;
@@ -67,6 +71,10 @@
   }
   body input, body textarea {
     background-color: rgb(253, 249, 255);
+  }
+  body .messages nav a {
+    background-color: rgb(231, 173, 209);
+    box-shadow: 2px 2px rgb(151, 103, 111);
   }
   body .messages nav a:hover {
     background-color: rgb(148, 97, 148);

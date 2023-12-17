@@ -83,12 +83,12 @@ pricing
 :   free and paid (14-39 USD per month)
 
 storage limit
-:   - free - 2 pages and 50 content items.
-    - paid - 150 pages and 0-10,000 content items.
+:   - free - 2 pages & 50 content items.
+    - paid - 150 pages & 0-10,000 content items.
 
 monthly bandwidth
-:   - free - 1 GB and 1,000 visitors.
-    - paid - 50-400 GB and 250,000-300,000 visitors.
+:   - free - 1 GB & 1,000 visitors.
+    - paid - 50-400 GB & 250,000-300,000 visitors.
 
 notes
 :   a super sleek visual site builder and content management system for personal and professional pages alike.
@@ -190,6 +190,35 @@ notes
 ## static and dynamic sites
 
 ### building and hosting
+
+#### [w3schools spaces](https://www.w3schools.com/spaces/index.php)
+
+host location
+:   united states
+
+pricing
+:   free and paid (5-30 USD per month)
+
+storage limit
+:   20 MB - 15 GB
+
+monthly bandwidth
+:   - free - 500 requests & 25 MB served
+    - paid - up to 10 million requests & 400 GB served
+
+backend environment
+:   - free - not available
+    - paid - node.js, PHP, python, java, C#, and rust
+
+database
+:   unavailable
+
+web server
+:   not configurable
+
+notes
+:   learn as you go with one of the web's most popular tutorial sites! static pages are completely free, but backend support starts at 10 USD per month.
+
 
 #### [glitch 👑](https://glitch.com/)
 

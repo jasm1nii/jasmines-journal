@@ -219,23 +219,28 @@ form textarea {
   font-size: x-large;
 }
 .messages nav a {
-  -webkit-text-decoration: 1.5px underline solid;
-          text-decoration: 1.5px underline solid;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 0.5em;
+  font-size: larger;
 }
 .messages nav .previous {
   text-align: left;
   margin-left: 0;
   margin-right: auto;
+  padding-left: 5px;
+  width: 25%;
 }
 .messages nav .position {
   text-align: center;
   margin: 0 auto;
-  width: 50%;
 }
 .messages nav .next {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
+  padding-right: 5px;
+  width: 25%;
 }
 
 #issues {

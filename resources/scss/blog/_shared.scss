@@ -77,6 +77,15 @@
                 font-size: x-large;
             }
         }
+        .previous, .next {
+            a {
+                padding: .5em;
+                text-decoration: none;
+                font-size: larger;
+                border-radius: 50px;
+                border: 1px solid;
+            }
+        }
         .position {
             text-align: center;
             margin: 0 auto;

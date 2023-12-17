@@ -24,6 +24,8 @@
     .messages {
         & nav {
             & a {
+                background-color: rgb(231, 173, 209);
+                box-shadow: 2px 2px rgb(151, 103, 111);
                 &:hover {
                     background-color: rgb(148, 97, 148);
                     color: rgb(255, 255, 255);
