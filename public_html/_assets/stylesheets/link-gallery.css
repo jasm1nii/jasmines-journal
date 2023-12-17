@@ -250,7 +250,7 @@ main {
        columns: 3;
   -moz-column-gap: 0;
        column-gap: 0;
-  background-image: url("/_assets/media/main/ooorganize.svg");
+  background-image: url("/_assets/media/_shared/css/ooorganize.svg");
   background-size: 200px !important;
   padding-top: 8vh;
   padding-bottom: 10vh;

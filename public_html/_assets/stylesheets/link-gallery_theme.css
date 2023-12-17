@@ -7,7 +7,7 @@
   border-color: var(--page-border-dark);
 }
 .dark-mode .page-columns {
-  background: url("/_assets/media/main/ooorganize-dark.svg");
+  background: url("/_assets/media/_shared/css/ooorganize-dark.svg");
 }
 .dark-mode header {
   color: white;
@@ -71,7 +71,7 @@
   background-color: var(--page-color-light);
 }
 .light-mode main {
-  background: url("/_assets/media/main/ooorganize.svg");
+  background: url("/_assets/media/_shared/css/ooorganize.svg");
 }
 .light-mode header {
   color: var(--h1-light);

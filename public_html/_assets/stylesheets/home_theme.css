@@ -123,14 +123,14 @@
   color: var(--h1-light);
 }
 .light-mode article {
-  background: url("/_assets/media/main/ooorganize.svg");
+  background: url("/_assets/media/_shared/css/ooorganize.svg");
 }
 .light-mode article > section {
   background-color: var(--section-card-light);
   color: var(--font-color-light);
 }
 .light-mode .h-card {
-  background: url("/_assets/media/main/bank-note.svg");
+  background: url("/_assets/media/_shared/css/bank-note.svg");
   background-color: snow;
   text-shadow: 0 0 5px white;
 }
@@ -161,7 +161,7 @@
   background-color: linen;
 }
 .light-mode #latest-status {
-  background: url("/_assets/media/main/line-in-motion.svg") rgb(238, 225, 238);
+  background: url("/_assets/media/_shared/css/line-in-motion.svg") rgb(238, 225, 238);
 }
 .light-mode #statuscafe {
   background-color: snow;
@@ -279,7 +279,7 @@
   border-color: var(--page-border-dark);
 }
 .dark-mode article {
-  background: url("/_assets/media/main/ooorganize-dark.svg");
+  background: url("/_assets/media/_shared/css/ooorganize-dark.svg");
 }
 .dark-mode article > section,
 .dark-mode #statuscafe,
@@ -291,7 +291,7 @@
   color: white;
 }
 .dark-mode .h-card {
-  background-image: url("/_assets/media/main/bank-note-dark.svg");
+  background-image: url("/_assets/media/_shared/css/bank-note-dark.svg");
   text-shadow: 0 0 5px black;
   background-color: var(--section-card-dark);
 }
@@ -300,7 +300,7 @@
   border-right: 5px outset rgb(67, 67, 102);
 }
 .dark-mode #latest-status {
-  background: url("/_assets/media/main/line-in-motion-dark.svg") rgb(52, 39, 58);
+  background: url("/_assets/media/_shared/css/line-in-motion-dark.svg") rgb(52, 39, 58);
 }
 .dark-mode #statuscafe-content {
   background-color: rgba(255, 255, 255, 0.1);
