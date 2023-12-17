@@ -60,9 +60,10 @@
         private function alterTable(): void {
 
            $sql = $this->database->prepare(
-                "ALTER TABLE `{$this->table}` AUTO_INCREMENT=0"
+                "ALTER TABLE :table AUTO_INCREMENT = 0"
             );
 
+            $sql->bindValue('table', $this->table);
             $sql->execute();
 
         }
@@ -70,15 +71,17 @@
         private function insertIntoTable(): void {
 
             $sql = $this->database->prepare(
-                "INSERT INTO `{$this->table}` (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
+                "INSERT INTO :table
+                (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
                 VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
-            $sql->bindParam(':name', $this->sender_name);
-            $sql->bindParam(':email', $this->sender_email);
-            $sql->bindParam(':url', $this->sender_url);
-            $sql->bindParam(':message', $this->sender_message);
-            $sql->bindParam(':ip', $_SERVER['REMOTE_ADDR']);
+            $sql->bindValue('table', $this->table);
+            $sql->bindValue('name', $this->sender_name);
+            $sql->bindValue('email', $this->sender_email);
+            $sql->bindValue('url', $this->sender_url);
+            $sql->bindValue('message', $this->sender_message);
+            $sql->bindValue('ip', $_SERVER['REMOTE_ADDR']);
 
             $sql->execute();
 

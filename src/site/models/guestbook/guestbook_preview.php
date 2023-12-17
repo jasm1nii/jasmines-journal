@@ -15,12 +15,13 @@
 
                 $sql = $this->database->prepare(
                     "SELECT `ID`, `Date`, `Name`, `Comment`
-                    FROM `{$this->table}`
+                    FROM :table
                     WHERE `Moderation Status`='Approved' AND `User Privilege`='Guest'
                     ORDER BY `ID` DESC
                     LIMIT 1"
                 );
 
+                $sql->bindValue('table', $this->table);
                 $sql->execute();
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
 

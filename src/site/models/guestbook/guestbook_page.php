@@ -32,9 +32,10 @@
             if ($this->database !== null) {
 
                 $sql = $this->database->prepare(
-                    $this->templateQuery() . "ORDER BY `ID` DESC LIMIT $rows, 10"
+                    $this->templateQuery() . "ORDER BY `ID` DESC LIMIT :rows, 10"
                 );
 
+                $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
                 $sql->execute();
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
@@ -54,10 +55,11 @@
 
                 $sql = $this->database->prepare(
                     "SELECT COUNT(*)
-                    FROM `{$this->table}`
+                    FROM :table
                     WHERE `Moderation Status`='Approved'"
                 );
 
+                $sql->bindValue('table', $this->table);
                 $sql->execute();
 
                 return $sql->fetchColumn();
@@ -73,9 +75,10 @@
         final public function getThread(): array {
 
             $sql = $this->database->prepare(
-                $this->templateQuery() . "AND `ID`={$this->commentID()}"
+                $this->templateQuery() . "AND `ID` = :id"
             );
 
+            $sql->bindValue('id', $this->commentID(), \PDO::PARAM_INT);
             $sql->execute();
             $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
@@ -86,9 +89,12 @@
         final public function getThreadReplies(): array {
 
             $sql = $this->database->prepare(
-                $this->templateQuery() . "AND `Parent ID`={$this->commentID()} ORDER BY `ID` ASC"
+                $this->templateQuery()
+                . "AND `Parent ID` = :parent_id
+                ORDER BY `ID` ASC"
             );
 
+            $sql->bindValue('parent_id', $this->commentID(), \PDO::PARAM_INT);
             $sql->execute();
             $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
