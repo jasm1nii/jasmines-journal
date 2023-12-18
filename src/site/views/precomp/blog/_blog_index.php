@@ -4,8 +4,11 @@
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
     use JasminesJournal\Core\Views\Render\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
+    use JasminesJournal\Site\Models\ArticlesDatabase;
+    use JasminesJournal\Site\Models\NotesDatabase;
 
     abstract class IndexSection {
 
@@ -44,13 +47,15 @@
 
         }
 
-        final protected static function renderTwig(string $file): ?string {
+        final protected static function renderTwig(string $file, ?bool $use_db = false): ?string {
+
+            $template = $use_db ? $file : self::getContent($file);
 
             return self::buildTwig()->render(
-                self::getContent($file),
+                $template,
                 [
                     'layout'    => static::$template,
-                    'slug'      => self::getSlug(self::getContent($file))
+                    'slug'      => self::getSlug($template)
                 ]
             );
 
@@ -62,15 +67,20 @@
 
     final class Notes extends IndexSection {
 
-        protected static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/notes';
+        protected static string $source_dir
+            = SITE_ROOT . DIR['content'] . 'blog/notes';
         
-        protected static string $template      = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
+        protected static string $template
+            = DIR['layouts'] . "blog/_blog_notes_preview.html.twig";
 
         final public static function makeList(): ?string {
 
-            $file = parent::getFiles()[0];
+            $database = new NotesDatabase;
+            $file = $database->getNewestEntry();
 
-            $content = parent::renderTwig($file);
+            $content = parent::renderTwig(
+                file: $file, use_db: true
+            );
 
             return $content;
 
@@ -80,21 +90,22 @@
 
     final class Articles extends IndexSection {
 
-        protected static string $source_dir    = SITE_ROOT . DIR['content'] . 'blog/articles';
+        protected static string $source_dir
+            = SITE_ROOT . DIR['content'] . 'blog/articles';
 
-        protected static string $template      = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
+        protected static string $template
+            = DIR['layouts'] . "blog/_blog_articles_preview.html.twig";
 
         final public static function makeList(): ?string {
 
+            $database = new ArticlesDatabase;
             $content = [];
 
-            $i = 0;
+            foreach ($database->getEntries(row_total: 5) as $file) {
 
-            foreach (parent::getFiles() as $file) {
-
-                $content[] = parent::renderTwig($file);
-
-                if (++$i > 4) break;
+                $content[] = parent::renderTwig(
+                    file: $file['File Path'], use_db: true
+                );
 
             }
 

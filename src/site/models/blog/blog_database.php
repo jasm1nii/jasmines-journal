@@ -132,7 +132,7 @@
             $sql = $this->database->prepare(
                 "SELECT `File Path`
                 FROM `{$this->table}`
-                ORDER BY `Date` DESC
+                ORDER BY `ID` DESC
                 LIMIT 1"
             );
 
@@ -165,13 +165,14 @@
         }
 
         final public function getEntries(
-            int $row_limit,
+            ?int $row_limit = 1,
+            ?int $row_total = 10,
             ?string $sort_tag = null
         ): ?array {
 
             try {
 
-                $rows = ($row_limit - 1) * 10;
+                $offset = ($row_limit - 1) * 10;
 
                 if ($sort_tag !== null) {
 
@@ -180,7 +181,7 @@
                         FROM `{$this->table}`
                         WHERE `Tags` LIKE '%{$sort_tag}%'
                         ORDER BY `ID` DESC
-                        LIMIT :rows, 10"
+                        LIMIT :offset, :total"
                     );
                 
                 } else {
@@ -189,14 +190,15 @@
                         "SELECT `ID`, `File Path`, `Relative URL`
                         FROM `{$this->table}`
                         ORDER BY `ID` DESC
-                        LIMIT :rows, 10"
+                        LIMIT :offset, :total"
                     );
 
                 }
 
-                $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
-                $sql->execute();
+                $sql->bindValue('offset', $offset, \PDO::PARAM_INT);
+                $sql->bindValue('total', $row_total, \PDO::PARAM_INT);
 
+                $sql->execute();
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
                 return $sql->fetchAll();
