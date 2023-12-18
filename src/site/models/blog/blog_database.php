@@ -144,7 +144,7 @@
                 $rows = ($row_limit - 1) * 10;
         
                 $sql = $this->database->prepare(
-                    "SELECT `File Path`, `Relative URL`
+                    "SELECT `File Path`, `Relative URL`, `Tags`
                     FROM `{$this->table}`
                     ORDER BY `Date` DESC
                     LIMIT :rows, 10"

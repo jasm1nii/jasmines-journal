@@ -39,12 +39,23 @@
 					</h2>
 					<section class="h-entry">
 						{% if updated is defined %}
-							<time class="dt-updated" datetime="{{ updated|date() }}">updated
-								{{ updated }}</time>
+							<time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
 						{% endif %}
 						<section class="e-content">
 							{{ block('content') }}
 						</section>
+						<footer class="tags">
+							<dl>
+								<dt>tags:</dt>
+								{% if keywords is defined %}
+									{% for keyword in keywords %}
+										<dd>{{ keyword }}</dd>
+									{% endfor %}
+								{% else %}
+									<dd>none defined</dd>
+								{% endif %}
+							</dl>
+						</footer>
 					</section>
 					<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
 				</article>

@@ -173,10 +173,14 @@ button:hover {
 
 body {
   font-size: 1.1em;
-  width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  margin-top: 5%;
   padding-bottom: 3vh;
+  display: flex;
+  flex-direction: row-reverse;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
 }
 
 header {
@@ -192,12 +196,8 @@ header #blog li:nth-child(2) > a {
   text-underline-offset: 0.25em;
 }
 
-.layout {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: row-reverse;
-  -moz-column-gap: 1em;
-       column-gap: 1em;
+.main-column {
+  max-width: 700px;
 }
 
 .feed-links {
@@ -241,7 +241,7 @@ article h2 {
 .notes-format {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-width: 100vw;
   margin-bottom: 3em;
 }
 .notes-format .u-photo {
@@ -252,7 +252,7 @@ article h2 {
 }
 .notes-format .h-entry {
   flex-direction: column;
-  padding: 1.5em 2em 2em;
+  padding: 1em 2em;
   border: 1px solid rgb(56, 49, 56);
   max-width: 95vw;
 }
@@ -260,14 +260,46 @@ article h2 {
   padding-bottom: 1em;
   margin-top: 0;
   font-size: larger;
+  font-stretch: 95%;
   line-height: 1.5em;
 }
-.notes-format .h-entry .e-content + span {
+.notes-format .h-entry footer {
   border-top: 1px dashed;
   margin-left: 0;
-  padding-left: 0;
-  padding-top: 1em;
+  padding: 0.5em 0;
   display: block;
+  width: 100%;
+  text-align: left;
+  font-size: medium;
+}
+.notes-format .tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  line-height: 2.5em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  margin: 0;
+}
+.notes-format .tags dt {
+  font-weight: bolder;
+  font-size: larger;
+}
+.notes-format .tags dd {
+  margin-left: 1em;
+}
+.notes-format .tags dd a {
+  padding: 0.5em;
+  border-radius: 50px;
+  border: 1px solid;
+  text-decoration: none;
+  font-weight: 400;
+}
+.notes-format .post-links {
+  border-top: 1px dashed;
+  padding-top: 1.5em;
+  margin-top: 0;
+  text-align: right;
+  font-size: larger;
 }
 
 iframe {
@@ -317,8 +349,6 @@ iframe {
   body {
     width: -moz-fit-content;
     width: fit-content;
-  }
-  .layout {
     margin: auto auto;
     padding-top: 3vh;
     flex-direction: column;

@@ -2,8 +2,20 @@
     <img class="u-photo" alt="" src="/_assets/media/main/oingo-boingo.png" width="80" height="80"/>
     <section class="h-entry">
         <section class="e-content">{{ block('content') }}</section>
-        <span>
-            <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="{{ slug }}">view post with comments</a>
-        </span>
+        <footer>
+			<dl class="tags">
+                <dt>tags:</dt>
+                {% if keywords is defined %}
+                    {% for keyword in keywords %}
+                        <dd><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></dd>
+                    {% endfor %}
+                {% else %}
+                    <dd>none defined</dd>
+                {% endif %}
+            </dl>
+            <p class="post-links">
+                <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="{{ slug }}">view post with comments</a>
+            </p>
+		</footer>
     </section>
 </section>
