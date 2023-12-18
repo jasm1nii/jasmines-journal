@@ -16,10 +16,9 @@
             try {
 
                 $sql = $this->database->prepare(
-                    "SELECT count(*) FROM :table"
+                    "SELECT count(*) FROM {$this->table}"
                 );
 
-                $sql->bindValue('table', $this->table);
                 $sql->execute();
 
                 if (empty($sql->fetchColumn())) {
@@ -87,12 +86,11 @@
             $tags = get_meta_tags('http://' . $_SERVER['HTTP_HOST'] . $url)['keywords'];
 
             $sql = $this->database->prepare(
-                "INSERT INTO :table
+                "INSERT INTO `{$this->table}`
                 (`File Path`, `Relative URL`, `Date`, `Tags`)
                 VALUES (:path, :url, :date, :tags)"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->bindValue('path', $path);
             $sql->bindValue('url', $url);
             $sql->bindValue('date', $date);
@@ -106,14 +104,13 @@
 
             $sql = $this->database->prepare(
                 "SELECT `File Path`
-                FROM :table
+                FROM `{$this->table}`
                 ORDER BY `Date` DESC
                 LIMIT 1"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->execute();
-
+            
             return $sql->fetchColumn();
 
         }
@@ -125,13 +122,11 @@
 
             $sql = $this->database->prepare(
                 "SELECT `File Path`
-                FROM :table
+                FROM `{$this->table}`
                 WHERE `File Path` = :file"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->bindValue('file', $file);
-
             $sql->execute();
 
             if (!$sql->fetchColumn()) {
@@ -150,17 +145,15 @@
         
                 $sql = $this->database->prepare(
                     "SELECT `File Path`, `Relative URL`
-                    FROM :table
+                    FROM `{$this->table}`
                     ORDER BY `Date` DESC
                     LIMIT :rows, 10"
                 );
         
-                $sql->bindValue('table', $this->table);
                 $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
-
                 $sql->execute();
-                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
                 return $sql->fetchAll();
 
             } catch (\Exception) {
@@ -177,10 +170,9 @@
 
                 $sql = $this->database->prepare(
                     "SELECT COUNT(*)
-                    FROM :table"
+                    FROM `{$this->table}`"
                 );
 
-                $sql->bindValue('table', $this->table);
                 $sql->execute();
 
                 return $sql->fetchColumn();
@@ -196,13 +188,11 @@
         final public function removeMissing(string $path): void {
 
             $sql = $this->database->prepare(
-                "DELETE FROM :table
+                "DELETE FROM `{$this->table}`
                 WHERE `File Path` = :path"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->bindValue('path', $path);
-
             $sql->execute();
 
         }
