@@ -199,8 +199,7 @@ body {
 }
 
 main {
-  margin-right: auto;
-  margin-bottom: 3em;
+  margin: 0 auto 3em;
   width: 70%;
   font-size: larger;
 }
@@ -225,7 +224,6 @@ article {
 }
 article h2 {
   letter-spacing: 0.05em;
-  margin-left: 1em;
 }
 article ol {
   border: 1px solid;
@@ -334,6 +332,7 @@ article li time {
     max-width: none;
   }
   main {
+    margin-top: 5%;
     width: 100%;
   }
   footer {

@@ -31,8 +31,7 @@ body {
 }
 
 main {
-    margin-right: auto;
-    margin-bottom: 3em;
+    margin: 0 auto 3em;
     width: 70%;
     font-size: larger;
     &::before {
@@ -56,7 +55,6 @@ article {
     margin: 0 auto 2em;
     h2 {
         letter-spacing: .05em;
-        margin-left: 1em;
     }
     ol {
         border: 1px solid;
