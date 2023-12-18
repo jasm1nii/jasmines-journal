@@ -49,13 +49,13 @@
 
         final protected static function renderTwig(string $file, ?bool $use_db = false): ?string {
 
-            $template = $use_db ? $file : self::getContent($file);
+            $entry = $use_db ? $file : self::getContent($file);
 
             return self::buildTwig()->render(
-                $template,
+                $entry,
                 [
                     'layout'    => static::$template,
-                    'slug'      => self::getSlug($template)
+                    'slug'      => self::getSlug($entry)
                 ]
             );
 

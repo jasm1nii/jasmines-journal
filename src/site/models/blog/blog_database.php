@@ -60,8 +60,7 @@
         }
 
         final protected function updateTable(
-            string $file,
-            bool $use_root
+            string $file, bool $use_root
         ): void {
 
             if ($use_root) {
@@ -142,23 +141,34 @@
 
         }
 
+        #[Maintenance]
         final public function validateNewestEntry(): void {
 
-            $dir = new BlogDirectory($this->type);
-            $file = $dir->getNewestFile();
+            try {
 
-            $sql = $this->database->prepare(
-                "SELECT `File Path`
-                FROM `{$this->table}`
-                WHERE `File Path` = :file"
-            );
+                $dir = new BlogDirectory($this->type);
+                $file = $dir->getNewestFile();
 
-            $sql->bindValue('file', $file);
-            $sql->execute();
+                $sql = $this->database->prepare(
+                    "SELECT `File Path`
+                    FROM `{$this->table}`
+                    WHERE `File Path` = :file"
+                );
 
-            if (!$sql->fetchColumn()) {
+                $sql->bindValue('file', $file);
+                $sql->execute();
 
-                $this->updateTable($file, use_root: false);
+                if (!$sql->fetchColumn()) {
+
+                    $this->updateTable($file, use_root: false);
+
+                }
+
+                echo "({$this->type}) Successfully validated!";
+
+            } catch (\Exception $e) {
+
+                echo $e->getMessage();
 
             }
 
@@ -245,6 +255,12 @@
 
             $sql->bindValue('path', $path);
             $sql->execute();
+
+            $this->resetTable();
+
+        }
+
+        private function resetTable(): void {
 
             $sql = $this->database->prepare(
                 "ALTER TABLE `{$this->table}`
