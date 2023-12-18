@@ -42,18 +42,23 @@
 
             } else {
 
-                $this->sender_name = htmlspecialchars($_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+                $this->sender_name = htmlspecialchars(
+                    $_POST['name'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true
+                );
 
             }
 
-            $this->sender_email
-                = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $this->sender_email = filter_var(
+                $_POST['email'], FILTER_SANITIZE_EMAIL
+            );
 
-            $this->sender_url
-                = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+            $this->sender_url = filter_var(
+                $_POST['website'], FILTER_SANITIZE_URL
+            );
 
-            $this->sender_message
-                = htmlspecialchars($_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true);
+            $this->sender_message = htmlspecialchars(
+                $_POST['message'], ENT_QUOTES | ENT_HTML401, 'UTF-8', true
+            );
 
         }
 
@@ -72,8 +77,10 @@
 
             $sql = $this->database->prepare(
                 "INSERT INTO :table
-                (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`, `IP Address`, `Moderation Status`, `User Privilege`)
-                VALUES (NULL, current_timestamp(), :name, :email, :url, :message, INET6_ATON(:ip), 'Pending', 'Guest')"
+                (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`,
+                `IP Address`, `Moderation Status`, `User Privilege`)
+                VALUES (NULL, current_timestamp(), :name, :email, :url,
+                :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
             $sql->bindValue('table', $this->table);
@@ -93,18 +100,20 @@
 
             $this->mail->subject = "guestbook message received!";
 
-            $name = "Name: {$this->sender_name}";
-            $email = "Email: {$this->sender_email}";
-            $url = "URL: {$this->sender_url}";
-            $message = "Message: {$this->sender_message}";
+            $name       = "Name: {$this->sender_name}";
+            $email      = "Email: {$this->sender_email}";
+            $url        = "URL: {$this->sender_url}";
+            $message    = "Message: {$this->sender_message}";
 
             $html = "<ul><li>{$message}</li>";
             $html .= "<li>{$email}</li>";
             $html .= "<li>{$url}</li>";
             $html .= "<li>{$message}</li></ul>";
+
             $this->mail->html_body = $html;
 
             $plaintext = "{$name} - {$email} - {$url} - {$message}";
+
             $this->mail->plaintext_body = $plaintext;
             
         }

@@ -28,7 +28,9 @@
 
             $_SESSION['page'] = self::setPageNumber();
             
-            new Layouts\Guestbook($show_dialog, self::setPageNumber());
+            new Layouts\Guestbook(
+                $show_dialog, self::setPageNumber()
+            );
 
         }
 

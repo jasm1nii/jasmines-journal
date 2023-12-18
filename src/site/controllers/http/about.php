@@ -24,7 +24,8 @@
                     => new Layouts\ChangelogIndex(),
 
 
-                str_contains(REQUEST, ChangelogSubpage::matchQuery()) && file_exists(ChangelogSubpage::file())
+                str_contains(REQUEST, ChangelogSubpage::matchQuery())
+                && file_exists(ChangelogSubpage::file())
 
                     => new Layouts\ChangelogSubpage(),
                 

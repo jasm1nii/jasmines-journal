@@ -55,11 +55,10 @@
 
                 $sql = $this->database->prepare(
                     "SELECT COUNT(*)
-                    FROM :table
+                    FROM `{$this->table}`
                     WHERE `Moderation Status`='Approved'"
                 );
 
-                $sql->bindValue('table', $this->table);
                 $sql->execute();
 
                 return $sql->fetchColumn();
@@ -80,8 +79,8 @@
 
             $sql->bindValue('id', $this->commentID(), \PDO::PARAM_INT);
             $sql->execute();
-            $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
+            $sql->setFetchMode(\PDO::FETCH_ASSOC);
             return $sql->fetchAll()[0];
 
         }
@@ -96,8 +95,8 @@
 
             $sql->bindValue('parent_id', $this->commentID(), \PDO::PARAM_INT);
             $sql->execute();
-            $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
+            $sql->setFetchMode(\PDO::FETCH_ASSOC);
             return $sql->fetchAll();
 
         }

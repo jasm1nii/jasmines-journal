@@ -66,7 +66,8 @@
                     => self::routeSubpageIndex(validate_db: false),
 
 
-                str_contains(REQUEST, self::subpage()) && file_exists(BlogEntry::matchURLToFile())
+                str_contains(REQUEST, self::subpage())
+                && file_exists(BlogEntry::matchURLToFile())
 
                     => new Layouts\BlogEntry(self::subpage()),
 

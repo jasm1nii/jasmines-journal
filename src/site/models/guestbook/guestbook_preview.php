@@ -15,16 +15,16 @@
 
                 $sql = $this->database->prepare(
                     "SELECT `ID`, `Date`, `Name`, `Comment`
-                    FROM :table
-                    WHERE `Moderation Status`='Approved' AND `User Privilege`='Guest'
+                    FROM `{$this->table}`
+                    WHERE `Moderation Status`='Approved'
+                    AND `User Privilege`='Guest'
                     ORDER BY `ID` DESC
                     LIMIT 1"
                 );
 
-                $sql->bindValue('table', $this->table);
                 $sql->execute();
-                $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
+                $sql->setFetchMode(\PDO::FETCH_ASSOC);
                 $this->comment = $sql->fetchAll()[0];
 
             } else {

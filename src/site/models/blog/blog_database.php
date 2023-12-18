@@ -27,11 +27,15 @@
                     $this->buildTable();
                     $this->validateTable();
 
-                    echo nl2br("({$this->type}) Successfully added new rows. \n");
+                    echo nl2br(
+                        "({$this->type}) Successfully added new rows. \n"
+                    );
                     
                 } else {
 
-                    echo nl2br("({$this->type}) Existing rows were found - no data was inserted. \n");
+                    echo nl2br(
+                        "({$this->type}) Existing rows were found - no data was inserted. \n"
+                    );
 
                 }
             
@@ -46,7 +50,8 @@
         #[Setup]
         final protected function buildTable(): void {
 
-            $files = glob(SITE_ROOT . DIR['content'] ."blog/{$this->type}/*/*/*/entry.html.twig");
+            $files = glob(SITE_ROOT . DIR['content']
+            ."blog/{$this->type}/*/*/*/entry.html.twig");
 
             foreach ($files as $file) {
 
@@ -73,7 +78,9 @@
             $url    = preg_split('/(content)/', $base)[1];
 
             preg_match_all('/[0-9]+/', $path, $date_values);
-            $date_obj = date_create("{$date_values[0][0]}-{$date_values[0][1]}-{$date_values[0][2]}");
+            $date_obj = date_create(
+                "{$date_values[0][0]}-{$date_values[0][1]}-{$date_values[0][2]}"
+            );
             // format with leading zeros:
             $date = date_format($date_obj, 'Y-m-d');
 
@@ -124,6 +131,7 @@
 
             $sql->bindValue('table', $this->table);
             $sql->bindValue('file', $file);
+
             $sql->execute();
 
             if (!$sql->fetchColumn()) {
@@ -149,6 +157,7 @@
         
                 $sql->bindValue('table', $this->table);
                 $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
+
                 $sql->execute();
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
 
@@ -193,6 +202,7 @@
 
             $sql->bindValue('table', $this->table);
             $sql->bindValue('path', $path);
+
             $sql->execute();
 
         }
@@ -203,7 +213,6 @@
 
         protected static string $db_name = 'blog_notes';
         protected string $type = 'notes';
-        
 
     }
 

@@ -34,7 +34,8 @@
 
             $file_date = date_format($this->date, 'Y/n/d');
 
-            return SITE_ROOT . DIR['content'] . "blog/{$this->type}/{$file_date}/entry.html.twig";
+            return SITE_ROOT . DIR['content']
+            . "blog/{$this->type}/{$file_date}/entry.html.twig";
 
         }
 
