@@ -22,13 +22,13 @@
                 <article>
                     <header>
                         {% set decoded_tag = tag|replace({'%20': ' ' }) %}
+
                         {% if tag in request %}
                             <h2>articles tagged "{{ decoded_tag }}"</h2>
                             <p>({{ total_entries }} {{ total_entries == 1 ? "result" : "results" }})</p>
                         {% else %}
                             <h2>articles</h2>
                         {% endif %}
-                        </h2>
                     </header>
 
                     {% if entries != null %}
@@ -36,11 +36,18 @@
                             {{ entries|raw }}
                         </ol>
                     {% else %}
-                        <p>that's too far!!!</p>
+                        <p class="exception">
+                            {{ tag in request ? "maybe one day i'll write about " ~ decoded_tag ~ "!!" : "too far!!" }}
+                        </p>
                     {% endif %}
                 </article>
 
-                {% set paginator_url = "/blog/articles/page" %}
+                {% if tag in request %}
+                    {% set paginator_url = "/blog/articles/tag/" ~ tag ~ "/page" %}
+                {% else %}
+                    {% set paginator_url = "/blog/articles/page" %}
+                {% endif %}
+
                 {{ include('@includes/_paginator.html.twig') }}
 
             </main>
