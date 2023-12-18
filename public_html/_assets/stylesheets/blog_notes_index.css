@@ -197,7 +197,7 @@ header #blog li:nth-child(2) > a {
 }
 
 .main-column {
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .feed-links {
@@ -247,6 +247,15 @@ article h2 {
   flex-direction: row;
   max-width: 100vw;
   margin-bottom: 3em;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+}
+.notes-format header {
+  border-bottom: none;
+}
+.notes-format header .id {
+  border-top: 1px solid;
+  padding-top: 1em;
 }
 .notes-format .u-photo {
   border-radius: 50%;

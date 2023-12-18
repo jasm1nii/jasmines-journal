@@ -4,7 +4,6 @@
         {{ include('@includes/head.shtml') }}
         <title>jasmine's b(rain)log</title>
         <meta name="description" content="my online diary"/>
-        <link rel="canonical" href="https://jasm1nii.xyz/blog/articles"/>
         <link id="base-theme" href="/_assets/stylesheets/blog_articles_index.css" rel="stylesheet" type="text/css" media="all"/>
         <noscript>
             <link href="/_assets/stylesheets/blog_articles_index_noscript.css" rel="stylesheet" type="text/css" media="all"/>
@@ -23,7 +22,9 @@
                 <article>
                     <h2>articles</h2>
                     {% if entries != null %}
-                        <ol reversed class="articles-list">{{ entries|raw }}</ol>
+                        <ol class="articles-list">
+                            {{ entries|raw }}
+                        </ol>
                     {% else %}
                         <p>that's too far!!!</p>
                     {% endif %}

@@ -32,9 +32,9 @@
     final class BlogSubpageIndex extends Layout {
 
         private ?object $data;
+        private ?string $index;
         private ?int $total_rows;
         private ?int $total_pages;
-        private ?string $index;
         private ?string $decoded_tag;
 
         final public function __construct(

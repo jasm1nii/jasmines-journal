@@ -20,22 +20,33 @@
         <div class="main-column">
             <main>
                 <article>
+
                     {% set decoded_tag = tag|replace({'%20': ' ' }) %}
+
                     {% if tag in request %}
-                        <h2 class="tag-title">posts tagged "{{ decoded_tag }}" ({{ total_entries > 1 or total_entries == 0 ? total_entries ~ " results" : total_entries ~ " result" }})</h2>
+                        <h2 class="tag-title">
+                            posts tagged "{{ decoded_tag }}" ({{ total_entries }} {{ 1 >= total_entries ? "result" : "results" }})
+                        </h2>
                     {% endif %}
+
                     {% if entries != null %}
                         {{ entries|raw }}
                     {% else %}
-                        <p class="exception">{{ tag in request ? "maybe one day i'll write about " ~ decoded_tag ~ "!!" : "too far!!" }}</p>
+                        <p class="exception">
+                            {{ tag in request ? "maybe one day i'll write about " ~ decoded_tag ~ "!!" : "too far!!" }}
+                        </p>
                     {% endif %}
+
                 </article>
+
                 {% if tag in request %}
                     {% set paginator_url = "/blog/notes/tag/" ~ tag ~ "/page" %}
                 {% else %}
                     {% set paginator_url = "/blog/notes/page" %}
                 {% endif %}
+                
                 {{ include('@includes/_paginator.html.twig') }}
+
                 <footer class="feed-links">
                     <p>
                         <span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
