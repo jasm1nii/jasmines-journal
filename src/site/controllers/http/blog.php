@@ -53,11 +53,7 @@
 
 
                 str_ends_with(REQUEST, self::subpage()),
-                str_ends_with(REQUEST, self::subpage() . "/index")
-
-                    => self::routeSubpageIndex(),
-
-
+                str_ends_with(REQUEST, self::subpage() . "/index"),
                 str_contains(REQUEST, self::subpage() . "/page")
 
                     => self::routeSubpageIndex(),
