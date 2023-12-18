@@ -66,11 +66,11 @@
                         {% elseif thread_parent != null %}
 
                             {% set comment = thread_parent %}
-                            {{ include('guestbook_comment.html.twig') }}
+                            {{ include('_guestbook_comment.html.twig') }}
                             {% if thread_replies != null %}
                                 {% for comment in thread_replies %}
                                     {% set comment_style = 'is-threaded' %}
-                                    {{ include('guestbook_comment.html.twig') }}
+                                    {{ include('_guestbook_comment.html.twig') }}
                                 {% endfor %}
                             {% endif %}
                             <nav>
