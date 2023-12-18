@@ -174,33 +174,35 @@ button:hover {
 body {
   font-size: 1.1em;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-}
-
-header {
-  max-width: 12em;
-  margin-left: 1em;
-  position: sticky;
-  top: 5%;
-  align-self: flex-start;
-}
-header #blog li:first-child > a {
-  -webkit-text-decoration: wavy underline;
-          text-decoration: wavy underline;
-  text-underline-offset: 0.25em;
 }
 
 .layout {
   margin-top: 5%;
   display: flex;
   flex-direction: row-reverse;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+}
+.layout > header {
+  max-width: 12em;
+  margin-left: 1em;
+  position: sticky;
+  top: 5%;
+  align-self: flex-start;
+}
+.layout > header #blog li:first-child > a {
+  -webkit-text-decoration: wavy underline;
+          text-decoration: wavy underline;
+  text-underline-offset: 0.25em;
 }
 
 main {
   margin-right: auto;
   margin-bottom: 3em;
   width: 70%;
+  font-size: larger;
 }
 main::before {
   content: "⋆｡ ﾟ☁︎｡ ⋆｡ ﾟ☾ ﾟ｡ ⋆";
@@ -219,28 +221,21 @@ main::after {
 }
 
 article {
-  border: 1px solid;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 1em;
-  margin-bottom: 2em;
-  max-width: calc(70% + 1vw);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2em;
 }
 article h2 {
   letter-spacing: 0.05em;
+  margin-left: 1em;
 }
-
-.articles-list {
-  margin-bottom: 2em;
-}
-
 article ol {
-  margin-left: 0.5em;
+  border: 1px solid;
+  padding: 1.5em 2em 2em;
+  list-style-position: inside;
+  margin-bottom: 2em;
 }
 article li {
   list-style-type: decimal-leading-zero;
+  margin-bottom: 1em;
 }
 article li::marker {
   font-size: xx-large;
@@ -313,33 +308,32 @@ article li time {
   .layout {
     flex-direction: column;
   }
-  header nav ul ul {
+  .layout header nav ul ul {
     padding-right: 0;
     display: inline;
     padding-left: 0;
   }
-  header nav li {
+  .layout header nav li {
     margin-right: 0.5em;
     display: inline-block;
     height: -moz-fit-content;
     height: fit-content;
   }
-  header nav li:last-child::after {
+  .layout header nav li:last-child::after {
     content: "✧";
     margin-left: 0.5em;
   }
-  header nav li li:last-child::after {
+  .layout header nav li li:last-child::after {
     content: none;
   }
-  #headernav ul ul li:not(:first-child)::before {
+  .layout #headernav ul ul li:not(:first-child)::before {
     content: "/";
   }
-  header {
+  .layout > header {
     position: static;
     max-width: none;
   }
   main {
-    margin-top: 5%;
     width: 100%;
   }
   footer {
@@ -353,8 +347,5 @@ article li time {
   main {
     width: -moz-fit-content;
     width: fit-content;
-  }
-  article {
-    padding-top: 1em;
   }
 }/*# sourceMappingURL=blog_articles_index.css.map */

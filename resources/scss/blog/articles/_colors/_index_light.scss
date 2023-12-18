@@ -7,7 +7,9 @@
 
 @mixin light-mode {
     article {
-        background-color: $light-section-bg;
+        ol {
+            background-color: $light-section-bg;
+        }
     }
     a {
         color: $light-link-color;

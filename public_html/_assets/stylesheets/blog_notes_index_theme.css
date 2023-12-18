@@ -39,6 +39,9 @@
   color: white;
   font-weight: normal;
 }
+.dark-mode .notes-format header {
+  color: rgb(223, 211, 211);
+}
 .dark-mode .feed-links {
   background-color: rgb(52, 47, 54);
 }

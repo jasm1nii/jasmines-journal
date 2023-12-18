@@ -60,7 +60,7 @@ article {
     font-weight: 500;
     hyphens: manual;
     hgroup {
-        border-bottom: 1px solid;
+        border-bottom: 1px dashed;
         h2 {
             padding-bottom: 0;
             margin-bottom: 0.5em;
@@ -69,8 +69,8 @@ article {
         .p-summary {
             text-indent: 0;
             font-style: italic;
-            padding-left: 1em;
-            margin-top: 0;
+            padding: 1em;
+            margin: 1em 0;
             background-color: rgba(128, 128, 128, .1);
         }
     }

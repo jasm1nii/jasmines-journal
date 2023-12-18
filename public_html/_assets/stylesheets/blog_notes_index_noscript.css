@@ -49,6 +49,9 @@
     color: white;
     font-weight: normal;
   }
+  .notes-format header {
+    color: rgb(223, 211, 211);
+  }
   .feed-links {
     background-color: rgb(52, 47, 54);
   }

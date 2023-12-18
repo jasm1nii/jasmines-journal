@@ -7,18 +7,15 @@
         }
         .layout {
             flex-direction: column;
+            @include header-style-2-768();
+            > header {
+                position: static;
+                max-width: none;
+            }
         }
-        @include header-style-2-768();
-        header {
-            position: static;
-            max-width: none;
-        }
-
         main {
-            margin-top: 5%;
             width: 100%;
         }
-        
         footer {            
             width: 80%;
             margin-left: auto;

@@ -24,7 +24,7 @@
     background-color: black;
     color: white;
   }
-  article {
+  article ol {
     background-color: rgb(22, 21, 21);
     border-color: rgb(68, 60, 60);
   }
@@ -41,7 +41,7 @@
     background-color: rgb(232, 221, 235);
     color: rgb(63, 48, 48);
   }
-  article {
+  article ol {
     background-color: ghostwhite;
   }
   a {

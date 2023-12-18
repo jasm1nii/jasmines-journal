@@ -8,6 +8,11 @@
 
 @mixin dark-mode {
     $shadow-color: rgba(128, 0, 107, 0.4);
+    .notes-format {
+        header {
+            color: rgb(223, 211, 211);
+        }
+    }
     .feed-links {
         background-color: rgb(52, 47, 54);
     }

@@ -7,8 +7,10 @@
 
 @mixin dark-mode() {
     article {
-        background-color: $dark-section-bg;
-        border-color: $dark-section-border;
+        ol {
+            background-color: $dark-section-bg;
+            border-color: $dark-section-border;
+        }
     }
     a {
         color: $dark-link-color;

@@ -20,12 +20,11 @@
         <div class="main-column">
             <main>
                 <article>
-
                     {% set decoded_tag = tag|replace({'%20': ' ' }) %}
 
                     {% if tag in request %}
                         <h2 class="tag-title">
-                            posts tagged "{{ decoded_tag }}" ({{ total_entries }} {{ 1 >= total_entries ? "result" : "results" }})
+                            posts tagged "{{ decoded_tag }}" ({{ total_entries }} {{ total_entries == 1 ? "result" : "results" }})
                         </h2>
                     {% endif %}
 
@@ -36,7 +35,6 @@
                             {{ tag in request ? "maybe one day i'll write about " ~ decoded_tag ~ "!!" : "too far!!" }}
                         </p>
                     {% endif %}
-
                 </article>
 
                 {% if tag in request %}
