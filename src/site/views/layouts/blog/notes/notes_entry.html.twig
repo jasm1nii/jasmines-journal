@@ -49,7 +49,7 @@
 								<dt>tags:</dt>
 								{% if keywords is defined %}
 									{% for keyword in keywords %}
-										<dd>{{ keyword }}</dd>
+										<dd><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></dd>
 									{% endfor %}
 								{% else %}
 									<dd>none defined</dd>

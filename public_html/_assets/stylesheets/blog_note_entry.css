@@ -242,12 +242,38 @@ iframe {
 }
 
 .h-entry {
-  padding: 1em;
+  padding: 1em 1.5em;
   line-height: 1.5em;
 }
 
 .emoji {
   display: inline-block;
+}
+
+.tags {
+  line-height: 3em;
+  padding: 0.5em 0;
+  margin-top: 2em;
+  border-top: 1px dashed;
+  text-align: left;
+}
+.tags dl {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.tags dt {
+  font-weight: bolder;
+  font-size: larger;
+}
+.tags dd {
+  margin-left: 1em;
+}
+.tags dd a {
+  padding: 0.5em;
+  border-radius: 50px;
+  border: 1px solid;
+  text-decoration: none;
+  font-weight: 400;
 }
 
 .feed-links {
