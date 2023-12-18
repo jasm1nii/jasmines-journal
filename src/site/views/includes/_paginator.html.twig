@@ -10,10 +10,10 @@
 			{% endif %}
 		</li>
 		<li>
-			{{ page }} of {{ total_pages + 1 }}
+			{{ total_pages + 1 == 0 ? 0 : page }} of {{ total_pages + 1 }}
 		</li>
 		<li class="next">
-			{% if page != total_pages + 1 %}
+			{% if page != total_pages + 1 and total_pages > 0 %}
 				<a href="{{ paginator_url }}/{{ page + 1 }}" title="next page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-right.svg" alt="next page arrow" width="40" height="40"/></a>
 			{% else %}
 				<span aria-hidden="true">

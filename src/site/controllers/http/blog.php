@@ -20,8 +20,17 @@
 
         private static function getCurrentPage(): int {
 
-            preg_match('/[0-9]+/', REQUEST, $page_num);
-            return $page_num ? $page_num[0] : 1;
+            try {
+
+                $page = @preg_split('/\/(page)\//', REQUEST)[1];
+                @preg_match('/[0-9]+/', $page, $page_num);
+                return $page_num ? $page_num[0] : 1;
+            
+            } catch (\Exception) {
+
+                return 1;
+            
+            }
 
         }
 

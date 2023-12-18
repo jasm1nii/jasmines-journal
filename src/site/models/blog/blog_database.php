@@ -26,15 +26,11 @@
                     $this->buildTable();
                     $this->validateTable();
 
-                    echo nl2br(
-                        "({$this->type}) Successfully added new rows. \n"
-                    );
+                    echo "({$this->type}) Successfully added new rows. \n";
                     
                 } else {
 
-                    echo nl2br(
-                        "({$this->type}) Existing rows were found - no data was inserted. \n"
-                    );
+                    echo "({$this->type}) Existing rows were found - no data was inserted. \n";
 
                 }
             
@@ -57,6 +53,9 @@
                 $this->updateTable($file, use_root: true);
 
             }
+
+            $this->resortByDate();
+            $this->addPrimaryKey();
 
         }
 
@@ -90,14 +89,39 @@
 
             $sql = $this->database->prepare(
                 "INSERT INTO `{$this->table}`
-                (`File Path`, `Relative URL`, `Date`, `Tags`)
-                VALUES (:path, :url, :date, :tags)"
+                (`Date`, `File Path`, `Relative URL`, `Tags`)
+                VALUES (:date, :path, :url, :tags)"
             );
 
+            $sql->bindValue('date', $date);
             $sql->bindValue('path', $path);
             $sql->bindValue('url', $url);
-            $sql->bindValue('date', $date);
             $sql->bindValue('tags', $tags);
+
+            $sql->execute();
+
+        }
+
+        #[Setup]
+        private function resortByDate(): void {
+
+            $sql = $this->database->prepare(
+                "ALTER TABLE `{$this->table}`
+                ORDER BY `Date` ASC"
+            );
+
+            $sql->execute();
+
+        }
+
+        #[Setup]
+        private function addPrimaryKey(): void {
+                
+            $sql = $this->database->prepare(
+                "ALTER TABLE `{$this->table}`
+                ADD `ID` INT(6) NOT NULL AUTO_INCREMENT FIRST,
+                ADD PRIMARY KEY (`ID`)"
+            );
 
             $sql->execute();
 
@@ -150,33 +174,34 @@
                 $rows = ($row_limit - 1) * 10;
 
                 if ($sort_tag !== null) {
-        
+
                     $sql = $this->database->prepare(
-                        "SELECT `File Path`, `Relative URL`
+                        "SELECT `ID`, `File Path`, `Relative URL`
                         FROM `{$this->table}`
                         WHERE `Tags` LIKE '%{$sort_tag}%'
-                        ORDER BY `Date` DESC
+                        ORDER BY `ID` DESC
                         LIMIT :rows, 10"
                     );
                 
                 } else {
 
                     $sql = $this->database->prepare(
-                        "SELECT `File Path`, `Relative URL`
+                        "SELECT `ID`, `File Path`, `Relative URL`
                         FROM `{$this->table}`
-                        ORDER BY `Date` DESC
+                        ORDER BY `ID` DESC
                         LIMIT :rows, 10"
                     );
 
                 }
-        
+
                 $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
                 $sql->execute();
 
                 $sql->setFetchMode(\PDO::FETCH_ASSOC);
+
                 return $sql->fetchAll();
 
-            } catch (\Exception) {
+            } catch (\Exception $e) {
 
                 return null;
 
@@ -188,28 +213,18 @@
 
             if ($this->database !== null) {
 
-                if ($sort_tag == null) {
+                $query = "SELECT COUNT(*) FROM `{$this->table}`";
 
-                    $sql = $this->database->prepare(
-                        "SELECT COUNT(*)
-                        FROM `{$this->table}`"
-                    );
+                if ($sort_tag !== null) {
 
-                    $sql->execute();
-                    return $sql->fetchColumn();
+                    $query .= "WHERE `Tags` LIKE '%{$sort_tag}%'";
                 
-                } else {
-
-                    $sql = $this->database->prepare(
-                        "SELECT COUNT(*)
-                        FROM `{$this->table}`
-                        WHERE `Tags` LIKE '%{$sort_tag}%'"
-                    );
-
-                    $sql->execute();
-                    return $sql->fetchColumn();
-
                 }
+
+                $sql = $this->database->prepare($query);
+                $sql->execute();
+
+                return $sql->fetchColumn();
 
             } else {
 
@@ -227,6 +242,13 @@
             );
 
             $sql->bindValue('path', $path);
+            $sql->execute();
+
+            $sql = $this->database->prepare(
+                "ALTER TABLE `{$this->table}`
+                AUTO_INCREMENT = 0"
+            );
+
             $sql->execute();
 
         }

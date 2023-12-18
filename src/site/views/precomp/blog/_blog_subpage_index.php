@@ -30,8 +30,13 @@
 
             $content    = [];
             $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
-            $articles   = $database->getEntries($rows, $sort_tag);
 
+            $articles = $database->getEntries(
+                row_limit: $rows,
+                sort_tag: $sort_tag
+            );
+
+            $i = 0;
             foreach ($articles as $article) {
 
                 $path = $article['File Path'];
@@ -41,9 +46,10 @@
                     $content[] = self::buildTwig()->render($path,
                         [
                             'layout'    => $template,
-                            'slug'      => $article['Relative URL']
+                            'slug'      => $article['Relative URL'],
+                            'id'        => $article['ID']
                         ]);
-                    
+
                 } else {
 
                     $database->removeMissing($path);

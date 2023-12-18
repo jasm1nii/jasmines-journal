@@ -227,7 +227,7 @@ main::after {
   font-size: x-large;
 }
 
-.tag-title {
+.tag-title, .exception {
   text-align: center;
 }
 

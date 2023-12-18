@@ -35,12 +35,17 @@
         private ?int $total_rows;
         private ?int $total_pages;
         private ?string $index;
+        private ?string $decoded_tag;
 
         final public function __construct(
             private string $type,
             private int $current_page,
             private ?string $sort_tag = null
         ) {
+
+            $this->decoded_tag = ($this->sort_tag !== null)
+                ? rawurldecode($this->sort_tag)
+                : $this->sort_tag;
 
             $this->getTotalPages();
             $this->render();
@@ -54,7 +59,7 @@
                 'notes'     => new NotesDatabase
             };
 
-            $this->total_rows = $this->data->getTotal($this->sort_tag);
+            $this->total_rows = $this->data->getTotal($this->decoded_tag);
     
             if ($this->total_rows !== null) {
     
@@ -84,7 +89,7 @@
                 = Partials\Blog\Subpage\Index::renderRows(
                     type: $this->type,
                     rows: $this->current_page,
-                    sort_tag: $this->sort_tag
+                    sort_tag: $this->decoded_tag
                 );
 
             $vars = [
@@ -128,7 +133,7 @@
                 'slug'      => Route::useCleanSlug(),
                 'src'       => FileRouter\BlogEntry::mapMedia(),
                 'nav'       => Partials\Blog\Nav::make()
-            ]; 
+            ];
                 
             parent::Twig($this->content, $vars, null);
 
