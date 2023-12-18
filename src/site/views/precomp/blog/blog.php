@@ -12,7 +12,8 @@
 
     final class BlogIndex extends Layout {
         
-        protected string $layout = DIR['layouts'] . "blog/blog_layout.html.twig";
+        protected string $layout
+            = DIR['layouts'] . "blog/blog_layout.html.twig";
 
         final protected function render(): void {
 
@@ -31,15 +32,15 @@
     final class BlogSubpageIndex extends Layout {
 
         private ?object $data;
+        private ?int $total_rows;
         private ?int $total_pages;
         private ?string $index;
 
-        final public function __construct(private string $type, private int $current_page) {
-
-            $this->data = match ($this->type) {
-                'articles'  => new ArticlesDatabase,
-                'notes'     => new NotesDatabase
-            };
+        final public function __construct(
+            private string $type,
+            private int $current_page,
+            private ?string $sort_tag = null
+        ) {
 
             $this->getTotalPages();
             $this->render();
@@ -48,15 +49,22 @@
 
         private function getTotalPages(): void {
 
-            $total_rows = $this->data->getTotal();
+            $this->data = match ($this->type) {
+                'articles'  => new ArticlesDatabase,
+                'notes'     => new NotesDatabase
+            };
+
+            $this->total_rows = $this->data->getTotal($this->sort_tag);
     
-            if ($total_rows !== null) {
+            if ($this->total_rows !== null) {
     
-                $pages = intdiv($total_rows, 10);
+                $pages = intdiv($this->total_rows, 10);
     
                 // remove the last page if it's blank due to perfect division:
     
-                $this->total_pages = ($pages * 10 == $total_rows) ? $pages - 1 : $pages;
+                $this->total_pages
+                    = ($pages * 10 == $this->total_rows)
+                    ? $pages - 1 : $pages;
                     
             } else {
 
@@ -68,16 +76,23 @@
 
         final protected function render(): void {
 
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
+            $this->layout
+                = DIR['layouts']
+                . "blog/{$this->type}/{$this->type}_index_layout.html.twig";
 
-            $this->index = Partials\Blog\Subpage\Index::renderRows(
-                type: $this->type,
-                rows: $this->current_page
-            );
+            $this->index
+                = Partials\Blog\Subpage\Index::renderRows(
+                    type: $this->type,
+                    rows: $this->current_page,
+                    sort_tag: $this->sort_tag
+                );
 
             $vars = [
+                'request'       => REQUEST,
+                'tag'           => $this->sort_tag,
                 'nav'           => Partials\Blog\Nav::make(),
                 'entries'       => $this->index,
+                'total_entries' => $this->total_rows,
                 'total_pages'   => $this->total_pages,
                 'page'          => $this->current_page
             ];
@@ -99,9 +114,14 @@
 
         final protected function render(): void {
 
-            $this->layout = DIR['layouts'] . "blog/{$this->type}/{$this->type}_entry.html.twig";
+            $this->layout
+                = DIR['layouts']
+                . "blog/{$this->type}/{$this->type}_entry.html.twig";
 
-            $this->content = FileRouter\BlogEntry::matchURLToFile($use_root = false);
+            $this->content
+                = FileRouter\BlogEntry::matchURLToFile(
+                    use_root: false
+                );
 
             $vars = [
                 'layout'    => $this->layout,

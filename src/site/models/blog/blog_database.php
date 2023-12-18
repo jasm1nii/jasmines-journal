@@ -60,7 +60,10 @@
 
         }
 
-        final protected function updateTable(string $file, bool $use_root): void {
+        final protected function updateTable(
+            string $file,
+            bool $use_root
+        ): void {
 
             if ($use_root) {
 
@@ -137,18 +140,35 @@
 
         }
 
-        final public function getEntries(int $row_limit): ?array {
+        final public function getEntries(
+            int $row_limit,
+            ?string $sort_tag = null
+        ): ?array {
 
             try {
 
                 $rows = ($row_limit - 1) * 10;
+
+                if ($sort_tag !== null) {
         
-                $sql = $this->database->prepare(
-                    "SELECT `File Path`, `Relative URL`, `Tags`
-                    FROM `{$this->table}`
-                    ORDER BY `Date` DESC
-                    LIMIT :rows, 10"
-                );
+                    $sql = $this->database->prepare(
+                        "SELECT `File Path`, `Relative URL`
+                        FROM `{$this->table}`
+                        WHERE `Tags` LIKE '%{$sort_tag}%'
+                        ORDER BY `Date` DESC
+                        LIMIT :rows, 10"
+                    );
+                
+                } else {
+
+                    $sql = $this->database->prepare(
+                        "SELECT `File Path`, `Relative URL`
+                        FROM `{$this->table}`
+                        ORDER BY `Date` DESC
+                        LIMIT :rows, 10"
+                    );
+
+                }
         
                 $sql->bindValue('rows', $rows, \PDO::PARAM_INT);
                 $sql->execute();
@@ -164,18 +184,32 @@
     
         }
 
-        final public function getTotal(): ?int {
+        final public function getTotal(?string $sort_tag = null): ?int {
 
             if ($this->database !== null) {
 
-                $sql = $this->database->prepare(
-                    "SELECT COUNT(*)
-                    FROM `{$this->table}`"
-                );
+                if ($sort_tag == null) {
 
-                $sql->execute();
+                    $sql = $this->database->prepare(
+                        "SELECT COUNT(*)
+                        FROM `{$this->table}`"
+                    );
 
-                return $sql->fetchColumn();
+                    $sql->execute();
+                    return $sql->fetchColumn();
+                
+                } else {
+
+                    $sql = $this->database->prepare(
+                        "SELECT COUNT(*)
+                        FROM `{$this->table}`
+                        WHERE `Tags` LIKE '%{$sort_tag}%'"
+                    );
+
+                    $sql->execute();
+                    return $sql->fetchColumn();
+
+                }
 
             } else {
 

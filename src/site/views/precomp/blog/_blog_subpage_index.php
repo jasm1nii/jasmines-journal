@@ -17,17 +17,22 @@
 
         }
 
-        final public static function renderRows(string $type, ?int $rows): ?string {
+        final public static function renderRows(
+            string $type,
+            ?int $rows,
+            ?string $sort_tag = null
+        ): ?string {
 
             $database = match ($type) {
                 'articles' => new ArticlesDatabase,
                 'notes'    => new NotesDatabase
             };
 
-            $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
             $content    = [];
+            $template   = DIR['layouts'] . "blog/{$type}/_{$type}_index.html.twig";
+            $articles   = $database->getEntries($rows, $sort_tag);
 
-            foreach ($database->getEntries($rows) as $article) {
+            foreach ($articles as $article) {
 
                 $path = $article['File Path'];
 

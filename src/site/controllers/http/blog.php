@@ -25,7 +25,10 @@
 
         }
 
-        private static function routeSubpageIndex(bool $validate_db): void {
+        private static function routeSubpageIndex(
+            bool $validate_db = false,
+            ?string $sort_tag = null
+        ): void {
 
             if ($validate_db) {
 
@@ -40,7 +43,8 @@
 
             new Layouts\BlogSubpageIndex(
                 type: self::subpage(),
-                current_page: self::getCurrentPage()
+                current_page: self::getCurrentPage(),
+                sort_tag: $sort_tag
             );
 
         }
@@ -58,12 +62,25 @@
                 str_ends_with(REQUEST, self::subpage()),
                 str_ends_with(REQUEST, self::subpage() . "/index")
 
-                    => self::routeSubpageIndex(validate_db: true),
+                    => self::routeSubpageIndex(
+                        validate_db: true
+                    ),
 
 
                 str_contains(REQUEST, self::subpage() . "/page")
 
-                    => self::routeSubpageIndex(validate_db: false),
+                    => self::routeSubpageIndex(
+                        validate_db: false
+                    ),
+
+
+                str_contains(REQUEST, self::subpage() . "/tag")
+                && !empty(parent::matchSubpage(4))
+
+                    => self::routeSubpageIndex(
+                        validate_db: false,
+                        sort_tag: parent::matchSubpage(4)
+                    ),
 
 
                 str_contains(REQUEST, self::subpage())
