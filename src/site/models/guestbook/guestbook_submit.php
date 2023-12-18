@@ -65,10 +65,9 @@
         private function alterTable(): void {
 
            $sql = $this->database->prepare(
-                "ALTER TABLE :table AUTO_INCREMENT = 0"
+                "ALTER TABLE `{$this->table}` AUTO_INCREMENT = 0"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->execute();
 
         }
@@ -76,14 +75,13 @@
         private function insertIntoTable(): void {
 
             $sql = $this->database->prepare(
-                "INSERT INTO :table
+                "INSERT INTO `{$this->table}`
                 (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`,
                 `IP Address`, `Moderation Status`, `User Privilege`)
                 VALUES (NULL, current_timestamp(), :name, :email, :url,
                 :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
-            $sql->bindValue('table', $this->table);
             $sql->bindValue('name', $this->sender_name);
             $sql->bindValue('email', $this->sender_email);
             $sql->bindValue('url', $this->sender_url);
