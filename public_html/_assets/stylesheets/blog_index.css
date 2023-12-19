@@ -304,6 +304,7 @@ main a {
   display: flex;
   flex-wrap: wrap;
   line-height: 1.5em;
+  padding-left: 1em;
 }
 .tags dd {
   margin-left: 1em;
