@@ -33,12 +33,17 @@
           {# theme switcher placeholder #}
           <h1>b(rain)log entry</h1>
         </hgroup>
+
         <nav aria-label="primary">{{ nav|raw }}</nav>
       </header>
+
       <main>
         <article class="h-entry">
+
           <hgroup>
-            <h2 class="p-name">{{ title is defined ? title : "untitled" }}</h2>
+            <h2 class="p-name">
+              {{ title is defined ? title : "untitled" }}
+            </h2>
 
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
@@ -52,25 +57,54 @@
               <p class="p-summary">{{ summary }}</p>
             {% endif %}
           </hgroup>
-          <section class="e-content">{{ block('content') }}</section>
+
+          <section class="e-content">
+            {{ block('content') }}
+          </section>
+
           <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
+
+          <footer class="tags">
+							<dl>
+								<dt>tags:</dt>
+								{% if keywords is defined %}
+									{% for keyword in keywords %}
+										<dd><a href="/blog/articles/tag/{{ keyword }}">#{{ keyword }}</a></dd>
+									{% endfor %}
+								{% else %}
+									<dd>none defined</dd>
+								{% endif %}
+							</dl>
+						</footer>
         </article>
+
+        <aside class="feed-links">
+					<p>
+						<span aria-hidden="true">📰</span> subscribe via <a href="/articles.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
+					</p>
+				</aside>
 
         <section id="webmentions">
           <h3>webmentions</h3>
+
           {% if enable_webmentions == true %}
             <s-e-i-a></s-e-i-a>
           {% else %}
-            <p>the displaying of webmentions is disabled.</p>
+            <p>
+              the displaying of webmentions is disabled.
+            </p>
           {% endif %}
         </section>
 
         <section id="comments">
           <h3>comments</h3>
+
           {% if enable_comments == true %}
             <div id="comment-section" data-comments-id="blog-{{ published|date("Ymd") }}"></div>
           {% else %}
-            <p>comments are disabled.</p>
+            <p>
+              comments are disabled.
+            </p>
           {% endif %}
         </section>
       </main>

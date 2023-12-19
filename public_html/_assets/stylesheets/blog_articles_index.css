@@ -229,35 +229,50 @@ article ol {
   border: 1px solid;
   padding: 1.5em 2em 2em;
   list-style-position: inside;
+  list-style-type: decimal-leading-zero;
   margin-bottom: 2em;
 }
 article li {
-  list-style-type: decimal-leading-zero;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed;
+}
+article li:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  border-bottom: none;
 }
 article li::marker {
   font-size: xx-large;
   font-style: italic;
 }
-article li span {
-  border-bottom: 1px solid;
-  font-size: large;
+article li h3 {
+  margin-left: 1em;
+  line-height: 2em;
 }
-article li span::before {
-  content: "❝";
-  margin-right: 0.25em;
-}
-article li span::after {
-  content: "❞";
-  margin-left: 0.25em;
-}
-article li span a {
-  color: inherit;
+article li h3 a {
+  -webkit-text-decoration: 1px underline;
+          text-decoration: 1px underline;
+  text-underline-offset: 0.5em;
 }
 article li time {
   display: block;
   font-size: smaller;
-  margin-top: 0.5em;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+.tags {
+  display: inline-flex;
+  font-size: smaller;
+  margin-left: 2em;
+}
+.tags dd {
+  margin-left: 1em;
+}
+.tags a {
+  -webkit-text-decoration: 1px dotted underline;
+          text-decoration: 1px dotted underline;
 }
 
 .page-nav {

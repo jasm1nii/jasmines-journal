@@ -28,6 +28,9 @@
     background-color: rgb(22, 21, 21);
     border-color: rgb(68, 60, 60);
   }
+  article a {
+    color: #ffc0ca;
+  }
   a {
     color: rgb(255, 166, 181);
   }

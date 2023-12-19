@@ -1,4 +1,18 @@
 <li value="{{ id }}">
-    <h3><a href='{{ slug }}'>{{ title }}</a></h3>
-    <time datetime="{{ published|date() }}">{{ published }}</time>
+    <h3>
+        <a href='{{ slug }}'>{{ title }}</a>
+    </h3>
+    <time datetime="{{ published|date() }}">
+        {{ published }}
+    </time>
+    <dl class="tags">
+        <dt>tags:</dt>
+        {% if keywords is defined %}
+            {% for keyword in keywords %}
+                <dd><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></dd>
+            {% endfor %}
+        {% else %}
+            <dd>none defined</dd>
+        {% endif %}
+    </dl>
 </li>

@@ -60,35 +60,48 @@ article {
         border: 1px solid;
         padding: 1.5em 2em 2em;
         list-style-position: inside;
+        list-style-type: decimal-leading-zero;
         margin-bottom: 2em;
     }
     li {
-        list-style-type: decimal-leading-zero;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        padding-bottom: 2em;
+        border-bottom: 1px dashed;
+        &:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 1em;
+            border-bottom: none;
+        }
         &::marker {
             font-size: xx-large;
             font-style: italic;
         }
-        span {
-            border-bottom: 1px solid;
-            font-size: large;
-            &::before {
-                content: '❝';
-                margin-right: .25em;
-            }
-            &::after {
-                content: '❞';
-                margin-left: .25em;
-            }
+        h3 {
+            margin-left: 1em;
+            line-height: 2em;
             a {
-                color: inherit;
+                text-decoration: 1px underline;
+                text-underline-offset: .5em;
             }
         }
         time {
             display: block;
             font-size: smaller;
-            margin-top: .5em;
+            margin-left: 2em;
+            margin-bottom: 1em;
         }
+    }
+}
+
+.tags {
+    display: inline-flex;
+    font-size: smaller;
+    margin-left: 2em;
+    dd {
+        margin-left: 1em;
+    }
+    a {
+        text-decoration: 1px dotted underline;
     }
 }
 
