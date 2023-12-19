@@ -14,6 +14,7 @@
 
         protected static string $source_dir;
         protected static string $template;
+        protected static object $database;
 
         final protected static function getFiles(): ?array {
 
@@ -63,6 +64,14 @@
 
         abstract protected static function makeList(): ?string;
 
+        final public static function getTags(): ?array {
+
+            static::$database->getTags();
+
+            return static::$database->unique_tag_count;
+            
+        }
+
     }
 
     final class Notes extends IndexSection {
@@ -75,14 +84,12 @@
 
         final public static function makeList(): ?string {
 
-            $database = new NotesDatabase;
-            $file = $database->getNewestEntry();
+            static::$database = new NotesDatabase;
+            $file = static::$database->getNewestEntry();
 
-            $content = parent::renderTwig(
+            return parent::renderTwig(
                 file: $file, use_db: true
             );
-
-            return $content;
 
         }
 
@@ -98,10 +105,10 @@
 
         final public static function makeList(): ?string {
 
-            $database = new ArticlesDatabase;
+            static::$database = new ArticlesDatabase;
             $content = [];
 
-            foreach ($database->getEntries(row_total: 5) as $file) {
+            foreach (static::$database->getEntries(row_total: 5) as $file) {
 
                 $content[] = parent::renderTwig(
                     file: $file['File Path'], use_db: true

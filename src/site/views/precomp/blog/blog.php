@@ -20,7 +20,9 @@
             $vars = [
                 'nav'               => Partials\Blog\Nav::make(),
                 'notes_preview'     => Partials\Blog\Notes::makeList(),
-                'articles_archive'  => Partials\Blog\Articles::makeList()
+                'note_tags'         => Partials\Blog\Notes::getTags(),
+                'articles_archive'  => Partials\Blog\Articles::makeList(),
+                'article_tags'      => Partials\Blog\Articles::getTags()
             ];
 
             parent::Twig($this->layout, $vars, null);

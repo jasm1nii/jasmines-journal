@@ -9,6 +9,9 @@
     abstract class BlogDatabase extends Database {
 
         protected string $type;
+        public array $tags;
+        public array $unique_tags;
+        public array $unique_tag_count;
 
         #[Setup]
         final public function validateTable(): void {
@@ -268,6 +271,48 @@
             );
 
             $sql->execute();
+
+        }
+
+        final public function getTags(): void {
+
+            $sql = $this->database->prepare(
+                "SELECT `Tags`
+                FROM `{$this->table}`"
+            );
+
+            $sql->execute();
+            $sql->setFetchMode(\PDO::FETCH_ASSOC);
+
+            $sql_array = $sql->fetchAll();
+
+            for ($i = 0; $i < count($sql_array); $i++) {
+
+                $tags[$i] = $sql_array[$i]['Tags'];
+                $tags_resorted[$i] = explode(", ", $tags[$i]);
+               
+            }
+
+            $this->tags = array_merge(...$tags_resorted);
+
+            // remove redundant tags if they exist:
+
+            foreach (array_keys($this->tags, 'microblog') as $notes_key) {
+
+                unset($this->tags[$notes_key]);
+        
+            }
+
+            foreach (array_keys($this->tags, 'blog') as $articles_key) {
+
+                unset($this->tags[$articles_key]);
+        
+            }
+
+            $this->unique_tags = array_unique($this->tags, SORT_STRING);
+
+            $this->unique_tag_count = array_count_values($this->tags);
+            arsort($this->unique_tag_count, SORT_DESC);
 
         }
 
