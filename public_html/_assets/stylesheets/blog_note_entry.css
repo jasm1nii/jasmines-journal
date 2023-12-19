@@ -278,6 +278,19 @@ iframe {
 
 .feed-links {
   text-align: center;
+  margin: auto;
+}
+.feed-links ul {
+  display: flex;
+  margin-left: 0;
+  padding-left: 0;
+}
+.feed-links li {
+  display: block;
+}
+.feed-links li:not(:last-of-type)::after {
+  content: "•";
+  margin: 0 1em;
 }
 
 #webmentions, #comments {

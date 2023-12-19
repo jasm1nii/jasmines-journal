@@ -49,7 +49,7 @@
 								<dt>tags:</dt>
 								{% if keywords is defined %}
 									{% for keyword in keywords %}
-										<dd><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></dd>
+										<dd><a href="/blog/notes/tag/{{ keyword }}"># {{ keyword }}</a></dd>
 									{% endfor %}
 								{% else %}
 									<dd>none defined</dd>
@@ -60,11 +60,12 @@
 					<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
 				</article>
 
-				<aside class="feed-links">
-					<p>
-						<span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a> / <span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a>
-					</p>
-				</aside>
+				<nav class="feed-links">
+					<ul>
+						<li><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a></li>
+						<li><span aria-hidden="true">🐘</span> follow via <a href="https://fed.brid.gy/web/jasm1nii.xyz" rel="external me">fediverse</a></li>
+					</ul>
+				</nav>
 
 				<section id="webmentions">
 					<h3>webmentions</h3>

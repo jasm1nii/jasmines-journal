@@ -140,7 +140,20 @@ section {
 
 .feed-links {
     text-align: center;
+    margin: auto;
     font-size: larger;
+    ul {
+        display: flex;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    li {
+        display: block;
+        &:not(:last-of-type)::after {
+            content: "\2022";
+            margin: 0 1em;
+        }
+    }
 }
 
 #comments, #webmentions {
