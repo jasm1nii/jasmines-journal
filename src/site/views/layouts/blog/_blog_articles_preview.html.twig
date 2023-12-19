@@ -1,5 +1,6 @@
 <section class="h-entry">
     <h3 class="p-name"><a href='/blog/articles/{{ slug }}'>{{ title }}</a></h3>
-    <p class="p-summary">&ldquo;{{ summary }}&rdquo;</p>
-    <time datetime="{{ published|date() }}">{{ published }}</time>
+    <p>
+        <time datetime="{{ published|date() }}">{{ published }}</time> - <q class="p-summary" cite="https://jasm1nii.xyz/blog/articles/{{ slug }}">{{ summary }}</q>
+    </p>
 </section>

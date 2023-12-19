@@ -27,10 +27,10 @@
 								<img src='/_assets/media/main/oingo-boingo.png' alt='profile picture' class='u-photo' width='80' height='80'/>
 								{{ notes_preview|raw }}
 							</section>
-							<dl>
-								<dt>frequent tags</dt>
+							<dl class="tags">
+								<dt>frequent tags:</dt>
 								{% for key, value in note_tags|slice(0, 5) %}
-									<dd># <a href="/blog/notes/tag/{{ key }}">{{ key }} ({{ value }})</a></dd>
+									<dd><a href="/blog/notes/tag/{{ key }}"># {{ key }} ({{ value }})</a></dd>
 								{% endfor %}
 							</dl>
 							<nav class="subscribe">
@@ -39,7 +39,7 @@
 										<span aria-hidden="true">📖</span> <a href="/blog/notes">view archive</a>
 									</li>
 									<li>
-										<span aria-hidden="true">📰</span> subscribe via <a href="/blog/notes/notes.xml">atom</a>
+										<span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a>
 									</li>
 								</ul>
 							</nav>
@@ -47,10 +47,10 @@
 						<section class="blog">
 							<h2>articles</h2>
 							{{ articles_archive|raw }}
-							<dl>
-								<dt>frequent tags</dt>
+							<dl class="tags">
+								<dt>frequent tags:</dt>
 								{% for key, value in article_tags|slice(0, 5) %}
-									<dd># <a href="/blog/articles/tag/{{ key }}">{{ key }} ({{ value }})</a></dd>
+									<dd><a href="/blog/articles/tag/{{ key }}"># {{ key }} ({{ value }})</a></dd>
 								{% endfor %}
 							</dl>
 							<nav class="subscribe">
@@ -59,7 +59,7 @@
 										<span aria-hidden="true">📖</span> <a href="/blog/articles">view archive</a>
 									</li>
 									<li>
-										<span aria-hidden="true">📰</span> subscribe via <a href="/blog/articles/articles.xml">atom</a>
+										<span aria-hidden="true">📰</span> subscribe via <a href="/articles.xml">atom</a>
 									</li>
 								</ul>
 							</nav>

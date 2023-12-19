@@ -174,7 +174,7 @@ button:hover {
 body {
   font-size: 1.1em;
   width: 90%;
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   padding-bottom: 3vh;
 }
@@ -248,12 +248,17 @@ main a {
   margin-bottom: auto;
   border: 1px solid;
 }
+.microblog .newest-note .p-name {
+  font-size: x-large;
+}
 .microblog .newest-note .h-entry {
   display: flex;
   flex-direction: column;
 }
 .microblog .newest-note .e-content {
   line-height: 1.5em;
+  font-size: larger;
+  margin: 0;
 }
 .microblog .newest-note p {
   margin-top: 0;
@@ -264,9 +269,9 @@ main a {
 }
 
 .blog .h-entry {
-  padding: 0;
-  padding-bottom: 2em;
+  padding: 0 0 1em 0;
   border: none;
+  font-size: larger;
 }
 .blog .h-entry h3 {
   margin-top: 0;
@@ -274,11 +279,38 @@ main a {
   letter-spacing: 0.015em;
   font-weight: 600;
 }
-.blog .h-entry .p-summary {
-  font-style: italic;
-}
-.blog .h-entry .p-summary, .blog .h-entry time {
+.blog .h-entry h3 + p {
   margin-left: 1em;
+}
+.blog .tags {
+  border-top: 1px dashed;
+  padding-top: 1em;
+}
+
+.p-name {
+  line-height: 1.5em;
+}
+.p-name a {
+  -webkit-text-decoration: 1px solid underline;
+          text-decoration: 1px solid underline;
+  text-underline-offset: 0.3em;
+}
+
+.read-more {
+  font-weight: normal;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.5em;
+}
+.tags dd {
+  margin-left: 1em;
+  font-weight: normal;
+}
+.tags dd a {
+  font-weight: normal;
 }
 
 .subscribe {
@@ -286,6 +318,13 @@ main a {
   padding-top: 1em;
   border-top: 1px dashed;
   text-align: right;
+}
+.subscribe ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+  list-style: none;
 }
 
 iframe {

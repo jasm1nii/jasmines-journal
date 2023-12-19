@@ -2,13 +2,15 @@
 
 <section class="h-entry">
     <h3 class='p-name'>
-        <time datetime='{{ published|date() }}'><a href='/blog/notes/{{ slug }}'>{{ published }}</a></time>
+        <time datetime='{{ published|date() }}'>
+            <a href='/blog/notes/{{ slug }}'>{{ published }}</a>
+        </time>
     </h3>
-    <section class='e-content'>
+    <blockquote class='e-content' cite="https://jasm1nii.xyz/blog/notes/{{ slug }}">
         {% if block('content')|length > 250 %}
-            {{ block('content')[:250]|striptags(tag_filter)|raw }} &hellip;
+            {{ block('content')[:250]|striptags(tag_filter)|raw }} &hellip; <a class="read-more" href="/blog/notes/{{ slug }}">(read more)</a>
         {% else %}
             {{ block('content')|striptags(tag_filter)|raw }}
         {% endif %}
-    </section>
+    </blockquote>
 </section>

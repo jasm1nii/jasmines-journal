@@ -225,50 +225,58 @@ article {
 article h2 {
   letter-spacing: 0.05em;
 }
-article ol {
+article .articles-list {
   border: 1px solid;
   padding: 1.5em 2em 2em;
   list-style-position: inside;
   list-style-type: decimal-leading-zero;
   margin-bottom: 2em;
 }
-article li {
+article .articles-list > li {
   margin-bottom: 1.5em;
   padding-bottom: 2em;
   border-bottom: 1px dashed;
 }
-article li:last-of-type {
+article .articles-list > li:last-of-type {
   margin-bottom: 0;
   padding-bottom: 1em;
   border-bottom: none;
 }
-article li::marker {
+article .articles-list > li::marker {
   font-size: xx-large;
   font-style: italic;
 }
-article li h3 {
+article .articles-list > li h3 {
   margin-left: 1em;
   line-height: 2em;
 }
-article li h3 a {
+article .articles-list > li h3 a {
   -webkit-text-decoration: 1px underline;
           text-decoration: 1px underline;
   text-underline-offset: 0.5em;
 }
-article li time {
-  display: block;
-  font-size: smaller;
+article .articles-list > li dl {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  row-gap: 1em;
   margin-left: 2em;
-  margin-bottom: 1em;
+  font-size: smaller;
+}
+article .articles-list > li dl dt {
+  grid-column: 1;
+}
+article .articles-list > li dl dd {
+  grid-column: 2;
 }
 
 .tags {
   display: inline-flex;
-  font-size: smaller;
-  margin-left: 2em;
+  list-style: none;
+  padding-left: 0;
 }
-.tags dd {
-  margin-left: 1em;
+.tags li {
+  margin-left: 0;
+  margin-right: 1em;
 }
 .tags a {
   -webkit-text-decoration: 1px dotted underline;

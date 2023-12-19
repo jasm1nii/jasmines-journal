@@ -34,10 +34,20 @@
 .dark-mode {
   background-color: black;
   color: white;
+  font-weight: normal;
+}
+.dark-mode main a {
+  color: #ffc0ca;
 }
 .dark-mode .microblog, .dark-mode .blog {
   background-color: rgb(22, 21, 21);
   border-color: rgb(68, 60, 60);
+}
+.dark-mode .newest-note {
+  background-color: rgb(39, 28, 39);
+}
+.dark-mode .blog .h-entry h3 {
+  background-color: rgb(39, 28, 39);
 }
 .dark-mode a {
   color: rgb(255, 166, 181);
@@ -45,10 +55,4 @@
 .dark-mode a:hover {
   color: black;
   background-color: rgb(255, 234, 176);
-}
-.dark-mode .newest-note {
-  background-color: rgb(39, 28, 39);
-}
-.dark-mode .blog .h-entry h3 {
-  background-color: rgb(39, 28, 39);
 }/*# sourceMappingURL=blog_index_theme.css.map */

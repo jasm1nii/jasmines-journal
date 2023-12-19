@@ -56,49 +56,57 @@ article {
     h2 {
         letter-spacing: .05em;
     }
-    ol {
+    .articles-list {
         border: 1px solid;
         padding: 1.5em 2em 2em;
         list-style-position: inside;
         list-style-type: decimal-leading-zero;
         margin-bottom: 2em;
-    }
-    li {
-        margin-bottom: 1.5em;
-        padding-bottom: 2em;
-        border-bottom: 1px dashed;
-        &:last-of-type {
-            margin-bottom: 0;
-            padding-bottom: 1em;
-            border-bottom: none;
-        }
-        &::marker {
-            font-size: xx-large;
-            font-style: italic;
-        }
-        h3 {
-            margin-left: 1em;
-            line-height: 2em;
-            a {
-                text-decoration: 1px underline;
-                text-underline-offset: .5em;
+        > li {
+            margin-bottom: 1.5em;
+            padding-bottom: 2em;
+            border-bottom: 1px dashed;
+            &:last-of-type {
+                margin-bottom: 0;
+                padding-bottom: 1em;
+                border-bottom: none;
             }
-        }
-        time {
-            display: block;
-            font-size: smaller;
-            margin-left: 2em;
-            margin-bottom: 1em;
+            &::marker {
+                font-size: xx-large;
+                font-style: italic;
+            }
+            h3 {
+                margin-left: 1em;
+                line-height: 2em;
+                a {
+                    text-decoration: 1px underline;
+                    text-underline-offset: .5em;
+                }
+            }
+            dl {
+                display: grid;
+                grid-template-columns: 1fr 9fr;
+                row-gap: 1em;
+                margin-left: 2em;
+                font-size: smaller;
+                dt {
+                    grid-column: 1;
+                }
+                dd {
+                    grid-column: 2;
+                }
+            }
         }
     }
 }
 
 .tags {
     display: inline-flex;
-    font-size: smaller;
-    margin-left: 2em;
-    dd {
-        margin-left: 1em;
+    list-style: none;
+    padding-left: 0;
+    li {
+        margin-left: 0;
+        margin-right: 1em;
     }
     a {
         text-decoration: 1px dotted underline;

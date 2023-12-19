@@ -23,10 +23,20 @@
   body {
     background-color: black;
     color: white;
+    font-weight: normal;
+  }
+  main a {
+    color: #ffc0ca;
   }
   .microblog, .blog {
     background-color: rgb(22, 21, 21);
     border-color: rgb(68, 60, 60);
+  }
+  .newest-note {
+    background-color: rgb(39, 28, 39);
+  }
+  .blog .h-entry h3 {
+    background-color: rgb(39, 28, 39);
   }
   a {
     color: rgb(255, 166, 181);
@@ -34,12 +44,6 @@
   a:hover {
     color: black;
     background-color: rgb(255, 234, 176);
-  }
-  .newest-note {
-    background-color: rgb(39, 28, 39);
-  }
-  .blog .h-entry h3 {
-    background-color: rgb(39, 28, 39);
   }
 }
 @media (prefers-color-scheme: light) {

@@ -1,21 +1,21 @@
 @use '../../shared' as *;
+@use 'sass:color';
 
 @mixin dark-mode-body {
     background-color: $dark-bg-color;
     color: $dark-font-color;
+    font-weight: normal;
 }
 
 @mixin dark-mode {
+    main {
+        a {
+            color: color.adjust($dark-link-color, $lightness: 5%);
+        }
+    }
     .microblog, .blog {
         background-color: $dark-section-bg;
         border-color: $dark-section-border;
-    }
-    a {
-        color: $dark-link-color;
-        &:hover {
-            color: black;
-            background-color: $dark-link-hover-bg-color;
-        }
     }
     .newest-note {
         background-color: rgb(39, 28, 39);;
@@ -25,6 +25,13 @@
             h3 {
                 background-color: rgb(39, 28, 39);
             }
+        }
+    }
+    a {
+        color: $dark-link-color;
+        &:hover {
+            color: black;
+            background-color: $dark-link-hover-bg-color;
         }
     }
 }

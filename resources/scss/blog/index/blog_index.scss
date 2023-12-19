@@ -7,7 +7,7 @@
 body {
     font-size: 1.1em;
     width: 90%;
-    max-width: 800px;
+    max-width: 850px;
     margin: auto;
     padding-bottom: 3vh;
 }
@@ -77,12 +77,17 @@ main {
             margin-bottom: auto;
             border: 1px solid;
         }
+        .p-name {
+            font-size: x-large;
+        }
         .h-entry {
             display: flex;
             flex-direction: column;
         }
         .e-content {
             line-height: 1.5em;
+            font-size: larger;
+            margin: 0;
         }
         p {
             margin-top: 0;
@@ -96,20 +101,46 @@ main {
 
 .blog {
     .h-entry {
-        padding: 0;
-        padding-bottom: 2em;
+        padding: 0 0 1em 0;
         border: none;
+        font-size: larger;
         h3 {
             margin-top: 0;
             padding: .5em;
             letter-spacing: .015em;
             font-weight: 600;
+            + p {
+                margin-left: 1em;
+            }
         }
-        .p-summary {
-            font-style: italic;
-        }
-        .p-summary, time {
-            margin-left: 1em;
+    }
+    .tags {
+        border-top: 1px dashed;
+        padding-top: 1em;
+    }
+}
+
+.p-name {
+    line-height: 1.5em;
+    a {
+        text-decoration: 1px solid underline;
+        text-underline-offset: .3em;
+    }
+}
+
+.read-more {
+    font-weight: normal;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.5em;
+    dd {
+        margin-left: 1em;
+        font-weight: normal;
+        a {
+            font-weight: normal;
         }
     }
 }
@@ -119,6 +150,12 @@ main {
     padding-top: 1em;
     border-top: 1px dashed;
     text-align: right;
+    ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+        column-gap: 1em;
+        list-style: none;
+    }
 }
 
 iframe {

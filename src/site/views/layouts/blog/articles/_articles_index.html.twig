@@ -1,18 +1,26 @@
 <li value="{{ id }}">
-    <h3>
-        <a href='{{ slug }}'>{{ title }}</a>
-    </h3>
-    <time datetime="{{ published|date() }}">
-        {{ published }}
-    </time>
-    <dl class="tags">
-        <dt>tags:</dt>
-        {% if keywords is defined %}
-            {% for keyword in keywords %}
-                <dd><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></dd>
-            {% endfor %}
-        {% else %}
-            <dd>none defined</dd>
+    <h3><a href='{{ slug }}'>{{ title }}</a></h3>
+    <blockquote cite="https://jasm1nii.xyz{{ slug }}">
+        <p>&ldquo;{{ summary }}&rdquo;</p>
+    </blockquote>
+    <dl>
+        <dt>published</dt>
+        <dd><time datetime="{{ published|date() }}">{{ published }}</time></dd>
+        {% if updated is defined %}
+            <dt>updated</dt>
+            <dd><time datetime="{{ updated|date() }}">{{ updated }}</time></dd>
         {% endif %}
+        <dt>tags</dt>
+        <dd>
+            <ul class="tags">
+                {% if keywords is defined %}
+                    {% for keyword in keywords %}
+                        <li><a href="/blog/notes/tag/{{ keyword }}">#{{ keyword }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    <li>none</li>
+                {% endif %}
+            </ul>
+        </dd>
     </dl>
 </li>
