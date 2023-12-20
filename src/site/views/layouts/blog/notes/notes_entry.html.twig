@@ -72,6 +72,9 @@
 					
 					{% if enable_webmentions == true %}
 
+						{% if webmentions_301 == true %}
+							<h4>via current URL</h4>
+						{% endif %}
 						<s-e-i-a></s-e-i-a>
 
 						{% if webmentions_301 == true %}
@@ -85,7 +88,7 @@
 
 								<h4>via past URLs</h4>
 								<p>webmentions from the previous address could not be carried over.</p>
-
+								
 							{% endif %}
 
 						{% endif %}
