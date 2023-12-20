@@ -4,6 +4,7 @@
     @media all and (max-width:768px) {
         body {
             width: fit-content;
+            max-width: 100vw;
             margin: auto auto;
             padding-top: 3vh;
             flex-direction: column;
@@ -26,26 +27,6 @@
             flex-direction: column;
         }
         .notes-format {
-            flex-direction: column;
-            header {
-                margin-left: 3vw;
-                margin-bottom: 3vh;
-                display: flex;
-                align-items: center;
-                .u-photo {
-                    margin-bottom: 0;
-                }
-                hgroup {
-                    p {
-                        margin-bottom: 0;
-                    }
-                }
-                .id {
-                    margin-top: 0;
-                    border-top: none;
-                    padding-top: 0;
-                }
-            }
             .h-entry {
                 border-left: none;
                 border-right: none;

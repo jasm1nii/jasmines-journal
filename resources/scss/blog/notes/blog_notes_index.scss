@@ -1,5 +1,6 @@
 @use '../shared' as theme;
 
+@use '_screen-sizes/index_1100' as *;
 @use '_screen-sizes/index_768' as *;
 @use '_screen-sizes/index_500' as *;
 
@@ -7,18 +8,16 @@
 
 body {
     font-size: 1.1em;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     margin-top: 5%;
     padding-bottom: 3vh;
     display: flex;
     flex-direction: row-reverse;
-    column-gap: 2em;
+    column-gap: 3vw;
 }
 
 header {
-    max-width: 12em;
-    margin-left: 1em;
     position: sticky;
     top: 5%;
     align-self: flex-start;
@@ -154,5 +153,6 @@ iframe {
 
 @include theme.paginator;
 
+@include screen-1100;
 @include screen-768;
 @include screen-500;

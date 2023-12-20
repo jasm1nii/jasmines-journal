@@ -56,50 +56,51 @@ article {
     h2 {
         letter-spacing: .05em;
     }
-    .articles-list {
-        border: 1px solid;
-        padding: 1.5em 2em 2em;
-        list-style-position: inside;
-        list-style-type: decimal-leading-zero;
-        margin-bottom: 2em;
-        > li {
-            margin-bottom: 1.5em;
-            padding-bottom: 2em;
-            border-bottom: 1px dashed;
-            &:last-of-type {
-                margin-bottom: 0;
-                padding-bottom: 1em;
-                border-bottom: none;
-            }
-            &::marker {
-                font-size: xx-large;
-                font-style: italic;
-            }
-            h3 {
-                margin-left: 1em;
-                line-height: 2em;
-                a {
-                    text-decoration: 1px underline;
-                    text-underline-offset: .5em;
-                }
-                + blockquote {
-                    margin-bottom: 2em;
-                }
-            }
-            dl {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-                row-gap: 1em;
-                margin-left: 2em;
-                font-size: smaller;
-                line-height: 1em;
-                dt {
-                    grid-column: 1;
-                }
-                dd {
-                    grid-column: 2;
-                }
-            }
+}
+
+.articles-list {
+    border: 1px solid;
+    padding: 1.5em 2em 2em;
+    list-style-position: inside;
+    list-style-type: decimal-leading-zero;
+    margin-bottom: 2em;
+    h3 {
+        margin-left: 1em;
+        line-height: 2em;
+        a {
+            text-decoration: 1px underline;
+            text-underline-offset: .5em;
+        }
+        + blockquote {
+            margin-bottom: 2em;
+        }
+    }
+    > li {
+        margin-bottom: 1.5em;
+        padding-bottom: 2em;
+        border-bottom: 1px dashed;
+        &:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 1em;
+            border-bottom: none;
+        }
+        &::marker {
+            font-size: xx-large;
+            font-style: italic;
+        }
+    }
+    dl {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        row-gap: 1em;
+        margin-left: 2em;
+        font-size: smaller;
+        line-height: 1em;
+        dt {
+            grid-column: 1;
+        }
+        dd {
+            grid-column: 2;
         }
     }
 }

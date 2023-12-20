@@ -225,40 +225,41 @@ article {
 article h2 {
   letter-spacing: 0.05em;
 }
-article .articles-list {
+
+.articles-list {
   border: 1px solid;
   padding: 1.5em 2em 2em;
   list-style-position: inside;
   list-style-type: decimal-leading-zero;
   margin-bottom: 2em;
 }
-article .articles-list > li {
-  margin-bottom: 1.5em;
-  padding-bottom: 2em;
-  border-bottom: 1px dashed;
-}
-article .articles-list > li:last-of-type {
-  margin-bottom: 0;
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-article .articles-list > li::marker {
-  font-size: xx-large;
-  font-style: italic;
-}
-article .articles-list > li h3 {
+.articles-list h3 {
   margin-left: 1em;
   line-height: 2em;
 }
-article .articles-list > li h3 a {
+.articles-list h3 a {
   -webkit-text-decoration: 1px underline;
           text-decoration: 1px underline;
   text-underline-offset: 0.5em;
 }
-article .articles-list > li h3 + blockquote {
+.articles-list h3 + blockquote {
   margin-bottom: 2em;
 }
-article .articles-list > li dl {
+.articles-list > li {
+  margin-bottom: 1.5em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed;
+}
+.articles-list > li:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  border-bottom: none;
+}
+.articles-list > li::marker {
+  font-size: xx-large;
+  font-style: italic;
+}
+.articles-list dl {
   display: grid;
   grid-template-columns: 1fr 3fr;
   row-gap: 1em;
@@ -266,10 +267,10 @@ article .articles-list > li dl {
   font-size: smaller;
   line-height: 1em;
 }
-article .articles-list > li dl dt {
+.articles-list dl dt {
   grid-column: 1;
 }
-article .articles-list > li dl dd {
+.articles-list dl dd {
   grid-column: 2;
 }
 
@@ -325,6 +326,17 @@ article .articles-list > li dl dd {
   width: 25%;
 }
 
+@media all and (max-width: 900px) {
+  .articles-list dl {
+    display: block;
+  }
+  .articles-list dt {
+    margin-bottom: 1em;
+  }
+  .articles-list dt:not(dl:first-child) {
+    margin-top: 1em;
+  }
+}
 @media all and (max-width: 768px) {
   body {
     width: -moz-fit-content;
@@ -357,6 +369,13 @@ article .articles-list > li dl dd {
   .layout > header {
     position: static;
     max-width: none;
+  }
+  .articles-list {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .articles-list h3, .articles-list blockquote, .articles-list dl {
+    margin-left: 1em;
   }
   main {
     margin-top: 5%;

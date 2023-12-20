@@ -173,19 +173,17 @@ button:hover {
 
 body {
   font-size: 1.1em;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   margin-top: 5%;
   padding-bottom: 3vh;
   display: flex;
   flex-direction: row-reverse;
-  -moz-column-gap: 2em;
-       column-gap: 2em;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
 }
 
 header {
-  max-width: 12em;
-  margin-left: 1em;
   position: sticky;
   top: 5%;
   align-self: flex-start;
@@ -359,10 +357,43 @@ iframe {
   width: 25%;
 }
 
+@media all and (max-width: 1100px) {
+  body {
+    max-width: 90vw;
+  }
+  header {
+    max-width: none;
+  }
+  .main-column {
+    max-width: 700px;
+  }
+  .notes-format {
+    flex-direction: column;
+  }
+  .notes-format header {
+    margin-left: 3vw;
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    position: static;
+  }
+  .notes-format header .u-photo {
+    margin-bottom: 0;
+  }
+  .notes-format header hgroup p {
+    margin-bottom: 0;
+  }
+  .notes-format header .id {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+  }
+}
 @media all and (max-width: 768px) {
   body {
     width: -moz-fit-content;
     width: fit-content;
+    max-width: 100vw;
     margin: auto auto;
     padding-top: 3vh;
     flex-direction: column;
@@ -403,26 +434,6 @@ iframe {
   }
   article {
     flex-direction: column;
-  }
-  .notes-format {
-    flex-direction: column;
-  }
-  .notes-format header {
-    margin-left: 3vw;
-    margin-bottom: 3vh;
-    display: flex;
-    align-items: center;
-  }
-  .notes-format header .u-photo {
-    margin-bottom: 0;
-  }
-  .notes-format header hgroup p {
-    margin-bottom: 0;
-  }
-  .notes-format header .id {
-    margin-top: 0;
-    border-top: none;
-    padding-top: 0;
   }
   .notes-format .h-entry {
     border-left: none;

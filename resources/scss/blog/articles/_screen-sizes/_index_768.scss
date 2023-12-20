@@ -1,7 +1,20 @@
 @use '../../../_shared/components/header_2' as *;
 
 @mixin screen-768 {
-    @media all and (max-width:768px) {
+    @media all and (max-width: 900px) {
+        .articles-list {
+            dl {
+                display: block;
+            }
+            dt {
+                margin-bottom: 1em;
+                &:not(dl:first-child) {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+    @media all and (max-width: 768px) {
         body {
             width: fit-content;
         }
@@ -11,6 +24,13 @@
             > header {
                 position: static;
                 max-width: none;
+            }
+        }
+        .articles-list {
+            padding-left: 1em;
+            padding-right: 1em;
+            h3, blockquote, dl {
+                margin-left: 1em;
             }
         }
         main {
