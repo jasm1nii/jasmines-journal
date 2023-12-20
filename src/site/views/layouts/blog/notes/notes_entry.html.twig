@@ -69,17 +69,31 @@
 
 				<section id="webmentions">
 					<h3>webmentions</h3>
-					{% if webmentions_301 == true %}
-						<p>
-							this post has moved to a new URL - webmentions from the previous one could not be carried over.
-						</p>
-					{% endif %}
+					
 					{% if enable_webmentions == true %}
+
 						<s-e-i-a></s-e-i-a>
+
+						{% if webmentions_301 == true %}
+
+							{% if webmentions_prev_url is defined %}
+
+								<h4>via {{ webmentions_prev_url }}</h4>
+								<s-e-i-a target="{{ webmentions_prev_url }}"></s-e-i-a>
+
+							{% else %}
+
+								<h4>via past URLs</h4>
+								<p>webmentions from the previous address could not be carried over.</p>
+
+							{% endif %}
+
+						{% endif %}
+
 					{% else %}
-						<p>
-							the displaying of webmentions is disabled.
-						</p>
+
+						<p>the displaying of webmentions is disabled.</p>
+
 					{% endif %}
 				</section>
 
