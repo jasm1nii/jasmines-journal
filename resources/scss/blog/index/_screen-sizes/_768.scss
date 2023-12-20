@@ -12,7 +12,8 @@
         @include header-style-2-768();
         header {
             position: static;
-            max-width: none;
+            max-width: 95vw;
+            margin: auto;
         }
 
         main {

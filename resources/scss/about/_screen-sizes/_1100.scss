@@ -1,0 +1,10 @@
+@mixin screen-1100 {
+    @media all and (max-width:1100px) {
+        header {
+            max-width: none;
+        }
+        main {
+            max-width: 850px;
+        }
+    }
+}

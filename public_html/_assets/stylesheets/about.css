@@ -216,6 +216,9 @@ article > section ul li p ~ footer {
   overflow-y: auto;
 }
 
+#contact {
+  padding-bottom: 1em;
+}
 #contact ul {
   -moz-columns: 2;
        columns: 2;
@@ -339,6 +342,14 @@ button {
   background-color: plum;
 }
 
+@media all and (max-width: 1100px) {
+  header {
+    max-width: none;
+  }
+  main {
+    max-width: 850px;
+  }
+}
 @media all and (max-width: 768px) {
   body {
     font-size: 1.1em;

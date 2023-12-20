@@ -371,7 +371,8 @@ iframe {
   }
   header {
     position: static;
-    max-width: none;
+    max-width: 95vw;
+    margin: auto;
   }
   main {
     margin-top: 5%;
