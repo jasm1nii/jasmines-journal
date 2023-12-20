@@ -48,6 +48,12 @@
 
     - [7.css](https://khang-nd.github.io/7.css/)
 
+#### CSS generators
+
+- [CSS generators](https://css-generators.com/)
+
+- [CSS portal](https://www.cssportal.com/)
+
 </section>
 
 <section>

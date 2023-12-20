@@ -64,6 +64,15 @@
 these resources can help keep your code more consistent and reduce the redundancy of typing straight <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Stylesheets">CSS</abbr> for every single page.
 
 
+### developer tools
+
+- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
+
+- [prepos](https://prepros.io/)
+
+    a standalone compiler program that supports many templating languages and language extensions, such as sass, tailwind CSS, pug, and markdown. it can also compress javascript, CSS, and image files. comes with a built-in web server, too!
+
+
 ### accessibility references
 
 **a free internet is an accessible internet** - ideally, a website's design should accommodate a wide range of visitors, included disabled people and assistive technology users.
@@ -100,6 +109,10 @@ for a list of things that i've used specifically on this site (including graphic
     a pure <abbr title="Cascading Stylesheets">CSS</abbr> library of predefined animations - takes the work out of setting keyframes for simple transitions.
 
 ### javascript
+
+- [oring](https://github.com/Graycot/Oring)
+
+    an open source web ring template.
 
 - [p5.js](https://p5js.org/)
 
@@ -147,12 +160,6 @@ for a list of things that i've used specifically on this site (including graphic
 ## miscellaneous
 
 - [a guide for blocking <abbr title="artificial intelligence">AI</abbr>/<abbr title="machine learning">ML</abbr> scraper bots 👑](https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/)
-
-- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
-
-- [oring](https://github.com/Graycot/Oring)
-
-    an open source web ring template.
 
 - [HTML validator](https://validator.w3.org/)
 
