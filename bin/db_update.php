@@ -7,7 +7,7 @@
     use JasminesJournal\Site\Models\NotesDatabase;
     use JasminesJournal\Site\Models\ArticlesDatabase;
 
-    if (PHP_SAPI == 'cli' && getenv('ENV') == 'prod') {
+    if (getenv('ENV') == 'prod') {
 
         $_SERVER['HTTP_HOST'] = 'jasm1nii.xyz';
 

@@ -63,7 +63,8 @@
         }
 
         final protected function updateTable(
-            string $file, bool $use_root
+            string $file,
+            bool $use_root
         ): void {
 
             if ($use_root) {
@@ -192,10 +193,12 @@
                     $sql = $this->database->prepare(
                         "SELECT `ID`, `File Path`, `Relative URL`
                         FROM `{$this->table}`
-                        WHERE `Tags` LIKE '%{$sort_tag}%'
+                        WHERE `Tags` LIKE :tag
                         ORDER BY `ID` DESC
                         LIMIT :offset, :total"
                     );
+
+                    $sql->bindValue('tag', "%" . $sort_tag . "%");
                 
                 } else {
 
@@ -228,15 +231,25 @@
 
             if ($this->database !== null) {
 
-                $query = "SELECT COUNT(*) FROM `{$this->table}`";
-
                 if ($sort_tag !== null) {
 
-                    $query .= "WHERE `Tags` LIKE '%{$sort_tag}%'";
+                    $sql = $this->database->prepare(
+                        "SELECT COUNT(*)
+                        FROM `{$this->table}`
+                        WHERE `Tags` LIKE :tag"
+                    );
+
+                    $sql->bindValue('tag', "%" . $sort_tag . "%");
                 
+                } else {
+
+                    $sql = $this->database->prepare(
+                        "SELECT COUNT(*)
+                        FROM `{$this->table}`"
+                    );
+
                 }
 
-                $sql = $this->database->prepare($query);
                 $sql->execute();
 
                 return $sql->fetchColumn();
