@@ -3,6 +3,7 @@
     namespace JasminesJournal\Site\RequestRouter;
 
     use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Model\SecurityFilter;
     use JasminesJournal\Site\Views\Layouts;
     use JasminesJournal\Site\Models;
 
@@ -111,9 +112,20 @@
 
             $_SESSION['guestbook'] = $_SERVER['REQUEST_TIME'];
 
-            parent::timeOffset() > 3
-                ? parent::validateContent()
-                : parent::sendHeader('time_too_short');
+            $filter = new SecurityFilter;
+
+            if (!$filter->checkBlocklist()) {
+
+                parent::timeOffset() > 3
+                    ? parent::validateContent()
+                    : parent::sendHeader('time_too_short');
+                
+            } else {
+
+                $filter->logRequestTime();
+                parent::sendHeader('blocked');
+
+            }
 
         }
 
@@ -132,5 +144,3 @@
         }
 
     }
-
-?>

@@ -18,11 +18,24 @@
     {
         type : "request_failed",
         message : "uh oh - your message didn't go through! 😫 if your connection is stable, this was likely due to a server-side issue."
+    },
+    {
+        type : "blocked",
+        message : "sorry, this IP has been flagged for previous misconduct."
     }
 ] %}
 
 {% for value in dialog_message %}
 	{% if value.type == dialog %}
-		<p class="dialog {{ dialog }}">{{ value.message }}</p>
+		<p class="dialog {{ dialog }}">
+            {{ value.message }}
+            {% if dialog == 'blocked' %}
+                <br/><br/>
+                if this was a mistake, please appeal to <a href="mailto:contact@jasm1nii.xyz">contact@jasm1nii.xyz</a> and include the time of your request:
+                <br/><br/>
+                {{ request_time|format_datetime('full', 'full', timezone='Asia/Jakarta') }}
+            {% endif %}
+        </p>
+        
 	{% endif %}
 {% endfor %}
