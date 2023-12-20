@@ -11,9 +11,9 @@
         public string $to_addr;
         public string $to_name;
 
-        public string $subject;
-        public string $html_body;
-        public string $plaintext_body;
+        public ?string $subject = "(no subject)";
+        public ?string $html_body = "(empty)";
+        public ?string $plaintext_body = "(empty)";
 
         final public function __construct() {
 

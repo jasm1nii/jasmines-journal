@@ -10,6 +10,9 @@
 
         protected static string $db_name = 'admin';
 
+        private int $sent_count = 0;
+        private int $del_count = 0;
+
         private function setTable(): void {
 
             $this->table = $this->db_config['email_queue_table'];
@@ -38,7 +41,7 @@
 
         }
 
-        private function count(): ?int {
+        private function countAll(): ?int {
 
             $sql = $this->database->prepare(
                 "SELECT COUNT(*)
@@ -51,9 +54,7 @@
 
         }
 
-        private function retrieve(): ?array {
-
-            $this->setTable();
+        private function retrieveAll(): ?array {
 
             $sql = $this->database->prepare(
                 "SELECT `ID`, `Subject`,
@@ -69,14 +70,23 @@
         }
 
         #[Routine]
-        public function send(?bool $clear = false): void {
+        public function sendAll(
+            ?bool $clear = false,
+            ?bool $show_summary = true,
+        ): void {
+            
+            $this->setTable();
+
+            if ($this->countAll() == 0) {
+
+                // echo "Nothing to send.\n";
+                return;
+
+            }
 
             $mail = new Mail;
 
-            $sent_count = 0;
-            $del_count = 0;
-
-            foreach ($this->retrieve() as $data) {
+            foreach ($this->retrieveAll() as $data) {
 
                 try {
 
@@ -85,7 +95,8 @@
                     $mail->plaintext_body = $data['Plaintext Message'];
 
                     $mail->sendMessage();
-                    $sent_count++;
+
+                    $this->sent_count++;
 
                 } catch (\Exception $e) {
 
@@ -94,35 +105,65 @@
 
                 if ($clear) {
 
-                    try {
-
-                        $sql = $this->database->prepare(
-                            "DELETE FROM `{$this->table}`
-                            WHERE `ID` = :id" 
-                        );
-
-                        $sql->bindParam('id', $data['ID']);
-                        $sql->execute();
-
-                        $del_count++;
-                    
-                    } catch (\Exception $e) {
-
-                        echo "#{$data['ID']} was not deleted - {$e->getMessage()}\n";
-
-                    }
+                    $this->clearByID($data['ID']);
 
                 }
 
             }
 
-            $sent_msg = ($sent_count == 1)
-                ? "One email was sent"
-                : "{$sent_count} emails were sent";
+            if ($show_summary) {
 
-            $del_msg = ($del_count == 1)
+                $this->showSummary();
+
+            }
+
+        }
+
+        private function clearByID(int $id): void {
+
+            try {
+
+                $sql = $this->database->prepare(
+                    "DELETE FROM `{$this->table}`
+                    WHERE `ID` = :id"
+                );
+
+                $sql->bindParam('id', $id);
+                $sql->execute();
+
+                $this->del_count++;
+            
+            } catch (\Exception $e) {
+
+                echo "#{$id} was not deleted - {$e->getMessage()}\n";
+
+            }
+
+        }
+
+        public function clearAll(): void {
+
+            $this->table ??= $this->setTable();
+
+            $sql = $this->database->prepare(
+                "TRUNCATE `{$this->table}`"
+            );
+
+            $sql->execute();
+
+            $this->del_count++;
+
+        }
+
+        private function showSummary(): void {
+
+            $sent_msg = ($this->sent_count == 1)
+                ? "One email was sent"
+                : "{$this->sent_count} emails were sent";
+
+            $del_msg = ($this->del_count == 1)
                 ? " and one queue item was deleted.\n"
-                : " and {$del_count} queue items were deleted.\n";
+                : " and {$this->del_count} queue items were deleted.\n";
 
             echo $sent_msg . $del_msg;
 

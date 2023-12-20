@@ -5,4 +5,4 @@
     use JasminesJournal\Core\Model\EmailQueue;
 
     $q = new EmailQueue;
-    $q->send(clear: true);
+    $q->sendAll(clear: true, show_summary: true);
