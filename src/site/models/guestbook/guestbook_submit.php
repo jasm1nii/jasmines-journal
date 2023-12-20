@@ -22,9 +22,7 @@
                 $this->sanitizeInput();
                 $this->alterTable();
                 $this->insertIntoTable();
-
-                $this->composeEmail();
-                $this->sendEmail();
+                $this->queueEmail();
 
             } catch (Exception) {
 
@@ -92,6 +90,35 @@
 
         }
 
+        private function queueEmail(): void {
+
+            try {
+
+                $sql = $this->database->prepare(
+                    "INSERT INTO `email_queue`
+                    (`Date`, `Name`, `Email`, `Website`, `Comment`)
+                    VALUES (current_timestamp(), :name, :email, :url, :message)"
+                );
+
+                $sql->bindValue('name', $this->sender_name);
+                $sql->bindValue('email', $this->sender_email);
+                $sql->bindValue('url', $this->sender_url);
+                $sql->bindValue('message', $this->sender_message);
+
+                $sql->execute();
+
+                RequestRouter\Guestbook::sendHeader('success');
+            
+            } catch (\Exception) {
+
+                RequestRouter\Guestbook::sendHeader('exception');
+
+            }
+
+        }
+
+        /* to-do: set up a cron script for this.
+
         private function composeEmail(): void {
 
             $this->mail = new Mail();
@@ -131,5 +158,7 @@
             }
             
         }
+
+        */
 
     }
