@@ -8,8 +8,7 @@
     abstract class Database extends Config {
 
         private readonly array $user_config;
-        private readonly array $db_config;
-
+        protected readonly array $db_config;
         protected static string $db_name;
         protected ?object $database;
         protected ?string $table;
@@ -29,7 +28,11 @@
                     [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']
                 );
 
-                $this->table = $this->db_config['table'];
+                if (isset($this->db_config['table'])) {
+
+                    $this->table = $this->db_config['table'];
+                
+                }
 
             } catch (\Exception) {
 

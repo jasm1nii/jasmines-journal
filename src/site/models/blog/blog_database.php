@@ -3,6 +3,7 @@
     namespace JasminesJournal\Site\Models;
 
     use JasminesJournal\Core\Setup;
+    use JasminesJournal\Core\Routine;
     use JasminesJournal\Core\Database;
     use JasminesJournal\Site\Models\BlogDirectory;
 
@@ -145,7 +146,7 @@
 
         }
 
-        #[Maintenance]
+        #[Routine]
         final public function validateNewestEntry(): void {
 
             try {

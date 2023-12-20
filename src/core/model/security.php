@@ -8,7 +8,15 @@
 
         protected static string $db_name = 'admin';
 
+        private function setTable() {
+
+            $this->table = $this->db_config['blocklist_table'];
+
+        }
+
         public function checkBlocklist(): bool|array {
+
+            $this->setTable();
 
             $sql = $this->database->prepare(
                 "SELECT `IP Address`

@@ -16,4 +16,7 @@
     class Setup {}
 
     #[\Attribute(\Attribute::IS_REPEATABLE)]
+    class Routine {}
+
+    #[\Attribute(\Attribute::IS_REPEATABLE)]
     class Testing {}

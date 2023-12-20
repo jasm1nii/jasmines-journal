@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Models;
 
-    use JasminesJournal\Core\Controller\Mail;
+    use JasminesJournal\Core\Model\EmailQueue;
     use JasminesJournal\Site\Models\GuestbookComments;
     use JasminesJournal\Site\RequestRouter;
 
@@ -23,6 +23,8 @@
                 $this->alterTable();
                 $this->insertIntoTable();
                 $this->queueEmail();
+
+                RequestRouter\Guestbook::sendHeader('success');
 
             } catch (Exception) {
 
@@ -74,9 +76,9 @@
 
             $sql = $this->database->prepare(
                 "INSERT INTO `{$this->table}`
-                (`ID`, `Date`, `Name`, `Email`, `Website`, `Comment`,
+                (`Date`, `Name`, `Email`, `Website`, `Comment`,
                 `IP Address`, `Moderation Status`, `User Privilege`)
-                VALUES (NULL, current_timestamp(), :name, :email, :url,
+                VALUES (current_timestamp(), :name, :email, :url,
                 :message, INET6_ATON(:ip), 'Pending', 'Guest')"
             );
 
@@ -92,38 +94,7 @@
 
         private function queueEmail(): void {
 
-            try {
-
-                $sql = $this->database->prepare(
-                    "INSERT INTO `email_queue`
-                    (`Date`, `Name`, `Email`, `Website`, `Comment`)
-                    VALUES (current_timestamp(), :name, :email, :url, :message)"
-                );
-
-                $sql->bindValue('name', $this->sender_name);
-                $sql->bindValue('email', $this->sender_email);
-                $sql->bindValue('url', $this->sender_url);
-                $sql->bindValue('message', $this->sender_message);
-
-                $sql->execute();
-
-                RequestRouter\Guestbook::sendHeader('success');
-            
-            } catch (\Exception) {
-
-                RequestRouter\Guestbook::sendHeader('exception');
-
-            }
-
-        }
-
-        /* to-do: set up a cron script for this.
-
-        private function composeEmail(): void {
-
-            $this->mail = new Mail();
-
-            $this->mail->subject = "guestbook message received!";
+            $subject = "guestbook message received!";
 
             $name       = "Name: {$this->sender_name}";
             $email      = "Email: {$this->sender_email}";
@@ -135,30 +106,15 @@
             $html .= "<li>{$url}</li>";
             $html .= "<li>{$message}</li></ul>";
 
-            $this->mail->html_body = $html;
-
             $plaintext = "{$name} - {$email} - {$url} - {$message}";
 
-            $this->mail->plaintext_body = $plaintext;
-            
+            $queue = new EmailQueue;
+            $queue->add(
+                subject: $subject,
+                html_body: $html,
+                plaintext_body: $plaintext
+            );
+
         }
-
-        private function sendEmail(): void {
-
-            try {
-
-                $this->mail->sendMessage();
-                
-                RequestRouter\Guestbook::sendHeader('success');
-                
-            } catch (Exception) {
-
-                RequestRouter\Guestbook::sendHeader('exception');
-
-            }
-            
-        }
-
-        */
 
     }
