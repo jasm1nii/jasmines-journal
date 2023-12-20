@@ -1,11 +1,16 @@
 <section class="notes-format">
     <header>
         <img class="u-photo" alt="" src="/_assets/media/main/oingo-boingo.png" width="80" height="80"/>
-        {% if tag is defined %}
-            <h3 class="id">#{{ id }}</h3>
-        {% else %}
-            <h2 class="id">#{{ id }}</h2>
-        {% endif %}
+        <hgroup>
+            {% if tag is defined %}
+                <h3 class="id">#{{ id }}</h3>
+            {% else %}
+                <h2 class="id">#{{ id }}</h2>
+            {% endif %}
+            <p>
+                <time datetime="{{ published|date() }}">{{ published|format_datetime(pattern="dd.M.yyyy") }}</time>
+            </p>
+        </hgroup>
     </header>
     <section class="h-entry">
         <section class="e-content">{{ block('content') }}</section>
@@ -21,7 +26,7 @@
                 {% endif %}
             </dl>
             <p class="post-links">
-                <time datetime="{{ published|date() }}">{{ published }}</time> | <a href="{{ slug }}">view post with comments</a>
+                <span aria-hidden="true">💬</span> <a href="{{ slug }}">view post with comments</a>
             </p>
 		</footer>
     </section>

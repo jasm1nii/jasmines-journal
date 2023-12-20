@@ -255,12 +255,16 @@ article .articles-list > li h3 a {
           text-decoration: 1px underline;
   text-underline-offset: 0.5em;
 }
+article .articles-list > li h3 + blockquote {
+  margin-bottom: 2em;
+}
 article .articles-list > li dl {
   display: grid;
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: 1fr 3fr;
   row-gap: 1em;
   margin-left: 2em;
   font-size: smaller;
+  line-height: 1em;
 }
 article .articles-list > li dl dt {
   grid-column: 1;

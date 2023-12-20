@@ -1,24 +1,20 @@
 <nav class="page-nav">
 	<ul>
-		<li class="previous">
+		<li class="previous" aria-hidden="{{ page != 1 ? 'false' : 'true' }}">
 			{% if page != 1 %}
-				<a href="{{ paginator_url }}/{{ page - 1 }}" title="previous page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-left.svg" alt="previous page arrow" width="40" height="40"/></a>
+				<a href="{{ paginator_url }}/{{ page - 1 }}" title="previous page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-left.svg" alt="previous page" width="40" height="40"/></a>
 			{% else %}
-				<span aria-hidden="true">
-					{{ previous_placeholder ? previous_placeholder : '🌸' }}
-				</span>
+				<span>{{ previous_placeholder ? previous_placeholder : '🌸' }}</span>
 			{% endif %}
 		</li>
 		<li>
 			{{ total_pages + 1 == 0 ? 0 : page }} of {{ total_pages + 1 }}
 		</li>
-		<li class="next">
+		<li class="next" aria-hidden="{{ page != total_pages + 1 and total_pages > 0 ? 'false' : 'true' }}">
 			{% if page != total_pages + 1 and total_pages > 0 %}
-				<a href="{{ paginator_url }}/{{ page + 1 }}" title="next page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-right.svg" alt="next page arrow" width="40" height="40"/></a>
+				<a href="{{ paginator_url }}/{{ page + 1 }}" title="next page"><img class="arrow" src="/_assets/media/_shared/css/arrow-circle-right.svg" alt="next page" width="40" height="40"/></a>
 			{% else %}
-				<span aria-hidden="true">
-					{{ next_placeholder ? next_placeholder : '💮' }}
-				</span>
+				<span>{{ next_placeholder ? next_placeholder : '💮' }}</span>
 			{% endif %}
 		</li>
 	</ul>

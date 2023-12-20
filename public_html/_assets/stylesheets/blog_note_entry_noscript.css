@@ -54,11 +54,20 @@
     background-color: ghostwhite;
     font-weight: 500;
   }
+  .cactus-container button {
+    background-color: rgb(204, 198, 207);
+    color: black;
+  }
+  .cactus-container button:hover {
+    background-color: pink;
+    color: rgb(70, 35, 41);
+  }
   a {
     color: rgb(88, 24, 56);
   }
   a:hover {
-    color: black;
+    color: white;
+    background-color: rgb(160, 120, 155);
   }
   :root, :host {
     --seia-color-text: $light-font-color;

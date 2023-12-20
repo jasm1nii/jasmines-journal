@@ -11,10 +11,21 @@
         background-color: $light-section-bg;
         font-weight: 500;
     }
+    .cactus-container {
+        button {
+            background-color: rgb(204, 198, 207);
+            color: black;
+            &:hover {
+                background-color: pink;
+                color: rgb(70, 35, 41);
+            }
+        }
+    }
     a {
         color: $light-link-color;
         &:hover {
-            color: black;
+            color: white;
+            background-color: $light-link-hover-bg-color;
         }
     }
 }

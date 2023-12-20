@@ -4,13 +4,13 @@
         <p>&ldquo;{{ summary }}&rdquo;</p>
     </blockquote>
     <dl>
-        <dt>published</dt>
+        <dt><span aria-hidden="true">📅</span> published</dt>
         <dd><time datetime="{{ published|date() }}">{{ published }}</time></dd>
         {% if updated is defined %}
-            <dt>updated</dt>
+            <dt><span aria-hidden="true">🆕</span> updated</dt>
             <dd><time datetime="{{ updated|date() }}">{{ updated }}</time></dd>
         {% endif %}
-        <dt>tags</dt>
+        <dt><span aria-hidden="true">🔖</span> tags</dt>
         <dd>
             <ul class="tags">
                 {% if keywords is defined %}

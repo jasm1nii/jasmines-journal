@@ -82,13 +82,17 @@ article {
                     text-decoration: 1px underline;
                     text-underline-offset: .5em;
                 }
+                + blockquote {
+                    margin-bottom: 2em;
+                }
             }
             dl {
                 display: grid;
-                grid-template-columns: 1fr 9fr;
+                grid-template-columns: 1fr 3fr;
                 row-gap: 1em;
                 margin-left: 2em;
                 font-size: smaller;
+                line-height: 1em;
                 dt {
                     grid-column: 1;
                 }
