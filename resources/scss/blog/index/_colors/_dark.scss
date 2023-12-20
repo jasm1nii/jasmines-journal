@@ -8,6 +8,9 @@
 }
 
 @mixin dark-mode {
+    header {
+        color: rgb(230, 225, 227);
+    }
     main {
         a {
             color: color.adjust($dark-link-color, $lightness: 5%);

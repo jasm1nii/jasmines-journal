@@ -22,7 +22,8 @@
   color: rgb(88, 24, 56);
 }
 .light-mode a:hover {
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: rgb(172, 93, 137);
 }
 .light-mode .newest-note {
   background-color: rgba(211, 196, 226, 0.24);
@@ -35,6 +36,9 @@
   background-color: black;
   color: white;
   font-weight: normal;
+}
+.dark-mode header {
+  color: rgb(230, 225, 227);
 }
 .dark-mode main a {
   color: #ffc0ca;

@@ -25,6 +25,9 @@
     color: white;
     font-weight: normal;
   }
+  header {
+    color: rgb(230, 225, 227);
+  }
   main a {
     color: #ffc0ca;
   }
@@ -58,7 +61,8 @@
     color: rgb(88, 24, 56);
   }
   a:hover {
-    color: black;
+    color: rgb(255, 255, 255);
+    background-color: rgb(172, 93, 137);
   }
   .newest-note {
     background-color: rgba(211, 196, 226, 0.24);

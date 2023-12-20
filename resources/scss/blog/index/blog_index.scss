@@ -135,13 +135,19 @@ main {
 .tags {
     display: flex;
     flex-wrap: wrap;
-    line-height: 1.5em;
     padding-left: 1em;
+    line-height: 2em;
     dd {
         margin-left: 1em;
         font-weight: normal;
+        font-size: smaller;
         a {
             font-weight: normal;
+            clip-path: polygon(10px 0%, 100% 0, 100% 100%, 10px 100%, 0 50%);
+            padding: .5em;
+            padding-left: 1em;
+            text-decoration: none;
+            background-color: rgba(136, 95, 160, 0.2);
         }
     }
 }
