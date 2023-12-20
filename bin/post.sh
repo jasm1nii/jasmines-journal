@@ -39,7 +39,7 @@ if [[ "$option" = "new-draft" || "$option" = "new" ]]; then
 
     target_file="resources/drafts/blog/$post_dir/$date/entry.html.twig"
 
-    cp "src/site/templates/note_entry.html.twig" "$target_file"
+    cp "resources/templates/${post_type}_entry.html.twig" "$target_file"
 
     echo "a blank note was created - opening the text editor..."
     codium "$target_file"
