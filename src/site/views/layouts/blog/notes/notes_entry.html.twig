@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{{ language is defined ? language : 'en-US' }}">
 	<head>
 		{{ include('@includes/head.shtml') }}
 		<title>{{ published }} | jasmine's notes</title>
+		
+		{% if noindex %}
+      		<meta name="robots" content="noindex"/>
+    	{% endif %}
 		<meta name="author" content="jasmine"/>
 		<meta name="keywords" content="{{ keywords is defined ? keywords|join(', ') ~ ", microblog" : "microblog" }}"/>
 		<meta name="description" content="note from {{ published }}"/>
 		<link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
 
-		{% if publish_to_bridgy == true %}
+		{% if publish_to_bridgy %}
 			<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
 		{% endif %}
 
 		<link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/blog_note_entry.css" type="text/css" media="all"/>
 
-		{% if custom_style == true %}
+		{% if custom_style %}
 			<link rel="stylesheet" href="style.css" type="text/css" media="all"/>
 		{% endif %}
 		
@@ -29,7 +33,9 @@
 					{# theme switch placeholder #}
 					<h1>jasmine&apos;s notes</h1>
 				</hgroup>
-				<nav aria-label="primary">{{ nav|raw }}</nav>
+				<nav aria-label="primary">
+					{{ nav|raw }}
+				</nav>
 			</header>
 			<main>
 				<article>
@@ -57,7 +63,9 @@
 							</dl>
 						</footer>
 					</section>
-					<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
+					{% if publish_to_bridgy %}
+						<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
+					{% endif %}
 				</article>
 
 				<nav class="feed-links">
@@ -70,14 +78,14 @@
 				<section id="webmentions">
 					<h3>webmentions</h3>
 					
-					{% if enable_webmentions == true %}
+					{% if enable_webmentions %}
 
-						{% if webmentions_301 == true %}
+						{% if webmentions_301 %}
 							<h4>via current URL</h4>
 						{% endif %}
 						<s-e-i-a powered-by="false"></s-e-i-a>
 
-						{% if webmentions_301 == true %}
+						{% if webmentions_301 %}
 
 							{% if webmentions_prev_url is defined %}
 
@@ -115,11 +123,11 @@
 			{{ include('@includes/footer.shtml') }}
 		</footer>
 
-		{% if enable_webmentions == true %}
+		{% if enable_webmentions %}
 			<script type="module" src="/_assets/scripts/seia.min.js" async></script>
 		{% endif %}
 
-		{% if enable_comments == true %}
+		{% if enable_comments %}
 			<script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
 			<script src="/_assets/scripts/comment-section.js"></script>
 		{% endif %}

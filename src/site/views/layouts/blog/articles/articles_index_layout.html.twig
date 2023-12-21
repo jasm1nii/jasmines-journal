@@ -16,7 +16,9 @@
                 <hgroup>
                     <h1>jasmine's b(rain)log</h1>
                 </hgroup>
-                <nav aria-label="primary">{{ nav|raw }}</nav>
+                <nav aria-label="primary">
+                    {{ nav|raw }}
+                </nav>
             </header>
             <main>
                 <article>
@@ -32,7 +34,9 @@
                         </hgroup>
                     </header>
                     {% if entries != null %}
-                        <ol class="articles-list">{{ entries|raw }}</ol>
+                        <ol class="articles-list">
+                            {{ entries|raw }}
+                        </ol>
                     {% else %}
                         <p class="exception">
                             {{ tag in request

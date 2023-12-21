@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{{ language is defined ? language : 'en-US' }}">
   <head>
     {{ include('@includes/head.shtml') }}
     <title>{{ title is defined ? title : "untitled" }} | jasmine's b(rain)log</title>
+
+    {% if noindex %}
+      <meta name="robots" content="noindex"/>
+    {% endif %}
+
     <meta name="author" content="jasmine"/>
     <meta name="keywords" content="{{ keywords is defined ? keywords|join(', ') ~ ", blog" : "blog" }}"/>
 
@@ -11,14 +16,14 @@
     {% endif %}
 
     <link rel="canonical" href="https://jasm1nii.xyz/blog/articles{{ slug }}"/>
-
-    {% if publish_to_bridgy == true %}
+    
+    {% if publish_to_bridgy %}
       <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/articles{{ slug }}"/>
     {% endif %}
 
     <link id="base-theme" rel="stylesheet" href="/_assets/stylesheets/blog_article_entry.css" type="text/css" media="all"/>
 
-    {% if custom_style == true %}
+    {% if custom_style %}
       <link rel="stylesheet" href="/_assets/stylesheets/{{ slug|trim('/entry', 'right') }}/style.css" type="text/css" media="all"/>
     {% endif %}
     
@@ -33,17 +38,16 @@
           {# theme switcher placeholder #}
           <h1>b(rain)log entry</h1>
         </hgroup>
-
-        <nav aria-label="primary">{{ nav|raw }}</nav>
+        <nav aria-label="primary">
+          {{ nav|raw }}
+        </nav>
       </header>
 
       <main>
         <article class="h-entry">
 
           <hgroup>
-            <h2 class="p-name">
-              {{ title is defined ? title : "untitled" }}
-            </h2>
+            <h2 class="p-name">{{ title is defined ? title : "untitled" }}</h2>
 
             {% if updated is defined %}
               <time class="dt-updated" datetime="{{ updated|date() }}">updated {{ updated }}</time>
@@ -62,7 +66,9 @@
             {{ block('content') }}
           </section>
 
-          <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
+          {% if publish_to_bridgy %}
+            <a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1"></a>
+          {% endif %}
 
           <footer class="tags">
 							<dl>
@@ -87,7 +93,7 @@
 
         <section id="webmentions">
           <h3>webmentions</h3>
-          {% if enable_webmentions == true %}
+          {% if enable_webmentions %}
             <s-e-i-a powered-by="false"></s-e-i-a>
           {% else %}
             <p>the displaying of webmentions is disabled.</p>
@@ -96,7 +102,7 @@
 
         <section id="comments">
           <h3>comments</h3>
-          {% if enable_comments == true %}
+          {% if enable_comments %}
             <div id="comment-section" data-comments-id="blog-{{ published|date("Ymd") }}"></div>
           {% else %}
             <p>comments are disabled.</p>
@@ -109,11 +115,11 @@
       {{ include('@includes/footer.shtml') }}
     </footer>
 
-    {% if enable_webmentions == true %}
+    {% if enable_webmentions %}
       <script type="module" src="/_assets/scripts/seia.min.js" async></script>
     {% endif %}
 
-    {% if enable_comments == true %}
+    {% if enable_comments %}
       <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
       <script src="/_assets/scripts/comment-section.js"></script>
     {% endif %}
