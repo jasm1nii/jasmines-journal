@@ -2,7 +2,7 @@
     
     define("INI", parse_ini_file("env.ini", true));
 
-    define("SITE_ROOT", INI['server']['document_root']);
+    define("SITE_ROOT", INI['server']['server_root']);
     
     define(
         "DIR",

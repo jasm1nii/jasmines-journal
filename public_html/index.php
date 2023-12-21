@@ -1,6 +1,7 @@
 <?php
 
     // uncomment when doing maintenance 🔧
+
     /*
         http_response_code(503);
         require "503.shtml";
