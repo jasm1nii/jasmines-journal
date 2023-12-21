@@ -35,11 +35,20 @@ if [[ "$option" = "new-draft" || "$option" = "new" ]]; then
     echo "* the month can be a single digit"
     read -r date
 
-    mkdir -p "resources/drafts/blog/$post_dir/$date"
+    draft_dir="resources/drafts/blog/$post_dir/$date"
+    mkdir -p "$draft_dir"
 
-    target_file="resources/drafts/blog/$post_dir/$date/entry.html.twig"
-
+    target_file="$draft_dir/entry.html.twig"
     cp "resources/templates/${post_type}_entry.html.twig" "$target_file"
+
+    echo "would you like to attach any media? (yes/no)"
+    read -r media_option
+
+    if [[ "$media_option" = "yes" ]]; then
+
+        mkdir -p "$draft_dir/media"
+
+    fi
 
     echo "a blank note was created - opening the text editor..."
     codium "$target_file"
@@ -58,6 +67,13 @@ elif [[ "$option" = "publish-draft" || "$option" = "publish" ]]; then
     published_file="src/site/content/blog/$post_dir/$date/entry.html.twig"
 
     mv "$draft_file" "$published_file"
+
+    if [[ -f "$draft_dir/media" ]]; then
+
+        mv "$draft_dir/media" "public_html/_assets/media/blog/$post_dir/$date"
+
+    fi
+
     rmdir "$draft_dir"
 
     echo "moved to public directory"

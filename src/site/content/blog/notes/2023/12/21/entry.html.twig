@@ -1,0 +1,25 @@
+{% extends layout %}
+
+{% set keywords = ['art', 'sketch', 'school'] %}
+
+{% set published = '21 december 2023' %}
+
+{% block content %}
+    <p>
+        less than ten days til new years... RAAHH i need more brain power so i can wrap up my undergrad project already 😭
+    </p>
+    <figure>
+        <img src="{{ src }}sketch.webp" alt="a digital sketch of a girl resting her head in her hand with a tired expression."/>
+        <figcaption>
+            anyways, here's my first doodle in forever.
+        </figcaption>
+    </figure>
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}
