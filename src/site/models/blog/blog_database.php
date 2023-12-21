@@ -10,9 +10,10 @@
     abstract class BlogDatabase extends Database {
 
         protected string $type;
-        public array $tags;
-        public array $unique_tags;
-        public array $unique_tag_count;
+        public string $source_site = "https://jasm1nii.xyz";
+        public ?array $tags;
+        public ?array $unique_tags;
+        public ?array $unique_tag_count;
 
         #[Setup]
         final public function validateTable(): void {
@@ -89,7 +90,7 @@
             // format with leading zeros:
             $date = date_format($date_obj, 'Y-m-d');
 
-            $tags = get_meta_tags('http://' . $_SERVER['HTTP_HOST'] . $url)['keywords'];
+            $tags = get_meta_tags($this->source_site . $url)['keywords'];
 
             $sql = $this->database->prepare(
                 "INSERT INTO `{$this->table}`

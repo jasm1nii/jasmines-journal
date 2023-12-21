@@ -7,12 +7,6 @@
     use JasminesJournal\Site\Models\NotesDatabase;
     use JasminesJournal\Site\Models\ArticlesDatabase;
 
-    if (getenv('ENV') == 'prod') {
-
-        $_SERVER['HTTP_HOST'] = 'jasm1nii.xyz';
-
-    }
-
     function updateArticles(): void {
 
         $db = new ArticlesDatabase;
