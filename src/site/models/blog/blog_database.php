@@ -139,7 +139,20 @@
 
         }
 
-        final public function getNewestEntry(): string {
+        final public function getDateOfNewest(): ?int {
+
+            $sql = $this->database->prepare(
+                "SELECT MAX(`Date`)
+                FROM `{$this->table}`"
+            );
+
+            $sql->execute();
+            
+            return strtotime($sql->fetchColumn());
+
+        }
+
+        final public function getNewestEntry(): ?string {
 
             $sql = $this->database->prepare(
                 "SELECT `File Path`

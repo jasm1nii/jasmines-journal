@@ -3,165 +3,113 @@
     namespace JasminesJournal\Site\Views\Generator;
 
     use JasminesJournal\Core\View\Extension;
+    use JasminesJournal\Site\Models\ArticlesDatabase;
+    use JasminesJournal\Site\Models\NotesDatabase;
 
     class XMLFeeds {
 
         private const ENTRY_LAYOUT  = DIR['layouts'] . "blog/xml/feed_entry.xml.twig";
         private const FEED_LAYOUT   = DIR['layouts'] . "blog/xml/feed.xml.twig";
-        protected const TEMP_DIR    = "/tmp/feed_generator";
 
-        protected string|int $max_entries;
-
-        protected string $type;
-        protected string $src_dir;
-        
-        protected string $temp_file;
+        private bool $debug_settings;
+        protected object $database;
         protected string $output_file;
 
-        private static function setDebug(): bool {
+        private function parseEntries(): ?string {
 
-            return INI['debug']['xml_generator'];
+            $files  = $this->database->getEntries(
+                row_total: $this->max_entries
+            );
 
-        }
+            $env = Extension\PartialTwig::buildTwigEnv();
 
-        private function globCount(): ?array {
-
-            $year = date("Y");
-
-            return glob($this->src_dir . "/$year/{12,11,10,9,8,7,6,5,4,3,2,1}/{3,2,1,0}{9,8,7,6,5,4,3,2,1,0}/entry.html.twig", GLOB_BRACE);
-
-        }
-
-        private function getEntryFiles(): ?array {
-
-            $glob = $this->globCount();
-
-            $count = ($this->max_entries == 'total_entries')
-                ? count($glob)
-                : $this->max_entries;
-
-            for ($i = 0; $i < $count; $i++) {
-                
-                $files[] = $glob[$i];
-
-            }
-
-            rsort($files, SORT_NATURAL);
-
-            return $files;
-
-        }
-
-        private function parseEntries(): void {
-
-            $files  = $this->getEntryFiles();
-            $twig   = new Extension\Twig();
-
-            $twig->loadBaseLoader();
-
-            if (!is_dir(SITE_ROOT . self::TEMP_DIR)) {
-
-                mkdir(SITE_ROOT . self::TEMP_DIR, 0775, true);
-
-            }
-
-            ob_start();
+            $content = [];
 
             foreach ($files as $article) {
+
+                if (file_exists(SITE_ROOT . $article['File Path'])) {
+
+                    $slug = $article['Relative URL'];
+
+                    $img_dir = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
+
+                    $vars = [
+                        'type'      => $this->type,
+                        'layout'    => self::ENTRY_LAYOUT,
+                        'slug'      => $slug,
+                        'src'       => $img_dir
+                    ];
+
+                    $content[] = $env->render($article['File Path'], $vars);
                 
-                $dir  = preg_quote(SITE_ROOT, '/');
-                $path = preg_split('/('. $dir . ')/', $article)[1];
-
-                $slug       = ltrim(rtrim($path, '.html.twig'), $this->src_dir);
-
-                $img_dir    = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
-
-                $vars = [
-                    'type'      => $this->type,
-                    'layout'    => self::ENTRY_LAYOUT,
-                    'slug'      => $slug,
-                    'src'       => $img_dir
-                ];
-
-                $twig->createEnvAndMake($path, $vars);
+                } 
 
             }
 
-            $xml_entries = ob_get_contents();
-
-            file_put_contents(SITE_ROOT . $this->temp_file, $xml_entries);
-
-            ob_end_clean();
+            return implode($content);
 
         }
 
-        private function setOutputPath(): void {
+        private function createFeed(): ?string {
 
-            $this->output_file = self::setDebug()
-
-                ? SITE_ROOT . "/tests/{$this->type}.xml"
-                
-                : SITE_ROOT . DIR['content']. "/blog/{$this->type}/{$this->type}.xml";
-
-        }
-
-        private function createFeed(): void {
-
-            $this->parseEntries();
-
-            $twig = new Extension\Twig();
-            $twig->loadBaseLoader();
+            $env = Extension\PartialTwig::buildTwigEnv();
 
             $vars = [
                 'type'      => $this->type,
-                'temp_file' => $this->temp_file
+                'temp_file' => $this->parseEntries()
             ];
 
-            ob_start();
-
-            $twig->createEnvAndMake(self::FEED_LAYOUT, $vars);
-
-            $xml_final = ob_get_contents();
-
-            file_put_contents($this->output_file, $xml_final);
-
-            ob_end_clean();
-
-            unlink(SITE_ROOT . $this->temp_file);
+            return $env->render(self::FEED_LAYOUT, $vars);
 
         }
 
-        private function showXML(): void {
+        private function validateXML(): void {
 
-            $entry  = $this->getEntryFiles()[0];
+            $entry  = $this->database->getNewestEntry();
+
+            $latest_entry_date = $this->database->getDateOfNewest();
+
             $feed   = $this->output_file;
 
-            $latest_entry_date  = @filemtime($entry);
-            $feed_date          = @filectime($feed);
+            $feed_date = @filemtime($feed);
 
             if (!file_exists($feed) || $latest_entry_date > $feed_date) {
 
-                $this->createFeed();
+                $start = microtime(true);
+
+                $output = new \DOMDocument();
+                $output->loadXML($this->createFeed(), LIBXML_PARSEHUGE);
+                $output->save($this->output_file);
+
+                $time = round(microtime(true) - $start, 3);
+
+                echo "New feed generated in {$time} seconds.\n";
+
+            } else {
+
+                echo "No changes detected.\n";
 
             }
 
-            $output = new \DOMDocument();
-            $output->load($this->output_file);
-
-            echo $output->saveXML();
-
         }
 
-        public function __construct(string $type, string|int $max_entries) {
+        final public function __construct(
+            protected string $type,
+            protected int $max_entries
+        ) {
 
-            $this->type         = $type;
-            $this->max_entries  = $max_entries;
+            $this->debug_settings = INI['debug']['xml_generator'];
 
-            $this->src_dir      = SITE_ROOT. DIR['content'] . "blog/{$this->type}";
-            $this->temp_file    = self::TEMP_DIR . "/{$this->type}.tmp.xml";
+            $this->database = match($this->type) {
+                'articles'  => new ArticlesDatabase,
+                'notes'     => new NotesDatabase
+            };
 
-            $this->setOutputPath();
-            $this->showXML();
+            $this->output_file = $this->debug_settings
+                ? SITE_ROOT . "/tests/{$this->type}.xml"
+                : $_SERVER['DOCUMENT_ROOT'] . "/{$this->type}.xml";
+
+            $this->validateXML();
 
         }
 

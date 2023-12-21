@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
-    <title>jasmine&apos;s notes | jasm1nii.xyz</title>
+    <title>jasmine's notes | jasm1nii.xyz</title>
     <subtitle>blog notes by jasmine</subtitle>
-    <updated>2023-12-07T11:30:55+07:00</updated>
+    <updated>2023-12-21T15:58:18+07:00</updated>
     <id>https://jasm1nii.xyz/blog/notes</id>
     <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/notes.xml"/>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes"/>
@@ -17,12 +17,44 @@
     <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
         
     <entry>
+        <title>7 december 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/07/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/07/entry"/>
+        <updated>2023-12-07T00:00:00+07:00</updated>
+        <published>2023-12-07T00:00:00+07:00</published>
+        <summary>    my noise-cancelling headphones remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within ...</summary>
+        <content type="html">
+            &lt;p&gt;&lt;a href="https://www.edifier.com/global/p/over-ear-on-ear-headphones/w820nb"&gt;my noise-cancelling headphones&lt;/a&gt; remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 100-meter radius 😭 wish i had more money for a pair with a higher decibel limit, but i guess i'll just deal.&lt;/p&gt;
+&lt;hr /&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/52FZWhlJCi1pwxNOd0RIi9?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+    &lt;p&gt;
+        &lt;q cite="https://open.spotify.com/track/32JZFkClwxLNqBaaCHlH94?si=e9fe490543884c4f"&gt;i think too much, yet not enough~&lt;/q&gt;
+    &lt;/p&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/32JZFkClwxLNqBaaCHlH94?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/59kIuAVlIgcR6NSctQxylR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+        </content>
+    </entry>    
+    <entry>
+        <title>3 december 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/03/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/03/entry"/>
+        <updated>2023-12-03T00:00:00+07:00</updated>
+        <published>2023-12-03T00:00:00+07:00</published>
+        <summary>    14:54
+i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today....</summary>
+        <content type="html">
+            &lt;p&gt;&lt;strong&gt;14:54&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today.&lt;/p&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7Eit07n6BBsT9v36WpOuWA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+        </content>
+    </entry>    
+    <entry>
         <title>2 december 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/12/02/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/12/02/entry"/>
+        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/02/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/02/entry"/>
         <updated>2023-12-02T00:00:00+07:00</updated>
         <published>2023-12-02T00:00:00+07:00</published>
-        <summary>    i&#039;ve finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧
+        <summary>    i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧
 
 in a mellow kind of mood tonight 🌃
     ...</summary>
@@ -36,118 +68,27 @@ in a mellow kind of mood tonight 🌃
         </content>
     </entry>    
     <entry>
+        <title>29 november 2023</title>
+        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/29/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/29/entry"/>
+        <updated>2023-11-29T00:00:00+07:00</updated>
+        <published>2023-11-29T00:00:00+07:00</published>
+        <summary>    14:56
+i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some ...</summary>
+        <content type="html">
+            &lt;p&gt;&lt;strong&gt;14:56&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some &lt;a href="https://music.youtube.com/watch?v=hTLa16ZwgX0&amp;amp;si=skG1QhQkd1K7gXVM"&gt;jazz ambience&lt;/a&gt; in the background.&lt;/p&gt;
+        </content>
+    </entry>    
+    <entry>
         <title>23 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/11/28/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/28/entry"/>
+        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/28/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/28/entry"/>
         <updated>2023-11-23T00:00:00+07:00</updated>
         <published>2023-11-23T00:00:00+07:00</published>
-        <summary>    check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven&#039;t made much progress with the current after effects scene i&#039;m working ...</summary>
+        <summary>    check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working ...</summary>
         <content type="html">
             &lt;p&gt;check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.&lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>23 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/11/23/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/23/entry"/>
-        <updated>2023-11-23T00:00:00+07:00</updated>
-        <published>2023-11-23T00:00:00+07:00</published>
-        <summary>    
-        i&#039;ve been painfully inconsistent with my yoga practice, but i finally hit the mat again today. i swear i used to be a lot less stiffer than this.
-    
-    ...</summary>
-        <content type="html">
-            &lt;p&gt;
-        i've been painfully inconsistent with my yoga practice, but i finally hit the mat again today. i swear i used to be a lot less stiffer than this.
-    &lt;/p&gt;
-    &lt;iframe src="https://www.youtube-nocookie.com/embed/StLUjMxHZZE?si=c754A_97QweA5tVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>22 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/11/22/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/22/entry"/>
-        <updated>2023-11-22T00:00:00+07:00</updated>
-        <published>2023-11-22T00:00:00+07:00</published>
-        <summary>    
-        felt too wiped out to check off the important tasks from today&#039;s to-do list, but at least i ate some really good cinnamon rolls 🍽
-    
-...</summary>
-        <content type="html">
-            &lt;p&gt;
-        felt too wiped out to check off the important tasks from today's to-do list, but at least i ate some really good cinnamon rolls &lt;span aria-hidden="true"&gt;🍽&lt;/span&gt;
-    &lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>21 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/11/21/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/11/21/entry"/>
-        <updated>2023-11-21T00:00:00+07:00</updated>
-        <published>2023-11-21T00:00:00+07:00</published>
-        <summary>    18:03
-i wanna try using this space for accountability posting... updates to come from my stream of conciousness...
-been struggling to eat today, so i&#039;ll try to have a big dinner first!
-19:10...</summary>
-        <content type="html">
-            &lt;p&gt;&lt;strong&gt;18:03&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;i wanna try using this space for accountability posting... updates to come from my stream of conciousness...&lt;/p&gt;
-&lt;p&gt;been struggling to eat today, so i'll try to have a big dinner first!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;19:10&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;ate a proper meal while watching a day-in-my-life vlog &lt;span class="emoji" aria-hidden="true"&gt;⸜(｡˃ ᵕ ˂ )⸝♡&lt;/span&gt;&lt;/p&gt;
-    &lt;iframe src="https://www.youtube-nocookie.com/embed/FX1RwfA20wE?si=UJMfcLKLCU8p6rD-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
-    &lt;p&gt;&lt;strong&gt;21:08&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;i think about this song a lot...&lt;/p&gt;
-    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6uyltToZgo3MDKhCJ7F8Wc?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-    &lt;p&gt;i saw porter robinson back in july this year, by the way! i have a lot of thoughts about it that i haven't been able to put in coherent writing yet...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;22:12&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;that's only an hour total of school work today... i spent the entire time trying to fix my after effects compositions with very little animation work. it's so annoying that &lt;abbr title="Photoshop Document"&gt;PSD&lt;/abbr&gt; masks and layer effects don't always stay perfectly intact when i'm switching between programs.&lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>20 october 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/10/20/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/10/20/entry"/>
-        <updated>2023-10-20T00:00:00+07:00</updated>
-        <published>2023-10-20T00:00:00+07:00</published>
-        <summary>    
-        was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... check it out!
-    
-...</summary>
-        <content type="html">
-            &lt;p&gt;
-        was possessed by a bought of hyperfocus for a couple of days and made an atom (RSS) feed generator in PHP... &lt;a href="https://github.com/jasm1nii/xml-feed-generator" rel="external me"&gt;check it out!&lt;/a&gt;
-    &lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>3 september 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/9/03/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/9/03/entry"/>
-        <updated>2023-09-03T00:00:00+07:00</updated>
-        <published>2023-09-03T00:00:00+07:00</published>
-        <summary>    
-        check out these cool web pages made by the 32-bit cafe community for our august code jam 💻 ...</summary>
-        <content type="html">
-            &lt;p&gt;
-        check out these cool web pages made by the 32-bit cafe community for our &lt;a href="https://tilde.32bit.cafe/~hermit/community_jam_2/submissions.html"&gt;august code jam 💻&lt;/a&gt; &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
-    &lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>23 august 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes/2023/8/23/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes/2023/8/23/entry"/>
-        <updated>2023-08-23T00:00:00+07:00</updated>
-        <published>2023-08-23T00:00:00+07:00</published>
-        <summary>    
-        hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) #indieweb
-    
-...</summary>
-        <content type="html">
-            &lt;p&gt;
-        hey look - my hand-coded site is on mastodon now! (i hope this renders correctly) &lt;a href="https://stream.indieweb.org/" rel="external" class="p-category"&gt;#indieweb&lt;/a&gt;
-    &lt;/p&gt;
         </content>
     </entry>
 </feed>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
-    <title>jasmine&apos;s b(rain)log | jasm1nii.xyz</title>
+    <title>jasmine's b(rain)log | jasm1nii.xyz</title>
     <subtitle>blog articles by jasmine</subtitle>
-    <updated>2023-12-01T13:39:10+07:00</updated>
+    <updated>2023-12-21T15:45:03+07:00</updated>
     <id>https://jasm1nii.xyz/blog/articles</id>
     <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/articles.xml"/>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
@@ -18,8 +18,8 @@
         
     <entry>
         <title>tummy treats</title>
-        <id>https://jasm1nii.xyz/blog/articles/2023/9/26/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/9/26/entry"/>
+        <id>https://jasm1nii.xyz/blog/articles//blog/articles/2023/9/26/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles//blog/articles/2023/9/26/entry"/>
         <updated>2023-09-26T00:00:00+07:00</updated>
         <published>2023-09-26T00:00:00+07:00</published>
         <summary>a short food post!</summary>
@@ -55,7 +55,7 @@
                 &lt;h4&gt;chicken fried rice 🌶&lt;/h4&gt;
                 &lt;p&gt;current the most frequently ordered item 👑&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -71,7 +71,7 @@
                     &lt;li&gt;chili sauce&lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -85,8 +85,8 @@
                 &lt;/ul&gt;
             &lt;/section&gt;
             &lt;div&gt;
-                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
-                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
             &lt;/div&gt;
         &lt;/section&gt;
         &lt;section&gt;
@@ -101,7 +101,7 @@
                 &lt;/ul&gt;
                 &lt;p&gt;&lt;small&gt;* not pictured, because i was super hungry.&lt;/small&gt;&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -109,7 +109,7 @@
                 &lt;h4&gt;mixue kiwi smoothie sundae 👍&lt;/h4&gt;
                 &lt;p&gt;so citrusy and fresh 😋&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/9/26/IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
         &lt;/section&gt;
         &lt;/section&gt;
     &lt;/section&gt;
@@ -117,16 +117,16 @@
     </entry>    
     <entry>
         <title>bye neocities (part 2)</title>
-        <id>https://jasm1nii.xyz/blog/articles/2023/8/17/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/17/entry"/>
-        <updated>2023-08-18T00:00:00+07:00</updated>
+        <id>https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/17/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/17/entry"/>
+        <updated>2023-12-14T00:00:00+07:00</updated>
         <published>2023-08-17T00:00:00+07:00</published>
         <summary>new beginnings</summary>
         <content type="html">
             &lt;p&gt;
-        update - a very funny thing happened last night &lt;em&gt;right after&lt;/em&gt; i posted my blog yesterday:
+        18 august 2023 update - a very funny thing happened last night &lt;em&gt;right after&lt;/em&gt; i posted my blog yesterday:
         &lt;br/&gt;
-        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/17/email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
+        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/8/17/email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
     &lt;/p&gt;
     &lt;p&gt;
         now, being on &lt;em&gt;three different web hosts&lt;/em&gt; just feels excessive, so the new plan is to set up a splash page with a redirect on ichi and neocities! will get around to that in the near future.
@@ -156,19 +156,24 @@
     &lt;p&gt;
       so with that said, i’ll continue mirroring “jasmine’s journal” to &lt;a href="https://jasm1nii.ichi.city/" rel="external"&gt;https://jasm1nii.ichi.city/&lt;/a&gt; for as long as i’m able to, or at least until i hit the upper limit of my allotted storage space (&lt;a href="https://10mbmanifesto.neocities.org/" rel="external"&gt;10 megabytes&lt;/a&gt;, to be exact). for reference, this website takes up a grand total of around 4 MB on my hard drive, but it will likely explode in size once i get my illustration gallery up. while i have more than enough room to accommodate for these planned additions on my paid hosting service, i can’t guarantee that i’ll reupload everything to ichi, but i’ll try to work around the limit by using fallback links or uploading my images to dropbox instead.
     &lt;/p&gt;
-    &lt;details&gt;
-      &lt;summary&gt;
-        and now a message from our sponsors* ❣
-        &lt;br&gt;&lt;br&gt;
-        &lt;small&gt;
-          *i am sharing this link out of my own free will, and nobody is paying me anything.
-        &lt;/small&gt;
-      &lt;/summary&gt;
-      &lt;p&gt;
-        wanna store your files on a service that isn’t google drive? dropbox’s free tier starts off at 2 GB, but you can get 500 MB extra storage space if you use
-        &lt;a href="https://www.dropbox.com/referrals/AAB2Zm7DYc9hrkpj3Tb3fr8jMPDiZdk_Po0?src=global9" rel="external"&gt;my referral link&lt;/a&gt; and download dropbox for desktop.
-      &lt;/p&gt;
-    &lt;/details&gt;
+    &lt;del&gt;
+      &lt;details&gt;
+        &lt;summary&gt;
+          and now a message from our sponsors* ❣
+          &lt;br&gt;&lt;br&gt;
+          &lt;small&gt;
+            *i am sharing this link out of my own free will, and nobody is paying me anything.
+          &lt;/small&gt;
+        &lt;/summary&gt;
+        &lt;p&gt;
+          wanna store your files on a service that isn’t google drive? dropbox’s free tier starts off at 2 GB, but you can get 500 MB extra storage space if you use
+          my referral link and download dropbox for desktop.
+        &lt;/p&gt;
+      &lt;/details&gt;
+    &lt;/del&gt;
+    &lt;ins&gt;
+      &lt;p&gt;14 december 2023 update - revoking my endorsement of dropbox services due to their &lt;a href="https://arstechnica.com/information-technology/2023/12/dropbox-spooks-users-by-sending-data-to-openai-for-ai-search-features" rel="external"&gt;questionable partnership with OpenAI.&lt;/a&gt;&lt;/p&gt;
+    &lt;/ins&gt;
     &lt;p&gt;
       p.s. - i've enabled &lt;a href="https://indieweb.org/Webmention" rel="external"&gt;webmentions&lt;/a&gt;, by the way! at the moment, my brain isn't big enough for understanding how to fetch and display them automatically, but that's probably for the best. i'll stick with manually adding reposts to prevent spam. for now, have a comment box -
       please be kind!
@@ -177,8 +182,8 @@
     </entry>    
     <entry>
         <title>bye neocities</title>
-        <id>https://jasm1nii.xyz/blog/articles/2023/8/12/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/12/entry"/>
+        <id>https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/12/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/12/entry"/>
         <updated>2023-08-12T00:00:00+07:00</updated>
         <published>2023-08-12T00:00:00+07:00</published>
         <summary>an unexpected change</summary>
@@ -202,9 +207,9 @@
         </content>
     </entry>    
     <entry>
-        <title>parroting a broken record held together by elmer&#039;s glue</title>
-        <id>https://jasm1nii.xyz/blog/articles/2023/8/09/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles/2023/8/09/entry"/>
+        <title>parroting a broken record held together by elmer's glue</title>
+        <id>https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/09/entry</id>
+        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles//blog/articles/2023/8/09/entry"/>
         <updated>2023-08-09T00:00:00+07:00</updated>
         <published>2023-08-09T00:00:00+07:00</published>
         <summary>a first post</summary>
@@ -215,7 +220,7 @@
           &lt;/summary&gt;
           &lt;p&gt;
               the staple of every USian classroom, only good for cruddy papier-mâché, and nothing more:
-              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/09/elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
+              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles//blog/articles/2023/8/09/elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
           &lt;/p&gt;
           &lt;hr&gt;
       &lt;/details&gt;

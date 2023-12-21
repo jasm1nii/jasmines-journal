@@ -41,6 +41,7 @@
         public static function matchURL(string $query): ?string {
 
             preg_match($query, REQUEST, $matches);
+
             return $matches[0] ??= null;
 
         }
@@ -49,11 +50,7 @@
 
             $matches = preg_split('/\//', REQUEST);
 
-            if (isset($matches[$level])) {
-
-                return $matches[$level];
-
-            }
+            return $matches[$level] ??= null;
 
         }
 
