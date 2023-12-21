@@ -1,5 +1,13 @@
 <?php
 
+    // uncomment when doing maintenance 🔧
+    /*
+        http_response_code(503);
+        require "503.shtml";
+
+        __halt_compiler();
+    */
+
     require __DIR__ . '/../vendor/autoload.php';
 
     use JasminesJournal\Core\Route;

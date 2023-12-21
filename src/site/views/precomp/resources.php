@@ -2,8 +2,8 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Views\Render\Layout;
-    use JasminesJournal\Core\Views\Render\Extension\MarkdownWithTOC;
+    use JasminesJournal\Core\View\Main\Layout;
+    use JasminesJournal\Core\View\Extension\MarkdownWithTOC;
     use JasminesJournal\Site\FileRouter;
 
     abstract class Resources extends Layout {

@@ -5,7 +5,7 @@
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
-    use JasminesJournal\Core\Views\Render\Extension;
+    use JasminesJournal\Core\View\Extension;
     use JasminesJournal\Site\FileRouter\BlogEntry;
     use JasminesJournal\Site\Models\ArticlesDatabase;
     use JasminesJournal\Site\Models\NotesDatabase;

@@ -3,7 +3,7 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Core\Route;
-    use JasminesJournal\Core\Views\Render\Layout;
+    use JasminesJournal\Core\View\Main\Layout;
     
     use JasminesJournal\Site\FileRouter;
     use JasminesJournal\Site\Views\Partials;

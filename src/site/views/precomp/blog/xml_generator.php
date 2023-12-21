@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Generator;
 
-    use JasminesJournal\Core\Views\Render\Extension;
+    use JasminesJournal\Core\View\Extension;
 
     class XMLFeeds {
 

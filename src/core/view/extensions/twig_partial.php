@@ -1,6 +1,6 @@
 <?php
 
-    namespace JasminesJournal\Core\Views\Render\Extension;
+    namespace JasminesJournal\Core\View\Extension;
 
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;

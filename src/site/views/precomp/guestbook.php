@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
     
-    use JasminesJournal\Core\Views\Render\Layout;
+    use JasminesJournal\Core\View\Main\Layout;
     use JasminesJournal\Site\Models\GuestbookComments;
 
     final class Guestbook extends Layout {

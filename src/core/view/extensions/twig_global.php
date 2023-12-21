@@ -1,6 +1,6 @@
 <?php
 
-    namespace JasminesJournal\Core\Views\Render\Extension;
+    namespace JasminesJournal\Core\View\Extension;
 
     use Twig\Extra\Markdown\DefaultMarkdown;
     use Twig\Extra\Markdown\MarkdownExtension;

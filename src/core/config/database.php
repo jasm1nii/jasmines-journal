@@ -3,7 +3,6 @@
     namespace JasminesJournal\Core;
 
     use JasminesJournal\Core\Config;
-    use JasminesJournal\Core\Setup;
 
     abstract class Database extends Config {
 

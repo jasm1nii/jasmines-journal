@@ -1,6 +1,6 @@
 <?php
 
-    namespace JasminesJournal\Core\Views\Render\Extension;
+    namespace JasminesJournal\Core\View\Extension;
 
     class Utils {
 
