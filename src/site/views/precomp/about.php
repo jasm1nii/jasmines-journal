@@ -19,7 +19,7 @@
                 "updated"   => filemtime(SITE_ROOT . $this->content)
             ];
 
-            parent::Twig($this->content, $vars, null);
+            parent::renderTwig($this->content, $vars, null);
 
         }
 

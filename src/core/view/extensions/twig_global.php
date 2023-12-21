@@ -7,34 +7,37 @@
     use Twig\Extra\Markdown\MarkdownRuntime;
     use Twig\Extra\Intl\IntlExtension;
     use Twig\RuntimeLoader\RuntimeLoaderInterface;
-    # use Twig\Extension\StringLoaderExtension;
+    // use Twig\Extension\StringLoaderExtension;
 
     class Twig {
 
-        public function loadBaseLoader(string $add_path = null): object {
+        public object $loader;
 
-            $loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
+        public function loadBaseLoader(string $add_path = null): void {
+
+            $this->loader = new \Twig\Loader\FilesystemLoader(SITE_ROOT, getcwd());
             
-            $loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
+            $this->loader->addPath(SITE_ROOT . '/src/site/views/includes/', 'includes');
 
             if ($add_path !== null) {
 
-                $loader->addPath(SITE_ROOT . $add_path);
+                $this->loader->addPath(SITE_ROOT . $add_path);
 
             }
 
-            return $loader;
-
         }
 
-        public function createEnvAndMake(object $loader, string $template, array $args): void {
+        public function createEnvAndMake(
+            string $template,
+            array $args
+        ): void {
 
             $twig = new \Twig\Environment(
-                $loader,
+                $this->loader,
                 [
                     'cache'         => SITE_ROOT . '/tmp/twig',
                     'auto_reload'   => true,
-                    'debug'         => true
+                    'debug'         => false
                 ]
             );
 
@@ -51,14 +54,14 @@
                 }
             );
 
-            $twig->addExtension(new \Twig\Extension\DebugExtension());
-            # $twig->addExtension(new StringLoaderExtension());
+            // $twig->addExtension(new \Twig\Extension\DebugExtension());
+            // $twig->addExtension(new StringLoaderExtension());
             $twig->addExtension(new IntlExtension());
 
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setDateFormat(DATE_ATOM);
             $twig->getExtension(\Twig\Extension\CoreExtension::class)->setTimezone('Asia/Jakarta');
 
-            echo $twig->render($template, $args);
+            echo $twig->render($template, $args ??= []);
 
         }
 

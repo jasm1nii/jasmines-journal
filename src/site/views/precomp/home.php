@@ -5,7 +5,7 @@
     use JasminesJournal\Core\View\Main\Layout;
     use JasminesJournal\Site\Models\GuestbookLatest;
     use JasminesJournal\Core\View\Extension\Utils;
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
 
 
     final class Home extends Layout {
@@ -56,7 +56,7 @@
                 'last_updated'  => Route::getLastUpdated(SITE_ROOT . DIR['content'] . '{changelog/*/*,blog/*/*.xml}'),
             ];
 
-            parent::Twig($this->layout, $vars, self::$includes_path);
+            parent::renderTwig($this->layout, $vars, self::$includes_path);
 
         }
 

@@ -28,7 +28,7 @@
                 "nav"       => Partials\About\Nav::make(),
             ];
 
-            parent::Twig($this->content, $vars, null);
+            parent::renderTwig($this->content, $vars, null);
 
         }
 

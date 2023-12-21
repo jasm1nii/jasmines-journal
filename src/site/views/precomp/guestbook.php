@@ -132,7 +132,7 @@
                     'comments'       => $this->comments
                 ];
 
-            parent::Twig($this->layout, $vars, self::$includes_path);
+            parent::renderTwig($this->layout, $vars, self::$includes_path);
 
         }
 

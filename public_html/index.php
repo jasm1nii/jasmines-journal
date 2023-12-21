@@ -10,7 +10,7 @@
 
     require __DIR__ . '/../vendor/autoload.php';
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
 
     use JasminesJournal\Site\RequestRouter\{About, Blog, Resources, Feeds, Guestbook};
     use JasminesJournal\Site\Views\Layouts;

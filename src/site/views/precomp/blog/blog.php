@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
     use JasminesJournal\Core\View\Main\Layout;
     
     use JasminesJournal\Site\FileRouter;
@@ -25,7 +25,7 @@
                 'article_tags'      => Partials\Blog\Articles::getTags()
             ];
 
-            parent::Twig($this->layout, $vars, null);
+            parent::renderTwig($this->layout, $vars, null);
 
         }
 
@@ -104,7 +104,7 @@
                 'page'          => $this->current_page
             ];
 
-            parent::Twig($this->layout, $vars, null);
+            parent::renderTwig($this->layout, $vars, null);
 
         }
 
@@ -137,7 +137,7 @@
                 'nav'       => Partials\Blog\Nav::make()
             ];
                 
-            parent::Twig($this->content, $vars, null);
+            parent::renderTwig($this->content, $vars, null);
 
         }
 

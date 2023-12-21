@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\Views\Layouts;
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
     use JasminesJournal\Core\View\Main\Layout;
 
     abstract class DefaultLayout extends Layout {

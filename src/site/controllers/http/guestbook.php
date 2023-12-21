@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
     use JasminesJournal\Core\Model\SecurityFilter;
     use JasminesJournal\Site\Views\Layouts;
     use JasminesJournal\Site\Models;

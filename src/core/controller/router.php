@@ -1,6 +1,6 @@
 <?php
 
-    namespace JasminesJournal\Core;
+    namespace JasminesJournal\Core\Controller;
 
     abstract class FileRouter {
 

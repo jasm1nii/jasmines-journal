@@ -2,6 +2,8 @@
 
     namespace JasminesJournal\Core\View\Main;
 
+    use JasminesJournal\Core\View\Extension;
+
     abstract class Layout {
 
         protected string $layout;
@@ -22,10 +24,8 @@
 
             $twig = new Extension\Twig();
 
-            $vars ??= [];
-
-            $loader = $twig->loadBaseLoader($path);
-            $twig->createEnvAndMake($loader, $page, $vars);
+            $twig->loadBaseLoader($path);
+            $twig->createEnvAndMake($page, $vars ??= []);
 
         }
         

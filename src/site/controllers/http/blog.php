@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\RequestRouter;
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
     use JasminesJournal\Site\Views\Layouts;
     use JasminesJournal\Site\FileRouter\BlogEntry;
 

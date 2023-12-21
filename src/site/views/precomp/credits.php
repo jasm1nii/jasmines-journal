@@ -10,7 +10,7 @@
 
         final protected function render(): void {
 
-            parent::Twig($this->content, $this->setVars(), null);
+            parent::renderTwig($this->content, $this->setVars(), null);
 
         }
 

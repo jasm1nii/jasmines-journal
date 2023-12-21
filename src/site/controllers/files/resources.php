@@ -2,7 +2,7 @@
 
     namespace JasminesJournal\Site\FileRouter;
 
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
 
     final class Resources extends Route {
 
@@ -46,5 +46,3 @@
         }
 
     }
-
-?>

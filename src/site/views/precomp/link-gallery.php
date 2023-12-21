@@ -3,7 +3,7 @@
     namespace JasminesJournal\Site\Views\Layouts;
 
     use JasminesJournal\Core\View\Main\Layout;
-    use JasminesJournal\Core\Route;
+    use JasminesJournal\Core\Controller\Route;
 
     final class LinkGallery extends Layout {
 
@@ -16,7 +16,7 @@
                 'updated'   => Route::getLastUpdated(SITE_ROOT . self::$includes_path . "/*"),
             ];
 
-            parent::Twig($this->layout, $vars, self::$includes_path);
+            parent::renderTwig($this->layout, $vars, self::$includes_path);
 
         }
 

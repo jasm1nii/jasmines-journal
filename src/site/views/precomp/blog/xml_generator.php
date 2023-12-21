@@ -55,9 +55,9 @@
         private function parseEntries(): void {
 
             $files  = $this->getEntryFiles();
-
             $twig   = new Extension\Twig();
-            $loader = $twig->loadBaseLoader();
+
+            $twig->loadBaseLoader();
 
             if (!is_dir(SITE_ROOT . self::TEMP_DIR)) {
 
@@ -83,7 +83,7 @@
                     'src'       => $img_dir
                 ];
 
-                $twig->createEnvAndMake($loader, $path, $vars);
+                $twig->createEnvAndMake($path, $vars);
 
             }
 
@@ -110,7 +110,7 @@
             $this->parseEntries();
 
             $twig = new Extension\Twig();
-            $loader = $twig->loadBaseLoader();
+            $twig->loadBaseLoader();
 
             $vars = [
                 'type'      => $this->type,
@@ -119,7 +119,7 @@
 
             ob_start();
 
-            $twig->createEnvAndMake($loader, self::FEED_LAYOUT, $vars);
+            $twig->createEnvAndMake(self::FEED_LAYOUT, $vars);
 
             $xml_final = ob_get_contents();
 

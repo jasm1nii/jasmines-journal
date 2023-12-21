@@ -10,7 +10,7 @@
 
         final protected function render(): void {
 
-            parent::Twig($this->layout, null, null);
+            parent::renderTwig($this->layout, null, null);
 
         }
 
@@ -45,7 +45,7 @@
                 "message"   => $this->message
             ];
 
-            parent::Twig($this->layout, $vars, null);
+            parent::renderTwig($this->layout, $vars, null);
 
         }
 
