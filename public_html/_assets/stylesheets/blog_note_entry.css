@@ -245,6 +245,9 @@ iframe {
   padding: 1em 1.5em;
   line-height: 1.5em;
 }
+.h-entry img {
+  max-width: 100%;
+}
 
 .emoji {
   display: inline-block;

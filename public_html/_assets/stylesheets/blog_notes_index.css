@@ -275,6 +275,9 @@ article h2 {
   font-stretch: 95%;
   line-height: 1.5em;
 }
+.notes-format .h-entry img {
+  max-width: 100%;
+}
 .notes-format .h-entry footer {
   border-top: 1px dashed;
   margin-left: 0;
