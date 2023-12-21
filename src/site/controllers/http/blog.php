@@ -46,6 +46,18 @@
 
             match (true) {
 
+                // because URLs for feeds have changed multiple times lol
+                
+                str_ends_with(REQUEST, "blog.atom")
+
+                    => parent::redirect("/blog.xml"),
+
+
+                str_ends_with(REQUEST, ".xml")
+
+                    => parent::redirect("/" . self::subpage() . ".xml"),
+
+
                 REQUEST == "/blog",
                 REQUEST == "/blog/index"
 
@@ -71,11 +83,6 @@
                 && file_exists(BlogEntry::matchURLToFile())
 
                     => new Layouts\BlogEntry(self::subpage()),
-
-
-                str_ends_with(REQUEST, ".xml")
-
-                    => parent::redirect("/" . self::subpage() . ".xml"),
 
 
                 default
