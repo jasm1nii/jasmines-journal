@@ -20,9 +20,7 @@
 
         private static function setDebug(): bool {
 
-            $ini = parse_ini_file(ENV_CONF, true);
-
-            return $ini['debug']['xml_generator'];
+            return INI['debug']['xml_generator'];
 
         }
 

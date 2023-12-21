@@ -2,13 +2,9 @@
 
     putenv("ENV=prod");
 
-    dirname($_SERVER['DOCUMENT_ROOT'], 1)
-        ? define("SITE_ROOT", dirname($_SERVER['DOCUMENT_ROOT'], 1))
-        : define("SITE_ROOT", "/var/www/jasmines-journal");
+    define("INI", parse_ini_file(SITE_ROOT . "/config/env_" . getenv("ENV") . ".ini", true));
 
-    // the second argument for "ENV_CONF" should match the absolute path to the configuration file.
-
-    define("ENV_CONF", SITE_ROOT . "/config/env_prod.ini");
+    define("SITE_ROOT", INI['server']['document_root']);
     
     define(
         "DIR",
