@@ -375,7 +375,6 @@ a:hover {
 
 .h-card {
   border: 1px solid rgb(183, 124, 189);
-  background: url("/_assets/media/main/bank-note.svg");
   background-color: snow;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   height: -moz-min-content;
@@ -461,7 +460,7 @@ a:hover {
 }
 
 .barcode {
-  background: url("/_assets/media/main/barcode.svg");
+  background: url("/_assets/media/_shared/css/barcode.svg");
   background-repeat: no-repeat;
   background-position: right;
   height: 50px;
