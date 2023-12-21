@@ -45,9 +45,15 @@
 
         }
 
-        public static function matchSubpage(int $level = 0): string {
+        public static function matchSubpage(?int $level = 0): ?string {
 
-            return preg_split('/\//', REQUEST)[$level];
+            $matches = preg_split('/\//', REQUEST);
+
+            if (isset($matches[$level])) {
+
+                return $matches[$level];
+
+            }
 
         }
 
