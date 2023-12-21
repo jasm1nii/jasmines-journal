@@ -36,7 +36,6 @@
                 sort_tag: $sort_tag
             );
 
-            $i = 0;
             foreach ($articles as $article) {
 
                 $path = $article['File Path'];
@@ -58,7 +57,7 @@
 
             }
 
-            return implode("", $content);
+            return implode($content);
 
         }
 

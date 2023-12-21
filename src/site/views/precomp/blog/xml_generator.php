@@ -13,6 +13,7 @@
 
         private bool $debug_settings;
         protected object $database;
+        protected object $twig;
         protected string $output_file;
 
         private function parseEntries(): ?string {
@@ -20,8 +21,6 @@
             $files  = $this->database->getEntries(
                 row_total: $this->max_entries
             );
-
-            $env = Extension\PartialTwig::buildTwigEnv();
 
             $content = [];
 
@@ -40,7 +39,7 @@
                         'src'       => $img_dir
                     ];
 
-                    $content[] = $env->render($article['File Path'], $vars);
+                    $content[] = $this->twig->render($article['File Path'], $vars);
                 
                 } 
 
@@ -52,14 +51,14 @@
 
         private function createFeed(): ?string {
 
-            $env = Extension\PartialTwig::buildTwigEnv();
+            $this->twig = Extension\PartialTwig::buildTwigEnv();
 
             $vars = [
                 'type'      => $this->type,
                 'temp_file' => $this->parseEntries()
             ];
 
-            return $env->render(self::FEED_LAYOUT, $vars);
+            return $this->twig->render(self::FEED_LAYOUT, $vars);
 
         }
 
@@ -69,7 +68,7 @@
 
             $latest_entry_date = $this->database->getDateOfNewest();
 
-            $feed   = $this->output_file;
+            $feed = $this->output_file;
 
             $feed_date = @filemtime($feed);
 
@@ -107,7 +106,7 @@
 
             $this->output_file = $this->debug_settings
                 ? SITE_ROOT . "/tests/{$this->type}.xml"
-                : $_SERVER['DOCUMENT_ROOT'] . "/{$this->type}.xml";
+                : SITE_ROOT . "/public_html/{$this->type}.xml";
 
             $this->validateXML();
 
