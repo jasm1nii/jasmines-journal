@@ -1,8 +1,8 @@
 <?php
 
     putenv("ENV=prod");
-
-    define("INI", parse_ini_file(SITE_ROOT . "/config/env_" . getenv("ENV") . ".ini", true));
+    
+    define("INI", parse_ini_file("env_" . getenv("ENV") . ".ini", true));
 
     define("SITE_ROOT", INI['server']['document_root']);
     

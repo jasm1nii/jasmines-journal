@@ -16,6 +16,13 @@
         public ?array $unique_tag_count;
 
         #[Setup]
+        final public function useLocalhostAsSource(): void {
+
+            $this->source_site = "http://localhost";
+            
+        }
+
+        #[Setup]
         final public function validateTable(): void {
 
             try {

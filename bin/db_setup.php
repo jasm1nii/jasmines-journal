@@ -19,14 +19,5 @@
 
     }
 
-    if (getenv('ENV') !== 'dev') {
-
-        http_response_code(403);
-        return;
-
-    } else {
-
-        checkNotesDB();
-        checkArticlesDB();
-
-    }
+    checkNotesDB();
+    checkArticlesDB();
