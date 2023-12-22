@@ -15,18 +15,22 @@
         </hgroup>
     </header>
     <section class="h-entry">
-        <section class="e-content">{{ block('content') }}</section>
+        <section class="e-content">
+            {{ block('content') }}
+            <footer>
+                <dl class="tags">
+                    <dt>tags:</dt>
+                    {% if keywords is defined %}
+                        {% for keyword in keywords %}
+                            <dd><a href="https://jasm1nii.xyz/blog/notes/tag/{{ keyword }}" class="p-category">#{{ keyword }}</a></dd>
+                        {% endfor %}
+                    {% else %}
+                        <dd>none defined</dd>
+                    {% endif %}
+                </dl>
+            </footer>
+        </section>
         <footer>
-			<dl class="tags">
-                <dt>tags:</dt>
-                {% if keywords is defined %}
-                    {% for keyword in keywords %}
-                        <dd><a href="/blog/notes/tag/{{ keyword }}"># {{ keyword }}</a></dd>
-                    {% endfor %}
-                {% else %}
-                    <dd>none defined</dd>
-                {% endif %}
-            </dl>
             <p class="post-links">
                 <span aria-hidden="true">💬</span> <a href="{{ slug }}">view post with comments</a>
             </p>

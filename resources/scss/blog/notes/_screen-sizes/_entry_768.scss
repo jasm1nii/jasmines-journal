@@ -32,7 +32,10 @@
             margin-left: 1em;
         }
         .h-entry {
-            padding: 2em 1em;
+            padding: 1em 1em;
+            footer {
+                width: 100%;
+            }
         }
         .feed-links {
             margin-bottom: 2em;
@@ -48,7 +51,6 @@
             border-left: none;
             border-right: none;
         }
-
         footer {            
             width: 80%;
             max-width: 100vw;

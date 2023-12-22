@@ -28,15 +28,10 @@
 
                 if (file_exists(SITE_ROOT . $article['File Path'])) {
 
-                    $slug = $article['Relative URL'];
-
-                    $img_dir = "https://jasm1nii.xyz/_assets/media/blog/{$this->type}/" . rtrim($slug,'/entry') . '/';
-
                     $vars = [
                         'type'      => $this->type,
                         'layout'    => self::ENTRY_LAYOUT,
-                        'slug'      => $slug,
-                        'src'       => $img_dir
+                        'slug'      => $article['Relative URL'],
                     ];
 
                     $content[] = $this->twig->render($article['File Path'], $vars);

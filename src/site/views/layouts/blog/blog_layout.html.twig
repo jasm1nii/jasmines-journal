@@ -30,17 +30,13 @@
 							<dl class="tags">
 								<dt>frequent tags:</dt>
 								{% for key, value in note_tags|slice(0, 5) %}
-									<dd><a href="/blog/notes/tag/{{ key }}"># {{ key }} ({{ value }})</a></dd>
+									<dd><a href="https://jasm1nii.xyz/blog/notes/tag/{{ key }}" class="p-category">#{{ key }} ({{ value }})</a></dd>
 								{% endfor %}
 							</dl>
 							<nav class="subscribe">
 								<ul>
-									<li>
-										<span aria-hidden="true">📖</span> <a href="/blog/notes">view archive</a>
-									</li>
-									<li>
-										<span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a>
-									</li>
+									<li><span aria-hidden="true">📖</span> <a href="/blog/notes">view archive</a></li>
+									<li><span aria-hidden="true">📰</span> subscribe via <a href="/notes.xml">atom</a></li>
 								</ul>
 							</nav>
 						</section>
@@ -50,17 +46,13 @@
 							<dl class="tags">
 								<dt>frequent tags:</dt>
 								{% for key, value in article_tags|slice(0, 5) %}
-									<dd><a href="/blog/articles/tag/{{ key }}"># {{ key }} ({{ value }})</a></dd>
+									<dd><a href="/blog/articles/tag/{{ key }}">#{{ key }} ({{ value }})</a></dd>
 								{% endfor %}
 							</dl>
 							<nav class="subscribe">
 								<ul>
-									<li>
-										<span aria-hidden="true">📖</span> <a href="/blog/articles">view archive</a>
-									</li>
-									<li>
-										<span aria-hidden="true">📰</span> subscribe via <a href="/articles.xml">atom</a>
-									</li>
+									<li><span aria-hidden="true">📖</span> <a href="/blog/articles">view archive</a></li>
+									<li><span aria-hidden="true">📰</span> subscribe via <a href="/articles.xml">atom</a></li>
 								</ul>
 							</nav>
 						</section>

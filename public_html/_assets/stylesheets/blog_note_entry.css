@@ -217,8 +217,11 @@ article {
   margin-left: auto;
   margin-right: 0;
 }
-article a:hover {
-  letter-spacing: 0.05em;
+article > .u-photo {
+  aspect-ratio: 1;
+  border: 1px solid;
+  margin-bottom: auto;
+  margin-right: 1em;
 }
 
 h2 {
@@ -232,13 +235,6 @@ iframe {
 
 .h-entry, #webmentions, #comments {
   border: 1px solid;
-}
-
-.u-photo {
-  aspect-ratio: 1;
-  border: 1px solid;
-  margin-bottom: auto;
-  margin-right: 1em;
 }
 
 .h-entry {
@@ -285,15 +281,16 @@ iframe {
 }
 .feed-links ul {
   display: flex;
+  line-height: 1.5em;
   margin-left: 0;
   padding-left: 0;
+  list-style-position: inside;
 }
-.feed-links li {
-  display: block;
+.feed-links li:first-of-type {
+  margin-right: 0.75em;
 }
-.feed-links li:not(:last-of-type)::after {
-  content: "•";
-  margin: 0 1em;
+.feed-links li:first-of-type::marker {
+  content: none;
 }
 
 #webmentions, #comments {
@@ -354,7 +351,10 @@ iframe {
     margin-left: 1em;
   }
   .h-entry {
-    padding: 2em 1em;
+    padding: 1em 1em;
+  }
+  .h-entry footer {
+    width: 100%;
   }
   .feed-links {
     margin-bottom: 2em;

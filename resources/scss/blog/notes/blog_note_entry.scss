@@ -34,10 +34,11 @@ article {
     font-weight: 500;
     margin-left: auto;
     margin-right: 0;
-    a {
-        &:hover {
-            letter-spacing: .05em;
-        }
+    > .u-photo {
+        aspect-ratio: 1;
+        border: 1px solid;
+        margin-bottom: auto;
+        margin-right: 1em;
     }
 }
 
@@ -51,12 +52,6 @@ iframe {
 
 .h-entry, #webmentions, #comments {
     border: 1px solid;
-}
-.u-photo {
-    aspect-ratio: 1;
-    border: 1px solid;
-    margin-bottom: auto;
-    margin-right: 1em;
 }
 .h-entry {
     padding: 1em 1.5em;
@@ -100,14 +95,17 @@ iframe {
     margin: auto;
     ul {
         display: flex;
+        line-height: 1.5em;
         margin-left: 0;
         padding-left: 0;
+        list-style-position: inside;
     }
     li {
-        display: block;
-        &:not(:last-of-type)::after {
-            content: "\2022";
-            margin: 0 1em;
+        &:first-of-type {
+            &::marker {
+                content: none;
+            }
+            margin-right: .75em;
         }
     }
 }

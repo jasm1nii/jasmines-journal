@@ -1,12 +1,17 @@
-    
-    <entry>
-        <title>{{ title is defined ? title : published }}</title>
-        <id>https://jasm1nii.xyz/blog/{{ type }}/{{ slug }}</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/{{ type }}/{{ slug }}"/>
-        <updated>{{ updated is defined ? updated|date() : published|date() }}</updated>
-        <published>{{ published|date() }}</published>
-        <summary>{{ summary is defined ? summary : block('content')[:250]|striptags ~ "..." }}</summary>
-        <content type="html">
-            {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;', '&hellip;' : '...' })|spaceless }}
-        </content>
-    </entry>
+{% set src = "https://jasm1nii.xyz/_assets/media" ~ slug|trim('entry', 'right') ~ "/" %}
+<entry>
+    <title>{{ title is defined ? title : published }}</title>
+    <id>https://jasm1nii.xyz{{ slug }}</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog{{ slug }}" hreflang="{{ language is defined ? language : 'en' }}" />
+    <updated>{{ updated is defined ? updated|date() : published|date() }}</updated>
+    <published>{{ published|date() }}</published>
+    {% if keywords is defined %}
+        {% for keyword in keywords %}
+            <category term="{{ keyword }}" label="{{ keyword }}"/>
+        {% endfor %}
+    {% endif %}
+    <summary>{{ summary is defined ? summary : block('content')[:250]|striptags ~ "..." }}</summary>
+    <content type="html">
+        {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;', '&hellip;' : '...' })|spaceless }}
+    </content>
+</entry>

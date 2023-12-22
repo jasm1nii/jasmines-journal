@@ -87,7 +87,7 @@ article {
             margin-bottom: 0;
         }
     }
-    .u-photo {
+    > .u-photo {
         border-radius: 50%;
         margin-right: 1em;
         margin-bottom: 1em;
@@ -99,7 +99,6 @@ article {
         border: 1px solid rgb(56, 49, 56);
         max-width: 95vw;
         .e-content {
-            padding-bottom: 1em;
             margin-top: 0;
             font-size: larger;
             font-stretch: 95%;
@@ -123,7 +122,7 @@ article {
         flex-wrap: wrap;
         line-height: 2.5em;
         padding-top: .5em;
-        padding-bottom: 1em;
+        padding-bottom: .5em;
         margin: 0;
         dt {
             font-weight: bolder;
@@ -141,7 +140,6 @@ article {
         }
     }
     .post-links {
-        border-top: 1px dashed;
         padding-top: 1.5em;
         margin-top: 0;
         text-align: right;

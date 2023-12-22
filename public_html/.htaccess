@@ -10,6 +10,9 @@ Options +FollowSymLinks -Indexes +Includes -MultiViews
 
 RewriteEngine on
 
+RewriteBase /
+RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
+
 RewriteRule ^(.*)/+$ $1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME}\.html -f
@@ -27,9 +30,6 @@ RewriteRule ^ – [F]
 RewriteCond %{HTTP_REFERER} lolcow.farm [NC,OR]
 RewriteCond %{HTTP_REFERER} pawoo.net [NC]
 RewriteRule .* - [F]
-
-RewriteBase /
-RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
 
 ModPageSpeed on
 AddOutputFilterByType MOD_PAGESPEED_OUTPUT_FILTER text/html

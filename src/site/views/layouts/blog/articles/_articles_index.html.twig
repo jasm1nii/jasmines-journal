@@ -15,7 +15,7 @@
             <ul class="tags">
                 {% if keywords is defined %}
                     {% for keyword in keywords %}
-                        <li><a href="/blog/notes/tag/{{ keyword }}"># {{ keyword }}</a></li>
+                        <li><a href="https://jasm1nii.xyz/blog/notes/tag/{{ keyword }}" class="p-category">#{{ keyword }}</a></li>
                     {% endfor %}
                 {% else %}
                     <li>none</li>
