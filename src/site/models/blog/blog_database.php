@@ -350,10 +350,11 @@
         
             }
 
-            $this->unique_tags = array_unique($this->tags, SORT_STRING);
+            $this->unique_tags = array_unique($this->tags);
+            asort($this->unique_tags);
 
             $this->unique_tag_count = array_count_values($this->tags);
-            arsort($this->unique_tag_count, SORT_DESC);
+            arsort($this->unique_tag_count);
 
         }
 

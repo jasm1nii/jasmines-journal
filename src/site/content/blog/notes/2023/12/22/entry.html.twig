@@ -1,0 +1,21 @@
+{% extends layout %}
+
+{% set keywords = ['art', 'sketch', 'blaze the cat'] %}
+
+{% set published = '22 december 2023' %}
+
+{% block content %}
+    <p>it's been a while since i've last drawn her 💜</p>
+    <figure>
+        <img class="u-photo" src="{{ src }}blaze.webp" alt="a digital sketch of blaze staring wide-eyed at the viewer, with a... blaze (fire) in the background."/>
+        <figcaption>my take on blaze the cat from sonic the hedgehog.</figcaption>
+    </figure>
+{% endblock %}
+
+{# optional #}
+
+{% set custom_style         = false %}
+{% set publish_to_bridgy    = true  %}
+{% set webmentions_301      = false %}
+{% set enable_webmentions   = true  %}
+{% set enable_comments      = true  %}
