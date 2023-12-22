@@ -1,7 +1,5 @@
 <?php
 
-    // cron script
-
     require __DIR__ . '/../vendor/autoload.php';
 
     use JasminesJournal\Site\Models\NotesDatabase;
@@ -10,6 +8,7 @@
     function updateArticles(): void {
 
         $db = new ArticlesDatabase;
+        // $db->useLocalhostAsSource();
         $db->validateNewestEntry();
 
     }
@@ -17,6 +16,7 @@
     function updateNotes(): void {
 
         $db = new NotesDatabase;
+        // $db->useLocalhostAsSource();
         $db->validateNewestEntry();
 
     }

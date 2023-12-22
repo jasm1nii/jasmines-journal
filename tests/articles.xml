@@ -3,7 +3,7 @@
   <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
   <title>jasmine's b(rain)log | jasm1nii.xyz</title>
   <subtitle>blog articles by jasmine</subtitle>
-  <updated>2023-12-22T10:56:51+07:00</updated>
+  <updated>2023-12-22T13:00:01+07:00</updated>
   <id>https://jasm1nii.xyz/blog/articles</id>
   <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/articles.xml"/>
   <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/articles"/>
@@ -56,7 +56,7 @@
                 &lt;h4&gt;chicken fried rice 🌶&lt;/h4&gt;
                 &lt;p&gt;current the most frequently ordered item 👑&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230805_185717_compressed.webp" alt="fried rice"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -72,7 +72,7 @@
                     &lt;li&gt;chili sauce&lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230825_092907_1_compressed.webp" alt="rice porridge"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -86,8 +86,8 @@
                 &lt;/ul&gt;
             &lt;/section&gt;
             &lt;div&gt;
-                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
-                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_155844_compressed.webp" alt="balado burger from mcdonald's indonesia"/&gt;
+                &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230830_160844_compressed.webp" alt="french fries with soda"/&gt;
             &lt;/div&gt;
         &lt;/section&gt;
         &lt;section&gt;
@@ -102,7 +102,7 @@
                 &lt;/ul&gt;
                 &lt;p&gt;&lt;small&gt;* not pictured, because i was super hungry.&lt;/small&gt;&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230905_164554_compressed.webp" alt="A&amp;W curly fries"/&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;section&gt;
@@ -110,7 +110,7 @@
                 &lt;h4&gt;mixue kiwi smoothie sundae 👍&lt;/h4&gt;
                 &lt;p&gt;so citrusy and fresh 😋&lt;/p&gt;
             &lt;/section&gt;
-            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26//IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
+            &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/9/26/IMG_20230912_150928_compressed.webp" alt="mixue kiwi smoothie sundae"/&gt;
         &lt;/section&gt;
         &lt;/section&gt;
     &lt;/section&gt;</content>
@@ -127,7 +127,7 @@
     <content type="html">&lt;p&gt;
         18 august 2023 update - a very funny thing happened last night &lt;em&gt;right after&lt;/em&gt; i posted my blog yesterday:
         &lt;br/&gt;
-        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/17//email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
+        &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/17/email.png" alt="on friday, august 11th 2023, i wrote to neocities support with the follow message: &amp;#34;hello, my website (https://jasm1nii.neocities.org/) and profile suddenly disappeared a few moments ago - opening them leads to a &amp;#34;page not found&amp;#34; error. i am still able to receive password reset emails, but the links do not follow through, and i can't sign in. may i get some clarity as to what happened, and is it possible to get my site back up?&amp;#34;. attached above my message is a reply from neocities support, sent thursday, august 17th, 2023: &amp;#34;My sincere apologies for the delay and issues, we are receiving record support requests right now. I believe we have this resolved for you and you should be able to login again. Again, please accept my apologies for the extreme delay in response and the issues.#34;"/&gt;
     &lt;/p&gt;
     &lt;p&gt;
         now, being on &lt;em&gt;three different web hosts&lt;/em&gt; just feels excessive, so the new plan is to set up a splash page with a redirect on ichi and neocities! will get around to that in the near future.
@@ -221,7 +221,7 @@
           &lt;/summary&gt;
           &lt;p&gt;
               the staple of every USian classroom, only good for cruddy papier-mâché, and nothing more:
-              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/09//elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
+              &lt;img src="https://jasm1nii.xyz/_assets/media/blog/articles/2023/8/09/elmers.jpg" height="200px" alt="a photo of elmer's washable school glue"&gt;
           &lt;/p&gt;
           &lt;hr&gt;
       &lt;/details&gt;

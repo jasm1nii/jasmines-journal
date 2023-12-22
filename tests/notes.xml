@@ -3,7 +3,7 @@
   <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
   <title>jasmine's notes | jasm1nii.xyz</title>
   <subtitle>blog notes by jasmine</subtitle>
-  <updated>2023-12-22T10:56:51+07:00</updated>
+  <updated>2023-12-22T13:00:01+07:00</updated>
   <id>https://jasm1nii.xyz/blog/notes</id>
   <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/notes.xml"/>
   <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes"/>
@@ -17,6 +17,28 @@
   <icon>https://jasm1nii.xyz/_assets/media/itchio-textless-white.svg</icon>
   <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
   <entry>
+    <title>21 december 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/12/21/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/12/21/entry" hreflang="en"/>
+    <updated>2023-12-21T00:00:00+07:00</updated>
+    <published>2023-12-21T00:00:00+07:00</published>
+    <category term="art" label="art"/>
+    <category term="sketch" label="sketch"/>
+    <category term="school" label="school"/>
+    <summary>
+        less than ten days til new years... RAAHH i need more brain power so i can wrap up my undergrad project already 😭
+    ...</summary>
+    <content type="html">&lt;p&gt;
+        less than ten days til new years... RAAHH i need more brain power so i can wrap up my undergrad project already 😭
+    &lt;/p&gt;
+    &lt;figure&gt;
+        &lt;img class="u-photo" src="https://jasm1nii.xyz/_assets/media/blog/notes/2023/12/21/sketch.webp" alt="a digital sketch of a girl resting her head in her hand with a tired expression."/&gt;
+        &lt;figcaption&gt;
+            anyways, here's my first doodle in forever.
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;</content>
+  </entry>
+  <entry>
     <title>7 december 2023</title>
     <id>https://jasm1nii.xyz/blog/notes/2023/12/07/entry</id>
     <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/12/07/entry" hreflang="en"/>
@@ -24,7 +46,7 @@
     <published>2023-12-07T00:00:00+07:00</published>
     <category term="personal" label="personal"/>
     <category term="music" label="music"/>
-    <summary>my noise-cancelling headphones remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 10...</summary>
+    <summary>my noise-cancelling headphones remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within...</summary>
     <content type="html">&lt;p&gt;&lt;a href="https://www.edifier.com/global/p/over-ear-on-ear-headphones/w820nb"&gt;my noise-cancelling headphones&lt;/a&gt; remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 100-meter radius 😭 wish i had more money for a pair with a higher decibel limit, but i guess i'll just deal.&lt;/p&gt;
 &lt;hr /&gt;
     &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/52FZWhlJCi1pwxNOd0RIi9?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
@@ -71,16 +93,5 @@
     <summary>14:56i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some ...</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;14:56&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some &lt;a href="https://music.youtube.com/watch?v=hTLa16ZwgX0&amp;amp;si=skG1QhQkd1K7gXVM"&gt;jazz ambience&lt;/a&gt; in the background.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>23 november 2023</title>
-    <id>https://jasm1nii.xyz/blog/notes/2023/11/28/entry</id>
-    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/11/28/entry" hreflang="en"/>
-    <updated>2023-11-23T00:00:00+07:00</updated>
-    <published>2023-11-23T00:00:00+07:00</published>
-    <category term="accountability" label="accountability"/>
-    <category term="personal" label="personal"/>
-    <summary>check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹...</summary>
-    <content type="html">&lt;p&gt;check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.&lt;/p&gt;</content>
   </entry>
 </feed>

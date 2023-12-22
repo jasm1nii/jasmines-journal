@@ -175,6 +175,8 @@
                 $dir = new BlogDirectory($this->type);
                 $file = $dir->getNewestFile();
 
+                $prev_count = $this->getTotal();
+
                 $sql = $this->database->prepare(
                     "SELECT `File Path`
                     FROM `{$this->table}`
@@ -190,7 +192,11 @@
 
                 }
 
-                echo "({$this->type}) Successfully validated!";
+                $new_count = $this->getTotal();
+
+                $diff = $new_count - $prev_count;
+
+                echo "({$this->type}) Successfully validated, with {$diff} new rows added.\n";
 
             } catch (\Exception $e) {
 
