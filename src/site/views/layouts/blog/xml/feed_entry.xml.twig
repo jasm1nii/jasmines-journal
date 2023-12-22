@@ -10,8 +10,6 @@
             <category term="{{ keyword }}" label="{{ keyword }}"/>
         {% endfor %}
     {% endif %}
-    <summary>{{ summary is defined ? summary : block('content')[:250]|striptags ~ "..." }}</summary>
-    <content type="html">
-        {{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;', '&hellip;' : '...' })|spaceless }}
-    </content>
+    <summary>{{ summary is defined ? summary : block('content')[:250]|spaceless|striptags ~ "..." }}</summary>
+    <content type="html">{{ block('content')|replace({ '<' : '&lt;', '>' : '&gt;' , '&shy;' : '-', '&' : '&amp;', '&hellip;' : '...' })|spaceless }}</content>
 </entry>

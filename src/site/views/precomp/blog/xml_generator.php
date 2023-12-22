@@ -72,6 +72,8 @@
                 $start = microtime(true);
 
                 $output = new \DOMDocument();
+                $output->preserveWhiteSpace = false;
+                $output->formatOutput = true;
                 $output->loadXML($this->createFeed(), LIBXML_PARSEHUGE);
                 $output->save($this->output_file);
 

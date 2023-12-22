@@ -1,94 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
-    <title>jasmine's notes | jasm1nii.xyz</title>
-    <subtitle>blog notes by jasmine</subtitle>
-    <updated>2023-12-21T16:50:23+07:00</updated>
-    <id>https://jasm1nii.xyz/blog/notes</id>
-    <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/notes.xml"/>
-    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes"/>
-    <author>
-        <name>jasmine</name>
-        <email>contact@jasm1nii.xyz</email>
-        <uri>https://jasm1nii.xyz/</uri>
-    </author>
-    <rights>© 2023 - jasmine amalia</rights>
-    <icon>https://jasm1nii.xyz/_assets/media/itchio-textless-white.svg</icon>
-    <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
-        
-    <entry>
-        <title>7 december 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/07/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/07/entry"/>
-        <updated>2023-12-07T00:00:00+07:00</updated>
-        <published>2023-12-07T00:00:00+07:00</published>
-        <summary>    my noise-cancelling headphones remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within ...</summary>
-        <content type="html">
-            &lt;p&gt;&lt;a href="https://www.edifier.com/global/p/over-ear-on-ear-headphones/w820nb"&gt;my noise-cancelling headphones&lt;/a&gt; remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 100-meter radius 😭 wish i had more money for a pair with a higher decibel limit, but i guess i'll just deal.&lt;/p&gt;
+  <generator version="2.0">PHP feed generator by jasm1nii.xyz</generator>
+  <title>jasmine's notes | jasm1nii.xyz</title>
+  <subtitle>blog notes by jasmine</subtitle>
+  <updated>2023-12-22T10:56:51+07:00</updated>
+  <id>https://jasm1nii.xyz/blog/notes</id>
+  <link rel="self" type="application/atom+xml" href="https://jasm1nii.xyz/notes.xml"/>
+  <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes"/>
+  <category term="blog" label="blog"/>
+  <author>
+    <name>jasmine</name>
+    <email>contact@jasm1nii.xyz</email>
+    <uri>https://jasm1nii.xyz/</uri>
+  </author>
+  <rights>© 2023 - jasmine amalia</rights>
+  <icon>https://jasm1nii.xyz/_assets/media/itchio-textless-white.svg</icon>
+  <logo>https://jasm1nii.xyz/_assets/media/main/07042023-me_compressed.webp</logo>
+  <entry>
+    <title>7 december 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/12/07/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/12/07/entry" hreflang="en"/>
+    <updated>2023-12-07T00:00:00+07:00</updated>
+    <published>2023-12-07T00:00:00+07:00</published>
+    <category term="personal" label="personal"/>
+    <category term="music" label="music"/>
+    <summary>my noise-cancelling headphones remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 10...</summary>
+    <content type="html">&lt;p&gt;&lt;a href="https://www.edifier.com/global/p/over-ear-on-ear-headphones/w820nb"&gt;my noise-cancelling headphones&lt;/a&gt; remain the best thing i've purchased yet within the past two years, but sadly, they don't withstand the screams of children within a 100-meter radius 😭 wish i had more money for a pair with a higher decibel limit, but i guess i'll just deal.&lt;/p&gt;
 &lt;hr /&gt;
     &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/52FZWhlJCi1pwxNOd0RIi9?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
     &lt;p&gt;
         &lt;q cite="https://open.spotify.com/track/32JZFkClwxLNqBaaCHlH94?si=e9fe490543884c4f"&gt;i think too much, yet not enough~&lt;/q&gt;
     &lt;/p&gt;
     &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/32JZFkClwxLNqBaaCHlH94?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/59kIuAVlIgcR6NSctQxylR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>3 december 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/03/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/03/entry"/>
-        <updated>2023-12-03T00:00:00+07:00</updated>
-        <published>2023-12-03T00:00:00+07:00</published>
-        <summary>    14:54
-i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today....</summary>
-        <content type="html">
-            &lt;p&gt;&lt;strong&gt;14:54&lt;/strong&gt;&lt;/p&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/59kIuAVlIgcR6NSctQxylR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>3 december 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/12/03/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/12/03/entry" hreflang="en"/>
+    <updated>2023-12-03T00:00:00+07:00</updated>
+    <published>2023-12-03T00:00:00+07:00</published>
+    <category term="personal" label="personal"/>
+    <summary>14:54i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today....</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;14:54&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;i am soo tense right now... sensory overwhelm has been hitting hard since this morning. but i'll still try to do what i can. i felt really productive last night, so i'm hoping that i can get even more done today.&lt;/p&gt;
-    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7Eit07n6BBsT9v36WpOuWA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>2 december 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/02/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/12/02/entry"/>
-        <updated>2023-12-02T00:00:00+07:00</updated>
-        <published>2023-12-02T00:00:00+07:00</published>
-        <summary>    i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧
-
-in a mellow kind of mood tonight 🌃
-    ...</summary>
-        <content type="html">
-            &lt;p&gt;i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧&lt;/p&gt;
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7Eit07n6BBsT9v36WpOuWA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>2 december 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/12/02/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/12/02/entry" hreflang="en"/>
+    <updated>2023-12-02T00:00:00+07:00</updated>
+    <published>2023-12-02T00:00:00+07:00</published>
+    <category term="personal" label="personal"/>
+    <summary>i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧in a mellow kind of mood tonight 🌃...</summary>
+    <content type="html">&lt;p&gt;i've finally been able to cut down on my sleep medication after months of taking the highest permitted dosage 🤧&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;in a mellow kind of mood tonight 🌃&lt;/p&gt;
     &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0rbKrBvZUYY9GN9l057BuY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
     &lt;br/&gt;
-    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4LOLvDtzykDC7y9WehFoOi?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>29 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/29/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/29/entry"/>
-        <updated>2023-11-29T00:00:00+07:00</updated>
-        <published>2023-11-29T00:00:00+07:00</published>
-        <summary>    14:56
-i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some ...</summary>
-        <content type="html">
-            &lt;p&gt;&lt;strong&gt;14:56&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some &lt;a href="https://music.youtube.com/watch?v=hTLa16ZwgX0&amp;amp;si=skG1QhQkd1K7gXVM"&gt;jazz ambience&lt;/a&gt; in the background.&lt;/p&gt;
-        </content>
-    </entry>    
-    <entry>
-        <title>23 november 2023</title>
-        <id>https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/28/entry</id>
-        <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/notes//blog/notes/2023/11/28/entry"/>
-        <updated>2023-11-23T00:00:00+07:00</updated>
-        <published>2023-11-23T00:00:00+07:00</published>
-        <summary>    check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working ...</summary>
-        <content type="html">
-            &lt;p&gt;check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.&lt;/p&gt;
-        </content>
-    </entry>
+    &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4LOLvDtzykDC7y9WehFoOi?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>29 november 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/11/29/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/11/29/entry" hreflang="en"/>
+    <updated>2023-11-29T00:00:00+07:00</updated>
+    <published>2023-11-29T00:00:00+07:00</published>
+    <category term="personal" label="personal"/>
+    <summary>14:56i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some ...</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;14:56&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;i woke up with another bad headache today, but at least i did my morning yoga today. currently trying to relax my tense nerves while playing some &lt;a href="https://music.youtube.com/watch?v=hTLa16ZwgX0&amp;amp;si=skG1QhQkd1K7gXVM"&gt;jazz ambience&lt;/a&gt; in the background.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>23 november 2023</title>
+    <id>https://jasm1nii.xyz/blog/notes/2023/11/28/entry</id>
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog/blog/notes/2023/11/28/entry" hreflang="en"/>
+    <updated>2023-11-23T00:00:00+07:00</updated>
+    <published>2023-11-23T00:00:00+07:00</published>
+    <category term="accountability" label="accountability"/>
+    <category term="personal" label="personal"/>
+    <summary>check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹...</summary>
+    <content type="html">&lt;p&gt;check-in time - i fell off hard with task tracking for the past few days due to a bought of PMS. did not get in my daily dose of physical activity either, and i still haven't made much progress with the current after effects scene i'm working on ☹ i have less than a month to get this done, but i keep hyperfocusing on the wrong things.&lt;/p&gt;</content>
+  </entry>
 </feed>
