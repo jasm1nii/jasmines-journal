@@ -70,11 +70,11 @@ elif [[ "$option" = "publish-draft" || "$option" = "publish" ]]; then
 
     if [[ -f "$draft_dir/media" ]]; then
 
-        mv "$draft_dir/media" "public_html/_assets/media/blog/$post_dir/$date"
+        mv "$draft_dir/media/*" "public_html/_assets/media/blog/$post_dir/$date"
 
     fi
 
-    rmdir "$draft_dir"
+    rm -rf "$draft_dir"
 
     echo "moved to public directory"
 

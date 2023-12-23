@@ -10,8 +10,11 @@
 		<meta name="author" content="jasmine"/>
 		<meta name="keywords" content="{{ keywords is defined ? keywords|join(', ') ~ ", microblog" : "microblog" }}"/>
 		<meta name="description" content="note from {{ published }}"/>
-		<link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
+		{% if cover is defined %}
+			<meta property="og:image" content="https://jasm1nii.xyz{{ src ~ cover }}"/>
+		{% endif %}
 
+		<link rel="canonical" href="https://jasm1nii.xyz/blog/notes{{ slug }}"/>
 		{% if publish_to_bridgy %}
 			<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/https://jasm1nii.xyz/blog/notes/{{ slug }}"/>
 		{% endif %}
