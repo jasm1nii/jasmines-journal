@@ -5,9 +5,15 @@
     <script src="/_assets/scripts/loader.js" type="text/javascript" async></script>
 
     <title>jasmine's journal</title>
-    <link rel="canonical" href="https://jasm1nii.xyz/"/>
+    <link rel="canonical" href="https://jasm1nii.xyz"/>
     <meta name="description" content="the interwebbed dwelling of a multifaceted internet creative"/>
     <meta property="og:description" content="the interwebbed dwelling of a multifaceted internet creative"/>
+    <!-- bro none of these are working -->
+    <link rel="me" href="https://github.com/jasm1nii"/>
+    <!-- <link rel="indieauth-metadata" href="https://jasm1nii.xyz/auth/"/> -->
+    <link rel="authorization_endpoint" href="https://jasm1nii.xyz/auth/"/>
+    <!-- <link rel="authorization_endpoint" href="https://indieauth.com/auth"/> -->
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token"/>
 
     <link rel="preload" href="{{ src }}/07042023-me_compressed.webp" as="image" type="image/webp" fetchpriority="high"/>
     <link rel="preload" href="{{ src }}/pluto-pretzel_compressed.webp" as="image" type="image/webp"/>
@@ -19,11 +25,6 @@
     <noscript>
       <link rel="stylesheet" href="/_assets/stylesheets/home_noscript.css" type="text/css" media="all"/>
     </noscript>
-
-    <link href="mailto:contact@jasm1nii.xyz" rel="authn me"/>
-    <link href="https://jasm1nii.xyz/_assets/pgp-public-jasm1nii-xyz.asc" rel="authn pgpkey"/>
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth"/>
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token"/>
   </head>
   <body>
     {{ include('@includes/_loader.html') }}

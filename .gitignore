@@ -10,3 +10,4 @@ vendor/*
 bin/sitemap-generator
 resources/drafts
 node_modules
+public_html/auth

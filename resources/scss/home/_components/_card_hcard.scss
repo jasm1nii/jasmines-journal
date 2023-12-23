@@ -8,9 +8,6 @@
         font-size: 1.1em;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        & [rel="me"] {
-            display: none;
-        }
         footer {
             padding: 0;
         }
