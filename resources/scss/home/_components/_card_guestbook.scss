@@ -7,7 +7,7 @@
         }
         blockquote {
             margin: 1.5em auto auto;
-            width: fit-content;
+            max-width: 100%;
             font-family: var(--font-3);
             font-weight: 600;
             font-size: larger;
