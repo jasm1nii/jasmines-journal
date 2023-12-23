@@ -67,10 +67,10 @@
 								</dl>
 							</footer>
 						</section>
+						{% if publish_to_bridgy %}
+							<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
+						{% endif %}
 					</section>
-					{% if publish_to_bridgy %}
-						<a class="u-bridgy-fed" href="https://fed.brid.gy/" aria-hidden="true" tabindex="-1" inert></a>
-					{% endif %}
 				</article>
 
 				<nav class="feed-links">
