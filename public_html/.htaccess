@@ -123,7 +123,7 @@ ModPagespeedEnableFilters hint_preload_subresources,insert_dns_prefetch,collapse
   
   Header always set Permissions-Policy "autoplay=*, ambient-light-sensor=(), accelerometer=(), battery=(), camera=(), cross-origin-isolated=*, display-capture=(), document-domain=(),encrypted-media=*, execution-while-not-rendered=(), execution-while-out-of-viewport=*, fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=*, navigation-override=*, payment=(), picture-in-picture=*, publickey-credentials-get=*, screen-wake-lock=(), sync-xhr=*, usb=(), web-share=*, xr-spatial-tracking=(), clipboard-read=*, clipboard-write=*, gamepad=*, speaker-selection=*"
 
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Referrer-Policy "strict-origin"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
   Header always set X-Powered-By "medium spicy fried rice"
   Header always set X-Content-Type-Options "nosniff"

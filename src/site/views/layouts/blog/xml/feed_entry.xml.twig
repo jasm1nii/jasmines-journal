@@ -2,7 +2,7 @@
 <entry>
     <title>{{ title is defined ? title : published }}</title>
     <id>https://jasm1nii.xyz{{ slug }}</id>
-    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz/blog{{ slug }}" hreflang="{{ language is defined ? language : 'en' }}" />
+    <link rel="alternate" type="text/html" href="https://jasm1nii.xyz{{ slug }}" hreflang="{{ language is defined ? language : 'en' }}" />
     <updated>{{ updated is defined ? updated|date() : published|date() }}</updated>
     <published>{{ published|date() }}</published>
     {% if keywords is defined %}
