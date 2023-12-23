@@ -1,13 +1,13 @@
 AddDefaultCharset utf-8
 
-Options +FollowSymLinks +Includes -MultiViews -Indexes
-
-AddHandler server-parsed .html .php
-AddOutputFilter INCLUDES .shtml
-AddType text/html .shtml
-
+Options +FollowSymLinks -MultiViews -Indexes
 DirectoryIndex index.php
 # DirectorySlash off
+
+<RequireAll>
+  Require all granted
+  Require not host lolcow.farm pawoo.net
+</RequireAll>
 
 RewriteEngine on
 
@@ -20,7 +20,7 @@ RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redire
 # RewriteRule ^(.*)  /$1.html [L] 
 
 RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)  /$1.php [L]
+RewriteRule ^(.*) /$1.php [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -28,10 +28,6 @@ RewriteRule ^(.*) /index.php [L]
 
 RewriteCond %{HTTP_USER_AGENT} (CCBot|ChatGPT|GPTBot|Omgilibot|FacebookBot) [NC]
 RewriteRule ^ – [F]
-
-RewriteCond %{HTTP_REFERER} lolcow.farm [NC,OR]
-RewriteCond %{HTTP_REFERER} pawoo.net [NC]
-RewriteRule .* - [F]
 
 ModPageSpeed on
 AddOutputFilterByType MOD_PAGESPEED_OUTPUT_FILTER text/html
@@ -107,7 +103,7 @@ ModPagespeedEnableFilters hint_preload_subresources,insert_dns_prefetch,collapse
 
 <IfModule mod_headers.c>
 
-  # Header add Link "<https://jasm1nii.xyz/auth/>; rel=\"authorization_endpoint\""
+  Header always set Link "<https://jasm1nii.xyz/auth/>; rel=authorization_endpoint"
 
   # Make sure proxies don't deliver the wrong content
   Header append Vary Accept-Encoding env=!dont-vary
