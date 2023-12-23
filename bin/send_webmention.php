@@ -6,7 +6,7 @@
 
     readline_add_history($my_page);
 
-    $check_endpoint = readline("check for endpoints first? ");
+    $check_endpoint = readline("check for endpoints first?: ");
 
     readline_add_history($check_endpoint);
 
@@ -23,9 +23,17 @@
 
         $client = new IndieWeb\MentionClient();
         $endpoint = $client->discoverWebmentionEndpoint($my_page);
-        $endpoint = $client->discoverPingbackEndpoint($my_page);
-
         var_dump($endpoint);
+
+        $send_mention = readline("would you like to continue sending?: ");
+
+        readline_add_history($send_mention);
+
+        if ($send_mention == 'yes') {
+
+            sendWebmention();
+
+        }
         
     } else {
 

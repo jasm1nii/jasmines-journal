@@ -101,7 +101,7 @@
             $url        = "URL: {$this->sender_url}";
             $message    = "Message: {$this->sender_message}";
 
-            $html = "<ul><li>{$message}</li>";
+            $html = "<ul><li>{$sender_name}</li>";
             $html .= "<li>{$email}</li>";
             $html .= "<li>{$url}</li>";
             $html .= "<li>{$message}</li></ul>";
