@@ -31,11 +31,10 @@
         });
 
         previewContainer.addEventListener('touchstart', () => {
-            if (document.getElementsByClassName('lightbox-toggle')[0] == null) {
-                previewContainer.append(overlay);
-            } else {
-                overlay.remove();
-            }
+            previewContainer.append(overlay);
+        });
+        previewContainer.addEventListener('touchcancel', () => {
+            overlay.remove();
         });
 
     }
