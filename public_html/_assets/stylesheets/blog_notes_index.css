@@ -377,6 +377,8 @@ iframe {
     display: flex;
     align-items: center;
     position: static;
+    -moz-column-gap: 1em;
+         column-gap: 1em;
   }
   .notes-format header .u-photo {
     margin-bottom: 0;
