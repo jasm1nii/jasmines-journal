@@ -15,18 +15,27 @@
         previewContainer.style.position = 'relative';
         previewContainer.replaceChildren(image);
 
-        previewContainer.addEventListener('touchstart', () => {
-            displayFull(image);
-        });
-
         const overlay = createOverlay(image);
 
-        previewContainer.addEventListener('mouseover', () => {
-            previewContainer.append(overlay)
+        document.addEventListener('keydown', (event) => {
+            if (event.key == 'Tab') {
+                previewContainer.append(overlay);
+            }
         });
 
+        previewContainer.addEventListener('mouseover', () => {
+            previewContainer.append(overlay);
+        });
         previewContainer.addEventListener('mouseleave', () => {
             overlay.remove();
+        });
+
+        previewContainer.addEventListener('touchstart', () => {
+            if (document.getElementsByClassName('lightbox-toggle')[0] == null) {
+                previewContainer.append(overlay);
+            } else {
+                overlay.remove();
+            }
         });
 
     }
