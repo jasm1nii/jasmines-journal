@@ -59,4 +59,18 @@
 .dark-mode a:hover {
   color: black;
   background-color: rgb(255, 166, 181);
+}
+
+.lightbox-toggle {
+  color: white;
+  font-weight: normal;
+  background-color: rgba(124, 86, 93, 0.5);
+}
+
+.lightbox button {
+  color: white;
+}
+.lightbox button:hover {
+  color: black;
+  background-color: rgb(214, 175, 181);
 }/*# sourceMappingURL=blog_notes_index_theme.css.map */

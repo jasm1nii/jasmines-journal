@@ -11,6 +11,20 @@
     opacity: 1;
   }
 }
+.lightbox-toggle {
+  color: white;
+  font-weight: normal;
+  background-color: rgba(124, 86, 93, 0.5);
+}
+
+.lightbox button {
+  color: white;
+}
+.lightbox button:hover {
+  color: black;
+  background-color: rgb(214, 175, 181);
+}
+
 .dark-mode {
   background-color: black;
   color: white;

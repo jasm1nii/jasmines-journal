@@ -34,9 +34,8 @@
     function createOverlay(image) {
 
         const toggle = document.createElement('button');
-        const toggleText = document.createTextNode('enlarge');
-
-        toggle.appendChild(toggleText);
+        toggle.classList.add('lightbox-toggle');
+        
         toggle.style.position = 'absolute';
         toggle.style.bottom = 0;
         toggle.style.right = 0;
@@ -44,6 +43,9 @@
         toggle.style.marginRight = '25px';
         toggle.style.padding = '0 .5em';
         toggle.style.zIndex = 99;
+
+        const toggleText = document.createTextNode('enlarge');
+        toggle.appendChild(toggleText);
 
         toggle.addEventListener('click', () => {
             document.body.style.overflow = 'hidden';
