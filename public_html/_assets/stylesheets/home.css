@@ -287,21 +287,20 @@ main a {
 article {
   -moz-columns: 3;
        columns: 3;
-  -moz-column-gap: 0;
-       column-gap: 0;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
   background-size: 200px !important;
-  padding: 5vh 1%;
+  padding: 5vh 5vw;
 }
 
 article > section {
   padding: 1em;
   margin: 0 auto 75px;
   border: 1px solid rgb(190, 133, 141);
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 15px;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
-  width: 70%;
 }
 article > section ul {
   padding-left: 1em;
@@ -379,12 +378,12 @@ a:hover {
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
-  height: -moz-min-content;
-  height: min-content;
-  min-width: 250px;
+  aspect-ratio: 6/10;
   font-size: 1.1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0.5em 1em;
+  overflow: hidden;
 }
 .h-card footer {
   padding: 0;
@@ -395,7 +394,7 @@ a:hover {
   border: none;
   font-variant: small-caps;
   letter-spacing: 1px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   grid-row: 1;
   grid-column: span 4;
 }
@@ -403,8 +402,8 @@ a:hover {
 .u-photo {
   grid-column: span 3;
   grid-row: 2/5;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1/1;
 }
 
 .u-featured {
@@ -433,14 +432,13 @@ a:hover {
   grid-column: span 4;
   grid-row: 5;
   letter-spacing: 0.025em;
-  font-size: 1.05em;
+  font-size: 1em;
 }
 .p-note ul {
   list-style: none;
   padding: 0;
   padding-left: 0.5em;
   margin: 0;
-  margin-bottom: 1.5em;
 }
 .p-note li {
   margin-bottom: 0.5em;
@@ -468,6 +466,8 @@ a:hover {
   margin-top: 0;
   padding: 0;
   border-top: 0;
+  display: block;
+  position: static;
 }
 
 #surprise button:active, #surprise button :focus, #surprise button :hover {
@@ -505,13 +505,10 @@ hr {
 .time {
   border-radius: 10px;
   text-align: center;
-  width: 60%;
-  max-width: 240px;
-  padding: 0.25em 1em 0.25em;
+  padding: 0.25em 1em;
   box-shadow: 10px 10px rgba(147, 112, 219, 0.5);
   border-bottom: var(--time-border-bottom);
   border-right: var(--time-border-right);
-  outline: 1px solid rgb(140, 112, 169);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   font-size: 1.1em;
@@ -646,7 +643,6 @@ hr {
 }
 
 .latest-status {
-  width: 80%;
   padding: 0;
   border: 1px solid rgb(175, 140, 175);
   border-radius: 0;
@@ -659,15 +655,14 @@ hr {
 }
 
 #latest-status {
-  border: none;
-  padding: 1em 1em 0.5em 1em;
+  border-bottom: 1px solid rgb(194, 167, 194);
+  padding: 1em;
 }
 
 #statuscafe {
-  padding: 1em;
   margin-left: auto;
   margin-right: auto;
-  border-top: 1px solid rgb(194, 167, 194);
+  padding: 1em;
   font-size: 1.1em;
 }
 
@@ -714,7 +709,6 @@ hr {
 #tip-jar + ul .button-style {
   border-radius: 10px;
   font-size: 1.25em;
-  width: 80%;
   margin: auto;
   margin-top: 0.5em;
 }
@@ -729,7 +723,6 @@ hr {
 .web-rings {
   border-color: purple;
   box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
-  min-width: 275px;
 }
 .web-rings details p {
   text-align: left;
@@ -867,6 +860,9 @@ hr {
   article {
     -moz-columns: 2;
          columns: 2;
+    -moz-column-gap: 15vw;
+         column-gap: 15vw;
+    padding: 10vh 10vw;
   }
   nav {
     font-size: 0.9em;
@@ -874,26 +870,14 @@ hr {
   main {
     font-size: 0.9em;
   }
-  section {
-    max-width: 300px;
-  }
   #webmaster-identity {
     font-size: 1.25em;
   }
-  .h-card {
-    max-width: 300px;
-  }
-  .time {
-    min-width: 260px;
-  }
-  .clock-display {
-    width: 80%;
+  .p-note {
+    font-size: 0.9em;
   }
   .last-played {
     max-width: 270px;
-  }
-  .latest-status {
-    max-width: 350px;
   }
 }
 @media all and (max-width: 900px) {
@@ -917,12 +901,16 @@ hr {
   main {
     font-size: 0.9em;
   }
-  section {
-    max-width: 275px;
+  article {
+    -moz-column-gap: 10vw;
+         column-gap: 10vw;
+    padding: 8vh 8vw;
   }
   .p-locality {
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 1.2em;
+  }
+  footer {
+    width: 90%;
   }
 }
 @media all and (max-width: 768px) {
@@ -965,22 +953,20 @@ hr {
     right: -5vw;
   }
   article {
-    padding-top: 10vh;
+    -moz-columns: 1;
+         columns: 1;
+  }
+  article > section {
+    width: clamp(250px, 60vw, 350px);
   }
   .p-note {
     font-size: 0.9em;
   }
+  .time {
+    max-width: 300px;
+  }
   .latest-status {
-    min-width: 55%;
-  }
-  footer {
-    width: 90%;
-  }
-}
-@media all and (max-width: 700px) {
-  article {
-    -moz-columns: 1;
-         columns: 1;
+    min-width: 70%;
   }
 }
 @media all and (max-width: 500px) {
@@ -999,6 +985,9 @@ hr {
     margin-top: 0;
     font-size: 2.2em;
   }
+  h2 {
+    font-size: 1.1em;
+  }
   .ascii-img {
     width: 100%;
   }
@@ -1010,7 +999,7 @@ hr {
     margin: 0 0 3vh 0;
   }
   #webmaster-identity {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
   .clock-display {
     width: 80%;
@@ -1024,23 +1013,16 @@ hr {
     font-size: 1em;
   }
   h2 {
-    font-size: 1.5em;
-    line-height: 1.75em;
+    font-size: 1.2em;
   }
-  .p-note ul {
-    width: 100%;
-  }
-  .time {
-    min-width: 200px;
-  }
-  .last-played {
-    max-width: 240px;
-  }
-  .clock-display {
+  article > section {
     width: 90%;
   }
-  .clock {
-    font-size: 3.2em;
+  .h-card {
+    aspect-ratio: unset;
+  }
+  .time {
+    max-width: 270px;
   }
   .overflow {
     max-height: 40vh;

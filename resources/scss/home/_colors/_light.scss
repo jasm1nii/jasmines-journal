@@ -59,18 +59,15 @@
     h3 {
         color: var(--h3-light);
     }
-
     .time {
         background-color: var(--time-bg);
         color: var(--time-font-color);
         border-bottom: var(--time-border-bottom);
         border-right: var(--time-border-right);
     }
-
     .clock {
         color: mintcream;
     }
-
     .last-played {
         background-color: var(--last-played-bg);
         border-bottom: var(--last-played-border-bottom);
@@ -79,25 +76,20 @@
             color: #5a4f8b;
         }
     }
-
     #track {
         background-color: linen;
     }
-
     #latest-status {
         background: url('/_assets/media/_shared/css/line-in-motion.svg') rgb(238, 225, 238);
     }
-
     #statuscafe {
         background-color: snow;
         color: black;
     }
-
     #statuscafe-content {
         background-color: rgb(243, 242, 247);
         color: rgb(24, 14, 39);
     }
-
     .site-updates {
         background-color: #e0e9dc;
         color: rgb(4, 32, 4);

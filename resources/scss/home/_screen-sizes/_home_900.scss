@@ -22,12 +22,15 @@
         main {
             font-size: .9em;
         }
-        section {
-            max-width: 275px;
+        article {
+            column-gap: 10vw;
+            padding: 8vh 8vw;
         }
         .p-locality {
-            font-size: 1em;
-            font-weight: 600;
+            font-size: 1.2em;
+        }
+        footer {
+            width: 90%;
         }
     }
 }

@@ -8,13 +8,10 @@
     .time {
         border-radius: 10px;
         text-align: center;
-        width: 60%;
-        max-width: 240px;
-        padding: .25em 1em .25em;
+        padding: .25em 1em;
         box-shadow: 10px 10px rgba(147, 112, 219, 50%);
         border-bottom: var(--time-border-bottom);
         border-right: var(--time-border-right);
-        outline: 1px solid 	rgb(140, 112, 169);
         break-inside: avoid;
         font-size: 1.1em;
         footer {

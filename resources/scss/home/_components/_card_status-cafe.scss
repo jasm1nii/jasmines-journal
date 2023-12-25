@@ -1,6 +1,5 @@
 @mixin status-cafe {
     .latest-status {
-        width: 80%;
         padding: 0;
         border: 1px solid rgb(175, 140, 175);
         border-radius: 0;
@@ -12,14 +11,13 @@
         }
     }
     #latest-status {
-        border: none;
-        padding: 1em 1em .5em 1em;
+        border-bottom: 1px solid rgb(194, 167, 194);
+        padding: 1em;
     }
     #statuscafe {
-        padding: 1em;
         margin-left: auto;
         margin-right: auto;
-        border-top: 1px solid rgb(194, 167, 194);
+        padding: 1em;
         font-size: 1.1em;
     }
     #statuscafe-username {
