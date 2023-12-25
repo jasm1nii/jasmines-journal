@@ -79,9 +79,18 @@
     };
 
     const cs = creature.style;
+
+    function calcOffset() {
+      let minLeftOffset = window.innerWidth / 4;
+      let maxLeftOffset = window.innerWidth / 2;
+      cs.left = `clamp(${minLeftOffset}px, 25vw, ${maxLeftOffset}px)`;
+    }
+
+    calcOffset();
+    window.addEventListener('resize', calcOffset);
+    
     cs.position = 'absolute';
-    cs.top = '20vh';
-    cs.left = '40vw';
+    cs.top = '25vh';
     cs.display = 'block';
     cs.margin = 'auto';
     cs.zIndex = '4';
