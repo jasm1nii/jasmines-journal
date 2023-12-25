@@ -1,0 +1,7 @@
+@mixin screen-1600 {
+    @media all and (min-width: 1600px) {
+        .layout {
+            max-width: 1300px;
+        }
+    }
+}

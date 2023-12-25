@@ -10,6 +10,7 @@
 @use '_components/card_webrings' as *;
 @use '_components/card_guestbook' as *;
 
+@use '_screen-sizes/home_1600' as *;
 @use '_screen-sizes/home_1100' as *;
 @use '_screen-sizes/home_900' as *;
 @use '_screen-sizes/home_768' as *;
@@ -150,7 +151,7 @@ h3 {
 }
 
 a {
-  transition: all 0.2s ease-out;
+  // transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
@@ -218,6 +219,7 @@ hr {
 @include web-rings();
 @include guestbook();
 
+@include screen-1600;
 @include screen-1100;
 @include screen-900;
 @include screen-768;

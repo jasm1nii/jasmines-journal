@@ -16,10 +16,10 @@
   notice.innerHTML = n;
 
   function showNote() {
-    if (!notice.hasChildNodes()) {
-      notice.innerHTML = n;
+    if (notice.style.display === 'none') {
+      notice.style.display = 'block';
     } else {
-      notice.innerHTML = '';
+      notice.style.display = 'none';
     }
   };
 

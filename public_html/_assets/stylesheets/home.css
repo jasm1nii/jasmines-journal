@@ -133,19 +133,17 @@ footer a img {
 
 button {
   cursor: pointer;
-  transition: all 0.5s ease;
+  /*transition: all .5s ease;*/
 }
 
-button:active,
+/*button:active,
 .button-style:active {
-  transition: all 0.1s ease;
-}
-
+    transition: all .1s ease;
+}*/
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
 }
-
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -347,7 +345,6 @@ h3 {
 }
 
 a {
-  transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
@@ -852,6 +849,11 @@ hr {
   font-size: larger;
 }
 
+@media all and (min-width: 1600px) {
+  .layout {
+    max-width: 1300px;
+  }
+}
 @media all and (max-width: 1100px) {
   body {
     font-size: 1.2em;

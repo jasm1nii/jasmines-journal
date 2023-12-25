@@ -133,19 +133,17 @@ footer a img {
 
 button {
   cursor: pointer;
-  transition: all 0.5s ease;
+  /*transition: all .5s ease;*/
 }
 
-button:active,
+/*button:active,
 .button-style:active {
-  transition: all 0.1s ease;
-}
-
+    transition: all .1s ease;
+}*/
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
 }
-
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
