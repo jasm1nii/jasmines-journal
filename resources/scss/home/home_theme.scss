@@ -2,6 +2,16 @@
 @use '_colors/light'as *;
 @use '_components/sticky-note' as *;
 
+#themeSwitch {
+    margin: auto 0;
+    font-family: var(--font-3);
+    font-size: 1em;
+    height: fit-content;
+    width: fit-content;
+    padding: .5em;
+    border: 1px solid #8e629b;
+}
+
 @include sticky-note;
 
 :root .light-mode {

@@ -268,10 +268,10 @@ header hgroup p {
   letter-spacing: 0.05em;
   align-self: center;
 }
-header nav #linkGallery {
+header nav #link-gallery {
   font-weight: 600;
 }
-header nav #linkGallery a {
+header nav #link-gallery a {
   -webkit-text-decoration: wavy underline 1px;
           text-decoration: wavy underline 1px;
 }
@@ -292,26 +292,12 @@ h1 {
   font-family: var(--font-2);
   font-weight: 500;
   margin-right: 2em;
-  transition: color 0.3s ease-out;
 }
 h1::before {
   content: "₊ ⊹";
   font-weight: 100;
   color: thistle;
   margin-right: 0.25em;
-}
-
-#themeSwitch {
-  font-family: var(--font-3);
-  font-size: larger;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.5em;
-  border: 1px solid #8e629b;
-  align-self: center;
-  transition: all 0.5s;
 }
 
 h2 {
@@ -386,7 +372,6 @@ section {
 
 a {
   background-color: transparent;
-  transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
@@ -414,27 +399,6 @@ hr {
   border: 1px dashed plum;
 }
 
-#gif-controls {
-  text-align: center;
-  padding-bottom: 1em;
-  container-type: inline-size;
-}
-#gif-controls button {
-  font: inherit;
-  text-transform: lowercase;
-  margin-right: 1em;
-  padding: 0.5em;
-  transition: all 0.5s;
-  letter-spacing: 0.05em;
-  border-radius: 5px;
-  border: var(--gif-controls-border);
-}
-
-@container (max-width: 210px) {
-  #play-gif {
-    margin-bottom: 1em;
-  }
-}
 time {
   font-weight: 600;
   display: block;

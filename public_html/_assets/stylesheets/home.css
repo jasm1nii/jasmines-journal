@@ -360,18 +360,6 @@ a:hover {
   font-family: var(--font-3);
 }
 
-#themeSwitch {
-  margin: auto 0;
-  font-family: var(--font-3);
-  font-size: 1em;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.5em;
-  border: 1px solid #8e629b;
-}
-
 .h-card {
   border: 1px solid rgb(183, 124, 189);
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
@@ -636,7 +624,6 @@ hr {
   font-stretch: semi-expanded;
   border: 1px solid green;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 .latest-status {

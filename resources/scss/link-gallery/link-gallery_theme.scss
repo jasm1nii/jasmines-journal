@@ -1,5 +1,38 @@
-@use '_colors/dark'as *;
-@use '_colors/light'as *;
+@use '_colors/dark' as *;
+@use '_colors/light' as *;
+
+#themeSwitch {
+    font-family: var(--font-3);
+    font-size: larger;
+    height: fit-content;
+    width: fit-content;
+    padding: .5em;
+    border: 1px solid #8e629b;
+    align-self: center;
+    // transition: all .5s;
+}
+
+#gif-controls {
+    text-align: center;
+    padding-bottom: 1em;
+    container-type: inline-size;
+
+    & button {
+        font: inherit;
+        text-transform: lowercase;
+        margin-right: 1em;
+        padding: .5em;
+        letter-spacing: 0.05em;
+        border-radius: 5px;
+        border: var(--gif-controls-border);
+    }
+}
+
+@container (max-width: 210px) {
+    #play-gif {
+        margin-bottom: 1em;
+    }
+}
 
 .dark-mode {
     @include dark-mode-body();

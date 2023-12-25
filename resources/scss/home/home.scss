@@ -167,16 +167,6 @@ a {
   font-family: var(--font-3);
 }
 
-#themeSwitch {
-  margin: auto 0;
-  font-family: var(--font-3);
-  font-size: 1em;
-  height: fit-content;
-  width: fit-content;
-  padding: .5em;
-  border: 1px solid #8e629b;
-}
-
 @include h-card();
 
 #surprise {
