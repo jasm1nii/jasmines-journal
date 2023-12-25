@@ -12,17 +12,19 @@
   n += `<figcaption>pretzel (he/him)</figcaption>`;
   n += `</figure>`;
   n += `<p><b>now you have!</b></p><hr/><p><small>click the pushpin to hide this notice.</small></p>`;
+
   notice.innerHTML = n;
 
   function showNote() {
-    if (notice.style.display === "none") {
-      notice.style.display = "block";
+    if (!notice.hasChildNodes()) {
+      notice.innerHTML = n;
     } else {
-      notice.style.display = "none";
-    };
+      notice.innerHTML = '';
+    }
   };
 
   document.getElementById("pin").addEventListener("click", showNote);
+  
 };
 
 { // yipee!!!!
@@ -36,13 +38,15 @@
       height: 60,
       alt: ''
     };
+
     for (let attr in flwrAttr) { 
       flower.setAttribute(attr, flwrAttr[attr]);
     };
 
     const flwrBtn = document.createElement('button');
     flwrBtn.insertAdjacentElement('beforeend', flower);
-    flwrBtn.setAttribute('title','open for a surprise!');
+    flwrBtn.setAttribute('title', 'open for a surprise!');
+    flwrBtn.setAttribute('id', 'yipee-toggle');
 
     const fs = flwrBtn.style;
     fs.backgroundColor = 'transparent';
@@ -50,42 +54,68 @@
     fs.padding = 0;
 
     return flwrBtn;
+
   };
 
   const button = createButton();
   surprise.appendChild(button);
 
   function addCreature() {
+
     const creature = document.createElement('img');
+
     const creatureAttr = {
       src: '/_assets/media/main/la-creatura.png',
       width: '290',
       height: '341',
       alt: 'ASCII art of the autism creature',
       class: 'u-featured',
+      id: 'creatura',
       loading: 'lazy'
     };
+
     for (let attr in creatureAttr) {
       creature.setAttribute(attr, creatureAttr[attr]);
     };
+
     const cs = creature.style;
     cs.position = 'absolute';
-    cs.marginTop = '20px';
-    cs.display = 'none';
-    cs.marginLeft = '-220px';
+    cs.top = '20vh';
+    cs.left = '40vw';
+    cs.display = 'block';
+    cs.margin = 'auto';
     cs.zIndex = '4';
+
     return creature;
+
   };
 
-  const yipee = addCreature();
-  surprise.appendChild(yipee);
+  const popup = addCreature();
 
   function toggleYippee() {
-    const ys = yipee.style.display;
-    yipee.style.display = (ys === 'block') ? 'none' : 'block';
+
+    if (!document.contains(popup)) {
+
+      document.body.insertAdjacentElement('afterbegin', popup);
+
+    } else {
+
+      popup.remove();
+      
+    }
+
   };
 
+  let confetti = new Confetti('yipee-toggle');
+
+  confetti.setCount(75);
+  confetti.setSize(1);
+  confetti.setPower(25);
+  confetti.setFade(false);
+  confetti.destroyTarget(false);
+
   button.addEventListener('click', toggleYippee);
+
 };
 
 { // clock

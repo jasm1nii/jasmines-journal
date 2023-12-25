@@ -12,7 +12,10 @@
             }
         }
         .h-card {
-            aspect-ratio: unset;
+            overflow-y: auto;
+        }
+        .p-note {
+            font-size: 1.1em;
         }
         .time {
             max-width: 270px;
