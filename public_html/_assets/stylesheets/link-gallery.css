@@ -221,9 +221,9 @@ section:hover {
   font-size: x-large;
   text-align: center;
   z-index: 1;
-}
-.loader p {
-  filter: drop-shadow(0.1em 0.1em 5px rgb(255, 215, 222)) drop-shadow(-0.1em -0.1em 5px rgb(255, 215, 222));
+  /*p {
+      filter: drop-shadow(.1em .1em 5px rgb(255, 215, 222)) drop-shadow(-.1em -.1em 5px rgb(255, 215, 222));
+  }*/
 }
 .loader button {
   display: block;

@@ -1,7 +1,7 @@
 {
     const loader = document.getElementsByClassName('loader')[0];
     const page = loader.nextElementSibling;
-    
+
     const loaderLoop = setInterval(incrLoader, 200);
 
     let dotCount = 0;
@@ -46,7 +46,7 @@
 
         };
 
-    };
+    }
 
     class ExitButton {
         constructor() {
@@ -57,7 +57,7 @@
             this.button.addEventListener('click', closeLoader);
             return this.button;
         };
-    };
+    }
 
     class FinalAnimation {
         constructor() {
@@ -67,7 +67,7 @@
             ];
             this.timing = { duration: 500, iterations: 1, fill: "forwards" };
         }
-    };
+    }
 
     const loadExit = setTimeout(() => { loader.appendChild(new ExitButton); }, 3000);
 
@@ -81,15 +81,22 @@
         clearInterval(loaderLoop);
         clearTimeout(loadExit);
 
-        return;
+    }
 
-    };
-
-    if (loader !== null) {
-
-        document.addEventListener("load", () => {
+    function timeoutClose() {
+        if (document.contains(loader)) {
             setTimeout(closeLoader, 500);
-        });
+        }
+    }
 
-    };
+    window.addEventListener('load', timeoutClose);
+
+    const observer = new MutationObserver(() => {
+        if (!document.contains(loader)) {
+            window.removeEventListener('load', timeoutClose);
+        }
+    });
+
+    observer.observe(loader, { childList: true, subtree: true });
+
 };
