@@ -32,7 +32,7 @@ body {
   column-gap: 3em;
   justify-content: space-between;
   background-color: rgb(65, 55, 65);
-  transition: background-color 0.25s ease-out;
+  // transition: background-color 0.25s ease-out;
 }
 
 a {
@@ -264,7 +264,7 @@ dd {
 
 a {
   background-color: transparent;
-  transition: all 0.2s ease-out;
+  // transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;

@@ -164,10 +164,8 @@ a {
     font-weight: bold;
     font-size: 1.1em;
     letter-spacing: .1em;
-    transition: all 0.2s ease-out;
     text-decoration: underline dashed 1px;
     text-underline-offset: .3em;
-
     &:hover {
         background-color: palevioletred;
         color: white !important;
@@ -180,8 +178,6 @@ button {
     font: inherit;
     border: 1px solid rgb(126, 98, 126);
     background-color: rgba(212, 103, 167, 0.192);
-    transition: all .5s ease;
-
     &:hover {
         box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.514);
     }

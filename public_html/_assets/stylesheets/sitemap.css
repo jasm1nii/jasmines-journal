@@ -160,7 +160,6 @@ a {
   font-weight: bold;
   font-size: 1.1em;
   letter-spacing: 0.1em;
-  transition: all 0.2s ease-out;
   -webkit-text-decoration: underline dashed 1px;
           text-decoration: underline dashed 1px;
   text-underline-offset: 0.3em;
@@ -176,7 +175,6 @@ button {
   font: inherit;
   border: 1px solid rgb(126, 98, 126);
   background-color: rgba(212, 103, 167, 0.192);
-  transition: all 0.5s ease;
 }
 button:hover {
   box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.514);

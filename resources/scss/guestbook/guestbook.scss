@@ -17,8 +17,6 @@ html {
 body {
     color: rgb(245, 229, 229);
     background-color: rgb(36, 33, 37);
-    @include fadeIn;
-    transition: background-color 0.25s ease-out;
     font-family: "Instrument Sans", sans-serif;
     font-size: 1.1em;
 }
@@ -33,10 +31,6 @@ body {
 
 @mixin heading-font {
     font-family: "Besley", serif;
-}
-
-a, #themeSwitch, input[type="submit"] {
-    transition: all .25s;
 }
 
 a {

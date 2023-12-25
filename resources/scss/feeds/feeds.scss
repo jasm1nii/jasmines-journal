@@ -1,20 +1,20 @@
 /* subscription form */
 @use 'shared' as theme;
 @use '../_shared/components/nav_1' as *;
-@use '../_shared/animations/fade-in' as *;
+// @use '../_shared/animations/fade-in' as *;
 
 @use '_screen-sizes/900' as *;
 
 /* animations */
-header, main, footer {
+/*header, main, footer {
   @include fadeIn();
-}
+}*/
 
 @include nav-style-1();
 
 main {
   margin: auto;
-  background: url("/_assets/media/main/ooorganize.svg");
+  background: url("/_assets/media/_shared/css/ooorganize.svg");
   background-size: 200px;
 }
 article {
@@ -29,7 +29,7 @@ article {
     border: 1px solid;
     border-color: purple;
     box-shadow: 0px 0px 15px #804da725;
-    transition: all .25s ease;
+    transition: box-shadow .25s ease;
     &:hover {
       box-shadow: 0px 0px 25px rgba(255, 192, 203, 0.747);
       filter: brightness(101%);

@@ -160,21 +160,10 @@ button, button:active, button:hover, button:focus {
   background-color: plum;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /* animations */
-header, main, footer {
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-}
-
+/*header, main, footer {
+  @include fadeIn();
+}*/
 nav {
   margin: auto;
   padding-left: 1em;
@@ -220,7 +209,7 @@ nav::-webkit-scrollbar-thumb {
 
 main {
   margin: auto;
-  background: url("/_assets/media/main/ooorganize.svg");
+  background: url("/_assets/media/_shared/css/ooorganize.svg");
   background-size: 200px;
 }
 
@@ -237,7 +226,7 @@ article > section {
   border: 1px solid;
   border-color: purple;
   box-shadow: 0px 0px 15px rgba(128, 77, 167, 0.1450980392);
-  transition: all 0.25s ease;
+  transition: box-shadow 0.25s ease;
 }
 article > section:hover {
   box-shadow: 0px 0px 25px rgba(255, 192, 203, 0.747);

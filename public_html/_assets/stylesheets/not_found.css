@@ -12,7 +12,6 @@
 a {
   background-color: transparent;
   color: rgb(255, 168, 216);
-  transition: all 0.2s ease-out;
   text-decoration: none;
 }
 
@@ -22,11 +21,11 @@ a:hover {
 }
 
 ::-moz-selection {
-  background-color: rgb(248, 208, 170);
+  background-color: rgb(6, 5, 4);
 }
 
 ::selection {
-  background-color: rgb(248, 208, 170);
+  background-color: rgb(6, 5, 4);
 }
 
 ::-webkit-scrollbar {
