@@ -85,20 +85,16 @@
 					
 					{% if enable_webmentions %}
 
-						{% if webmentions_301 %}
+						{{ webmentions_301 ? '<h4>via current URL</h4>'|raw }}
 
-							<h4>via current URL</h4>
-
-						{% endif %}
-
-						<s-e-i-a powered-by="false" target=""></s-e-i-a>
+						<s-e-i-a target="https://jasm1nii.xyz{{ slug }}"></s-e-i-a>
 
 						{% if webmentions_301 %}
 
 							{% if webmentions_prev_url is defined %}
 
 								<h4>via {{ webmentions_prev_url }}</h4>
-								<s-e-i-a target="{{ webmentions_prev_url }}" powered-by="false"></s-e-i-a>
+								<s-e-i-a target="{{ webmentions_prev_url }}"></s-e-i-a>
 
 							{% else %}
 

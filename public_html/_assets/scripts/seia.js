@@ -41,35 +41,37 @@ const pt = (s) => new At(typeof s == "string" ? s : s + "", void 0, ct), wt = (s
     e += i.cssText;
   return pt(e);
 })(s) : s;
-const { is: xt, defineProperty: Et, getOwnPropertyDescriptor: St, getOwnPropertyNames: kt, getOwnPropertySymbols: Ct, getPrototypeOf: Tt } = Object, A = globalThis, tt = A.trustedTypes, Pt = tt ? tt.emptyScript : "", B = A.reactiveElementPolyfillSupport, L = { toAttribute(s, t) {
-  switch (t) {
-    case Boolean:
-      s = s ? Pt : null;
-      break;
-    case Object:
-    case Array:
-      s = s == null ? s : JSON.stringify(s);
+const { is: xt, defineProperty: Et, getOwnPropertyDescriptor: St, getOwnPropertyNames: kt, getOwnPropertySymbols: Ct, getPrototypeOf: Tt } = Object, A = globalThis, tt = A.trustedTypes, Pt = tt ? tt.emptyScript : "", B = A.reactiveElementPolyfillSupport, L = {
+  toAttribute(s, t) {
+    switch (t) {
+      case Boolean:
+        s = s ? Pt : null;
+        break;
+      case Object:
+      case Array:
+        s = s == null ? s : JSON.stringify(s);
+    }
+    return s;
+  }, fromAttribute(s, t) {
+    let e = s;
+    switch (t) {
+      case Boolean:
+        e = s !== null;
+        break;
+      case Number:
+        e = s === null ? null : Number(s);
+        break;
+      case Object:
+      case Array:
+        try {
+          e = JSON.parse(s);
+        } catch {
+          e = null;
+        }
+    }
+    return e;
   }
-  return s;
-}, fromAttribute(s, t) {
-  let e = s;
-  switch (t) {
-    case Boolean:
-      e = s !== null;
-      break;
-    case Number:
-      e = s === null ? null : Number(s);
-      break;
-    case Object:
-    case Array:
-      try {
-        e = JSON.parse(s);
-      } catch {
-        e = null;
-      }
-  }
-  return e;
-} }, I = (s, t) => !xt(s, t), et = { attribute: !0, type: String, converter: L, reflect: !1, hasChanged: I }, F = "finalized";
+}, I = (s, t) => !xt(s, t), et = { attribute: !0, type: String, converter: L, reflect: !1, hasChanged: I }, F = "finalized";
 Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), A.litPropertyMetadata ?? (A.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
 class C extends HTMLElement {
   static addInitializer(t) {
@@ -85,17 +87,21 @@ class C extends HTMLElement {
     }
   }
   static getPropertyDescriptor(t, e, i) {
-    const { get: r, set: n } = St(this.prototype, t) ?? { get() {
-      return this[e];
-    }, set(o) {
-      this[e] = o;
-    } };
-    return { get() {
-      return r == null ? void 0 : r.call(this);
-    }, set(o) {
-      const l = r == null ? void 0 : r.call(this);
-      n.call(this, o), this.requestUpdate(t, l, i);
-    }, configurable: !0, enumerable: !0 };
+    const { get: r, set: n } = St(this.prototype, t) ?? {
+      get() {
+        return this[e];
+      }, set(o) {
+        this[e] = o;
+      }
+    };
+    return {
+      get() {
+        return r == null ? void 0 : r.call(this);
+      }, set(o) {
+        const l = r == null ? void 0 : r.call(this);
+        n.call(this, o), this.requestUpdate(t, l, i);
+      }, configurable: !0, enumerable: !0
+    };
   }
   static getPropertyOptions(t) {
     return this.elementProperties.get(t) ?? et;
@@ -297,7 +303,7 @@ const ft = (s, t) => {
   for (let l = 0; l < e; l++) {
     const a = s[l];
     let c, u, h = -1, b = 0;
-    for (; b < a.length && (o.lastIndex = b, u = o.exec(a), u !== null); )
+    for (; b < a.length && (o.lastIndex = b, u = o.exec(a), u !== null);)
       b = o.lastIndex, o === P ? u[1] === "!--" ? o = rt : u[1] !== void 0 ? o = st : u[2] !== void 0 ? (gt.test(u[2]) && (r = RegExp("</" + u[2], "g")), o = x) : u[3] !== void 0 && (o = x) : o === x ? u[0] === ">" ? (o = r ?? P, h = -1) : u[1] === void 0 ? h = -2 : (h = o.lastIndex - u[2].length, c = u[1], o = u[3] === void 0 ? x : u[3] === '"' ? ot : nt) : o === ot || o === nt ? o = x : o === rt || o === st ? o = P : (o = x, r = void 0);
     const _ = o === x && s[l + 1].startsWith("/>") ? " " : "";
     n += o === P ? a + Ut : h >= 0 ? (i.push(c), a.slice(0, h) + Y + a.slice(h) + v + _) : a + v + (h === -2 ? l : _);
@@ -314,7 +320,7 @@ class z {
       const h = this.el.content.firstChild;
       h.replaceWith(...h.childNodes);
     }
-    for (; (r = E.nextNode()) !== null && a.length < l; ) {
+    for (; (r = E.nextNode()) !== null && a.length < l;) {
       if (r.nodeType === 1) {
         if (r.hasAttributes())
           for (const h of r.getAttributeNames())
@@ -337,7 +343,7 @@ class z {
           a.push({ type: 2, index: n });
         else {
           let h = -1;
-          for (; (h = r.data.indexOf(v, h + 1)) !== -1; )
+          for (; (h = r.data.indexOf(v, h + 1)) !== -1;)
             a.push({ type: 7, index: n }), h += v.length - 1;
         }
       n++;
@@ -370,7 +376,7 @@ class yt {
     const { el: { content: e }, parts: i } = this._$AD, r = ((t == null ? void 0 : t.creationScope) ?? S).importNode(e, !0);
     E.currentNode = r;
     let n = E.nextNode(), o = 0, l = 0, a = i[0];
-    for (; a !== void 0; ) {
+    for (; a !== void 0;) {
       if (o === a.index) {
         let c;
         a.type === 2 ? c = new T(n, n.nextSibling, this, t) : a.type === 1 ? c = new a.ctor(n, a.name, a.strings, this, t) : a.type === 6 && (c = new _t(n, this, t)), this._$AV.push(c), a = i[++l];
@@ -440,7 +446,7 @@ class T {
   }
   _$AR(t = this._$AA.nextSibling, e) {
     var i;
-    for ((i = this._$AP) == null ? void 0 : i.call(this, !1, !0, e); t && t !== this._$AB; ) {
+    for ((i = this._$AP) == null ? void 0 : i.call(this, !1, !0, e); t && t !== this._$AB;) {
       const r = t.nextSibling;
       t.remove(), t = r;
     }
@@ -570,16 +576,18 @@ const Ht = { attribute: !0, type: String, converter: L, reflect: !1, hasChanged:
   let n = globalThis.litPropertyMetadata.get(r);
   if (n === void 0 && globalThis.litPropertyMetadata.set(r, n = /* @__PURE__ */ new Map()), n.set(e.name, s), i === "accessor") {
     const { name: o } = e;
-    return { set(l) {
-      const a = t.get.call(this);
-      t.set.call(this, l), this.requestUpdate(o, a, s);
-    }, init(l) {
-      return l !== void 0 && this.C(o, void 0, s), l;
-    } };
+    return {
+      set(l) {
+        const a = t.get.call(this);
+        t.set.call(this, l), this.requestUpdate(o, a, s);
+      }, init(l) {
+        return l !== void 0 && this.C(o, void 0, s), l;
+      }
+    };
   }
   if (i === "setter") {
     const { name: o } = e;
-    return function(l) {
+    return function (l) {
       const a = this[o];
       t.call(this, l), this.requestUpdate(o, a, s);
     };
@@ -854,16 +862,18 @@ const qt = (s, t) => s === t || s.length === t.length && s.every((e, i) => !I(e,
   invite: "📨",
   link: "🔗"
 };
-const Ft = { boundAttributeSuffix: d.S, marker: d.A, markerMatch: d.P, HTML_RESULT: d.C, getTemplateHtml: d.M, overrideDirectiveResolve: (s, t) => class extends s {
-  _$AS(e, i) {
-    return t(this, i);
-  }
-}, setDirectiveClass(s, t) {
-  s._$litDirective$ = t;
-}, getAttributePartCommittedValue: (s, t, e) => {
-  let i = w;
-  return s.j = (r) => i = r, s._$AI(t, s, e), i;
-}, connectedDisconnectable: (s) => ({ ...s, _$AU: !0 }), resolveDirective: d.V, AttributePart: d.I, PropertyPart: d.U, BooleanAttributePart: d.H, EventPart: d.N, ElementPart: d.B, TemplateInstance: d.L, isIterable: d.R, ChildPart: d.D };
+const Ft = {
+  boundAttributeSuffix: d.S, marker: d.A, markerMatch: d.P, HTML_RESULT: d.C, getTemplateHtml: d.M, overrideDirectiveResolve: (s, t) => class extends s {
+    _$AS(e, i) {
+      return t(this, i);
+    }
+  }, setDirectiveClass(s, t) {
+    s._$litDirective$ = t;
+  }, getAttributePartCommittedValue: (s, t, e) => {
+    let i = w;
+    return s.j = (r) => i = r, s._$AI(t, s, e), i;
+  }, connectedDisconnectable: (s) => ({ ...s, _$AU: !0 }), resolveDirective: d.V, AttributePart: d.I, PropertyPart: d.U, BooleanAttributePart: d.H, EventPart: d.N, ElementPart: d.B, TemplateInstance: d.L, isIterable: d.R, ChildPart: d.D
+};
 var Z;
 const { AttributePart: m } = Ft, g = (s) => s, Jt = { h: g`<i-svg-spinners-90-ring-with-bg w-12="" h-12="" mx-auto="" my-4="" text="seia-primary"></i-svg-spinners-90-ring-with-bg>`, parts: [] }, Kt = { h: g`<i-svg-spinners-270-ring-with-bg w-12="" h-12="" mx-auto="" my-4="" text="seia-primary"></i-svg-spinners-270-ring-with-bg>`, parts: [] }, Yt = { h: g`\n              <?>\n              <?>\n              <?>\n            `, parts: [{ type: 2, index: 0 }, { type: 2, index: 1 }, { type: 2, index: 2 }] }, Gt = { h: g`\n                    <div id="seia-avatar-container" flex="~ row-reverse wrap" space-x="-2 reverse" gap="y-2" p-4="" bg="seia-bg" justify="end" rounded="card">\n                      <?>\n                    </div>\n                  `, parts: [{ type: 2, index: 1 }] }, Qt = { h: g`\n                          <div shrink="0" hover="z-10">\n                            <a class="u-url">\n                              <figure relative="" class="p-author h-card">\n                                <img w-12="" h-12="" mb-auto="" transition="" bg="seia-bg" rounded="avatar" ring="2 seia-bg group-hover:seia-primary" class="u-photo">\n                                <span absolute="" bottom="0" right="0"><?></span>\n                              </figure>\n                            </a>\n                            <?>\n                          </div>\n                        `, parts: [{ type: 1, index: 0, name: "class", strings: ["", "h-cite group"], ctor: m }, { type: 1, index: 1, name: "href", strings: ["", ""], ctor: m }, { type: 1, index: 3, name: "alt", strings: ["", ""], ctor: m }, { type: 1, index: 3, name: "src", strings: ["", ""], ctor: m }, { type: 2, index: 5 }, { type: 2, index: 6 }] }, Xt = { h: g`\n                              <a class="p-name u-url" hidden=""><?></a>\n                            `, parts: [{ type: 1, index: 0, name: "href", strings: ["", ""], ctor: m }, { type: 2, index: 1 }] }, te = { h: g`\n                    <div id="seia-content-container" flex="~ col" gap="2">\n                      <?>\n                    </div>\n                  `, parts: [{ type: 2, index: 1 }] }, ee = { h: g`\n                          <div p-4="" bg="seia-bg" rounded="card" class="p-comment h-cite">\n                            <div flex="" items-center="" gap="3" mb-4="" class="p-author h-card">\n                              <figure relative="">\n                                <img w-12="" h-12="" mb-auto="" rounded="avatar" class="u-photo">\n                                <span absolute="" bottom="0" right="0"><?></span>\n                              </figure>\n                              <div flex="~ col" break-all="">\n                                <?>\n                                <span opacity-75="">\n                                  <?>\n                                  <a transition="" hover="underline text-seia-primary" class="u-url">\n                                    <time class="dt-published"><?></time>\n                                  </a>\n                                </span>\n                              </div>\n                            </div>\n                            <!-- TODO: p-r-o-s-e (unocss/unocss#2189) -->\n                            <div class="e-content">\n                              <?>\n                            </div>\n                          </div>\n                        `, parts: [{ type: 1, index: 3, name: "alt", strings: ["", ""], ctor: m }, { type: 1, index: 3, name: "src", strings: ["", ""], ctor: m }, { type: 2, index: 5 }, { type: 2, index: 7 }, { type: 2, index: 9 }, { type: 1, index: 10, name: "href", strings: ["", ""], ctor: m }, { type: 1, index: 11, name: "datetime", strings: ["", ""], ctor: m }, { type: 2, index: 12 }, { type: 2, index: 15 }] }, ie = { h: g`<a font="bold" class="p-name u-url"><?></a>`, parts: [{ type: 1, index: 0, name: "href", strings: ["", ""], ctor: m }, { type: 2, index: 1 }] }, re = { h: g`<span font="bold" class="p-name"><?></span>`, parts: [{ type: 2, index: 1 }] }, se = { h: g`<a transition="" hover="underline text-seia-primary" class="u-url"><?></a>\n                                    <span>\u00B7</span>`, parts: [{ type: 1, index: 0, name: "href", strings: ["", ""], ctor: m }, { type: 2, index: 1 }] }, ne = { h: g`<?><!--?-->`, parts: [{ type: 2, index: 0 }] }, oe = { h: g`<span ml-auto="" mr-2="" text="sm">Powered by\n                    <?>\n                    <a href="https://github.com/importantimport/seia" rel="noopener noreferrer" target="_blank" text="seia-primary" hover="underline">Seia</a></span>`, parts: [{ type: 2, index: 1 }] }, ae = { h: g`<a href="https://webmention.io" rel="noopener noreferrer" target="_blank" text="seia-primary" hover="underline">Webmention.io</a>\n                          &amp;`, parts: [] };
 let f = (Z = class extends M {
@@ -894,23 +904,29 @@ let f = (Z = class extends M {
       error: console.error,
       complete: ({ links: s }) => {
         const { avatar: t, content: e } = Zt(s);
-        return { _$litType$: Yt, values: [t.length > 0 ? { _$litType$: Gt, values: [t.map(({ activity: i, data: { author: r, url: n } }) => ({ _$litType$: Qt, values: [i.type === "like" ? "p-like " : "", n, r.name, r.photo ?? this["fallback-photo"].replace("%NAME%", encodeURIComponent(r.name)), lt[i.type], r.url && { _$litType$: Xt, values: [r.url, r.name] }] }))] } : null, e.length > 0 ? { _$litType$: te, values: [e.map(({
-          activity: i,
-          data: { author: r, content: n, url: o },
-          // eslint-disable-next-line camelcase
-          verified_date: l
-        }) => ({ _$litType$: ee, values: [
-          r.name,
-          r.photo ?? this["fallback-photo"].replace("%NAME%", encodeURIComponent(r.name)),
-          lt[i.type],
-          r.url ? { _$litType$: ie, values: [r.url, r.name] } : { _$litType$: re, values: [r.name] },
-          r.url && { _$litType$: se, values: [r.url, r.url.split("://")[1].replace(/\/$/, "")] },
-          o,
-          // eslint-disable-next-line camelcase
-          l,
-          new Date(l).toLocaleDateString(),
-          { _$litType$: ne, values: [this["unsafe-html"] ? It(n) : n] }
-        ] }))] } : null, this["powered-by"] ? { _$litType$: oe, values: [this.api.includes("webmention.io") ? { _$litType$: ae, values: [] } : ""] } : ""] };
+        return {
+          _$litType$: Yt, values: [t.length > 0 ? { _$litType$: Gt, values: [t.map(({ activity: i, data: { author: r, url: n } }) => ({ _$litType$: Qt, values: [i.type === "like" ? "p-like " : "", n, r.name, r.photo ?? this["fallback-photo"].replace("%NAME%", encodeURIComponent(r.name)), lt[i.type], r.url && { _$litType$: Xt, values: [r.url, r.name] }] }))] } : null, e.length > 0 ? {
+            _$litType$: te, values: [e.map(({
+              activity: i,
+              data: { author: r, content: n, url: o },
+              // eslint-disable-next-line camelcase
+              verified_date: l
+            }) => ({
+              _$litType$: ee, values: [
+                r.name,
+                r.photo ?? this["fallback-photo"].replace("%NAME%", encodeURIComponent(r.name)),
+                lt[i.type],
+                r.url ? { _$litType$: ie, values: [r.url, r.name] } : { _$litType$: re, values: [r.name] },
+                r.url && { _$litType$: se, values: [r.url, r.url.split("://")[1].replace(/\/$/, "")] },
+                o,
+                // eslint-disable-next-line camelcase
+                l,
+                new Date(l).toLocaleDateString(),
+                { _$litType$: ne, values: [this["unsafe-html"] ? It(n) : n] }
+              ]
+            }))]
+          } : null, this["powered-by"] ? { _$litType$: oe, values: [this.api.includes("webmention.io") ? { _$litType$: ae, values: [] } : ""] } : ""]
+        };
       }
     })}</div>`;
   }
