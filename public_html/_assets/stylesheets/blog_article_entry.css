@@ -13,6 +13,11 @@
     opacity: 1;
   }
 }
+@font-face {
+  font-family: "Noto Color Emoji", sans-serif;
+  font-display: swap;
+  src: url("/_assets/fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.woff2") format("woff2"), url("/_assets/fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.woff") format("woff"), url("/_assets/fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf") format("truetype");
+}
 html {
   scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
