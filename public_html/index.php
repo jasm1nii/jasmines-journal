@@ -43,8 +43,6 @@
             => new Layouts\Accessibility,
 
 
-        //
-
         str_starts_with(REQUEST, "/about")
 
             => About::dispatch(),
