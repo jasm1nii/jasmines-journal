@@ -28,7 +28,7 @@
     --page-border-dark: #503281;
     --section-card-dark: hsl(255, 5%, 16%);
     --dark-mode-links: rgb(255, 192, 216);
-    --link-hover-bg-dark: rgba(216, 112, 147, .5);
+    --link-hover-bg-dark: rgb(170, 92, 118);
     --dark-mode-h: rgb(223, 154, 236);
     --dark-button-bg: #463646;
 }
@@ -38,8 +38,13 @@
 }
 
 body {
+    color: white;
     background-color: rgb(56, 49, 56);
     transition: background-color 0.25s ease-out;
+}
+
+a {
+    color: plum;
 }
 
 @include nav-style-1();

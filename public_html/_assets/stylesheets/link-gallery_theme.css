@@ -13,7 +13,12 @@
   color: white;
 }
 .dark-mode header nav {
-  border-color: #503281;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: var(--page-border-dark);
+}
+.dark-mode main {
+  background: url("/_assets/media/_shared/css/ooorganize-dark.svg");
 }
 .dark-mode section,
 .dark-mode .warning {
@@ -24,9 +29,6 @@
   box-shadow: 10px 10px rgba(104, 59, 84, 0.75);
   border-color: #665085;
 }
-.dark-mode .warning {
-  box-shadow: 10px 10px rgba(131, 36, 131, 0.75);
-}
 .dark-mode .button-gallery {
   background-color: transparent;
 }
@@ -36,10 +38,6 @@
 .dark-mode h2,
 .dark-mode h3 {
   color: var(--dark-mode-h);
-}
-.dark-mode a,
-.dark-mode nav a {
-  color: var(--dark-mode-links);
 }
 .dark-mode a {
   color: var(--dark-mode-links);
@@ -77,7 +75,8 @@
   color: var(--h1-light);
 }
 .light-mode header nav {
-  color: var(--font-color-light);
+  border-top: 1px solid rgb(82, 70, 82);
+  border-bottom: 1px solid rgb(82, 70, 82);
 }
 .light-mode section {
   color: var(--font-color-light);
@@ -87,6 +86,7 @@
 }
 .light-mode .warning {
   background-color: var(--warning-bg);
+  box-shadow: 10px 10px rgba(131, 36, 131, 0.5);
 }
 .light-mode .code {
   background-color: var(--button-code-txt);

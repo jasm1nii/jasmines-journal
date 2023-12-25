@@ -41,7 +41,8 @@ body {
 }
 
 .layout {
-  border: 1px solid purple;
+  border: 1px solid;
+  border-color: #8e629b;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
   max-width: 1200px;
@@ -97,10 +98,10 @@ article {
 }
 
 article > section {
-  border: 1px solid rgb(190, 133, 141);
-  border-radius: 15px 15px 15px 15px;
   padding: 1em;
   margin: 0 auto 75px;
+  border: 1px solid rgb(190, 133, 141);
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   break-inside: avoid;
   width: 70%;

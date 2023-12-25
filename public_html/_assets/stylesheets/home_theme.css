@@ -118,6 +118,10 @@
 .light-mode .layout {
   background-color: var(--page-color-light);
 }
+.light-mode header nav {
+  border-top: 1px solid rgb(82, 70, 82);
+  border-bottom: 1px solid rgb(82, 70, 82);
+}
 .light-mode h1,
 .light-mode header p {
   color: var(--h1-light);
@@ -174,13 +178,13 @@
 .light-mode .site-updates {
   background-color: #e0e9dc;
   color: rgb(4, 32, 4);
+  /*& .overflow {
+      background-color: rgb(241, 241, 241);
+  }*/
 }
 .light-mode .site-updates h2,
 .light-mode .site-updates h3 {
   color: rgb(4, 32, 4);
-}
-.light-mode .site-updates .overflow {
-  background-color: rgb(241, 241, 241);
 }
 .light-mode .overflow {
   background-color: var(--overflow-bg-light);
@@ -239,7 +243,9 @@
   color: white;
 }
 .dark-mode header nav {
-  border-color: #503281;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: var(--page-border-dark);
 }
 .dark-mode header nav a {
   color: var(--dark-mode-links);

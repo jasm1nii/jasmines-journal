@@ -35,11 +35,16 @@ html {
 }
 
 body {
+  color: rgb(247, 238, 238);
   font-family: var(--font-1);
   font-size: 1.2em;
   font-stretch: 95%;
   margin: auto;
-  background-color: #433a46;
+  background-color: #342f36;
+}
+
+a {
+  color: plum;
 }
 
 .layout {
@@ -174,8 +179,6 @@ nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
   font-size: 1.15em;
   font-weight: normal;
   letter-spacing: 1px;
@@ -209,7 +212,6 @@ nav li::before {
 }
 nav a {
   text-decoration: none;
-  color: purple;
   padding: 0px 5px 3px 5px;
 }
 nav::-webkit-scrollbar-thumb {

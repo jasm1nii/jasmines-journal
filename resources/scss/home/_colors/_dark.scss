@@ -9,10 +9,11 @@
     }
 
     header {
-        & nav {
-            border-color: #503281;
-
-            & a {
+        nav {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            border-color: var(--page-border-dark);
+            a {
                 color: var(--dark-mode-links);
             }
         }
@@ -27,7 +28,6 @@
     .web-rings a {
         color: var(--dark-mode-links);
     }
-
     a:hover {
         background-color: var(--link-hover-bg-dark);
         color: white;
@@ -61,7 +61,7 @@
         background: url('/_assets/media/_shared/css/ooorganize-dark.svg');
     }
 
-    article>section,
+    article > section,
     #statuscafe,
     .time,
     .web-rings,

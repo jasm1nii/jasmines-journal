@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  color: rgb(245, 229, 229);
   background-color: rgb(36, 33, 37);
   opacity: 0;
   animation: fadeIn 0.5s;
@@ -44,6 +45,9 @@ a, #themeSwitch, input[type=submit] {
   transition: all 0.25s;
 }
 
+a {
+  color: plum;
+}
 a:hover {
   letter-spacing: 0.1em;
 }
@@ -142,6 +146,13 @@ form input, form textarea {
   border: 1px solid;
   border-radius: 5px;
   font-size: 1em;
+  background-color: transparent;
+}
+form input::-moz-placeholder, form textarea::-moz-placeholder {
+  color: rgb(189, 168, 168);
+}
+form input::placeholder, form textarea::placeholder {
+  color: rgb(189, 168, 168);
 }
 form label:nth-of-type(1), form input:nth-of-type(1) {
   grid-row: 1;

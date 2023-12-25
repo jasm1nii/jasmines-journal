@@ -35,7 +35,7 @@ section {
 @include theme.add-loader($max-width: none);
 
 .layout {
-  border: 1px solid purple;
+  border: 1px solid;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
   max-width: 1200px;
@@ -45,7 +45,6 @@ main {
   margin: auto;
   columns: 3;
   column-gap: 0;
-  background-image: url('/_assets/media/_shared/css/ooorganize.svg');
   background-size: 200px !important;
   padding-top: 8vh;
   padding-bottom: 10vh;
@@ -149,9 +148,6 @@ section {
 }
 
 .warning {
-  display: none;
-  background-color: var(--warning-bg);
-  box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
   h2 {
     border-color: rgb(204, 148, 204);
   }
@@ -215,7 +211,6 @@ hr {
 #gif-controls {
   text-align: center;
   padding-bottom: 1em;
-  background-color: transparent !important;
   container-type: inline-size;
   & button {
     font: inherit;

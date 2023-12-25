@@ -25,11 +25,16 @@ html {
 }
 
 body {
+    color: rgb(247, 238, 238);
     font-family: var(--font-1);
     font-size: 1.2em;
     font-stretch: 95%;
     margin: auto;
-    background-color: #433a46;
+    background-color: #342f36;
+}
+
+a {
+    color: plum;
 }
 
 .layout {

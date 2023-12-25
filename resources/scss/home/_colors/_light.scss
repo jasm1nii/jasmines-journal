@@ -7,41 +7,40 @@
 @mixin light-mode {
     a {
         color: var(--link-color-light);
-
         &:hover {
             background-color: rgba(128, 0, 128, 0.5);
             color: white;
         }
     }
-
     button,
     .button-style {
         background-color: #f5e9f5;
         color: rgb(51, 44, 44);
-
         &:hover {
             background-color: lightgoldenrodyellow;
             color: rgb(51, 44, 44);
         }
-
         & a:hover {
             color: rgb(51, 44, 44);
         }
     }
-
     .layout {
         background-color: var(--page-color-light);
     }
-
+    header {
+        nav {
+            $nav-border: 1px solid rgb(82, 70, 82);
+            border-top: $nav-border;
+            border-bottom: $nav-border;
+        }
+    }
     h1,
     header p {
         color: var(--h1-light);
     }
-
     article {
         background: url('/_assets/media/_shared/css/ooorganize.svg');
-
-        >section {
+        > section {
             background-color: var(--section-card-light);
             color: var(--font-color-light);
         }
@@ -76,7 +75,6 @@
         background-color: var(--last-played-bg);
         border-bottom: var(--last-played-border-bottom);
         border-right: var(--last-played-border-right);
-
         & h2 {
             color: #5a4f8b;
         }
@@ -103,15 +101,13 @@
     .site-updates {
         background-color: #e0e9dc;
         color: rgb(4, 32, 4);
-
         & h2,
         h3 {
             color: rgb(4, 32, 4);
         }
-
-        & .overflow {
+        /*& .overflow {
             background-color: rgb(241, 241, 241);
-        }
+        }*/
     }
 
     .overflow {
@@ -125,15 +121,12 @@
         & h2 {
             color: var(--web-rings-font);
         }
-
         & a {
             color: var(--web-rings-links);
-
             &:hover {
                 color: white;
             }
         }
-
         & details p {
             background-color: white;
             color: var(--font-color-light);
@@ -143,7 +136,6 @@
     .web-rings-list {
         background-color: var(--web-rings-bg-light);
         color: var(--web-rings-font);
-
         & a {
             color: var(--web-rings-links);
         }
@@ -151,13 +143,11 @@
 
     .guestbook {
         background-color: #ffe1f5;
-
         & h2,
         h3 {
             color: rgb(153, 32, 127);
         }
     }
-
     footer {
         color: var(--footer-font);
     }

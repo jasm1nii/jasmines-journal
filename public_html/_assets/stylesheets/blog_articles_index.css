@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  color: white;
   font-weight: 500;
   font-family: "Inconsolata", monospace;
   scrollbar-color: pink transparent;
@@ -28,6 +29,10 @@ body {
   animation-fill-mode: forwards;
   background-color: rgb(45, 42, 48);
   transition: all 0.25s ease-out;
+}
+
+a {
+  color: plum;
 }
 
 header {
@@ -132,7 +137,6 @@ a {
 }
 a:hover {
   background-color: var(--links-hover-bg);
-  color: black;
 }
 
 button {

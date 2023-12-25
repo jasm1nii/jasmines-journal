@@ -33,7 +33,7 @@
   --page-border-dark: #503281;
   --section-card-dark: hsl(255, 5%, 16%);
   --dark-mode-links: rgb(255, 192, 216);
-  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --link-hover-bg-dark: rgb(170, 92, 118);
   --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
 }
@@ -44,16 +44,19 @@
 }
 
 body {
+  color: white;
   background-color: rgb(56, 49, 56);
   transition: background-color 0.25s ease-out;
+}
+
+a {
+  color: plum;
 }
 
 nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
   font-size: 1.15em;
   font-weight: normal;
   letter-spacing: 1px;
@@ -87,7 +90,6 @@ nav li::before {
 }
 nav a {
   text-decoration: none;
-  color: purple;
   padding: 0px 5px 3px 5px;
 }
 nav::-webkit-scrollbar-thumb {
@@ -234,7 +236,8 @@ body ::-webkit-scrollbar-thumb:hover {
 }
 
 .layout {
-  border: 1px solid purple;
+  border: 1px solid;
+  border-color: #8e629b;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
   max-width: 1200px;
@@ -291,10 +294,10 @@ article {
 }
 
 article > section {
-  border: 1px solid rgb(190, 133, 141);
-  border-radius: 15px 15px 15px 15px;
   padding: 1em;
   margin: 0 auto 75px;
+  border: 1px solid rgb(190, 133, 141);
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
@@ -375,7 +378,6 @@ a:hover {
 
 .h-card {
   border: 1px solid rgb(183, 124, 189);
-  background-color: snow;
   box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
   height: -moz-min-content;
   height: min-content;
@@ -506,12 +508,10 @@ hr {
   width: 60%;
   max-width: 240px;
   padding: 0.25em 1em 0.25em;
-  background-color: var(--time-bg);
   box-shadow: 10px 10px rgba(147, 112, 219, 0.5);
   border-bottom: var(--time-border-bottom);
   border-right: var(--time-border-right);
   outline: 1px solid rgb(140, 112, 169);
-  color: var(--time-font-color);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   font-size: 1.1em;
@@ -526,9 +526,9 @@ hr {
 #current-time {
   border: none;
   color: inherit;
-  font-weight: normal;
   font-size: 1em;
   padding: 1em 0;
+  font-weight: 500;
 }
 
 .p-locality {

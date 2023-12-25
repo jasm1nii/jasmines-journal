@@ -28,7 +28,7 @@
     // create theme toggle button:
     themeSwitch.setAttribute('type', 'button');
     themeSwitch.setAttribute('id', 'themeSwitch');
-    document.querySelector('hgroup').insertAdjacentElement('beforebegin',themeSwitch);
+    document.querySelector('hgroup').insertAdjacentElement('beforebegin', themeSwitch);
 
     // set default theme:
     localStorage.theme
@@ -41,7 +41,7 @@
         : themeSwitch.innerText = '🌚';
 
     // switch theme and store in local storage:
-    themeSwitch.addEventListener("click", function() {
+    themeSwitch.addEventListener("click", () => {
         if (page.classList.contains('light-mode')){
             page.classList.remove('light-mode');
             page.classList.add('dark-mode');

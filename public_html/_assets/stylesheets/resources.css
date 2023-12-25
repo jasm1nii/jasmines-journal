@@ -37,6 +37,7 @@ html {
 }
 
 body {
+  color: white;
   background-color: rgb(46, 41, 48);
   font-family: "Instrument Sans", sans-serif;
   font-weight: 450;
@@ -44,6 +45,10 @@ body {
   animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
   transition: all 0.25s ease-out;
+}
+
+a {
+  color: plum;
 }
 
 dl {

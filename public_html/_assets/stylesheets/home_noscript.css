@@ -73,6 +73,10 @@ header hgroup p {
   .layout {
     background-color: var(--page-color-light);
   }
+  header nav {
+    border-top: 1px solid rgb(82, 70, 82);
+    border-bottom: 1px solid rgb(82, 70, 82);
+  }
   h1,
   header p {
     color: var(--h1-light);
@@ -129,13 +133,13 @@ header hgroup p {
   .site-updates {
     background-color: #e0e9dc;
     color: rgb(4, 32, 4);
+    /*& .overflow {
+        background-color: rgb(241, 241, 241);
+    }*/
   }
   .site-updates h2,
   .site-updates h3 {
     color: rgb(4, 32, 4);
-  }
-  .site-updates .overflow {
-    background-color: rgb(241, 241, 241);
   }
   .overflow {
     background-color: var(--overflow-bg-light);
@@ -190,7 +194,9 @@ header hgroup p {
     color: white;
   }
   header nav {
-    border-color: #503281;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--page-border-dark);
   }
   header nav a {
     color: var(--dark-mode-links);

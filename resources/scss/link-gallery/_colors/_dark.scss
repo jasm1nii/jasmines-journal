@@ -15,10 +15,15 @@
 
     header {
         color: white;
-
         nav {
-            border-color: #503281;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            border-color: var(--page-border-dark);
         }
+    }
+
+    main {
+        background: url('/_assets/media/_shared/css/ooorganize-dark.svg');
     }
 
     section,
@@ -30,10 +35,6 @@
     section {
         box-shadow: 10px 10px rgba(104, 59, 84, 0.75);
         border-color: #665085;
-    }
-
-    .warning {
-        box-shadow: 10px 10px rgba(131, 36, 131, .75);
     }
 
     .button-gallery {
@@ -49,14 +50,8 @@
         color: var(--dark-mode-h);
     }
 
-    a,
-    nav a {
-        color: var(--dark-mode-links);
-    }
-
     a {
         color: var(--dark-mode-links);
-
         &:hover {
             color: white;
         }

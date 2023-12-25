@@ -28,6 +28,7 @@ html {
 }
 
 body {
+  color: white;
   font-family: "Instrument Sans", sans-serif;
   font-size: 1.1em;
   line-height: 1.5em;
@@ -35,6 +36,7 @@ body {
 }
 
 a {
+  color: plum;
   background-color: transparent;
   transition: all 0.2s ease-out;
   text-decoration-style: dashed;
@@ -42,9 +44,9 @@ a {
   text-decoration-thickness: 1px;
 }
 a:hover {
-  background-color: palevioletred;
+  background-color: rgb(163, 90, 114);
   text-decoration: none;
-  color: white !important;
+  color: white;
 }
 
 button {

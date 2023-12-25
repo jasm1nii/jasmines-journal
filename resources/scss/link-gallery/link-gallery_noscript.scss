@@ -9,6 +9,10 @@
     opacity: 1;
 }
 
+.warning {
+    display: none;
+}
+
 @media (prefers-color-scheme: light) {
     body {
         @include light-mode-body();

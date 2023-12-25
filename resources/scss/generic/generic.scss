@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  color: white;
   background-color: rgb(46, 41, 48);
   transition: background-color 0.25s ease-out;
   display: grid;
@@ -157,15 +158,16 @@ main+footer {
 }
 
 a {
+  color: plum;
   background-color: transparent;
   transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   &:hover {
-    background-color: palevioletred;
+    background-color: rgb(124, 49, 74);
     text-decoration: none;
-    color: white !important;
+    color: white;
   }
 }
 

@@ -33,7 +33,7 @@
   --page-border-dark: #503281;
   --section-card-dark: hsl(255, 5%, 16%);
   --dark-mode-links: rgb(255, 192, 216);
-  --link-hover-bg-dark: rgba(216, 112, 147, .5);
+  --link-hover-bg-dark: rgb(170, 92, 118);
   --dark-mode-h: rgb(223, 154, 236);
   --dark-button-bg: #463646;
 }
@@ -44,16 +44,19 @@
 }
 
 body {
+  color: white;
   background-color: rgb(56, 49, 56);
   transition: background-color 0.25s ease-out;
+}
+
+a {
+  color: plum;
 }
 
 nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
   font-size: 1.15em;
   font-weight: normal;
   letter-spacing: 1px;
@@ -87,7 +90,6 @@ nav li::before {
 }
 nav a {
   text-decoration: none;
-  color: purple;
   padding: 0px 5px 3px 5px;
 }
 nav::-webkit-scrollbar-thumb {
@@ -238,7 +240,7 @@ section:hover {
 }
 
 .layout {
-  border: 1px solid purple;
+  border: 1px solid;
   box-shadow: 5px 5px 10px rgba(128, 0, 128, 0.1);
   margin: 5% auto auto;
   max-width: 1200px;
@@ -250,7 +252,6 @@ main {
        columns: 3;
   -moz-column-gap: 0;
        column-gap: 0;
-  background-image: url("/_assets/media/_shared/css/ooorganize.svg");
   background-size: 200px !important;
   padding-top: 8vh;
   padding-bottom: 10vh;
@@ -356,11 +357,6 @@ section {
   padding-right: 2em;
 }
 
-.warning {
-  display: none;
-  background-color: var(--warning-bg);
-  box-shadow: 10px 10px rgba(131, 36, 131, 0.5) !important;
-}
 .warning h2 {
   border-color: rgb(204, 148, 204);
 }
@@ -423,7 +419,6 @@ hr {
 #gif-controls {
   text-align: center;
   padding-bottom: 1em;
-  background-color: transparent !important;
   container-type: inline-size;
 }
 #gif-controls button {

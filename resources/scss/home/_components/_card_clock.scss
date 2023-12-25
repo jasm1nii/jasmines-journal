@@ -11,12 +11,10 @@
         width: 60%;
         max-width: 240px;
         padding: .25em 1em .25em;
-        background-color: var(--time-bg);
         box-shadow: 10px 10px rgba(147, 112, 219, 50%);
         border-bottom: var(--time-border-bottom);
         border-right: var(--time-border-right);
         outline: 1px solid 	rgb(140, 112, 169);
-        color: var(--time-font-color);
         break-inside: avoid;
         font-size: 1.1em;
         footer {
@@ -29,9 +27,9 @@
     #current-time {
         border: none;
         color: inherit;
-        font-weight: normal;
         font-size: 1em;
         padding: 1em 0;
+        font-weight: 500;
     }
     .p-locality {
         display: block;

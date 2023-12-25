@@ -15,9 +15,10 @@
 
     header {
         color: var(--h1-light);
-
         nav {
-            color: var(--font-color-light);
+            $nav-border: 1px solid rgb(82, 70, 82);
+            border-top: $nav-border;
+            border-bottom: $nav-border;
         }
     }
 
@@ -30,6 +31,7 @@
 
     .warning {
         background-color: var(--warning-bg);
+        box-shadow: 10px 10px rgba(131, 36, 131, 0.5);
     }
 
     .code {
@@ -48,7 +50,6 @@
 
     a {
         color: var(--link-color-light);
-
         &:hover {
             color: rgb(255, 255, 255);
             background-color: rgba(128, 0, 128, 0.637);
@@ -58,7 +59,6 @@
     button {
         background-color: #f5e9f5;
         color: rgb(51, 44, 44);
-
         &:hover {
             background-color: lightgoldenrodyellow;
         }
@@ -69,15 +69,12 @@
             background-color: var(--gif-controls-bg);
             color: var(--gif-controls-font);
             border: var(--gif-controls-border);
-
             &:hover {
                 background-color: var(--gif-controls-hover-bg);
             }
-
             &:active {
                 background-color: var(--gif-controls-active-bg);
             }
-
             &:focus {
                 background-color: var(--gif-controls-focus-bg);
             }
