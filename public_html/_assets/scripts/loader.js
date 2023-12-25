@@ -1,5 +1,5 @@
 {
-    const loader = document.querySelector(".loader");
+    const loader = document.getElementsByClassName('loader')[0];
     const page = loader.nextElementSibling;
     
     const loaderLoop = setInterval(incrLoader, 200);
@@ -41,6 +41,7 @@
                 fin.appendChild(finMsg);
 
             if (loaderEl !== null) { loaderEl.replaceWith(fin); };
+
             return;
 
         };
@@ -70,11 +71,8 @@
 
     const loadExit = setTimeout(() => { loader.appendChild(new ExitButton); }, 3000);
 
-    // check this variable to prevent the animation from firing twice:
-    let closeTriggered = false;
-
     function closeLoader() {
-        closeTriggered = true;
+
         const animation = new FinalAnimation;
 
         loader.remove();
@@ -84,11 +82,14 @@
         clearTimeout(loadExit);
 
         return;
+
     };
 
-    if (closeTriggered == false) {
-        window.addEventListener("load", ()=> {
+    if (loader !== null) {
+
+        document.addEventListener("load", () => {
             setTimeout(closeLoader, 500);
         });
+
     };
 };
