@@ -13,6 +13,10 @@
         border-right: var(--time-border-right);
         break-inside: avoid;
         font-size: 1.1em;
+        max-width: 270px;
+        aspect-ratio: 1.15 / 1;
+        display: flex;
+        flex-direction: column;
         footer {
             border: none;
             text-align: center;
@@ -28,24 +32,22 @@
         font-weight: 500;
     }
     .p-locality {
-        display: block;
         font-size: 1.3em;
     }
-    .clock-display {
+    .clock {
         color: mintcream;
         background-color: #374048;
         border-top: 3px inset gray;
         border-left: 3px inset gray;
+        margin: auto;
+        overflow: clip;
+        font-size: 3em;
+        line-height: 1.5em;
         min-height: 50px;
         width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 1.5em;
-        overflow: hidden;
-    }
-    .clock {
-        font-size: 3em;
         letter-spacing: .1em;
-        margin: 0;
+        display: block;
+        text-wrap: nowrap;
+        overflow-wrap: normal;
     }
 }

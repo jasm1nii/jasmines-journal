@@ -1,5 +1,8 @@
 @mixin screen-500 {
     @media all and (max-width: 500px) {
+        body {
+            font-size: 1em;
+        }
         header {
             & hgroup {
                 margin-right: 0;
@@ -29,11 +32,14 @@
         #webmaster-identity {
             font-size: 1.1em;
         }
-        .clock-display {
-            width: 80%;
+        .p-note {
+            font-size: 1em;
         }
         .latest-status {
             min-width: 80vw;
+        }
+        .web-rings-list {
+            max-height: 330px;
         }
     }
 }

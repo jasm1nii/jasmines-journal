@@ -1,13 +1,11 @@
 <section class="time">
     <h2 id="current-time">
-        <span class="js-time">current time in <span class="p-locality">bandung, indonesia</span></span>
+        <span class="js-time">current time in<br/><span class="p-locality">bandung, indonesia</span></span>
         <noscript>page request time</noscript>
     </h2>
-    <section class="clock-display">
-        <p class="clock" timezone="+7">
-            <noscript>{{ 'now'|format_datetime('none', 'short', timezone='Asia/Jakarta') }}</noscript>
-        </p>
-    </section>
+    <p class="clock" timezone="+7">
+        <noscript>{{ 'now'|format_datetime('none', 'short', timezone='Asia/Jakarta') }}</noscript>
+    </p>
     <footer>
         <p>timezone: GMT+7</p>
     </footer>

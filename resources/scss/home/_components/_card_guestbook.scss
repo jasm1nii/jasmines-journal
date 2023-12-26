@@ -1,5 +1,6 @@
 @mixin guestbook {
     .guestbook {
+        border-radius: unset;
         .button-style {
             margin: 1.5em auto .75em;
             width: fit-content;

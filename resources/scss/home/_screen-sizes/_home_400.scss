@@ -1,8 +1,5 @@
 @mixin screen-400 {
     @media all and (max-width:400px) {
-        body {
-            font-size: 1em;
-        }
         h2 {
             font-size: 1.2em;
         }
@@ -10,15 +7,6 @@
             > section {
                 width: 90%;
             }
-        }
-        .h-card {
-            overflow-y: auto;
-        }
-        .p-note {
-            font-size: 1em;
-        }
-        .time {
-            max-width: 270px;
         }
         .overflow {
             max-height: 40vh;

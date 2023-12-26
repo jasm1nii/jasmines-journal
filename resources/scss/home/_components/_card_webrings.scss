@@ -1,123 +1,145 @@
 @mixin web-rings {
-    :root {
-        --web-rings-card: #f5ddff;
-        --web-rings-font: rgb(92, 39, 92);
-        --web-rings-links: rgb(122, 78, 180);
-        --web-rings-bg-light: rgb(255, 233, 251);
-    }
-    .web-rings {
-        border-color: purple;
-        ::-webkit-scrollbar-thumb {
-          background-color: rgb(155, 96, 155) !important;
-              &:hover {
-              background-color: rgb(190, 110, 190) !important;
-              }
-          }
-          ::-webkit-scrollbar-track-piece {
-              background-color: rgba(112, 23, 134, 0.281) !important;
-          }
-        h2 {
-          border-color: blueviolet;
-        }
-        details {
-          p {
-            text-align: left;
-            position: absolute;
-            border: 1px solid;
-            color: black;
-            padding: 1em;
-            margin-left: 2em;
-            width: clamp(200px, 20vw, 300px);
-          }
-        }
-        summary {
-            font-weight: 600;
-            margin: 1em;
-        }
-        p {
-          text-align: center;
-        }
-        footer {
-          border: none;
-          font-size: smaller;
-          text-align: center;
-        }
-    }
-    .string {
-        margin-left: .75em;
-    }
-    .web-rings-list {
-        border: 1px solid rgb(167, 95, 177);
-        margin-left: auto;
-        margin-right: auto;
-        overflow: auto;
-        max-height: 300px;
-        scrollbar-color: rgb(171, 113, 189) transparent;
-        scrollbar-width: thin;
-        h3 {
-            text-align: center;
-            padding: .75em;
-            margin-top: 0;
-            letter-spacing: .2em;
-            font-stretch: expanded;
-            font-weight: 600;
-        }
-        p {
-            margin: 0 auto;
-            padding: .5em;
-            border-bottom: 1px solid rgb(138, 85, 138);
-            display: block;
-            &:first-of-type {
-              border-top: 1px solid rgb(138, 85, 138);
-            }
-        }
-        img {
-          image-rendering: pixelated;
-        }
-        a {
-          font-weight: 600;
-          font-size: larger;
-          display: inline-block;
-          padding: .5em;
-        }
-    }
-    
-    .pending {
-      background-color: #d452db1f;
-    }
-    .joined p:last-of-type {
-      border-top: 1px solid rgb(138, 85, 138);
-      border-bottom: none;
+  :root {
+    --web-rings-card: #f5ddff;
+    --web-rings-font: rgb(92, 39, 92);
+    --web-rings-links: rgb(122, 78, 180);
+    --web-rings-bg-light: rgb(255, 233, 251);
+  }
+
+  .web-rings {
+    border-color: purple;
+
+    h2 {
+      border-color: blueviolet;
     }
 
-    #resourceRing {
-      display: flex;
-      flex-direction: column;
+    details {
+      p {
+        text-align: left;
+        position: absolute;
+        border: 1px solid;
+        color: black;
+        padding: 1em;
+        margin-left: 2em;
+        width: clamp(200px, 20vw, 300px);
+      }
+    }
+
+    summary {
+      font-weight: 600;
+      margin: 1em;
+    }
+
+    p {
       text-align: center;
-      margin-bottom: 1em;
-      & a {
-        padding: 0;
+    }
+
+    footer {
+      border: none;
+      font-size: smaller;
+      text-align: center;
+    }
+  }
+
+  .string {
+    margin-left: .75em;
+  }
+
+  .web-rings-list {
+    border: 1px solid rgb(167, 95, 177);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    max-height: 300px;
+    scrollbar-color: rgb(171, 113, 189) transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(155, 96, 155) !important;
+
+      &:hover {
+        background-color: rgb(190, 110, 190) !important;
       }
     }
-    #vocaring {
-      font-family: var(--font-3);
-      font-stretch: semi-expanded;
-      border: 1px solid rgb(22, 128, 117);
-      margin: 2em auto;
-      padding-top: 1em;
-      background-color: rgba(64, 224, 208, 0.178);
-      width: 70%;
-      & .title {
-        font-size: 1.5em;
-        font-weight: 600;
-        font-stretch: expanded;
-      }
-      & a {
-        display: inline;
-        padding: 0px;
-      }
-      & img {
-        margin: 1em auto .5em;
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: rgba(112, 23, 134, 0.281) !important;
+    }
+
+    h3 {
+      text-align: center;
+      padding: .75em;
+      margin-top: 0;
+      letter-spacing: .2em;
+      font-stretch: expanded;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 auto;
+      padding: .5em;
+      border-bottom: 1px solid rgb(138, 85, 138);
+      display: block;
+
+      &:first-of-type {
+        border-top: 1px solid rgb(138, 85, 138);
       }
     }
+
+    img {
+      image-rendering: pixelated;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: larger;
+      display: inline-block;
+      padding: .5em;
+    }
+  }
+
+  .pending {
+    background-color: #d452db1f;
+  }
+
+  .joined p:last-of-type {
+    border-top: 1px solid rgb(138, 85, 138);
+    border-bottom: none;
+  }
+
+  #resourceRing {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1em;
+
+    & a {
+      padding: 0;
+    }
+  }
+
+  #vocaring {
+    font-family: var(--font-3);
+    font-stretch: semi-expanded;
+    border: 1px solid rgb(22, 128, 117);
+    margin: 2em auto;
+    padding-top: 1em;
+    background-color: rgba(64, 224, 208, 0.178);
+    width: 70%;
+
+    .title {
+      font-size: 1.5em;
+      font-weight: 600;
+      font-stretch: expanded;
+    }
+
+    a {
+      display: inline;
+      padding: 0px;
+    }
+
+    img {
+      margin: 1em auto .5em;
+    }
+  }
 }
