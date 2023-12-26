@@ -131,6 +131,9 @@
         }
         a {
             color: rgb(124, 184, 124);
+            &:hover {
+                color: white;
+            }
         }
     }
 
