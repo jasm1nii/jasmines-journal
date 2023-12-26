@@ -45,6 +45,10 @@
     margin-left: .75em;
   }
 
+  .web-ring-index {
+    max-width: 50%;
+  }
+
   .web-rings-list {
     border: 1px solid rgb(167, 95, 177);
     margin-left: auto;
@@ -128,19 +132,20 @@
     padding-top: 1em;
     background-color: rgba(64, 224, 208, 0.178);
     width: 70%;
-
+    p {
+      border: unset;
+    }
     .title {
       font-size: 1.5em;
       font-weight: 600;
       font-stretch: expanded;
     }
-
     a {
       display: inline;
       padding: 0px;
     }
-
     img {
+      display: block;
       margin: 1em auto .5em;
     }
   }

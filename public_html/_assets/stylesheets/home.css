@@ -711,6 +711,10 @@ hr {
   margin-left: 0.75em;
 }
 
+.web-ring-index {
+  max-width: 50%;
+}
+
 .web-rings-list {
   border: 1px solid rgb(167, 95, 177);
   margin-left: auto;
@@ -787,6 +791,9 @@ hr {
   background-color: rgba(64, 224, 208, 0.178);
   width: 70%;
 }
+#vocaring p {
+  border: unset;
+}
 #vocaring .title {
   font-size: 1.5em;
   font-weight: 600;
@@ -797,6 +804,7 @@ hr {
   padding: 0px;
 }
 #vocaring img {
+  display: block;
   margin: 1em auto 0.5em;
 }
 
