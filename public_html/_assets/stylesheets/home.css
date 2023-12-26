@@ -356,7 +356,6 @@ a:hover {
 
 .h-card {
   border: 1px solid rgb(183, 124, 189);
-  box-shadow: 10px 10px rgba(192, 138, 176, 0.5) !important;
   aspect-ratio: 6/10;
   font-size: 1.1em;
   display: grid;
@@ -551,7 +550,6 @@ hr {
   padding-bottom: 5px;
   border-top: none;
   border-left: none;
-  box-shadow: var(--last-played-shadow) !important;
 }
 .last-played .button-style {
   font-size: smaller;
@@ -626,7 +624,6 @@ hr {
   padding: 0;
   border: 1px solid;
   border-radius: 0;
-  box-shadow: 10px 10px rgba(161, 110, 172, 0.5) !important;
 }
 .latest-status footer {
   margin: 1.5em auto 0;
@@ -664,9 +661,6 @@ hr {
   content: '"';
 }
 
-.site-updates {
-  box-shadow: 10px 10px rgba(50, 129, 67, 0.4) !important;
-}
 .site-updates p {
   text-align: center;
 }
@@ -698,7 +692,6 @@ hr {
 
 .web-rings {
   border-color: purple;
-  box-shadow: 10px 10px rgba(141, 67, 141, 0.5) !important;
 }
 .web-rings ::-webkit-scrollbar-thumb {
   background-color: rgb(155, 96, 155) !important;
@@ -843,7 +836,7 @@ hr {
          columns: 2;
     -moz-column-gap: 15vw;
          column-gap: 15vw;
-    padding: 10vh 10vw;
+    padding: 5vh 10vw 10vh;
   }
   nav {
     font-size: 0.9em;
@@ -999,7 +992,7 @@ hr {
     overflow-y: auto;
   }
   .p-note {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .time {
     max-width: 270px;
