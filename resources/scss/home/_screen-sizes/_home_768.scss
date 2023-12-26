@@ -42,6 +42,7 @@
             columns: 1;
             > section {
                 width: clamp(250px, 60vw, 350px);
+                margin-bottom: 15vh;
             }
         }
         .p-note {

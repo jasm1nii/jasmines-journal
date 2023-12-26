@@ -19,8 +19,8 @@
         h2 {
           border-color: blueviolet;
         }
-        & details {
-          & p {
+        details {
+          p {
             text-align: left;
             position: absolute;
             border: 1px solid;
@@ -30,18 +30,12 @@
             width: clamp(200px, 20vw, 300px);
           }
         }
-        & summary {
+        summary {
             font-weight: 600;
             margin: 1em;
         }
-        & p {
+        p {
           text-align: center;
-        }
-        & a {
-          font-weight: 600;
-          font-size: larger;
-          display: inline-block;
-          padding: .5em;
         }
         footer {
           border: none;
@@ -60,7 +54,7 @@
         max-height: 300px;
         scrollbar-color: rgb(171, 113, 189) transparent;
         scrollbar-width: thin;
-        & h3 {
+        h3 {
             text-align: center;
             padding: .75em;
             margin-top: 0;
@@ -68,7 +62,7 @@
             font-stretch: expanded;
             font-weight: 600;
         }
-        & p {
+        p {
             margin: 0 auto;
             padding: .5em;
             border-bottom: 1px solid rgb(138, 85, 138);
@@ -77,8 +71,14 @@
               border-top: 1px solid rgb(138, 85, 138);
             }
         }
-        & img {
+        img {
           image-rendering: pixelated;
+        }
+        a {
+          font-weight: 600;
+          font-size: larger;
+          display: inline-block;
+          padding: .5em;
         }
     }
     

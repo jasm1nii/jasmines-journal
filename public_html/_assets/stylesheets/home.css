@@ -721,12 +721,6 @@ hr {
 .web-rings p {
   text-align: center;
 }
-.web-rings a {
-  font-weight: 600;
-  font-size: larger;
-  display: inline-block;
-  padding: 0.5em;
-}
 .web-rings footer {
   border: none;
   font-size: smaller;
@@ -765,6 +759,12 @@ hr {
 }
 .web-rings-list img {
   image-rendering: pixelated;
+}
+.web-rings-list a {
+  font-weight: 600;
+  font-size: larger;
+  display: inline-block;
+  padding: 0.5em;
 }
 
 .pending {
@@ -932,6 +932,7 @@ hr {
   }
   article > section {
     width: clamp(250px, 60vw, 350px);
+    margin-bottom: 15vh;
   }
   .p-note {
     font-size: 0.9em;
