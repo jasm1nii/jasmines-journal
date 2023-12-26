@@ -32,7 +32,6 @@ body {
   column-gap: 3em;
   justify-content: space-between;
   background-color: rgb(65, 55, 65);
-  // transition: background-color 0.25s ease-out;
 }
 
 a {
@@ -264,7 +263,6 @@ dd {
 
 a {
   background-color: transparent;
-  // transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -313,11 +311,13 @@ main + footer {
 
 button {
   cursor: pointer;
-  background-color: rgba(255, 192, 239, 0.493);
+  background-color: transparent;
   border: 1px solid purple;
   font-size: 1em;
   padding: .5em;
-  border-radius: 5px;
+  &:hover {
+    background-color: rgba(255, 192, 239, .5);
+  }
 }
 
 ::selection {

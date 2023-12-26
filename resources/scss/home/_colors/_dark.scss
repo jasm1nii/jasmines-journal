@@ -19,6 +19,10 @@
         }
     }
 
+    h2 {
+        border-bottom: 1px solid rgb(131, 82, 131);
+    }
+
     h2,
     h3 {
         color: rgb(223, 154, 236);
@@ -36,19 +40,17 @@
     button,
     .button-style {
         background-color: var(--dark-button-bg);
+        border-color: purple;
         color: rgb(230, 214, 236);
-
         &:hover {
-            background-color: #712357;
+            background-color: rgb(113, 35, 87);
         }
-
         &:active {
             background-color: rgb(207, 102, 102);
             color: white;
         }
-
         &:focus {
-            background-color: #8b4f61;
+            background-color: rgb(139, 79, 97);
         }
     }
 
@@ -59,6 +61,10 @@
 
     article {
         background: url('/_assets/media/_shared/css/ooorganize-dark.svg');
+        > section {
+            border-color: rgb(121, 70, 121);
+            box-shadow: 10px 10px rgba(167, 85, 153, 0.5);
+        }
     }
 
     article > section,
@@ -78,10 +84,15 @@
     }
 
     .time {
+        border-color: rgb(90, 45, 130);
         border-bottom: 5px outset rgb(58, 58, 88);
         border-right: 5px outset rgb(67, 67, 102);
+        box-shadow: 10px 10px rgba(147, 112, 219, .25);
     }
 
+    .latest-status, #latest-status {
+        border-color: rgb(100, 80, 100);
+    }
     #latest-status {
         background: url('/_assets/media/_shared/css/line-in-motion-dark.svg') rgb(52, 39, 58);
     }
@@ -94,46 +105,57 @@
         background-color: var(--last-played-dark-bg);
         border-bottom: var(--last-played-dark-b-border);
         border-right: var(--last-played-dark-r-border);
-
-        & h2 {
+        h2 {
             color: rgb(170, 195, 212);
         }
     }
 
     #track {
-        background-color: #232629;
+        background-color: rgb(35, 38, 41);
     }
 
     .site-updates {
-
-        & h2,
+        border-color: rgb(39, 78, 78);
+        h2 {
+            border-color: rgb(39, 78, 78);
+        }
+        h2,
         h3 {
             color: rgb(179, 216, 179);
+        }
+        a {
+            color: rgb(124, 184, 124);
         }
     }
 
     .web-rings {
-        & h2 {
-            color: #aa8cdb;
+        h2 {
+            color: rgb(170, 140, 219);
         }
     }
 
     .guestbook {
-        & h2 {
+        box-shadow: 10px 10px rgba(121, 26, 85, 0.45);
+        h2 {
             color: rgb(253, 188, 255);
         }
-
-        & h3 {
-            color: #f2c7ff;
+        h3 {
+            color: rgb(242, 199, 255);
         }
-
         blockquote {
             font-weight: 500;
+            background-color: rgb(49, 47, 51);
         }
     }
 
     .overflow {
         background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(164, 118, 170);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: plum;
     }
 }
 

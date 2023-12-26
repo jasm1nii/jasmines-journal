@@ -35,6 +35,7 @@ body {
 
 a {
     color: plum;
+    transition: letter-spacing .2s ease;
     &:hover {
         letter-spacing: .1em;
     }
@@ -118,7 +119,7 @@ form {
     display: grid;
     row-gap: .5em;
     margin-top: 2em;
-    & input, textarea {
+    input, textarea {
         padding: .5em;
         margin-bottom: 1em;
         border: 1px solid;
@@ -130,11 +131,11 @@ form {
         }
     }
     @for $i from 1 through 4 {
-        & label:nth-of-type(#{$i}), input:nth-of-type(#{$i}) {
+        label:nth-of-type(#{$i}), input:nth-of-type(#{$i}) {
             grid-row: $i;
         }
     }
-    & label {
+    label {
         font-size: larger;
         font-weight: 600;
         grid-column: 1;
@@ -142,7 +143,7 @@ form {
             margin-left: .25em;
         }
     }
-    & label[for="message"] {
+    label[for="message"] {
         $grid: span 5;
         grid-column: $grid;
         &::after {
@@ -150,13 +151,14 @@ form {
             color: red;
             font-size: larger;
         }
-        & ~ textarea, ~ span {
+        ~ textarea, ~ span {
             grid-column: $grid;
         }
     }
-    & input {
+    input {
         grid-column: 2 / 6;
         &[type="submit"] {
+            border-radius: 0px;
             grid-row: 7;
             width: fit-content;
             height: fit-content;
@@ -165,7 +167,7 @@ form {
             cursor: pointer;
         }
     }
-    & textarea {
+    textarea {
         height: 15vh;
         font-size: larger;
         margin-top: 1em;

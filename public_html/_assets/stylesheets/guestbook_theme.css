@@ -44,7 +44,7 @@
   background-color: antiquewhite;
 }
 .light-mode #themeSwitch:hover, .light-mode input[type=submit]:hover {
-  background-color: rgb(190, 241, 224);
+  background-color: rgb(241, 190, 237);
 }
 .light-mode #themeSwitch {
   border-color: purple;

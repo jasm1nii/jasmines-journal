@@ -1,7 +1,7 @@
 @mixin clock {
     :root {
         --time-bg: lavender;
-        --time-font-color: #685c7c;
+        --time-font-color: rgb(104, 92, 124);
         --time-border-bottom: 5px outset rgb(199, 199, 236);
         --time-border-right: 5px outset rgb(242, 242, 255);    
     }
@@ -9,7 +9,6 @@
         border-radius: 10px;
         text-align: center;
         padding: .25em 1em;
-        box-shadow: 10px 10px rgba(147, 112, 219, 50%);
         border-bottom: var(--time-border-bottom);
         border-right: var(--time-border-right);
         break-inside: avoid;
@@ -42,6 +41,7 @@
         margin-left: auto;
         margin-right: auto;
         padding-top: 1.5em;
+        overflow: hidden;
     }
     .clock {
         font-size: 3em;

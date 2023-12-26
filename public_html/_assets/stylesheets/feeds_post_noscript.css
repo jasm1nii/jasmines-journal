@@ -3,17 +3,17 @@
   --dark-mode-links: rgb(255, 192, 216);
   --link-hover-bg-dark: rgba(216, 112, 147, .5);
   --dark-mode-h: rgb(223, 154, 236);
-  --dark-button-bg: #463646;
+  --dark-button-bg: rgb(70, 54, 70);
 }
 
 :root {
-  --font-color-light: #4e494e;
-  --h1-light: #5a5463;
-  --h2-light: #794668;
+  --font-color-light: rgb(78, 73, 78);
+  --h1-light: rgb(90, 84, 99);
+  --h2-light: rgb(121, 70, 104);
   --link-color-light: darkmagenta;
   --link-hover-bg-light: rgb(216, 112, 147);
   --document-color-light: thistle;
-  --page-color-light: #fff6f6;
+  --page-color-light: rgb(255, 246, 246);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,10 +23,10 @@
   }
   .layout {
     background-color: rgb(10, 10, 10);
-    border-color: #463646;
+    border-color: rgb(70, 54, 70);
   }
   header nav {
-    border-color: #463646;
+    border-color: rgb(70, 54, 70);
   }
   article > section {
     background-color: rgb(20, 20, 20);
@@ -35,7 +35,7 @@
     color: rgb(255, 142, 198);
   }
   footer {
-    border-color: #463646;
+    border-color: rgb(70, 54, 70);
   }
   h2, h3 {
     color: var(--dark-mode-h);
@@ -49,17 +49,18 @@
   }
   button {
     background-color: var(--dark-button-bg);
+    border-color: plum;
     color: rgb(230, 214, 236);
   }
   button:hover {
-    background-color: #712357;
+    background-color: rgb(113, 35, 87);
   }
   button:active {
     background-color: rgb(207, 102, 102);
     color: white;
   }
   button:focus {
-    background-color: #8b4f61;
+    background-color: rgb(139, 79, 97);
   }
 }
 @media (prefers-color-scheme: light) {
@@ -90,7 +91,8 @@
     color: white;
   }
   button {
-    background-color: #f5e9f5;
+    background-color: rgb(245, 233, 245);
+    border-color: purple;
     color: rgb(51, 44, 44);
   }
   button:hover {

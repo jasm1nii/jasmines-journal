@@ -3,10 +3,10 @@
     --dark-mode-links: rgb(255, 192, 216);
     --link-hover-bg-dark: rgba(216, 112, 147, .5);
     --dark-mode-h: rgb(223, 154, 236);
-    --dark-button-bg: #463646;
+    --dark-button-bg: rgb(70, 54, 70);
 }
 
-$dark-border-color: #463646;
+$dark-border-color: rgb(70, 54, 70);
 
 @mixin dark-mode-body {
     color: white;
@@ -50,16 +50,17 @@ $dark-border-color: #463646;
     }
     button {
         background-color: var(--dark-button-bg);
+        border-color: plum;
         color: rgb(230, 214, 236);
         &:hover {
-            background-color: #712357;
+            background-color: rgb(113, 35, 87);
         }
         &:active {
             background-color: rgb(207, 102, 102);
             color: white;
         }
         &:focus {
-            background-color: #8b4f61;
+            background-color: rgb(139, 79, 97);
         }
     }
 }

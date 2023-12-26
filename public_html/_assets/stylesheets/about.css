@@ -314,11 +314,13 @@ main + footer time {
 
 button {
   cursor: pointer;
-  background-color: rgba(255, 192, 239, 0.493);
+  background-color: transparent;
   border: 1px solid purple;
   font-size: 1em;
   padding: 0.5em;
-  border-radius: 5px;
+}
+button:hover {
+  background-color: rgba(255, 192, 239, 0.5);
 }
 
 ::-moz-selection {

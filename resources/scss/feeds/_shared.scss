@@ -85,7 +85,6 @@ footer a img {
 
 a {
     background-color: transparent;
-    transition: all 0.2s ease-out;
     text-decoration-style: dashed;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
@@ -100,19 +99,14 @@ button {
     padding: .5em 1em;
     width: fit-content;
     border: 1px solid;
-    border-radius: 10px;
     font-family: var(--font-3);
     font-size: larger;
-}
-
-button, button:active, button:hover, button:focus {
-    transition: all .5s ease;
 }
 
 #themeSwitch {
     padding: .5em;
     border-radius: 0px;
-    border: 1px solid #8e629b;
+    border: 1px solid rgb(142, 98, 155);
     height: fit-content;
     font-size: smaller;
     margin: auto 0;

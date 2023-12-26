@@ -7,7 +7,19 @@
     }
     .web-rings {
         border-color: purple;
-        box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
+        box-shadow: 10px 10px rgba(141, 67, 141, 0.5) !important;
+        ::-webkit-scrollbar-thumb {
+          background-color: rgb(155, 96, 155) !important;
+              &:hover {
+              background-color: rgb(190, 110, 190) !important;
+              }
+          }
+          ::-webkit-scrollbar-track-piece {
+              background-color: rgba(112, 23, 134, 0.281) !important;
+          }
+        h2 {
+          border-color: blueviolet;
+        }
         & details {
           & p {
             text-align: left;
@@ -68,15 +80,6 @@
         }
         & img {
           image-rendering: pixelated;
-        }
-        & ::-webkit-scrollbar-thumb {
-        background-color: rgb(155, 96, 155);
-            &:hover {
-            background-color: purple;
-            }
-        }
-        & ::-webkit-scrollbar-track-piece {
-            background-color: rgba(112, 23, 134, 0.281);
         }
     }
     

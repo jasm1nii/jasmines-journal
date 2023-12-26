@@ -30,7 +30,6 @@ body {
 a {
   color: plum;
   background-color: transparent;
-  // transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -39,10 +38,6 @@ a {
     text-decoration: none;
     color: white;
   }
-}
-
-button {
-  cursor: pointer;
 }
 
 .layout {
@@ -230,11 +225,14 @@ hr {
 }
 
 button {
-  background-color: rgba(255, 192, 239, 0.493);
+  cursor: pointer;
+  background-color: transparent;
   border: 1px solid purple;
   font-size: 1em;
   padding: .5em;
-  border-radius: 5px;
+  &:hover {
+    background-color: rgba(255, 192, 239, .5);
+  }
 }
 
 footer {

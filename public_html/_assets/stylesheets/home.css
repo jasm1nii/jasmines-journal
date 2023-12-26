@@ -93,7 +93,7 @@ nav a {
   padding: 0px 5px 3px 5px;
 }
 nav::-webkit-scrollbar-thumb {
-  background-color: rgba(161, 117, 197, 0.4509803922);
+  background-color: rgba(161, 117, 197, 0.451);
 }
 
 footer {
@@ -133,17 +133,13 @@ footer a img {
 
 button {
   cursor: pointer;
-  /*transition: all .5s ease;*/
 }
 
-/*button:active,
-.button-style:active {
-    transition: all .1s ease;
-}*/
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
 }
+
 ::selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -296,7 +292,6 @@ article > section {
   margin: 0 auto 75px;
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px;
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   -moz-column-break-inside: avoid;
        break-inside: avoid;
 }
@@ -325,7 +320,6 @@ article > section footer {
 .overflow {
   max-height: 30vh;
   overflow-y: auto;
-  border: var(--overflow-border);
   padding-right: 1em;
   padding-left: 1em;
   margin-top: 1em;
@@ -336,7 +330,6 @@ h2 {
   padding: 0.25em 0 0.5em;
   font-size: 1.25em;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgb(233, 166, 205);
 }
 
 h3 {
@@ -354,6 +347,7 @@ a:hover {
 }
 
 .button-style {
+  text-decoration: none;
   display: block;
   border: 1px solid;
   padding: 0.5em;
@@ -362,7 +356,7 @@ a:hover {
 
 .h-card {
   border: 1px solid rgb(183, 124, 189);
-  box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
+  box-shadow: 10px 10px rgba(192, 138, 176, 0.5) !important;
   aspect-ratio: 6/10;
   font-size: 1.1em;
   display: grid;
@@ -484,7 +478,7 @@ hr {
 
 :root {
   --time-bg: lavender;
-  --time-font-color: #685c7c;
+  --time-font-color: rgb(104, 92, 124);
   --time-border-bottom: 5px outset rgb(199, 199, 236);
   --time-border-right: 5px outset rgb(242, 242, 255);
 }
@@ -493,7 +487,6 @@ hr {
   border-radius: 10px;
   text-align: center;
   padding: 0.25em 1em;
-  box-shadow: 10px 10px rgba(147, 112, 219, 0.5);
   border-bottom: var(--time-border-bottom);
   border-right: var(--time-border-right);
   -moz-column-break-inside: avoid;
@@ -530,6 +523,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5em;
+  overflow: hidden;
 }
 
 .clock {
@@ -564,7 +558,7 @@ hr {
   border-radius: 5px;
   margin-left: 5px;
   padding: 0.75em 1em;
-  border: 1px solid green;
+  border: 1px solid green !important;
 }
 .last-played footer {
   display: flex;
@@ -630,9 +624,9 @@ hr {
 
 .latest-status {
   padding: 0;
-  border: 1px solid rgb(175, 140, 175);
+  border: 1px solid;
   border-radius: 0;
-  box-shadow: 10px 10px rgba(161, 110, 172, 0.493);
+  box-shadow: 10px 10px rgba(161, 110, 172, 0.5) !important;
 }
 .latest-status footer {
   margin: 1.5em auto 0;
@@ -641,7 +635,7 @@ hr {
 }
 
 #latest-status {
-  border-bottom: 1px solid rgb(194, 167, 194);
+  border-bottom: 1px solid;
   padding: 1em;
 }
 
@@ -671,11 +665,7 @@ hr {
 }
 
 .site-updates {
-  box-shadow: 10px 10px rgba(50, 129, 67, 0.4196078431);
-  border-color: green;
-}
-.site-updates h2 {
-  border-color: green;
+  box-shadow: 10px 10px rgba(50, 129, 67, 0.4) !important;
 }
 .site-updates p {
   text-align: center;
@@ -708,7 +698,19 @@ hr {
 
 .web-rings {
   border-color: purple;
-  box-shadow: 10px 10px rgba(141, 67, 141, 0.5);
+  box-shadow: 10px 10px rgba(141, 67, 141, 0.5) !important;
+}
+.web-rings ::-webkit-scrollbar-thumb {
+  background-color: rgb(155, 96, 155) !important;
+}
+.web-rings ::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(190, 110, 190) !important;
+}
+.web-rings ::-webkit-scrollbar-track-piece {
+  background-color: rgba(112, 23, 134, 0.281) !important;
+}
+.web-rings h2 {
+  border-color: blueviolet;
 }
 .web-rings details p {
   text-align: left;
@@ -771,15 +773,6 @@ hr {
 .web-rings-list img {
   image-rendering: pixelated;
 }
-.web-rings-list ::-webkit-scrollbar-thumb {
-  background-color: rgb(155, 96, 155);
-}
-.web-rings-list ::-webkit-scrollbar-thumb:hover {
-  background-color: purple;
-}
-.web-rings-list ::-webkit-scrollbar-track-piece {
-  background-color: rgba(112, 23, 134, 0.281);
-}
 
 .pending {
   background-color: rgba(212, 82, 219, 0.1215686275);
@@ -822,9 +815,6 @@ hr {
   margin: 1em auto 0.5em;
 }
 
-.guestbook {
-  box-shadow: 10px 10px rgba(192, 45, 136, 0.432);
-}
 .guestbook .button-style {
   margin: 1.5em auto 0.75em;
   width: -moz-fit-content;

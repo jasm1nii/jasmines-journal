@@ -43,6 +43,7 @@
         > section {
             background-color: var(--section-card-light);
             color: var(--font-color-light);
+            box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
         }
     }
 
@@ -54,6 +55,7 @@
 
     h2 {
         color: var(--h2-light);
+        border-bottom: 1px solid rgb(233, 166, 205);
     }
 
     h3 {
@@ -62,8 +64,10 @@
     .time {
         background-color: var(--time-bg);
         color: var(--time-font-color);
+        border-color: purple;
         border-bottom: var(--time-border-bottom);
         border-right: var(--time-border-right);
+        box-shadow: 10px 10px rgba(147, 112, 219, .5);
     }
     .clock {
         color: mintcream;
@@ -72,12 +76,15 @@
         background-color: var(--last-played-bg);
         border-bottom: var(--last-played-border-bottom);
         border-right: var(--last-played-border-right);
-        & h2 {
-            color: #5a4f8b;
+        h2 {
+            color: rgb(90, 79, 139);
         }
     }
     #track {
         background-color: linen;
+    }
+    .latest-status, #latest-status {
+        border-color: rgb(175, 140, 175);
     }
     #latest-status {
         background: url('/_assets/media/_shared/css/line-in-motion.svg') rgb(238, 225, 238);
@@ -91,15 +98,19 @@
         color: rgb(24, 14, 39);
     }
     .site-updates {
-        background-color: #e0e9dc;
+        background-color: rgb(224, 233, 220);
+        border-color: green;
         color: rgb(4, 32, 4);
+        h2 {
+            border-color: green;
+        }
         & h2,
         h3 {
             color: rgb(4, 32, 4);
         }
-        /*& .overflow {
-            background-color: rgb(241, 241, 241);
-        }*/
+        a {
+            color: rgb(15, 83, 15);
+        }
     }
 
     .overflow {
@@ -128,14 +139,15 @@
     .web-rings-list {
         background-color: var(--web-rings-bg-light);
         color: var(--web-rings-font);
-        & a {
+        a {
             color: var(--web-rings-links);
         }
     }
 
     .guestbook {
-        background-color: #ffe1f5;
-        & h2,
+        background-color: rgb(255, 225, 245);
+        box-shadow: 10px 10px rgba(192, 45, 136, 0.45);
+        h2,
         h3 {
             color: rgb(153, 32, 127);
         }

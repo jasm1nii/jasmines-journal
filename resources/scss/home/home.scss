@@ -103,23 +103,22 @@ article > section {
   margin: 0 auto 75px;
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px;
-  box-shadow: 10px 10px rgba(255, 149, 165, 0.5);
   break-inside: avoid;
-  & ul {
+  ul {
     padding-left: 1em;
     padding-top: 1em;
     margin-top: 0;
   }
-  & li {
+  li {
     margin-bottom: 1em;
   }
-  & button {
+  button {
     padding: 1em;
     border: 1px solid;
     border-radius: 50px;
     font-family: var(--font-3);
   }
-  & footer {
+  footer {
     width: 100%;
     text-align: left;
     margin-top: 2em;
@@ -131,7 +130,6 @@ article > section {
 .overflow {
   max-height: 30vh;
   overflow-y: auto;
-  border: var(--overflow-border);
   padding-right: 1em;
   padding-left: 1em;
   margin-top: 1em;
@@ -142,7 +140,6 @@ h2 {
   padding: .25em 0 .5em;
   font-size: 1.25em;
   letter-spacing: .05em;
-  border-bottom: 1px solid rgb(233, 166, 205);
 }
 
 h3 {
@@ -151,7 +148,6 @@ h3 {
 }
 
 a {
-  // transition: all 0.2s ease-out;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
@@ -161,6 +157,7 @@ a {
 }
 
 .button-style {
+  text-decoration: none;
   display: block;
   border: 1px solid;
   padding: .5em;

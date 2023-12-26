@@ -1,11 +1,11 @@
 :root {
-    --font-color-light: #4e494e;
-    --h1-light: #5a5463;
-    --h2-light: #794668;
+    --font-color-light: rgb(78, 73, 78);
+    --h1-light: rgb(90, 84, 99);
+    --h2-light: rgb(121, 70, 104);
     --link-color-light: darkmagenta;
     --link-hover-bg-light: rgb(216, 112, 147);
     --document-color-light: thistle;
-    --page-color-light: #fff6f6;
+    --page-color-light: rgb(255, 246, 246);
 }
 
 @mixin light-mode-body {
@@ -43,7 +43,8 @@
         }
     }
     button {
-        background-color: #f5e9f5;
+        background-color: rgb(245, 233, 245);
+        border-color: purple;
         color: rgb(51, 44, 44);
         &:hover {
             background-color: lightgoldenrodyellow;

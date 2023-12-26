@@ -24,8 +24,11 @@
                 transform: translatey(-5px);
             }
         }
-        & ::-webkit-scrollbar-thumb {
-            background-color: rgb(202, 172, 97);
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(202, 172, 97) !important;
+            &:hover {
+                background-color: rgb(218, 188, 115) !important;
+            }
         }
     }
     #notice {

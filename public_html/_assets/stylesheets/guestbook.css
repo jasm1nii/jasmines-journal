@@ -39,6 +39,7 @@ body {
 
 a {
   color: plum;
+  transition: letter-spacing 0.2s ease;
 }
 a:hover {
   letter-spacing: 0.1em;
@@ -181,6 +182,7 @@ form input {
   grid-column: 2/6;
 }
 form input[type=submit] {
+  border-radius: 0px;
   grid-row: 7;
   width: -moz-fit-content;
   width: fit-content;

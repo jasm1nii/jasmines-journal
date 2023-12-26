@@ -1,7 +1,7 @@
 @mixin h-card {
     .h-card {
         border: 1px solid rgb(183, 124, 189);
-        box-shadow: 10px 10px rgba(192, 138, 176, 0.521);
+        box-shadow: 10px 10px rgba(192, 138, 176, 0.5) !important;
         aspect-ratio: 6 / 10;
         font-size: 1.1em;
         display: grid;

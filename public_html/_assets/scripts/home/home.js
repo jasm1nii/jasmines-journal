@@ -174,7 +174,9 @@
       let clock = window.arrClocks[i];
       let offset = window.arrOffsets[i];
 
-      clock.innerHTML = dateToText(new Date(new Date().getTime() + offset));
+      let timeString = dateToText(new Date(new Date().getTime() + offset));
+
+      clock.innerHTML = timeString;
 
     }
 
