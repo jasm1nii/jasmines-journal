@@ -516,14 +516,12 @@ hr {
   border-left: 3px inset gray;
   margin: auto;
   overflow: clip;
-  font-size: 3em;
+  font-size: 3.5em;
   line-height: 1.5em;
   min-height: 50px;
   width: 80%;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.075em;
   display: block;
-  text-wrap: nowrap;
-  overflow-wrap: normal;
 }
 
 :root {
@@ -771,7 +769,10 @@ hr {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 1em;
+  padding: 1em 0;
+}
+#resourceRing span {
+  height: 31px;
 }
 #resourceRing a {
   padding: 0;
