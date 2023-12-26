@@ -38,6 +38,8 @@
     }
     .flower {
         grid-column: 4;
+        width: 100%;
+        height: auto;
         /* sass: start from 2, because the javascript flower comes first in the DOM, for whatever weird reason... */
         @for $i from 2 through 3 {
             &:nth-of-type(#{$i}) {

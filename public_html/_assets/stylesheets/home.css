@@ -404,6 +404,8 @@ a:hover {
 
 .flower {
   grid-column: 4;
+  width: 100%;
+  height: auto;
   /* sass: start from 2, because the javascript flower comes first in the DOM, for whatever weird reason... */
 }
 .flower:nth-of-type(2) {
@@ -982,10 +984,6 @@ hr {
   }
   p .ascii-img {
     display: none;
-  }
-  #themeSwitch {
-    font-size: larger;
-    margin: 0 0 3vh 0;
   }
   #webmaster-identity {
     font-size: 1.1em;

@@ -16,6 +16,12 @@
   border: 1px solid #8e629b;
 }
 
+@media all and (max-width: 768px) {
+  #themeSwitch {
+    font-size: larger;
+    margin-top: 0;
+  }
+}
 .notice-group {
   position: absolute;
   top: 25vh;
@@ -97,7 +103,7 @@
 }
 
 :root .light-mode {
-  --sticky-note-bg: cornsilk !important;
+  --sticky-note-bg: cornsilk;
 }
 
 .light-mode {
@@ -236,8 +242,8 @@
 }
 
 :root .dark-mode {
-  --sticky-note-bg: var(--section-card-dark) !important;
-  --sticky-note-font: white !important;
+  --sticky-note-bg: var(--section-card-dark);
+  --sticky-note-font: white;
 }
 
 .dark-mode {
