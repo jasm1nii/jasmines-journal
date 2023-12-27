@@ -235,7 +235,7 @@
   color: var(--web-rings-font);
 }
 .light-mode .web-rings a {
-  color: var(--web-rings-links);
+  color: rgb(83, 20, 83);
 }
 .light-mode .web-rings a:hover {
   color: white;
@@ -249,7 +249,10 @@
   color: var(--web-rings-font);
 }
 .light-mode .web-rings-list a {
-  color: var(--web-rings-links);
+  color: rgb(83, 20, 83);
+}
+.light-mode .web-ring-item {
+  background-color: rgba(128, 0, 128, 0.1);
 }
 .light-mode .guestbook {
   background-color: rgb(255, 225, 245);
@@ -296,8 +299,7 @@
 .dark-mode h3 {
   color: rgb(223, 154, 236);
 }
-.dark-mode a,
-.dark-mode .web-rings a {
+.dark-mode a {
   color: var(--dark-mode-links);
 }
 .dark-mode a:hover {
@@ -401,6 +403,16 @@
 }
 .dark-mode .web-rings h2 {
   color: rgb(170, 140, 219);
+}
+.dark-mode .web-rings a {
+  color: rgb(255, 194, 255);
+}
+.dark-mode .web-rings a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(95, 25, 112);
+}
+.dark-mode .web-ring-item {
+  background-color: rgb(58, 49, 58);
 }
 .dark-mode .guestbook {
   box-shadow: 0px 0px 12px rgb(121, 26, 85);

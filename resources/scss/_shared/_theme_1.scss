@@ -47,7 +47,10 @@ a {
     color: plum;
 }
 
-@include nav-style-1();
+header {
+    @include nav-style-1;
+}
+
 @include footer-style-1();
 
 button {

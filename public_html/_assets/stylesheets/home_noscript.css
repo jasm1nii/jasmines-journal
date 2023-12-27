@@ -170,7 +170,7 @@ header hgroup p {
     color: var(--web-rings-font);
   }
   .web-rings a {
-    color: var(--web-rings-links);
+    color: rgb(83, 20, 83);
   }
   .web-rings a:hover {
     color: white;
@@ -184,7 +184,10 @@ header hgroup p {
     color: var(--web-rings-font);
   }
   .web-rings-list a {
-    color: var(--web-rings-links);
+    color: rgb(83, 20, 83);
+  }
+  .web-ring-item {
+    background-color: rgba(128, 0, 128, 0.1);
   }
   .guestbook {
     background-color: rgb(255, 225, 245);
@@ -227,8 +230,7 @@ header hgroup p {
   h3 {
     color: rgb(223, 154, 236);
   }
-  a,
-  .web-rings a {
+  a {
     color: var(--dark-mode-links);
   }
   a:hover {
@@ -332,6 +334,16 @@ header hgroup p {
   }
   .web-rings h2 {
     color: rgb(170, 140, 219);
+  }
+  .web-rings a {
+    color: rgb(255, 194, 255);
+  }
+  .web-rings a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 25, 112);
+  }
+  .web-ring-item {
+    background-color: rgb(58, 49, 58);
   }
   .guestbook {
     box-shadow: 0px 0px 12px rgb(121, 26, 85);

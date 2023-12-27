@@ -4,16 +4,16 @@
             font-size: 1em;
         }
         header {
-            & hgroup {
-                margin-right: 0;
-                & p {
-                    font-size: 1.25em;
-                }
-            }
-            & .top {
+            .top {
                 width: 80%;
                 margin: auto;
                 padding-top: 3vh;
+            }
+            hgroup {
+                margin-right: 0;
+                p {
+                    font-size: 1.25em;
+                }
             }
         }
         h1 {

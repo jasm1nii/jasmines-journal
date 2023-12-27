@@ -123,6 +123,8 @@
         background-color: var(--overflow-bg-light);
     }
 
+    $webring-links: rgb(83, 20, 83);
+
     .web-rings {
         background-color: var(--web-rings-card);
         color: var(--web-rings-font);
@@ -131,7 +133,7 @@
             color: var(--web-rings-font);
         }
         a {
-            color: var(--web-rings-links);
+            color: $webring-links;
             &:hover {
                 color: white;
             }
@@ -146,8 +148,12 @@
         background-color: var(--web-rings-bg-light);
         color: var(--web-rings-font);
         a {
-            color: var(--web-rings-links);
+            color: $webring-links;
         }
+    }
+
+    .web-ring-item {
+        background-color: rgba(128, 0, 128, 0.1);
     }
 
     .guestbook {

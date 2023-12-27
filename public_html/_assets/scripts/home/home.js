@@ -330,9 +330,9 @@
             let nextSiteIndex = (matchedSiteIndex + 1 > sites.length - 1) ? 0 : matchedSiteIndex + 1;
             let randomSiteIndex = this.getRandomInt(0, sites.length - 1);
 
-            let cp = `<span class="title">i'm a <a href="https://xandra.cc/safonts/" rel="external"><b>sa</b><i>font</i></a></span>`;
+            let cp = `<p class="title">i'm a <a href="https://xandra.cc/safonts/" rel="external"><b>sa</b><i>font</i></a></p>`;
 
-            cp += `<br/><span class="nav">`;
+            cp += `<p class="nav">`;
 
             cp += `<a href="${sites[prevSiteIndex].url}" rel="external" aria-label="safonts webring: previous site">&lt;&lt;</a>`;
 
@@ -340,7 +340,7 @@
 
             cp += `<a href="https://xandra.cc/safonts/members.html" rel="external" aria-label="safonts webring: index">...</a>`;
 
-            cp += `<a href="${sites[nextSiteIndex].url}" rel="external" aria-label="safonts webring: next site">&gt;&gt;</a></span>`;
+            cp += `<a href="${sites[nextSiteIndex].url}" rel="external" aria-label="safonts webring: next site">&gt;&gt;</a></p>`;
 
             this.shadowRoot.querySelector(".safonts").insertAdjacentHTML("afterbegin", cp);
 
@@ -350,9 +350,11 @@
 
           let style = `.safonts * { color: inherit; }`;
 
-          style += `.safonts { margin: 1em auto 0px; padding-bottom: 1em; text-align: center; border-bottom: 1px solid rgb(138, 85, 138); }`;
+          style += `.safonts { margin: 1em auto 0; text-align: center; padding: 0 1em; }`;
 
           style += `.safonts .title a { font-size: larger; }`;
+
+          style += `.safonts .nav { display: flex; flex-direction: row; justify-content: space-between };`
 
           sheet.replaceSync(style);
           this.shadowRoot.adoptedStyleSheets.push(sheet);

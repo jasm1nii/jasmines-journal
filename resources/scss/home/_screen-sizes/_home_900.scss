@@ -9,15 +9,15 @@
             line-height: 1.5em;
         }
         header {
-            & .top {
+            .top {
                 padding: 1vh;
             }
-            & p {
+            p {
                 margin: 3vh auto;
             }
-        }
-        nav {
-            font-size: 1em;
+            nav {
+                font-size: 1em;
+            }
         }
         main {
             font-size: .9em;

@@ -17,7 +17,7 @@
         padding-bottom: 5px;
         border-top: none;
         border-left: none;
-        & .button-style {
+        .button-style {
             font-size: smaller;
             border-radius: 5px;
             margin-left: 5px;
@@ -65,7 +65,7 @@
             transform: translateX(100%); 		
         }
         100% { 
-            transform: translateX(-150%); 
+            transform: translateX(-175%); 
         }
     }
     @media (prefers-reduced-motion) {
@@ -81,6 +81,5 @@
         font-stretch: semi-expanded;
         border: 1px solid green;
         border-radius: 5px;
-        // transition: background-color 0.3s;
     }
 }

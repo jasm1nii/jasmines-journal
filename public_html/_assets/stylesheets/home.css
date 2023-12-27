@@ -53,7 +53,7 @@ a {
   color: plum;
 }
 
-nav {
+header nav {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
@@ -61,38 +61,38 @@ nav {
   font-weight: normal;
   letter-spacing: 1px;
 }
-nav ul {
+header nav ul {
   margin: 0;
   padding: 0;
   padding-top: 0.5em;
   padding-bottom: 1em;
 }
-nav li {
+header nav li {
   display: inline-block;
   margin-right: 0.5em;
   margin-bottom: 0;
   padding-bottom: 0;
   white-space: nowrap;
 }
-nav li:last-child::after {
+header nav li:last-child::after {
   content: "✧";
   font-size: 1.3em;
   margin-left: 0.5em;
   color: pink;
   font-weight: normal;
 }
-nav li::before {
+header nav li::before {
   content: "✧";
   font-size: 1.3em;
   margin-right: 0.5em;
   color: pink;
   font-weight: normal;
 }
-nav a {
+header nav a {
   text-decoration: none;
   padding: 0px 5px 3px 5px;
 }
-nav::-webkit-scrollbar-thumb {
+header nav::-webkit-scrollbar-thumb {
   background-color: rgba(161, 117, 197, 0.451);
 }
 
@@ -507,6 +507,7 @@ hr {
 
 .p-locality {
   font-size: 1.3em;
+  display: block;
 }
 
 .clock {
@@ -595,7 +596,7 @@ hr {
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateX(-175%);
   }
 }
 @media (prefers-reduced-motion) {
@@ -675,7 +676,6 @@ hr {
 :root {
   --web-rings-card: #f5ddff;
   --web-rings-font: rgb(92, 39, 92);
-  --web-rings-links: rgb(122, 78, 180);
   --web-rings-bg-light: rgb(255, 233, 251);
 }
 
@@ -698,20 +698,30 @@ hr {
   font-weight: 600;
   margin: 1em;
 }
-.web-rings p {
-  text-align: center;
-}
 .web-rings footer {
   border: none;
   font-size: smaller;
   text-align: center;
 }
 
-.string {
-  margin-left: 0.75em;
+.web-ring-item {
+  text-align: center;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 2em;
+  border: 1px dashed purple;
 }
-
-.web-ring-index {
+.web-ring-item p {
+  margin: 0;
+}
+.web-ring-item a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5em;
+}
+.web-ring-item .index {
+  font-size: larger;
   max-width: 50%;
 }
 
@@ -724,6 +734,22 @@ hr {
   scrollbar-color: rgb(171, 113, 189) transparent;
   scrollbar-width: thin;
 }
+.web-rings-list h3 {
+  text-align: center;
+  padding: 0.75em;
+  margin-top: 0;
+  letter-spacing: 0.2em;
+  font-stretch: expanded;
+  font-weight: 600;
+}
+.web-rings-list p:not(.web-ring-item p) {
+  display: block;
+  margin: 2em auto;
+  text-align: center;
+}
+.web-rings-list img {
+  image-rendering: pixelated;
+}
 .web-rings-list::-webkit-scrollbar-thumb {
   background-color: rgb(155, 96, 155) !important;
 }
@@ -733,47 +759,15 @@ hr {
 .web-rings-list::-webkit-scrollbar-track-piece {
   background-color: rgba(112, 23, 134, 0.281) !important;
 }
-.web-rings-list h3 {
-  text-align: center;
-  padding: 0.75em;
-  margin-top: 0;
-  letter-spacing: 0.2em;
-  font-stretch: expanded;
-  font-weight: 600;
-}
-.web-rings-list p {
-  margin: 0 auto;
-  padding: 0.5em;
-  border-bottom: 1px solid rgb(138, 85, 138);
-  display: block;
-}
-.web-rings-list p:first-of-type {
-  border-top: 1px solid rgb(138, 85, 138);
-}
-.web-rings-list img {
-  image-rendering: pixelated;
-}
-.web-rings-list a {
-  font-weight: 600;
-  font-size: larger;
-  display: inline-block;
-  padding: 0.5em;
-}
 
 .pending {
-  background-color: rgba(212, 82, 219, 0.1215686275);
-}
-
-.joined p:last-of-type {
-  border-top: 1px solid rgb(138, 85, 138);
-  border-bottom: none;
+  border-bottom: 2px dashed purple;
 }
 
 #resourceRing {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 1em 0;
 }
 #resourceRing span {
   height: 31px;
@@ -790,14 +784,16 @@ hr {
   padding-top: 1em;
   background-color: rgba(64, 224, 208, 0.178);
   width: 70%;
-}
-#vocaring p {
-  border: unset;
+  text-align: center;
 }
 #vocaring .title {
   font-size: 1.5em;
   font-weight: 600;
   font-stretch: expanded;
+  margin: 0 auto;
+}
+#vocaring p {
+  margin: 0 auto;
 }
 #vocaring a {
   display: inline;
@@ -834,15 +830,15 @@ hr {
     font-size: 1.2em;
     padding-top: 0;
   }
+  header nav {
+    font-size: 0.9em;
+  }
   article {
     -moz-columns: 2;
          columns: 2;
     -moz-column-gap: 15vw;
          column-gap: 15vw;
     padding: 5vh 10vw 10vh;
-  }
-  nav {
-    font-size: 0.9em;
   }
   main {
     font-size: 0.9em;
@@ -872,7 +868,7 @@ hr {
   header p {
     margin: 3vh auto;
   }
-  nav {
+  header nav {
     font-size: 1em;
   }
   main {
@@ -907,14 +903,14 @@ hr {
     font-size: clamp(1.5em, 3vw, 1.75em);
     line-height: 1.5em;
   }
-  h1 {
-    line-height: 1.5em;
-  }
-  nav {
+  header nav {
     padding-left: 5%;
     overflow-x: auto;
     white-space: nowrap;
     font-size: 0.95em;
+  }
+  h1 {
+    line-height: 1.5em;
   }
   main {
     font-size: 1em;
@@ -951,16 +947,16 @@ hr {
   body {
     font-size: 1em;
   }
+  header .top {
+    width: 80%;
+    margin: auto;
+    padding-top: 3vh;
+  }
   header hgroup {
     margin-right: 0;
   }
   header hgroup p {
     font-size: 1.25em;
-  }
-  header .top {
-    width: 80%;
-    margin: auto;
-    padding-top: 3vh;
   }
   h1 {
     margin-top: 0;

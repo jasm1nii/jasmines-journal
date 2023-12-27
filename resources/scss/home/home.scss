@@ -51,14 +51,14 @@ body {
 
 header {
   font-weight: normal;
-  & .top {
+  .top {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     margin: 0 5%;
     padding: 3vh 0;
   }
-  & hgroup p {
+  hgroup p {
     font-family: var(--font-2);
     font-size: 1.5em;
     letter-spacing: .05em;
@@ -79,14 +79,14 @@ h1 {
 }
 
 nav {
-  & #home a {
+  #home a {
     text-decoration: wavy underline 1px;
   }
 }
 
 main {
   margin: auto;
-  & a {
+  a {
     font-weight: 600;
   }
 }
@@ -182,7 +182,7 @@ a {
 
 .note {
   border-radius: initial;
-  & p {
+  p {
     padding-left: 1em;
     padding-right: 1em;
     font-size: 1.05em;

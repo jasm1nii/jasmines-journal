@@ -28,13 +28,12 @@
         color: rgb(223, 154, 236);
     }
 
-    a,
-    .web-rings a {
+    a {
         color: var(--dark-mode-links);
-    }
-    a:hover {
-        background-color: var(--link-hover-bg-dark);
-        color: white;
+        &:hover {
+            background-color: var(--link-hover-bg-dark);
+            color: white;
+        }
     }
 
     button,
@@ -142,6 +141,17 @@
         h2 {
             color: rgb(170, 140, 219);
         }
+        a {
+            color: rgb(255, 194, 255);
+            &:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(95, 25, 112);
+            }
+        }
+    }
+
+    .web-ring-item {
+        background-color: rgb(58, 49, 58);
     }
 
     .guestbook {

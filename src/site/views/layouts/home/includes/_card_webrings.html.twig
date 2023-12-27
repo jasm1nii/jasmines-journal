@@ -11,26 +11,20 @@
     <section class="web-rings-list">
       <section class="pending">
         <h3 id="pending-web-rings">pending</h3>
-
-        <p>
-          <span>
-            <a href="https://loop.graycot.dev/webring.html?action=prev" aria-label="loop ring: previous site" rel="external">←</a>
-            <a href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a>
-            <a href="https://loop.graycot.dev/webring.html?action=next" aria-label="loop ring: next site" rel="external">→</a>
-          </span>
-          <br/>
-          <span>
-            <small>
-              <a href="https://loop.graycot.dev/webring.html?action=rand" rel="external" aria-label="loop ring: random site">random</a> <span aria-hidden="true">|</span> <a href="https://loop.graycot.dev/webring.html?action=list" rel="external" aria-label="loop ring: member list">member list</a>
-            </small>
-          </span>
-        </p>
+        <section class="web-ring-item">
+          <p>
+            <a href="https://loop.graycot.dev/webring.html?action=prev" aria-label="loop ring: previous site" rel="external">←</a> <a class="index" href="https://loop.graycot.dev/webring.html?action=home" rel="external">loop ring</a> <a href="https://loop.graycot.dev/webring.html?action=next" aria-label="loop ring: next site" rel="external">→</a>
+          </p>
+          <p>
+            <a href="https://loop.graycot.dev/webring.html?action=rand" rel="external" aria-label="loop ring: random site">random</a> | <a href="https://loop.graycot.dev/webring.html?action=list" rel="external" aria-label="loop ring: member list">member list</a>
+          </p>
+        </section>
       </section>
 
       <section class="joined">
         <h3 id="joined-web-rings">joined</h3>
 
-        <p id="resourceRing"></p>
+        <section id="resourceRing"></section>
 
         <p>
           <a href="https://indieseek.xyz/" rel="external"><img src="{{ src }}/indieseek.gif" alt="indieseek.xyz directory" width="88" height="31" loading="lazy"/></a>
@@ -40,28 +34,33 @@
           <a href="https://pinkvampyr.leprd.space/accessiblenet/" rel="external"><img src="{{ src }}/accessiblenet88x31.png" alt="accessible net directory" width="88" height="31" loading="lazy"/></a>
         </p>
 
-        <p>
-          <a href="https://xn--sr8hvo.ws/previous" rel="external" aria-label="indieweb ring: previous site">←</a> <a href="https://xn--sr8hvo.ws" rel="external">indieweb ring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" aria-label="indieweb ring: next site">→</a>
+        <p class="web-ring-item">
+            <a href="https://xn--sr8hvo.ws/previous" rel="external" aria-label="indieweb ring: previous site">←</a> <a class="index" href="https://xn--sr8hvo.ws" rel="external">indieweb ring</a> <a href="https://xn--sr8hvo.ws/next" rel="external" aria-label="indieweb ring: next site">→</a>
         </p>
 
         <p>
-          <a href="https://pastels.minty.nu/" rel="external"><img src="{{ src }}/100x50-mallows.gif" width="100" height="50" alt="pastel colours fanlisting" loading="lazy" /></a>
+          <a href="https://pastels.minty.nu/" rel="external"><img src="{{ src }}/100x50-mallows.gif" width="100" height="50" alt="pastel colours fanlisting" loading="lazy"/></a>
         </p>
 
-        <ring-900 site="https://jasm1nii.xyz/"></ring-900>
+        <section class="web-ring-item">
+          <ring-900 site="https://jasm1nii.xyz/"></ring-900>
+        </section>
         
-        <p>
-          <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" aria-label="fediring: previous site">←</a> <a href="https://fediring.net/" rel="external">fediring</a> <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" aria-label="fediring: next site">→</a>
-          <br/>
-          <small><a href="https://fediring.net/random" rel="external" aria-label="fediring: random site">random</a></small>
-        </p>
+        <section class="web-ring-item">
+          <p>
+            <a href="https://fediring.net/previous?host=jasm1nii.xyz" rel="external" aria-label="fediring: previous site">←</a> <a class="index" href="https://fediring.net/" rel="external">fediring</a> <a href="https://fediring.net/next?host=jasm1nii.xyz" rel="external" aria-label="fediring: next site">→</a>
+          </p>
+          <p>
+            <a href="https://fediring.net/random" rel="external" aria-label="fediring: random site">random</a>
+          </p>
+        </section>
 
         <p>
           <a href="https://macaque.moe/trickyfox/" rel="external" aria-label="linked clique">LINKED!</a> <img src="{{ src }}/linked.png" width="20" height="20" alt="" loading="lazy"/> blaze the cat
         </p>
 
         <p>
-          <img src="{{ src }}/angelic-left.png" width="20" height="20" alt="" loading="lazy" /><span class="string">i am<a href="https://macaque.moe/trickyfox/" rel="external">angelic <span aria-hidden="true">♥</span></a></span> <img src="{{ src }}/angelic-right.png" width="20"  height="20" alt="" loading="lazy" />
+          <img src="{{ src }}/angelic-left.png" width="20" height="20" alt="" loading="lazy"/> <a href="https://macaque.moe/trickyfox/" rel="external">i am angelic <span aria-hidden="true">♥</span></a> <img src="{{ src }}/angelic-right.png" width="20" height="20" alt="" loading="lazy"/>
         </p>
 
         <p>
@@ -73,9 +72,9 @@
         </p>
 
         <p>
-          <a href="https://strawberry-gashes.neocities.org" rel="external"><img src="/_assets/media/main/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>
-          <a href="https://mizuki.world/healinghospital" rel="external"><img src="/_assets/media/main/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>
-          <a href="https://tsuinosora.neocities.org/" rel="external"><img src="/_assets/media/main/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>
+          <a href="https://strawberry-gashes.neocities.org" rel="external"><img src="{{ src }}/healing-hospital-left.png" width="40" height="40" alt="healing hospital webring: previous site" loading="lazy"/></a>
+          <a href="https://mizuki.world/healinghospital" rel="external"><img src="{{ src }}/healing-hospital.png" width="80" height="40" alt="healing hospital webring: index" loading="lazy"/></a>
+          <a href="https://tsuinosora.neocities.org/" rel="external"><img src="{{ src }}/healing-hospital-right.png" width="40" height="40" alt="healing hospital webing: next site" loading="lazy"/></a>
         </p>
 
         <p>
@@ -95,13 +94,13 @@
         <section id="vocaring">
           <p class="title">VOCALOID WEBRING</p>
           <p>
-            <a href='https://webring.adilene.net/' rel="external">index</a> <span aria-hidden="true">|</span> <a href='https://webring.adilene.net/members.php' rel="external">members</a>
+            <a href='https://webring.adilene.net/' rel="external">index</a> | <a href='https://webring.adilene.net/members.php' rel="external">members</a>
           </p>
           <img src='{{ src }}/vocaloid.png' width="100" height="100" alt="" loading="lazy"/>
         </section>
 
-        <p>
-          <a href="https://hotlinewebring.club/jasm1nii/previous" rel="external" aria-label="hotline webring: previous site">←</a> <a class="web-ring-index" href="https://hotlinewebring.club/" rel="external">hotline webring</a> <a href="https://hotlinewebring.club/jasm1nii/next" rel="external" aria-label="hotline webring: next site">→</a>
+        <p class="web-ring-item">
+          <a href="https://hotlinewebring.club/jasm1nii/previous" rel="external" aria-label="hotline webring: previous site">←</a> <a class="index" href="https://hotlinewebring.club/" rel="external">hotline webring</a> <a href="https://hotlinewebring.club/jasm1nii/next" rel="external" aria-label="hotline webring: next site">→</a>
         </p>
       </section>
     </section>

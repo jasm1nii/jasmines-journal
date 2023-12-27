@@ -8,22 +8,22 @@
         }
         header {
             padding-top: 2vh;
-            & hgroup {
+            hgroup {
                 margin-right: 20vw;
-                & p {
-                font-size: clamp(1.5em, 3vw, 1.75em);
-                line-height: 1.5em;
+                p {
+                    font-size: clamp(1.5em, 3vw, 1.75em);
+                    line-height: 1.5em;
                 }
+            }
+            nav {
+                padding-left: 5%;
+                overflow-x: auto;
+                white-space: nowrap;
+                font-size: .95em;
             }
         }
         h1 {
             line-height: 1.5em;
-        }
-        nav {
-            padding-left: 5%;
-            overflow-x: auto;
-            white-space: nowrap;
-            font-size: .95em;
         }
         main {
             font-size: 1em;

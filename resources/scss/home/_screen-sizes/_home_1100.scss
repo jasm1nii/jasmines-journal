@@ -4,13 +4,15 @@
             font-size: 1.2em;
             padding-top: 0;
         }
+        header {
+            nav {
+                font-size: .9em;
+            }
+        }
         article {
             columns: 2;
             column-gap: 15vw;
             padding: 5vh 10vw 10vh;
-        }
-        nav {
-            font-size: .9em;
         }
         main {
             font-size: .9em;
