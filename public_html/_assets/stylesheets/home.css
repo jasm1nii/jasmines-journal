@@ -583,7 +583,7 @@ hr {
 #song {
   white-space: nowrap;
   transform: translateX(0);
-  animation: scroll 15s linear infinite;
+  animation: scroll 18s linear infinite;
   font-weight: 500;
   font-size: larger;
 }
