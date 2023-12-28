@@ -11,7 +11,7 @@
         const originalParent = image.parentElement;
         const previewContainer = document.createElement('div');
 
-        originalParent.insertAdjacentElement('afterbegin', previewContainer);
+        originalParent.insertAdjacentElement('beforeend', previewContainer);
         previewContainer.style.position = 'relative';
         previewContainer.replaceChildren(image);
 
