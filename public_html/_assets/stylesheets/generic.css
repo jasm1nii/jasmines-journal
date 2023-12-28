@@ -171,16 +171,21 @@ a {
 a:hover {
   background-color: rgb(141, 76, 97);
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 button {
   padding: 0.5em;
   font-size: 1.2em;
-  background-color: rgba(128, 0, 128, 0.267);
   border: 1px solid purple;
-  border-radius: 5px;
+  background-color: transparent;
   cursor: pointer;
+}
+button:hover {
+  background-color: rgba(128, 0, 128, 0.25);
+}
+button:active {
+  background-color: burlywood;
 }
 
 ::-moz-selection {
