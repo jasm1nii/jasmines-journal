@@ -317,11 +317,6 @@ article > section footer {
   border-top: 1px dashed thistle;
 }
 
-.greeting {
-  font-size: x-large;
-  letter-spacing: 0.1em;
-}
-
 .overflow {
   max-height: 30vh;
   overflow-y: auto;
@@ -460,8 +455,8 @@ a:hover {
   border-radius: initial;
 }
 .note p {
-  padding-left: 1em;
-  padding-right: 1em;
+  /*padding-left: 1em;
+  padding-right: 1em;*/
   font-size: 1.05em;
 }
 
@@ -526,7 +521,7 @@ hr {
   font-size: 3.5em;
   line-height: 100%;
   letter-spacing: 0.025em;
-  min-height: 50px;
+  height: 60px;
   width: 80%;
 }
 
@@ -852,9 +847,6 @@ hr {
   }
   .p-note {
     font-size: 0.9em;
-  }
-  .last-played {
-    max-width: 270px;
   }
 }
 @media all and (max-width: 900px) {

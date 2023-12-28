@@ -127,11 +127,6 @@ article > section {
   }
 }
 
-.greeting {
-  font-size: x-large;
-  letter-spacing: .1em;
-}
-
 .overflow {
   max-height: 30vh;
   overflow-y: auto;
@@ -188,8 +183,8 @@ a {
 .note {
   border-radius: initial;
   p {
-    padding-left: 1em;
-    padding-right: 1em;
+    /*padding-left: 1em;
+    padding-right: 1em;*/
     font-size: 1.05em;
   }
 }
