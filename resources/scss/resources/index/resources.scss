@@ -156,36 +156,6 @@ details {
     }
 }
 
-footer {
-    font-size: smaller;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    margin-top: 7em;
-    margin-bottom: 3em;
-    letter-spacing: .05em;
-    border-top: 1px solid;
-    & time {
-        font-weight: 600;
-    }
-    & ul {
-        padding: 0;
-        list-style-type: none;
-    }
-    & li {
-        display: inline-block;
-        margin-right: 1em;
-        &:nth-child(1)::before {
-            content: none;
-        }
-        &::before {
-            content: "⬩";
-            font-size: 1.25em;
-            margin-right: 1em;
-        }
-    }
-}
-
 hr {
     border: 1px dashed pink;
     margin-top: 2em;
@@ -213,5 +183,5 @@ button {
     }
 }
 
-@include screen-1100();
-@include screen-768();
+@include screen-1100;
+@include screen-768;

@@ -7,8 +7,7 @@
         }
         header {
             margin: 5% auto;
-            padding-left: 5%;
-            padding-right: 5%;
+            padding: 0 5%;
             max-width: none;
             position: static;
             nav {
@@ -47,6 +46,9 @@
         main {
             margin: auto;
             font-size: 1em;
+            img {
+                margin: 1vh auto;
+            }
         }
         article {
             > section {
@@ -62,8 +64,8 @@
         h2 {
             padding-right: 5vw;
         }
-        img {
-            margin: 1vh auto;
+        footer {
+            font-size: smaller;
         }
     }
 }

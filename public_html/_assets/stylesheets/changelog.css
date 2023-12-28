@@ -12,12 +12,6 @@
     opacity: 1;
   }
 }
-header, main, footer {
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-}
-
 * {
   scrollbar-width: thin;
 }
@@ -33,6 +27,9 @@ body {
   font-size: 1.1em;
   line-height: 1.5em;
   background-color: rgb(63, 49, 63);
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
 }
 
 a {
@@ -211,10 +208,7 @@ h4:after {
 
 hr {
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
   border: 1px dashed plum;
 }
 
@@ -230,40 +224,42 @@ button:hover {
 }
 
 footer {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
+  margin: 3em auto;
   text-align: center;
-  font-size: 0.9em;
-  width: 80%;
-}
-footer nav {
-  border-bottom: 1px solid rgb(177, 137, 177);
-  padding-bottom: 3em;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3em;
-  font-size: larger;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
 footer ul {
-  padding: 0;
-  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
 }
-footer li {
-  display: inline-block;
-  margin-right: 15px;
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
 }
-footer li:first-child::before {
+footer li:not(ul:last-of-type li)::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin: 0 1em;
+}
+footer li:not(ul:last-of-type li):first-of-type::before {
   content: none;
 }
-footer li::before {
-  content: "⬩";
-  font-size: 20px;
-  margin-right: 15px;
+footer a img {
+  text-decoration: none;
 }
-footer time {
-  font-weight: 600;
+
+main + footer {
+  max-width: 90%;
 }
 
 ::-moz-selection {
@@ -363,5 +359,8 @@ footer time {
   article > h2 {
     text-align: center;
     margin-top: 1em;
+  }
+  footer {
+    font-size: smaller;
   }
 }/*# sourceMappingURL=changelog.css.map */

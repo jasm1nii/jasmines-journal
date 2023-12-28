@@ -17,12 +17,6 @@
     opacity: 1;
   }
 }
-header, main, footer {
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-}
-
 * {
   scrollbar-width: thin;
 }
@@ -45,6 +39,9 @@ body {
        column-gap: 3em;
   justify-content: space-between;
   background-color: rgb(65, 55, 65);
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
 }
 
 a {
@@ -158,6 +155,11 @@ main {
   line-height: 1.6em;
   margin: auto;
 }
+main img {
+  width: 100%;
+  display: block;
+  margin: 1.5em auto;
+}
 
 section ul {
   list-style-position: inside;
@@ -245,10 +247,7 @@ summary h3 {
 
 hr {
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
   border: 1px dashed plum;
 }
 
@@ -274,42 +273,6 @@ a:hover {
   background-color: palevioletred;
   text-decoration: none;
   color: white !important;
-}
-
-img {
-  width: 100%;
-  display: block;
-  margin: 1.5em auto;
-}
-
-main + footer {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
-  text-align: center;
-  width: 90%;
-  opacity: 0.8;
-}
-main + footer ul {
-  padding: 0;
-  list-style-type: none;
-}
-main + footer li {
-  display: inline-block;
-  margin-right: 15px;
-}
-main + footer li::before {
-  content: "⬩";
-  font-size: 20px;
-  margin-right: 15px;
-}
-main + footer li:first-child::before {
-  content: none;
-}
-main + footer time {
-  font-weight: 600;
 }
 
 button {
@@ -347,6 +310,45 @@ button:hover {
   background-color: plum;
 }
 
+footer {
+  margin: 3em auto;
+  text-align: center;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+}
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+}
+footer li:not(ul:last-of-type li)::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin: 0 1em;
+}
+footer li:not(ul:last-of-type li):first-of-type::before {
+  content: none;
+}
+footer a img {
+  text-decoration: none;
+}
+
+main + footer {
+  max-width: 90%;
+}
+
 @media all and (max-width: 1100px) {
   header {
     max-width: none;
@@ -363,8 +365,7 @@ button:hover {
   }
   header {
     margin: 5% auto;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0 5%;
     max-width: none;
     position: static;
   }
@@ -400,6 +401,9 @@ button:hover {
     margin: auto;
     font-size: 1em;
   }
+  main img {
+    margin: 1vh auto;
+  }
   article > section {
     border-left: none;
     border-right: none;
@@ -412,7 +416,7 @@ button:hover {
   h2 {
     padding-right: 5vw;
   }
-  img {
-    margin: 1vh auto;
+  footer {
+    font-size: smaller;
   }
 }/*# sourceMappingURL=about.css.map */

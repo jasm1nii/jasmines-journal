@@ -4,6 +4,7 @@
 
 @use '../_shared/components/scrollbar' as *;
 @use '../_shared/components/webkit_scrollbar' as *;
+@use '../_shared/components/footer_1' as *;
 
 :root {
     --font-1: 'Instrument Sans', sans-serif;
@@ -52,36 +53,7 @@ hr {
   margin: 2em 0;
 }
 
-footer {
-  margin: auto;
-  padding: 1em;
-  border-top: 1px solid;
-  text-align: center;
-  font-size: .9em;
-  font-stretch: semi-expanded;
-}
-footer ul {
-   list-style-type: none;
-   padding-left: 0;
-}
-footer li:first-child:before {
-   content: none;
-}
-footer li::before {
-   content: "⬩";
-   font-size: 1.25em;
-   margin-right: 15px;
-}
-footer li {
-   display: inline-block;
-   margin-right: 15px;
-}
-footer time {
-    display: inline;
-}
-footer a img {
-    text-decoration: none
-}
+@include footer-style-1;
 
 a {
     background-color: transparent;
@@ -117,4 +89,4 @@ button {
     color: black;
 }
 
-@include webkit-scrollbar-style-1();
+@include webkit-scrollbar-style-1;

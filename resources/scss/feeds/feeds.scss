@@ -3,7 +3,7 @@
 @use '../_shared/components/nav_1' as *;
 @use '_screen-sizes/900' as *;
 
-@include nav-style-1();
+@include nav-style-1;
 
 main {
   margin: auto;
@@ -140,4 +140,4 @@ form {
   margin-left: 1em;
 }
 
-@include screen-900();
+@include screen-900;

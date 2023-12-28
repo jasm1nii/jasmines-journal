@@ -4,7 +4,7 @@
 @use '_screen-sizes/entry_800' as *;
 @use '_screen-sizes/entry_500' as *;
 
-@include theme.base($override_footer: true, $add_comments: true);
+@include theme.base($override_footer: false, $add_comments: true);
 
 body {
     font-stretch: normal;
@@ -168,32 +168,8 @@ summary {
 }
 
 .layout + footer {
-    font-size: 1em;
-    margin-top: 3em;
-    margin-bottom: 3em;
     width: 70%;
-    text-align: center;
-    time {
-        font-weight: 600;
-    }
-    ul {
-        padding: 0;
-        list-style-type: none;
-    }
-    li {
-        display: inline;
-        margin-right: 1em;
-        &::before {
-            content: "⬩";
-            font-size: 1.25em;
-            margin-right: 1em;
-        }
-        &:first-child {
-            &::before {
-                content: none;
-            }
-        }
-    }
+    margin-left: 0;
 }
 
 @include screen-800();

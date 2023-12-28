@@ -13,15 +13,6 @@
     opacity: 1;
   }
 }
-/* animations */
-header,
-main,
-footer {
-  opacity: 0;
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
-}
-
 html {
   scrollbar-color: rgb(184, 140, 184) transparent;
   scrollbar-width: thin;
@@ -135,30 +126,39 @@ h4 {
   letter-spacing: 0.1em;
 }
 
-main + footer {
-  margin: 5vh auto;
+footer {
+  margin: 3em auto;
   text-align: center;
   font-size: 1em;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
-main + footer ul {
-  padding: 0;
-  list-style-type: none;
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
 }
-main + footer li {
-  display: inline-block;
-  margin-right: 1em;
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
 }
-main + footer li::before {
+footer li:not(ul:last-of-type li)::before {
   content: "⬩";
-  font-size: 20px;
-  margin-right: 15px;
+  font-size: 1.25em;
+  margin: 0 1em;
 }
-main + footer li:first-child::before {
+footer li:not(ul:last-of-type li):first-of-type::before {
   content: none;
 }
-main + footer li time {
-  font-weight: 600;
+footer a img {
+  text-decoration: none;
 }
 
 a {
@@ -169,7 +169,7 @@ a {
   text-decoration-thickness: 1px;
 }
 a:hover {
-  background-color: rgb(124, 49, 74);
+  background-color: rgb(141, 76, 97);
   text-decoration: none;
   color: white;
 }

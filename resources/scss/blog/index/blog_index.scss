@@ -170,5 +170,5 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
-@include screen-768();
-@include screen-500();
+@include screen-768;
+@include screen-500;

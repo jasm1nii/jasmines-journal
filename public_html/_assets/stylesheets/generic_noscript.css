@@ -64,6 +64,9 @@
   a {
     color: var(--light-a);
   }
+  a:hover {
+    color: white;
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {

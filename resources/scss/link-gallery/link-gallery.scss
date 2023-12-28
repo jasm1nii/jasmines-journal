@@ -199,7 +199,9 @@ hr {
 
 time {
   font-weight: 600;
-  display: block;
+  &:not(footer time) {
+    display: block;
+  }
 }
 
 @include screen-1100();

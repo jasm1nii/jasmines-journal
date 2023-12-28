@@ -63,6 +63,9 @@
 .light-mode a {
   color: var(--light-a);
 }
+.light-mode a:hover {
+  color: white;
+}
 
 .dark-mode {
   background-color: black;

@@ -97,34 +97,34 @@ header nav::-webkit-scrollbar-thumb {
 }
 
 footer {
-  margin-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 2em;
+  margin: 3em auto;
   text-align: center;
   font-size: 1em;
-  width: 50%;
-  height: -moz-fit-content;
-  height: fit-content;
-  max-width: 500px;
-}
-footer time {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
 footer ul {
-  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
   padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
 }
-footer li {
-  display: inline-block;
-  margin-right: 15px;
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
 }
-footer li::before {
+footer li:not(ul:last-of-type li)::before {
   content: "⬩";
   font-size: 1.25em;
-  margin-right: 15px;
+  margin: 0 1em;
 }
-footer li:first-child:before {
+footer li:not(ul:last-of-type li):first-of-type::before {
   content: none;
 }
 footer a img {
@@ -397,6 +397,8 @@ hr {
 
 time {
   font-weight: 600;
+}
+time:not(footer time) {
   display: block;
 }
 

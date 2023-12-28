@@ -63,38 +63,36 @@ hr {
 }
 
 footer {
-  margin: auto;
-  padding: 1em;
-  border-top: 1px solid;
+  margin: 3em auto;
   text-align: center;
-  font-size: 0.9em;
-  font-stretch: semi-expanded;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
-
 footer ul {
-  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
   padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
 }
-
-footer li:first-child:before {
-  content: none;
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
 }
-
-footer li::before {
+footer li:not(ul:last-of-type li)::before {
   content: "⬩";
   font-size: 1.25em;
-  margin-right: 15px;
+  margin: 0 1em;
 }
-
-footer li {
-  display: inline-block;
-  margin-right: 15px;
+footer li:not(ul:last-of-type li):first-of-type::before {
+  content: none;
 }
-
-footer time {
-  display: inline;
-}
-
 footer a img {
   text-decoration: none;
 }

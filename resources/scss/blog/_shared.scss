@@ -2,7 +2,7 @@
 
 // @use '../_shared/components/loader' as *;
 @use '../_shared/components/header_2' as *;
-@use '../_shared/components/footer_2' as *;
+@use '../_shared/components/footer_1' as *;
 @use '../_shared/components/links_1' as *;
 @use '../_shared/components/buttons_1' as *;
 @use '../_shared/components/scrollbar' as *;
@@ -23,8 +23,8 @@
         color: white;
         font-weight: 500;
         font-family: 'Inconsolata', monospace;
-        @include scrollbar-style-2();
-        @include fadeIn();
+        @include scrollbar-style-2;
+        @include fadeIn;
         background-color: rgb(45, 42, 48);
         // transition: all 0.25s ease-out;
     }
@@ -36,16 +36,16 @@
     // @include add-loader($width: auto, $min-width: 50%, $max-width: 75%, $left: 21%);
 
     @if $override_header == false {
-        @include header-style-2();
+        @include header-style-2;
     }
 
     @if $override_footer == false {
-        @include footer-style-2();
+        @include footer-style-1;
     }
 
     @if $add_comments == true {
         @import url('cactus-chat.css');
-        @include comments-webmentions();
+        @include comments-webmentions;
     }
 
     hr {
@@ -62,7 +62,7 @@
         color: black;
     }
 
-    @include webkit-scrollbar-style-1();
+    @include webkit-scrollbar-style-1;
 
 }
 

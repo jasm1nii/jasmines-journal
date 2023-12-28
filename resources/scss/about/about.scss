@@ -4,20 +4,17 @@
 @use '../_shared/animations/fade-in' as *;
 @use '../_shared/components/scrollbar' as *;
 @use '../_shared/components/webkit_scrollbar' as *;
+@use '../_shared/components/footer_1' as *;
 
-@use '_screen-sizes/768' as *;
 @use '_screen-sizes/1100' as *;
-
-header, main, footer {
-  @include fadeIn();
-}
+@use '_screen-sizes/768' as *;
 
 * {
   scrollbar-width: thin;
 }
 
 html {
-  @include scrollbar-style-1();
+  @include scrollbar-style-1;
 }
 
 body {
@@ -32,6 +29,7 @@ body {
   column-gap: 3em;
   justify-content: space-between;
   background-color: rgb(65, 55, 65);
+  @include fadeIn;
 }
 
 a {
@@ -144,20 +142,25 @@ main {
   font-size: 1.05em;
   line-height: 1.6em;
   margin: auto;
+  img {
+    width: 100%;
+    display: block;
+    margin: 1.5em auto;
+  }
 }
 
 section {
-  & ul {
+  ul {
     list-style-position: inside;
     padding: 0;
   }
-  & li {
+  li {
     border-bottom: 1px solid;
     padding: 1em;
     &:first-child {
       padding-top: 0;
     }
-    & li {
+    li {
       border: none;
       padding-bottom: 0;
     }
@@ -198,7 +201,7 @@ article {
 
 #soundcloud {
   padding: 0 1em 1em 1.5em;
-  & h2 {
+  h2 {
     text-align: left;
     text-transform: uppercase;
     letter-spacing: .1em;
@@ -243,10 +246,7 @@ summary {
 
 hr {
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
   border: 1px dashed plum;
 }
 
@@ -273,42 +273,6 @@ a {
   }
 }
 
-img {
-  width: 100%;
-  display: block;
-  margin: 1.5em auto;
-}
-
-main + footer {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
-  text-align: center;
-  width: 90%;
-  opacity: .8;
-  & ul {
-    padding: 0;
-    list-style-type: none;
-  }
-  & li {
-    display: inline-block;
-    margin-right: 15px;
-    &::before {
-      content: "⬩";
-      font-size: 20px;
-      margin-right: 15px;
-    }
-    &:first-child::before {
-      content: none;
-    }
-  }
-  & time {
-    font-weight: 600;
-  }
-}
-
 button {
   cursor: pointer;
   background-color: transparent;
@@ -326,6 +290,11 @@ button {
 }
 
 @include webkit-scrollbar-style-1;
+
+@include footer-style-1;
+main + footer {
+  max-width: 90%;
+}
 
 @include screen-1100;
 @include screen-768;

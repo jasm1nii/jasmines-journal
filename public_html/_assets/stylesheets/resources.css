@@ -89,6 +89,41 @@ ul dd {
   margin-left: 0;
 }
 
+footer {
+  margin: 3em auto;
+  text-align: center;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+}
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+}
+footer li:not(ul:last-of-type li)::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin: 0 1em;
+}
+footer li:not(ul:last-of-type li):first-of-type::before {
+  content: none;
+}
+footer a img {
+  text-decoration: none;
+}
+
 ::-moz-selection {
   background-color: rgb(248, 208, 170);
   color: black;
@@ -262,36 +297,6 @@ article > p:first-child {
 
 details p {
   margin-left: 3em;
-}
-
-footer {
-  font-size: smaller;
-  text-align: center;
-  width: 80%;
-  margin: auto;
-  margin-top: 7em;
-  margin-bottom: 3em;
-  letter-spacing: 0.05em;
-  border-top: 1px solid;
-}
-footer time {
-  font-weight: 600;
-}
-footer ul {
-  padding: 0;
-  list-style-type: none;
-}
-footer li {
-  display: inline-block;
-  margin-right: 1em;
-}
-footer li:nth-child(1)::before {
-  content: none;
-}
-footer li::before {
-  content: "⬩";
-  font-size: 1.25em;
-  margin-right: 1em;
 }
 
 hr {

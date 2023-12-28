@@ -292,7 +292,11 @@ main + footer ul {
   display: inline-flex;
   flex-wrap: wrap;
   list-style-position: inside;
+  align-items: center;
   margin-right: -1em;
+}
+main + footer ul:last-of-type {
+  list-style: none;
 }
 main + footer li {
   margin-bottom: 1em;

@@ -97,30 +97,38 @@ h1 {
 }
 
 footer {
-  font-size: smaller;
-  margin-top: 3em auto 5em;
-  width: 100%;
-  letter-spacing: 0.05em;
+  margin: 3em auto;
   text-align: center;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
 footer ul {
-  padding: 0;
-  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
 }
-footer li {
-  display: inline-block;
-  margin-right: 1em;
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
 }
-footer li::before {
+footer li:not(ul:last-of-type li)::before {
   content: "⬩";
   font-size: 1.25em;
-  margin-right: 1em;
+  margin: 0 1em;
 }
-footer li:first-child::before {
+footer li:not(ul:last-of-type li):first-of-type::before {
   content: none;
 }
-footer time {
-  font-weight: 600;
+footer a img {
+  text-decoration: none;
 }
 
 hr {

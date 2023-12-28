@@ -98,6 +98,41 @@ h1 {
   font-size: 2em;
 }
 
+footer {
+  margin: 3em auto;
+  text-align: center;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+}
+footer ul:last-of-type {
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+}
+footer li:not(ul:last-of-type li)::before {
+  content: "⬩";
+  font-size: 1.25em;
+  margin: 0 1em;
+}
+footer li:not(ul:last-of-type li):first-of-type::before {
+  content: none;
+}
+footer a img {
+  text-decoration: none;
+}
+
 :root, :host {
   --seia-color-bg: transparent !important;
 }
@@ -326,30 +361,8 @@ summary {
 }
 
 .layout + footer {
-  font-size: 1em;
-  margin-top: 3em;
-  margin-bottom: 3em;
   width: 70%;
-  text-align: center;
-}
-.layout + footer time {
-  font-weight: 600;
-}
-.layout + footer ul {
-  padding: 0;
-  list-style-type: none;
-}
-.layout + footer li {
-  display: inline;
-  margin-right: 1em;
-}
-.layout + footer li::before {
-  content: "⬩";
-  font-size: 1.25em;
-  margin-right: 1em;
-}
-.layout + footer li:first-child::before {
-  content: none;
+  margin-left: 0;
 }
 
 @media all and (max-width: 800px) {
