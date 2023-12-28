@@ -100,7 +100,7 @@ article {
 
 article > section {
   padding: 1em;
-  margin: 0 auto 75px;
+  margin: 0 auto 10vh;
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px;
   break-inside: avoid;
@@ -125,6 +125,11 @@ article > section {
     padding: 1em 0px 1.5em;
     border-top: 1px dashed thistle;
   }
+}
+
+.greeting {
+  font-size: x-large;
+  letter-spacing: .1em;
 }
 
 .overflow {
