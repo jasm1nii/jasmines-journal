@@ -289,7 +289,7 @@ article {
 
 article > section {
   padding: 1em;
-  margin: 0 auto 10vh;
+  margin: 0 auto 75px;
   border: 1px solid rgb(190, 133, 141);
   border-radius: 15px;
   -moz-column-break-inside: avoid;
@@ -455,8 +455,6 @@ a:hover {
   border-radius: initial;
 }
 .note p {
-  /*padding-left: 1em;
-  padding-right: 1em;*/
   font-size: 1.05em;
 }
 
