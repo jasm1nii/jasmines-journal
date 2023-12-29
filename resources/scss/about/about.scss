@@ -142,6 +142,14 @@ main {
   font-size: 1.05em;
   line-height: 1.6em;
   margin: auto;
+  footer {
+    font-size: smaller;
+    margin: 1em auto;
+    a {
+      display: inline;
+      width: fit-content;
+    }
+  }
   img {
     width: 100%;
     display: block;
@@ -173,7 +181,7 @@ article {
     margin-top: 2em;
     margin-bottom: 2em;
     padding: 0 2em;
-    p, dl, footer {
+    p, dl {
       padding-left: 2em;
     }
     ul {
@@ -188,11 +196,6 @@ article {
           margin: 0;
           padding: 0;
           display: inline;
-          ~ footer {
-            padding: 0;
-            text-align: center;
-            font-size: smaller;
-          }
         }
       }
     }

@@ -118,13 +118,6 @@ article > section {
     border-radius: 50px;
     font-family: var(--font-3);
   }
-  footer {
-    width: 100%;
-    text-align: left;
-    margin-top: 2em;
-    padding: 1em 0px 1.5em;
-    border-top: 1px dashed thistle;
-  }
 }
 
 .overflow {
@@ -151,6 +144,7 @@ a {
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
+  width: fit-content;
   &:hover {
     text-decoration: none;
   }

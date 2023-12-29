@@ -155,6 +155,15 @@ main {
   line-height: 1.6em;
   margin: auto;
 }
+main footer {
+  font-size: smaller;
+  margin: 1em auto;
+}
+main footer a {
+  display: inline;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 main img {
   width: 100%;
   display: block;
@@ -183,7 +192,7 @@ article > section {
   margin-bottom: 2em;
   padding: 0 2em;
 }
-article > section p, article > section dl, article > section footer {
+article > section p, article > section dl {
   padding-left: 2em;
 }
 article > section ul {
@@ -196,11 +205,6 @@ article > section ul li p {
   margin: 0;
   padding: 0;
   display: inline;
-}
-article > section ul li p ~ footer {
-  padding: 0;
-  text-align: center;
-  font-size: smaller;
 }
 
 #soundcloud {

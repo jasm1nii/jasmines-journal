@@ -96,4 +96,7 @@
   a {
     color: var(--dark-a);
   }
+  a:hover {
+    color: white;
+  }
 }/*# sourceMappingURL=changelog_noscript.css.map */

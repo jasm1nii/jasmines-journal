@@ -93,4 +93,7 @@
 }
 .dark-mode a {
   color: var(--dark-a);
+}
+.dark-mode a:hover {
+  color: white;
 }/*# sourceMappingURL=changelog_theme.css.map */

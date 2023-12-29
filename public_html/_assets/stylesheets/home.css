@@ -309,13 +309,6 @@ article > section button {
   border-radius: 50px;
   font-family: var(--font-3);
 }
-article > section footer {
-  width: 100%;
-  text-align: left;
-  margin-top: 2em;
-  padding: 1em 0px 1.5em;
-  border-top: 1px dashed thistle;
-}
 
 .overflow {
   max-height: 30vh;
@@ -341,6 +334,8 @@ a {
   text-decoration-style: dashed;
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 a:hover {
   text-decoration: none;
@@ -618,8 +613,13 @@ hr {
 }
 .latest-status footer {
   margin: 1.5em auto 0;
+  padding: 1em 0 0;
   text-align: center;
-  padding-bottom: 0;
+  border-top: 1px dashed thistle;
+}
+.latest-status footer a {
+  display: block;
+  margin: 0 auto;
 }
 
 #latest-status {
