@@ -1,17 +1,22 @@
 @use '../shared' as theme;
 
+@use '_screen-sizes/1100' as *;
+@use '_screen-sizes/768' as *;
+@use '_screen-sizes/500' as *;
+
 @include theme.base;
 
 body {
     font-size: 1.1em;
     font-stretch: 95%;
+    letter-spacing: .01em;
     line-height: 1.5em;
-    max-width: 1250px;
+    max-width: 1500px;
     margin: auto;
 }
 
 #layout {
-    margin-top: 5%;
+    margin: 5vh 3vw;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -22,7 +27,7 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 2em;
-    max-width: min-content;
+    min-width: 20%;
     h1 {
         font-size: 1.5em;
     }
@@ -242,58 +247,6 @@ footer {
     }
 }
 
-@media all and (max-width: 1100px) {
-    #layout {
-        margin-top: 0;
-        flex-direction: column;
-    }
-    header {
-        position: relative;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 3vh;
-        text-align: right;
-        nav {
-            text-align: left;
-            li {
-                display: inline;
-                margin-right: .5em;
-                &:last-child::after {
-                    content: "✧";
-                    margin-left: .5em;
-                }
-            }
-        }
-    }
-    main {
-        margin-top: 5vh;
-    }
-}
-
-@media all and (max-width: 768px) {
-    body {
-        width: fit-content;
-    }
-    article {
-        display: block;
-    }
-    section {
-        border-right: none;
-        border-left: none;
-        margin-bottom: 3vh;
-        font-size: 1em;
-        &:first-of-type {
-            position: relative;
-        }
-    }
-    #legend, main nav {
-        margin: 5vh 5vw;
-    }
-}
-
-@media all and (max-width:500px) {
-    main {
-        width: fit-content;
-    }
-}
+@include screen-1100;
+@include screen-768;
+@include screen-500;

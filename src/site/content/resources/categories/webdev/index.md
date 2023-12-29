@@ -39,7 +39,11 @@
 
 - [the modern javascript tutorial](https://javascript.info/)
 
-- [javascript tutorial](https://www.javascripttutorial.net/)
+- [javascripttutorial.net](https://www.javascripttutorial.net/)
+
+- [you might not need jQuery](https://youmightnotneedjquery.com/) 👑
+
+    this is a good supplemental reference if you're a staunch vanilla javascript purist 👍
 
 #### PHP
 
@@ -47,7 +51,7 @@
 
 - [clean code PHP](https://github.com/piotrplenik/clean-code-php)
 
-- [PHP tutorial](https://www.phptutorial.net/)
+- [phptutorial.net](https://www.phptutorial.net/)
 
 - the official [PHP manual](https://www.php.net/docs.php)
 

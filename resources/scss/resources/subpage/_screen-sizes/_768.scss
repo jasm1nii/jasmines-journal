@@ -1,0 +1,36 @@
+@mixin screen-768 {
+    @media all and (max-width: 768px) {
+        body {
+            width: fit-content;
+        }
+        #layout {
+            margin: 0;
+        }
+        article {
+            display: block;
+            ul {
+                padding-right: 2vw;
+            }
+            dd:last-child {
+                margin-left: 1em;
+            }
+        }
+        section {
+            border-right: none;
+            border-left: none;
+            margin-bottom: 3vh;
+            font-size: 1em;
+            &:first-of-type {
+                position: relative;
+            }
+            li {
+                p:not(li:first-child) {
+                    margin-left: 0;
+                }
+            }
+        }
+        #legend, main nav {
+            margin: 5vh 5vw;
+        }
+    }
+}

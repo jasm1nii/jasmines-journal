@@ -73,6 +73,28 @@ monthly bandwidth
 notes
 :   a flexible site builder geared towards single-page sites. mobile-friendly editor!
 
+#### [tilda](https://tilda.cc/)
+
+host location
+:   united states
+
+pricing
+:   free and paid (15-25 USD per month)
+
+total sites
+:   - free - 1 site
+    - paid - 5 sites
+
+storage limit
+:   - free - 50 pages & 50 MB total per site
+    - paid - 500 pages & 1 GB total per site
+
+monthly bandwidth
+:   no limit defined
+
+notes
+:   a beautiful block-based site creation tool with easy export options!
+
 
 #### [webflow](https://webflow.com/)
 
@@ -91,7 +113,7 @@ monthly bandwidth
     - paid - 50-400 GB & 250,000-300,000 visitors.
 
 notes
-:   a super sleek visual site builder and content management system for personal and professional pages alike.
+:   a super sleek site builder and content management system for personal and professional pages alike.
 
 
 #### [webstudio 👑](https://webstudio.is/)
@@ -126,6 +148,10 @@ host location
 pricing
 :   free and paid (5 USD per month)
 
+total sites
+:   - free - 1 site
+    - paid - unlimited sites
+
 storage limit
 :   - free - 1 GB
     - paid - 50 GB
@@ -150,6 +176,9 @@ host location
 pricing
 :   100% free
 
+total sites
+:   1 per account
+
 storage limit
 :   10 MB
 
@@ -163,6 +192,7 @@ notes
 
     - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
 
+
 #### [github pages](https://pages.github.com/)
 
 host location
@@ -172,15 +202,17 @@ pricing
 :   100% free for non-enterprise
 
 storage limit
-:   2 GB per file, with no total size limit
+:   1 GB
 
 monthly bandwidth
-:   no limit defined
+:   100 GB
 
 notes
 :   - site files are hosted in a public git repository.
 
     - supports adding custom domains at no extra cost.
+
+    - more details on [github hosting limits here.](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages)
 
 
 </section>
@@ -206,7 +238,7 @@ monthly bandwidth
 :   - free - 500 requests & 25 MB served
     - paid - up to 10 million requests & 400 GB served
 
-backend environment
+server-side environment
 :   - free - not available
     - paid - node.js, PHP, python, java, C#, and rust
 
@@ -234,7 +266,7 @@ storage limit
 monthly bandwidth
 :   no limit defined
 
-backend environment
+server-side environment
 :   node.js
 
 database
@@ -249,28 +281,66 @@ notes
 
 ### hosting only
 
-#### [marigold town](https://marigold.town/)
+#### [netlify](https://www.netlify.com/)
 
 host location
 :   united states
 
 pricing
-:   100% free
+:   free and paid (19 USD per month)
+
+total sites
+:   500 sites
 
 storage limit
-:   2 GB
+:   none defined
 
 monthly bandwidth
-:   150 GB
+:   - free - 100 GB
+    - paid - 1 TB
 
-backend environment
-:   PHP, java
+server-side environment
+:   various javascript frameworks (as a build integration and for serverless functions only)
+
+database
+:   multiple options (for serverless functions only)
 
 web server
-:   apache
+:   not configurable
 
 notes
-:   sites are themed around a cozy town square! signup is currently limited to a few accounts at a time.
+:   \-
+
+#### [vercel](https://vercel.com/)
+
+host location
+:   united states
+
+pricing
+:   free and paid (20 USD per month)
+
+total sites
+:   - free - 50 sites
+    - paid - unlimited sites
+
+storage limit
+:   none defined
+
+monthly bandwidth
+:   - free - 100 GB
+    - paid - 1 TB
+
+server-side environment
+:   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks (as a build integration and for serverless functions only)
+
+database
+:   multiple options, including vercel KV and postgres (for serverless functions only)
+
+web server
+:   not configurable
+
+notes
+:   \-
 
 
 #### [teacake](https://teacake.org/)
@@ -289,7 +359,7 @@ monthly bandwidth
 :   - free - 5 GB
     - paid - up to 30 GB
 
-backend environment
+server-side environment
 :   PHP
 
 database
@@ -316,7 +386,7 @@ storage limit
 monthly bandwidth
 :   up to 50 GB
 
-backend environment
+server-side environment
 :   PHP
 
 database
@@ -327,6 +397,57 @@ web server
 
 notes
 :   completely free hosting with offerings similar to those of teacake, but note that available slots tend to be more limited.
+
+
+#### [marigold town](https://marigold.town/)
+
+host location
+:   united states
+
+pricing
+:   100% free
+
+storage limit
+:   2 GB
+
+monthly bandwidth
+:   150 GB
+
+server-side environment
+:   PHP, java
+
+web server
+:   apache
+
+notes
+:   sites are themed around a cozy town square! signup is currently limited to a few accounts at a time.
+
+
+#### [infinity free](https://www.infinityfree.com/)
+
+host location
+:   united states
+
+pricing
+:   100% free
+
+storage limit
+:   5 GB
+
+monthly bandwidth
+:   unlimited
+
+server-side environment
+:   PHP
+
+database
+:   mySQL (mariaDB)
+
+web server
+:   apache
+
+notes
+:   a well-established hosting service with community forum support.
 
 
 #### [uberspace 💲](https://uberspace.de/en/)
@@ -340,7 +461,7 @@ pricing
 storage limit
 :   10-100 GB
 
-backend environment
+server-side environment
 :   PHP, python, ruby, .NET core, and node.js
 
 database
@@ -364,7 +485,7 @@ pricing
 storage limit
 : 1 USD/GB per month
 
-backend environment
+server-side environment
 :   [25+ languages](https://2023q3.nfshost.com/)
 
 database

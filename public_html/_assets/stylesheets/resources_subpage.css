@@ -150,13 +150,14 @@ footer a img {
 body {
   font-size: 1.1em;
   font-stretch: 95%;
+  letter-spacing: 0.01em;
   line-height: 1.5em;
-  max-width: 1250px;
+  max-width: 1500px;
   margin: auto;
 }
 
 #layout {
-  margin-top: 5%;
+  margin: 5vh 3vw;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -167,8 +168,7 @@ header {
   align-self: flex-start;
   position: sticky;
   top: 2em;
-  max-width: -moz-min-content;
-  max-width: min-content;
+  min-width: 20%;
 }
 header h1 {
   font-size: 1.5em;
@@ -385,7 +385,7 @@ footer ul {
   padding-left: 0;
 }
 
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1100px) and (max-width: 1100px) {
   #layout {
     margin-top: 0;
     flex-direction: column;
@@ -412,14 +412,29 @@ footer ul {
   main {
     margin-top: 5vh;
   }
+  footer {
+    text-align: center;
+  }
+  footer ul {
+    margin: auto;
+  }
 }
 @media all and (max-width: 768px) {
   body {
     width: -moz-fit-content;
     width: fit-content;
   }
+  #layout {
+    margin: 0;
+  }
   article {
     display: block;
+  }
+  article ul {
+    padding-right: 2vw;
+  }
+  article dd:last-child {
+    margin-left: 1em;
   }
   section {
     border-right: none;
@@ -429,6 +444,9 @@ footer ul {
   }
   section:first-of-type {
     position: relative;
+  }
+  section li p:not(li:first-child) {
+    margin-left: 0;
   }
   #legend, main nav {
     margin: 5vh 5vw;

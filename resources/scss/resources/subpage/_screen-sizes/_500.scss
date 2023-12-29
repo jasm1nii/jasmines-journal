@@ -1,0 +1,7 @@
+@mixin screen-500 {
+    @media all and (max-width:500px) {
+        main {
+            width: fit-content;
+        }
+    }
+}

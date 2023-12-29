@@ -78,7 +78,7 @@ $dark-section-border: rgb(51, 42, 56);
 
     dt, dd {
         &:not(:last-child, :last-of-type) {
-            @include list-border();
+            @include list-border;
         }
         &:last-child {
             grid-column: span 4;
@@ -91,7 +91,7 @@ $dark-section-border: rgb(51, 42, 56);
             grid-template-columns: 2fr 5fr;
         }
         dt, dd {
-            @include list-border();
+            @include list-border;
         }
         dd {
             margin-left: 0;
