@@ -1,5 +1,8 @@
 @mixin screen-900 {
     @media all and (max-width:900px) {
+        body {
+            font-size: 1em;
+        }
         header {
             hgroup {
                 flex-direction: column;

@@ -549,6 +549,7 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
   margin: 0 auto 15px;
   padding: 15px 0px;
   border: 1px solid rgb(146, 162, 180);
@@ -573,6 +574,7 @@ hr {
   border-top-right-radius: 10px;
   font-family: var(--font-3);
   overflow-x: hidden;
+  width: 100%;
 }
 
 #song {
