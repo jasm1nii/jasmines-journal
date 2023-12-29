@@ -255,7 +255,7 @@ monthly bandwidth
 :   - free - 500 requests & 25 MB served
     - paid - up to 10 million requests & 400 GB served
 
-server-side environment
+dynamic programming
 :   - free - not available
     - paid - node.js, PHP, python, java, C#, and rust
 
@@ -283,7 +283,7 @@ storage limit
 monthly bandwidth
 :   no limit defined
 
-server-side environment
+dynamic programming
 :   node.js
 
 database
@@ -303,7 +303,8 @@ notes
 #### [netlify](https://www.netlify.com/)
 
 host location
-:   united states
+:   - operations - united states
+    - content delivery - globally distributed
 
 pricing
 :   free and paid (19 USD per month)
@@ -318,7 +319,7 @@ monthly bandwidth
 :   - free - 100 GB
     - paid - 1 TB
 
-server-side environment
+dynamic programming
 :   various javascript frameworks (as a build integration and for serverless functions only)
 
 database
@@ -333,7 +334,8 @@ notes
 #### [vercel](https://vercel.com/)
 
 host location
-:   united states
+:   - operations - united states
+    - content delivery - globally distributed
 
 pricing
 :   free and paid (20 USD per month)
@@ -349,7 +351,7 @@ monthly bandwidth
 :   - free - 100 GB
     - paid - 1 TB
 
-server-side environment
+dynamic programming
 :   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks (as a build integration and for serverless functions only)
 
 database
@@ -362,6 +364,36 @@ notes
 :   - only supports site management via CLI and third-party git services.
 
     - beware that you might be blocked upon signup if you use an account that's not associated with a gmail address (source: personal experience, also [corroborated by others](https://github.com/vercel/next.js/discussions/33365)). this can quickly be resolved by emailing support.
+
+
+#### [render](https://render.com/)
+
+host location
+:   - operations - united states
+    - content delivery - global distribution for static sites, [4 regions for dynamic sites](https://docs.render.com/regions)
+
+pricing
+:   free and paid (19-29 USD per month)
+
+storage limit
+:   - static sites: virtually free
+    - dynamic sites: 0.25 USD/GB per month, if a persistent disk is required (e.g. anything mySQL-based)
+
+monthly bandwidth
+:   starts from 100 GB
+
+dynamic programming
+:   - natively supports node.js, python, ruby, go, rust, and elixir
+    - other languages require additional setup with [docker](https://www.docker.com/)
+
+database
+:   natively supports postgresSQL and redis
+
+web server
+:   not configurable
+
+notes
+:   \-
 
 
 #### [teacake 👑](https://teacake.org/)
@@ -380,7 +412,7 @@ monthly bandwidth
 :   - free - 5 GB
     - paid - up to 30 GB
 
-server-side environment
+dynamic programming
 :   PHP
 
 database
@@ -407,7 +439,7 @@ storage limit
 monthly bandwidth
 :   up to 50 GB
 
-server-side environment
+dynamic programming
 :   PHP
 
 database
@@ -436,8 +468,11 @@ storage limit
 monthly bandwidth
 :   150 GB
 
-server-side environment
+dynamic programming
 :   PHP, java
+
+database
+:   mySQL
 
 web server
 :   apache
@@ -462,7 +497,7 @@ storage limit
 monthly bandwidth
 :   unlimited
 
-server-side environment
+dynamic programming
 :   PHP
 
 database
@@ -488,7 +523,7 @@ pricing
 storage limit
 :   10-100 GB
 
-server-side environment
+dynamic programming
 :   PHP, python, ruby, .NET core, and node.js
 
 database
@@ -514,7 +549,7 @@ pricing
 storage limit
 : 1 USD/GB per month
 
-server-side environment
+dynamic programming
 :   [25+ languages](https://2023q3.nfshost.com/)
 
 database
