@@ -32,7 +32,9 @@ monthly bandwidth
     - paid - 1,000-100,000 visitors per month
 
 notes
-:    does not support exporting websites as files nor social discovery (yet).
+:   - does not support exporting websites as files nor social discovery (yet).
+
+    - custom <abbr title="HyperText Markup Language">HTML</abbr> is only supported on the paid plan.
 
 
 #### [hotglue](https://hotglue.me/)
@@ -71,7 +73,12 @@ monthly bandwidth
 :   no limit defined
 
 notes
-:   a flexible site builder geared towards single-page sites. mobile-friendly editor!
+:   - geared towards single-page sites.
+
+    - site editor is mobile-friendly!
+
+    - projects can only be exported on the highest paid tier.
+
 
 #### [tilda](https://tilda.cc/)
 
@@ -93,7 +100,10 @@ monthly bandwidth
 :   no limit defined
 
 notes
-:   a beautiful block-based site creation tool with easy export options!
+:   - sites can be exported.
+
+    - allows custom domains on all plans!
+
 
 
 #### [webflow](https://webflow.com/)
@@ -113,8 +123,7 @@ monthly bandwidth
     - paid - 50-400 GB & 250,000-300,000 visitors.
 
 notes
-:   a super sleek site builder and content management system for personal and professional pages alike.
-
+:   custom domains are only available on a paid plan.
 
 #### [webstudio 👑](https://webstudio.is/)
 
@@ -133,12 +142,42 @@ monthly bandwidth
     - paid - 100,000 page views
 
 notes
-:   the open-source alternative to webflow, with much higher hosting limits!
+:   - the open-source alternative to webflow, with much higher hosting limits!
+
+    - supports management via CLI and deployment to [vercel.](#vercel)
 
 
 ### more code
 
 you'll need to brush up on your frontend programming skills and work directly with raw lines of code - check out [# coding-help](/resources/webdev#coding-help) over at [/resources/webdev](/resources/webdev) if you don't know where to start.
+
+
+#### [ichi](https://ichi.city/)
+
+host location
+:   united kingdom
+
+pricing
+:   100% free
+
+total sites
+:   1 per account
+
+storage limit
+:   10 MB
+
+monthly bandwidth
+:   no limit defined
+
+notes
+:   - no email required for account creation - on the downside, this also means that lost passwords aren't recoverable.
+
+    - all sites are discoverable via global feed, but there aren't any social interaction features.
+
+    - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
+
+    - no custom domain options.
+
 
 #### [neocities](https://neocities.org/)
 
@@ -161,36 +200,13 @@ monthly bandwidth
     - paid - 3 TB
 
 notes
-:   - the paid tier allows for custom domains (purchased separately).
+:   - while i can vouch for the vibrant community, the spam filter is known to be overly sensitive - i've been the subject of [temporary suspension](https://jasm1nii.xyz/blog/articles/2023/8/17/entry), myself.
+
+    - custom domains are only available on the paid plan.
 
     - social profiles are optional.
 
     - supports site management via direct upload, command line, and <abbr title="application programming interface">API</abbr>.
-
-
-#### [ichi](https://ichi.city/)
-
-host location
-:   united kingdom
-
-pricing
-:   100% free
-
-total sites
-:   1 per account
-
-storage limit
-:   10 MB
-
-monthly bandwidth
-:   no limit defined
-
-notes
-:   - no email requried for account creation - on the downside, this also means that lost passwords aren't recoverable.
-
-    - all sites are discoverable via global feed, but there aren't any social interaction features.
-
-    - supports site management via direct upload and <abbr title="secure file transfer protocol">SFTP</abbr>.
 
 
 #### [github pages](https://pages.github.com/)
@@ -232,7 +248,8 @@ pricing
 :   free and paid (5-30 USD per month)
 
 storage limit
-:   20 MB - 15 GB
+:   - free - 20 MB
+    - paid - up to 15 GB
 
 monthly bandwidth
 :   - free - 500 requests & 25 MB served
@@ -276,7 +293,9 @@ web server
 :   not configurable
 
 notes
-:   beginner-friendly community with lots of remixable templates! site repositories are public by default, but can be made private by upgrading to a paid plan.
+:   - beginner-friendly community with lots of remixable templates!
+
+    - site repositories are public by default, but can be made private by upgrading to a paid plan.
 
 
 ### hosting only
@@ -309,7 +328,7 @@ web server
 :   not configurable
 
 notes
-:   \-
+:   supports uploading static sites as files without git.
 
 #### [vercel](https://vercel.com/)
 
@@ -340,10 +359,12 @@ web server
 :   not configurable
 
 notes
-:   \-
+:   - only supports site management via CLI and third-party git services.
+
+    - beware that you might be blocked upon signup if you use an account that's not associated with a gmail address (source: personal experience, also [corroborated by others](https://github.com/vercel/next.js/discussions/33365)). this can quickly be resolved by emailing support.
 
 
-#### [teacake](https://teacake.org/)
+#### [teacake 👑](https://teacake.org/)
 
 host location
 :   united states
@@ -369,10 +390,10 @@ web server
 :   apache
 
 notes
-:   paid plans come with cPanel and easy script installation via softaculous.
+:   GUI admin panel for site management is only available with a paid plan.
 
 
-#### [leprd](https://leprd.space/)
+#### [leprd 👑](https://leprd.space/)
 
 host location
 :   north america
@@ -396,7 +417,9 @@ web server
 :   apache
 
 notes
-:   completely free hosting with offerings similar to those of teacake, but note that available slots tend to be more limited.
+:   - while their offerings exceed those of teacake, available slots tend to be more limited.
+
+    - GUI admin panel is available on all plans.
 
 
 #### [marigold town](https://marigold.town/)
@@ -420,7 +443,9 @@ web server
 :   apache
 
 notes
-:   sites are themed around a cozy town square! signup is currently limited to a few accounts at a time.
+:   - themed as a cozy town square!
+
+    - signup is also limited to a few accounts at a time.
 
 
 #### [infinity free](https://www.infinityfree.com/)
@@ -447,7 +472,9 @@ web server
 :   apache
 
 notes
-:   a well-established hosting service with community forum support.
+:   - a well-established hosting service for starter sites.
+
+    - provides help via community forums, but does not offer 1-on-1 support.
 
 
 #### [uberspace 💲](https://uberspace.de/en/)
@@ -471,7 +498,9 @@ web server
 :   apache
 
 notes
-:   includes a free subdomain and runs on renewable energy! requires a willingness to get comfortable with the command line.
+:   - runs on renewable energy!
+
+    - requires a willingness to get comfortable with the command line.
 
 
 #### [nearly free speech 💲](https://www.nearlyfreespeech.net/)
@@ -495,6 +524,8 @@ web server
 :   apache
 
 notes
-:   super cheap and also requires some command line know-how. does not offer webmail hosting.
+:   - also requires some command line know-how.
+
+    - does not offer webmail hosting.
 
 </section>
