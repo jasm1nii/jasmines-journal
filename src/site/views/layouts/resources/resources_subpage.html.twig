@@ -30,6 +30,11 @@
             </header>
             <main>
                 <article>
+                    {% if parent != null %}
+                        <nav>
+                            return to <a href="{{ parent }}">{{ parent }}</a>
+                        </nav>
+                    {% endif %}
                     <aside id="legend">
                         <details>
                             <summary>
@@ -40,11 +45,6 @@
                             {% endapply %}
                         </details>
                     </aside>
-                    {% if parent != null %}
-                        <nav>
-                            return to <a href="{{ parent }}">{{ parent }}</a>
-                        </nav>
-                    {% endif %}
                     {{ content != null ? content|raw : block('content') }}
                 </article>
             </main>

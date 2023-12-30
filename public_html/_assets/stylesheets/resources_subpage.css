@@ -389,6 +389,7 @@ button:hover {
 }
 
 footer {
+  margin: 3em auto 3em 3em;
   text-align: left;
 }
 footer ul {
@@ -461,6 +462,10 @@ footer ul {
   }
   #legend, main nav {
     margin: 5vh 5vw;
+  }
+  footer {
+    margin: auto;
+    text-align: center;
   }
 }
 @media all and (max-width: 500px) {

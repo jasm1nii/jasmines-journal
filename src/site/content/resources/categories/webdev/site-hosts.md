@@ -8,6 +8,20 @@
 
 <section>
 
+## TL;DR for the choice paralyzed
+
+* [neocities](#neocities) is the most popular choice for small web hobbyists that are looking for community, especially for those just starting out.
+
+* if raw code isn't for you, [hotglue](#hotglue) and [mmm.page](#mmmpage) are both easy-to-use site builders that don't sacrifice layout flexibility.
+
+* if you want to do server-side scripting with node.js, [glitch](#glitch-👑) is great for dipping your toes in the water.
+
+* if you want to use PHP, [teacake](#teacake-👑), [leprd](#leprd-👑), and [marigold town](#marigold-town) are all reputable hobbyist-oriented PHP hosts.
+
+</section>
+
+<section>
+
 ## low code
 
 many of these feature an easy-to-use visual editor - perfect for every skill level!
@@ -199,9 +213,11 @@ notes
 
 ## more code
 
-work with raw HTML, CSS, and javascript from the get-go.
+work with raw code from the get-go.
 
 ### static sites only
+
+only supports HTML, CSS, and javascript.
 
 #### [ichi](https://ichi.city/)
 
@@ -295,6 +311,10 @@ notes
 
 
 ### traditional static & dynamic sites
+
+**"what do you mean by 'traditional?'"**
+
+these options are "traditional" in the sense that you manage your site within a dedicated user folder on a regular file system, and you may even be able to tweak your server configuration settings to an extent - for example, to rewrite URLs without file extensions, or extend plain HTML with [server-side includes.](https://httpd.apache.org/docs/current/howto/ssi.html)
 
 #### [teacake 👑](https://teacake.org/)
 
@@ -472,6 +492,14 @@ notes
     - does not offer webmail hosting.
 
 ### serverless dynamic & static sites
+
+**"what makes these hosts *different* from 'traditional' hosts?"**
+
+to clarify, "serverless" just means that the underlying web infrastructure is managed by someone else. *how* you manage your site will vary from host to host - some will let you upload files directly, others require using [a git service.](https://docs.github.com/en/get-started/using-git/about-git)
+
+these hosts are generally faster and more reliable than conventional server setups, at the cost of less user control over the backend. for the most basic hobby sites, i would say the trade off is not that important - *especially* if you're only running a static site.
+
+**if you're *super* new to web development,** i would recommend the first two options in this section. however, *if you want to use PHP specifically* and don't care for node.js, i strongly suggest a [traditional web host](#traditional-static--dynamic-sites) instead.
 
 #### [w3schools spaces](https://www.w3schools.com/spaces/index.php)
 
