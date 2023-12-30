@@ -1,0 +1,36 @@
+@mixin screen-1200 {
+    @media all and (max-width: 1200px) {
+        #layout {
+            margin-top: 0;
+            flex-direction: column;
+        }
+        header {
+            position: relative;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3vh;
+            text-align: right;
+            nav {
+                text-align: left;
+                li {
+                    display: inline;
+                    margin-right: .5em;
+                    &:last-child::after {
+                        content: "✧";
+                        margin-left: .5em;
+                    }
+                }
+            }
+        }
+        main {
+            margin-top: 5vh;
+        }
+        footer {
+            text-align: center;
+            ul {
+                margin: auto;
+            }
+        }
+    }
+}

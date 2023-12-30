@@ -1,5 +1,5 @@
-@mixin screen-768 {
-    @media all and (max-width: 768px) {
+@mixin screen-900 {
+    @media all and (max-width: 900px) {
         body {
             width: fit-content;
         }
