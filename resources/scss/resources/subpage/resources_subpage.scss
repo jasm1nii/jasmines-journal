@@ -111,8 +111,8 @@ article {
     column-gap: 3vw;
     row-gap: 3vh;
     nav {
-        grid-column: 1;
-        grid-row: 1;
+        grid-column: 2;
+        // grid-row: 1;
         height: fit-content;
     }
 }
@@ -120,7 +120,7 @@ article {
 #legend {
     padding-top: .5em;
     grid-column: 2;
-    grid-row: 1;
+    //grid-row: 1;
     summary {
         margin: 1em 2em 0;
         font-size: 1em;
@@ -156,7 +156,7 @@ section {
         grid-row: 2;
         height: fit-content;
         break-after: always;
-        position: sticky;
+        position: fixed;
         top: 5%;
         padding-bottom: 0;
     }
@@ -164,7 +164,7 @@ section {
 
 .table-of-contents {
     overflow-y: auto;
-    max-height: 50vh;
+    max-height: 75vh;
     margin-top: 0;
     margin-bottom: 0;
     padding: 1em 0 1em 1em;
@@ -243,10 +243,10 @@ button {
 }
 
 footer {
-    margin: 3em auto 3em 3em;
-    text-align: left;
+    margin: 3em 3em 3em auto;
+    text-align: right;
     ul {
-        margin-left: 0;
+        margin-right: 0;
         padding-left: 0;
     }
 }

@@ -253,8 +253,7 @@ article {
   row-gap: 3vh;
 }
 article nav {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 2;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -262,7 +261,6 @@ article nav {
 #legend {
   padding-top: 0.5em;
   grid-column: 2;
-  grid-row: 1;
 }
 #legend summary {
   margin: 1em 2em 0;
@@ -303,14 +301,14 @@ section:first-of-type {
   height: fit-content;
   -moz-column-break-after: always;
        break-after: always;
-  position: sticky;
+  position: fixed;
   top: 5%;
   padding-bottom: 0;
 }
 
 .table-of-contents {
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 75vh;
   margin-top: 0;
   margin-bottom: 0;
   padding: 1em 0 1em 1em;
@@ -389,11 +387,11 @@ button:hover {
 }
 
 footer {
-  margin: 3em auto 3em 3em;
-  text-align: left;
+  margin: 3em 3em 3em auto;
+  text-align: right;
 }
 footer ul {
-  margin-left: 0;
+  margin-right: 0;
   padding-left: 0;
 }
 
