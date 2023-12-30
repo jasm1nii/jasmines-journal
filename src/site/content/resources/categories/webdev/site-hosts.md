@@ -8,15 +8,33 @@
 
 <section>
 
-## static sites only
+## low code
 
-*at most*, these sites only support HTML, javascript, and CSS. if you're looking to use PHP, node.js, python, and more, jump to [# static and dynamic sites.](/resources/webdev/site-hosts#static-and-dynamic-sites)
+many of these feature an easy-to-use visual editor - perfect for every skill level!
 
-### low code
+### static sites only
 
-many of these feature a visual editor, which means they are relatively easy to use without any prior coding knowledge!
+#### [hotglue](https://hotglue.me/)
 
-#### [mmm.page 👑](https://build.mmm.page/)
+host location
+:   netherlands
+
+pricing
+:   100% free
+
+storage limit
+:   no limit defined
+
+monthly bandwidth
+:   no limit defined
+
+notes
+:   - sites are discoverable via feed.
+
+    - includes a forum for community discussion and troubleshooting.
+
+
+#### [mmm.page](https://build.mmm.page/)
 
 host location
 :   north america
@@ -44,26 +62,6 @@ notes
 :   - does not support exporting websites as files nor social discovery (yet).
 
     - custom <abbr title="HyperText Markup Language">HTML</abbr> is only supported on the paid plan.
-
-
-#### [hotglue](https://hotglue.me/)
-
-host location
-:   netherlands
-
-pricing
-:   100% free
-
-storage limit
-:   no limit defined
-
-monthly bandwidth
-:   no limit defined
-
-notes
-:   - sites are discoverable via feed.
-
-    - includes a forum for community discussion and troubleshooting.
 
 
 #### [carrd 🎀](https://try.carrd.co/k8hrjrws)
@@ -103,6 +101,38 @@ notes
     - embed forms and widgets require a paid plan.
 
 
+#### [webstudio](https://webstudio.is/)
+
+host location
+:   north america
+
+pricing
+:   free and paid (20 USD per month)
+
+storage limit
+:   <dl>
+        <dt>free</dt>
+        <dd>2 GB</dd>
+        <dt>paid</dt>
+        <dd>20 GB</dd>
+    </dl>
+
+monthly bandwidth
+:   <dl>
+        <dt>free</dt>
+        <dd>10,000 page views</dd>
+        <dt>paid</dt>
+        <dd>100,000 page views</dd>
+    </dl>
+
+notes
+:   - open source!
+
+    - supports management via CLI and deployment to [vercel.](#vercel)
+
+
+### static & dynamic sites 
+
 #### [tilda](https://tilda.cc/)
 
 host location
@@ -131,10 +161,9 @@ monthly bandwidth
 :   no limit defined
 
 notes
-:   - sites can be exported.
-
-    - allows custom domains on all plans!
-
+:   - free users are virtually limited to static pages.
+    - custom HTML and domains are only supported on the paid plan.
+    - sites can be exported or integrated with wordpress with the highest paid tier.
 
 
 #### [webflow](https://webflow.com/)
@@ -162,42 +191,17 @@ monthly bandwidth
     </dl>
 
 notes
-:   custom domains are only available on a paid plan.
+:   - custom domains are only available on a paid plan.
 
-#### [webstudio 👑](https://webstudio.is/)
+</section>
 
-host location
-:   north america
+<section>
 
-pricing
-:   free and paid (20 USD per month)
+## more code
 
-storage limit
-:   <dl>
-        <dt>free</dt>
-        <dd>2 GB</dd>
-        <dt>paid</dt>
-        <dd>20 GB</dd>
-    </dl>
+work with raw HTML, CSS, and javascript from the get-go.
 
-monthly bandwidth
-:   <dl>
-        <dt>free</dt>
-        <dd>10,000 page views</dd>
-        <dt>paid</dt>
-        <dd>100,000 page views</dd>
-    </dl>
-
-notes
-:   - the open-source alternative to webflow, with much higher hosting limits!
-
-    - supports management via CLI and deployment to [vercel.](#vercel)
-
-
-### more code
-
-you'll need to brush up on your frontend programming skills and work directly with raw lines of code - check out [# coding-help](/resources/webdev#coding-help) over at [/resources/webdev](/resources/webdev) if you don't know where to start.
-
+### static sites only
 
 #### [ichi](https://ichi.city/)
 
@@ -290,89 +294,7 @@ notes
     - more details on [github hosting limits here.](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages)
 
 
-</section>
-
-<section>
-
-## static and dynamic sites
-
-### building and hosting
-
-#### [w3schools spaces](https://www.w3schools.com/spaces/index.php)
-
-host location
-:   united states
-
-pricing
-:   free and paid (5-30 USD per month)
-
-storage limit
-:   <dl>
-        <dt>free</dt>
-        <dd>20 MB</dd>
-        <dt>paid</dt>
-        <dd>up to 15 GB</dd>
-    </dl>
-
-monthly bandwidth
-:   <dl>
-        <dt>free</dt>
-        <dd>500 requests & 25 MB served</dd>
-        <dt>paid</dt>
-        <dd>up to 10 million requests & 400 GB served</dd>
-    </dl>
-
-dynamic programming
-:   <dl>
-        <dt>free</dt>
-        <dd>not available</dd>
-        <dt>paid</dt>
-        <dd>node.js, PHP, python, java, C#, and rust</dd>
-    </dl>
-
-database
-:   unavailable
-
-web server
-:   not configurable
-
-notes
-:   - learn as you go with one of the web's most popular tutorial sites!
-
-    - static pages are completely free, but backend support starts at 10 USD per month.
-
-
-#### [glitch 👑](https://glitch.com/)
-
-host location
-:   united states
-
-pricing
-:   free and paid (8 USD per month)
-
-storage limit
-:   no limit defined
-
-monthly bandwidth
-:   no limit defined
-
-dynamic programming
-:   node.js
-
-database
-:   SQlite
-
-web server
-:   not configurable
-
-notes
-:   - beginner-friendly community with lots of remixable templates!
-
-    - site repositories are public by default, but can be made private by upgrading to a paid plan.
-
-
-### hosting only
-
+### traditional static & dynamic sites
 
 #### [teacake 👑](https://teacake.org/)
 
@@ -549,6 +471,74 @@ notes
 
     - does not offer webmail hosting.
 
+### serverless dynamic & static sites
+
+#### [w3schools spaces](https://www.w3schools.com/spaces/index.php)
+
+host location
+:   united states
+
+pricing
+:   free and paid (5-30 USD per month)
+
+storage limit
+:   <dl>
+        <dt>free</dt>
+        <dd>20 MB</dd>
+        <dt>paid</dt>
+        <dd>up to 15 GB</dd>
+    </dl>
+
+monthly bandwidth
+:   <dl>
+        <dt>free</dt>
+        <dd>500 requests & 25 MB served</dd>
+        <dt>paid</dt>
+        <dd>up to 10 million requests & 400 GB served</dd>
+    </dl>
+
+dynamic programming
+:   <dl>
+        <dt>free</dt>
+        <dd>not available</dd>
+        <dt>paid</dt>
+        <dd>node.js, PHP, python, java, C#, and rust</dd>
+    </dl>
+
+database
+:   unavailable
+
+notes
+:   - learn as you go with one of the web's most popular tutorial sites!
+
+    - static pages are completely free, but backend support starts at 10 USD per month.
+
+
+#### [glitch 👑](https://glitch.com/)
+
+host location
+:   united states
+
+pricing
+:   free and paid (8 USD per month)
+
+storage limit
+:   no limit defined
+
+monthly bandwidth
+:   no limit defined
+
+dynamic programming
+:   node.js
+
+database
+:   SQlite
+
+notes
+:   - beginner-friendly community with lots of remixable templates!
+
+    - site repositories are public by default, but can be made private by upgrading to a paid plan.
+
 
 #### [netlify](https://www.netlify.com/)
 
@@ -578,13 +568,10 @@ monthly bandwidth
     </dl>
 
 dynamic programming
-:   various javascript frameworks (as a build integration and for serverless functions only)
+:   various javascript frameworks
 
 database
-:   multiple options (for serverless functions only)
-
-web server
-:   not configurable
+:   multiple options
 
 notes
 :   - supports uploading static sites as files without git.
@@ -623,13 +610,10 @@ monthly bandwidth
     </dl>
 
 dynamic programming
-:   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks (as a build integration and for serverless functions only)
+:   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks
 
 database
-:   multiple options, including vercel KV and postgres (for serverless functions only)
-
-web server
-:   not configurable
+:   multiple options, including vercel KV and postgres
 
 notes
 :   - only supports site management via CLI and third-party git services.
@@ -676,9 +660,6 @@ dynamic programming
 
 database
 :   postgresSQL and redis (native)
-
-web server
-:   not configurable
 
 notes
 :   - git or docker is required for deployment; more languages are supported via the latter.
