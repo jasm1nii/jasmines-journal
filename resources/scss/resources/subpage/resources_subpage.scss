@@ -146,6 +146,9 @@ section {
     }
     p:not(ul p), dl:not(ul dl) {
         margin-left: 3em;
+        dl {
+            margin-left: 0;
+        }
     }
     &:first-of-type {
         font-size: 1em;

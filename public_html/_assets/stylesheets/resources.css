@@ -70,6 +70,14 @@ dd ul {
 dd p:first-child {
   margin-top: 0;
 }
+dd dl {
+  grid-template-columns: 2fr 5fr;
+}
+dd dl dd {
+  grid-column: 2 !important;
+  margin-left: 0 !important;
+  padding-left: 0.5em !important;
+}
 
 dt:not(:last-child, :last-of-type), dd:not(:last-child, :last-of-type) {
   border-bottom: 1px solid rgba(128, 128, 128, 0.575);

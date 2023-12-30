@@ -74,6 +74,14 @@ $dark-section-border: rgb(51, 42, 56);
                 margin-top: 0;
             }
         }
+        dl {
+            grid-template-columns: 2fr 5fr;
+            dd {
+                grid-column: 2 !important;
+                margin-left: 0 !important;
+                padding-left: .5em !important;
+            }
+        }
     }
 
     dt, dd {

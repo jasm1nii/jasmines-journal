@@ -25,11 +25,20 @@ pricing
 :   free and paid (5-30 USD per month)
 
 storage limit
-:   starts from 5 pages
+:   <dl>
+        <dt>free</dt>
+        <dd>5 pages</dd>
+        <dt>paid</dt>
+        <dd>starts from 25 pages</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 1,000 visitors per month
-    - paid - 1,000-100,000 visitors per month
+:   <dl>
+        <dt>free</dt>
+        <dd>1,000 visitors per month</dd>
+        <dt>paid</dt>
+        <dd>up to 100,000 visitors per month</dd>
+    </dl>
 
 notes
 :   - does not support exporting websites as files nor social discovery (yet).
@@ -65,9 +74,21 @@ host location
 pricing
 :   free and paid (9-49 USD per year)
 
+total sites
+:   <dl>
+        <dt>free</dt>
+        <dd>3 sites</dd>
+        <dt>paid</dt>
+        <dd>up to 25 sites</dd>
+    </dl>
+
 storage limit
-:   - free - 100 elements, with 2 MB per image and 4 MB per video.
-    - paid - no element limit, with 16 MB per image and 32 MB per video.
+:   <dl>
+        <dt>free</dt>
+        <dd>100 elements per site, with 2 MB per image and 4 MB per video</dd>
+        <dt>paid</dt>
+        <dd>unlimited elements, with 16 MB per image and 32 MB per video</dd>
+    </dl>
 
 monthly bandwidth
 :   no limit defined
@@ -79,6 +100,8 @@ notes
 
     - projects can only be exported on the highest paid tier.
 
+    - embed forms and widgets require a paid plan.
+
 
 #### [tilda](https://tilda.cc/)
 
@@ -89,12 +112,20 @@ pricing
 :   free and paid (15-25 USD per month)
 
 total sites
-:   - free - 1 site
-    - paid - 5 sites
+:   <dl>
+        <dt>free</dt>
+        <dd>1 site</dd>
+        <dt>paid</dt>
+        <dd>5 sites</dd>
+    </dl>
 
 storage limit
-:   - free - 50 pages & 50 MB total per site
-    - paid - 500 pages & 1 GB total per site
+:   <dl>
+        <dt>free</dt>
+        <dd>50 pages & 50 MB per site</dd>
+        <dt>paid</dt>
+        <dd>500 pages & 1 GB per site</dd>
+    </dl>
 
 monthly bandwidth
 :   no limit defined
@@ -115,12 +146,20 @@ pricing
 :   free and paid (14-39 USD per month)
 
 storage limit
-:   - free - 2 pages & 50 content items.
-    - paid - 150 pages & 0-10,000 content items.
+:   <dl>
+        <dt>free</dt>
+        <dd>2 pages & 50 content items</dd>
+        <dt>paid</dt>
+        <dd>150 pages & 0-10,000 content items</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 1 GB & 1,000 visitors.
-    - paid - 50-400 GB & 250,000-300,000 visitors.
+:   <dl>
+        <dt>free</dt>
+        <dd>1 GB & 1,000 visitors</dd>
+        <dt>paid</dt>
+        <dd>50-400 GB & 250,000-300,000 visitors</dd>
+    </dl>
 
 notes
 :   custom domains are only available on a paid plan.
@@ -134,12 +173,20 @@ pricing
 :   free and paid (20 USD per month)
 
 storage limit
-:   - free - 2 GB
-    - paid - 20 GB
+:   <dl>
+        <dt>free</dt>
+        <dd>2 GB</dd>
+        <dt>paid</dt>
+        <dd>20 GB</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 10,000 page views
-    - paid - 100,000 page views
+:   <dl>
+        <dt>free</dt>
+        <dd>10,000 page views</dd>
+        <dt>paid</dt>
+        <dd>100,000 page views</dd>
+    </dl>
 
 notes
 :   - the open-source alternative to webflow, with much higher hosting limits!
@@ -188,16 +235,28 @@ pricing
 :   free and paid (5 USD per month)
 
 total sites
-:   - free - 1 site
-    - paid - unlimited sites
+:   <dl>
+        <dt>free</dt>
+        <dd>1 site</dd>
+        <dt>paid</dt>
+        <dd>unlimited sites</dd>
+    </dl>
 
 storage limit
-:   - free - 1 GB
-    - paid - 50 GB
+:   <dl>
+        <dt>free</dt>
+        <dd>1 GB</dd>
+        <dt>paid</dt>
+        <dd>50 GB</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 200 GB
-    - paid - 3 TB
+:   <dl>
+        <dt>free</dt>
+        <dd>200 GB</dd>
+        <dt>paid</dt>
+        <dd>3 TB</dd>
+    </dl>
 
 notes
 :   - while i can vouch for the vibrant community, the spam filter is known to be overly sensitive - i've been the subject of [temporary suspension](https://jasm1nii.xyz/blog/articles/2023/8/17/entry), myself.
@@ -248,16 +307,28 @@ pricing
 :   free and paid (5-30 USD per month)
 
 storage limit
-:   - free - 20 MB
-    - paid - up to 15 GB
+:   <dl>
+        <dt>free</dt>
+        <dd>20 MB</dd>
+        <dt>paid</dt>
+        <dd>up to 15 GB</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 500 requests & 25 MB served
-    - paid - up to 10 million requests & 400 GB served
+:   <dl>
+        <dt>free</dt>
+        <dd>500 requests & 25 MB served</dd>
+        <dt>paid</dt>
+        <dd>up to 10 million requests & 400 GB served</dd>
+    </dl>
 
 dynamic programming
-:   - free - not available
-    - paid - node.js, PHP, python, java, C#, and rust
+:   <dl>
+        <dt>free</dt>
+        <dd>not available</dd>
+        <dt>paid</dt>
+        <dd>node.js, PHP, python, java, C#, and rust</dd>
+    </dl>
 
 database
 :   unavailable
@@ -266,7 +337,9 @@ web server
 :   not configurable
 
 notes
-:   learn as you go with one of the web's most popular tutorial sites! static pages are completely free, but backend support starts at 10 USD per month.
+:   - learn as you go with one of the web's most popular tutorial sites!
+
+    - static pages are completely free, but backend support starts at 10 USD per month.
 
 
 #### [glitch 👑](https://glitch.com/)
@@ -300,101 +373,6 @@ notes
 
 ### hosting only
 
-#### [netlify](https://www.netlify.com/)
-
-host location
-:   - operations - united states
-    - content delivery - globally distributed
-
-pricing
-:   free and paid (19 USD per month)
-
-total sites
-:   500 sites
-
-storage limit
-:   none defined
-
-monthly bandwidth
-:   - free - 100 GB
-    - paid - 1 TB
-
-dynamic programming
-:   various javascript frameworks (as a build integration and for serverless functions only)
-
-database
-:   multiple options (for serverless functions only)
-
-web server
-:   not configurable
-
-notes
-:   supports uploading static sites as files without git.
-
-#### [vercel](https://vercel.com/)
-
-host location
-:   - operations - united states
-    - content delivery - globally distributed
-
-pricing
-:   free and paid (20 USD per month)
-
-total sites
-:   - free - 50 sites
-    - paid - unlimited sites
-
-storage limit
-:   none defined
-
-monthly bandwidth
-:   - free - 100 GB
-    - paid - 1 TB
-
-dynamic programming
-:   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks (as a build integration and for serverless functions only)
-
-database
-:   multiple options, including vercel KV and postgres (for serverless functions only)
-
-web server
-:   not configurable
-
-notes
-:   - only supports site management via CLI and third-party git services.
-
-    - beware that you might be blocked upon signup if you use an account that's not associated with a gmail address (source: personal experience, also [corroborated by others](https://github.com/vercel/next.js/discussions/33365)). this can quickly be resolved by emailing support.
-
-
-#### [render](https://render.com/)
-
-host location
-:   - operations - united states
-    - content delivery - global distribution for static sites, [4 regions for dynamic sites](https://docs.render.com/regions)
-
-pricing
-:   free and paid (19-29 USD per month)
-
-storage limit
-:   - static sites: virtually free
-    - dynamic sites: 0.25 USD/GB per month, if a persistent disk is required (e.g. anything mySQL-based)
-
-monthly bandwidth
-:   starts from 100 GB
-
-dynamic programming
-:   - natively supports node.js, python, ruby, go, rust, and elixir
-    - other languages require additional setup with [docker](https://www.docker.com/)
-
-database
-:   natively supports postgresSQL and redis
-
-web server
-:   not configurable
-
-notes
-:   \-
-
 
 #### [teacake 👑](https://teacake.org/)
 
@@ -405,12 +383,20 @@ pricing
 :   free and paid (2-3 USD per month)
 
 storage limit
-:   - free - 500 MB
-    - paid - up to 5 GB
+:   <dl>
+        <dt>free</dt>
+        <dd>500 MB</dd>
+        <dt>paid</dt>
+        <dd>up to 5 GB</dd>
+    </dl>
 
 monthly bandwidth
-:   - free - 5 GB
-    - paid - up to 30 GB
+:   <dl>
+        <dt>free</dt>
+        <dd>5 GB</dd>
+        <dt>paid</dt>
+        <dd>up to 30 GB</dd>
+    </dl>
 
 dynamic programming
 :   PHP
@@ -422,7 +408,7 @@ web server
 :   apache
 
 notes
-:   GUI admin panel for site management is only available with a paid plan.
+:   - GUI admin panel for site management is only available with a paid plan.
 
 
 #### [leprd 👑](https://leprd.space/)
@@ -469,10 +455,10 @@ monthly bandwidth
 :   150 GB
 
 dynamic programming
-:   PHP, java
+:   PHP, node.js (on request), and java
 
 database
-:   mySQL
+:   mySQL and SQLite
 
 web server
 :   apache
@@ -495,7 +481,7 @@ storage limit
 :   5 GB
 
 monthly bandwidth
-:   unlimited
+:   no limit defined
 
 dynamic programming
 :   PHP
@@ -547,7 +533,7 @@ pricing
 :   starts from 0.01 USD per month
 
 storage limit
-: 1 USD/GB per month
+:   1 USD/GB per month
 
 dynamic programming
 :   [25+ languages](https://2023q3.nfshost.com/)
@@ -562,5 +548,139 @@ notes
 :   - also requires some command line know-how.
 
     - does not offer webmail hosting.
+
+
+#### [netlify](https://www.netlify.com/)
+
+host location
+:   <dl>
+        <dt>operations</dt>
+        <dd>united states</dd>
+        <dt>content delivery</dt>
+        <dd>globally distributed</dd>
+    </dl>
+
+pricing
+:   free and paid (19 USD per month)
+
+total sites
+:   500 sites
+
+storage limit
+:   none defined
+
+monthly bandwidth
+:   <dl>
+        <dt>free</dt>
+        <dd>100 GB</dd>
+        <dt>paid</dt>
+        <dd>1 TB</dd>
+    </dl>
+
+dynamic programming
+:   various javascript frameworks (as a build integration and for serverless functions only)
+
+database
+:   multiple options (for serverless functions only)
+
+web server
+:   not configurable
+
+notes
+:   - supports uploading static sites as files without git.
+
+
+#### [vercel](https://vercel.com/)
+
+host location
+:   <dl>
+        <dt>operations</dt>
+        <dd>united states</dd>
+        <dt>content delivery</dt>
+        <dd>globally distributed</dd>
+    </dl>
+
+pricing
+:   free and paid (20 USD per month)
+
+total sites
+:   <dl>
+        <dt>free</dt>
+        <dd>50 sites</dd>
+        <dt>paid</dt>
+        <dd>unlimited sites</dd>
+    </dl>
+
+storage limit
+:   depends on your git provider
+
+monthly bandwidth
+:   <dl>
+        <dt>free</dt>
+        <dd>100 GB</dd>
+        <dt>paid</dt>
+        <dd>1 TB</dd>
+    </dl>
+
+dynamic programming
+:   35+ javascript, python, and [PHP](https://github.com/vercel-community/php) frameworks (as a build integration and for serverless functions only)
+
+database
+:   multiple options, including vercel KV and postgres (for serverless functions only)
+
+web server
+:   not configurable
+
+notes
+:   - only supports site management via CLI and third-party git services.
+
+    - beware that you might be blocked upon signup if you use an account that's not associated with a gmail address (source: personal experience, also [corroborated by others](https://github.com/vercel/next.js/discussions/33365)). this can quickly be resolved by emailing support.
+
+
+#### [render](https://render.com/)
+
+host location
+:   <dl>
+        <dt>operations</dt>
+        <dd>united states</dd>
+        <dt>content delivery</dt>
+        <dd>
+            <dl>
+                <dt>static sites</dt>
+                <dd>globally distributed</dd>
+                <dt>dynamic sites</dt>
+                <dd>USA, germany, and singapore</dd>
+            </dl>
+        </dd>
+    </dt>
+
+pricing
+:   free and paid (19-29 USD per month)
+
+total sites
+:   no limit defined
+
+storage limit
+:   <dl>
+        <dt>static sites</dt>
+        <dd>depends on your git provider</dd>
+        <dt>dynamic sites</dt>
+        <dd>0.25 USD/GB per month (if a <a href="https://docs.render.com/disks" rel="external">persistent disk</a> is required)</dd>
+    </dl>
+
+monthly bandwidth
+:   starts from 100 GB
+
+dynamic programming
+:   node.js, python, ruby, go, rust, and elixir (native)
+
+database
+:   postgresSQL and redis (native)
+
+web server
+:   not configurable
+
+notes
+:   - git or docker is required for deployment; more languages are supported via the latter.
 
 </section>
