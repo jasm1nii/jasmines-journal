@@ -98,8 +98,6 @@ refer to the ["credits" page.](/credits)
 
 ### libraries
 
-these resources can help keep your code more consistent and reduce the redundancy of typing boilerplate for each page.
-
 *view the full list: [/resources/webdev/libraries](/resources/webdev/libraries).*
 
 ### templating languages

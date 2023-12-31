@@ -23,8 +23,9 @@ RewriteRule ^(.*)/+$ $1 [R=301,L]
 # RewriteCond %{REQUEST_FILENAME}\.html -f
 # RewriteRule ^(.*)  /$1.html [L]
 
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*) /$1.php [L]
+# Enabling this sometimes causes problems with IndieAuth:
+# RewriteCond %{REQUEST_FILENAME}\.php -f
+# RewriteRule ^(.*) /$1.php [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -106,6 +107,8 @@ ModPagespeedEnableFilters hint_preload_subresources,insert_dns_prefetch,collapse
 </IfModule>
 
 <IfModule mod_headers.c>
+
+  Header always set Link "<https://jasm1nii.xyz/auth/index.php>; rel='authorization_endpoint'"
 
   # Make sure proxies don't deliver the wrong content
   Header append Vary Accept-Encoding env=!dont-vary
