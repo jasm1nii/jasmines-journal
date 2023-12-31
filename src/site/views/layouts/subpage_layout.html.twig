@@ -15,7 +15,7 @@
         <header>
             <hgroup>
                 <h1>jasmine's journal</h1>
-                <p>updated<br/><time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time></p>
+                <p>updated<br/><time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM yyyy")|lower }}</time></p>
             </hgroup>
             <nav>
                 {{ include('@includes/headernav.shtml') }}

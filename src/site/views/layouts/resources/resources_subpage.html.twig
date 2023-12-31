@@ -21,7 +21,7 @@
                     {% endif %}
                     <h1>{{ title }}</h1>
                     <p>
-                        last updated: <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM Y")|lower }}</time>
+                        last updated: <time datetime="{{ updated|date() }}">{{ updated|format_date(pattern="d MMMM yyyy")|lower }}</time>
                     </p>
                 </hgroup>
                 <nav>
