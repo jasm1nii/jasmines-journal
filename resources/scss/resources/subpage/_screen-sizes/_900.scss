@@ -3,6 +3,13 @@
         body {
             width: fit-content;
         }
+        header {
+            max-width: 90vw;
+            margin: auto;
+            nav {
+                text-align: left;
+            }
+        }
         #layout {
             margin: 0;
         }
