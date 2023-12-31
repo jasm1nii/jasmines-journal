@@ -34,6 +34,16 @@
 
                     => new Layouts\ResourcesIndex(),
 
+                
+                REQUEST == "/resources/webdev/code-templates-tools"
+
+                    => parent::redirect("/resources/webdev/libraries"),
+
+
+                REQUEST == "/resources/webdev/site-comments"
+
+                    => parent::redirect("/resources/webdev/libraries/site-comments"),
+
 
                 str_starts_with(REQUEST, "/resources")
 

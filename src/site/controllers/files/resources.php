@@ -18,14 +18,9 @@
 
             $url = preg_split('/\//', REQUEST);
 
-            if (!empty($url[3])) {
+            array_pop($url);
 
-                return '/' . $url[1] . '/' . $url[2];
-
-            } else {
-                    
-                return null;
-            }
+            return implode("/", $url);
 
         }
 

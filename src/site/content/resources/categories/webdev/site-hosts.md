@@ -8,7 +8,7 @@
 
 <section>
 
-## TL;DR for the choice paralyzed
+## TL;DR for the choice-paralyzed
 
 * [neocities](#neocities) is the most popular choice for small web hobbyists that are looking for community, especially for those just starting out.
 
@@ -314,7 +314,7 @@ notes
 
 **"what do you mean by 'traditional?'"**
 
-these options are "traditional" in the sense that you manage your site within a dedicated user folder on a regular file system, and you may even be able to tweak your server configuration settings to an extent - for example, to rewrite URLs without file extensions, or extend plain HTML with [server-side includes.](https://httpd.apache.org/docs/current/howto/ssi.html)
+these options are "traditional" in the sense that you manage your site within a dedicated user folder on a regular file system, and you may even be able to tweak your server configuration settings to an extent - for example, to rewrite URLs without file extensions, or extend plain HTML with [server-side includes.](https://httpd.apache.org/docs/current/howto/ssi.html) many will also offer email hosting if you have your own domain.
 
 #### [teacake 👑](https://teacake.org/)
 

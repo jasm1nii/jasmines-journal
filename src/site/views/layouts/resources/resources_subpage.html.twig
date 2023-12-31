@@ -30,10 +30,16 @@
             </header>
             <main>
                 <article>
-                    {% if parent != null %}
+                    {% if parent_url is defined %}
                         <nav>
-                            return to <a href="{{ parent }}">{{ parent }}</a>
+                            return to <a href="{{ parent_url }}">{{ parent_url }}</a>
                         </nav>
+                    {% else %}
+                        {% if parent != null %}
+                            <nav>
+                                return to <a href="{{ parent }}">{{ parent }}</a>
+                            </nav>
+                        {% endif %}
                     {% endif %}
                     <aside id="legend">
                         <details>
@@ -46,6 +52,17 @@
                         </details>
                     </aside>
                     {{ content != null ? content|raw : block('content') }}
+                    {% if parent_url is defined %}
+                        <nav>
+                            return to <a href="{{ parent_url }}">{{ parent_url }}</a>
+                        </nav>
+                    {% else %}
+                        {% if parent != null %}
+                            <nav>
+                                return to <a href="{{ parent }}">{{ parent }}</a>
+                            </nav>
+                        {% endif %}
+                    {% endif %}
                 </article>
             </main>
         </div>

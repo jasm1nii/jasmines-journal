@@ -8,6 +8,14 @@
 
 <section>
 
+## for things i've used
+
+refer to the ["credits" page.](/credits)
+
+</section>
+
+<section>
+
 ## getting started
 
 ### site hosting services
@@ -61,22 +69,6 @@
 *view the full list: [/resources/webdev/code-editors](/resources/webdev/code-editors).*
 
 
-### templates & templating tools
-
-*view the full list: [/resources/webdev/code-templates-tools](/resources/webdev/code-templates-tools).*
-
-these resources can help keep your code more consistent and reduce the redundancy of typing straight <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Stylesheets">CSS</abbr> for every single page.
-
-
-### developer tools
-
-- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
-
-- [prepos](https://prepros.io/)
-
-    a standalone compiler program that supports many templating languages and language extensions, such as sass, tailwind CSS, pug, and markdown. it can also compress javascript, CSS, and image files. comes with a built-in web server, too!
-
-
 ### accessibility references
 
 **a free internet is an accessible internet** - ideally, a website's design should accommodate a wide range of visitors, included disabled people and assistive technology users.
@@ -96,66 +88,47 @@ these resources can help keep your code more consistent and reduce the redundanc
 
 <section>
 
-## code libraries
+## extending the basics
 
-for a list of things that i've used specifically on this site (including graphics), refer to the ["credits" page.](/credits)
+### quick tools
 
-### <abbr title="Cascading Stylesheets">CSS</abbr>
+- [CSS generators](https://css-generators.com/)
 
-**see also:** [# templates & templating tools ➡ style](/resources/webdev/code-templates-tools#style) and [# graphic assets.](/resources/art-design#graphic-assets)
+- [CSS portal](https://www.cssportal.com/)
 
-- [UI verse](https://uiverse.io/)
+### libraries
 
-    2.7k+ open source <abbr title="Cascading Stylesheets">CSS</abbr> elements.
+these resources can help keep your code more consistent and reduce the redundancy of typing boilerplate for each page.
 
-- [animate.css](https://animate.style/)
+*view the full list: [/resources/webdev/libraries](/resources/webdev/libraries).*
 
-    a pure <abbr title="Cascading Stylesheets">CSS</abbr> library of predefined animations - takes the work out of setting keyframes for simple transitions.
+### templating languages
 
-### javascript
+- [pug](https://github.com/pugjs/pug#syntax)
 
-- [oring](https://github.com/Graycot/Oring)
+    pug uses whitespace and indentation instead of tags for rendering HTML. it has a few other features, such as includes, template inheritance, and markdown rendering.
+    
+    it is possible to skip `npm install` entirely and compile pug within vscode using the [compile hero](https://marketplace.visualstudio.com/items?itemName=Wscats.qf) extension. a [command line interface](https://github.com/pugjs/pug-cli) is also available.
 
-    an open source web ring template.
+    pug is also available for PHP as [phug](https://phug-lang.com/).
 
-- [p5.js](https://p5js.org/)
+- [twig](https://twig.symfony.com/)
 
-    for creative coding, geared towards beginner programmers and artists.
+    a template engine for PHP, with syntax akin to [nunjucks](https://mozilla.github.io/nunjucks/) for javascript and [django](https://docs.djangoproject.com/en/4.2/topics/templates/) for python. also supports converting markdown to html and vice versa.
 
-- [GSAP](https://gsap.com/)
+- [sass](https://sass-lang.com/)
 
-    for 2D animations.
+    a CSS preprocessor - super useful for polyfilling nested styles and vendor prefixes for older browsers. sass variables are also much more flexible than regular CSS variables.
+    
+    sass can be precompiled with [compile hero](https://github.com/Wscats/compile-hero) or [live sass compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) for vscode.
 
-- [three.js](https://threejs.org/)
+### develop & deploy
 
-    for 3D animations.
+- [deploy-to-neocities github action](https://github.com/marketplace/actions/deploy-to-neocities)
 
-### <abbr title="PHP Hypertext Preprocessor">PHP</abbr>
+- [prepos](https://prepros.io/)
 
-- [league/commonmark 👑](https://commonmark.thephpleague.com/)
-
-    a commonmark-compliant markdown-to-<abbr title="HyperText Markup Language">HTML</abbr> converter - i'm using it on this very page for generating the table of contents!
-
-
-</section>
-
-<section>
-
-## site features
-
-- [page crypt 👑](https://www.maxlaumeister.com/pagecrypt/)
-
-    password protect your static <abbr title="HyperText Markup Language">HTML</abbr> pages - you should only use this if your host doesn't allow for access configuration on the server side.
-
-- [collectibles.js](https://github.com/MaxLaumeister/collectibles.js)
-
-    add an item collection game to your website!
-
-
-### comments
-
-*view the full list: [/resources/webdev/site-comments](/resources/webdev/site-comments).*
-
+    a standalone compiler program that supports many templating languages and language extensions, such as sass, tailwind CSS, pug, and markdown. it can also compress javascript, CSS, and image files. comes with a built-in web server, too!
 
 </section>
 
@@ -171,7 +144,7 @@ for a list of things that i've used specifically on this site (including graphic
 
 - [IndieWebify.Me](https://indiewebify.me/)
 
-    a guide to getting on the [indie web](https://indieweb.org/) - also features a microformats validator.
+    also features a microformats validator.
 
 
 </section>
