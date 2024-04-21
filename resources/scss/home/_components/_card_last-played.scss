@@ -57,9 +57,17 @@
     #song {
         white-space: nowrap;
         transform: translateX(0);
-        animation: scroll 20s linear infinite;
+        animation: scroll 20s linear infinite normal;
         font-weight: 500;
         font-size: larger;
+    }
+    #js-toggle {
+        padding: .6em 1em;
+        font: inherit;
+        font-weight: 600;
+        font-stretch: semi-expanded;
+        border: 1px solid green;
+        border-radius: 5px;
     }
     @keyframes scroll {
         0% { 
@@ -69,18 +77,13 @@
             transform: translateX(-175%); 
         }
     }
-    @media (prefers-reduced-motion) {
+    @media (prefers-reduced-motion: reduce) {
         #song {
             white-space: normal;
-            animation-play-state: paused;
+            animation: unset;
         }
-    }
-    #js-toggle {
-        padding: .6em 1em;
-        font: inherit;
-        font-weight: 600;
-        font-stretch: semi-expanded;
-        border: 1px solid green;
-        border-radius: 5px;
+        #js-toggle {
+            display: none;
+        }
     }
 }

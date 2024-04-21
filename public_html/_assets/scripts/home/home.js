@@ -240,7 +240,7 @@
   }
   
   jstoggle.addEventListener('click', pauseAnimation);
-  
+
 };
 
 { // status.cafe
